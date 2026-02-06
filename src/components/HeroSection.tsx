@@ -8,8 +8,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
         style={{
-          backgroundImage:
-          'url(https://cdn.magicpatterns.com/uploads/pBD4vyqwot3SxWc8ziPePc/279000632_61847a32-e2d1-49e5-bbbb-6ea5c145d830-1-1.png)',
+          backgroundImage: 'url(/hero-bg-pattern.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
