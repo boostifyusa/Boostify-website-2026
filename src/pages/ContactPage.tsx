@@ -271,13 +271,13 @@ function ContactForm() {
 
       <p className="text-[11px] text-gray/60 leading-relaxed">
         By clicking "Send Message", you agree to our{' '}
-        <Link to="/terms" className="text-orange hover:underline">
+        <a href="https://boostifyusa.com/terms" className="text-orange hover:underline">
           Terms of Service
-        </Link>{' '}
+        </a>{' '}
         and{' '}
-        <Link to="/privacy" className="text-orange hover:underline">
+        <a href="https://boostifyusa.com/privacy" className="text-orange hover:underline">
           Privacy Policy
-        </Link>
+        </a>
         . Message and data rates may apply. Reply STOP to
         unsubscribe or HELP for help.
       </p>
@@ -427,6 +427,8 @@ export function ContactPage() {
                     <div>
                       <div className="text-dark font-bold text-sm">Address</div>
                       <div className="text-gray font-medium text-sm leading-relaxed">
+                        <strong>Boostify USA LLC</strong>
+                        <br />
                         6362 N Figarden Dr Ste 118
                         <br />
                         Fresno, CA 93722
