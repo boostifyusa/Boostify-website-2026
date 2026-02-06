@@ -53,11 +53,18 @@ function ContactForm() {
         body: JSON.stringify({ ...formData, recaptchaToken: token }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
+        // Try to parse error JSON, but handle HTML (e.g. 500/404) gracefully
+        const text = await response.text();
+        try {
+          const data = JSON.parse(text);
+          throw new Error(data.error || 'Failed to send message');
+        } catch (e) {
+          throw new Error(`Server Error (${response.status}): Please try again.`);
+        }
       }
+
+      const data = await response.json();
 
       setSubmitted(true);
     } catch (err: any) {
@@ -379,7 +386,7 @@ export function ContactPage() {
               className="lg:col-span-3">
 
               <GoogleReCaptchaProvider
-                reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+                reCaptchaKey={(import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI").trim()}
                 scriptProps={{
                   async: false,
                   defer: false,
