@@ -226,12 +226,7 @@ function ContactForm() {
             className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
 
           <span className="text-xs text-gray leading-relaxed">
-            I consent to receive promotional notifications about
-            promotional offers, discounts, and updates from Boostify
-            USA LLC at the phone number provided. Message frequency
-            varies, up to 4 messages per month. Message &amp; data
-            rates may apply. Text HELP for assistance, reply STOP to
-            opt out.
+            I consent to receive marketing text messages from Boostify USA LLC at the phone number provided. Message frequency varies, up to 4 messages per month. Message & data rates may apply. Text HELP to (559) 785-3834 for assistance, reply STOP to opt out.
           </span>
         </label>
 
@@ -248,11 +243,7 @@ function ContactForm() {
             className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
 
           <span className="text-xs text-gray leading-relaxed">
-            I consent to receive non-marketing messages about
-            service updates and inquiries from Boostify USA LLC.
-            Message frequency varies, up to 4 messages per month.
-            Message &amp; data rates may apply. Text HELP for
-            assistance, reply STOP to opt out.
+            I consent to receive non-marketing text messages from Boostify USA LLC about service updates and inquiries. Message frequency varies, up to 4 messages per month. Message & data rates may apply. Text HELP to (559) 785-3834 for assistance, reply STOP to opt out.
           </span>
         </label>
       </div>
