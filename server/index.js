@@ -15,7 +15,11 @@ app.use(express.json());
 // Main Contact Route
 app.post('/api/contact', async (req, res) => {
     try {
-        const { name, email, phone, service, message, recaptchaToken } = req.body;
+
+        // Extract consents too
+        const { name, email, phone, service, message, recaptchaToken, consentPromo, consentService } = req.body;
+
+        console.log('Received Form Data:', { name, email, service, consentPromo, consentService });
 
         // Basic validation
         if (!name || !email || !message) {
@@ -64,7 +68,13 @@ app.post('/api/contact', async (req, res) => {
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
             <p><strong>Service Interest:</strong> ${service || 'Not specified'}</p>
-            <br/>
+            
+            <hr />
+            <h3>SMS Consents</h3>
+            <p><strong>Marketing SMS:</strong> ${consentPromo ? '✅ CONSTENTED' : '❌ Opt-out'}</p>
+            <p><strong>Non-Marketing SMS:</strong> ${consentService ? '✅ CONSENTED' : '❌ Opt-out'}</p>
+            <hr />
+
             <h3>Message:</h3>
             <p>${message.replace(/\n/g, '<br>')}</p>
           </body>

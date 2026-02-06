@@ -45,6 +45,8 @@ function ContactForm() {
     try {
       const token = await executeRecaptcha('contact_form');
 
+      console.log('Sending Form Data:', formData);
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -116,6 +118,7 @@ function ContactForm() {
           </label>
           <input
             type="text"
+            name="name"
             required
             value={formData.name}
             onChange={(e) =>
@@ -134,6 +137,7 @@ function ContactForm() {
           </label>
           <input
             type="email"
+            name="email"
             required
             value={formData.email}
             onChange={(e) =>
@@ -155,6 +159,7 @@ function ContactForm() {
           </label>
           <input
             type="tel"
+            name="phone"
             value={formData.phone}
             onChange={(e) =>
               setFormData({
@@ -171,6 +176,7 @@ function ContactForm() {
             Service Interested In
           </label>
           <select
+            name="service"
             value={formData.service}
             onChange={(e) =>
               setFormData({
@@ -216,6 +222,7 @@ function ContactForm() {
         <label className="flex items-start gap-3 cursor-pointer group">
           <input
             type="checkbox"
+            name="consentPromo"
             checked={formData.consentPromo}
             onChange={(e) =>
               setFormData({
@@ -233,6 +240,7 @@ function ContactForm() {
         <label className="flex items-start gap-3 cursor-pointer group">
           <input
             type="checkbox"
+            name="consentService"
             checked={formData.consentService}
             onChange={(e) =>
               setFormData({
