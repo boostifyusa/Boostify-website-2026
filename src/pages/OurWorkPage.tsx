@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
-import { ArrowUpRight, TrendingUp } from 'lucide-react';
+import { ArrowRight, TrendingUp } from 'lucide-react';
 const projects = [
   {
     id: '01',
@@ -199,15 +199,15 @@ export function OurWorkPage() {
               <h3 className="text-2xl font-black text-dark mb-3 tracking-tight">
                 More Projects Coming Soon
               </h3>
-              <p className="text-gray font-medium text-lg leading-relaxed">
+              <p className="text-gray font-medium text-lg leading-relaxed mb-8">
                 We're always building. New case studies and project breakdowns
                 are on the way. Want to be featured here?
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
-                Start Your Project
-                <ArrowUpRight className="w-5 h-5 ml-2" />
+                className="inline-flex items-center text-orange font-bold text-lg hover:text-dark transition-colors duration-300">
+                Let's work together
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>
           </div>
