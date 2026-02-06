@@ -8,7 +8,8 @@ export function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
         style={{
-          backgroundImage: 'url(/hero-bg-pattern.png)',
+          backgroundImage:
+            'url(https://cdn.magicpatterns.com/uploads/pBD4vyqwot3SxWc8ziPePc/279000632_61847a32-e2d1-49e5-bbbb-6ea5c145d830-1-1.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -19,7 +20,7 @@ export function HeroSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-          'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 100%)'
+            'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 100%)'
         }} />
 
 
@@ -29,7 +30,7 @@ export function HeroSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Centered Content */}
-        <div className="text-center max-w-4xl mx-auto mb-20 relative">
+        <div className="text-center max-w-[57rem] mx-auto mb-20 relative">
           <motion.div
             initial={{
               opacity: 0,
