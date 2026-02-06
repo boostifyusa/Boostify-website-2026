@@ -185,7 +185,7 @@ export function ServicesPage() {
                   )}
               </ul>
               <Link
-                to="/services/web-design"
+                to="/web-design"
                 className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
                 Explore Web Design
@@ -331,7 +331,7 @@ export function ServicesPage() {
                   )}
               </ul>
               <Link
-                to="/services/local-seo"
+                to="/local-seo"
                 className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
                 Explore Local SEO
@@ -488,7 +488,7 @@ export function ServicesPage() {
                   )}
               </ul>
               <Link
-                to="/services/local-marketing"
+                to="/local-marketing"
                 className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
                 Explore Marketing
@@ -546,7 +546,7 @@ export function ServicesPage() {
                   )}
               </ul>
               <Link
-                to="/services/app-development"
+                to="/app-development"
                 className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
                 Explore App Dev
@@ -654,7 +654,7 @@ export function ServicesPage() {
                   )}
               </ul>
               <Link
-                to="/services/maintenance"
+                to="/maintenance"
                 className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
                 Explore Maintenance

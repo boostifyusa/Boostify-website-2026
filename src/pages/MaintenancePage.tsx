@@ -165,15 +165,14 @@ export function MaintenancePage() {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
-                Get Protected Now
+                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
+                Get Protected Today
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 backdrop-blur-sm transition-all duration-300">
-                View Maintenance Plans
-                <ArrowRight className="w-5 h-5 ml-2" />
+                to="/maintenance#pricing"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
+                See What's Included
               </Link>
             </motion.div>
           </div>

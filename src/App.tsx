@@ -14,6 +14,7 @@ import { BlogPostPage } from './pages/BlogPostPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { SMSProgramPage } from './pages/SMSProgramPage';
 import { AppDevelopmentPage } from './pages/AppDevelopmentPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,6 +45,7 @@ export function App() {
         <Route path="/sms" element={<SMSProgramPage />} />
         <Route path="/app-development" element={<AppDevelopmentPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
