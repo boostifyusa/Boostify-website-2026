@@ -73,15 +73,14 @@ export function AppDevelopmentPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
-                  Start Your Project
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
+                  Start Your MVP
+                  <Rocket className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
                   to="/work"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 backdrop-blur-sm transition-all duration-300">
-                  View Portfolio
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border-2 border-white/20 font-bold rounded-lg hover:bg-white/10 transition-all">
+                  See Our Work
                 </Link></div>
 
               <div className="flex items-center gap-6 text-sm font-bold text-white/60">
@@ -442,7 +441,7 @@ export function AppDevelopmentPage() {
                     {/* Step Circle */}
                     <div className="relative mb-8">
                       <div className="w-32 h-32 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center relative">
-                        <div className="w-20 h-20 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center">
+                        <div className="w-20 h-20 rounded-full bg-[rgba(42,42,42,1)] border border-white/10 flex items-center justify-center">
                           <item.icon
                             size={28}
                             className="text-orange"

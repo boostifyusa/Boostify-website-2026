@@ -88,16 +88,16 @@ export function LocalMarketingPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
+                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
                   Get Your Free Audit
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
-                <a
-                  href="#/work"
+                <Link
+                  to="/work"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
 
                   See Results
-                </a>
+                </Link>
               </div>
 
               <div className="flex items-center gap-6 text-sm font-bold text-dark/60">
