@@ -13,8 +13,14 @@ import {
   CheckCircle
 } from
   'lucide-react';
+// @ts-ignore
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+
 export function ContactPage() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,9 +30,42 @@ export function ContactPage() {
     consentPromo: false,
     consentService: false
   });
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    if (!executeRecaptcha) {
+      setError('ReCAPTCHA not ready. Please refresh.');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const token = await executeRecaptcha('contact_form');
+
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, recaptchaToken: token }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error('Submission error:', err);
+      setError(err.message || 'Something went wrong. Please try again later or call us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
@@ -295,13 +334,18 @@ export function ContactPage() {
                     </label>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1 w-full sm:w-auto">
 
-                    Send Message
-                    <Send className="ml-2 h-5 w-5" />
+                  <button
+                    type="submit" disabled={loading}
+                    className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
+                    {loading ? 'Sending...' : 'Send Message'}
+                    {!loading && <Send className="ml-2 h-5 w-5" />}
                   </button>
+                  {error && (
+                    <p className="text-red-500 font-bold text-center mt-4">
+                      {error}
+                    </p>
+                  )}
 
                   <p className="text-[11px] text-gray/60 leading-relaxed">
                     By clicking "Send Message", you agree to our{' '}
