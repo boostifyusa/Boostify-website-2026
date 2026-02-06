@@ -1,16 +1,18 @@
-import React, { useState, lazy } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import {
-  ArrowRight,
+
   MapPin,
   Phone,
   Mail,
   Clock,
   Send,
-  CheckCircle } from
-'lucide-react';
+  CheckCircle
+} from
+  'lucide-react';
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -115,7 +117,7 @@ export function ContactPage() {
               className="lg:col-span-3">
 
               {submitted ?
-              <div className="bg-light rounded-3xl border border-gray-light p-12 text-center">
+                <div className="bg-light rounded-3xl border border-gray-light p-12 text-center">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircle size={32} className="text-green-600" />
                   </div>
@@ -126,42 +128,42 @@ export function ContactPage() {
                     We'll get back to you within a few hours. Talk soon!
                   </p>
                   <button
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormData({
-                      name: '',
-                      email: '',
-                      phone: '',
-                      service: '',
-                      message: '',
-                      consentPromo: false,
-                      consentService: false
-                    });
-                  }}
-                  className="text-orange font-bold hover:underline">
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        service: '',
+                        message: '',
+                        consentPromo: false,
+                        consentService: false
+                      });
+                    }}
+                    className="text-orange font-bold hover:underline">
 
                     Send another message
                   </button>
                 </div> :
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-bold text-dark mb-2">
                         Full Name *
                       </label>
                       <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        name: e.target.value
-                      })
-                      }
-                      placeholder="Joaquin Estrada"
-                      className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            name: e.target.value
+                          })
+                        }
+                        placeholder="Joaquin Estrada"
+                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
 
                     </div>
                     <div>
@@ -169,17 +171,17 @@ export function ContactPage() {
                         Email *
                       </label>
                       <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        email: e.target.value
-                      })
-                      }
-                      placeholder="you@business.com"
-                      className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            email: e.target.value
+                          })
+                        }
+                        placeholder="you@business.com"
+                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
 
                     </div>
                   </div>
@@ -190,16 +192,16 @@ export function ContactPage() {
                         Phone
                       </label>
                       <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        phone: e.target.value
-                      })
-                      }
-                      placeholder="(559) 555-0123"
-                      className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            phone: e.target.value
+                          })
+                        }
+                        placeholder="(559) 555-0123"
+                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
 
                     </div>
                     <div>
@@ -207,14 +209,14 @@ export function ContactPage() {
                         Service Interested In
                       </label>
                       <select
-                      value={formData.service}
-                      onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        service: e.target.value
-                      })
-                      }
-                      className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all appearance-none">
+                        value={formData.service}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            service: e.target.value
+                          })
+                        }
+                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all appearance-none">
 
                         <option value="">Select a service...</option>
                         <option value="web-design">Web Design</option>
@@ -233,17 +235,17 @@ export function ContactPage() {
                       Tell Us About Your Project *
                     </label>
                     <textarea
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      message: e.target.value
-                    })
-                    }
-                    placeholder="What's your business? What are you looking to accomplish? Any timeline in mind?"
-                    className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all resize-none" />
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          message: e.target.value
+                        })
+                      }
+                      placeholder="What's your business? What are you looking to accomplish? Any timeline in mind?"
+                      className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all resize-none" />
 
                   </div>
 
@@ -251,15 +253,15 @@ export function ContactPage() {
                   <div className="space-y-4">
                     <label className="flex items-start gap-3 cursor-pointer group">
                       <input
-                      type="checkbox"
-                      checked={formData.consentPromo}
-                      onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        consentPromo: e.target.checked
-                      })
-                      }
-                      className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
+                        type="checkbox"
+                        checked={formData.consentPromo}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            consentPromo: e.target.checked
+                          })
+                        }
+                        className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
 
                       <span className="text-xs text-gray leading-relaxed">
                         I consent to receive promotional notifications about
@@ -273,15 +275,15 @@ export function ContactPage() {
 
                     <label className="flex items-start gap-3 cursor-pointer group">
                       <input
-                      type="checkbox"
-                      checked={formData.consentService}
-                      onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        consentService: e.target.checked
-                      })
-                      }
-                      className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
+                        type="checkbox"
+                        checked={formData.consentService}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            consentService: e.target.checked
+                          })
+                        }
+                        className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
 
                       <span className="text-xs text-gray leading-relaxed">
                         I consent to receive non-marketing messages about
@@ -294,8 +296,8 @@ export function ContactPage() {
                   </div>
 
                   <button
-                  type="submit"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1 w-full sm:w-auto">
+                    type="submit"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1 w-full sm:w-auto">
 
                     Send Message
                     <Send className="ml-2 h-5 w-5" />
@@ -303,13 +305,13 @@ export function ContactPage() {
 
                   <p className="text-[11px] text-gray/60 leading-relaxed">
                     By clicking "Send Message", you agree to our{' '}
-                    <a href="#/terms" className="text-orange hover:underline">
+                    <Link to="/terms" className="text-orange hover:underline">
                       Terms of Service
-                    </a>{' '}
+                    </Link>{' '}
                     and{' '}
-                    <a href="#/privacy" className="text-orange hover:underline">
+                    <Link to="/privacy" className="text-orange hover:underline">
                       Privacy Policy
-                    </a>
+                    </Link>
                     . Message and data rates may apply. Reply STOP to
                     unsubscribe or HELP for help.
                   </p>
@@ -317,8 +319,8 @@ export function ContactPage() {
                   <p className="text-sm text-gray font-medium">
                     Or skip the form, call us at{' '}
                     <a
-                    href="tel:+15597853834"
-                    className="text-orange font-bold hover:underline">
+                      href="tel:+15597853834"
+                      className="text-orange font-bold hover:underline">
 
                       (559) 785-3834
                     </a>

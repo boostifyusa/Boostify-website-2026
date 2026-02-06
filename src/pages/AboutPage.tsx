@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -11,75 +11,74 @@ import {
   Bot,
   Target,
   BarChart3,
-  Award,
-  Users,
   Globe,
   Mic,
   TrendingUp,
   Code,
   Palette,
-  Headphones } from
-'lucide-react';
+  Headphones
+} from
+  'lucide-react';
 const expertise = [
-{
-  label: 'Google Ads',
-  icon: Megaphone
-},
-{
-  label: 'Local SEO',
-  icon: Search
-},
-{
-  label: 'AI Automations',
-  icon: Bot
-},
-{
-  label: 'Lead Generation',
-  icon: Target
-},
-{
-  label: 'Competitor Analysis',
-  icon: BarChart3
-}];
+  {
+    label: 'Google Ads',
+    icon: Megaphone
+  },
+  {
+    label: 'Local SEO',
+    icon: Search
+  },
+  {
+    label: 'AI Automations',
+    icon: Bot
+  },
+  {
+    label: 'Lead Generation',
+    icon: Target
+  },
+  {
+    label: 'Competitor Analysis',
+    icon: BarChart3
+  }];
 
 const credentials = [
-{
-  icon: Mic,
-  title: 'SBA Speaker',
-  desc: 'Invited by the Small Business Administration to speak on SEO and AI for local businesses.'
-},
-{
-  icon: Globe,
-  title: 'Fresno State News',
-  desc: "Built Fresno State's news website — a high-traffic, content-heavy platform used by thousands."
-},
-{
-  icon: TrendingUp,
-  title: '2x Conversions',
-  desc: 'Doubled conversion rates for local service businesses with data-driven design and strategy.'
-}];
+  {
+    icon: Mic,
+    title: 'SBA Speaker',
+    desc: 'Invited by the Small Business Administration to speak on SEO and AI for local businesses.'
+  },
+  {
+    icon: Globe,
+    title: 'Fresno State News',
+    desc: "Built Fresno State's news website — a high-traffic, content-heavy platform used by thousands."
+  },
+  {
+    icon: TrendingUp,
+    title: '2x Conversions',
+    desc: 'Doubled conversion rates for local service businesses with data-driven design and strategy.'
+  }];
 
 const team = [
-{
-  role: 'Web Development',
-  icon: Code,
-  desc: 'Custom-coded sites built for speed and conversion.'
-},
-{
-  role: 'Design & UX',
-  icon: Palette,
-  desc: 'Interfaces that look sharp and feel intuitive.'
-},
-{
-  role: 'SEO & Marketing',
-  icon: Search,
-  desc: 'Data-driven strategies that get you found.'
-},
-{
-  role: 'Client Support',
-  icon: Headphones,
-  desc: 'Real humans, fast responses, no runaround.'
-}];
+  {
+    role: 'Web Development',
+    icon: Code,
+    desc: 'Custom-coded sites built for speed and conversion.'
+  },
+  {
+    role: 'Design & UX',
+    icon: Palette,
+    desc: 'Interfaces that look sharp and feel intuitive.'
+  },
+  {
+    role: 'SEO & Marketing',
+    icon: Search,
+    desc: 'Data-driven strategies that get you found.'
+  },
+  {
+    role: 'Client Support',
+    icon: Headphones,
+    desc: 'Real humans, fast responses, no runaround.'
+  }];
 
 export function AboutPage() {
   return (
@@ -184,25 +183,25 @@ export function AboutPage() {
               {/* Expertise Pills */}
               <div className="flex flex-wrap gap-3 mb-10">
                 {expertise.map((skill, i) =>
-                <motion.div
-                  key={i}
-                  initial={{
-                    opacity: 0,
-                    y: 10
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0
-                  }}
-                  transition={{
-                    delay: 0.3 + i * 0.06
-                  }}
-                  className="flex items-center gap-2 px-4 py-2 bg-light rounded-full border border-gray-light">
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 10
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    transition={{
+                      delay: 0.3 + i * 0.06
+                    }}
+                    className="flex items-center gap-2 px-4 py-2 bg-light rounded-full border border-gray-light">
 
                     <skill.icon
-                    size={14}
-                    className="text-orange"
-                    strokeWidth={2.5} />
+                      size={14}
+                      className="text-orange"
+                      strokeWidth={2.5} />
 
                     <span className="text-sm font-bold text-dark">
                       {skill.label}
@@ -211,13 +210,12 @@ export function AboutPage() {
                 )}
               </div>
 
-              <a
-                href="#/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-
-                Book a Call
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
+                Start Your Journey
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -236,23 +234,23 @@ export function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {credentials.map((cred, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}
-                className="bg-white p-8 rounded-2xl border border-gray-light shadow-sm">
+                <motion.div
+                  key={i}
+                  initial={{
+                    opacity: 0,
+                    y: 20
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }}
+                  viewport={{
+                    once: true
+                  }}
+                  transition={{
+                    delay: i * 0.1
+                  }}
+                  className="bg-white p-8 rounded-2xl border border-gray-light shadow-sm">
 
                   <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6">
                     <cred.icon size={24} strokeWidth={2} />
@@ -284,23 +282,23 @@ export function AboutPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((member, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.08
-                }}
-                className="bg-light rounded-2xl p-6 border border-gray-light text-center group">
+                <motion.div
+                  key={i}
+                  initial={{
+                    opacity: 0,
+                    y: 20
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }}
+                  viewport={{
+                    once: true
+                  }}
+                  transition={{
+                    delay: i * 0.08
+                  }}
+                  className="bg-light rounded-2xl p-6 border border-gray-light text-center group">
 
                   <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-orange mx-auto mb-5 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <member.icon size={24} strokeWidth={2} />
@@ -327,48 +325,48 @@ export function AboutPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-              {
-                num: '01',
-                title: 'Data Over Opinions',
-                desc: 'Every decision is backed by analytics, not guesswork. We test, measure, and optimize relentlessly.'
-              },
-              {
-                num: '02',
-                title: 'Speed Is a Feature',
-                desc: "We move fast. Most projects launch in weeks, not months. Your competitors aren't waiting and neither should you."
-              },
-              {
-                num: '03',
-                title: 'Results or Nothing',
-                desc: "We don't bill for busywork. If it doesn't move the needle for your business, we don't do it."
-              }].
-              map((value, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}>
+                {
+                  num: '01',
+                  title: 'Data Over Opinions',
+                  desc: 'Every decision is backed by analytics, not guesswork. We test, measure, and optimize relentlessly.'
+                },
+                {
+                  num: '02',
+                  title: 'Speed Is a Feature',
+                  desc: "We move fast. Most projects launch in weeks, not months. Your competitors aren't waiting and neither should you."
+                },
+                {
+                  num: '03',
+                  title: 'Results or Nothing',
+                  desc: "We don't bill for busywork. If it doesn't move the needle for your business, we don't do it."
+                }].
+                map((value, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 20
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.1
+                    }}>
 
-                  <div className="text-orange font-black text-5xl mb-4 opacity-30">
-                    {value.num}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-white/60 font-medium leading-relaxed">
-                    {value.desc}
-                  </p>
-                </motion.div>
-              )}
+                    <div className="text-orange font-black text-5xl mb-4 opacity-30">
+                      {value.num}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{value.title}</h3>
+                    <p className="text-white/60 font-medium leading-relaxed">
+                      {value.desc}
+                    </p>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>

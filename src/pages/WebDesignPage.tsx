@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -15,30 +16,31 @@ import {
   Search,
   ShieldCheck,
   Zap,
-  AlertTriangle } from
-'lucide-react';
+  AlertTriangle
+} from
+  'lucide-react';
 // FAQ Data
 const faqs = [
-{
-  question: 'How long does it take to build a website?',
-  answer:
-  'Typically 4-6 weeks from kickoff to launch. We move fast but never rush the details. The timeline depends on how quickly we can get content and feedback from you.'
-},
-{
-  question: 'Do I own the website?',
-  answer:
-  "100%. Once the project is paid for, you own everything—the code, the design, and the content. We don't hold your site hostage."
-},
-{
-  question: 'Will it work on mobile phones?',
-  answer:
-  'Absolutely. We design mobile-first, meaning your site will look and perform perfectly on iPhones, Androids, tablets, and desktops.'
-},
-{
-  question: 'What if I need to make changes later?',
-  answer:
-  'We offer affordable maintenance plans to handle updates for you, or we can build the site on a CMS so you can make simple edits yourself.'
-}];
+  {
+    question: 'How long does it take to build a website?',
+    answer:
+      'Typically 4-6 weeks from kickoff to launch. We move fast but never rush the details. The timeline depends on how quickly we can get content and feedback from you.'
+  },
+  {
+    question: 'Do I own the website?',
+    answer:
+      "100%. Once the project is paid for, you own everything—the code, the design, and the content. We don't hold your site hostage."
+  },
+  {
+    question: 'Will it work on mobile phones?',
+    answer:
+      'Absolutely. We design mobile-first, meaning your site will look and perform perfectly on iPhones, Androids, tablets, and desktops.'
+  },
+  {
+    question: 'What if I need to make changes later?',
+    answer:
+      'We offer affordable maintenance plans to handle updates for you, or we can build the site on a CMS so you can make simple edits yourself.'
+  }];
 
 export function WebDesignPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -81,19 +83,19 @@ export function WebDesignPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a
-                  href="#/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
 
                   Get a Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-                <a
-                  href="#/work"
+                </Link>
+                <Link
+                  to="/work"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
 
                   View Portfolio
-                </a>
+                </Link>
               </div>
 
               <div className="flex items-center gap-6 text-sm font-bold text-dark/60">
@@ -263,51 +265,51 @@ export function WebDesignPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-              {
-                title: 'Slow & Bloated',
-                desc: "Templates are full of junk code that kills load speed. Customers won't wait more than 3 seconds.",
-                icon: Clock
-              },
-              {
-                title: 'Invisible to Google',
-                desc: 'Without proper structure and schema, Google ignores your site. You stay buried on page 10.',
-                icon: Search
-              },
-              {
-                title: 'Generic Design',
-                desc: 'Looking like everyone else makes you forgettable. Your brand deserves to stand out.',
-                icon: X
-              }].
-              map((item, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
+                {
+                  title: 'Slow & Bloated',
+                  desc: "Templates are full of junk code that kills load speed. Customers won't wait more than 3 seconds.",
+                  icon: Clock
+                },
+                {
+                  title: 'Invisible to Google',
+                  desc: 'Without proper structure and schema, Google ignores your site. You stay buried on page 10.',
+                  icon: Search
+                },
+                {
+                  title: 'Generic Design',
+                  desc: 'Looking like everyone else makes you forgettable. Your brand deserves to stand out.',
+                  icon: X
+                }].
+                map((item, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 20
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.1
+                    }}
+                    className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
 
-                  <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
-                    <item.icon size={24} strokeWidth={2.5} />
-                  </div>
-                  <h3 className="text-xl font-bold text-dark mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray font-medium leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              )}
+                    <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
+                      <item.icon size={24} strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl font-bold text-dark mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray font-medium leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>
@@ -331,22 +333,22 @@ export function WebDesignPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                  '90+ Google PageSpeed Scores',
-                  'Optimized Images & Assets',
-                  'Global CDN Hosting'].
-                  map((item, i) =>
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 font-bold text-dark">
+                    '90+ Google PageSpeed Scores',
+                    'Optimized Images & Assets',
+                    'Global CDN Hosting'].
+                    map((item, i) =>
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 font-bold text-dark">
 
-                      <Check
-                      size={18}
-                      className="text-green-500"
-                      strokeWidth={3} />
+                        <Check
+                          size={18}
+                          className="text-green-500"
+                          strokeWidth={3} />
 
-                      {item}
-                    </li>
-                  )}
+                        {item}
+                      </li>
+                    )}
                 </ul>
               </div>
               <div className="order-1 lg:order-2 bg-white rounded-3xl aspect-square relative overflow-hidden border border-gray-light shadow-2xl p-8 flex flex-col">
@@ -401,42 +403,42 @@ export function WebDesignPage() {
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-2 gap-3 mb-5">
                   {[
-                  {
-                    label: 'FCP',
-                    value: '0.8s',
-                    status: 'green'
-                  },
-                  {
-                    label: 'LCP',
-                    value: '1.2s',
-                    status: 'green'
-                  },
-                  {
-                    label: 'TBT',
-                    value: '0ms',
-                    status: 'green'
-                  },
-                  {
-                    label: 'CLS',
-                    value: '0.00',
-                    status: 'green'
-                  }].
-                  map((metric, i) =>
-                  <div
-                    key={i}
-                    className="bg-light rounded-lg p-3 border border-gray-light/50">
+                    {
+                      label: 'FCP',
+                      value: '0.8s',
+                      status: 'green'
+                    },
+                    {
+                      label: 'LCP',
+                      value: '1.2s',
+                      status: 'green'
+                    },
+                    {
+                      label: 'TBT',
+                      value: '0ms',
+                      status: 'green'
+                    },
+                    {
+                      label: 'CLS',
+                      value: '0.00',
+                      status: 'green'
+                    }].
+                    map((metric, i) =>
+                      <div
+                        key={i}
+                        className="bg-light rounded-lg p-3 border border-gray-light/50">
 
-                      <div className="flex items-center gap-1.5 mb-1">
-                        <span className="w-2 h-2 rounded-full bg-green-400" />
-                        <span className="text-[10px] font-bold text-dark/40 uppercase tracking-wider">
-                          {metric.label}
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <span className="w-2 h-2 rounded-full bg-green-400" />
+                          <span className="text-[10px] font-bold text-dark/40 uppercase tracking-wider">
+                            {metric.label}
+                          </span>
+                        </div>
+                        <span className="text-lg font-black text-dark">
+                          {metric.value}
                         </span>
                       </div>
-                      <span className="text-lg font-black text-dark">
-                        {metric.value}
-                      </span>
-                    </div>
-                  )}
+                    )}
                 </div>
 
                 {/* Load Time Comparison */}
@@ -535,11 +537,11 @@ export function WebDesignPage() {
                   </div>
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) =>
-                    <svg
-                      key={i}
-                      className="w-3 h-3 text-yellow-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20">
+                      <svg
+                        key={i}
+                        className="w-3 h-3 text-yellow-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20">
 
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
@@ -576,39 +578,39 @@ export function WebDesignPage() {
                   </div>
                   <div className="space-y-2">
                     {[
-                    {
-                      keyword: 'plumber fresno',
-                      rank: '#1',
-                      change: '+3'
-                    },
-                    {
-                      keyword: 'emergency plumber',
-                      rank: '#2',
-                      change: '+5'
-                    },
-                    {
-                      keyword: 'drain cleaning fresno',
-                      rank: '#1',
-                      change: '+7'
-                    }].
-                    map((kw, i) =>
-                    <div
-                      key={i}
-                      className="flex items-center justify-between">
+                      {
+                        keyword: 'plumber fresno',
+                        rank: '#1',
+                        change: '+3'
+                      },
+                      {
+                        keyword: 'emergency plumber',
+                        rank: '#2',
+                        change: '+5'
+                      },
+                      {
+                        keyword: 'drain cleaning fresno',
+                        rank: '#1',
+                        change: '+7'
+                      }].
+                      map((kw, i) =>
+                        <div
+                          key={i}
+                          className="flex items-center justify-between">
 
-                        <span className="text-white/50 text-xs font-medium">
-                          {kw.keyword}
-                        </span>
-                        <div className="flex items-center gap-2">
-                          <span className="text-green-400 text-[10px] font-bold">
-                            {kw.change}
+                          <span className="text-white/50 text-xs font-medium">
+                            {kw.keyword}
                           </span>
-                          <span className="text-white font-black text-xs">
-                            {kw.rank}
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-400 text-[10px] font-bold">
+                              {kw.change}
+                            </span>
+                            <span className="text-white font-black text-xs">
+                              {kw.rank}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
                   </div>
                 </div>
               </div>
@@ -626,22 +628,22 @@ export function WebDesignPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                  'Proper Heading Structure',
-                  'Local Schema Markup',
-                  'Meta Tags & Descriptions'].
-                  map((item, i) =>
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 font-bold text-dark">
+                    'Proper Heading Structure',
+                    'Local Schema Markup',
+                    'Meta Tags & Descriptions'].
+                    map((item, i) =>
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 font-bold text-dark">
 
-                      <Check
-                      size={18}
-                      className="text-green-500"
-                      strokeWidth={3} />
+                        <Check
+                          size={18}
+                          className="text-green-500"
+                          strokeWidth={3} />
 
-                      {item}
-                    </li>
-                  )}
+                        {item}
+                      </li>
+                    )}
                 </ul>
               </div>
             </div>
@@ -680,40 +682,40 @@ export function WebDesignPage() {
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) =>
-              <div
-                key={i}
-                className="bg-white rounded-2xl border border-gray-light overflow-hidden">
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl border border-gray-light overflow-hidden">
 
                   <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
 
                     {faq.question}
                     {openFaq === i ?
-                  <ChevronUp size={20} className="text-orange" /> :
+                      <ChevronUp size={20} className="text-orange" /> :
 
-                  <ChevronDown size={20} className="text-gray/40" />
-                  }
+                      <ChevronDown size={20} className="text-gray/40" />
+                    }
                   </button>
                   <AnimatePresence>
                     {openFaq === i &&
-                  <motion.div
-                    initial={{
-                      height: 0
-                    }}
-                    animate={{
-                      height: 'auto'
-                    }}
-                    exit={{
-                      height: 0
-                    }}
-                    className="overflow-hidden">
+                      <motion.div
+                        initial={{
+                          height: 0
+                        }}
+                        animate={{
+                          height: 'auto'
+                        }}
+                        exit={{
+                          height: 0
+                        }}
+                        className="overflow-hidden">
 
                         <div className="px-8 pb-8 text-gray font-medium leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
-                  }
+                    }
                   </AnimatePresence>
                 </div>
               )}

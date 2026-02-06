@@ -9,6 +9,7 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 import { StatsSection } from '../components/StatsSection';
 import { CTASection } from '../components/CTASection';
 import { Footer } from '../components/Footer';
+
 export function AgencyHomePage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
@@ -24,6 +25,6 @@ export function AgencyHomePage() {
         <CTASection />
       </main>
       <Footer />
-    </div>);
-
+    </div>
+  );
 }

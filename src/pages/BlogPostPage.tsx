@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useParams } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
@@ -10,16 +11,15 @@ import {
   Tag,
   Share2,
   Check,
-  X,
-  AlertTriangle,
-  Zap } from
-'lucide-react';
+  X
+} from
+  'lucide-react';
 // Blog Post Data Dictionary
 const blogPosts: Record<string, any> = {
   'seo-mistakes': {
     title: '5 SEO Mistakes Fresno Businesses Keep Making',
     excerpt:
-    "Most local businesses are leaving money on the table with these common SEO mistakes. Here's how to fix them and start ranking higher on Google.",
+      "Most local businesses are leaving money on the table with these common SEO mistakes. Here's how to fix them and start ranking higher on Google.",
     date: 'January 15, 2026',
     readTime: '6 min read',
     author: 'Joaquin Estrada',
@@ -30,7 +30,7 @@ const blogPosts: Record<string, any> = {
 
     tags: ['SEO', 'Local Business', 'Google', 'Fresno'],
     content:
-    <>
+      <>
         <p>
           If you're a local business owner in Fresno, you already know how
           important it is to show up on Google. But here's the thing: most
@@ -130,7 +130,7 @@ const blogPosts: Record<string, any> = {
   'website-leads': {
     title: "Why Your Website Isn't Getting Leads (And How to Fix It)",
     excerpt:
-    "Traffic means nothing if it doesn't convert. If your phone isn't ringing, your website might be guilty of these conversion killers.",
+      "Traffic means nothing if it doesn't convert. If your phone isn't ringing, your website might be guilty of these conversion killers.",
     date: 'January 8, 2026',
     readTime: '5 min read',
     author: 'Joaquin Estrada',
@@ -141,7 +141,7 @@ const blogPosts: Record<string, any> = {
 
     tags: ['Conversion Rate', 'UX Design', 'Small Business'],
     content:
-    <>
+      <>
         <p>
           You spent thousands on a new website. It looks great. You're getting
           traffic. But your phone isn't ringing, and your inbox is empty. What
@@ -242,7 +242,7 @@ const blogPosts: Record<string, any> = {
   'google-ads-vs-lsa': {
     title: 'Google Ads vs. Local Service Ads: Which Is Right for You?',
     excerpt:
-    "Confused by Google's advertising options? We break down the differences between traditional PPC and the new Local Service Ads (Google Guaranteed).",
+      "Confused by Google's advertising options? We break down the differences between traditional PPC and the new Local Service Ads (Google Guaranteed).",
     date: 'December 20, 2025',
     readTime: '7 min read',
     author: 'Joaquin Estrada',
@@ -250,10 +250,10 @@ const blogPosts: Record<string, any> = {
 
     category: 'Paid Ads',
     featuredImage:
-    'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     tags: ['PPC', 'Google Ads', 'Marketing Budget'],
     content:
-    <>
+      <>
         <p>
           When you search for a plumber or electrician on Google, you'll often
           see two different types of ads at the very top of the page.
@@ -356,7 +356,7 @@ const blogPosts: Record<string, any> = {
   'dental-redesign': {
     title: 'How to Get More Google Reviews (Without Being Annoying)',
     excerpt:
-    "Google reviews are the #1 trust signal for local businesses. Here's a simple, repeatable system to get more 5-star reviews without pestering your customers.",
+      "Google reviews are the #1 trust signal for local businesses. Here's a simple, repeatable system to get more 5-star reviews without pestering your customers.",
     date: 'December 5, 2025',
     readTime: '6 min read',
     author: 'Joaquin Estrada',
@@ -364,10 +364,10 @@ const blogPosts: Record<string, any> = {
 
     category: 'Local SEO',
     featuredImage:
-    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     tags: ['Google Reviews', 'Reputation', 'Local Business', 'Trust'],
     content:
-    <>
+      <>
         <p>
           Let's be honest: asking customers for reviews feels awkward. Nobody
           wants to be that business owner who sends five follow-up texts begging
@@ -510,57 +510,56 @@ const blogPosts: Record<string, any> = {
   }
 };
 const relatedPosts = [
-{
-  title: "Why Your Website Isn't Getting Leads",
-  category: 'Web Design',
-  image: "/pexels-noviana-27910251.jpg",
+  {
+    title: "Why Your Website Isn't Getting Leads",
+    category: 'Web Design',
+    image: "/pexels-noviana-27910251.jpg",
 
-  date: 'January 8, 2026',
-  slug: 'website-leads'
-},
-{
-  title: 'Google Ads vs. LSAs: Which Is Right for You?',
-  category: 'Paid Ads',
-  image:
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  date: 'December 20, 2025',
-  slug: 'google-ads-vs-lsa'
-},
-{
-  title: '5 SEO Mistakes Fresno Businesses Keep Making',
-  category: 'Local SEO',
-  image: "/pexels-level23media-19097251.jpg",
+    date: 'January 8, 2026',
+    slug: 'website-leads'
+  },
+  {
+    title: 'Google Ads vs. LSAs: Which Is Right for You?',
+    category: 'Paid Ads',
+    image:
+      'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    date: 'December 20, 2025',
+    slug: 'google-ads-vs-lsa'
+  },
+  {
+    title: '5 SEO Mistakes Fresno Businesses Keep Making',
+    category: 'Local SEO',
+    image: "/pexels-level23media-19097251.jpg",
 
-  date: 'January 15, 2026',
-  slug: 'seo-mistakes'
-},
-{
-  title: 'How to Get More Google Reviews (Without Being Annoying)',
-  category: 'Local SEO',
-  image:
-  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  date: 'December 5, 2025',
-  slug: 'dental-redesign'
-}];
+    date: 'January 15, 2026',
+    slug: 'seo-mistakes'
+  },
+  {
+    title: 'How to Get More Google Reviews (Without Being Annoying)',
+    category: 'Local SEO',
+    image:
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    date: 'December 5, 2025',
+    slug: 'dental-redesign'
+  }];
 
 export function BlogPostPage() {
-  const [slug, setSlug] = useState<string>('');
+  const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<any>(null);
+
   useEffect(() => {
-    // Parse slug from hash: #/blog/my-slug
-    const currentHash = window.location.hash;
-    const extractedSlug = currentHash.replace('#/blog/', '');
-    setSlug(extractedSlug);
-    // Look up post
-    if (blogPosts[extractedSlug]) {
-      setPost(blogPosts[extractedSlug]);
+    // Look up post based on slug from params
+    if (slug && blogPosts[slug]) {
+      setPost(blogPosts[slug]);
     } else {
-      // Default to SEO mistakes if not found (or handle 404)
+      // Default behavior or 404
+      // Use seo-mistakes if slug is missing or not found
       setPost(blogPosts['seo-mistakes']);
     }
-    window.scrollTo(0, 0);
-  }, [window.location.hash]);
+  }, [slug]);
+
   if (!post) return null;
+
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <Navigation />
@@ -568,13 +567,12 @@ export function BlogPostPage() {
       <main className="pt-28 md:pt-40">
         {/* Back Link */}
         <div className="px-6 max-w-4xl mx-auto mb-8">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="inline-flex items-center gap-2 text-gray font-semibold hover:text-orange transition-colors text-sm">
-
             <ArrowLeft size={16} />
             Back to Home
-          </a>
+          </Link>
         </div>
 
         {/* Article Header */}
@@ -688,14 +686,14 @@ export function BlogPostPage() {
               <div className="flex items-center gap-2">
                 <Tag size={14} className="text-gray/50" />
                 {post.tags &&
-                post.tags.map((tag: string, i: number) =>
-                <span
-                  key={i}
-                  className="px-3 py-1 bg-light border border-gray-light rounded-full text-xs font-bold text-dark">
+                  post.tags.map((tag: string, i: number) =>
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-light border border-gray-light rounded-full text-xs font-bold text-dark">
 
                       {tag}
                     </span>
-                )}
+                  )}
               </div>
               <button className="flex items-center gap-2 text-sm font-bold text-gray hover:text-orange transition-colors">
                 <Share2 size={14} />
@@ -713,19 +711,19 @@ export function BlogPostPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedPosts.
-              filter((p) => p.slug !== slug) // Exclude current post
-              .slice(0, 3).
-              map((related, i) =>
-              <a
-                key={i}
-                href={`#/blog/${related.slug}`}
-                className="group block">
+                filter((p) => p.slug !== slug) // Exclude current post
+                .slice(0, 3).
+                map((related, i) =>
+                  <Link
+                    key={i}
+                    to={`/blog/${related.slug}`}
+                    className="group block">
 
                     <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-4">
                       <img
-                    src={related.image}
-                    alt={related.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        src={related.image}
+                        alt={related.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
 
                     </div>
                     <span className="inline-block px-2.5 py-0.5 bg-orange/10 text-orange text-[10px] font-bold uppercase tracking-wider rounded-full mb-2">
@@ -737,8 +735,8 @@ export function BlogPostPage() {
                     <span className="text-sm text-gray font-medium">
                       {related.date}
                     </span>
-                  </a>
-              )}
+                  </Link>
+                )}
             </div>
           </div>
         </section>
@@ -748,5 +746,4 @@ export function BlogPostPage() {
 
       <Footer />
     </div>);
-
 }

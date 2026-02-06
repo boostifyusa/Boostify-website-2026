@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
 export function Footer() {
   return (
@@ -42,44 +43,44 @@ export function Footer() {
             </h4>
             <ul className="space-y-4 text-white/60 font-medium">
               <li>
-                <a
-                  href="#/web-design"
+                <Link
+                  to="/web-design"
                   className="hover:text-orange transition-colors">
 
                   Web Design
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/local-seo"
+                <Link
+                  to="/local-seo"
                   className="hover:text-orange transition-colors">
 
                   SEO Optimization
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/local-marketing"
+                <Link
+                  to="/local-marketing"
                   className="hover:text-orange transition-colors">
 
                   Local Marketing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/app-development"
+                <Link
+                  to="/app-development"
                   className="hover:text-orange transition-colors">
 
                   App Development
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/maintenance"
+                <Link
+                  to="/maintenance"
                   className="hover:text-orange transition-colors">
 
                   Maintenance
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -90,46 +91,46 @@ export function Footer() {
             </h4>
             <ul className="space-y-4 text-white/60 font-medium">
               <li>
-                <a
-                  href="#/about"
+                <Link
+                  to="/about"
                   className="hover:text-orange transition-colors">
 
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#work" className="hover:text-orange transition-colors">
+                <Link to="/work" className="hover:text-orange transition-colors">
                   Our Work
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/contact"
+                <Link
+                  to="/contact"
                   className="hover:text-orange transition-colors">
 
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/privacy"
+                <Link
+                  to="/privacy"
                   className="hover:text-orange transition-colors">
 
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/terms"
+                <Link
+                  to="/terms"
                   className="hover:text-orange transition-colors">
 
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/sms" className="hover:text-orange transition-colors">
+                <Link to="/sms" className="hover:text-orange transition-colors">
                   SMS Program
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -146,12 +147,12 @@ export function Footer() {
                 Fresno, CA 93722
               </li>
               <li className="pt-4">
-                <a
-                  href="#/contact"
+                <Link
+                  to="/contact"
                   className="text-orange font-bold hover:text-white transition-colors text-lg">
 
                   Book a Call →
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -165,5 +166,4 @@ export function Footer() {
         </div>
       </div>
     </footer>);
-
 }

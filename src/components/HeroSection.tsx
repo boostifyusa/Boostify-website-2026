@@ -1,6 +1,7 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Star } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 export function HeroSection() {
   return (
     <section className="relative pt-28 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden bg-white">
@@ -9,7 +10,7 @@ export function HeroSection() {
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
         style={{
           backgroundImage:
-            'url(https://cdn.magicpatterns.com/uploads/pBD4vyqwot3SxWc8ziPePc/279000632_61847a32-e2d1-49e5-bbbb-6ea5c145d830-1-1.png)',
+            'url(/279000632_61847a32-e2d1-49e5-bbbb-6ea5c145d830-1-1.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -30,7 +31,7 @@ export function HeroSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Centered Content */}
-        <div className="text-center max-w-[57rem] mx-auto mb-20 relative">
+        <div className="text-center max-w-4xl mx-auto mb-20 relative">
           <motion.div
             initial={{
               opacity: 0,
@@ -67,7 +68,7 @@ export function HeroSection() {
             Websites That Bring Your{' '}
             <span className="relative inline-block px-2 isolate">
               <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-              Neighbors
+              <span className="text-orange relative z-10">Neighbors</span>
             </span>{' '}
             to Your Door.
           </motion.h1>
@@ -106,19 +107,19 @@ export function HeroSection() {
             }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
 
-            <a
-              href="#/contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center px-10 py-5 bg-orange text-white text-lg font-bold rounded-lg hover:bg-orange-hover transition-all duration-300 shadow-xl shadow-orange/20 hover:shadow-orange/30 transform hover:-translate-y-1 w-full sm:w-auto">
 
               Book a Free Call
               <ArrowRight className="ml-2 h-6 w-6" />
-            </a>
-            <a
-              href="#/work"
+            </Link>
+            <Link
+              to="/work"
               className="inline-flex items-center justify-center px-10 py-5 bg-white text-dark border-2 border-gray-light font-bold text-lg rounded-lg hover:border-dark hover:bg-dark hover:text-white transition-all duration-300 w-full sm:w-auto">
 
               View Our Work
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div

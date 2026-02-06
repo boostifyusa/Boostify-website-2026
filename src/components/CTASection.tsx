@@ -1,4 +1,5 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 export function CTASection() {
@@ -67,13 +68,13 @@ export function CTASection() {
             delay: 0.2
           }}>
 
-          <a
-            href="#/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center px-12 py-6 bg-orange text-xl font-bold rounded-lg hover:bg-orange-hover transition-all duration-300 shadow-2xl shadow-orange/30 transform hover:-translate-y-1 hover:scale-105">
 
             Book a Free Call
             <ArrowRight className="ml-3 h-7 w-7" />
-          </a>
+          </Link>
           <p className="mt-6 text-sm text-white/40 font-bold uppercase tracking-widest">
             Free consultation • No obligation
           </p>

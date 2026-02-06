@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -19,31 +20,31 @@ import {
   Users,
   MousePointerClick,
   TrendingUp,
-  BarChart3,
   BadgeCheck,
-  Megaphone } from
-'lucide-react';
+  Megaphone
+} from
+  'lucide-react';
 const faqs = [
-{
-  question: 'How much should I spend on Google Ads?',
-  answer:
-  "It depends on your industry and competition. Most local service businesses see great results starting at $1,000 to $2,500/month in ad spend. We'll help you find the sweet spot where every dollar brings back $3-5 in revenue."
-},
-{
-  question: 'What are Local Service Ads (LSAs)?',
-  answer:
-  'LSAs are Google\'s pay-per-lead ads that appear at the very top of search results with a "Google Guaranteed" badge. You only pay when a customer actually contacts you, not for clicks. They\'re the highest-converting ad format for local businesses.'
-},
-{
-  question: 'How fast will I start getting leads?',
-  answer:
-  'Unlike SEO, paid ads deliver results almost immediately. Most clients see their first leads within 48 hours of campaign launch. We optimize continuously to improve quality and lower costs over time.'
-},
-{
-  question: 'Can I pause or stop my ads anytime?',
-  answer:
-  'Absolutely. You have full control. No long-term contracts, no cancellation fees. We work month-to-month because we believe results should earn your business, not a contract.'
-}];
+  {
+    question: 'How much should I spend on Google Ads?',
+    answer:
+      "It depends on your industry and competition. Most local service businesses see great results starting at $1,000 to $2,500/month in ad spend. We'll help you find the sweet spot where every dollar brings back $3-5 in revenue."
+  },
+  {
+    question: 'What are Local Service Ads (LSAs)?',
+    answer:
+      'LSAs are Google\'s pay-per-lead ads that appear at the very top of search results with a "Google Guaranteed" badge. You only pay when a customer actually contacts you, not for clicks. They\'re the highest-converting ad format for local businesses.'
+  },
+  {
+    question: 'How fast will I start getting leads?',
+    answer:
+      'Unlike SEO, paid ads deliver results almost immediately. Most clients see their first leads within 48 hours of campaign launch. We optimize continuously to improve quality and lower costs over time.'
+  },
+  {
+    question: 'Can I pause or stop my ads anytime?',
+    answer:
+      'Absolutely. You have full control. No long-term contracts, no cancellation fees. We work month-to-month because we believe results should earn your business, not a contract.'
+  }];
 
 export function LocalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -85,13 +86,12 @@ export function LocalMarketingPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a
-                  href="#/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-
-                  Get a Free Ad Strategy
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
+                  Get Your Free Audit
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
                 <a
                   href="#/work"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
@@ -234,35 +234,35 @@ export function LocalMarketingPage() {
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-4 gap-2 mb-5">
                   {[
-                  {
-                    label: 'Impressions',
-                    value: '12,847'
-                  },
-                  {
-                    label: 'Clicks',
-                    value: '943'
-                  },
-                  {
-                    label: 'CTR',
-                    value: '7.3%'
-                  },
-                  {
-                    label: 'Conversions',
-                    value: '78'
-                  }].
-                  map((metric, i) =>
-                  <div
-                    key={i}
-                    className="bg-white/5 rounded-lg p-2.5 border border-white/5 text-center">
+                    {
+                      label: 'Impressions',
+                      value: '12,847'
+                    },
+                    {
+                      label: 'Clicks',
+                      value: '943'
+                    },
+                    {
+                      label: 'CTR',
+                      value: '7.3%'
+                    },
+                    {
+                      label: 'Conversions',
+                      value: '78'
+                    }].
+                    map((metric, i) =>
+                      <div
+                        key={i}
+                        className="bg-white/5 rounded-lg p-2.5 border border-white/5 text-center">
 
-                      <div className="text-white font-black text-sm leading-none mb-1">
-                        {metric.value}
+                        <div className="text-white font-black text-sm leading-none mb-1">
+                          {metric.value}
+                        </div>
+                        <div className="text-white/30 text-[8px] font-bold uppercase tracking-wider">
+                          {metric.label}
+                        </div>
                       </div>
-                      <div className="text-white/30 text-[8px] font-bold uppercase tracking-wider">
-                        {metric.label}
-                      </div>
-                    </div>
-                  )}
+                    )}
                 </div>
 
                 {/* Mini Chart */}
@@ -278,12 +278,12 @@ export function LocalMarketingPage() {
                   <div className="flex items-end gap-1.5 h-20">
                     {[35, 42, 28, 55, 48, 62, 45, 70, 58, 75, 68, 82, 78].map(
                       (h, i) =>
-                      <div
-                        key={i}
-                        className={`flex-1 rounded-t-sm ${i >= 10 ? 'bg-orange' : 'bg-white/15'}`}
-                        style={{
-                          height: `${h}%`
-                        }} />
+                        <div
+                          key={i}
+                          className={`flex-1 rounded-t-sm ${i >= 10 ? 'bg-orange' : 'bg-white/15'}`}
+                          style={{
+                            height: `${h}%`
+                          }} />
 
 
                     )}
@@ -355,51 +355,51 @@ export function LocalMarketingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-              {
-                title: 'Wasted Ad Spend',
-                desc: 'Throwing money at Google without a strategy is like setting it on fire. Most DIY campaigns waste 40-60% of their budget on irrelevant clicks.',
-                icon: DollarSign
-              },
-              {
-                title: 'No Conversion Tracking',
-                desc: "If you can't measure it, you can't improve it. Without proper tracking, you have no idea which ads are actually bringing in customers.",
-                icon: Target
-              },
-              {
-                title: 'Wrong Audience',
-                desc: "Your ads are showing to people 50 miles away who'll never visit. Poor targeting means you're paying for eyeballs that don't matter.",
-                icon: Users
-              }].
-              map((item, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
+                {
+                  title: 'Wasted Ad Spend',
+                  desc: 'Throwing money at Google without a strategy is like setting it on fire. Most DIY campaigns waste 40-60% of their budget on irrelevant clicks.',
+                  icon: DollarSign
+                },
+                {
+                  title: 'No Conversion Tracking',
+                  desc: "If you can't measure it, you can't improve it. Without proper tracking, you have no idea which ads are actually bringing in customers.",
+                  icon: Target
+                },
+                {
+                  title: 'Wrong Audience',
+                  desc: "Your ads are showing to people 50 miles away who'll never visit. Poor targeting means you're paying for eyeballs that don't matter.",
+                  icon: Users
+                }].
+                map((item, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 20
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.1
+                    }}
+                    className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
 
-                  <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
-                    <item.icon size={24} strokeWidth={2.5} />
-                  </div>
-                  <h3 className="text-xl font-bold text-dark mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray font-medium leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              )}
+                    <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
+                      <item.icon size={24} strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl font-bold text-dark mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray font-medium leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>
@@ -423,23 +423,23 @@ export function LocalMarketingPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                  'Pay per lead, not per click',
-                  'Google Guaranteed trust badge',
-                  'Top of search placement',
-                  'Background-verified business'].
-                  map((item, i) =>
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 font-bold text-dark">
+                    'Pay per lead, not per click',
+                    'Google Guaranteed trust badge',
+                    'Top of search placement',
+                    'Background-verified business'].
+                    map((item, i) =>
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 font-bold text-dark">
 
-                      <Check
-                      size={18}
-                      className="text-green-500"
-                      strokeWidth={3} />
+                        <Check
+                          size={18}
+                          className="text-green-500"
+                          strokeWidth={3} />
 
-                      {item}
-                    </li>
-                  )}
+                        {item}
+                      </li>
+                    )}
                 </ul>
               </div>
 
@@ -480,7 +480,7 @@ export function LocalMarketingPage() {
                         <div className="flex items-center gap-1 mb-2">
                           <div className="flex text-yellow-400 gap-0.5">
                             {[...Array(5)].map((_, i) =>
-                            <Star key={i} size={12} fill="currentColor" />
+                              <Star key={i} size={12} fill="currentColor" />
                             )}
                           </div>
                           <span className="text-dark/60 text-xs font-bold">
@@ -557,50 +557,50 @@ export function LocalMarketingPage() {
                 {/* Conversion Funnel */}
                 <div className="space-y-3 mb-6 flex-1">
                   {[
-                  {
-                    label: 'Impressions',
-                    value: '24,512',
-                    bar: '100%',
-                    color: 'bg-white/15'
-                  },
-                  {
-                    label: 'Clicks',
-                    value: '1,847',
-                    bar: '65%',
-                    color: 'bg-white/25'
-                  },
-                  {
-                    label: 'Leads',
-                    value: '156',
-                    bar: '35%',
-                    color: 'bg-orange/60'
-                  },
-                  {
-                    label: 'Customers',
-                    value: '42',
-                    bar: '18%',
-                    color: 'bg-orange'
-                  }].
-                  map((item, i) =>
-                  <div key={i}>
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-white/50 text-xs font-medium">
-                          {item.label}
-                        </span>
-                        <span className="text-white font-bold text-xs">
-                          {item.value}
-                        </span>
-                      </div>
-                      <div className="h-2.5 bg-white/5 rounded-full overflow-hidden">
-                        <div
-                        className={`h-full ${item.color} rounded-full`}
-                        style={{
-                          width: item.bar
-                        }} />
+                    {
+                      label: 'Impressions',
+                      value: '24,512',
+                      bar: '100%',
+                      color: 'bg-white/15'
+                    },
+                    {
+                      label: 'Clicks',
+                      value: '1,847',
+                      bar: '65%',
+                      color: 'bg-white/25'
+                    },
+                    {
+                      label: 'Leads',
+                      value: '156',
+                      bar: '35%',
+                      color: 'bg-orange/60'
+                    },
+                    {
+                      label: 'Customers',
+                      value: '42',
+                      bar: '18%',
+                      color: 'bg-orange'
+                    }].
+                    map((item, i) =>
+                      <div key={i}>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-white/50 text-xs font-medium">
+                            {item.label}
+                          </span>
+                          <span className="text-white font-bold text-xs">
+                            {item.value}
+                          </span>
+                        </div>
+                        <div className="h-2.5 bg-white/5 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full ${item.color} rounded-full`}
+                            style={{
+                              width: item.bar
+                            }} />
 
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between">
@@ -630,23 +630,23 @@ export function LocalMarketingPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                  'Geo-targeted to your service area',
-                  'Full conversion tracking setup',
-                  'A/B tested ad copy & landing pages',
-                  'Weekly performance reports'].
-                  map((item, i) =>
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 font-bold text-dark">
+                    'Geo-targeted to your service area',
+                    'Full conversion tracking setup',
+                    'A/B tested ad copy & landing pages',
+                    'Weekly performance reports'].
+                    map((item, i) =>
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 font-bold text-dark">
 
-                      <Check
-                      size={18}
-                      className="text-green-500"
-                      strokeWidth={3} />
+                        <Check
+                          size={18}
+                          className="text-green-500"
+                          strokeWidth={3} />
 
-                      {item}
-                    </li>
-                  )}
+                        {item}
+                      </li>
+                    )}
                 </ul>
               </div>
             </div>
@@ -685,40 +685,40 @@ export function LocalMarketingPage() {
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) =>
-              <div
-                key={i}
-                className="bg-white rounded-2xl border border-gray-light overflow-hidden">
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl border border-gray-light overflow-hidden">
 
                   <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
 
                     {faq.question}
                     {openFaq === i ?
-                  <ChevronUp size={20} className="text-orange" /> :
+                      <ChevronUp size={20} className="text-orange" /> :
 
-                  <ChevronDown size={20} className="text-gray/40" />
-                  }
+                      <ChevronDown size={20} className="text-gray/40" />
+                    }
                   </button>
                   <AnimatePresence>
                     {openFaq === i &&
-                  <motion.div
-                    initial={{
-                      height: 0
-                    }}
-                    animate={{
-                      height: 'auto'
-                    }}
-                    exit={{
-                      height: 0
-                    }}
-                    className="overflow-hidden">
+                      <motion.div
+                        initial={{
+                          height: 0
+                        }}
+                        animate={{
+                          height: 'auto'
+                        }}
+                        exit={{
+                          height: 0
+                        }}
+                        className="overflow-hidden">
 
                         <div className="px-8 pb-8 text-gray font-medium leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
-                  }
+                    }
                   </AnimatePresence>
                 </div>
               )}

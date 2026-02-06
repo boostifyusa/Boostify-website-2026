@@ -1,55 +1,47 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { ArrowUpRight, TrendingUp } from 'lucide-react';
 const projects = [
-{
-  title: 'Full Throttle Suspension',
-  category: 'Web Design & SEO',
-  result: 'Page 1 Rankings',
-  excerpt:
-  'Custom website build with full local SEO strategy. Hand-coded for speed, optimized for conversions, and ranking on page one for competitive automotive keywords in Fresno.',
-  image: "/FTS-Mock.jpg"
-
-},
-{
-  title: 'Martin Energy Inc',
-  category: 'Web Design & SEO',
-  result: '3× Organic Traffic',
-  excerpt:
-  'Full website redesign for a Fresno-based solar energy company. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.',
-  image: "/Slide-4_3-5.png"
-
-},
-{
-  title: 'Fresno State Today',
-  category: 'Web Development',
-  result: '50k+ Monthly Visitors',
-  excerpt:
-  'Built the official Fresno State news website from the ground up. A high-traffic, content-heavy platform serving students, faculty, and the Fresno community.',
-  image: "/Slide-4_3-4.png"
-
-},
-{
-  title: 'Benchmark Pool Supply',
-  category: 'Web Design & Local SEO',
-  result: '2× Service Bookings',
-  excerpt:
-  'Complete website and brand presence for a Fresno pool servicing company. Designed to showcase services, build trust, and drive appointment bookings from local homeowners.',
-  image: "/Slide-4_3-1.png"
-
-},
-{
-  title: 'Tint Headquarters',
-  category: 'Web Design & Google Ads',
-  result: '#1 for Window Tint Fresno',
-  excerpt:
-  "Bold, high-converting website for Fresno's top-rated ceramic window tint shop. Paired with Google Ads to dominate local search and drive same-day appointment requests.",
-  image: "/2024-04-30-2.jpg"
-
-}];
+  {
+    title: 'Full Throttle Suspension',
+    category: 'Web Design & SEO',
+    result: 'Page 1 Rankings',
+    excerpt:
+      'Complete website redesign and SEO strategy for a leading automotive suspension manufacturer, resulting in 40% increase in organic traffic.',
+    image: '/Slide-4_3-3.png',
+    link: '/portfolio/full-throttle'
+  },
+  {
+    title: 'Martin Energy Inc.',
+    category: 'Solar Installation',
+    result: '200% Lead Increase',
+    excerpt:
+      'Digital transformation for a solar energy provider, focused on high-converting landing pages and local SEO dominance.',
+    image: '/Slide-4_3-5.png',
+    link: '/portfolio/martin-energy'
+  },
+  {
+    title: 'Valley Future Foundation',
+    category: 'Non-Profit',
+    result: 'Brand Awareness',
+    excerpt:
+      'Modern interface design for a community foundation, improving accessibility and donor engagement.',
+    image: '/Slide-4_3-4.png',
+    link: '/portfolio/valley-future'
+  },
+  {
+    title: 'Central Valley Talk',
+    category: 'Media & News',
+    result: 'User Engagement',
+    excerpt:
+      'High-traffic news portal optimization handling thousands of daily visitors with improved load times and ad revenue.',
+    image: '/Slide-4_3-2.png',
+    link: '/portfolio/central-valley-talk'
+  }];
 
 export function OurWorkPage() {
   return (
@@ -125,31 +117,31 @@ export function OurWorkPage() {
         <section className="px-6 mb-32">
           <div className="max-w-7xl mx-auto space-y-8">
             {projects.map((project, i) =>
-            <motion.div
-              key={i}
-              initial={{
-                opacity: 0,
-                y: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              viewport={{
-                once: true
-              }}
-              transition={{
-                delay: i * 0.1,
-                duration: 0.5
-              }}
-              className="group relative block rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[21/9]">
+              <motion.div
+                key={i}
+                initial={{
+                  opacity: 0,
+                  y: 30
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0
+                }}
+                viewport={{
+                  once: true
+                }}
+                transition={{
+                  delay: i * 0.1,
+                  duration: 0.5
+                }}
+                className="group relative block rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[21/9]">
 
                 {/* Background Image */}
                 <div className="absolute inset-0 bg-dark">
                   <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover opacity-80" />
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover opacity-80" />
 
                 </div>
 
@@ -201,12 +193,12 @@ export function OurWorkPage() {
                 We're always building. New case studies and project breakdowns
                 are on the way. Want to be featured here?
               </p>
-              <a
-                href="#/contact"
-                className="inline-flex items-center text-orange font-bold text-lg mt-6 hover:gap-2 transition-all">
-
-                Let's work together →
-              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
+                Start Your Project
+                <ArrowUpRight className="w-5 h-5 ml-2" />
+              </Link>
             </div>
           </div>
         </section>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -6,21 +6,18 @@ import { CTASection } from '../components/CTASection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import {
   Rocket,
-  Code,
   Zap,
   Check,
   ArrowRight,
-  AlertTriangle,
-  Terminal,
-  Cpu,
   Layers,
   Clock,
   DollarSign,
   PieChart,
   Lightbulb,
   Hammer,
-  Sparkles } from
-'lucide-react';
+  Sparkles
+} from
+  'lucide-react';
 export function AppDevelopmentPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
@@ -34,12 +31,12 @@ export function AppDevelopmentPage() {
             className="absolute inset-0 opacity-[0.07] z-0"
             style={{
               backgroundImage:
-              'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
+                'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
               backgroundSize: '24px 24px',
               maskImage:
-              'radial-gradient(ellipse at center, black 20%, transparent 70%)',
+                'radial-gradient(ellipse at center, black 20%, transparent 70%)',
               WebkitMaskImage:
-              'radial-gradient(ellipse at center, black 20%, transparent 70%)'
+                'radial-gradient(ellipse at center, black 20%, transparent 70%)'
             }} />
 
 
@@ -74,20 +71,18 @@ export function AppDevelopmentPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a
-                  href="#/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-
-                  Start Your MVP
-                  <Rocket className="ml-2 h-5 w-5" />
-                </a>
-                <a
-                  href="#/work"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-lg hover:bg-white/10 transition-all">
-
-                  See Our Work
-                </a>
-              </div>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link
+                  to="/work"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 backdrop-blur-sm transition-all duration-300">
+                  View Portfolio
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link></div>
 
               <div className="flex items-center gap-6 text-sm font-bold text-white/60">
                 <span className="flex items-center gap-2">
@@ -243,69 +238,69 @@ export function AppDevelopmentPage() {
 
             <div className="space-y-4">
               {[
-              {
-                problem: 'Agencies charge $50k–$150k for an MVP',
-                solution: 'We build MVPs at a fraction of the cost',
-                problemIcon: DollarSign,
-                solutionIcon: Check
-              },
-              {
-                problem: '6+ months before anything is usable',
-                solution: 'Working prototype in 2–4 weeks',
-                problemIcon: Clock,
-                solutionIcon: Zap
-              },
-              {
-                problem: 'No demo to show investors',
-                solution: 'Investor-ready product you can pitch with',
-                problemIcon: Layers,
-                solutionIcon: Rocket
-              }].
-              map((item, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 12
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-0 rounded-2xl overflow-hidden border border-gray-light">
+                {
+                  problem: 'Agencies charge $50k–$150k for an MVP',
+                  solution: 'We build MVPs at a fraction of the cost',
+                  problemIcon: DollarSign,
+                  solutionIcon: Check
+                },
+                {
+                  problem: '6+ months before anything is usable',
+                  solution: 'Working prototype in 2–4 weeks',
+                  problemIcon: Clock,
+                  solutionIcon: Zap
+                },
+                {
+                  problem: 'No demo to show investors',
+                  solution: 'Investor-ready product you can pitch with',
+                  problemIcon: Layers,
+                  solutionIcon: Rocket
+                }].
+                map((item, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 12
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.1
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-0 rounded-2xl overflow-hidden border border-gray-light">
 
-                  {/* Problem Side */}
-                  <div className="flex items-center gap-4 px-8 py-6 bg-red-50/50">
-                    <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center text-red-500 shrink-0">
-                      <item.problemIcon size={20} strokeWidth={2.5} />
-                    </div>
-                    <div>
-                      <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">
-                        The old way
+                    {/* Problem Side */}
+                    <div className="flex items-center gap-4 px-8 py-6 bg-red-50/50">
+                      <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center text-red-500 shrink-0">
+                        <item.problemIcon size={20} strokeWidth={2.5} />
                       </div>
-                      <p className="text-dark font-bold">{item.problem}</p>
-                    </div>
-                  </div>
-                  {/* Solution Side */}
-                  <div className="flex items-center gap-4 px-8 py-6 bg-green-50/50">
-                    <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-green-600 shrink-0">
-                      <item.solutionIcon size={20} strokeWidth={2.5} />
-                    </div>
-                    <div>
-                      <div className="text-[10px] font-bold text-green-500 uppercase tracking-wider mb-1">
-                        With Boostify
+                      <div>
+                        <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">
+                          The old way
+                        </div>
+                        <p className="text-dark font-bold">{item.problem}</p>
                       </div>
-                      <p className="text-dark font-bold">{item.solution}</p>
                     </div>
-                  </div>
-                </motion.div>
-              )}
+                    {/* Solution Side */}
+                    <div className="flex items-center gap-4 px-8 py-6 bg-green-50/50">
+                      <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                        <item.solutionIcon size={20} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <div className="text-[10px] font-bold text-green-500 uppercase tracking-wider mb-1">
+                          With Boostify
+                        </div>
+                        <p className="text-dark font-bold">{item.solution}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>
@@ -325,50 +320,50 @@ export function AppDevelopmentPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {[
-              {
-                title: 'Rapid Prototyping',
-                desc: 'We go from napkin sketch to clickable prototype in days, not weeks. Validate your UX before writing a line of code.',
-                icon: Zap
-              },
-              {
-                title: 'Investor-Ready Demos',
-                desc: 'Polished, functional MVPs that look and feel like a Series A product. Built to impress VCs and angels.',
-                icon: PieChart
-              },
-              {
-                title: 'Flexible Partnerships',
-                desc: 'For the right startups, we offer equity-based partnerships to lower your upfront cash burn.',
-                icon: Check
-              }].
-              map((item, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}
-                className="bg-dark text-white p-8 rounded-3xl relative overflow-hidden group">
+                {
+                  title: 'Rapid Prototyping',
+                  desc: 'We go from napkin sketch to clickable prototype in days, not weeks. Validate your UX before writing a line of code.',
+                  icon: Zap
+                },
+                {
+                  title: 'Investor-Ready Demos',
+                  desc: 'Polished, functional MVPs that look and feel like a Series A product. Built to impress VCs and angels.',
+                  icon: PieChart
+                },
+                {
+                  title: 'Flexible Partnerships',
+                  desc: 'For the right startups, we offer equity-based partnerships to lower your upfront cash burn.',
+                  icon: Check
+                }].
+                map((item, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 20
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.1
+                    }}
+                    className="bg-dark text-white p-8 rounded-3xl relative overflow-hidden group">
 
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-orange/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-orange/20 transition-colors" />
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-orange mb-6">
-                    <item.icon size={24} strokeWidth={2.5} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                  <p className="text-white/60 font-medium leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              )}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-orange/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-orange/20 transition-colors" />
+                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-orange mb-6">
+                      <item.icon size={24} strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                    <p className="text-white/60 font-medium leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>
@@ -403,75 +398,75 @@ export function AppDevelopmentPage() {
 
 
               {[
-              {
-                step: '01',
-                week: 'Week 1',
-                title: 'Discovery & Wireframes',
-                desc: 'We map out your core features, user flows, and database architecture. No fluff, just the essentials that matter.',
-                icon: Lightbulb
-              },
-              {
-                step: '02',
-                week: 'Week 2–3',
-                title: 'Build & Iterate',
-                desc: 'We code the core functionality using modern, scalable tech stacks. You get weekly updates and live demos.',
-                icon: Hammer
-              },
-              {
-                step: '03',
-                week: 'Week 4',
-                title: 'Polish & Launch',
-                desc: 'UI refinement, bug squashing, and deployment to production. You walk away with a live product.',
-                icon: Sparkles
-              }].
-              map((item, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 30
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.15,
-                  duration: 0.5
-                }}
-                className="relative flex flex-col items-center text-center px-6">
+                {
+                  step: '01',
+                  week: 'Week 1',
+                  title: 'Discovery & Wireframes',
+                  desc: 'We map out your core features, user flows, and database architecture. No fluff, just the essentials that matter.',
+                  icon: Lightbulb
+                },
+                {
+                  step: '02',
+                  week: 'Week 2–3',
+                  title: 'Build & Iterate',
+                  desc: 'We code the core functionality using modern, scalable tech stacks. You get weekly updates and live demos.',
+                  icon: Hammer
+                },
+                {
+                  step: '03',
+                  week: 'Week 4',
+                  title: 'Polish & Launch',
+                  desc: 'UI refinement, bug squashing, and deployment to production. You walk away with a live product.',
+                  icon: Sparkles
+                }].
+                map((item, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 30
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.15,
+                      duration: 0.5
+                    }}
+                    className="relative flex flex-col items-center text-center px-6">
 
-                  {/* Step Circle */}
-                  <div className="relative mb-8">
-                    <div className="w-32 h-32 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center relative">
-                      <div className="w-20 h-20 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center">
-                        <item.icon
-                        size={28}
-                        className="text-orange"
-                        strokeWidth={2} />
+                    {/* Step Circle */}
+                    <div className="relative mb-8">
+                      <div className="w-32 h-32 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center relative">
+                        <div className="w-20 h-20 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center">
+                          <item.icon
+                            size={28}
+                            className="text-orange"
+                            strokeWidth={2} />
 
+                        </div>
+                      </div>
+                      {/* Step Number Badge */}
+                      <div className="absolute -top-1 -right-1 w-10 h-10 rounded-full bg-orange flex items-center justify-center text-white font-black text-sm shadow-lg shadow-orange/30">
+                        {item.step}
                       </div>
                     </div>
-                    {/* Step Number Badge */}
-                    <div className="absolute -top-1 -right-1 w-10 h-10 rounded-full bg-orange flex items-center justify-center text-white font-black text-sm shadow-lg shadow-orange/30">
-                      {item.step}
+
+                    {/* Week Badge */}
+                    <div className="text-[11px] font-bold text-orange uppercase tracking-widest mb-3 bg-orange/10 px-3 py-1 rounded-full">
+                      {item.week}
                     </div>
-                  </div>
 
-                  {/* Week Badge */}
-                  <div className="text-[11px] font-bold text-orange uppercase tracking-widest mb-3 bg-orange/10 px-3 py-1 rounded-full">
-                    {item.week}
-                  </div>
-
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-white/50 font-medium leading-relaxed text-sm max-w-xs">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              )}
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-white/50 font-medium leading-relaxed text-sm max-w-xs">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>

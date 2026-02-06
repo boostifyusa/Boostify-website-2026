@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -9,12 +9,12 @@ import {
   Globe,
   Search,
   MapPin,
-  BarChart3,
   Shield,
   Zap,
   Megaphone,
-  Rocket } from
-'lucide-react';
+  Rocket
+} from
+  'lucide-react';
 export function ServicesPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
@@ -85,51 +85,51 @@ export function ServicesPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-              {
-                icon: Zap,
-                title: 'Built for Speed',
-                desc: 'Lightning-fast load times that keep customers engaged and Google happy. No bloated templates.'
-              },
-              {
-                icon: Shield,
-                title: 'Bulletproof Security',
-                desc: 'Enterprise-grade protection for your small business. We keep the bad guys out so you can sleep easy.'
-              },
-              {
-                icon: MapPin,
-                title: 'Hyper-Local Focus',
-                desc: 'Strategies tailored specifically for the Central Valley market. We know what makes locals tick.'
-              }].
-              map((benefit, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}
-                className="bg-light/50 p-8 rounded-3xl border border-gray-light hover:border-orange/30 transition-colors duration-300 group">
+                {
+                  icon: Zap,
+                  title: 'Built for Speed',
+                  desc: 'Lightning-fast load times that keep customers engaged and Google happy. No bloated templates.'
+                },
+                {
+                  icon: Shield,
+                  title: 'Bulletproof Security',
+                  desc: 'Enterprise-grade protection for your small business. We keep the bad guys out so you can sleep easy.'
+                },
+                {
+                  icon: MapPin,
+                  title: 'Hyper-Local Focus',
+                  desc: 'Strategies tailored specifically for the Central Valley market. We know what makes locals tick.'
+                }].
+                map((benefit, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 20
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.1
+                    }}
+                    className="bg-light/50 p-8 rounded-3xl border border-gray-light hover:border-orange/30 transition-colors duration-300 group">
 
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-orange shadow-sm mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon size={24} strokeWidth={2} />
-                  </div>
-                  <h3 className="text-xl font-bold text-dark mb-3">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray font-medium leading-relaxed">
-                    {benefit.desc}
-                  </p>
-                </motion.div>
-              )}
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-orange shadow-sm mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <benefit.icon size={24} strokeWidth={2} />
+                    </div>
+                    <h3 className="text-xl font-bold text-dark mb-3">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray font-medium leading-relaxed">
+                      {benefit.desc}
+                    </p>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>
@@ -164,32 +164,33 @@ export function ServicesPage() {
               </p>
               <ul className="space-y-4 mb-10">
                 {[
-                'Mobile-first responsive design',
-                'Custom interactions & animations',
-                'Conversion-optimized layouts',
-                'Accessibility compliance (ADA)'].
-                map((item, i) =>
-                <li
-                  key={i}
-                  className="flex items-center gap-3 text-dark font-bold">
+                  'Mobile-first responsive design',
+                  'Custom interactions & animations',
+                  'Conversion-optimized layouts',
+                  'Accessibility compliance (ADA)'].
+                  map((item, i) =>
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-dark font-bold">
 
-                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                      <Check
-                      size={14}
-                      className="text-green-600"
-                      strokeWidth={3} />
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                        <Check
+                          size={14}
+                          className="text-green-600"
+                          strokeWidth={3} />
 
-                    </div>
-                    {item}
-                  </li>
-                )}
+                      </div>
+                      {item}
+                    </li>
+                  )}
               </ul>
-              <a
-                href="#/web-design"
-                className="inline-flex items-center text-orange font-bold text-lg hover:gap-2 transition-all">
+              <Link
+                to="/services/web-design"
+                className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
-                Start Your Project <ArrowRight size={20} className="ml-1" />
-              </a>
+                Explore Web Design
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </motion.div>
 
             <motion.div
@@ -309,32 +310,33 @@ export function ServicesPage() {
               </p>
               <ul className="space-y-4 mb-10">
                 {[
-                'Google Business Profile optimization',
-                'Local keyword targeting',
-                'Review management strategy',
-                'Citation building & cleanup'].
-                map((item, i) =>
-                <li
-                  key={i}
-                  className="flex items-center gap-3 text-dark font-bold">
+                  'Google Business Profile optimization',
+                  'Local keyword targeting',
+                  'Review management strategy',
+                  'Citation building & cleanup'].
+                  map((item, i) =>
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-dark font-bold">
 
-                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                      <Check
-                      size={14}
-                      className="text-green-600"
-                      strokeWidth={3} />
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                        <Check
+                          size={14}
+                          className="text-green-600"
+                          strokeWidth={3} />
 
-                    </div>
-                    {item}
-                  </li>
-                )}
+                      </div>
+                      {item}
+                    </li>
+                  )}
               </ul>
-              <a
-                href="#/local-seo"
-                className="inline-flex items-center text-orange font-bold text-lg hover:gap-2 transition-all">
+              <Link
+                to="/services/local-seo"
+                className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
-                Boost Your Rankings <ArrowRight size={20} className="ml-1" />
-              </a>
+                Explore Local SEO
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </motion.div>
           </div>
 
@@ -425,12 +427,12 @@ export function ServicesPage() {
                 {/* Mini Chart */}
                 <div className="flex-1 bg-white/5 rounded-xl p-4 border border-white/5 flex items-end gap-1.5">
                   {[30, 45, 35, 60, 50, 75, 65, 80, 70, 90].map((h, i) =>
-                  <div
-                    key={i}
-                    className="flex-1 bg-orange/80 rounded-t-sm"
-                    style={{
-                      height: `${h}%`
-                    }} />
+                    <div
+                      key={i}
+                      className="flex-1 bg-orange/80 rounded-t-sm"
+                      style={{
+                        height: `${h}%`
+                      }} />
 
                   )}
                 </div>
@@ -465,32 +467,33 @@ export function ServicesPage() {
               </p>
               <ul className="space-y-4 mb-10">
                 {[
-                'Google Ads management',
-                'Local Service Ads setup',
-                'Conversion tracking',
-                'Monthly ROI reporting'].
-                map((item, i) =>
-                <li
-                  key={i}
-                  className="flex items-center gap-3 text-dark font-bold">
+                  'Google Ads management',
+                  'Local Service Ads setup',
+                  'Conversion tracking',
+                  'Monthly ROI reporting'].
+                  map((item, i) =>
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-dark font-bold">
 
-                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                      <Check
-                      size={14}
-                      className="text-green-600"
-                      strokeWidth={3} />
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                        <Check
+                          size={14}
+                          className="text-green-600"
+                          strokeWidth={3} />
 
-                    </div>
-                    {item}
-                  </li>
-                )}
+                      </div>
+                      {item}
+                    </li>
+                  )}
               </ul>
-              <a
-                href="#/local-marketing"
-                className="inline-flex items-center text-orange font-bold text-lg hover:gap-2 transition-all">
+              <Link
+                to="/services/local-marketing"
+                className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
-                Get Instant Leads <ArrowRight size={20} className="ml-1" />
-              </a>
+                Explore Marketing
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </motion.div>
           </div>
 
@@ -522,32 +525,33 @@ export function ServicesPage() {
               </p>
               <ul className="space-y-4 mb-10">
                 {[
-                'Rapid prototyping in weeks',
-                'Investor-ready demos',
-                'Web & mobile apps',
-                'Equity partnerships available'].
-                map((item, i) =>
-                <li
-                  key={i}
-                  className="flex items-center gap-3 text-dark font-bold">
+                  'Rapid prototyping in weeks',
+                  'Investor-ready demos',
+                  'Web & mobile apps',
+                  'Equity partnerships available'].
+                  map((item, i) =>
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-dark font-bold">
 
-                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                      <Check
-                      size={14}
-                      className="text-green-600"
-                      strokeWidth={3} />
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                        <Check
+                          size={14}
+                          className="text-green-600"
+                          strokeWidth={3} />
 
-                    </div>
-                    {item}
-                  </li>
-                )}
+                      </div>
+                      {item}
+                    </li>
+                  )}
               </ul>
-              <a
-                href="#/app-development"
-                className="inline-flex items-center text-orange font-bold text-lg hover:gap-2 transition-all">
+              <Link
+                to="/services/app-development"
+                className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
-                Launch Your Startup <ArrowRight size={20} className="ml-1" />
-              </a>
+                Explore App Dev
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </motion.div>
 
             <motion.div
@@ -629,32 +633,33 @@ export function ServicesPage() {
               </p>
               <ul className="space-y-4 mb-10">
                 {[
-                '24/7 Uptime monitoring',
-                'Daily cloud backups',
-                'Plugin & core updates',
-                'Priority support line'].
-                map((item, i) =>
-                <li
-                  key={i}
-                  className="flex items-center gap-3 text-dark font-bold">
+                  '24/7 Uptime monitoring',
+                  'Daily cloud backups',
+                  'Plugin & core updates',
+                  'Priority support line'].
+                  map((item, i) =>
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-dark font-bold">
 
-                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                      <Check
-                      size={14}
-                      className="text-green-600"
-                      strokeWidth={3} />
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                        <Check
+                          size={14}
+                          className="text-green-600"
+                          strokeWidth={3} />
 
-                    </div>
-                    {item}
-                  </li>
-                )}
+                      </div>
+                      {item}
+                    </li>
+                  )}
               </ul>
-              <a
-                href="#/contact"
-                className="inline-flex items-center text-orange font-bold text-lg hover:gap-2 transition-all">
+              <Link
+                to="/services/maintenance"
+                className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
 
-                Get Peace of Mind <ArrowRight size={20} className="ml-1" />
-              </a>
+                Explore Maintenance
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </motion.div>
 
             <motion.div
@@ -702,9 +707,9 @@ export function ServicesPage() {
                     {Array.from({
                       length: 30
                     }).map((_, i) =>
-                    <div
-                      key={i}
-                      className={`flex-1 h-5 rounded-sm ${i === 17 ? 'bg-yellow-400/80' : 'bg-green-400/70'}`} />
+                      <div
+                        key={i}
+                        className={`flex-1 h-5 rounded-sm ${i === 17 ? 'bg-yellow-400/80' : 'bg-green-400/70'}`} />
 
                     )}
                   </div>
@@ -744,39 +749,39 @@ export function ServicesPage() {
                     Recent Activity
                   </div>
                   {[
-                  {
-                    time: '2m ago',
-                    label: 'Backup completed',
-                    color: 'bg-green-400'
-                  },
-                  {
-                    time: '1h ago',
-                    label: 'Plugin updated (3)',
-                    color: 'bg-orange'
-                  },
-                  {
-                    time: '6h ago',
-                    label: 'Security scan — clear',
-                    color: 'bg-green-400'
-                  },
-                  {
-                    time: '1d ago',
-                    label: 'Core update applied',
-                    color: 'bg-orange'
-                  }].
-                  map((item, i) =>
-                  <div key={i} className="flex items-center gap-3">
-                      <div
-                      className={`w-1.5 h-1.5 rounded-full ${item.color} shrink-0`} />
+                    {
+                      time: '2m ago',
+                      label: 'Backup completed',
+                      color: 'bg-green-400'
+                    },
+                    {
+                      time: '1h ago',
+                      label: 'Plugin updated (3)',
+                      color: 'bg-orange'
+                    },
+                    {
+                      time: '6h ago',
+                      label: 'Security scan — clear',
+                      color: 'bg-green-400'
+                    },
+                    {
+                      time: '1d ago',
+                      label: 'Core update applied',
+                      color: 'bg-orange'
+                    }].
+                    map((item, i) =>
+                      <div key={i} className="flex items-center gap-3">
+                        <div
+                          className={`w-1.5 h-1.5 rounded-full ${item.color} shrink-0`} />
 
-                      <span className="text-white/60 text-xs font-medium flex-1 truncate">
-                        {item.label}
-                      </span>
-                      <span className="text-white/20 text-[10px] font-mono shrink-0">
-                        {item.time}
-                      </span>
-                    </div>
-                  )}
+                        <span className="text-white/60 text-xs font-medium flex-1 truncate">
+                          {item.label}
+                        </span>
+                        <span className="text-white/20 text-[10px] font-mono shrink-0">
+                          {item.time}
+                        </span>
+                      </div>
+                    )}
                 </div>
               </div>
               <div className="absolute -top-10 -right-10 w-full h-full bg-dark/5 rounded-3xl -z-10 hidden lg:block" />

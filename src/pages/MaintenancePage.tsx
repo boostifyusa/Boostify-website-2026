@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -16,71 +17,67 @@ import {
   RefreshCw,
   Wrench,
   Headphones,
-  Clock,
-  AlertTriangle,
-  Wifi,
-  Lock,
-  Server } from
-'lucide-react';
+} from
+  'lucide-react';
 const faqs = [
-{
-  question: 'What counts as an "on-demand change"?',
-  answer:
-  "Text updates, image swaps, adding new sections, tweaking layouts, updating business hours. Basically anything that doesn't require building an entirely new page from scratch. Most requests are handled same-day."
-},
-{
-  question: 'What happens if my site goes down?',
-  answer:
-  "Our monitoring catches it within 60 seconds and we get an instant alert. Most issues are resolved before you even notice. If it's a hosting issue, we coordinate directly with the provider to get you back online ASAP."
-},
-{
-  question: 'Do I need maintenance if I have a new website?',
-  answer:
-  'Absolutely. Even brand-new sites need security updates, backups, and monitoring. Think of it like a new car: it still needs oil changes. We keep everything running smooth from day one.'
-},
-{
-  question: 'Can I cancel anytime?',
-  answer:
-  "Yes. Month-to-month, no contracts. We believe in earning your business every month with results, not locking you in. Though once you see the peace of mind, you won't want to leave."
-}];
+  {
+    question: 'What counts as an "on-demand change"?',
+    answer:
+      "Text updates, image swaps, adding new sections, tweaking layouts, updating business hours. Basically anything that doesn't require building an entirely new page from scratch. Most requests are handled same-day."
+  },
+  {
+    question: 'What happens if my site goes down?',
+    answer:
+      "Our monitoring catches it within 60 seconds and we get an instant alert. Most issues are resolved before you even notice. If it's a hosting issue, we coordinate directly with the provider to get you back online ASAP."
+  },
+  {
+    question: 'Do I need maintenance if I have a new website?',
+    answer:
+      'Absolutely. Even brand-new sites need security updates, backups, and monitoring. Think of it like a new car: it still needs oil changes. We keep everything running smooth from day one.'
+  },
+  {
+    question: 'Can I cancel anytime?',
+    answer:
+      "Yes. Month-to-month, no contracts. We believe in earning your business every month with results, not locking you in. Though once you see the peace of mind, you won't want to leave."
+  }];
 
 const features = [
-{
-  icon: Activity,
-  title: '24/7 Uptime Monitoring',
-  desc: 'We check your site every 60 seconds. If anything goes wrong, we know before your customers do.',
-  visual: 'uptime'
-},
-{
-  icon: Database,
-  title: 'Daily Cloud Backups',
-  desc: 'Your entire site backed up every single day to secure cloud storage. One-click restore if anything ever goes sideways.',
-  visual: 'backup'
-},
-{
-  icon: Shield,
-  title: 'Security Scanning',
-  desc: 'Continuous malware scanning, firewall protection, and vulnerability patching. We keep the bad guys out.',
-  visual: 'security'
-},
-{
-  icon: RefreshCw,
-  title: 'Plugin & Core Updates',
-  desc: 'We test and apply every update so nothing breaks. No more "update available" anxiety.',
-  visual: 'updates'
-},
-{
-  icon: Wrench,
-  title: 'On-Demand Changes',
-  desc: 'Need a text change? New photo? Updated hours? Just send us a message and we handle it, usually same day.',
-  visual: 'changes'
-},
-{
-  icon: Headphones,
-  title: 'Priority Support',
-  desc: 'Direct line to our team. No tickets, no waiting. Real humans who know your site inside and out.',
-  visual: 'support'
-}];
+  {
+    icon: Activity,
+    title: '24/7 Uptime Monitoring',
+    desc: 'We check your site every 60 seconds. If anything goes wrong, we know before your customers do.',
+    visual: 'uptime'
+  },
+  {
+    icon: Database,
+    title: 'Daily Cloud Backups',
+    desc: 'Your entire site backed up every single day to secure cloud storage. One-click restore if anything ever goes sideways.',
+    visual: 'backup'
+  },
+  {
+    icon: Shield,
+    title: 'Security Scanning',
+    desc: 'Continuous malware scanning, firewall protection, and vulnerability patching. We keep the bad guys out.',
+    visual: 'security'
+  },
+  {
+    icon: RefreshCw,
+    title: 'Plugin & Core Updates',
+    desc: 'We test and apply every update so nothing breaks. No more "update available" anxiety.',
+    visual: 'updates'
+  },
+  {
+    icon: Wrench,
+    title: 'On-Demand Changes',
+    desc: 'Need a text change? New photo? Updated hours? Just send us a message and we handle it, usually same day.',
+    visual: 'changes'
+  },
+  {
+    icon: Headphones,
+    title: 'Priority Support',
+    desc: 'Direct line to our team. No tickets, no waiting. Real humans who know your site inside and out.',
+    visual: 'support'
+  }];
 
 export function MaintenancePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -166,19 +163,18 @@ export function MaintenancePage() {
               }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
 
-              <a
-                href="#/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-
-                Get Protected Today
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-              <a
-                href="#features"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
-
-                See What's Included
-              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
+                Get Protected Now
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 backdrop-blur-sm transition-all duration-300">
+                View Maintenance Plans
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -220,48 +216,48 @@ export function MaintenancePage() {
               {/* Stats Row */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
                 {[
-                {
-                  label: 'Uptime',
-                  value: '99.98%',
-                  sub: '30 days',
-                  color: 'text-green-400'
-                },
-                {
-                  label: 'Avg Response',
-                  value: '142ms',
-                  sub: 'Last 24h',
-                  color: 'text-white'
-                },
-                {
-                  label: 'SSL Grade',
-                  value: 'A+',
-                  sub: 'Secure',
-                  color: 'text-green-400'
-                },
-                {
-                  label: 'Threats Blocked',
-                  value: '847',
-                  sub: 'This month',
-                  color: 'text-orange'
-                }].
-                map((stat, i) =>
-                <div
-                  key={i}
-                  className="bg-white/5 rounded-xl p-4 border border-white/5">
-
-                    <div className="text-white/30 text-[10px] font-bold uppercase tracking-wider mb-2">
-                      {stat.label}
-                    </div>
+                  {
+                    label: 'Uptime',
+                    value: '99.98%',
+                    sub: '30 days',
+                    color: 'text-green-400'
+                  },
+                  {
+                    label: 'Avg Response',
+                    value: '142ms',
+                    sub: 'Last 24h',
+                    color: 'text-white'
+                  },
+                  {
+                    label: 'SSL Grade',
+                    value: 'A+',
+                    sub: 'Secure',
+                    color: 'text-green-400'
+                  },
+                  {
+                    label: 'Threats Blocked',
+                    value: '847',
+                    sub: 'This month',
+                    color: 'text-orange'
+                  }].
+                  map((stat, i) =>
                     <div
-                    className={`font-black text-2xl leading-none mb-1 ${stat.color}`}>
+                      key={i}
+                      className="bg-white/5 rounded-xl p-4 border border-white/5">
 
-                      {stat.value}
+                      <div className="text-white/30 text-[10px] font-bold uppercase tracking-wider mb-2">
+                        {stat.label}
+                      </div>
+                      <div
+                        className={`font-black text-2xl leading-none mb-1 ${stat.color}`}>
+
+                        {stat.value}
+                      </div>
+                      <div className="text-white/20 text-xs font-medium">
+                        {stat.sub}
+                      </div>
                     </div>
-                    <div className="text-white/20 text-xs font-medium">
-                      {stat.sub}
-                    </div>
-                  </div>
-                )}
+                  )}
               </div>
 
               {/* Uptime Bar */}
@@ -278,9 +274,9 @@ export function MaintenancePage() {
                   {Array.from({
                     length: 30
                   }).map((_, i) =>
-                  <div
-                    key={i}
-                    className={`flex-1 h-6 rounded-sm ${i === 17 ? 'bg-yellow-400/80' : 'bg-green-400/70'}`} />
+                    <div
+                      key={i}
+                      className={`flex-1 h-6 rounded-sm ${i === 17 ? 'bg-yellow-400/80' : 'bg-green-400/70'}`} />
 
                   )}
                 </div>
@@ -302,39 +298,39 @@ export function MaintenancePage() {
                   </div>
                   <div className="space-y-2.5">
                     {[
-                    {
-                      time: '2m ago',
-                      label: 'Backup completed successfully',
-                      color: 'bg-green-400'
-                    },
-                    {
-                      time: '1h ago',
-                      label: '3 plugins updated',
-                      color: 'bg-orange'
-                    },
-                    {
-                      time: '6h ago',
-                      label: 'Security scan: all clear',
-                      color: 'bg-green-400'
-                    },
-                    {
-                      time: '1d ago',
-                      label: 'Core update applied (v6.4)',
-                      color: 'bg-orange'
-                    }].
-                    map((item, i) =>
-                    <div key={i} className="flex items-center gap-3">
-                        <div
-                        className={`w-1.5 h-1.5 rounded-full ${item.color} shrink-0`} />
+                      {
+                        time: '2m ago',
+                        label: 'Backup completed successfully',
+                        color: 'bg-green-400'
+                      },
+                      {
+                        time: '1h ago',
+                        label: '3 plugins updated',
+                        color: 'bg-orange'
+                      },
+                      {
+                        time: '6h ago',
+                        label: 'Security scan: all clear',
+                        color: 'bg-green-400'
+                      },
+                      {
+                        time: '1d ago',
+                        label: 'Core update applied (v6.4)',
+                        color: 'bg-orange'
+                      }].
+                      map((item, i) =>
+                        <div key={i} className="flex items-center gap-3">
+                          <div
+                            className={`w-1.5 h-1.5 rounded-full ${item.color} shrink-0`} />
 
-                        <span className="text-white/60 text-xs font-medium flex-1 truncate">
-                          {item.label}
-                        </span>
-                        <span className="text-white/20 text-[10px] font-mono shrink-0">
-                          {item.time}
-                        </span>
-                      </div>
-                    )}
+                          <span className="text-white/60 text-xs font-medium flex-1 truncate">
+                            {item.label}
+                          </span>
+                          <span className="text-white/20 text-[10px] font-mono shrink-0">
+                            {item.time}
+                          </span>
+                        </div>
+                      )}
                   </div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-4 border border-white/5">
@@ -343,43 +339,43 @@ export function MaintenancePage() {
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                    {
-                      label: 'Backups',
-                      value: '30',
-                      icon: Database
-                    },
-                    {
-                      label: 'Updates',
-                      value: '12',
-                      icon: RefreshCw
-                    },
-                    {
-                      label: 'Scans',
-                      value: '720',
-                      icon: Shield
-                    },
-                    {
-                      label: 'Changes',
-                      value: '4',
-                      icon: Wrench
-                    }].
-                    map((item, i) =>
-                    <div
-                      key={i}
-                      className="bg-white/5 rounded-lg p-3 text-center">
+                      {
+                        label: 'Backups',
+                        value: '30',
+                        icon: Database
+                      },
+                      {
+                        label: 'Updates',
+                        value: '12',
+                        icon: RefreshCw
+                      },
+                      {
+                        label: 'Scans',
+                        value: '720',
+                        icon: Shield
+                      },
+                      {
+                        label: 'Changes',
+                        value: '4',
+                        icon: Wrench
+                      }].
+                      map((item, i) =>
+                        <div
+                          key={i}
+                          className="bg-white/5 rounded-lg p-3 text-center">
 
-                        <item.icon
-                        size={14}
-                        className="text-orange mx-auto mb-1.5" />
+                          <item.icon
+                            size={14}
+                            className="text-orange mx-auto mb-1.5" />
 
-                        <div className="text-white font-black text-lg leading-none">
-                          {item.value}
+                          <div className="text-white font-black text-lg leading-none">
+                            {item.value}
+                          </div>
+                          <div className="text-white/30 text-[9px] font-bold uppercase tracking-wider mt-1">
+                            {item.label}
+                          </div>
                         </div>
-                        <div className="text-white/30 text-[9px] font-bold uppercase tracking-wider mt-1">
-                          {item.label}
-                        </div>
-                      </div>
-                    )}
+                      )}
                   </div>
                 </div>
               </div>
@@ -403,23 +399,23 @@ export function MaintenancePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.08
-                }}
-                className="bg-white p-8 rounded-2xl border border-gray-light shadow-sm hover:shadow-md transition-all group">
+                <motion.div
+                  key={i}
+                  initial={{
+                    opacity: 0,
+                    y: 20
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }}
+                  viewport={{
+                    once: true
+                  }}
+                  transition={{
+                    delay: i * 0.08
+                  }}
+                  className="bg-white p-8 rounded-2xl border border-gray-light shadow-sm hover:shadow-md transition-all group">
 
                   <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 group-hover:scale-110 transition-transform duration-300">
                     <feature.icon size={24} strokeWidth={2} />
@@ -469,39 +465,39 @@ export function MaintenancePage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 mb-12">
                   {[
-                  '24/7 uptime monitoring (60s checks)',
-                  'Daily automated cloud backups',
-                  'Malware scanning & removal',
-                  'SSL certificate management',
-                  'Plugin & core updates (tested)',
-                  'Monthly performance reports',
-                  'On-demand content changes',
-                  'Priority email & phone support',
-                  'Speed optimization',
-                  'Broken link monitoring'].
-                  map((item, i) =>
-                  <div key={i} className="flex items-center gap-3 py-2">
-                      <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                        <Check
-                        size={12}
-                        className="text-green-600"
-                        strokeWidth={3} />
+                    '24/7 uptime monitoring (60s checks)',
+                    'Daily automated cloud backups',
+                    'Malware scanning & removal',
+                    'SSL certificate management',
+                    'Plugin & core updates (tested)',
+                    'Monthly performance reports',
+                    'On-demand content changes',
+                    'Priority email & phone support',
+                    'Speed optimization',
+                    'Broken link monitoring'].
+                    map((item, i) =>
+                      <div key={i} className="flex items-center gap-3 py-2">
+                        <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                          <Check
+                            size={12}
+                            className="text-green-600"
+                            strokeWidth={3} />
 
+                        </div>
+                        <span className="text-dark font-bold text-sm">
+                          {item}
+                        </span>
                       </div>
-                      <span className="text-dark font-bold text-sm">
-                        {item}
-                      </span>
-                    </div>
-                  )}
+                    )}
                 </div>
 
-                <a
-                  href="#/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
 
                   Get Started: Book a Call
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -539,40 +535,40 @@ export function MaintenancePage() {
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) =>
-              <div
-                key={i}
-                className="bg-white rounded-2xl border border-gray-light overflow-hidden">
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl border border-gray-light overflow-hidden">
 
                   <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
 
                     {faq.question}
                     {openFaq === i ?
-                  <ChevronUp size={20} className="text-orange" /> :
+                      <ChevronUp size={20} className="text-orange" /> :
 
-                  <ChevronDown size={20} className="text-gray/40" />
-                  }
+                      <ChevronDown size={20} className="text-gray/40" />
+                    }
                   </button>
                   <AnimatePresence>
                     {openFaq === i &&
-                  <motion.div
-                    initial={{
-                      height: 0
-                    }}
-                    animate={{
-                      height: 'auto'
-                    }}
-                    exit={{
-                      height: 0
-                    }}
-                    className="overflow-hidden">
+                      <motion.div
+                        initial={{
+                          height: 0
+                        }}
+                        animate={{
+                          height: 'auto'
+                        }}
+                        exit={{
+                          height: 0
+                        }}
+                        className="overflow-hidden">
 
                         <div className="px-8 pb-8 text-gray font-medium leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
-                  }
+                    }
                   </AnimatePresence>
                 </div>
               )}
@@ -584,6 +580,6 @@ export function MaintenancePage() {
       </main>
 
       <Footer />
-    </div>);
+    </div >);
 
 }

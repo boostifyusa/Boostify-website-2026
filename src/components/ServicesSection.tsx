@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Globe, Search, MapPin, ArrowUpRight, BarChart3 } from 'lucide-react';
 export function ServicesSection() {
@@ -86,8 +87,8 @@ export function ServicesSection() {
                 build custom sites that reflect your brand and work perfectly on
                 every device.
               </p>
-              <a
-                href="#/web-design"
+              <Link
+                to="/web-design"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 group/link">
 
                 Learn more
@@ -95,7 +96,7 @@ export function ServicesSection() {
                   size={14}
                   className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
 
-              </a>
+              </Link>
             </div>
 
             {/* Visual: Browser Mockup */}
@@ -173,8 +174,8 @@ export function ServicesSection() {
                     optimize your site so local customers find you when they
                     need you most.
                   </p>
-                  <a
-                    href="#/local-seo"
+                  <Link
+                    to="/local-seo"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 mt-4 group/link">
 
                     Learn more
@@ -182,7 +183,7 @@ export function ServicesSection() {
                       size={14}
                       className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
 
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Visual: Search Bar & Growth */}
@@ -239,8 +240,8 @@ export function ServicesSection() {
                     Digital strategies that drive real foot traffic. From Google
                     Ads to Local Service Ads, we put your business at the top.
                   </p>
-                  <a
-                    href="#/local-marketing"
+                  <Link
+                    to="/local-marketing"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 mt-4 group/link">
 
                     Learn more
@@ -248,7 +249,7 @@ export function ServicesSection() {
                       size={14}
                       className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
 
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Visual: Map Grid */}
@@ -258,7 +259,7 @@ export function ServicesSection() {
                     className="absolute inset-0"
                     style={{
                       backgroundImage:
-                      'linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px)',
+                        'linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px)',
                       backgroundSize: '20px 20px'
                     }} />
 

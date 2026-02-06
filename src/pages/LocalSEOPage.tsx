@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -14,7 +15,6 @@ import {
   Clock,
   Search,
   ShieldCheck,
-  Zap,
   AlertTriangle,
   MapPin,
   TrendingUp,
@@ -23,21 +23,22 @@ import {
   BarChart3,
   Star,
   Phone,
-  Compass } from
-'lucide-react';
+  Compass
+} from
+  'lucide-react';
 // MapPinOff icon component since it might not be in the lucide version or just to be safe
 const MapPinOff = ({ size = 24, className = '' }) =>
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width={size}
-  height={size}
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2"
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  className={className}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}>
 
     <path d="M12.729 12.729a2 2 0 0 1-2.56-2.56" />
     <path d="M8.7 8.7c-1.233 1.324-2.7 3.59-2.7 6.3 0 2.29 1.5 4.5 4.5 4.5 3 0 4.5-2.21 4.5-4.5 0-.663-.09-1.306-.25-1.92" />
@@ -46,26 +47,26 @@ const MapPinOff = ({ size = 24, className = '' }) =>
 
 // FAQ Data for SEO
 const faqs = [
-{
-  question: 'How long does it take to see results?',
-  answer:
-  "SEO is a marathon, not a sprint. Typically, you'll start seeing movement in 3-4 months, with significant traffic growth around months 6-9. We build long-term assets that pay dividends for years."
-},
-{
-  question: 'Do you guarantee #1 rankings?',
-  answer:
-  "No ethical SEO agency can guarantee a #1 spot because Google's algorithm changes daily. However, we have a proven track record of getting our clients to the first page and the top of the Map Pack."
-},
-{
-  question: 'Do I have to sign a long-term contract?',
-  answer:
-  'Nope. We work month-to-month. We believe we should earn your business every single month with results, not lock you into a piece of paper.'
-},
-{
-  question: "What's the difference between SEO and Google Ads?",
-  answer:
-  'Google Ads (PPC) is like renting a house. You pay for every visitor, and traffic stops when you stop paying. SEO is like buying a house. You invest upfront to own the real estate, and the traffic is free forever.'
-}];
+  {
+    question: 'How long does it take to see results?',
+    answer:
+      "SEO is a marathon, not a sprint. Typically, you'll start seeing movement in 3-4 months, with significant traffic growth around months 6-9. We build long-term assets that pay dividends for years."
+  },
+  {
+    question: 'Do you guarantee #1 rankings?',
+    answer:
+      "No ethical SEO agency can guarantee a #1 spot because Google's algorithm changes daily. However, we have a proven track record of getting our clients to the first page and the top of the Map Pack."
+  },
+  {
+    question: 'Do I have to sign a long-term contract?',
+    answer:
+      'Nope. We work month-to-month. We believe we should earn your business every single month with results, not lock you into a piece of paper.'
+  },
+  {
+    question: "What's the difference between SEO and Google Ads?",
+    answer:
+      'Google Ads (PPC) is like renting a house. You pay for every visitor, and traffic stops when you stop paying. SEO is like buying a house. You invest upfront to own the real estate, and the traffic is free forever.'
+  }];
 
 export function LocalSEOPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -108,20 +109,18 @@ export function LocalSEOPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a
-                  href="#/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-
-                  Get a Free SEO Audit
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-                <a
-                  href="#/work"
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300">
+                  Get Your Free Audit
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link
+                  to="/work"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
 
                   See Results
-                </a>
-              </div>
+                </Link></div>
 
               <div className="flex items-center gap-6 text-sm font-bold text-dark/60">
                 <span className="flex items-center gap-2">
@@ -238,7 +237,7 @@ export function LocalSEOPage() {
                     className="absolute inset-0 opacity-20"
                     style={{
                       backgroundImage:
-                      'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+                        'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
                       backgroundSize: '20px 20px'
                     }} />
 
@@ -266,7 +265,7 @@ export function LocalSEOPage() {
                       <div className="flex items-center gap-1 mb-1">
                         <div className="flex text-yellow-400">
                           {[...Array(5)].map((_, i) =>
-                          <Star key={i} size={8} fill="currentColor" />
+                            <Star key={i} size={8} fill="currentColor" />
                           )}
                         </div>
                         <span className="text-[8px] text-gray font-medium">
@@ -337,51 +336,51 @@ export function LocalSEOPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-              {
-                title: 'Buried on Page 5',
-                desc: 'Your website exists but nobody can find it. 92% of clicks go to page one results.',
-                icon: EyeOff
-              },
-              {
-                title: 'No Google Profile',
-                desc: "Without an optimized Google Business Profile, you're invisible on Maps — where 46% of searches have local intent.",
-                icon: MapPinOff
-              },
-              {
-                title: 'Bad Reviews Hurting You',
-                desc: 'Unmanaged reviews are silently driving customers to your competitors. Reputation is everything.',
-                icon: ThumbsDown
-              }].
-              map((item, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1
-                }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
+                {
+                  title: 'Buried on Page 5',
+                  desc: 'Your website exists but nobody can find it. 92% of clicks go to page one results.',
+                  icon: EyeOff
+                },
+                {
+                  title: 'No Google Profile',
+                  desc: "Without an optimized Google Business Profile, you're invisible on Maps — where 46% of searches have local intent.",
+                  icon: MapPinOff
+                },
+                {
+                  title: 'Bad Reviews Hurting You',
+                  desc: 'Unmanaged reviews are silently driving customers to your competitors. Reputation is everything.',
+                  icon: ThumbsDown
+                }].
+                map((item, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: 20
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    viewport={{
+                      once: true
+                    }}
+                    transition={{
+                      delay: i * 0.1
+                    }}
+                    className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
 
-                  <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
-                    <item.icon size={24} strokeWidth={2.5} />
-                  </div>
-                  <h3 className="text-xl font-bold text-dark mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray font-medium leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              )}
+                    <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
+                      <item.icon size={24} strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl font-bold text-dark mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray font-medium leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                )}
             </div>
           </div>
         </section>
@@ -405,23 +404,23 @@ export function LocalSEOPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                  'Complete profile optimization',
-                  'Strategic category selection',
-                  'Photo & post management',
-                  'Q&A optimization'].
-                  map((item, i) =>
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 font-bold text-dark">
+                    'Complete profile optimization',
+                    'Strategic category selection',
+                    'Photo & post management',
+                    'Q&A optimization'].
+                    map((item, i) =>
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 font-bold text-dark">
 
-                      <Check
-                      size={18}
-                      className="text-green-500"
-                      strokeWidth={3} />
+                        <Check
+                          size={18}
+                          className="text-green-500"
+                          strokeWidth={3} />
 
-                      {item}
-                    </li>
-                  )}
+                        {item}
+                      </li>
+                    )}
                 </ul>
               </div>
 
@@ -453,7 +452,7 @@ export function LocalSEOPage() {
                       <span className="text-orange font-bold text-sm">4.9</span>
                       <div className="flex text-yellow-400 gap-0.5">
                         {[...Array(5)].map((_, i) =>
-                        <Star key={i} size={14} fill="currentColor" />
+                          <Star key={i} size={14} fill="currentColor" />
                         )}
                       </div>
                       <span className="text-gray text-sm">(127)</span>
@@ -523,7 +522,7 @@ export function LocalSEOPage() {
                     className="absolute inset-0 bg-gradient-to-t from-orange/10 to-transparent opacity-50 -z-10"
                     style={{
                       clipPath:
-                      'polygon(0 100%, 0 85%, 40% 50%, 100% 10%, 100% 100%)'
+                        'polygon(0 100%, 0 85%, 40% 50%, 100% 10%, 100% 100%)'
                     }} />
 
                 </div>
@@ -531,50 +530,50 @@ export function LocalSEOPage() {
                 {/* Keyword List */}
                 <div className="space-y-3 mb-6 flex-1">
                   {[
-                  {
-                    kw: 'ac repair fresno',
-                    rank: '#1',
-                    change: '↑4',
-                    badge: 'bg-green-500'
-                  },
-                  {
-                    kw: 'hvac contractor clovis',
-                    rank: '#2',
-                    change: '↑6',
-                    badge: 'bg-green-500'
-                  },
-                  {
-                    kw: 'furnace repair 93711',
-                    rank: '#1',
-                    change: '↑8',
-                    badge: 'bg-green-500'
-                  },
-                  {
-                    kw: 'emergency ac service',
-                    rank: '#3',
-                    change: '↑2',
-                    badge: 'bg-orange'
-                  }].
-                  map((item, i) =>
-                  <div
-                    key={i}
-                    className="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-white/5">
+                    {
+                      kw: 'ac repair fresno',
+                      rank: '#1',
+                      change: '↑4',
+                      badge: 'bg-green-500'
+                    },
+                    {
+                      kw: 'hvac contractor clovis',
+                      rank: '#2',
+                      change: '↑6',
+                      badge: 'bg-green-500'
+                    },
+                    {
+                      kw: 'furnace repair 93711',
+                      rank: '#1',
+                      change: '↑8',
+                      badge: 'bg-green-500'
+                    },
+                    {
+                      kw: 'emergency ac service',
+                      rank: '#3',
+                      change: '↑2',
+                      badge: 'bg-orange'
+                    }].
+                    map((item, i) =>
+                      <div
+                        key={i}
+                        className="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-white/5">
 
-                      <span className="text-white/80 text-sm font-medium">
-                        {item.kw}
-                      </span>
-                      <div className="flex items-center gap-3">
-                        <span
-                        className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${item.badge}`}>
+                        <span className="text-white/80 text-sm font-medium">
+                          {item.kw}
+                        </span>
+                        <div className="flex items-center gap-3">
+                          <span
+                            className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${item.badge}`}>
 
-                          {item.rank}
-                        </span>
-                        <span className="text-green-400 text-xs font-bold">
-                          {item.change}
-                        </span>
+                            {item.rank}
+                          </span>
+                          <span className="text-green-400 text-xs font-bold">
+                            {item.change}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
                 </div>
 
                 <div className="pt-4 border-t border-white/10">
@@ -601,23 +600,23 @@ export function LocalSEOPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                  'Hyper-local keyword research',
-                  'On-page optimization',
-                  'Technical SEO fixes',
-                  'Monthly ranking reports'].
-                  map((item, i) =>
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 font-bold text-dark">
+                    'Hyper-local keyword research',
+                    'On-page optimization',
+                    'Technical SEO fixes',
+                    'Monthly ranking reports'].
+                    map((item, i) =>
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 font-bold text-dark">
 
-                      <Check
-                      size={18}
-                      className="text-green-500"
-                      strokeWidth={3} />
+                        <Check
+                          size={18}
+                          className="text-green-500"
+                          strokeWidth={3} />
 
-                      {item}
-                    </li>
-                  )}
+                        {item}
+                      </li>
+                    )}
                 </ul>
               </div>
             </div>
@@ -655,40 +654,40 @@ export function LocalSEOPage() {
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) =>
-              <div
-                key={i}
-                className="bg-white rounded-2xl border border-gray-light overflow-hidden">
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl border border-gray-light overflow-hidden">
 
                   <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
 
                     {faq.question}
                     {openFaq === i ?
-                  <ChevronUp size={20} className="text-orange" /> :
+                      <ChevronUp size={20} className="text-orange" /> :
 
-                  <ChevronDown size={20} className="text-gray/40" />
-                  }
+                      <ChevronDown size={20} className="text-gray/40" />
+                    }
                   </button>
                   <AnimatePresence>
                     {openFaq === i &&
-                  <motion.div
-                    initial={{
-                      height: 0
-                    }}
-                    animate={{
-                      height: 'auto'
-                    }}
-                    exit={{
-                      height: 0
-                    }}
-                    className="overflow-hidden">
+                      <motion.div
+                        initial={{
+                          height: 0
+                        }}
+                        animate={{
+                          height: 'auto'
+                        }}
+                        exit={{
+                          height: 0
+                        }}
+                        className="overflow-hidden">
 
                         <div className="px-8 pb-8 text-gray font-medium leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
-                  }
+                    }
                   </AnimatePresence>
                 </div>
               )}

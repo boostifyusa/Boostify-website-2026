@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -100,12 +100,11 @@ export function SMSProgramPage() {
 
               <p>
                 For additional details, please review our{' '}
-                <a
-                  href="#/privacy"
-                  className="text-orange font-bold hover:underline">
-
-                  Privacy Policy
-                </a>{' '}
+                <Link
+                  to="/contact"
+                  className="inline-flex px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all duration-300 self-center">
+                  Contact Us for Help
+                </Link>{' '}
                 and{' '}
                 <a
                   href="#/terms"
