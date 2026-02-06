@@ -7,41 +7,51 @@ import { CTASection } from '../components/CTASection';
 import { ArrowUpRight, TrendingUp } from 'lucide-react';
 const projects = [
   {
+    id: '01',
     title: 'Full Throttle Suspension',
-    category: 'Web Design & SEO',
-    result: 'Page 1 Rankings',
-    excerpt:
-      'Complete website redesign and SEO strategy for a leading automotive suspension manufacturer, resulting in 40% increase in organic traffic.',
-    image: '/Slide-4_3-3.png',
-    link: '/portfolio/full-throttle'
+    category: 'WEB DESIGN & SEO',
+    stat: 'PAGE 1 RANKINGS',
+    description: 'Custom website build with full local SEO strategy. Hand-coded for speed, optimized for conversions, and ranking on page one for competitive automotive keywords in Fresno.',
+    image: '/FTS-Mock.jpg',
+    link: 'https://fullthrottlesuspension.com'
   },
   {
-    title: 'Martin Energy Inc.',
-    category: 'Solar Installation',
-    result: '200% Lead Increase',
-    excerpt:
-      'Digital transformation for a solar energy provider, focused on high-converting landing pages and local SEO dominance.',
+    id: '02',
+    title: 'Martin Energy Inc',
+    category: 'WEB DESIGN & SEO',
+    stat: '3× ORGANIC TRAFFIC',
+    description: 'Full website redesign for a Fresno-based solar energy company. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.',
     image: '/Slide-4_3-5.png',
-    link: '/portfolio/martin-energy'
+    link: 'https://martinenergyinc.com'
   },
   {
-    title: 'Valley Future Foundation',
-    category: 'Non-Profit',
-    result: 'Brand Awareness',
-    excerpt:
-      'Modern interface design for a community foundation, improving accessibility and donor engagement.',
+    id: '03',
+    title: 'Fresno State Today',
+    category: 'WEB DEVELOPMENT',
+    stat: '50K+ MONTHLY VISITORS',
+    description: 'Built the official Fresno State news website from the ground up. A high-traffic, content-heavy platform serving students, faculty, and the Fresno community.',
     image: '/Slide-4_3-4.png',
-    link: '/portfolio/valley-future'
+    link: 'https://fresnostatetoday.com'
   },
   {
-    title: 'Central Valley Talk',
-    category: 'Media & News',
-    result: 'User Engagement',
-    excerpt:
-      'High-traffic news portal optimization handling thousands of daily visitors with improved load times and ad revenue.',
-    image: '/Slide-4_3-2.png',
-    link: '/portfolio/central-valley-talk'
-  }];
+    id: '04',
+    title: 'Benchmark Pool Supply',
+    category: 'WEB DESIGN & LOCAL SEO',
+    stat: '2× SERVICE BOOKINGS',
+    description: 'Complete website and brand presence for a Fresno pool servicing company. Designed to showcase services, build trust, and drive appointment bookings from local homeowners.',
+    image: '/Slide-4_3-1.png',
+    link: 'https://benchmarkpoolsupply.com'
+  },
+  {
+    id: '05',
+    title: 'Tint Headquarters',
+    category: 'WEB DESIGN & GOOGLE ADS',
+    stat: '#1 FOR WINDOW TINT FRESNO',
+    description: 'Bold, high-converting website for Fresno\'s top-rated ceramic window tint shop. Paired with Google Ads to dominate local search and drive same-day appointment requests.',
+    image: '/2024-04-30-2.jpg',
+    link: 'https://tintheadquarters.com'
+  }
+];
 
 export function OurWorkPage() {
   return (
@@ -153,7 +163,7 @@ export function OurWorkPage() {
                   {/* Top */}
                   <div className="flex justify-between items-start">
                     <span className="text-white/30 font-bold text-sm tracking-widest">
-                      0{i + 1}
+                      {project.id}
                     </span>
                   </div>
 
@@ -165,14 +175,14 @@ export function OurWorkPage() {
                       </span>
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-wider rounded-full">
                         <TrendingUp size={12} className="text-green-400" />
-                        {project.result}
+                        {project.stat}
                       </span>
                     </div>
                     <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-3">
                       {project.title}
                     </h3>
                     <p className="text-white/60 font-medium text-sm md:text-base leading-relaxed max-w-xl">
-                      {project.excerpt}
+                      {project.description}
                     </p>
                   </div>
                 </div>
