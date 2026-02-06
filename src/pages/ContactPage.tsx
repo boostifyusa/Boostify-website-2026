@@ -4,19 +4,18 @@ import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import {
-
   MapPin,
   Phone,
   Mail,
   Clock,
   Send,
-  CheckCircle
-} from
-  'lucide-react';
+  CheckCircle,
+  ArrowRight
+} from 'lucide-react';
 // @ts-ignore
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
-export function ContactPage() {
+function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -36,6 +35,7 @@ export function ContactPage() {
     setLoading(true);
     setError(null);
 
+    // If recaptcha isn't ready yet
     if (!executeRecaptcha) {
       setError('ReCAPTCHA not ready. Please refresh.');
       setLoading(false);
@@ -67,6 +67,229 @@ export function ContactPage() {
       setLoading(false);
     }
   };
+
+  if (submitted) {
+    return (
+      <div className="bg-light rounded-3xl border border-gray-light p-12 text-center">
+        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle size={32} className="text-green-600" />
+        </div>
+        <h3 className="text-2xl font-black text-dark mb-3 tracking-tight">
+          Message Sent!
+        </h3>
+        <p className="text-gray font-medium text-lg mb-6">
+          We'll get back to you within a few hours. Talk soon!
+        </p>
+        <button
+          onClick={() => {
+            setSubmitted(false);
+            setFormData({
+              name: '',
+              email: '',
+              phone: '',
+              service: '',
+              message: '',
+              consentPromo: false,
+              consentService: false
+            });
+          }}
+          className="text-orange font-bold hover:underline">
+          Send another message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-dark mb-2">
+            Full Name *
+          </label>
+          <input
+            type="text"
+            required
+            value={formData.name}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                name: e.target.value
+              })
+            }
+            placeholder="Joaquin Estrada"
+            className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
+
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-dark mb-2">
+            Email *
+          </label>
+          <input
+            type="email"
+            required
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                email: e.target.value
+              })
+            }
+            placeholder="you@business.com"
+            className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
+
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-dark mb-2">
+            Phone
+          </label>
+          <input
+            type="tel"
+            value={formData.phone}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                phone: e.target.value
+              })
+            }
+            placeholder="(559) 555-0123"
+            className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
+
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-dark mb-2">
+            Service Interested In
+          </label>
+          <select
+            value={formData.service}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                service: e.target.value
+              })
+            }
+            className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all appearance-none">
+
+            <option value="">Select a service...</option>
+            <option value="web-design">Web Design</option>
+            <option value="local-seo">Local SEO</option>
+            <option value="local-marketing">
+              Google Ads / Marketing
+            </option>
+            <option value="maintenance">Website Maintenance</option>
+            <option value="other">Not sure yet</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-bold text-dark mb-2">
+          Tell Us About Your Project *
+        </label>
+        <textarea
+          required
+          rows={5}
+          value={formData.message}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              message: e.target.value
+            })
+          }
+          placeholder="What's your business? What are you looking to accomplish? Any timeline in mind?"
+          className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all resize-none" />
+
+      </div>
+
+      {/* A2P SMS Opt-In Consents */}
+      <div className="space-y-4">
+        <label className="flex items-start gap-3 cursor-pointer group">
+          <input
+            type="checkbox"
+            checked={formData.consentPromo}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                consentPromo: e.target.checked
+              })
+            }
+            className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
+
+          <span className="text-xs text-gray leading-relaxed">
+            I consent to receive promotional notifications about
+            promotional offers, discounts, and updates from Boostify
+            USA LLC at the phone number provided. Message frequency
+            varies, up to 4 messages per month. Message &amp; data
+            rates may apply. Text HELP for assistance, reply STOP to
+            opt out.
+          </span>
+        </label>
+
+        <label className="flex items-start gap-3 cursor-pointer group">
+          <input
+            type="checkbox"
+            checked={formData.consentService}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                consentService: e.target.checked
+              })
+            }
+            className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
+
+          <span className="text-xs text-gray leading-relaxed">
+            I consent to receive non-marketing messages about
+            service updates and inquiries from Boostify USA LLC.
+            Message frequency varies, up to 4 messages per month.
+            Message &amp; data rates may apply. Text HELP for
+            assistance, reply STOP to opt out.
+          </span>
+        </label>
+      </div>
+
+
+      <button
+        type="submit" disabled={loading}
+        className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
+        {loading ? 'Sending...' : 'Send Message'}
+        {!loading && <Send className="ml-2 h-5 w-5" />}
+      </button>
+      {error && (
+        <p className="text-red-500 font-bold text-center mt-4">
+          {error}
+        </p>
+      )}
+
+      <p className="text-[11px] text-gray/60 leading-relaxed">
+        By clicking "Send Message", you agree to our{' '}
+        <Link to="/terms" className="text-orange hover:underline">
+          Terms of Service
+        </Link>{' '}
+        and{' '}
+        <Link to="/privacy" className="text-orange hover:underline">
+          Privacy Policy
+        </Link>
+        . Message and data rates may apply. Reply STOP to
+        unsubscribe or HELP for help.
+      </p>
+
+      <p className="text-sm text-gray font-medium">
+        Or skip the form, call us at{' '}
+        <a
+          href="tel:+15597853834"
+          className="text-orange font-bold hover:underline">
+
+          (559) 785-3834
+        </a>
+      </p>
+    </form>
+  )
+}
+
+export function ContactPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <Navigation />
@@ -155,222 +378,18 @@ export function ContactPage() {
               }}
               className="lg:col-span-3">
 
-              {submitted ?
-                <div className="bg-light rounded-3xl border border-gray-light p-12 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle size={32} className="text-green-600" />
-                  </div>
-                  <h3 className="text-2xl font-black text-dark mb-3 tracking-tight">
-                    Message Sent!
-                  </h3>
-                  <p className="text-gray font-medium text-lg mb-6">
-                    We'll get back to you within a few hours. Talk soon!
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({
-                        name: '',
-                        email: '',
-                        phone: '',
-                        service: '',
-                        message: '',
-                        consentPromo: false,
-                        consentService: false
-                      });
-                    }}
-                    className="text-orange font-bold hover:underline">
+              <GoogleReCaptchaProvider
+                reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+                scriptProps={{
+                  async: false,
+                  defer: false,
+                  appendTo: 'head',
+                  nonce: undefined,
+                }}
+              >
+                <ContactForm />
+              </GoogleReCaptchaProvider>
 
-                    Send another message
-                  </button>
-                </div> :
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-bold text-dark mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            name: e.target.value
-                          })
-                        }
-                        placeholder="Joaquin Estrada"
-                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
-
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-dark mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            email: e.target.value
-                          })
-                        }
-                        placeholder="you@business.com"
-                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
-
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-bold text-dark mb-2">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            phone: e.target.value
-                          })
-                        }
-                        placeholder="(559) 555-0123"
-                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
-
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-dark mb-2">
-                        Service Interested In
-                      </label>
-                      <select
-                        value={formData.service}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            service: e.target.value
-                          })
-                        }
-                        className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all appearance-none">
-
-                        <option value="">Select a service...</option>
-                        <option value="web-design">Web Design</option>
-                        <option value="local-seo">Local SEO</option>
-                        <option value="local-marketing">
-                          Google Ads / Marketing
-                        </option>
-                        <option value="maintenance">Website Maintenance</option>
-                        <option value="other">Not sure yet</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-bold text-dark mb-2">
-                      Tell Us About Your Project *
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          message: e.target.value
-                        })
-                      }
-                      placeholder="What's your business? What are you looking to accomplish? Any timeline in mind?"
-                      className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all resize-none" />
-
-                  </div>
-
-                  {/* A2P SMS Opt-In Consents */}
-                  <div className="space-y-4">
-                    <label className="flex items-start gap-3 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        checked={formData.consentPromo}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            consentPromo: e.target.checked
-                          })
-                        }
-                        className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
-
-                      <span className="text-xs text-gray leading-relaxed">
-                        I consent to receive promotional notifications about
-                        promotional offers, discounts, and updates from Boostify
-                        USA LLC at the phone number provided. Message frequency
-                        varies, up to 4 messages per month. Message &amp; data
-                        rates may apply. Text HELP for assistance, reply STOP to
-                        opt out.
-                      </span>
-                    </label>
-
-                    <label className="flex items-start gap-3 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        checked={formData.consentService}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            consentService: e.target.checked
-                          })
-                        }
-                        className="mt-1 w-4 h-4 rounded border-gray-light text-orange focus:ring-orange/20 shrink-0 accent-orange" />
-
-                      <span className="text-xs text-gray leading-relaxed">
-                        I consent to receive non-marketing messages about
-                        service updates and inquiries from Boostify USA LLC.
-                        Message frequency varies, up to 4 messages per month.
-                        Message &amp; data rates may apply. Text HELP for
-                        assistance, reply STOP to opt out.
-                      </span>
-                    </label>
-                  </div>
-
-
-                  <button
-                    type="submit" disabled={loading}
-                    className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
-                    {loading ? 'Sending...' : 'Send Message'}
-                    {!loading && <Send className="ml-2 h-5 w-5" />}
-                  </button>
-                  {error && (
-                    <p className="text-red-500 font-bold text-center mt-4">
-                      {error}
-                    </p>
-                  )}
-
-                  <p className="text-[11px] text-gray/60 leading-relaxed">
-                    By clicking "Send Message", you agree to our{' '}
-                    <Link to="/terms" className="text-orange hover:underline">
-                      Terms of Service
-                    </Link>{' '}
-                    and{' '}
-                    <Link to="/privacy" className="text-orange hover:underline">
-                      Privacy Policy
-                    </Link>
-                    . Message and data rates may apply. Reply STOP to
-                    unsubscribe or HELP for help.
-                  </p>
-
-                  <p className="text-sm text-gray font-medium">
-                    Or skip the form, call us at{' '}
-                    <a
-                      href="tel:+15597853834"
-                      className="text-orange font-bold hover:underline">
-
-                      (559) 785-3834
-                    </a>
-                  </p>
-                </form>
-              }
             </motion.div>
 
             {/* Info Sidebar — takes 2 cols */}

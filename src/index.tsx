@@ -28,19 +28,4 @@ observer.observe(document.documentElement, {
   childList: true,
   subtree: true
 });
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-
-render(
-  <GoogleReCaptchaProvider
-    reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"} // Test Key
-    scriptProps={{
-      async: false,
-      defer: false,
-      appendTo: 'head',
-      nonce: undefined,
-    }}
-  >
-    <App />
-  </GoogleReCaptchaProvider>,
-  document.getElementById('root')
-);
+render(<App />, document.getElementById('root'));
