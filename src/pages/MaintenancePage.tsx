@@ -388,7 +388,7 @@ export function MaintenancePage() {
         </section>
 
         {/* Bento Feature Grid */}
-        <section id="features" className="py-24 px-6 bg-light/50" id="included">
+        <section className="py-24 px-6 bg-light/50" id="included">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
