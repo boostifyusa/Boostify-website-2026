@@ -146,6 +146,11 @@ export function Footer() {
                 <br />
                 Fresno, CA 93722
               </li>
+              <li>
+                <a href="tel:+15597853834" className="hover:text-orange transition-colors">
+                  (559) 785-3834
+                </a>
+              </li>
               <li className="pt-4">
                 <Link
                   to="/contact"

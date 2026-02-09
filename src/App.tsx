@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AgencyHomePage } from './pages/AgencyHomePage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -42,26 +43,28 @@ export function ScrollToTopOrHash() {
 
 export function App() {
   return (
-    <Router>
-      <ScrollToTopOrHash />
-      <Routes>
-        <Route path="/" element={<AgencyHomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/web-design" element={<WebDesignPage />} />
-        <Route path="/local-seo" element={<LocalSEOPage />} />
-        <Route path="/local-marketing" element={<LocalMarketingPage />} />
-        <Route path="/maintenance" element={<MaintenancePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/work" element={<OurWorkPage />} />
-        <Route path="/privacy" element={<PrivacyPolicyPage />} />
-        <Route path="/terms" element={<TermsOfServicePage />} />
-        <Route path="/sms" element={<SMSProgramPage />} />
-        <Route path="/app-development" element={<AppDevelopmentPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
-        <Route path="/sitemap" element={<SitemapPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTopOrHash />
+        <Routes>
+          <Route path="/" element={<AgencyHomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/web-design" element={<WebDesignPage />} />
+          <Route path="/local-seo" element={<LocalSEOPage />} />
+          <Route path="/local-marketing" element={<LocalMarketingPage />} />
+          <Route path="/maintenance" element={<MaintenancePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/work" element={<OurWorkPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
+          <Route path="/sms" element={<SMSProgramPage />} />
+          <Route path="/app-development" element={<AppDevelopmentPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/sitemap" element={<SitemapPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }

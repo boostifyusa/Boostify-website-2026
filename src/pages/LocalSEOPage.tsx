@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TrustBadges } from '../components/TrustBadges';
@@ -72,6 +74,23 @@ export function LocalSEOPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Local SEO Services Fresno - Boostify USA"
+        description="Dominate Google Maps and local search results in Fresno. Our local SEO strategies help you get found by neighbors who need your services."
+        canonicalUrl="/local-seo"
+      />
+      <SchemaJSON
+        type="Service"
+        data={{
+          name: "Local SEO Services",
+          description: "Search Engine Optimization services focused on local ranking in Fresno, CA.",
+          provider: {
+            "@type": "LocalBusiness",
+            "name": "Boostify USA"
+          },
+          areaServed: "Fresno, CA"
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

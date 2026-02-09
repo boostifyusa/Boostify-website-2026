@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -83,6 +85,23 @@ const team = [
 export function AboutPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="About Joaquin Estrada & Boostify USA"
+        description="Meet the team behind Boostify USA. Founded by Joaquin Estrada, serving Fresno businesses with data-driven web design and SEO."
+        canonicalUrl="/about"
+      />
+      <SchemaJSON
+        type="Organization"
+        data={{
+          name: "Boostify USA",
+          url: "https://boostifyusa.com/about",
+          founder: {
+            "@type": "Person",
+            "name": "Joaquin Estrada",
+            "jobTitle": "Founder & Lead Strategist"
+          }
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

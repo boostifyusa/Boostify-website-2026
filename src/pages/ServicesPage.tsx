@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import {
@@ -18,6 +20,50 @@ import {
 export function ServicesPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Digital Marketing Services - Boostify USA"
+        description="Web Design, Local SEO, and Google Ads management for Fresno businesses. Built for speed, security, and local growth."
+        canonicalUrl="/services"
+      />
+      <SchemaJSON
+        type="Service"
+        data={{
+          name: "Digital Marketing Services",
+          description: "Full-service digital marketing including Web Design, SEO, and PPC for local businesses.",
+          provider: {
+            "@type": "LocalBusiness",
+            "name": "Boostify USA"
+          },
+          areaServed: "Fresno, CA",
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            "name": "Digital Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Web Design"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Local SEO"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Google Ads Management"
+                }
+              }
+            ]
+          }
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

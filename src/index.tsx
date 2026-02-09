@@ -1,7 +1,7 @@
-import React from 'react';
+import { createRoot } from 'react-dom/client';
 import './index.css';
-import { render } from 'react-dom';
 import { App } from './App';
+
 // Strip all HTML comments from the DOM
 function removeHtmlComments(node: Node) {
   const walker = document.createTreeWalker(node, NodeFilter.SHOW_COMMENT);
@@ -11,8 +11,10 @@ function removeHtmlComments(node: Node) {
   }
   comments.forEach((c) => c.remove());
 }
+
 // Run on load and observe for any injected later
 removeHtmlComments(document);
+
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((m) => {
     m.addedNodes.forEach((node) => {
@@ -24,8 +26,12 @@ const observer = new MutationObserver((mutations) => {
     });
   });
 });
+
 observer.observe(document.documentElement, {
   childList: true,
   subtree: true
 });
-render(<App />, document.getElementById('root'));
+
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<App />);

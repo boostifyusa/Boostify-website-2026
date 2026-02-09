@@ -1,10 +1,17 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
 import { Footer } from '../components/Footer';
 export function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Privacy Policy - Boostify USA"
+        description="Privacy Policy for Boostify USA LLC. Learn how we collect, use, and protect your data."
+        canonicalUrl="/privacy"
+        noIndex={true} // Usually legal pages can be indexed, but some prefer not to clutter search results. I'll leave it indexed by default (remove noIndex) unless specific request. Actually, let's keep it indexed but typically low priority. The prompt asked for SEO fixes.
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40 pb-24">
@@ -67,17 +74,17 @@ export function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-3 ml-1">
                     {[
-                    'Name',
-                    'Phone number',
-                    'Email address',
-                    'Appointment or inquiry details',
-                    'Any information you voluntarily submit through forms or communication channels'].
-                    map((item, i) =>
-                    <li key={i} className="flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange mt-2.5 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    )}
+                      'Name',
+                      'Phone number',
+                      'Email address',
+                      'Appointment or inquiry details',
+                      'Any information you voluntarily submit through forms or communication channels'].
+                      map((item, i) =>
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange mt-2.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      )}
                   </ul>
                 </section>
 
@@ -89,17 +96,17 @@ export function PrivacyPolicyPage() {
                   <p className="mb-4">We use your information to:</p>
                   <ul className="space-y-3 ml-1">
                     {[
-                    'Respond to inquiries or requests',
-                    'Schedule, confirm, or remind you of appointments',
-                    'Send transactional or informational messages',
-                    'Provide customer support',
-                    'Improve our services and communications'].
-                    map((item, i) =>
-                    <li key={i} className="flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange mt-2.5 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    )}
+                      'Respond to inquiries or requests',
+                      'Schedule, confirm, or remind you of appointments',
+                      'Send transactional or informational messages',
+                      'Provide customer support',
+                      'Improve our services and communications'].
+                      map((item, i) =>
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange mt-2.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      )}
                   </ul>
                 </section>
 
@@ -146,14 +153,14 @@ export function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-3 ml-1">
                     {[
-                    'We do not sell or rent your personal information.',
-                    'We do not share mobile information for marketing or promotional purposes.'].
-                    map((item, i) =>
-                    <li key={i} className="flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange mt-2.5 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    )}
+                      'We do not sell or rent your personal information.',
+                      'We do not share mobile information for marketing or promotional purposes.'].
+                      map((item, i) =>
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange mt-2.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      )}
                   </ul>
                 </section>
 

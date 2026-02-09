@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import {
@@ -562,6 +564,38 @@ export function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title={`${post.title} - Boostify USA Blog`}
+        description={post.excerpt}
+        canonicalUrl={`/blog/${slug}`}
+        ogImage={post.featuredImage}
+        ogType="article"
+      />
+      <SchemaJSON
+        type="Article"
+        data={{
+          headline: post.title,
+          description: post.excerpt,
+          image: post.featuredImage.startsWith('http') ? post.featuredImage : `https://boostifyusa.com${post.featuredImage}`,
+          author: {
+            "@type": "Person",
+            "name": post.author
+          },
+          publisher: {
+            "@type": "Organization",
+            "name": "Boostify USA",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://boostifyusa.com/icon.png"
+            }
+          },
+          datePublished: post.date, // Note: Should ideally be ISO format
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://boostifyusa.com/blog/${slug}`
+          }
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

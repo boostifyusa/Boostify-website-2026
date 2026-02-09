@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
 import { Footer } from '../components/Footer';
 export function SMSProgramPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="SMS Program Terms - Boostify USA"
+        description="Terms and details regarding Boostify USA LLC's SMS program."
+        canonicalUrl="/sms-program"
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40 pb-24">

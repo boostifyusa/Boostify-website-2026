@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -8,7 +10,6 @@ import {
   Rocket,
   Zap,
   Check,
-  ArrowRight,
   Layers,
   Clock,
   DollarSign,
@@ -21,6 +22,23 @@ import {
 export function AppDevelopmentPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="App Development & MVP Services - Boostify USA"
+        description="Turn your app idea into a reality. We build investor-ready MVPs and custom applications for startups and businesses in Fresno."
+        canonicalUrl="/app-development"
+      />
+      <SchemaJSON
+        type="Service"
+        data={{
+          name: "App Development",
+          description: "Custom application development and MVP building services for startups.",
+          provider: {
+            "@type": "LocalBusiness",
+            "name": "Boostify USA"
+          },
+          areaServed: "Fresno, CA",
+        }}
+      />
       <Navigation />
 
       <main>

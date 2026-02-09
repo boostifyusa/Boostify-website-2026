@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import {
   MapPin,
@@ -298,6 +300,26 @@ function ContactForm() {
 export function ContactPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Contact Boostify USA - Fresno Web Design Agency"
+        description="Get in touch with Boostify USA. Web design, SEO, and marketing services in Fresno, CA. Call (559) 785-3834."
+        canonicalUrl="/contact"
+      />
+      <SchemaJSON
+        type="LocalBusiness" // Using LocalBusiness again as it's the contact page
+        data={{
+          "@id": "https://boostifyusa.com/#localbusiness",
+          "name": "Boostify USA",
+          "url": "https://boostifyusa.com/contact",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-559-785-3834",
+            "contactType": "sales",
+            "areaServed": "US",
+            "availableLanguage": "English"
+          }
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

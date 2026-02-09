@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TrustBadges } from '../components/TrustBadges';
@@ -50,6 +52,23 @@ export function LocalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Local Marketing & Google Ads Fresno - Boostify USA"
+        description="Maximize your ROI with precision-targeted Google Ads and Local Service Ads. We help Fresno businesses get more leads instantly."
+        canonicalUrl="/local-marketing"
+      />
+      <SchemaJSON
+        type="Service"
+        data={{
+          name: "Local Marketing Services",
+          description: "Google Ads (PPC) and Local Service Ads management for businesses in Fresno, CA.",
+          provider: {
+            "@type": "LocalBusiness",
+            "name": "Boostify USA"
+          },
+          areaServed: "Fresno, CA",
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

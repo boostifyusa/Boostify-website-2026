@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TrustBadges } from '../components/TrustBadges';
@@ -46,6 +48,23 @@ export function WebDesignPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Custom Web Design Fresno - Boostify USA"
+        description="Custom, SEO-optimized web design for Fresno businesses. Mobile-first, fast loading, and built to convert visitors into customers."
+        canonicalUrl="/web-design"
+      />
+      <SchemaJSON
+        type="Service"
+        data={{
+          name: "Custom Web Design",
+          description: "Professional web design services for local businesses in Fresno, CA.",
+          provider: {
+            "@type": "LocalBusiness",
+            "name": "Boostify USA"
+          },
+          areaServed: "Fresno, CA"
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

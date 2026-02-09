@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -83,6 +85,23 @@ export function MaintenancePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Website Maintenance Plans - Boostify USA"
+        description="Keep your website secure, fast, and up-to-date with our comprehensive maintenance plans. Daily backups, security scans, and 24/7 monitoring."
+        canonicalUrl="/maintenance"
+      />
+      <SchemaJSON
+        type="Service"
+        data={{
+          name: "Website Maintenance",
+          description: "Professional website maintenance, security monitoring, and updates for businesses.",
+          provider: {
+            "@type": "LocalBusiness",
+            "name": "Boostify USA"
+          },
+          areaServed: "Fresno, CA",
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">

@@ -1,10 +1,16 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
 import { Footer } from '../components/Footer';
 export function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Terms of Service - Boostify USA"
+        description="Terms and Conditions for using Boostify USA LLC services."
+        canonicalUrl="/terms"
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40 pb-24">

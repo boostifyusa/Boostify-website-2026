@@ -2,6 +2,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
+import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { ArrowRight, TrendingUp } from 'lucide-react';
@@ -56,6 +58,22 @@ const projects = [
 export function OurWorkPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+      <SeoHead
+        title="Our Work & Portfolio - Boostify USA"
+        description="Explore our portfolio of custom websites, SEO success stories, and digital marketing campaigns for Fresno businesses."
+        canonicalUrl="/work"
+      />
+      <SchemaJSON
+        type="CollectionPage"
+        data={{
+          name: "Our Work",
+          description: "Portfolio of Boostify USA's web design and marketing projects.",
+          publisher: {
+            "@type": "Organization",
+            "name": "Boostify USA"
+          }
+        }}
+      />
       <Navigation />
 
       <main className="pt-28 md:pt-40">
