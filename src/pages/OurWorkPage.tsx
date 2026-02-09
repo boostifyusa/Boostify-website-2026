@@ -144,7 +144,7 @@ export function OurWorkPage() {
                   delay: i * 0.1,
                   duration: 0.5
                 }}
-                className="group relative block rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[21/9]">
+                className="group relative block rounded-3xl overflow-hidden aspect-[10/11] md:aspect-[21/9]">
 
                 {/* Background Image */}
                 <div className="absolute inset-0 bg-dark">
