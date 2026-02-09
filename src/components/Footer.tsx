@@ -162,7 +162,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} Boostify USA. All rights reserved.
           </p>
-          <p>Proudly serving businesses in Fresno and the Central Valley.</p>
+          <p>❤️ Proudly serving businesses in Fresno, CA and across all California</p>
         </div>
       </div>
     </footer>);

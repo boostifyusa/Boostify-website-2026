@@ -170,7 +170,12 @@ export function MaintenancePage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <Link
-                to="/maintenance#pricing"
+                to="/maintenance#included"
+                onClick={() => {
+                  setTimeout(() => {
+                    document.getElementById('included')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
                 See What's Included
               </Link>
@@ -383,7 +388,7 @@ export function MaintenancePage() {
         </section>
 
         {/* Bento Feature Grid */}
-        <section id="features" className="py-24 px-6 bg-light/50">
+        <section id="features" className="py-24 px-6 bg-light/50" id="included">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">

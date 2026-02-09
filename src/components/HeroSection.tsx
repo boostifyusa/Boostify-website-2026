@@ -47,7 +47,7 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
 
             <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-            Local Web Design Agency
+            Local Digital Growth Studio
           </motion.div>
 
           <motion.h1
@@ -86,10 +86,9 @@ export function HeroSection() {
               duration: 0.5,
               delay: 0.2
             }}
-            className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-2xl mx-auto">
+            className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto">
 
-            Handcrafted web design & SEO for local service businesses in Fresno,
-            the Central Valley, and beyond.
+            Handcrafted design & search systems built to scale local service businesses from the Central Valley to the Coast.
           </motion.p>
 
           <motion.div
@@ -137,7 +136,7 @@ export function HeroSection() {
 
             <span className="flex items-center gap-2">
               <Check className="w-4 h-4 text-orange" strokeWidth={3} />
-              Competitively Priced
+              Built to Scale
             </span>
             <span className="flex items-center gap-2">
               <Check className="w-4 h-4 text-orange" strokeWidth={3} />

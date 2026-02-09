@@ -16,12 +16,25 @@ import { SMSProgramPage } from './pages/SMSProgramPage';
 import { AppDevelopmentPage } from './pages/AppDevelopmentPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+export function ScrollToTopOrHash() {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // If we have a hash, try to scroll to that element
+    if (hash) {
+      // Small timeout to ensure DOM is ready
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // No hash = scroll to top normally
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 }
@@ -29,7 +42,7 @@ function ScrollToTop() {
 export function App() {
   return (
     <Router>
-      <ScrollToTop />
+      <ScrollToTopOrHash />
       <Routes>
         <Route path="/" element={<AgencyHomePage />} />
         <Route path="/services" element={<ServicesPage />} />
