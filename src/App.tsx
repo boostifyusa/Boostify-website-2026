@@ -15,6 +15,7 @@ import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { SMSProgramPage } from './pages/SMSProgramPage';
 import { AppDevelopmentPage } from './pages/AppDevelopmentPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { SitemapPage } from './pages/SitemapPage';
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -58,6 +59,7 @@ export function App() {
         <Route path="/sms" element={<SMSProgramPage />} />
         <Route path="/app-development" element={<AppDevelopmentPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/sitemap" element={<SitemapPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
