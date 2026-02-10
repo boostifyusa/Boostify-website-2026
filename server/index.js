@@ -341,7 +341,15 @@ function loadBizStore() {
     try {
         console.log(`Loading Biz Store from: ${BIZ_STORE_PATH}`);
         if (fs.existsSync(BIZ_STORE_PATH)) {
-            const data = JSON.parse(fs.readFileSync(BIZ_STORE_PATH, 'utf8'));
+            const fileContent = fs.readFileSync(BIZ_STORE_PATH, 'utf8');
+
+            if (!fileContent.trim()) {
+                console.log('Biz Store file is empty. Clearing in-memory store.');
+                bizStore.clear();
+                return;
+            }
+
+            const data = JSON.parse(fileContent);
             bizStore.clear();
             for (const [key, value] of Object.entries(data)) {
                 bizStore.set(key, value);
@@ -368,12 +376,21 @@ try {
             loadAuditConfig();
         }
         else if (filename === 'pin-store.json') {
-            console.log('PIN store file changed, reloading...');
-            loadPinStore();
+            try {
+                // Debounce or just catch read errors
+                console.log('PIN store file changed, reloading...');
+                loadPinStore();
+            } catch (e) {
+                console.error('Error reloading pin store:', e);
+            }
         }
         else if (filename === 'biz-store.json') {
-            console.log('Biz store file changed, reloading...');
-            loadBizStore();
+            try {
+                console.log('Biz store file changed, reloading...');
+                loadBizStore();
+            } catch (e) {
+                console.error('Error reloading biz store:', e);
+            }
         }
     });
 } catch (err) { console.log('Watch error:', err.message); }
@@ -382,7 +399,7 @@ function saveBizStore() {
     try {
         const obj = Object.fromEntries(bizStore);
         console.log(`Saving Biz Store to: ${BIZ_STORE_PATH}`);
-        console.log(`Biz Store Content: ${JSON.stringify(obj)}`);
+        // console.log(`Biz Store Content: ${JSON.stringify(obj)}`); // Reduce noise
         fs.writeFileSync(BIZ_STORE_PATH, JSON.stringify(obj, null, 2));
         console.log('Biz Store saved successfully.');
     } catch (err) {
@@ -430,24 +447,47 @@ app.post('/api/audit/check-business', (req, res) => {
 // Quick email check — does this email already have an exhausted PIN?
 app.post('/api/audit/check-email', (req, res) => {
     const { email } = req.body;
+    console.log(`Checking email status for: ${email}`);
     if (!email) return res.status(200).json({ allowed: true });
 
     const emailLower = email.toLowerCase();
+
+    // Iterate all pins to find ANY valid logical session
+    // Logic: If they have ANY active PIN that is NOT exhausted, they are good.
+    // If they have conflicting PINs, we should ideally consolidate, but for now just prioritize the "good" one.
+
+    let hasExhaustedPin = false;
+    let validPinFound = false;
+    let existingName = '';
+
     for (const [, pinData] of pinStore.entries()) {
         if (pinData.email === emailLower && Date.now() < pinData.expiresAt) {
-            // Use global config limit, or fallback to stored maxRuns if config missing.
             const effectiveLimit = auditConfig.pin.maxRuns || pinData.maxRuns || 5;
 
-            if (pinData.runsUsed >= effectiveLimit) {
-                return res.status(403).json({
-                    allowed: false,
-                    error: 'Sorry, this email has already received a PIN and all runs have been used. Reach out to us for additional runs.'
-                });
+            if (pinData.runsUsed < effectiveLimit) {
+                // Found a valid, usable PIN!
+                validPinFound = true;
+                existingName = pinData.name;
+                // If we find at least one good one, we don't care about bad ones.
+                break;
+            } else {
+                hasExhaustedPin = true;
             }
-            // Has runs left — they're fine
-            return res.status(200).json({ allowed: true, hasExistingPin: true, name: pinData.name });
         }
     }
+
+    if (validPinFound) {
+        return res.status(200).json({ allowed: true, hasExistingPin: true, name: existingName });
+    }
+
+    if (hasExhaustedPin) {
+        console.log(`Blocking email ${email} due to exhausted PIN runs.`);
+        return res.status(403).json({
+            allowed: false,
+            error: 'Sorry, this email has already received a PIN and all runs have been used. Reach out to us for additional runs.'
+        });
+    }
+
     res.status(200).json({ allowed: true });
 });
 
