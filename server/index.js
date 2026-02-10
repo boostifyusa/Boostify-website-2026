@@ -37,6 +37,18 @@ app.get('/sitemap.xml', (req, res) => {
     }
 });
 
+// FORCE SERVE SITEMAP STYLESHEET
+app.get('/sitemap.xsl', (req, res) => {
+    const sitemapXslPath = path.join(DIST_DIR, 'sitemap.xsl');
+    if (fs.existsSync(sitemapXslPath)) {
+        res.header('Content-Type', 'text/xsl');
+        res.sendFile(sitemapXslPath);
+    } else {
+        console.error('SITEMAP XSL NOT FOUND AT:', sitemapXslPath);
+        res.status(404).send('Sitemap XSL not generated');
+    }
+});
+
 // Load Audit Configuration
 // Load Audit Configuration
 let auditConfig = {

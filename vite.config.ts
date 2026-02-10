@@ -13,6 +13,8 @@ export default defineConfig({
       hostname: 'https://boostifyusa.com',
       dynamicRoutes,
       exclude: ['/404'],
+      readable: true,
+      generateRobotsTxt: true,
     })
   ],
   build: {
