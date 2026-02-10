@@ -46,21 +46,21 @@ export function AppDevelopmentPage() {
         <section className="px-6 mb-20 relative overflow-hidden bg-dark text-white pt-36 md:pt-48 pb-24 rounded-b-[3rem]">
           {/* Subtle Dot Grid Pattern */}
           <div
-            className="absolute inset-0 opacity-[0.07] z-0"
+            className="absolute inset-0 opacity-[0.15] z-0"
             style={{
               backgroundImage:
                 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
               backgroundSize: '24px 24px',
               maskImage:
-                'radial-gradient(ellipse at center, black 20%, transparent 70%)',
+                'radial-gradient(ellipse at center, black 40%, transparent 70%)',
               WebkitMaskImage:
-                'radial-gradient(ellipse at center, black 20%, transparent 70%)'
+                'radial-gradient(ellipse at center, black 40%, transparent 70%)'
             }} />
 
 
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange/10 rounded-full blur-[100px] z-0 translate-x-1/3 -translate-y-1/4" />
 
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 lg:px-[50px]">
             <motion.div
               initial={{
                 opacity: 0,
