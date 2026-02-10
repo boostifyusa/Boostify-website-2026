@@ -3,12 +3,15 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 
+import compression from 'compression';
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
+app.use(compression());
 app.use(cors());
 app.use(express.json());
 
@@ -133,7 +136,8 @@ app.post('/api/contact', async (req, res) => {
 });
 
 // All other GET requests not handled before will return the React app
-app.get('*', (req, res) => {
+// All other GET requests not handled before will return the React app
+app.use((req, res) => {
     res.sendFile(path.join(DIST_DIR, 'index.html'));
 });
 
