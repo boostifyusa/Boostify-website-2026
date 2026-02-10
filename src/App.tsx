@@ -21,6 +21,7 @@ const SMSProgramPage = lazy(() => import('./pages/SMSProgramPage').then(module =
 const AppDevelopmentPage = lazy(() => import('./pages/AppDevelopmentPage').then(module => ({ default: module.AppDevelopmentPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(module => ({ default: module.NotFoundPage })));
 const SitemapPage = lazy(() => import('./pages/SitemapPage').then(module => ({ default: module.SitemapPage })));
+const AIPage = lazy(() => import('./pages/AIPage').then(module => ({ default: module.AIPage })));
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -66,6 +67,7 @@ export function App() {
             <Route path="/sms" element={<SMSProgramPage />} />
             <Route path="/app-development" element={<AppDevelopmentPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/ai-automation" element={<AIPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
