@@ -89,9 +89,10 @@ export function ServicesSection() {
               </p>
               <Link
                 to="/web-design"
+                aria-label="Learn more about Web Design"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 group/link">
 
-                Learn more
+                Learn more <span className="sr-only">about Web Design</span>
                 <ArrowUpRight
                   size={14}
                   className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
@@ -176,9 +177,10 @@ export function ServicesSection() {
                   </p>
                   <Link
                     to="/local-seo"
+                    aria-label="Learn more about SEO Optimization"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 mt-4 group/link">
 
-                    Learn more
+                    Learn more <span className="sr-only">about SEO Optimization</span>
                     <ArrowUpRight
                       size={14}
                       className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
@@ -242,9 +244,10 @@ export function ServicesSection() {
                   </p>
                   <Link
                     to="/local-marketing"
+                    aria-label="Learn more about Local Marketing"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 mt-4 group/link">
 
-                    Learn more
+                    Learn more <span className="sr-only">about Local Marketing</span>
                     <ArrowUpRight
                       size={14}
                       className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />

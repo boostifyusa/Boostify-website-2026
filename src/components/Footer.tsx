@@ -11,6 +11,8 @@ export function Footer() {
               <img
                 src="/Group-116.png"
                 alt="Boostify Logo"
+                width="1184"
+                height="152"
                 className="h-8 object-contain" />
 
             </div>
@@ -22,6 +24,7 @@ export function Footer() {
                 href="https://www.instagram.com/boostifyusa/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
                 className="text-white/40 hover:text-orange transition-colors">
 
                 <Instagram size={24} />
@@ -30,6 +33,7 @@ export function Footer() {
                 href="https://www.facebook.com/hyperboostusa/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow us on Facebook"
                 className="text-white/40 hover:text-orange transition-colors">
 
                 <Facebook size={24} />
@@ -38,9 +42,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-white text-lg mb-8 tracking-tight">
+            <h3 className="font-bold text-white text-lg mb-8 tracking-tight">
               Services
-            </h4>
+            </h3>
             <ul className="space-y-4 text-white/60 font-medium">
               <li>
                 <Link
@@ -86,9 +90,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-white text-lg mb-8 tracking-tight">
+            <h3 className="font-bold text-white text-lg mb-8 tracking-tight">
               Company
-            </h4>
+            </h3>
             <ul className="space-y-4 text-white/60 font-medium">
               <li>
                 <Link
@@ -136,9 +140,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-white text-lg mb-8 tracking-tight">
+            <h3 className="font-bold text-white text-lg mb-8 tracking-tight">
               Contact
-            </h4>
+            </h3>
             <ul className="space-y-4 text-white/60 font-medium">
               <li>hello@boostifyusa.com</li>
               <li>

@@ -462,7 +462,7 @@ export function LocalMarketingPage() {
                 </ul>
               </div>
 
-              <div className="order-1 lg:order-2 bg-white rounded-3xl aspect-square relative overflow-hidden border border-gray-light shadow-2xl p-8 flex items-center justify-center bg-gray-50">
+              <div className="order-1 lg:order-2 bg-white rounded-3xl aspect-square relative overflow-hidden border border-gray-light shadow-2xl p-8 pt-16 lg:pt-8 flex items-center justify-center bg-gray-50">
                 {/* LSA Listing Mockup */}
                 <div className="w-full max-w-sm space-y-4">
                   {/* Google Guaranteed Header */}

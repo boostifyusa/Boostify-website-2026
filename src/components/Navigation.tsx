@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
   X,
-  Phone,
-  MessageCircle,
   Globe,
   Search,
   MapPin,
@@ -79,6 +77,8 @@ export function Navigation() {
             <img
               src="/Group-116.png"
               alt="Boostify Logo"
+              width="1184"
+              height="152"
               className="h-8 md:h-10 w-auto object-contain" />
 
           </Link>
@@ -91,7 +91,13 @@ export function Navigation() {
                   key={link.name}
                   className="relative"
                   onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}>
+                  onMouseLeave={() => setServicesOpen(false)}
+                  onFocus={() => setServicesOpen(true)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget)) {
+                      setServicesOpen(false);
+                    }
+                  }}>
 
                   <Link
                     to={link.href}

@@ -10,7 +10,7 @@ export function HeroSection() {
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
         style={{
           backgroundImage:
-            'url(/279000632_61847a32-e2d1-49e5-bbbb-6ea5c145d830-1-1.png)',
+            'url(/hero-bg-pattern.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -212,8 +212,10 @@ export function HeroSection() {
               {/* Screenshot */}
               <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
                 <img
-                  src="/Slide-4_3-5.png"
+                  src="/Slide-4_3-5.webp"
                   alt="Martin Energy Inc website design"
+                  width="1024"
+                  height="768"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
 
               </div>
@@ -256,8 +258,10 @@ export function HeroSection() {
               {/* Screenshot */}
               <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
                 <img
-                  src="/Slide-4_3-4.png"
+                  src="/Slide-4_3-4.webp"
                   alt="Fresno State Today website design"
+                  width="1024"
+                  height="768"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
 
               </div>

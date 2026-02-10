@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Sparkles, BookOpen } from 'lucide-react';
@@ -9,7 +9,7 @@ const posts = [
     category: 'Local SEO',
     tag: 'Article',
     tagIcon: 'article',
-    image: "/pexels-level23media-19097251.jpg",
+    image: "/pexels-level23media-19097251.webp",
     slug: 'seo-mistakes'
   },
   {
@@ -17,7 +17,7 @@ const posts = [
     category: 'Web Design',
     tag: 'Guide',
     tagIcon: 'article',
-    image: "/pexels-noviana-27910251.jpg",
+    image: "/pexels-noviana-27910251.webp",
     slug: 'website-leads'
   },
   {

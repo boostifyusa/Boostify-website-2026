@@ -48,10 +48,27 @@ export function NotFoundPage() {
                         The page you're looking for might have been moved, deleted, or possibly never existed.
                     </motion.p>
 
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-12 w-full max-w-2xl mx-auto">
+                        <Link to="/" className="flex items-center justify-center p-4 bg-gray-50 rounded-xl hover:bg-orange/5 hover:text-orange transition-colors group">
+                            <span className="font-bold">Home</span>
+                        </Link>
+                        <Link to="/services" className="flex items-center justify-center p-4 bg-gray-50 rounded-xl hover:bg-orange/5 hover:text-orange transition-colors group">
+                            <span className="font-bold">Services</span>
+                        </Link>
+                        <Link to="/work" className="flex items-center justify-center p-4 bg-gray-50 rounded-xl hover:bg-orange/5 hover:text-orange transition-colors group">
+                            <span className="font-bold">Our Work</span>
+                        </Link>
+                        <Link to="/contact" className="flex items-center justify-center p-4 bg-gray-50 rounded-xl hover:bg-orange/5 hover:text-orange transition-colors group">
+                            <span className="font-bold">Contact</span>
+                        </Link>
+                    </div>
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}>
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="mt-12">
                         <Link
                             to="/"
                             className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white text-lg font-bold rounded-lg hover:bg-orange-hover transition-all duration-300 shadow-xl shadow-orange/20 hover:shadow-orange/30 transform hover:-translate-y-1">

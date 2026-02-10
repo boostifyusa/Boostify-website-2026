@@ -1,22 +1,24 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AgencyHomePage } from './pages/AgencyHomePage';
-import { ServicesPage } from './pages/ServicesPage';
-import { WebDesignPage } from './pages/WebDesignPage';
-import { LocalSEOPage } from './pages/LocalSEOPage';
-import { LocalMarketingPage } from './pages/LocalMarketingPage';
-import { MaintenancePage } from './pages/MaintenancePage';
-import { AboutPage } from './pages/AboutPage';
-import { ContactPage } from './pages/ContactPage';
-import { OurWorkPage } from './pages/OurWorkPage';
-import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
-import { BlogPostPage } from './pages/BlogPostPage';
-import { TermsOfServicePage } from './pages/TermsOfServicePage';
-import { SMSProgramPage } from './pages/SMSProgramPage';
-import { AppDevelopmentPage } from './pages/AppDevelopmentPage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { SitemapPage } from './pages/SitemapPage';
+
+// Lazy load pages for better performance
+const AgencyHomePage = lazy(() => import('./pages/AgencyHomePage').then(module => ({ default: module.AgencyHomePage })));
+const ServicesPage = lazy(() => import('./pages/ServicesPage').then(module => ({ default: module.ServicesPage })));
+const WebDesignPage = lazy(() => import('./pages/WebDesignPage').then(module => ({ default: module.WebDesignPage })));
+const LocalSEOPage = lazy(() => import('./pages/LocalSEOPage').then(module => ({ default: module.LocalSEOPage })));
+const LocalMarketingPage = lazy(() => import('./pages/LocalMarketingPage').then(module => ({ default: module.LocalMarketingPage })));
+const MaintenancePage = lazy(() => import('./pages/MaintenancePage').then(module => ({ default: module.MaintenancePage })));
+const AboutPage = lazy(() => import('./pages/AboutPage').then(module => ({ default: module.AboutPage })));
+const ContactPage = lazy(() => import('./pages/ContactPage').then(module => ({ default: module.ContactPage })));
+const OurWorkPage = lazy(() => import('./pages/OurWorkPage').then(module => ({ default: module.OurWorkPage })));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then(module => ({ default: module.PrivacyPolicyPage })));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage').then(module => ({ default: module.BlogPostPage })));
+const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage').then(module => ({ default: module.TermsOfServicePage })));
+const SMSProgramPage = lazy(() => import('./pages/SMSProgramPage').then(module => ({ default: module.SMSProgramPage })));
+const AppDevelopmentPage = lazy(() => import('./pages/AppDevelopmentPage').then(module => ({ default: module.AppDevelopmentPage })));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(module => ({ default: module.NotFoundPage })));
+const SitemapPage = lazy(() => import('./pages/SitemapPage').then(module => ({ default: module.SitemapPage })));
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -46,24 +48,26 @@ export function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTopOrHash />
-        <Routes>
-          <Route path="/" element={<AgencyHomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/web-design" element={<WebDesignPage />} />
-          <Route path="/local-seo" element={<LocalSEOPage />} />
-          <Route path="/local-marketing" element={<LocalMarketingPage />} />
-          <Route path="/maintenance" element={<MaintenancePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/work" element={<OurWorkPage />} />
-          <Route path="/privacy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms" element={<TermsOfServicePage />} />
-          <Route path="/sms" element={<SMSProgramPage />} />
-          <Route path="/app-development" element={<AppDevelopmentPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/sitemap" element={<SitemapPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white"><div className="w-12 h-12 border-4 border-orange/20 border-t-orange rounded-full animate-spin"></div></div>}>
+          <Routes>
+            <Route path="/" element={<AgencyHomePage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/web-design" element={<WebDesignPage />} />
+            <Route path="/local-seo" element={<LocalSEOPage />} />
+            <Route path="/local-marketing" element={<LocalMarketingPage />} />
+            <Route path="/maintenance" element={<MaintenancePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/work" element={<OurWorkPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsOfServicePage />} />
+            <Route path="/sms" element={<SMSProgramPage />} />
+            <Route path="/app-development" element={<AppDevelopmentPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/sitemap" element={<SitemapPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </Router>
     </HelmetProvider>
   );

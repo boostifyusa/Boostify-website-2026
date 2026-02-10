@@ -12,6 +12,29 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from the React app
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const DIST_DIR = path.join(__dirname, '../dist');
+
+// Serve static assets with efficient caching
+app.use(express.static(DIST_DIR, {
+    maxAge: '1d', // Default to 1 day
+    setHeaders: (res, path) => {
+        if (path.includes('assets')) {
+            // Hashed assets (JS/CSS) get 1 year cache
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        } else {
+            // Other static files (images, etc) get 1 day
+            res.setHeader('Cache-Control', 'public, max-age=86400');
+        }
+    }
+}));
+
 // Main Contact Route
 app.post('/api/contact', async (req, res) => {
     try {
@@ -107,6 +130,11 @@ app.post('/api/contact', async (req, res) => {
         console.error('Server Error:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
+});
+
+// All other GET requests not handled before will return the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(DIST_DIR, 'index.html'));
 });
 
 app.listen(PORT, () => {
