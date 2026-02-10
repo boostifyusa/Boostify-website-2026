@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Globe, Search, MapPin, ArrowUpRight, BarChart3 } from 'lucide-react';
+const MotionLink = motion(Link);
+
 export function ServicesSection() {
   return (
     <section id="services" className="py-32 px-6 bg-light/50">
@@ -57,7 +59,8 @@ export function ServicesSection() {
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Card 1: Web Design (Tall, Left) */}
-          <motion.div
+          <MotionLink
+            to="/web-design"
             initial={{
               opacity: 0,
               y: 30
@@ -87,17 +90,15 @@ export function ServicesSection() {
                 build custom sites that reflect your brand and work perfectly on
                 every device.
               </p>
-              <Link
-                to="/web-design"
-                aria-label="Learn more about Web Design"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 group/link">
+              <div
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 group-hover:text-orange transition-colors duration-200">
 
-                Learn more <span className="sr-only">about Web Design</span>
+                Learn more
                 <ArrowUpRight
                   size={14}
-                  className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                  className="transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" />
 
-              </Link>
+              </div>
             </div>
 
             {/* Visual: Browser Mockup */}
@@ -139,12 +140,13 @@ export function ServicesSection() {
 
             {/* Decorative background blob */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-orange/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          </motion.div>
+          </MotionLink>
 
           {/* Right Column Stack */}
           <div className="flex flex-col gap-8">
             {/* Card 2: SEO */}
-            <motion.div
+            <MotionLink
+              to="/local-seo"
               initial={{
                 opacity: 0,
                 y: 30
@@ -175,17 +177,15 @@ export function ServicesSection() {
                     optimize your site so local customers find you when they
                     need you most.
                   </p>
-                  <Link
-                    to="/local-seo"
-                    aria-label="Learn more about SEO Optimization"
-                    className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 mt-4 group/link">
+                  <div
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 group-hover:text-orange transition-colors duration-200 mt-4">
 
-                    Learn more <span className="sr-only">about SEO Optimization</span>
+                    Learn more
                     <ArrowUpRight
                       size={14}
-                      className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                      className="transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" />
 
-                  </Link>
+                  </div>
                 </div>
 
                 {/* Visual: Search Bar & Growth */}
@@ -209,10 +209,11 @@ export function ServicesSection() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </MotionLink>
 
             {/* Card 3: Local Marketing */}
-            <motion.div
+            <MotionLink
+              to="/local-marketing"
               initial={{
                 opacity: 0,
                 y: 30
@@ -242,17 +243,15 @@ export function ServicesSection() {
                     Digital strategies that drive real foot traffic. From Google
                     Ads to Local Service Ads, we put your business at the top.
                   </p>
-                  <Link
-                    to="/local-marketing"
-                    aria-label="Learn more about Local Marketing"
-                    className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 hover:text-orange transition-colors duration-200 mt-4 group/link">
+                  <div
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/60 group-hover:text-orange transition-colors duration-200 mt-4">
 
-                    Learn more <span className="sr-only">about Local Marketing</span>
+                    Learn more
                     <ArrowUpRight
                       size={14}
-                      className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                      className="transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" />
 
-                  </Link>
+                  </div>
                 </div>
 
                 {/* Visual: Map Grid */}
@@ -282,7 +281,7 @@ export function ServicesSection() {
                   <div className="absolute top-1/3 left-1/4 w-12 h-12 bg-orange/20 rounded-full -translate-x-[12px] -translate-y-[2px] animate-ping" />
                 </div>
               </div>
-            </motion.div>
+            </MotionLink>
           </div>
         </div>
       </div>

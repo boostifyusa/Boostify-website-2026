@@ -2,8 +2,10 @@ import { Suspense, lazy, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
+import { AgencyHomePage } from './pages/AgencyHomePage';
+
 // Lazy load pages for better performance
-const AgencyHomePage = lazy(() => import('./pages/AgencyHomePage').then(module => ({ default: module.AgencyHomePage })));
+// AgencyHomePage is imported directly to improve LCP (Largest Contentful Paint) for the main landing page
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then(module => ({ default: module.ServicesPage })));
 const WebDesignPage = lazy(() => import('./pages/WebDesignPage').then(module => ({ default: module.WebDesignPage })));
 const LocalSEOPage = lazy(() => import('./pages/LocalSEOPage').then(module => ({ default: module.LocalSEOPage })));
