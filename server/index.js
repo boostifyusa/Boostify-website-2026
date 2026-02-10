@@ -30,7 +30,16 @@ app.get('/sitemap.xml', (req, res) => {
     const sitemapPath = path.join(DIST_DIR, 'sitemap.xml');
     if (fs.existsSync(sitemapPath)) {
         res.header('Content-Type', 'application/xml');
-        res.sendFile(sitemapPath);
+
+        // Read the file and inject the stylesheet
+        let content = fs.readFileSync(sitemapPath, 'utf8');
+        if (!content.includes('xml-stylesheet')) {
+            content = content.replace(
+                '<?xml version="1.0" encoding="UTF-8"?>',
+                '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>'
+            );
+        }
+        res.send(content);
     } else {
         console.error('SITEMAP NOT FOUND AT:', sitemapPath);
         res.status(404).send('Sitemap not generated');
