@@ -6,14 +6,14 @@ export function Footer() {
     <footer className="bg-dark border-t border-white/10 pt-24 pb-12 px-6 text-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-          <div className="col-span-1 md:col-span-1">
-            <div className="bg-white p-2 inline-block rounded mb-8">
+          <div className="col-span-1 md:col-span-1 text-left">
+            <div className="bg-white p-2 inline-flex rounded mb-8">
               <img
                 src="/Group-116.png"
                 alt="Boostify Logo"
                 width="1184"
                 height="152"
-                className="h-8 object-contain" />
+                className="h-8 w-auto object-contain" />
 
             </div>
             <p className="text-white/60 mb-8 font-medium leading-relaxed">
@@ -24,18 +24,16 @@ export function Footer() {
                 href="https://www.instagram.com/boostifyusa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow us on Instagram"
                 className="text-white/40 hover:text-orange transition-colors">
-
+                <span className="sr-only">Follow us on Instagram</span>
                 <Instagram size={24} />
               </a>
               <a
                 href="https://www.facebook.com/hyperboostusa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow us on Facebook"
                 className="text-white/40 hover:text-orange transition-colors">
-
+                <span className="sr-only">Follow us on Facebook</span>
                 <Facebook size={24} />
               </a>
             </div>
