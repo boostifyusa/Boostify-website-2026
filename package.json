@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npx vite\" \"node server/index.js\"",
-    "build": "npx vite build",
+    "build": "npx vite build && node scripts/inject-sitemap-xsl.js",
     "start": "node server/index.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "preview": "npx vite preview"
