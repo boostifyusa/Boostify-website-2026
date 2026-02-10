@@ -122,7 +122,7 @@ export const StepLeadCapture = ({
                                         name="businessName"
                                         value={leadForm.businessName}
                                         onChange={handleInputChange}
-                                        placeholder="e.g. Victor's Plumbing"
+                                        placeholder="e.g. David's Plumbing"
                                         className="w-full h-14 bg-gray-50 border-2 border-transparent focus:bg-white focus:border-orange rounded-xl pl-12 pr-4 font-bold text-dark outline-none transition-all placeholder:text-gray-300"
                                     />
                                 </div>
