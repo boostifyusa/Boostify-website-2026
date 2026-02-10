@@ -5,6 +5,7 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { ArrowRight, Map } from 'lucide-react';
+import { blogPosts } from '../data/posts';
 
 const sitemapLinks = [
     {
@@ -25,6 +26,8 @@ const sitemapLinks = [
             { name: 'Local Marketing', path: '/local-marketing' },
             { name: 'Website Maintenance', path: '/maintenance' },
             { name: 'App Development', path: '/app-development' },
+            { name: 'AI Automation', path: '/ai-automation' },
+            { name: 'SEO Audit Tool', path: '/seo-audit' },
         ]
     },
     {
@@ -37,13 +40,11 @@ const sitemapLinks = [
         ]
     },
     {
-        category: 'Resources',
-        links: [
-            { name: 'Blog: SEO Mistakes', path: '/blog/seo-mistakes' },
-            { name: 'Blog: Website Leads', path: '/blog/website-leads' },
-            { name: 'Blog: Google Ads vs LSA', path: '/blog/google-ads-vs-lsa' },
-            { name: 'Blog: Google Reviews', path: '/blog/dental-redesign' },
-        ]
+        category: 'Insights & Resources',
+        links: Object.entries(blogPosts).map(([slug, post]: [string, any]) => ({
+            name: post.title,
+            path: `/blog/${slug}`
+        }))
     }
 ];
 
