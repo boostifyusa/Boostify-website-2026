@@ -702,31 +702,9 @@ app.get('/api/test-email-view', (req, res) => {
 
 
 
-// Diagnostic Endpoint (GET)
-app.get('/api/test-direct/:pin', (req, res) => {
-    const pin = String(req.params.pin || '').trim();
-    const stored = pinStore.get(pin);
-    const result = {
-        testPin: pin,
-        foundInStore: !!stored,
-        storeSize: pinStore.size,
-        storeKeys: Array.from(pinStore.keys()).slice(0, 5), // Limit keys
-        serverTime: Date.now(),
-        entry: stored
-    };
-    if (stored) {
-        result.expiryCheck = {
-            expiresAt: stored.expiresAt,
-            isExpired: Date.now() > stored.expiresAt
-        };
-        result.runCheck = {
-            runsUsed: stored.runsUsed,
-            maxRuns: stored.maxRuns,
-            isExhausted: stored.runsUsed >= stored.maxRuns
-        };
-    }
-    res.json(result);
-});
+
+// Diagnostic Endpoint removed for security
+
 
 // Verify PIN — supports PIN-only lookup (bypass) or email+PIN
 app.post('/api/audit/verify-pin', async (req, res) => {

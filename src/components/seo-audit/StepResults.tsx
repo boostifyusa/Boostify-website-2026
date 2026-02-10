@@ -103,7 +103,7 @@ export const StepResults = ({
                         const medals = ['🥇', '🥈', '🥉'];
                         return (
                             <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-lg">
-                                <h3 className="font-black text-dark text-sm uppercase tracking-wide mb-4">Who's Beating You</h3>
+                                <h3 className="font-black text-dark text-sm uppercase tracking-wide mb-4">Your Top Competitors</h3>
                                 <div className="space-y-3">
                                     {sorted.map(([name, count], idx) => (
                                         <div key={name} className="flex items-center justify-between">
