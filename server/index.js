@@ -25,6 +25,18 @@ const __dirname = path.dirname(__filename);
 
 const DIST_DIR = path.join(__dirname, '../dist');
 
+// FORCE SERVE SITEMAP
+app.get('/sitemap.xml', (req, res) => {
+    const sitemapPath = path.join(DIST_DIR, 'sitemap.xml');
+    if (fs.existsSync(sitemapPath)) {
+        res.header('Content-Type', 'application/xml');
+        res.sendFile(sitemapPath);
+    } else {
+        console.error('SITEMAP NOT FOUND AT:', sitemapPath);
+        res.status(404).send('Sitemap not generated');
+    }
+});
+
 // Load Audit Configuration
 // Load Audit Configuration
 let auditConfig = {
