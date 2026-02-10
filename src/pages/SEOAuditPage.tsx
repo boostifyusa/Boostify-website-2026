@@ -541,10 +541,10 @@ export function SEOAuditPage() {
                 d: JSON.stringify(compressedParams),
                 b: business.name,
                 k: keyword,
-                r: business.rating.toString(),
-                rv: business.reviews.toString(),
-                clat: business.location.latitude.toString(),
-                clng: business.location.longitude.toString()
+                r: (business.rating || 0).toString(),
+                rv: (business.reviews || 0).toString(),
+                clat: (business.location?.latitude || 0).toString(),
+                clng: (business.location?.longitude || 0).toString()
             });
 
             // Ensure loading animation shows for at least 6 seconds

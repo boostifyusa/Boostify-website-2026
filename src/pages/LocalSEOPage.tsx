@@ -236,23 +236,23 @@ export function LocalSEOPage() {
                 </div>
               </motion.div>
 
-              {/* The Original Graphic (Dark Theme) */}
-              <div className="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden relative z-10 aspect-[4/3] flex flex-col p-3 md:p-4">
-                <div className="bg-slate-800 border border-slate-700 rounded-full px-4 py-3 flex items-center gap-3 mb-4 shadow-sm z-20">
+              {/* The Original Graphic (Light Theme) */}
+              <div className="bg-gradient-to-br from-gray-50 to-gray-200 rounded-3xl border border-white shadow-2xl overflow-hidden relative z-10 aspect-[4/3] flex flex-col p-3 md:p-4">
+                <div className="bg-white border border-gray-100 rounded-full px-4 py-3 flex items-center gap-3 mb-4 shadow-sm z-20">
                   <Search size={18} className="text-gray-400" />
-                  <span className="text-white/90 font-medium">plumber near me</span>
-                  <div className="w-px h-5 bg-slate-600 ml-auto" />
+                  <span className="text-dark font-medium">plumber near me</span>
+                  <div className="w-px h-5 bg-gray-200 ml-auto" />
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Live Scan</span>
+                    <span className="text-xs font-bold text-green-600 uppercase tracking-wider">Live Scan</span>
                   </div>
                 </div>
 
-                <div className="flex-1 bg-slate-950 rounded-2xl relative overflow-hidden border border-slate-800 flex items-center justify-center">
-                  <div className="absolute inset-0 opacity-20 select-none pointer-events-none" style={{ backgroundImage: "radial-gradient(#94A3B8 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
+                <div className="flex-1 bg-white rounded-2xl relative overflow-hidden border border-gray-100 flex items-center justify-center">
+                  <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none" style={{ backgroundImage: "radial-gradient(#000 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
                   <svg className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M-10 40 Q 30 30 50 50 T 110 60" stroke="#fff" strokeWidth="2" fill="none"></path>
-                    <path d="M40 -10 Q 50 30 50 50 T 60 110" stroke="#fff" strokeWidth="2" fill="none"></path>
+                    <path d="M-10 40 Q 30 30 50 50 T 110 60" stroke="#000" strokeWidth="2" fill="none"></path>
+                    <path d="M40 -10 Q 50 30 50 50 T 60 110" stroke="#000" strokeWidth="2" fill="none"></path>
                   </svg>
 
                   <div className="grid grid-cols-7 gap-1.5 md:gap-3 relative z-10 p-4">
@@ -284,9 +284,9 @@ export function LocalSEOPage() {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.5, type: "spring" }}
-                            className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-slate-800 border-2 border-white shadow-xl flex items-center justify-center z-20"
+                            className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white border-2 border-gray-100 shadow-xl flex items-center justify-center z-20"
                           >
-                            <MapPin size={14} className="text-white" fill="currentColor" />
+                            <MapPin size={14} className="text-dark" fill="currentColor" />
                           </motion.div>
                         );
                       }
@@ -298,7 +298,7 @@ export function LocalSEOPage() {
                           whileInView={{ scale: 1, opacity: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: delay, type: "spring", stiffness: 200 }}
-                          className={`w-6 h-6 md:w-8 md:h-8 rounded-full ${colorClass} shadow-lg flex items-center justify-center text-[10px] md:text-xs font-bold border border-white/20`}
+                          className={`w-6 h-6 md:w-8 md:h-8 rounded-full ${colorClass} shadow-lg flex items-center justify-center text-[10px] md:text-xs font-bold border border-white/50`}
                         >
                           {rank}
                         </motion.div>
@@ -306,19 +306,19 @@ export function LocalSEOPage() {
                     })}
                   </div>
 
-                  <div className="absolute bottom-4 z-30 bg-slate-900/90 backdrop-blur-md rounded-xl p-3 shadow-xl border border-slate-700 flex items-center gap-3 transition-transform hover:scale-105 cursor-default">
+                  <div className="absolute bottom-4 z-30 bg-white/90 backdrop-blur-md rounded-xl p-3 shadow-xl border border-gray-100 flex items-center gap-3 transition-transform hover:scale-105 cursor-default">
                     <div className="w-10 h-10 bg-orange/10 rounded-lg shrink-0 flex items-center justify-center">
                       <span className="text-orange font-black text-sm">VP</span>
                     </div>
                     <div>
-                      <div className="text-xs font-black text-white mb-0.5">Valley Pro Plumbing</div>
+                      <div className="text-xs font-black text-dark mb-0.5">Valley Pro Plumbing</div>
                       <div className="flex items-center gap-1">
                         <div className="flex text-yellow-500 font-black gap-0.5">
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} size={8} fill="currentColor" />
                           ))}
                         </div>
-                        <span className="text-[9px] text-gray-400 font-bold">4.9 (127)</span>
+                        <span className="text-[9px] text-gray-500 font-bold">4.9 (127)</span>
                       </div>
                     </div>
                   </div>
