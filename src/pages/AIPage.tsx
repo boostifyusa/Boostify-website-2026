@@ -45,12 +45,29 @@ export function AIPage() {
             />
             <Navigation />
 
-            <main className="pt-28 md:pt-40">
+            <main>
                 {/* Hero Section */}
-                <section className="px-6 mb-20 relative overflow-hidden">
+                <section className="px-6 relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32">
+                    {/* Topographic Background Pattern - Subtle & Standard */}
+                    <div
+                        className="absolute inset-0 pointer-events-none opacity-[0.35]"
+                        style={{
+                            backgroundImage: 'url(/hero-bg-pattern.webp)',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }} />
+
+                    {/* Radial white fade for text readability */}
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                            background: 'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%)'
+                        }} />
+
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange/5 rounded-full blur-[100px] -z-10 translate-x-1/3 -translate-y-1/4" />
 
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-[50px]">
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-[50px] relative z-10">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}

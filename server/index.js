@@ -521,9 +521,8 @@ app.post('/api/audit/send-pin', async (req, res) => {
   <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#F5F5F7;padding:40px 20px;">
     <tr>
       <td align="center">
-        <!-- Logo -->
         <div style="margin-bottom:32px;">
-          <img src="https://boostifyusa.com/Group-116.png" alt="Boostify" width="320" style="display:block;width:320px;height:auto;border:0;">
+          <img src="https://boostifyusa.com/Group-116.png" alt="Boostify" width="280" style="display:block;width:280px;height:auto;border:0;">
         </div>
         
         <!-- Card -->
@@ -648,9 +647,8 @@ app.get('/api/test-email-view', (req, res) => {
   <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#F5F5F7;padding:40px 20px;">
     <tr>
       <td align="center">
-        <!-- Logo -->
         <div style="margin-bottom:32px;">
-          <img src="https://boostifyusa.com/Group-116.png" alt="Boostify" width="320" style="display:block;width:320px;height:auto;border:0;">
+          <img src="https://boostifyusa.com/Group-116.png" alt="Boostify" width="280" style="display:block;width:280px;height:auto;border:0;">
         </div>
         
         <!-- Card -->
@@ -701,6 +699,8 @@ app.get('/api/test-email-view', (req, res) => {
 </html>`;
     res.send(html);
 });
+
+
 
 // Diagnostic Endpoint (GET)
 app.get('/api/test-direct/:pin', (req, res) => {

@@ -62,7 +62,11 @@ export const StepLeadCapture = ({
                         Free Instant Analysis
                     </div>
                     <h1 className="text-4xl md:text-5xl font-black text-dark mb-4 tracking-tight">
-                        See how you rank instantly
+                        See how you rank{' '}
+                        <span className="relative inline-block px-2 isolate">
+                            <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
+                            <span className="text-orange relative z-10">instantly</span>
+                        </span>
                     </h1>
                     <p className="text-gray-500 text-lg">
                         See how you rank on Google Maps in real-time.

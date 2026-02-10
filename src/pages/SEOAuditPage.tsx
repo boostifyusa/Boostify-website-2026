@@ -459,9 +459,10 @@ export function SEOAuditPage() {
         // Log removed: Confidence in fix.
 
         // If we have a verified PIN, trust the verified email even if form is empty (e.g. refresh/rerun flow)
-        const currentEmail = leadForm.email || verifiedEmail;
+        const currentEmail = (leadForm.email || verifiedEmail).toLowerCase();
+        const vEmail = verifiedEmail.toLowerCase();
 
-        if (verifiedPin && verifiedEmail && verifiedEmail === currentEmail) {
+        if (verifiedPin && verifiedEmail && vEmail === currentEmail) {
             // Already verified — go straight to keywords
             // Ensure form state is consistent for next steps and subtitles
             if (!leadForm.email) {
