@@ -8,12 +8,12 @@ import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TrustBadges } from '../components/TrustBadges';
 import { TestimonialsSection } from '../components/TestimonialsSection';
+
 import {
   Check,
   ChevronDown,
   ChevronUp,
   Clock,
-  Search,
   ShieldCheck,
   AlertTriangle,
   MapPin,
@@ -24,8 +24,10 @@ import {
   Star,
   Phone,
   Compass,
-  ArrowRight
+  ArrowRight,
+  Search
 } from 'lucide-react';
+
 // MapPinOff icon component since it might not be in the lucide version or just to be safe
 const MapPinOff = ({ size = 24, className = '' }) =>
   <svg
@@ -126,7 +128,7 @@ export function LocalSEOPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
-                  to="/contact"
+                  to="/seo-audit"
                   className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
                   Get Your Free Audit
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -234,44 +236,30 @@ export function LocalSEOPage() {
                 </div>
               </motion.div>
 
-              {/* Local Map Grid Graphic */}
-              <div className="bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden relative z-10 p-3 md:p-4 aspect-[4/3] flex flex-col">
-                {/* Search Bar */}
-                <div className="bg-white border border-gray-100 rounded-full px-4 py-3 flex items-center gap-3 mb-4 shadow-sm z-20">
+              {/* The Original Graphic (Dark Theme) */}
+              <div className="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden relative z-10 aspect-[4/3] flex flex-col p-3 md:p-4">
+                <div className="bg-slate-800 border border-slate-700 rounded-full px-4 py-3 flex items-center gap-3 mb-4 shadow-sm z-20">
                   <Search size={18} className="text-gray-400" />
-                  <span className="text-dark/80 font-medium">
-                    plumber near me
-                  </span>
-                  <div className="w-px h-5 bg-gray-200 ml-auto" />
+                  <span className="text-white/90 font-medium">plumber near me</span>
+                  <div className="w-px h-5 bg-slate-600 ml-auto" />
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs font-bold text-green-600 uppercase tracking-wider">Live Scan</span>
+                    <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Live Scan</span>
                   </div>
                 </div>
 
-                {/* Map Area */}
-                <div className="flex-1 bg-slate-50 rounded-2xl relative overflow-hidden border border-gray-100 flex items-center justify-center">
-                  {/* Map Background (Abstract) */}
-                  <div className="absolute inset-0 opacity-40 select-none pointer-events-none"
-                    style={{
-                      backgroundImage: 'radial-gradient(#94A3B8 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                  {/* Roads/River (Decorative) */}
-                  <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M-10 40 Q 30 30 50 50 T 110 60" stroke="#000" strokeWidth="2" fill="none" />
-                    <path d="M40 -10 Q 50 30 50 50 T 60 110" stroke="#000" strokeWidth="2" fill="none" />
+                <div className="flex-1 bg-slate-950 rounded-2xl relative overflow-hidden border border-slate-800 flex items-center justify-center">
+                  <div className="absolute inset-0 opacity-20 select-none pointer-events-none" style={{ backgroundImage: "radial-gradient(#94A3B8 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
+                  <svg className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M-10 40 Q 30 30 50 50 T 110 60" stroke="#fff" strokeWidth="2" fill="none"></path>
+                    <path d="M40 -10 Q 50 30 50 50 T 60 110" stroke="#fff" strokeWidth="2" fill="none"></path>
                   </svg>
 
-                  {/* 7x7 Grid */}
                   <div className="grid grid-cols-7 gap-1.5 md:gap-3 relative z-10 p-4">
                     {Array.from({ length: 49 }).map((_, i) => {
                       const row = Math.floor(i / 7);
                       const col = i % 7;
-                      const centerRow = 3;
-                      const centerCol = 3;
-                      const dist = Math.sqrt(Math.pow(row - centerRow, 2) + Math.pow(col - centerCol, 2));
+                      const dist = Math.sqrt(Math.pow(row - 3, 2) + Math.pow(col - 3, 2));
 
                       let rank, colorClass, delay;
 
@@ -289,7 +277,6 @@ export function LocalSEOPage() {
                         delay = dist * 0.05;
                       }
 
-                      // Center Pin (Target Business)
                       if (row === 3 && col === 3) {
                         return (
                           <motion.div
@@ -297,7 +284,7 @@ export function LocalSEOPage() {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.5, type: "spring" }}
-                            className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-dark border-2 border-white shadow-xl flex items-center justify-center z-20"
+                            className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-slate-800 border-2 border-white shadow-xl flex items-center justify-center z-20"
                           >
                             <MapPin size={14} className="text-white" fill="currentColor" />
                           </motion.div>
@@ -319,35 +306,26 @@ export function LocalSEOPage() {
                     })}
                   </div>
 
-                  {/* Business Card Overlay */}
-                  <div className="absolute bottom-4 z-30 bg-white/90 backdrop-blur-md rounded-xl p-3 shadow-xl border border-gray-100 flex items-center gap-3 transition-transform hover:scale-105 cursor-default">
+                  <div className="absolute bottom-4 z-30 bg-slate-900/90 backdrop-blur-md rounded-xl p-3 shadow-xl border border-slate-700 flex items-center gap-3 transition-transform hover:scale-105 cursor-default">
                     <div className="w-10 h-10 bg-orange/10 rounded-lg shrink-0 flex items-center justify-center">
                       <span className="text-orange font-black text-sm">VP</span>
                     </div>
                     <div>
-                      <div className="text-xs font-black text-dark mb-0.5">
-                        Valley Pro Plumbing
-                      </div>
+                      <div className="text-xs font-black text-white mb-0.5">Valley Pro Plumbing</div>
                       <div className="flex items-center gap-1">
-                        <div className="flex text-yellow-500">
-                          {[...Array(5)].map((_, i) =>
+                        <div className="flex text-yellow-500 font-black gap-0.5">
+                          {[...Array(5)].map((_, i) => (
                             <Star key={i} size={8} fill="currentColor" />
-                          )}
+                          ))}
                         </div>
-                        <span className="text-[9px] text-gray-500 font-bold">
-                          4.9 (127)
-                        </span>
+                        <span className="text-[9px] text-gray-400 font-bold">4.9 (127)</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Center Radar Ping Effect */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-green-500/20 rounded-full animate-ping pointer-events-none" style={{ animationDuration: '3s' }} />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-green-500/20 rounded-full animate-ping pointer-events-none" style={{ animationDuration: "3s" }}></div>
                 </div>
               </div>
-
-              {/* Decorative Blob */}
-              <div className="absolute -bottom-10 -left-10 w-full h-full bg-orange/5 rounded-3xl -z-10 hidden lg:block" />
             </motion.div>
           </div>
         </section >

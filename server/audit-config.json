@@ -4,7 +4,7 @@
         "limitResetDays": 30
     },
     "pin": {
-        "maxRuns": 80,
+        "maxRuns": 5,
         "expiryDays": 180,
         "limitResetDays": 30
     },

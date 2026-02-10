@@ -22,6 +22,7 @@ interface LocalMapGridProps {
     centerLng?: number;
     variant?: 'card' | 'fullscreen';
     loadingVariant?: 'demo' | 'scan';
+    theme?: 'light' | 'dark';
 }
 
 export function LocalMapGrid({
@@ -36,7 +37,8 @@ export function LocalMapGrid({
     centerLat,
     centerLng,
     variant = 'card',
-    loadingVariant = 'demo'
+    loadingVariant = 'demo',
+    theme = 'light'
 }: LocalMapGridProps) {
     const totalPoints = 16;
     const isLoading = gridData.length === 0;
@@ -79,12 +81,13 @@ export function LocalMapGrid({
     };
 
     const isFullScreen = variant === 'fullscreen';
+    const isDark = theme === 'dark';
 
-    const cardContainerClasses = `flex flex-col w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-100 ${className}`;
-    const cardMapClasses = `relative overflow-hidden w-full bg-[#e5e3df] ${showSearch ? '' : 'rounded-t-3xl'} ${showBusinessCard ? '' : 'rounded-b-3xl'} aspect-[4/3]`;
+    const cardContainerClasses = `flex flex-col w-full rounded-3xl overflow-hidden shadow-2xl border ${isDark ? 'border-slate-800 bg-slate-900' : 'border-gray-100 bg-white'} ${className}`;
+    const cardMapClasses = `relative overflow-hidden w-full ${isDark ? 'bg-slate-800' : 'bg-[#e5e3df]'} ${showSearch ? '' : 'rounded-t-3xl'} ${showBusinessCard ? '' : 'rounded-b-3xl'} aspect-[4/3]`;
 
     const fullScreenContainerClasses = `flex flex-col w-full h-full ${className}`;
-    const fullScreenMapClasses = `relative overflow-hidden w-full h-full bg-[#e5e3df]`;
+    const fullScreenMapClasses = `relative overflow-hidden w-full h-full ${isDark ? 'bg-slate-800' : 'bg-[#e5e3df]'}`;
 
     const containerClasses = isFullScreen ? fullScreenContainerClasses : cardContainerClasses;
     const mapContainerClasses = isFullScreen ? fullScreenMapClasses : cardMapClasses;
@@ -94,13 +97,13 @@ export function LocalMapGrid({
 
             {/* Search Bar */}
             {showSearch && (
-                <div className={`${isFullScreen ? 'absolute top-6 left-6 z-30 w-auto' : 'bg-white border border-gray-100 rounded-t-3xl border-b-0 px-6 py-4'} flex items-center gap-4 shadow-sm transition-all relative z-20`}>
+                <div className={`${isFullScreen ? 'absolute top-6 left-6 z-30 w-auto' : `${isDark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-100'} border rounded-t-3xl border-b-0 px-6 py-4`} flex items-center gap-4 shadow-sm transition-all relative z-20`}>
                     <div className={`flex items-center gap-4 ${isFullScreen ? 'bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-lg border border-gray-200/50' : 'w-full'}`}>
                         <Search size={20} className="text-gray-400" />
-                        <span className="text-dark/80 font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis max-w-[200px] md:max-w-xs">
+                        <span className={`${isDark && !isFullScreen ? 'text-white' : 'text-dark/80'} font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis max-w-[200px] md:max-w-xs`}>
                             {keyword}
                         </span>
-                        <div className="flex items-center gap-2 shrink-0 pl-4 border-l border-gray-200">
+                        <div className={`flex items-center gap-2 shrink-0 pl-4 border-l ${isDark && !isFullScreen ? 'border-slate-700' : 'border-gray-200'}`}>
                             <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
                             <span className="text-xs font-black text-green-600 uppercase tracking-wider">Live</span>
                         </div>
@@ -275,13 +278,13 @@ export function LocalMapGrid({
 
             {/* Business Card */}
             {showBusinessCard && (
-                <div className={`${isFullScreen ? 'absolute bottom-6 left-6 z-30 w-auto' : 'bg-white border border-gray-100 rounded-b-3xl border-t-0 p-5 shadow-2xl relative z-20'}`}>
+                <div className={`${isFullScreen ? 'absolute bottom-6 left-6 z-30 w-auto' : `${isDark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-100'} border rounded-b-3xl border-t-0 p-5 shadow-2xl relative z-20`}`}>
                     <div className={`flex items-center gap-4 ${isFullScreen ? 'bg-white/95 backdrop-blur p-4 rounded-2xl shadow-xl border border-gray-200/50' : ''}`}>
                         <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center shrink-0 text-orange font-black text-lg">
                             {businessName.substring(0, 2).toUpperCase()}
                         </div>
                         <div className="min-w-0 flex-1">
-                            <h4 className="font-black text-dark text-base leading-snug">{businessName}</h4>
+                            <h4 className={`font-black ${isDark && !isFullScreen ? 'text-white' : 'text-dark'} text-base leading-snug`}>{businessName}</h4>
                             <div className="flex items-center gap-2 text-sm text-gray-500 font-medium mt-0.5">
                                 <span className="text-yellow-500 font-black flex items-center gap-1">
                                     <Star fill="currentColor" size={14} />

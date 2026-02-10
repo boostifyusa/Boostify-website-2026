@@ -1,20 +1,15 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useSearchParams } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { LocalMapGrid } from '../components/LocalMapGrid';
-import {
-    ArrowRight,
-    Check,
-    Search,
-    MapPin,
-    AlertCircle,
-    Loader2,
-    Edit2,
-    Info,
-    Mail
-} from 'lucide-react';
+import { StepLeadCapture } from '../components/seo-audit/StepLeadCapture';
+import { StepSelectBusiness } from '../components/seo-audit/StepSelectBusiness';
+import { StepVerifyPin } from '../components/seo-audit/StepVerifyPin';
+import { StepConfirmBusiness } from '../components/seo-audit/StepConfirmBusiness';
+import { StepSelectKeyword } from '../components/seo-audit/StepSelectKeyword';
+import { StepRunning } from '../components/seo-audit/StepRunning';
+import { StepResults } from '../components/seo-audit/StepResults';
 
 
 const STEPS = {
@@ -35,8 +30,7 @@ export function SEOAuditPage() {
     const [error, setError] = useState('');
     const [business, setBusiness] = useState<any>(null);
     const [keyword, setKeyword] = useState('');
-    const [customBusiness, setCustomBusiness] = useState('');
-    const [isEditingBusiness, setIsEditingBusiness] = useState(false);
+
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const [auditResults, setAuditResults] = useState<any>(null);
     const [suggestedKeywords, setSuggestedKeywords] = useState<string[]>([]);
@@ -296,6 +290,13 @@ export function SEOAuditPage() {
                             if (data.remainingRuns !== undefined) {
                                 setRemainingRuns(data.remainingRuns);
                             }
+                            // Restore lead details so verification checks pass & subtitles work
+                            setLeadForm(prev => ({
+                                ...prev,
+                                email: data.email || session.email || prev.email,
+                                name: data.name || prev.name,
+                                businessName: data.businessName || prev.businessName
+                            }));
                         })
                         .catch(err => {
                             console.error('Silent Re-verify failed (Network Error?)', err);
@@ -453,10 +454,19 @@ export function SEOAuditPage() {
     };
 
     // Step 2: Confirm Business — if no PIN yet, send it; if verified, go to keywords
+
     const handleConfirmBusiness = async () => {
-        // Only skip verify if we have a PIN AND the email matches the session
-        if (verifiedPin && verifiedEmail === leadForm.email) {
+        // Log removed: Confidence in fix.
+
+        // If we have a verified PIN, trust the verified email even if form is empty (e.g. refresh/rerun flow)
+        const currentEmail = leadForm.email || verifiedEmail;
+
+        if (verifiedPin && verifiedEmail && verifiedEmail === currentEmail) {
             // Already verified — go straight to keywords
+            // Ensure form state is consistent for next steps and subtitles
+            if (!leadForm.email) {
+                setLeadForm(prev => ({ ...prev, email: verifiedEmail }));
+            }
             proceedToKeywords();
         } else {
             // Not verified yet (or new email) — send PIN email, then show verify step
@@ -464,13 +474,7 @@ export function SEOAuditPage() {
         }
     };
 
-    const handleUpdateBusiness = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (customBusiness) {
-            setBusiness({ ...business, name: customBusiness });
-            setIsEditingBusiness(false);
-        }
-    }
+
 
     // Step 3: Run Audit
     const handleRunAudit = async () => {
@@ -561,11 +565,84 @@ export function SEOAuditPage() {
         }
     };
 
+    // Extracted Logic for Step 1.5 Manual Search
+    const handleManualSearch = async (query: string) => {
+        if (!query.trim()) return;
+        setIsLoading(true);
+        try {
+            const res = await fetch('/api/places/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+            const data = await res.json();
+            if (data.places && data.places.length > 0) {
+                setSearchResults(data.places);
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setIsLoading(false);
+            setShowBusinessSearch(false);
+        }
+    };
+
+    // Extracted Logic for Step 5 Rerun
+    const handleRerunAudit = async () => {
+        if (!verifiedPin) {
+            setAuditResults(null);
+            setShowAccessCodeInput(true);
+            setStep(STEPS.ACCESS_CODE);
+            return;
+        }
+
+        // Implicitly trusting verified state for rerun
+        if (verifiedEmail && !leadForm.email) {
+            setLeadForm(prev => ({ ...prev, email: verifiedEmail }));
+        }
+
+        setAuditResults(null);
+        setKeyword('');
+        setSuggestedKeywords([]);
+        setError('');
+        // Search for businesses again so they can pick
+        setIsLoading(true);
+        try {
+            const res = await fetch('/api/places/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: business?.name || leadForm.businessName })
+            });
+            const data = await res.json();
+            if (data.places && data.places.length > 0) {
+                setSearchResults(data.places);
+            }
+        } catch (e) {
+            console.error(e);
+        } finally {
+            setIsLoading(false);
+        }
+        setStep(STEPS.SELECT_BUSINESS);
+    };
+
     return (
         <div className="min-h-screen bg-slate-50 selection:bg-orange selection:text-white font-sans">
             <Navigation />
 
-            <main className="pt-32 pb-20 min-h-[90vh] flex flex-col items-center justify-center px-0">
+            {/* Dynamic Background Elements */}
+            <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+                {/* Grid Pattern */}
+                <div className="absolute inset-0 opacity-[0.03] bg-[length:40px_40px]"
+                    style={{ backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)' }} />
+
+                {/* Animated Gradient Orbs */}
+                <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-orange/5 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+
+
+            </div>
+
+            <main className="relative z-10 pt-32 pb-20 min-h-[90vh] flex flex-col items-center justify-center px-0">
                 <div className={`w-full mx-auto transition-all duration-500 ease-in-out ${step === STEPS.RESULTS
                     ? "min-h-screen w-full max-w-none px-0"
                     : "max-w-4xl px-6"
@@ -575,741 +652,97 @@ export function SEOAuditPage() {
 
                         {/* STEP 1: ACCESS CODE */}
                         {step === STEPS.ACCESS_CODE && (
-                            <motion.div
-                                key="step1"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                className="text-center max-w-lg mx-auto"
-                            >
-                                <div className="w-20 h-20 bg-orange/10 rounded-3xl flex items-center justify-center mx-auto mb-8 border border-orange/20">
-                                    <Search size={32} className="text-orange" />
-                                </div>
-                                <h1 className="text-4xl md:text-5xl font-black text-dark mb-4 tracking-tight">
-                                    Free Local <span className="text-orange">SEO Audit</span>
-                                </h1>
-                                <p className="text-lg text-gray-500 mb-8 leading-relaxed">
-                                    See exactly where you rank on Google Maps and how to beat your competitors.
-                                </p>
-
-
-
-                                {showExistingPinUser ? (
-                                    <div className="bg-white p-6 rounded-2xl border-2 border-orange/10 shadow-xl space-y-4">
-                                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                                            <Mail className="text-green-600" size={32} />
-                                        </div>
-                                        <h3 className="text-xl font-bold text-dark">Welcome back, {existingUserName}!</h3>
-                                        <p className="text-gray-600">
-                                            You already have an active access code for <span className="font-bold text-dark">{leadForm.email}</span>.
-                                        </p>
-
-                                        <div className="pt-2 space-y-3">
-                                            <button
-                                                onClick={() => {
-                                                    // Explicitly trigger resend
-                                                    fetch('/api/audit/send-pin', {
-                                                        method: 'POST',
-                                                        headers: { 'Content-Type': 'application/json' },
-                                                        body: JSON.stringify(leadForm)
-                                                    }).then(() => {
-                                                        setShowExistingPinUser(false);
-                                                        setStep(STEPS.VERIFY_PIN);
-                                                    }).catch(err => setError(err.message));
-                                                }}
-                                                className="w-full h-12 bg-orange text-white font-bold rounded-xl hover:bg-orange-hover transition-all shadow-md"
-                                            >
-                                                Resend Code
-                                            </button>
-                                            <button
-                                                onClick={() => {
-                                                    setShowExistingPinUser(false);
-                                                    setShowAccessCodeInput(true);
-                                                }}
-                                                className="w-full h-12 bg-white border-2 border-gray-200 text-gray-600 font-bold rounded-xl hover:border-orange hover:text-orange transition-all"
-                                            >
-                                                I have my code
-                                            </button>
-                                        </div>
-                                        <button
-                                            onClick={() => setShowExistingPinUser(false)}
-                                            className="text-xs text-gray-400 hover:text-dark underline"
-                                        >
-                                            Use a different email
-                                        </button>
-                                    </div>
-                                ) : !showAccessCodeInput ? (
-                                    <form onSubmit={handleLeadSubmit} className="space-y-4 text-left">
-                                        <div>
-                                            <label className="block text-sm font-bold text-dark mb-1">Business Name</label>
-                                            <input
-                                                required
-                                                type="text"
-                                                name="businessName"
-                                                value={leadForm.businessName}
-                                                onChange={handleInputChange}
-                                                placeholder="e.g. Victor's Plumbing"
-                                                className="w-full h-12 border-2 border-gray-200 rounded-xl px-4 font-medium focus:border-orange focus:outline-none transition-all"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-bold text-dark mb-1">Your Name</label>
-                                            <input
-                                                required
-                                                type="text"
-                                                name="name"
-                                                value={leadForm.name}
-                                                onChange={handleInputChange}
-                                                placeholder="e.g. Victor Estrada"
-                                                className="w-full h-12 border-2 border-gray-200 rounded-xl px-4 font-medium focus:border-orange focus:outline-none transition-all"
-                                            />
-                                        </div>
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div>
-                                                <label className="block text-sm font-bold text-dark mb-1">Email</label>
-                                                <input
-                                                    required
-                                                    type="email"
-                                                    name="email"
-                                                    value={leadForm.email}
-                                                    onChange={handleInputChange}
-                                                    placeholder="name@company.com"
-                                                    className="w-full h-12 border-2 border-gray-200 rounded-xl px-4 font-medium focus:border-orange focus:outline-none transition-all"
-                                                />
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-bold text-dark mb-1">Phone</label>
-                                                <input
-                                                    required
-                                                    type="text"
-                                                    inputMode="tel"
-                                                    name="phone"
-                                                    value={leadForm.phone}
-                                                    onChange={handleInputChange}
-                                                    placeholder="(559) 555-0123"
-                                                    className="w-full h-12 border-2 border-gray-200 rounded-xl px-4 font-medium focus:border-orange focus:outline-none transition-all"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <button
-                                            type="submit"
-                                            disabled={isLoading}
-                                            className="w-full h-14 bg-orange text-white text-lg font-bold rounded-xl hover:bg-orange-hover transition-all flex items-center justify-center gap-2 mt-4 shadow-lg hover:shadow-orange/20"
-                                        >
-                                            {isLoading ? (
-                                                <>
-                                                    <Loader2 size={24} className="animate-spin" />
-                                                    Analyzing...
-                                                </>
-                                            ) : (
-                                                <>
-                                                    Run Free Scan
-                                                    <ArrowRight size={20} />
-                                                </>
-                                            )}
-                                        </button>
-
-                                        {error && (
-                                            <div className="flex items-center justify-center gap-2 text-red-500 mt-4 font-medium">
-                                                <AlertCircle size={16} />
-                                                {error}
-                                            </div>
-                                        )}
-
-                                        <button
-                                            type="button"
-                                            onClick={() => setShowAccessCodeInput(true)}
-                                            className="w-full text-center text-sm font-bold text-gray-400 hover:text-orange mt-4"
-                                        >
-                                            Have an access code?
-                                        </button>
-                                    </form>
-                                ) : (
-                                    <form onSubmit={handleAccessCodeSubmit} className="relative">
-                                        <input
-                                            type="text"
-                                            value={accessCode}
-                                            onChange={(e) => setAccessCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                                            placeholder="000000"
-                                            className="w-full h-16 bg-white border-2 border-gray-200 rounded-2xl px-6 text-center text-3xl font-black tracking-[0.3em] text-dark placeholder:text-gray-200 focus:border-orange focus:outline-none transition-all"
-                                            maxLength={6}
-                                            inputMode="numeric"
-                                        />
-                                        <button
-                                            type="submit"
-                                            disabled={isLoading || !accessCode}
-                                            className="mt-6 w-full h-14 bg-orange text-white text-lg font-bold rounded-xl hover:bg-orange-hover transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-orange/20 hover:-translate-y-1"
-                                        >
-                                            {isLoading ? (
-                                                <>
-                                                    <Loader2 size={24} className="animate-spin" />
-                                                    Verifying...
-                                                </>
-                                            ) : (
-                                                <>
-                                                    Unlock Audit
-                                                    <ArrowRight size={20} />
-                                                </>
-                                            )}
-                                        </button>
-                                        {error && (
-                                            <div className="flex items-center justify-center gap-2 text-red-500 mt-4 font-medium">
-                                                <AlertCircle size={16} />
-                                                {error}
-                                            </div>
-                                        )}
-                                        <button
-                                            type="button"
-                                            onClick={() => setShowAccessCodeInput(false)}
-                                            className="w-full text-center text-sm font-bold text-gray-400 hover:text-orange mt-4"
-                                        >
-                                            No code? Fill out form instead
-                                        </button>
-                                    </form>
-                                )}
-                            </motion.div>
+                            <StepLeadCapture
+                                leadForm={leadForm}
+                                setLeadForm={setLeadForm as any} // State setter type mismatch slightly but functional
+                                handleInputChange={handleInputChange}
+                                handleLeadSubmit={handleLeadSubmit}
+                                isLoading={isLoading}
+                                error={error}
+                                showAccessCodeInput={showAccessCodeInput}
+                                setShowAccessCodeInput={setShowAccessCodeInput}
+                                showExistingPinUser={showExistingPinUser}
+                                setShowExistingPinUser={setShowExistingPinUser}
+                                existingUserName={existingUserName}
+                                handleResendCode={handleSendPin} // Reusing existing handler
+                                accessCode={accessCode}
+                                setAccessCode={setAccessCode}
+                                handleAccessCodeSubmit={handleAccessCodeSubmit}
+                            />
                         )}
 
                         {/* STEP 1.5: SELECT BUSINESS */}
                         {step === STEPS.SELECT_BUSINESS && (
-                            <motion.div
-                                key="step1.5"
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -20 }}
-                                className="max-w-xl mx-auto"
-                            >
-                                <h2 className="text-3xl font-black text-dark mb-2 text-center">Select Your Business</h2>
-                                <p className="text-center text-gray-500 mb-8">We found these top matches for "{leadForm.businessName}"</p>
-
-                                {error && (
-                                    <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-xl text-sm font-medium mb-4 text-center">
-                                        {error}
-                                    </div>
-                                )}
-
-                                <div className="space-y-3">
-                                    {searchResults.map((place, index) => (
-                                        <button
-                                            key={place.id || index}
-                                            onClick={() => handleSelectBusiness(place)}
-                                            disabled={isLoading}
-                                            className={`w-full bg-white text-left p-4 rounded-xl border-2 border-gray-100 hover:border-orange hover:shadow-lg transition-all flex items-start justify-between group ${isLoading ? 'opacity-50 cursor-wait' : ''}`}
-                                        >
-                                            <div className="flex items-start gap-4">
-                                                <div className="w-10 h-10 bg-gray-50 rounded-lg flex items-center justify-center text-xl shrink-0">
-                                                    🏢
-                                                </div>
-                                                <div>
-                                                    <h3 className="font-bold text-dark group-hover:text-orange transition-colors">
-                                                        {place.displayName?.text || place.name}
-                                                    </h3>
-                                                    <p className="text-sm text-gray-500">{place.formattedAddress}</p>
-                                                    <div className="flex items-center gap-1.5 mt-1">
-                                                        <span className="text-yellow-500 text-xs">★</span>
-                                                        <span className="text-xs font-bold text-dark">{place.rating}</span>
-                                                        <span className="text-xs text-gray-400">({place.userRatingCount} reviews)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ArrowRight className="text-gray-300 group-hover:text-orange transition-colors" size={20} />
-                                        </button>
-                                    ))}
-                                </div>
-
-                                <div className="mt-6 text-center">
-                                    <button
-                                        onClick={() => setShowBusinessSearch(true)}
-                                        className="text-gray-400 font-bold hover:text-dark text-sm"
-                                    >
-                                        I don't see my business
-                                    </button>
-                                </div>
-
-                                {showBusinessSearch && (
-                                    <form
-                                        onSubmit={async (e) => {
-                                            e.preventDefault();
-                                            if (!businessSearchQuery.trim()) return;
-                                            setIsLoading(true);
-                                            try {
-                                                const res = await fetch('/api/places/search', {
-                                                    method: 'POST',
-                                                    headers: { 'Content-Type': 'application/json' },
-                                                    body: JSON.stringify({ query: businessSearchQuery })
-                                                });
-                                                const data = await res.json();
-                                                if (data.places && data.places.length > 0) {
-                                                    setSearchResults(data.places);
-                                                }
-                                            } catch (err) {
-                                                console.error(err);
-                                            } finally {
-                                                setIsLoading(false);
-                                                setShowBusinessSearch(false);
-                                            }
-                                        }}
-                                        className="mt-4 flex gap-2"
-                                    >
-                                        <input
-                                            type="text"
-                                            value={businessSearchQuery}
-                                            onChange={(e) => setBusinessSearchQuery(e.target.value)}
-                                            placeholder="Search for your business..."
-                                            className="flex-1 h-12 border-2 border-gray-200 rounded-xl px-4 font-medium focus:border-orange focus:outline-none"
-                                            autoFocus
-                                        />
-                                        <button
-                                            type="submit"
-                                            disabled={isLoading || !businessSearchQuery.trim()}
-                                            className="h-12 px-6 bg-orange text-white font-bold rounded-xl hover:bg-orange-hover transition-all disabled:opacity-50"
-                                        >
-                                            {isLoading ? <Loader2 size={20} className="animate-spin" /> : <Search size={20} />}
-                                        </button>
-                                    </form>
-                                )}
-                            </motion.div>
+                            <StepSelectBusiness
+                                leadForm={leadForm}
+                                searchResults={searchResults}
+                                onSelectBusiness={handleSelectBusiness}
+                                isLoading={isLoading}
+                                error={error}
+                                showBusinessSearch={showBusinessSearch}
+                                setShowBusinessSearch={setShowBusinessSearch}
+                                businessSearchQuery={businessSearchQuery}
+                                setBusinessSearchQuery={setBusinessSearchQuery}
+                                handleManualSearch={handleManualSearch}
+                            />
                         )}
 
                         {/* STEP 1.75: VERIFY PIN */}
                         {step === STEPS.VERIFY_PIN && (
-                            <motion.div
-                                key="stepPin"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                className="text-center max-w-md mx-auto"
-                            >
-                                <div className="w-20 h-20 bg-orange/10 rounded-3xl flex items-center justify-center mx-auto mb-8 border border-orange/20">
-                                    <Mail size={32} className="text-orange" />
-                                </div>
-                                <h2 className="text-3xl md:text-4xl font-black text-dark mb-4 tracking-tight">Check Your Inbox</h2>
-                                <p className="text-gray-500 mb-2 leading-relaxed">
-                                    We sent a 6-digit verification code to
-                                </p>
-                                <p className="font-bold text-dark mb-8 text-lg">
-                                    {leadForm.email.replace(/(.{2})(.*)(@.*)/, '$1***$3')}
-                                </p>
-
-                                <form onSubmit={handleVerifyPin} className="space-y-6">
-                                    <input
-                                        type="text"
-                                        value={pinCode}
-                                        onChange={(e) => setPinCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                                        placeholder="000000"
-                                        className="w-full h-16 bg-white border-2 border-gray-200 rounded-2xl px-6 text-center text-3xl font-black tracking-[0.3em] text-dark placeholder:text-gray-200 focus:border-orange focus:outline-none transition-all"
-                                        maxLength={6}
-                                        autoFocus
-                                        inputMode="numeric"
-                                    />
-
-                                    <button
-                                        type="submit"
-                                        disabled={isLoading || pinCode.length < 6}
-                                        className="w-full h-14 bg-orange text-white text-lg font-bold rounded-xl hover:bg-orange-hover transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-orange/20 hover:-translate-y-1"
-                                    >
-                                        {isLoading ? (
-                                            <>
-                                                <Loader2 size={24} className="animate-spin" />
-                                                Verifying...
-                                            </>
-                                        ) : (
-                                            <>
-                                                Verify & Continue
-                                                <ArrowRight size={20} />
-                                            </>
-                                        )}
-                                    </button>
-                                </form>
-
-                                {error && (
-                                    <div className="flex items-center justify-center gap-2 text-red-500 mt-4 font-medium">
-                                        <AlertCircle size={16} />
-                                        {error}
-                                    </div>
-                                )}
-
-                                <button
-                                    onClick={() => {
-                                        if (resendCooldown <= 0) {
-                                            setPinCode('');
-                                            setError('');
-                                            handleSendPin();
-                                        }
-                                    }}
-                                    disabled={resendCooldown > 0}
-                                    className={`mt-6 text-sm font-bold transition-colors ${resendCooldown > 0
-                                        ? 'text-gray-300 cursor-not-allowed'
-                                        : 'text-gray-400 hover:text-orange'
-                                        }`}
-                                >
-                                    {resendCooldown > 0
-                                        ? `Resend code in ${resendCooldown}s`
-                                        : 'Didn\'t get it? Resend code'
-                                    }
-                                </button>
-                            </motion.div>
+                            <StepVerifyPin
+                                email={leadForm.email}
+                                pinCode={pinCode}
+                                setPinCode={setPinCode}
+                                handleVerifyPin={handleVerifyPin}
+                                isLoading={isLoading}
+                                error={error}
+                                resendCooldown={resendCooldown}
+                                handleResendPin={handleSendPin}
+                            />
                         )}
 
                         {/* STEP 2: CONFIRM BUSINESS */}
                         {step === STEPS.CONFIRM_BUSINESS && (
-                            <motion.div
-                                key="step2"
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
-                                className="bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 md:p-12 max-w-xl mx-auto"
-                            >
-                                <div className="text-center mb-10">
-                                    {verifiedPin && (
-                                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-                                            <Check size={14} strokeWidth={3} />
-                                            PIN Verified
-                                        </div>
-                                    )}
-                                    <h2 className="text-3xl font-black text-dark mb-4">Is this your business?</h2>
-                                    <p className="text-gray-500">Confirm this is correct before we proceed.</p>
-                                </div>
-
-                                <div className="bg-slate-50 rounded-2xl p-6 border border-gray-200 mb-8">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl shrink-0">
-                                            🏢
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-dark mb-1">{business.name}</h3>
-                                            <p className="text-gray-500 text-sm flex items-center gap-1.5 mb-2">
-                                                <MapPin size={14} />
-                                                {business.address}
-                                            </p>
-                                            <div className="flex items-center gap-1.5 text-sm font-bold text-dark">
-                                                <span className="text-yellow-500">★</span>
-                                                {business.rating} ({business.reviews} reviews)
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-col gap-3">
-                                    <button
-                                        onClick={handleConfirmBusiness}
-                                        className="w-full h-14 bg-orange text-white text-lg font-bold rounded-xl hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20"
-                                    >
-                                        {verifiedPin ? 'Yes, Run Audit' : 'Confirm & Verify Email'}
-                                    </button>
-                                    <button
-                                        onClick={() => setStep(STEPS.SELECT_BUSINESS)}
-                                        className="w-full text-center text-sm font-bold text-gray-400 hover:text-dark mt-2"
-                                    >
-                                        That's not me — go back
-                                    </button>
-                                </div>
-                            </motion.div>
+                            <StepConfirmBusiness
+                                business={business}
+                                verifiedPin={verifiedPin}
+                                onConfirm={handleConfirmBusiness}
+                                onBack={() => setStep(STEPS.SELECT_BUSINESS)}
+                                error={error}
+                            />
                         )}
 
                         {/* STEP 3: SELECT KEYWORD */}
                         {step === STEPS.SELECT_KEYWORD && (
-                            <motion.div
-                                key="step3"
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -20 }}
-                                className="max-w-2xl mx-auto text-center"
-                            >
-                                <div className="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                    <Search size={32} />
-                                </div>
-                                <h2 className="text-3xl font-black text-dark mb-4">AI Suggested Keyword</h2>
-                                <p className="text-gray-500 mb-8 max-w-md mx-auto">
-                                    Based on your business category, our AI recommends these high-intent keywords. Select one to audit.
-                                </p>
-
-                                <div className="grid gap-3 mb-8">
-                                    {suggestedKeywords.map((kw, idx) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => setKeyword(kw)}
-                                            className={`p-4 rounded-xl border-2 text-left transition-all flex items-center justify-between group ${keyword === kw
-                                                ? 'border-orange bg-orange/5 shadow-lg'
-                                                : 'border-gray-100 bg-white hover:border-orange/50'
-                                                }`}
-                                        >
-                                            <span className={`font-bold text-lg ${keyword === kw ? 'text-orange' : 'text-dark'}`}>
-                                                {kw}
-                                            </span>
-                                            {keyword === kw && (
-                                                <div className="w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center">
-                                                    <Check size={14} strokeWidth={3} />
-                                                </div>
-                                            )}
-                                        </button>
-                                    ))}
-
-                                    <div className={`p-4 rounded-xl border-2 text-left transition-all flex items-center gap-3 ${!suggestedKeywords.includes(keyword)
-                                        ? 'border-orange bg-orange/5 shadow-lg'
-                                        : 'border-gray-100 bg-white'
-                                        }`}>
-                                        <div className="w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center shrink-0">
-                                            {!suggestedKeywords.includes(keyword) && <div className="w-3 h-3 bg-orange rounded-full" />}
-                                        </div>
-                                        <input
-                                            type="text"
-                                            placeholder="Enter custom keyword..."
-                                            value={!suggestedKeywords.includes(keyword) ? keyword : ''}
-                                            onChange={(e) => setKeyword(e.target.value)}
-                                            className="flex-1 bg-transparent font-bold text-lg text-dark focus:outline-none placeholder:font-normal placeholder:text-gray-400"
-                                            onClick={() => setKeyword('')}
-                                        />
-                                    </div>
-                                </div>
-
-                                <button
-                                    onClick={handleRunAudit}
-                                    className="px-10 py-5 bg-orange text-white text-xl font-bold rounded-2xl hover:bg-orange-hover transition-all shadow-xl hover:shadow-orange/20 hover:-translate-y-1"
-                                >
-                                    Start Analysis
-                                </button>
-                            </motion.div>
+                            <StepSelectKeyword
+                                keyword={keyword}
+                                setKeyword={setKeyword}
+                                aiKeywords={suggestedKeywords}
+                                isAiLoading={isLoading} // Assuming isLoading is shared for AI fetch
+                                onRunAudit={handleRunAudit}
+                                isLoading={isLoading}
+                                error={error}
+                            />
                         )}
 
                         {/* STEP 4: RUNNING AUDIT */}
                         {step === STEPS.RUNNING_AUDIT && (
-                            <motion.div
-                                key="step4"
-                                className="max-w-4xl mx-auto w-full"
-                            >
-                                <div className="text-center mb-10">
-                                    <h2 className="text-3xl font-black text-dark mb-2">Analyzing Local Grid...</h2>
-                                    <p className="text-gray-500">Checking rankings across 16 coordinates in Fresno</p>
-                                </div>
-
-                                <div className="flex justify-center">
-                                    <div className="w-full max-w-2xl">
-                                        <LocalMapGrid
-                                            keyword={keyword}
-                                            businessName={business.name}
-                                            rating={business.rating}
-                                            reviewCount={business.reviews}
-                                            showBusinessCard={false}
-                                            loadingVariant="scan"
-                                        // Empty gridData implies loading state in component
-                                        />
-                                    </div>
-                                </div>
-                            </motion.div>
+                            <StepRunning
+                                keyword={keyword}
+                                business={business}
+                            />
                         )}
 
                         {/* STEP 5: RESULTS */}
                         {step === STEPS.RESULTS && (
-                            <motion.div
-                                key="step5"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="w-full max-w-7xl mx-auto px-6"
-                            >
-                                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-start">
-
-                                    {/* Left Column: Map Card + Quick Stats */}
-                                    <div className="w-full space-y-4">
-                                        <LocalMapGrid
-                                            keyword={keyword}
-                                            businessName={business.name}
-                                            rating={business.rating}
-                                            reviewCount={business.reviews}
-                                            gridData={auditResults || []}
-                                            centerLat={business?.location?.latitude}
-                                            centerLng={business?.location?.longitude}
-                                            variant="card"
-                                            loadingVariant="scan"
-                                        />
-
-                                        {/* Quick Stats Below Map */}
-                                        {auditResults && auditResults.length > 0 && (() => {
-                                            const total = auditResults.length;
-                                            const top3 = auditResults.filter((p: any) => p.rank <= 3).length;
-                                            const bestRank = Math.min(...auditResults.map((p: any) => p.rank));
-                                            const top3Pct = Math.round((top3 / total) * 100);
-
-                                            return (
-                                                <div className="grid grid-cols-3 gap-3">
-                                                    {/* Grid Points */}
-                                                    <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm text-center">
-                                                        <div className="text-2xl font-black text-dark">{total}</div>
-                                                        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mt-1">Points Scanned</div>
-                                                    </div>
-
-                                                    {/* Top 3 Count */}
-                                                    <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm text-center">
-                                                        <div className={`text-2xl font-black ${top3Pct >= 50 ? 'text-green-500' : top3Pct > 0 ? 'text-orange' : 'text-red-500'}`}>
-                                                            {top3Pct}%
-                                                        </div>
-                                                        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mt-1">In Top 3</div>
-                                                    </div>
-
-                                                    {/* Best Rank */}
-                                                    <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm text-center">
-                                                        <div className={`text-2xl font-black ${bestRank <= 3 ? 'text-green-500' : bestRank <= 10 ? 'text-orange' : 'text-red-500'}`}>
-                                                            #{bestRank > 20 ? '20+' : bestRank}
-                                                        </div>
-                                                        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mt-1">Best Rank</div>
-                                                    </div>
-                                                </div>
-                                            );
-                                        })()}
-
-                                        {/* Keyword Tag */}
-                                        <div className="flex items-center justify-center gap-2 bg-dark/[0.03] rounded-xl px-4 py-3 border border-gray-100">
-                                            <Search size={14} className="text-gray-400" />
-                                            <span className="text-sm font-bold text-dark">{keyword}</span>
-                                            <span className="text-[10px] font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full ml-auto">
-                                                {auditResults ? `${(auditResults.reduce((acc: any, curr: any) => acc + (curr.rank > 20 ? 20 : curr.rank), 0) / auditResults.length).toFixed(1)} avg` : ''}
-                                            </span>
-                                        </div>
-
-                                        {/* Competitor Analysis — Who's Beating You */}
-                                        {auditResults && auditResults[0]?.topCompetitors && (() => {
-                                            const competitorCounts: Record<string, number> = {};
-                                            auditResults.forEach((point: any) => {
-                                                (point.topCompetitors || []).forEach((name: string) => {
-                                                    competitorCounts[name] = (competitorCounts[name] || 0) + 1;
-                                                });
-                                            });
-                                            const sorted = Object.entries(competitorCounts)
-                                                .sort(([, a], [, b]) => (b as number) - (a as number))
-                                                .slice(0, 5);
-
-                                            if (sorted.length === 0) return null;
-
-                                            const medals = ['🥇', '🥈', '🥉'];
-                                            return (
-                                                <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-lg">
-                                                    <h3 className="font-black text-dark text-sm uppercase tracking-wide mb-4">Who's Beating You</h3>
-                                                    <div className="space-y-3">
-                                                        {sorted.map(([name, count], idx) => (
-                                                            <div key={name} className="flex items-center justify-between">
-                                                                <div className="flex items-center gap-2.5">
-                                                                    <span className="text-base">{medals[idx] || `#${idx + 1}`}</span>
-                                                                    <span className="font-bold text-dark text-sm truncate max-w-[200px]">{name}</span>
-                                                                </div>
-                                                                <div className="flex items-center gap-2">
-                                                                    <div className="h-1.5 bg-gray-100 rounded-full w-20 overflow-hidden">
-                                                                        <div
-                                                                            className="h-full bg-orange rounded-full transition-all"
-                                                                            style={{ width: `${((count as number) / auditResults.length) * 100}%` }}
-                                                                        />
-                                                                    </div>
-                                                                    <span className="text-xs font-bold text-gray-400 whitespace-nowrap">
-                                                                        {count as number}/{auditResults.length}
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            );
-                                        })()}
-                                    </div>
-
-                                    {/* Right Column: Results Content */}
-                                    <div className="w-full flex flex-col justify-center">
-                                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-bold uppercase tracking-wider mb-6 w-fit">
-                                            <Check size={12} strokeWidth={3} />
-                                            Audit Complete
-                                        </div>
-
-                                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-dark mb-6 leading-tight tracking-tight">
-                                            Here is where you <span className="text-orange">Dominate</span> (and where you don't).
-                                        </h2>
-
-                                        <p className="text-lg text-gray-500 mb-8 leading-relaxed">
-                                            The <span className="text-green-600 font-bold">green</span> spots show where you rank #1-3. The <span className="text-red-500 font-bold">red</span> spots are where others are winning.
-                                        </p>
-
-                                        {/* Stats Card */}
-                                        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-lg mb-6">
-                                            <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-4">
-                                                <span className="font-bold text-gray-500 uppercase tracking-wide text-xs">Target Keyword</span>
-                                                <span className="font-bold text-dark">{keyword}</span>
-                                            </div>
-                                            <div className="flex items-center justify-between">
-                                                <span className="font-bold text-gray-500 uppercase tracking-wide text-xs">Avg Rank Position</span>
-                                                <span className="font-black text-orange text-3xl">
-                                                    {auditResults
-                                                        ? (auditResults.reduce((acc: any, curr: any) => acc + (curr.rank > 20 ? 20 : curr.rank), 0) / auditResults.length).toFixed(1)
-                                                        : 'N/A'
-                                                    }
-                                                </span>
-                                            </div>
-                                        </div>
-
-
-                                        {/* Educational Explainer */}
-                                        <div className="bg-dark/[0.03] rounded-2xl p-5 mb-8 border border-gray-100">
-                                            <div className="flex items-start gap-3">
-                                                <Info size={18} className="text-orange mt-0.5 shrink-0" />
-                                                <div>
-                                                    <h4 className="font-black text-dark text-sm mb-2">What do these numbers mean?</h4>
-                                                    <p className="text-sm text-gray-500 leading-relaxed">
-                                                        Each circle represents a real Google search from that exact GPS coordinate for "<span className="font-bold text-dark">{keyword}</span>". The number is your business's rank position at that spot.
-                                                    </p>
-                                                    <p className="text-sm text-gray-500 leading-relaxed mt-2">
-                                                        <span className="font-bold text-dark">Why does #4+ matter?</span> Google only shows <span className="font-bold text-orange">3 businesses</span> in the Map Pack. If you're position #4 or lower, you're <span className="font-bold text-red-500">effectively invisible</span> — a customer has to click "View All" to find you, which kills conversions.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex gap-4">
-                                            <Link to="/contact" className="flex-1 px-6 py-4 bg-orange text-white text-base font-bold rounded-xl hover:bg-orange-hover transition-all text-center shadow-lg hover:shadow-orange/20 flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                                                Fix My Rankings
-                                                <ArrowRight size={18} />
-                                            </Link>
-                                            <button
-                                                onClick={async () => {
-                                                    if (!verifiedPin) {
-                                                        setAuditResults(null);
-                                                        setShowAccessCodeInput(true);
-                                                        setStep(STEPS.ACCESS_CODE);
-                                                        return;
-                                                    }
-
-                                                    setAuditResults(null);
-                                                    setKeyword('');
-                                                    setSuggestedKeywords([]);
-                                                    setError('');
-                                                    // Search for businesses again so they can pick
-                                                    setIsLoading(true);
-                                                    try {
-                                                        const res = await fetch('/api/places/search', {
-                                                            method: 'POST',
-                                                            headers: { 'Content-Type': 'application/json' },
-                                                            body: JSON.stringify({ query: business?.name || leadForm.businessName })
-                                                        });
-                                                        const data = await res.json();
-                                                        if (data.places && data.places.length > 0) {
-                                                            setSearchResults(data.places);
-                                                        }
-                                                    } catch (e) {
-                                                        console.error(e);
-                                                    } finally {
-                                                        setIsLoading(false);
-                                                    }
-                                                    setStep(STEPS.SELECT_BUSINESS);
-                                                }}
-                                                disabled={!!verifiedPin && remainingRuns <= 0}
-                                                className={`flex-1 px-6 py-4 bg-white border-2 font-bold rounded-xl transition-all ${!!verifiedPin && remainingRuns <= 0 ? 'border-gray-100 text-gray-300 cursor-not-allowed' : 'border-gray-100 text-gray-500 hover:border-dark hover:text-dark'}`}
-                                            >
-                                                {!verifiedPin
-                                                    ? "Login to Run Another Scan"
-                                                    : remainingRuns > 0
-                                                        ? `Run Another Scan (${remainingRuns} left)`
-                                                        : "Limit Reached (Check back later)"}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
+                            <StepResults
+                                business={business}
+                                keyword={keyword}
+                                auditResults={auditResults}
+                                verifiedPin={verifiedPin}
+                                remainingRuns={remainingRuns}
+                                onRerun={handleRerunAudit}
+                            />
                         )}
 
                     </AnimatePresence>
