@@ -22,6 +22,7 @@ const AppDevelopmentPage = lazy(() => import('./pages/AppDevelopmentPage').then(
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(module => ({ default: module.NotFoundPage })));
 const SitemapPage = lazy(() => import('./pages/SitemapPage').then(module => ({ default: module.SitemapPage })));
 const AIPage = lazy(() => import('./pages/AIPage').then(module => ({ default: module.AIPage })));
+const SEOAuditPage = lazy(() => import('./pages/SEOAuditPage').then(module => ({ default: module.SEOAuditPage })));
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -68,6 +69,7 @@ export function App() {
             <Route path="/app-development" element={<AppDevelopmentPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/ai-automation" element={<AIPage />} />
+            <Route path="/seo-audit" element={<SEOAuditPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

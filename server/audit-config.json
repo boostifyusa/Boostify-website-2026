@@ -1,0 +1,14 @@
+{
+    "business": {
+        "maxRuns": 5,
+        "limitResetDays": 30
+    },
+    "pin": {
+        "maxRuns": 80,
+        "expiryDays": 180,
+        "limitResetDays": 30
+    },
+    "audit": {
+        "gridRadiusMiles": 2
+    }
+}

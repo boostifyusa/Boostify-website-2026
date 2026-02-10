@@ -28,3 +28,5 @@ dist-ssr
 .env.local
 .env.*
 roadmap/
+server/pin-store.json
+server/biz-store.json

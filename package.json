@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx vite",
+    "dev": "concurrently \"npx vite\" \"node server/index.js\"",
     "build": "npx vite build",
     "start": "node server/index.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -29,6 +29,7 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.58.1",
     "@types/node": "^20.11.18",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
@@ -36,6 +37,7 @@
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "latest",
+    "concurrently": "^9.2.1",
     "eslint": "^8.50.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",

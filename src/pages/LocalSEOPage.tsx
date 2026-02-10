@@ -116,8 +116,8 @@ export function LocalSEOPage() {
                 Local SEO Services
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Get Found by the Neighbors Who{' '}
-                <span className="text-orange">Need You Most.</span>
+                Get Found <br></br>Faster Locally<br></br>{' '}
+                <span className="text-orange">On Google.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                 Stop being invisible on Google. We optimize your online presence
@@ -267,7 +267,6 @@ export function LocalSEOPage() {
                   {/* 7x7 Grid */}
                   <div className="grid grid-cols-7 gap-1.5 md:gap-3 relative z-10 p-4">
                     {Array.from({ length: 49 }).map((_, i) => {
-                      // Calculate "heat map" logic - Mostly Green!
                       const row = Math.floor(i / 7);
                       const col = i % 7;
                       const centerRow = 3;
@@ -276,16 +275,12 @@ export function LocalSEOPage() {
 
                       let rank, colorClass, delay;
 
-                      // Make almost everything green to show "Domination"
-                      // Corners might be slightly lower rank (4-5) to look realistic but still good
                       if (dist < 4) {
-                        rank = Math.floor(Math.random() * 3) + 1; // 1-3 (Dominant)
+                        rank = Math.floor(Math.random() * 3) + 1;
                         colorClass = "bg-green-500 text-white shadow-green-500/20";
-                        delay = dist * 0.05; // Faster ripple
+                        delay = dist * 0.05;
                       } else {
-                        // Just the very corners
-                        rank = Math.floor(Math.random() * 3) + 2; // 2-4 (Still very good)
-                        // If it happens to be 4, make it orange-ish, otherwise green
+                        rank = Math.floor(Math.random() * 3) + 2;
                         if (rank > 3) {
                           colorClass = "bg-orange text-white shadow-orange/20";
                         } else {
