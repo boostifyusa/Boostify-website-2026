@@ -469,285 +469,285 @@ export function SEOAuditPage() {
             await handleSendPin();
         }
     };
-};
 
 
 
-// Step 3: Run Audit
-const handleRunAudit = async () => {
-    if (!business?.location) {
-        console.error("Missing business location:", business);
-        setError("Business location data missing. Please re-select the business.");
-        return;
-    }
 
-    setStep(STEPS.RUNNING_AUDIT);
-    const auditStartTime = Date.now();
+    // Step 3: Run Audit
+    const handleRunAudit = async () => {
+        if (!business?.location) {
+            console.error("Missing business location:", business);
+            setError("Business location data missing. Please re-select the business.");
+            return;
+        }
 
-    try {
-        // Consume a run from the PIN
-        if (verifiedPin) {
-            const runRes = await fetch('/api/audit/use-run', {
+        setStep(STEPS.RUNNING_AUDIT);
+        const auditStartTime = Date.now();
+
+        try {
+            // Consume a run from the PIN
+            if (verifiedPin) {
+                const runRes = await fetch('/api/audit/use-run', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pin: verifiedPin, placeId: business.placeId, businessName: business.name })
+                });
+                const runData = await runRes.json();
+                if (!runRes.ok) {
+                    setError('Sorry, you\'ve hit your limit! Reach out to us for additional runs.');
+                    setStep(STEPS.SELECT_KEYWORD);
+                    return;
+                }
+                setRemainingRuns(runData.remainingRuns);
+                // SAVE SESSION (Lazy Persist for existing in-memory users)
+                localStorage.setItem('audit_session', JSON.stringify({
+                    pin: verifiedPin,
+                    timestamp: Date.now()
+                }));
+            }
+
+            console.log("Starting Geogrid Audit...", business.location);
+            const response = await fetch('/api/audit/grid', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ pin: verifiedPin, placeId: business.placeId, businessName: business.name })
+                body: JSON.stringify({
+                    lat: business.location.latitude,
+                    lng: business.location.longitude,
+                    keyword: keyword,
+                    businessName: business.name,
+                    radius: 5 // Default 5 miles
+                })
             });
-            const runData = await runRes.json();
-            if (!runRes.ok) {
-                setError('Sorry, you\'ve hit your limit! Reach out to us for additional runs.');
-                setStep(STEPS.SELECT_KEYWORD);
-                return;
+
+            if (!response.ok) {
+                throw new Error('Audit failed');
             }
-            setRemainingRuns(runData.remainingRuns);
-            // SAVE SESSION (Lazy Persist for existing in-memory users)
-            localStorage.setItem('audit_session', JSON.stringify({
-                pin: verifiedPin,
-                timestamp: Date.now()
-            }));
+
+            const data = await response.json();
+            console.log("Audit Results:", data.results);
+            setAuditResults(data.results);
+
+            // Serialize and update URL for persistence (Zero API cost on refresh)
+            const compressedParams = data.results.map((p: any) => [
+                Number(p.lat.toFixed(6)),
+                Number(p.lng.toFixed(6)),
+                p.rank
+            ]);
+
+            setSearchParams({
+                d: JSON.stringify(compressedParams),
+                b: business.name,
+                k: keyword,
+                r: (business.rating || 0).toString(),
+                rv: (business.reviews || 0).toString(),
+                clat: (business.location?.latitude || 0).toString(),
+                clng: (business.location?.longitude || 0).toString()
+            });
+
+            // Ensure loading animation shows for at least 6 seconds
+            const elapsed = Date.now() - auditStartTime;
+            const minDisplayTime = 6000;
+            if (elapsed < minDisplayTime) {
+                await new Promise(resolve => setTimeout(resolve, minDisplayTime - elapsed));
+            }
+
+            setStep(STEPS.RESULTS);
+
+        } catch (error) {
+            console.error("Audit Error:", error);
+            // Fallback for demo if API fails
+            setAuditResults([]);
+            setError("Audit failed. Please try again.");
+            setStep(STEPS.SELECT_KEYWORD); // Go back
+        }
+    };
+
+    // Extracted Logic for Step 1.5 Manual Search
+    const handleManualSearch = async (query: string) => {
+        if (!query.trim()) return;
+        setIsLoading(true);
+        try {
+            const res = await fetch('/api/places/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+            const data = await res.json();
+            if (data.places && data.places.length > 0) {
+                setSearchResults(data.places);
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setIsLoading(false);
+            setShowBusinessSearch(false);
+        }
+    };
+
+    // Extracted Logic for Step 5 Rerun
+    const handleRerunAudit = async () => {
+        if (!verifiedPin) {
+            setAuditResults(null);
+            setShowAccessCodeInput(true);
+            setStep(STEPS.ACCESS_CODE);
+            return;
         }
 
-        console.log("Starting Geogrid Audit...", business.location);
-        const response = await fetch('/api/audit/grid', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                lat: business.location.latitude,
-                lng: business.location.longitude,
-                keyword: keyword,
-                businessName: business.name,
-                radius: 5 // Default 5 miles
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('Audit failed');
+        // Implicitly trusting verified state for rerun
+        if (verifiedEmail && !leadForm.email) {
+            setLeadForm(prev => ({ ...prev, email: verifiedEmail }));
         }
 
-        const data = await response.json();
-        console.log("Audit Results:", data.results);
-        setAuditResults(data.results);
-
-        // Serialize and update URL for persistence (Zero API cost on refresh)
-        const compressedParams = data.results.map((p: any) => [
-            Number(p.lat.toFixed(6)),
-            Number(p.lng.toFixed(6)),
-            p.rank
-        ]);
-
-        setSearchParams({
-            d: JSON.stringify(compressedParams),
-            b: business.name,
-            k: keyword,
-            r: (business.rating || 0).toString(),
-            rv: (business.reviews || 0).toString(),
-            clat: (business.location?.latitude || 0).toString(),
-            clng: (business.location?.longitude || 0).toString()
-        });
-
-        // Ensure loading animation shows for at least 6 seconds
-        const elapsed = Date.now() - auditStartTime;
-        const minDisplayTime = 6000;
-        if (elapsed < minDisplayTime) {
-            await new Promise(resolve => setTimeout(resolve, minDisplayTime - elapsed));
-        }
-
-        setStep(STEPS.RESULTS);
-
-    } catch (error) {
-        console.error("Audit Error:", error);
-        // Fallback for demo if API fails
-        setAuditResults([]);
-        setError("Audit failed. Please try again.");
-        setStep(STEPS.SELECT_KEYWORD); // Go back
-    }
-};
-
-// Extracted Logic for Step 1.5 Manual Search
-const handleManualSearch = async (query: string) => {
-    if (!query.trim()) return;
-    setIsLoading(true);
-    try {
-        const res = await fetch('/api/places/search', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query })
-        });
-        const data = await res.json();
-        if (data.places && data.places.length > 0) {
-            setSearchResults(data.places);
-        }
-    } catch (err) {
-        console.error(err);
-    } finally {
-        setIsLoading(false);
-        setShowBusinessSearch(false);
-    }
-};
-
-// Extracted Logic for Step 5 Rerun
-const handleRerunAudit = async () => {
-    if (!verifiedPin) {
         setAuditResults(null);
-        setShowAccessCodeInput(true);
-        setStep(STEPS.ACCESS_CODE);
-        return;
-    }
-
-    // Implicitly trusting verified state for rerun
-    if (verifiedEmail && !leadForm.email) {
-        setLeadForm(prev => ({ ...prev, email: verifiedEmail }));
-    }
-
-    setAuditResults(null);
-    setKeyword('');
-    setSuggestedKeywords([]);
-    setError('');
-    // Search for businesses again so they can pick
-    setIsLoading(true);
-    try {
-        const res = await fetch('/api/places/search', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query: business?.name || leadForm.businessName })
-        });
-        const data = await res.json();
-        if (data.places && data.places.length > 0) {
-            setSearchResults(data.places);
+        setKeyword('');
+        setSuggestedKeywords([]);
+        setError('');
+        // Search for businesses again so they can pick
+        setIsLoading(true);
+        try {
+            const res = await fetch('/api/places/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: business?.name || leadForm.businessName })
+            });
+            const data = await res.json();
+            if (data.places && data.places.length > 0) {
+                setSearchResults(data.places);
+            }
+        } catch (e) {
+            console.error(e);
+        } finally {
+            setIsLoading(false);
         }
-    } catch (e) {
-        console.error(e);
-    } finally {
-        setIsLoading(false);
-    }
-    setStep(STEPS.SELECT_BUSINESS);
-};
+        setStep(STEPS.SELECT_BUSINESS);
+    };
 
-return (
-    <div className="min-h-screen bg-slate-50 selection:bg-orange selection:text-white font-sans">
-        <Navigation />
+    return (
+        <div className="min-h-screen bg-slate-50 selection:bg-orange selection:text-white font-sans">
+            <Navigation />
 
-        {/* Dynamic Background Elements */}
-        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-            {/* Grid Pattern */}
-            <div className="absolute inset-0 opacity-[0.03] bg-[length:40px_40px]"
-                style={{ backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)' }} />
+            {/* Dynamic Background Elements */}
+            <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+                {/* Grid Pattern */}
+                <div className="absolute inset-0 opacity-[0.03] bg-[length:40px_40px]"
+                    style={{ backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)' }} />
 
-            {/* Animated Gradient Orbs */}
-            <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-orange/5 rounded-full blur-[120px] animate-pulse" />
-            <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+                {/* Animated Gradient Orbs */}
+                <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-orange/5 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
 
-
-        </div>
-
-        <main className="relative z-10 pt-32 pb-20 min-h-[90vh] flex flex-col items-center justify-center px-0">
-            <div className={`w-full mx-auto transition-all duration-500 ease-in-out ${step === STEPS.RESULTS
-                ? "min-h-screen w-full max-w-none px-0"
-                : "max-w-4xl px-6"
-                }`}>
-
-                <AnimatePresence mode="wait">
-
-                    {/* STEP 1: ACCESS CODE */}
-                    {step === STEPS.ACCESS_CODE && (
-                        <StepLeadCapture
-                            leadForm={leadForm}
-                            setLeadForm={setLeadForm as any} // State setter type mismatch slightly but functional
-                            handleInputChange={handleInputChange}
-                            handleLeadSubmit={handleLeadSubmit}
-                            isLoading={isLoading}
-                            error={error}
-                            showAccessCodeInput={showAccessCodeInput}
-                            setShowAccessCodeInput={setShowAccessCodeInput}
-                            showExistingPinUser={showExistingPinUser}
-                            setShowExistingPinUser={setShowExistingPinUser}
-                            existingUserName={existingUserName}
-                            handleResendCode={handleSendPin} // Reusing existing handler
-                            accessCode={accessCode}
-                            setAccessCode={setAccessCode}
-                            handleAccessCodeSubmit={handleAccessCodeSubmit}
-                        />
-                    )}
-
-                    {/* STEP 1.5: SELECT BUSINESS */}
-                    {step === STEPS.SELECT_BUSINESS && (
-                        <StepSelectBusiness
-                            leadForm={leadForm}
-                            searchResults={searchResults}
-                            onSelectBusiness={handleSelectBusiness}
-                            isLoading={isLoading}
-                            error={error}
-                            showBusinessSearch={showBusinessSearch}
-                            setShowBusinessSearch={setShowBusinessSearch}
-                            businessSearchQuery={businessSearchQuery}
-                            setBusinessSearchQuery={setBusinessSearchQuery}
-                            handleManualSearch={handleManualSearch}
-                        />
-                    )}
-
-                    {/* STEP 1.75: VERIFY PIN */}
-                    {step === STEPS.VERIFY_PIN && (
-                        <StepVerifyPin
-                            email={leadForm.email}
-                            pinCode={pinCode}
-                            setPinCode={setPinCode}
-                            handleVerifyPin={handleVerifyPin}
-                            isLoading={isLoading}
-                            error={error}
-                            resendCooldown={resendCooldown}
-                            handleResendPin={handleSendPin}
-                        />
-                    )}
-
-                    {/* STEP 2: CONFIRM BUSINESS */}
-                    {step === STEPS.CONFIRM_BUSINESS && (
-                        <StepConfirmBusiness
-                            business={business}
-                            verifiedPin={verifiedPin}
-                            onConfirm={handleConfirmBusiness}
-                            onBack={() => setStep(STEPS.SELECT_BUSINESS)}
-                            error={error}
-                        />
-                    )}
-
-                    {/* STEP 3: SELECT KEYWORD */}
-                    {step === STEPS.SELECT_KEYWORD && (
-                        <StepSelectKeyword
-                            keyword={keyword}
-                            setKeyword={setKeyword}
-                            aiKeywords={suggestedKeywords}
-                            isAiLoading={isLoading} // Assuming isLoading is shared for AI fetch
-                            onRunAudit={handleRunAudit}
-                            isLoading={isLoading}
-                            error={error}
-                        />
-                    )}
-
-                    {/* STEP 4: RUNNING AUDIT */}
-                    {step === STEPS.RUNNING_AUDIT && (
-                        <StepRunning
-                            keyword={keyword}
-                            business={business}
-                        />
-                    )}
-
-                    {/* STEP 5: RESULTS */}
-                    {step === STEPS.RESULTS && (
-                        <StepResults
-                            business={business}
-                            keyword={keyword}
-                            auditResults={auditResults}
-                            verifiedPin={verifiedPin}
-                            remainingRuns={remainingRuns}
-                            onRerun={handleRerunAudit}
-                        />
-                    )}
-
-                </AnimatePresence>
 
             </div>
-        </main >
 
-        <Footer />
-    </div >
-);
+            <main className="relative z-10 pt-32 pb-20 min-h-[90vh] flex flex-col items-center justify-center px-0">
+                <div className={`w-full mx-auto transition-all duration-500 ease-in-out ${step === STEPS.RESULTS
+                    ? "min-h-screen w-full max-w-none px-0"
+                    : "max-w-4xl px-6"
+                    }`}>
+
+                    <AnimatePresence mode="wait">
+
+                        {/* STEP 1: ACCESS CODE */}
+                        {step === STEPS.ACCESS_CODE && (
+                            <StepLeadCapture
+                                leadForm={leadForm}
+                                setLeadForm={setLeadForm as any} // State setter type mismatch slightly but functional
+                                handleInputChange={handleInputChange}
+                                handleLeadSubmit={handleLeadSubmit}
+                                isLoading={isLoading}
+                                error={error}
+                                showAccessCodeInput={showAccessCodeInput}
+                                setShowAccessCodeInput={setShowAccessCodeInput}
+                                showExistingPinUser={showExistingPinUser}
+                                setShowExistingPinUser={setShowExistingPinUser}
+                                existingUserName={existingUserName}
+                                handleResendCode={handleSendPin} // Reusing existing handler
+                                accessCode={accessCode}
+                                setAccessCode={setAccessCode}
+                                handleAccessCodeSubmit={handleAccessCodeSubmit}
+                            />
+                        )}
+
+                        {/* STEP 1.5: SELECT BUSINESS */}
+                        {step === STEPS.SELECT_BUSINESS && (
+                            <StepSelectBusiness
+                                leadForm={leadForm}
+                                searchResults={searchResults}
+                                onSelectBusiness={handleSelectBusiness}
+                                isLoading={isLoading}
+                                error={error}
+                                showBusinessSearch={showBusinessSearch}
+                                setShowBusinessSearch={setShowBusinessSearch}
+                                businessSearchQuery={businessSearchQuery}
+                                setBusinessSearchQuery={setBusinessSearchQuery}
+                                handleManualSearch={handleManualSearch}
+                            />
+                        )}
+
+                        {/* STEP 1.75: VERIFY PIN */}
+                        {step === STEPS.VERIFY_PIN && (
+                            <StepVerifyPin
+                                email={leadForm.email}
+                                pinCode={pinCode}
+                                setPinCode={setPinCode}
+                                handleVerifyPin={handleVerifyPin}
+                                isLoading={isLoading}
+                                error={error}
+                                resendCooldown={resendCooldown}
+                                handleResendPin={handleSendPin}
+                            />
+                        )}
+
+                        {/* STEP 2: CONFIRM BUSINESS */}
+                        {step === STEPS.CONFIRM_BUSINESS && (
+                            <StepConfirmBusiness
+                                business={business}
+                                verifiedPin={verifiedPin}
+                                onConfirm={handleConfirmBusiness}
+                                onBack={() => setStep(STEPS.SELECT_BUSINESS)}
+                                error={error}
+                            />
+                        )}
+
+                        {/* STEP 3: SELECT KEYWORD */}
+                        {step === STEPS.SELECT_KEYWORD && (
+                            <StepSelectKeyword
+                                keyword={keyword}
+                                setKeyword={setKeyword}
+                                aiKeywords={suggestedKeywords}
+                                isAiLoading={isLoading} // Assuming isLoading is shared for AI fetch
+                                onRunAudit={handleRunAudit}
+                                isLoading={isLoading}
+                                error={error}
+                            />
+                        )}
+
+                        {/* STEP 4: RUNNING AUDIT */}
+                        {step === STEPS.RUNNING_AUDIT && (
+                            <StepRunning
+                                keyword={keyword}
+                                business={business}
+                            />
+                        )}
+
+                        {/* STEP 5: RESULTS */}
+                        {step === STEPS.RESULTS && (
+                            <StepResults
+                                business={business}
+                                keyword={keyword}
+                                auditResults={auditResults}
+                                verifiedPin={verifiedPin}
+                                remainingRuns={remainingRuns}
+                                onRerun={handleRerunAudit}
+                            />
+                        )}
+
+                    </AnimatePresence>
+
+                </div>
+            </main >
+
+            <Footer />
+        </div >
+    );
 }
