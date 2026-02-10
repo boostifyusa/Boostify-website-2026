@@ -512,30 +512,63 @@ app.post('/api/audit/send-pin', async (req, res) => {
             htmlContent: `
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background:#f5f5f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:40px 20px;">
-    <tr><td align="center">
-      <table width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;background:#111111;border-radius:24px;overflow:hidden;">
-        <!-- Header -->
-        <tr><td style="padding:40px 40px 24px;text-align:center;">
-          <div style="font-size:28px;font-weight:900;color:#ffffff;letter-spacing:-0.5px;">Boostify<span style="color:#E8590C;">.</span></div>
-        </td></tr>
-        <!-- Content -->
-        <tr><td style="padding:0 40px;text-align:center;">
-          <p style="color:#999999;font-size:14px;margin:0 0 24px;">Here's your verification code to unlock your free SEO audit.</p>
-          <div style="background:#1a1a1a;border:2px solid #333;border-radius:16px;padding:24px;margin-bottom:24px;">
-            <div style="font-size:40px;font-weight:900;color:#E8590C;letter-spacing:12px;font-family:monospace;">${pin}</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Verification Code</title>
+</head>
+<body style="margin:0;padding:0;background-color:#F5F5F7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;color:#111111;">
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#F5F5F7;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Logo -->
+        <div style="margin-bottom:32px;">
+          <img src="https://boostifyusa.com/Group-116.png" alt="Boostify" width="320" style="display:block;width:320px;height:auto;border:0;">
+        </div>
+        
+        <!-- Card -->
+        <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:480px;background-color:#FFFFFF;border-radius:24px;box-shadow:0 4px 24px rgba(0,0,0,0.04);overflow:hidden;">
+          <tr>
+            <td style="padding:48px 40px;text-align:center;">
+              <h1 style="margin:0 0 16px;font-size:24px;font-weight:700;color:#111111;letter-spacing:-0.5px;">Verify Your Email</h1>
+              <p style="margin:0 0 32px;font-size:16px;line-height:1.5;color:#666666;">
+                Use the verification code below to <strong style="color:#111111;">see your rankings</strong>.
+              </p>
+              
+              <!-- PIN Box -->
+              <div style="background-color:#FFF5F0;border:1px solid #FFE0D1;border-radius:16px;padding:24px;margin-bottom:32px;text-align:center;">
+                <div style="font-family:monospace;font-size:36px;font-weight:700;letter-spacing:8px;color:#E8590C;line-height:1;">
+                  ${pin}
+                </div>
+              </div>
+              
+              <p style="margin:0;font-size:14px;color:#888888;">
+                This code will expire in 15 minutes.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer in Card -->
+          <tr>
+            <td style="background-color:#FAFAFA;padding:24px;text-align:center;border-top:1px solid #EEEEEE;">
+              <p style="margin:0;font-size:12px;color:#999999;">
+                If you didn't request this code, you can safely ignore this email.
+              </p>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Bottom Footer -->
+        <div style="margin-top:32px;text-align:center;">
+          <p style="margin:0;font-size:12px;color:#999999;">
+            &copy; ${new Date().getFullYear()} Boostify USA LLC
+          </p>
+          <div style="margin-top:8px;">
+            <a href="https://boostifyusa.com" style="color:#E8590C;text-decoration:none;font-size:12px;font-weight:600;">boostifyusa.com</a>
           </div>
-          <p style="color:#666666;font-size:12px;margin:0 0 8px;">This code expires in <strong style="color:#ffffff;">15 minutes</strong>.</p>
-          <p style="color:#444444;font-size:11px;margin:0 0 32px;">If you didn't request this, you can safely ignore this email.</p>
-        </td></tr>
-        <!-- Footer -->
-        <tr><td style="padding:24px 40px 32px;text-align:center;border-top:1px solid #222;">
-          <p style="color:#444444;font-size:11px;margin:0;">© ${new Date().getFullYear()} Boostify USA LLC · <a href="https://boostifyusa.com" style="color:#E8590C;text-decoration:none;">boostifyusa.com</a></p>
-        </td></tr>
-      </table>
-    </td></tr>
+        </div>
+      </td>
+    </tr>
   </table>
 </body>
 </html>`
@@ -598,6 +631,75 @@ app.post('/api/audit/send-pin', async (req, res) => {
         console.error('Send PIN Error:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
+});
+
+// DEV: View Email Template Route
+app.get('/api/test-email-view', (req, res) => {
+    const pin = "123456";
+    const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Verification Code</title>
+</head>
+<body style="margin:0;padding:0;background-color:#F5F5F7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;color:#111111;">
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#F5F5F7;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Logo -->
+        <div style="margin-bottom:32px;">
+          <img src="https://boostifyusa.com/Group-116.png" alt="Boostify" width="320" style="display:block;width:320px;height:auto;border:0;">
+        </div>
+        
+        <!-- Card -->
+        <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:480px;background-color:#FFFFFF;border-radius:24px;box-shadow:0 4px 24px rgba(0,0,0,0.04);overflow:hidden;">
+          <tr>
+            <td style="padding:48px 40px;text-align:center;">
+              <h1 style="margin:0 0 16px;font-size:24px;font-weight:700;color:#111111;letter-spacing:-0.5px;">Verify Your Email</h1>
+              <p style="margin:0 0 32px;font-size:16px;line-height:1.5;color:#666666;">
+                Use the verification code below to <strong style="color:#111111;">see your rankings</strong>.
+              </p>
+              
+              <!-- PIN Box -->
+              <div style="background-color:#FFF5F0;border:1px solid #FFE0D1;border-radius:16px;padding:24px;margin-bottom:32px;text-align:center;">
+                <div style="font-family:monospace;font-size:36px;font-weight:700;letter-spacing:8px;color:#E8590C;line-height:1;">
+                  ${pin}
+                </div>
+              </div>
+              
+              <p style="margin:0;font-size:14px;color:#888888;">
+                This code will expire in 15 minutes.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer in Card -->
+          <tr>
+            <td style="background-color:#FAFAFA;padding:24px;text-align:center;border-top:1px solid #EEEEEE;">
+              <p style="margin:0;font-size:12px;color:#999999;">
+                If you didn't request this code, you can safely ignore this email.
+              </p>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Bottom Footer -->
+        <div style="margin-top:32px;text-align:center;">
+          <p style="margin:0;font-size:12px;color:#999999;">
+            &copy; ${new Date().getFullYear()} Boostify USA LLC
+          </p>
+          <div style="margin-top:8px;">
+            <a href="https://boostifyusa.com" style="color:#E8590C;text-decoration:none;font-size:12px;font-weight:600;">boostifyusa.com</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+    res.send(html);
 });
 
 // Diagnostic Endpoint (GET)

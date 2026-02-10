@@ -14,7 +14,8 @@ import {
   Shield,
   Zap,
   Megaphone,
-  Rocket
+  Rocket,
+  Bot
 } from
   'lucide-react';
 export function ServicesPage() {
@@ -181,7 +182,7 @@ export function ServicesPage() {
         </section>
 
         {/* Detailed Services */}
-        <section className="px-6 mb-20 md:mb-32 space-y-20 md:space-y-32 overflow-hidden">
+        <section className="px-6 mb-20 md:mb-32 space-y-20 md:space-y-32">
           {/* Service 1: Web Design */}
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div
@@ -833,12 +834,122 @@ export function ServicesPage() {
               <div className="absolute -top-10 -right-10 w-full h-full bg-dark/5 rounded-3xl -z-10 hidden lg:block" />
             </motion.div>
           </div>
+
+          {/* Service 4: AI Automation (Visual Left, Text Right) */}
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -30
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0
+              }}
+              viewport={{
+                once: true
+              }}
+              className="relative order-2 lg:order-1">
+
+              <div className="aspect-square max-h-[400px] lg:max-h-none rounded-3xl overflow-hidden bg-gray-50 border border-gray-light shadow-2xl relative z-10 p-8 flex items-center justify-center">
+                {/* Chat UI Preview */}
+                <div className="w-[300px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                  {/* Chat Header */}
+                  <div className="bg-white border-b border-gray-100 p-4 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-orange/10 flex items-center justify-center text-orange">
+                      <Bot size={16} />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-dark">AI Assistant</div>
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <span className="text-[10px] text-green-500 font-bold uppercase">Online</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Chat Body */}
+                  <div className="p-4 space-y-3 bg-gray-50/50 h-[200px]">
+                    <div className="bg-gray-100 text-dark px-3 py-2 rounded-2xl rounded-tl-sm text-xs max-w-[85%]">
+                      Hello! Do you have any appointments available for tomorrow?
+                    </div>
+                    <div className="flex justify-end">
+                      <div className="bg-orange text-white px-3 py-2 rounded-2xl rounded-tr-sm text-xs max-w-[85%]">
+                        Yes! We have openings at 10am and 2pm. Would you like to book one?
+                      </div>
+                    </div>
+                    <div className="bg-gray-100 text-dark px-3 py-2 rounded-2xl rounded-tl-sm text-xs max-w-[85%]">
+                      10am works perfectly.
+                    </div>
+                  </div>
+                  {/* Chat Input */}
+                  <div className="p-3 border-t border-gray-100 bg-white">
+                    <div className="h-8 bg-gray-100 rounded-full w-full" />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -top-10 -left-10 w-full h-full bg-orange/5 rounded-3xl -z-10 hidden lg:block" />
+            </motion.div>
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 30
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0
+              }}
+              viewport={{
+                once: true
+              }}
+              className="order-1 lg:order-2">
+
+              <div className="w-16 h-16 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-8">
+                <Bot size={32} strokeWidth={2} />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
+                AI Automation
+              </h2>
+              <p className="text-xl text-gray font-medium mb-8 leading-relaxed">
+                Automate the busywork. Our AI agents answer calls, book appointments, and chase leads 24/7 so you can focus on growing your business.
+              </p>
+              <ul className="space-y-4 mb-10">
+                {[
+                  'Missed call text-back',
+                  '24/7 AI booking agent',
+                  'Reputation management',
+                  'Custom knowledge base'].
+                  map((item, i) =>
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-dark font-bold">
+
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                        <Check
+                          size={14}
+                          className="text-green-600"
+                          strokeWidth={3} />
+
+                      </div>
+                      {item}
+                    </li>
+                  )}
+              </ul>
+              <Link
+                to="/ai-automation"
+                className="inline-flex items-center font-bold text-orange hover:gap-2 transition-all">
+
+                Explore AI Automation
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </motion.div>
+          </div>
         </section>
 
         <CTASection />
       </main>
 
       <Footer />
-    </div>);
+    </div >);
 
 }

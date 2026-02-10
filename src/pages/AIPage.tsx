@@ -7,6 +7,7 @@ import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
+import { TrustBadges } from '../components/TrustBadges';
 import {
     Bot,
     Check,
@@ -49,7 +50,7 @@ export function AIPage() {
                 <section className="px-6 mb-20 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange/5 rounded-full blur-[100px] -z-10 translate-x-1/3 -translate-y-1/4" />
 
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-[50px]">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -109,7 +110,7 @@ export function AIPage() {
                                     initial={{ opacity: 0, scale: 0.8, x: 20 }}
                                     animate={{ opacity: 1, scale: 1, x: 0 }}
                                     transition={{ delay: 4.5, duration: 0.5, type: "spring" }}
-                                    className="absolute -right-24 top-4 z-20 bg-white rounded-2xl shadow-xl border border-green-100 px-5 py-4 flex items-center gap-4 hidden xl:flex"
+                                    className="absolute -right-32 top-2 z-20 bg-white rounded-2xl shadow-xl border border-green-100 px-5 py-4 flex items-center gap-4 hidden xl:flex"
                                 >
                                     <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center">
                                         <Check size={20} className="text-green-600" strokeWidth={3} />
@@ -185,6 +186,8 @@ export function AIPage() {
                         </motion.div>
                     </div>
                 </section>
+
+                <TrustBadges />
 
                 {/* Feature: Missed Call Text Back */}
                 <section className="py-24 px-6 bg-light/30">

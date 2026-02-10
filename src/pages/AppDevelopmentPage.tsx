@@ -241,7 +241,7 @@ export function AppDevelopmentPage() {
         </section>
 
         {/* Pain Points — Comparison Layout */}
-        <section className="py-24 px-6">
+        <section className="py-12 px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-dark mb-4 tracking-tight">

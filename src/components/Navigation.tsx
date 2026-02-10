@@ -9,7 +9,8 @@ import {
   MapPin,
   Wrench,
   ChevronDown,
-  Rocket
+  Rocket,
+  Bot
 } from
   'lucide-react';
 
@@ -43,6 +44,12 @@ const serviceLinks = [
     href: '/maintenance',
     icon: Wrench,
     desc: 'Keep your site healthy'
+  },
+  {
+    name: 'AI Automation',
+    href: '/ai-automation',
+    icon: Bot,
+    desc: '24/7 Auto-Reply Agents'
   }];
 
 
