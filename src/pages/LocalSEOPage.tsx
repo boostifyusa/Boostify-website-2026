@@ -147,7 +147,7 @@ export function LocalSEOPage() {
                 <Link
                   to="/seo-audit"
                   className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-                  Get Your Free Audit
+                  See Your Rankings Instantly
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
