@@ -294,6 +294,13 @@ function loadPinStore() {
         if (fs.existsSync(PIN_STORE_PATH)) {
             const fileContent = fs.readFileSync(PIN_STORE_PATH, 'utf-8');
             console.log('PIN store file content length:', fileContent.length);
+
+            if (!fileContent.trim()) {
+                console.log('PIN store file is empty. Clearing in-memory store.');
+                pinStore.clear();
+                return;
+            }
+
             const data = JSON.parse(fileContent);
             pinStore.clear();
             for (const [key, value] of Object.entries(data)) {
@@ -306,6 +313,8 @@ function loadPinStore() {
         }
     } catch (err) {
         console.error('Failed to load pin store:', err.message);
+        // Optional: If parse fails (e.g. valid file but bad JSON), do we clear?
+        // Safer to keep old memory state so we don't lose data on simple syntax error.
     }
 }
 loadPinStore();
