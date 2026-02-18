@@ -20,7 +20,8 @@ const dynamicRoutes = [
   '/app-development',
   '/ai-automation',
   '/seo-audit',
-  '/sitemap'
+  '/sitemap',
+  '/links'
 ]
 
 // https://vitejs.dev/config/
