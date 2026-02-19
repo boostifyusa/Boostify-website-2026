@@ -85,7 +85,11 @@ const advertiserSchema = {
         { "@type": "City", "name": "Fresno" },
         { "@type": "City", "name": "Clovis" },
         { "@type": "City", "name": "Visalia" },
-        { "@type": "City", "name": "Madera" }
+        { "@type": "City", "name": "Madera" },
+        { "@type": "City", "name": "Hanford" },
+        { "@type": "City", "name": "Merced" },
+        { "@type": "City", "name": "Tulare" },
+        { "@type": "City", "name": "Sanger" }
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",

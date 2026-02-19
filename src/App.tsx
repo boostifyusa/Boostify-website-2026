@@ -33,7 +33,7 @@ const HanfordMarketingAgencyPage = lazy(() => import('./pages/HanfordMarketingAg
 const MercedMarketingAgencyPage = lazy(() => import('./pages/MercedMarketingAgencyPage').then(module => ({ default: module.MercedMarketingAgencyPage })));
 const TulareMarketingAgencyPage = lazy(() => import('./pages/TulareMarketingAgencyPage').then(module => ({ default: module.TulareMarketingAgencyPage })));
 const SangerMarketingAgencyPage = lazy(() => import('./pages/SangerMarketingAgencyPage').then(module => ({ default: module.SangerMarketingAgencyPage })));
-const WebDesignLocationTemplate = lazy(() => import('./pages/WebDesignLocationTemplate').then(module => ({ default: module.WebDesignLocationTemplate })));
+
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -92,7 +92,7 @@ export function App() {
             <Route path="/merced-marketing-agency" element={<MercedMarketingAgencyPage />} />
             <Route path="/tulare-marketing-agency" element={<TulareMarketingAgencyPage />} />
             <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
-            <Route path="/webdesign-location-template" element={<WebDesignLocationTemplate />} />
+
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
