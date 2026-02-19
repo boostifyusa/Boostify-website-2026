@@ -104,7 +104,12 @@ const advertiserSchema = {
         { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
     ],
     "email": "hello@boostifyusa.com",
-    "logo": "https://boostifyusa.com/icon.png"
+    "logo": "https://boostifyusa.com/icon.png",
+    "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+    ]
 };
 
 const faqSchema = {
