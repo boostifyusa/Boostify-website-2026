@@ -32,8 +32,17 @@ export function ServicesPage() {
           name: "Digital Marketing Services",
           description: "Full-service digital marketing including Web Design, SEO, and PPC for local businesses.",
           provider: {
-            "@type": "LocalBusiness",
-            "name": "Boostify USA"
+            "@type": "ProfessionalService",
+            "@id": "https://boostifyusa.com/#localbusiness",
+            "name": "Boostify USA",
+            "url": "https://boostifyusa.com",
+            "telephone": "+1-559-785-3834",
+            "email": "hello@boostifyusa.com",
+            "logo": "https://boostifyusa.com/icon.png",
+            "contactPoint": [
+              { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+              { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+            ]
           },
           areaServed: "Fresno, CA",
           hasOfferCatalog: {

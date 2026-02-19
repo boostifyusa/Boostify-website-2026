@@ -85,8 +85,17 @@ export function LocalSEOPage() {
           name: "Local SEO Services",
           description: "Search Engine Optimization services focused on local ranking in Fresno, CA.",
           provider: {
-            "@type": "LocalBusiness",
-            "name": "Boostify USA"
+            "@type": "ProfessionalService",
+            "@id": "https://boostifyusa.com/#localbusiness",
+            "name": "Boostify USA",
+            "url": "https://boostifyusa.com",
+            "telephone": "+1-559-785-3834",
+            "email": "hello@boostifyusa.com",
+            "logo": "https://boostifyusa.com/icon.png",
+            "contactPoint": [
+              { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+              { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+            ]
           },
           areaServed: "Fresno, CA"
         }}

@@ -95,6 +95,13 @@ export function AboutPage() {
         data={{
           name: "Boostify USA",
           url: "https://boostifyusa.com/about",
+          telephone: "+1-559-785-3834",
+          email: "hello@boostifyusa.com",
+          logo: "https://boostifyusa.com/icon.png",
+          contactPoint: [
+            { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+            { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+          ],
           founder: {
             "@type": "Person",
             "name": "Joaquin Estrada",

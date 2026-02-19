@@ -69,8 +69,17 @@ export function OurWorkPage() {
           name: "Our Work",
           description: "Portfolio of Boostify USA's web design and marketing projects.",
           publisher: {
-            "@type": "Organization",
-            "name": "Boostify USA"
+            "@type": "ProfessionalService",
+            "@id": "https://boostifyusa.com/#localbusiness",
+            "name": "Boostify USA",
+            "url": "https://boostifyusa.com",
+            "telephone": "+1-559-785-3834",
+            "email": "hello@boostifyusa.com",
+            "logo": "https://boostifyusa.com/icon.png",
+            "contactPoint": [
+              { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+              { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+            ]
           }
         }}
       />
