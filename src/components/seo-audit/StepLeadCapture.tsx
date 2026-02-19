@@ -111,7 +111,7 @@ export const StepLeadCapture = ({
 
                 {/* ─── RIGHT: Form Card ─── */}
                 <div className="order-1 lg:order-2">
-                    <div className="bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 md:p-10 relative overflow-hidden">
+                    <div className="bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 p-10 md:p-12 relative overflow-hidden">
 
                         {/* Subtle Background Pattern */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-orange/5 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3" />
