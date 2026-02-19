@@ -75,8 +75,7 @@ export function TulareMarketingAgencyPage() {
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Tulare Marketing Agency
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Marketing Agency Built for{' '}
-                                <span className="text-orange">Tulare's Hardest Workers.</span>
+                                Built for Tulare's <span className="text-orange">Hardest Workers.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Tulare is powered by industry and grit — your marketing should

@@ -168,8 +168,7 @@ export function FresnoMarketingAgencyPage() {
                                 Marketing Agency Fresno
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Fresno Marketing Agency & Digital{' '}
-                                <span className="text-orange">Growth Partner.</span>
+                                Fresno's Growth <span className="text-orange">Starts Here.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Boostify USA is a full-service advertising agency built for local

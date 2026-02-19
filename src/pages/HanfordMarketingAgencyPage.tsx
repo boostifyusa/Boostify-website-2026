@@ -75,8 +75,7 @@ export function HanfordMarketingAgencyPage() {
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Hanford Marketing Agency
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Hanford's Trusted Marketing Agency.{' '}
-                                <span className="text-orange">Community-Driven Growth.</span>
+                                Kings County. <span className="text-orange">Your Growth Partner.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Kings County businesses need marketing partners who understand

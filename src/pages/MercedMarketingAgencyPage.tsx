@@ -75,8 +75,7 @@ export function MercedMarketingAgencyPage() {
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Merced Marketing Agency
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Merced Is Booming.{' '}
-                                <span className="text-orange">Your Marketing Should Be Too.</span>
+                                Merced Is Booming. <span className="text-orange">Get Ahead Now.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 With UC Merced's expansion and a wave of new businesses, the opportunity

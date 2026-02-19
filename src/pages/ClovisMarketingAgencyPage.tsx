@@ -162,8 +162,7 @@ export function ClovisMarketingAgencyPage() {
                                 Clovis Marketing Agency
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Your Local Clovis Marketing Agency.{' '}
-                                <span className="text-orange">Real Results.</span>
+                                Clovis Roots. <span className="text-orange">Real Results.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Clovis businesses deserve a marketing team that understands the

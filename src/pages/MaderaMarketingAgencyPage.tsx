@@ -76,8 +76,7 @@ export function MaderaMarketingAgencyPage() {
                                 Madera Marketing Agency
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Madera's Digital Marketing Agency.{' '}
-                                <span className="text-orange">Big Results, Small Town Heart.</span>
+                                Small Town. <span className="text-orange">Big Time Growth.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Madera is growing — and your business should grow with it. Boostify
