@@ -642,7 +642,7 @@ export function SEOAuditPage() {
             <main className="relative z-10 pt-32 pb-20 min-h-[90vh] flex flex-col items-center justify-center px-0">
                 <div className={`w-full mx-auto transition-all duration-500 ease-in-out ${step === STEPS.RESULTS
                     ? "min-h-screen w-full max-w-none px-0"
-                    : "max-w-4xl px-6"
+                    : "max-w-6xl px-6"
                     }`}>
 
                     <AnimatePresence mode="wait">
