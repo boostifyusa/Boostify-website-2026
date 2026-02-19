@@ -42,7 +42,7 @@ const faqs = [
     {
         question: 'How much does it cost to work with Boostify USA?',
         answer:
-            "Every project is different. Custom web design starts at $2,500 and monthly SEO/advertising packages start at $750/mo. We'll build a plan based on your goals and budget — never a cookie-cutter package."
+            "Every project is different. Custom web design starts at $1,995 and template-based sites start at $649. Our Local SEO packages start at $595/mo with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/mo that includes hosting, web design, and maintenance. We'll build a plan based on your goals and budget — never a cookie-cutter package."
     },
     {
         question: 'How long until I see results from local SEO?',
@@ -64,7 +64,7 @@ const faqs = [
 // AdvertisingAgency JSON-LD Schema
 const advertiserSchema = {
     "@context": "https://schema.org",
-    "@type": "AdvertisingAgency",
+    "@type": "ProfessionalService",
     "name": "Boostify USA",
     "url": "https://boostifyusa.com/fresno-marketing-agency",
     "description": "Premier Fresno marketing agency specializing in custom web design, local SEO, and digital advertising strategies.",
@@ -96,7 +96,14 @@ const advertiserSchema = {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
         ]
     },
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "telephone": "+1-559-785-3834",
+    "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+    ],
+    "email": "hello@boostifyusa.com",
+    "logo": "https://boostifyusa.com/icon.png"
 };
 
 // FAQ Schema for SEO

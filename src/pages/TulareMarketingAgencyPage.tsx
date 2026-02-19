@@ -20,11 +20,11 @@ const faqs = [
     { question: 'What sets Boostify apart from other agencies in the Valley?', answer: "Three things: we never use templates (every site is custom-coded), we never require contracts (month-to-month only), and we track every lead back to its source (so you know exactly what's working). Most agencies can't offer all three." },
     { question: 'How do you handle businesses that serve multiple Valley cities?', answer: "Multi-location SEO is one of our specialties. We build city-specific landing pages, optimize separate Google Business Profiles where applicable, and create ad campaigns with geo-targeting for each area you serve." },
     { question: 'What should I expect in the first 30 days?', answer: "In month one, we audit your current presence, build your strategy, launch your Google Ads (if applicable), and begin SEO foundation work. You'll have a dedicated strategist, a live reporting dashboard, and your first leads from paid campaigns within weeks." },
-    { question: 'Is digital marketing worth it for a small Tulare business?', answer: "Absolutely — in fact, it's where small businesses have the biggest advantage. Local SEO levels the playing field against bigger competitors. A $1,000/month investment in targeted digital marketing can generate $5,000-$10,000 in new revenue." },
+    { question: 'Is digital marketing worth it for a small Tulare business?', answer: "Absolutely — in fact, it's where small businesses have the biggest advantage. Local SEO levels the playing field against bigger competitors. Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Lite plan in March at just $249/month that includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649." },
 ];
 
 const advertiserSchema = {
-    "@context": "https://schema.org", "@type": "AdvertisingAgency",
+    "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA", "url": "https://boostifyusa.com/tulare-marketing-agency",
     "description": "Tulare's results-driven marketing agency. Custom web design, local SEO, and Google Ads built for Tulare County businesses.",
     "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr Ste 118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
@@ -36,7 +36,14 @@ const advertiserSchema = {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Management" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
         ]
-    }, "priceRange": "$$"
+    }, "priceRange": "$$",
+    "telephone": "+1-559-785-3834",
+    "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+    ],
+    "email": "hello@boostifyusa.com",
+    "logo": "https://boostifyusa.com/icon.png"
 };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) };
 

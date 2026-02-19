@@ -27,7 +27,13 @@ export function AgencyHomePage() {
           "@id": "https://boostifyusa.com/#localbusiness",
           "name": "Boostify USA",
           "url": "https://boostifyusa.com",
-          "telephone": "+15597853834",
+          "telephone": "+1-559-785-3834",
+          "contactPoint": [
+            { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+            { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+          ],
+          "email": "hello@boostifyusa.com",
+          "logo": "https://boostifyusa.com/icon.png",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "6362 N Figarden Dr Ste 118",

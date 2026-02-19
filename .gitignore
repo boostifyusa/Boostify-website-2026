@@ -33,3 +33,6 @@ server/biz-store.json
 
 # Home page variation experiment
 src/pages/HomeVariation1.tsx
+
+# Web Design Location Template (local only)
+src/pages/WebDesignLocationTemplate.tsx

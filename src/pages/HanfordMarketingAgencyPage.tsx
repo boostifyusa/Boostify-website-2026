@@ -24,7 +24,7 @@ const faqs = [
 ];
 
 const advertiserSchema = {
-    "@context": "https://schema.org", "@type": "AdvertisingAgency",
+    "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA", "url": "https://boostifyusa.com/hanford-marketing-agency",
     "description": "Hanford's reliable marketing agency for custom web design, local SEO, and digital advertising. Serving Kings County businesses with data-driven strategies.",
     "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr Ste 118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
@@ -36,7 +36,14 @@ const advertiserSchema = {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Management" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
         ]
-    }, "priceRange": "$$"
+    }, "priceRange": "$$",
+    "telephone": "+1-559-785-3834",
+    "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+    ],
+    "email": "hello@boostifyusa.com",
+    "logo": "https://boostifyusa.com/icon.png"
 };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) };
 

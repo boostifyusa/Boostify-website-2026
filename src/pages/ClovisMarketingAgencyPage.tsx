@@ -65,7 +65,7 @@ const faqs = [
 // AdvertisingAgency JSON-LD Schema — Clovis
 const advertiserSchema = {
     "@context": "https://schema.org",
-    "@type": "AdvertisingAgency",
+    "@type": "ProfessionalService",
     "name": "Boostify USA",
     "url": "https://boostifyusa.com/clovis-marketing-agency",
     "description": "Leading Clovis marketing agency delivering custom web design, local SEO, and targeted digital advertising for Central Valley businesses.",
@@ -97,7 +97,14 @@ const advertiserSchema = {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
         ]
     },
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "telephone": "+1-559-785-3834",
+    "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+    ],
+    "email": "hello@boostifyusa.com",
+    "logo": "https://boostifyusa.com/icon.png"
 };
 
 const faqSchema = {

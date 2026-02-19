@@ -18,13 +18,13 @@ import {
 const faqs = [
     { question: 'Is Boostify USA based in Madera?', answer: "Our headquarters are in Fresno, just minutes from Madera. We serve Madera County businesses with the same local expertise and availability as our Fresno clients. We're close enough to meet in person whenever needed." },
     { question: 'What results can a Madera business expect from SEO?', answer: "Most clients see meaningful ranking improvements within 3-4 months and significant lead growth by month 6. Because Madera is a smaller market, competition is lower — meaning faster results than in bigger cities." },
-    { question: 'How much should I budget for digital marketing?', answer: 'For Madera businesses, effective campaigns typically run $800–$2,500/month depending on services. We always start with a free consultation to recommend the right investment based on your goals and competitive landscape.' },
+    { question: 'How much should I budget for digital marketing?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month — which includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. We always start with a free consultation to recommend the right investment based on your goals.` },
     { question: 'Do you build websites for Madera businesses?', answer: "Absolutely. Every website we build is 100% custom — no templates. We design for your specific audience, optimize for mobile and speed, and include SEO foundations so you start ranking from launch day." },
     { question: 'Can you help me compete with bigger businesses in Fresno?', answer: "That's exactly what we do. Local SEO levels the playing field. When someone in Madera searches for your service, we make sure you appear first — not the Fresno chain with a bigger budget." },
 ];
 
 const advertiserSchema = {
-    "@context": "https://schema.org", "@type": "AdvertisingAgency",
+    "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA", "url": "https://boostifyusa.com/madera-marketing-agency",
     "description": "Madera's trusted marketing agency for custom web design, local SEO, and Google Ads. Helping Madera County businesses grow their digital presence.",
     "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr Ste 118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
@@ -36,7 +36,14 @@ const advertiserSchema = {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Management" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
         ]
-    }, "priceRange": "$$"
+    }, "priceRange": "$$",
+    "telephone": "+1-559-785-3834",
+    "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+    ],
+    "email": "hello@boostifyusa.com",
+    "logo": "https://boostifyusa.com/icon.png"
 };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) };
 

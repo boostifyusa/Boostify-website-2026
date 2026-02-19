@@ -311,13 +311,25 @@ export function ContactPage() {
           "@id": "https://boostifyusa.com/#localbusiness",
           "name": "Boostify USA",
           "url": "https://boostifyusa.com/contact",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-559-785-3834",
-            "contactType": "sales",
-            "areaServed": "US",
-            "availableLanguage": "English"
-          }
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+1-559-785-3834",
+              "contactType": "sales",
+              "areaServed": "US",
+              "availableLanguage": "English"
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+1-559-201-8706",
+              "contactType": "customer service",
+              "areaServed": "US",
+              "availableLanguage": "English"
+            }
+          ],
+          "telephone": "+1-559-785-3834",
+          "email": "hello@boostifyusa.com",
+          "logo": "https://boostifyusa.com/icon.png"
         }}
       />
       <Navigation />

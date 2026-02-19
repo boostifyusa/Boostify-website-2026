@@ -18,13 +18,13 @@ import {
 const faqs = [
     { question: 'Why does a Sanger business need a marketing agency?', answer: "Sanger may be a smaller market, but your customers are searching online just like everyone else. In fact, smaller markets offer a huge advantage — less competition means faster results and lower advertising costs. A focused digital strategy can help you dominate your local area quickly." },
     { question: 'How close is Boostify to Sanger?', answer: "We're based in Fresno — just 15 minutes from Sanger. We serve Sanger as a priority market, not a distant afterthought. We're always available for in-person meetings and local strategy sessions." },
-    { question: 'What kind of budget do I need to get started?', answer: 'Sanger businesses can see meaningful results starting at $500-$1,500/month depending on services. Because competition is lower in smaller markets, your marketing dollars go further. We always recommend starting with a free strategy call to find the right fit.' },
+    { question: 'What kind of budget do I need to get started?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month that includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. Because competition is lower in Sanger, your marketing dollars go further. We always recommend a free strategy call to find the right fit.` },
     { question: 'Will you build my website or just do marketing?', answer: "Both. We offer complete digital solutions — from custom website design and development to ongoing SEO and Google Ads management. Most clients start with a website and SEO, then add paid advertising once their foundation is solid." },
     { question: 'How do you track results for my Sanger business?', answer: "Every client gets access to a live reporting dashboard showing rankings, traffic, leads, calls, and revenue attribution. We track every phone call and form submission back to its source — so you always know exactly what's working." },
 ];
 
 const advertiserSchema = {
-    "@context": "https://schema.org", "@type": "AdvertisingAgency",
+    "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA", "url": "https://boostifyusa.com/sanger-marketing-agency",
     "description": "Sanger's dedicated marketing agency for custom web design, local SEO, and Google Ads. Helping East Valley businesses compete and win online.",
     "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr Ste 118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
@@ -36,7 +36,14 @@ const advertiserSchema = {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Management" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
         ]
-    }, "priceRange": "$$"
+    }, "priceRange": "$$",
+    "telephone": "+1-559-785-3834",
+    "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+    ],
+    "email": "hello@boostifyusa.com",
+    "logo": "https://boostifyusa.com/icon.png"
 };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) };
 
