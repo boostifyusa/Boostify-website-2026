@@ -65,12 +65,13 @@ export function HeroSection() {
             }}
             className="text-5xl md:text-7xl lg:text-8xl font-black text-dark leading-[0.95] tracking-tighter mb-8">
 
-            Websites That Bring Your{' '}
+
+            We Build Websites That{' '}
             <span className="relative inline-block px-2 isolate">
               <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-              <span className="text-orange relative z-10">Neighbors</span>
+              <span className="text-orange relative z-10">Actually</span>
             </span>{' '}
-            to Your Door.
+            Bring Customers In.
           </motion.h1>
 
           <motion.p

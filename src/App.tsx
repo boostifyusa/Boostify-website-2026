@@ -24,6 +24,8 @@ const SitemapPage = lazy(() => import('./pages/SitemapPage').then(module => ({ d
 const AIPage = lazy(() => import('./pages/AIPage').then(module => ({ default: module.AIPage })));
 const SEOAuditPage = lazy(() => import('./pages/SEOAuditPage').then(module => ({ default: module.SEOAuditPage })));
 const LinksPage = lazy(() => import('./pages/LinksPage').then(module => ({ default: module.LinksPage })));
+const HomeVariation1 = lazy(() => import('./pages/HomeVariation1').then(module => ({ default: module.HomeVariation1 })));
+const FresnoMarketingAgencyPage = lazy(() => import('./pages/FresnoMarketingAgencyPage').then(module => ({ default: module.FresnoMarketingAgencyPage })));
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -73,6 +75,8 @@ export function App() {
             <Route path="/seo-audit" element={<SEOAuditPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
             <Route path="/links" element={<LinksPage />} />
+            <Route path="/home-1" element={<HomeVariation1 />} />
+            <Route path="/fresno-marketing-agency" element={<FresnoMarketingAgencyPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

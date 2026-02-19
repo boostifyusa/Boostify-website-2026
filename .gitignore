@@ -30,3 +30,6 @@ dist-ssr
 roadmap/
 server/pin-store.json
 server/biz-store.json
+
+# Home page variation experiment
+src/pages/HomeVariation1.tsx

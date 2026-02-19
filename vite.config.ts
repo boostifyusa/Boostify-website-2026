@@ -21,7 +21,8 @@ const dynamicRoutes = [
   '/ai-automation',
   '/seo-audit',
   '/sitemap',
-  '/links'
+  '/links',
+  '/fresno-marketing-agency'
 ]
 
 // https://vitejs.dev/config/

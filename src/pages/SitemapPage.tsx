@@ -31,6 +31,12 @@ const sitemapLinks = [
         ]
     },
     {
+        category: 'Locations',
+        links: [
+            { name: 'Fresno Marketing Agency', path: '/fresno-marketing-agency' },
+        ]
+    },
+    {
         category: 'Legal & Info',
         links: [
             { name: 'Privacy Policy', path: '/privacy' },
