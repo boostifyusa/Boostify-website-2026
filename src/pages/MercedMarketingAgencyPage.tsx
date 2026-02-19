@@ -112,11 +112,7 @@ export function MercedMarketingAgencyPage() {
                                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center"><GraduationCap size={16} className="text-blue-600" strokeWidth={3} /></div>
                                 <div><div className="text-xs font-black text-dark leading-none">UC Merced</div><div className="text-[10px] text-gray font-medium">Growth Corridor</div></div>
                             </motion.div>
-                            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.5 }}
-                                className="absolute -bottom-4 -left-4 z-20 bg-dark rounded-xl shadow-lg px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
-                                <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center"><TrendingUp size={16} className="text-green-400" strokeWidth={3} /></div>
-                                <div><div className="text-xs font-black text-white leading-none">+210%</div><div className="text-[10px] text-white/50 font-medium">Client Avg. Growth</div></div>
-                            </motion.div>
+
 
                             <div className="bg-dark rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative z-10 p-6 aspect-[4/3] flex flex-col">
                                 <div className="flex items-center justify-between mb-5">

@@ -238,19 +238,6 @@ export function FresnoMarketingAgencyPage() {
                                 </div>
                             </motion.div>
 
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 1, duration: 0.5 }}
-                                className="absolute -bottom-4 -left-4 z-20 bg-dark rounded-xl shadow-lg px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
-                                <div className="w-8 h-8 rounded-full bg-orange/20 flex items-center justify-center">
-                                    <Users size={16} className="text-orange" strokeWidth={3} />
-                                </div>
-                                <div>
-                                    <div className="text-xs font-black text-white leading-none">50+ Clients</div>
-                                    <div className="text-[10px] text-white/50 font-medium">Central Valley</div>
-                                </div>
-                            </motion.div>
 
                             {/* Hero Graphic: Multi-Service Dashboard */}
                             <div className="bg-dark rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative z-10 p-6 aspect-[4/3] flex flex-col">

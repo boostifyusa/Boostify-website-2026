@@ -23,9 +23,22 @@ import {
   MousePointerClick,
   TrendingUp,
   BadgeCheck,
-  Megaphone
+  Megaphone,
+  MapPin,
+  Building2
 } from
   'lucide-react';
+
+const areaCities = [
+  { city: 'Fresno', path: '/fresno-marketing-agency' },
+  { city: 'Clovis', path: '/clovis-marketing-agency' },
+  { city: 'Visalia', path: '/visalia-marketing-agency' },
+  { city: 'Madera', path: '/madera-marketing-agency' },
+  { city: 'Hanford', path: '/hanford-marketing-agency' },
+  { city: 'Merced', path: '/merced-marketing-agency' },
+  { city: 'Tulare', path: '/tulare-marketing-agency' },
+  { city: 'Sanger', path: '/sanger-marketing-agency' },
+];
 const faqs = [
   {
     question: 'How much should I spend on Google Ads?',
@@ -758,6 +771,42 @@ export function LocalMarketingPage() {
                   </AnimatePresence>
                 </div>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── AREA SERVED ───── */}
+        <section className="py-24 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-dark rounded-3xl p-10 md:p-16 relative overflow-hidden">
+              {/* Decorative bg glow */}
+              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-orange/15 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3" />
+              <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-orange/10 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3" />
+
+              <div className="relative z-10">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                  <div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <MapPin size={18} className="text-orange" strokeWidth={2.5} />
+                      <span className="text-orange text-sm font-bold uppercase tracking-wider">Our Locations</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Serving the <span className="text-orange">Central Valley</span></h2>
+                  </div>
+                  <p className="text-white/50 font-medium text-sm md:text-base max-w-md md:text-right">Local marketing expertise for every corner of the Valley. Click a city to see how we help businesses in your area.</p>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {areaCities.map((item, i) => (
+                    <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+                      <Link to={item.path} className="group block p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-orange hover:border-orange text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange/20">
+                        <Building2 size={22} className="mx-auto mb-2.5 text-orange group-hover:text-white transition-colors" strokeWidth={2.5} />
+                        <div className="text-base font-black text-white mb-0.5">{item.city}</div>
+                        <div className="text-xs font-medium text-white/40 group-hover:text-white/80 transition-colors">View Services →</div>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
