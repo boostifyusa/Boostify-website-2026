@@ -24,8 +24,15 @@ const SitemapPage = lazy(() => import('./pages/SitemapPage').then(module => ({ d
 const AIPage = lazy(() => import('./pages/AIPage').then(module => ({ default: module.AIPage })));
 const SEOAuditPage = lazy(() => import('./pages/SEOAuditPage').then(module => ({ default: module.SEOAuditPage })));
 const LinksPage = lazy(() => import('./pages/LinksPage').then(module => ({ default: module.LinksPage })));
-const HomeVariation1 = lazy(() => import('./pages/HomeVariation1').then(module => ({ default: module.HomeVariation1 })));
+
 const FresnoMarketingAgencyPage = lazy(() => import('./pages/FresnoMarketingAgencyPage').then(module => ({ default: module.FresnoMarketingAgencyPage })));
+const ClovisMarketingAgencyPage = lazy(() => import('./pages/ClovisMarketingAgencyPage').then(module => ({ default: module.ClovisMarketingAgencyPage })));
+const VisaliaMarketingAgencyPage = lazy(() => import('./pages/VisaliaMarketingAgencyPage').then(module => ({ default: module.VisaliaMarketingAgencyPage })));
+const MaderaMarketingAgencyPage = lazy(() => import('./pages/MaderaMarketingAgencyPage').then(module => ({ default: module.MaderaMarketingAgencyPage })));
+const HanfordMarketingAgencyPage = lazy(() => import('./pages/HanfordMarketingAgencyPage').then(module => ({ default: module.HanfordMarketingAgencyPage })));
+const MercedMarketingAgencyPage = lazy(() => import('./pages/MercedMarketingAgencyPage').then(module => ({ default: module.MercedMarketingAgencyPage })));
+const TulareMarketingAgencyPage = lazy(() => import('./pages/TulareMarketingAgencyPage').then(module => ({ default: module.TulareMarketingAgencyPage })));
+const SangerMarketingAgencyPage = lazy(() => import('./pages/SangerMarketingAgencyPage').then(module => ({ default: module.SangerMarketingAgencyPage })));
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -75,8 +82,15 @@ export function App() {
             <Route path="/seo-audit" element={<SEOAuditPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
             <Route path="/links" element={<LinksPage />} />
-            <Route path="/home-1" element={<HomeVariation1 />} />
+
             <Route path="/fresno-marketing-agency" element={<FresnoMarketingAgencyPage />} />
+            <Route path="/clovis-marketing-agency" element={<ClovisMarketingAgencyPage />} />
+            <Route path="/visalia-marketing-agency" element={<VisaliaMarketingAgencyPage />} />
+            <Route path="/madera-marketing-agency" element={<MaderaMarketingAgencyPage />} />
+            <Route path="/hanford-marketing-agency" element={<HanfordMarketingAgencyPage />} />
+            <Route path="/merced-marketing-agency" element={<MercedMarketingAgencyPage />} />
+            <Route path="/tulare-marketing-agency" element={<TulareMarketingAgencyPage />} />
+            <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

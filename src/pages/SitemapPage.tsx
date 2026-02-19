@@ -34,6 +34,13 @@ const sitemapLinks = [
         category: 'Locations',
         links: [
             { name: 'Fresno Marketing Agency', path: '/fresno-marketing-agency' },
+            { name: 'Clovis Marketing Agency', path: '/clovis-marketing-agency' },
+            { name: 'Visalia Marketing Agency', path: '/visalia-marketing-agency' },
+            { name: 'Madera Marketing Agency', path: '/madera-marketing-agency' },
+            { name: 'Hanford Marketing Agency', path: '/hanford-marketing-agency' },
+            { name: 'Merced Marketing Agency', path: '/merced-marketing-agency' },
+            { name: 'Tulare Marketing Agency', path: '/tulare-marketing-agency' },
+            { name: 'Sanger Marketing Agency', path: '/sanger-marketing-agency' },
         ]
     },
     {

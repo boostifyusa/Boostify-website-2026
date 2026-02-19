@@ -666,36 +666,34 @@ export function FresnoMarketingAgencyPage() {
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {[
-                                { city: 'Fresno', tagline: 'Home Base', highlight: true },
-                                { city: 'Clovis', tagline: 'Old Town & Beyond', highlight: false },
-                                { city: 'Visalia', tagline: 'Tulare County Hub', highlight: false },
-                                { city: 'Madera', tagline: 'Growing Market', highlight: false },
-                                { city: 'Hanford', tagline: 'Kings County', highlight: false },
-                                { city: 'Merced', tagline: 'UC Merced Area', highlight: false },
-                                { city: 'Tulare', tagline: 'Ag & Industry', highlight: false },
-                                { city: 'Sanger', tagline: 'East Valley', highlight: false }
+                                { city: 'Fresno', path: '/fresno-marketing-agency', highlight: true },
+                                { city: 'Clovis', path: '/clovis-marketing-agency', highlight: false },
+                                { city: 'Visalia', path: '/visalia-marketing-agency', highlight: false },
+                                { city: 'Madera', path: '/madera-marketing-agency', highlight: false },
+                                { city: 'Hanford', path: '/hanford-marketing-agency', highlight: false },
+                                { city: 'Merced', path: '/merced-marketing-agency', highlight: false },
+                                { city: 'Tulare', path: '/tulare-marketing-agency', highlight: false },
+                                { city: 'Sanger', path: '/sanger-marketing-agency', highlight: false },
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
-                                    className={`p-6 rounded-2xl border text-center transition-all hover:-translate-y-1 duration-300 ${item.highlight
-                                        ? 'bg-orange text-white border-orange shadow-lg shadow-orange/20'
-                                        : 'bg-white border-gray-light hover:border-orange/30 hover:shadow-md'
-                                        }`}>
-                                    <Building2
-                                        size={24}
-                                        className={`mx-auto mb-3 ${item.highlight ? 'text-white' : 'text-orange'}`}
-                                        strokeWidth={2.5}
-                                    />
-                                    <div className={`text-lg font-black mb-1 ${item.highlight ? 'text-white' : 'text-dark'}`}>
-                                        {item.city}
-                                    </div>
-                                    <div className={`text-sm font-medium ${item.highlight ? 'text-white/80' : 'text-gray'}`}>
-                                        {item.tagline}
-                                    </div>
+                                    transition={{ delay: i * 0.05 }}>
+                                    {item.highlight ? (
+                                        <div className="p-6 rounded-2xl border text-center bg-orange text-white border-orange shadow-lg shadow-orange/20">
+                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} />
+                                            <div className="text-lg font-black mb-1 text-white">{item.city}</div>
+                                            <div className="text-sm font-medium text-white/80">Home Base</div>
+                                        </div>
+                                    ) : (
+                                        <Link to={item.path} className="block p-6 rounded-2xl border text-center bg-white border-gray-light hover:border-orange/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                                            <Building2 size={24} className="mx-auto mb-3 text-orange" strokeWidth={2.5} />
+                                            <div className="text-lg font-black mb-1 text-dark">{item.city}</div>
+                                            <div className="text-sm font-medium text-gray">View Services →</div>
+                                        </Link>
+                                    )}
                                 </motion.div>
                             ))}
                         </div>

@@ -22,7 +22,14 @@ const dynamicRoutes = [
   '/seo-audit',
   '/sitemap',
   '/links',
-  '/fresno-marketing-agency'
+  '/fresno-marketing-agency',
+  '/clovis-marketing-agency',
+  '/visalia-marketing-agency',
+  '/madera-marketing-agency',
+  '/hanford-marketing-agency',
+  '/merced-marketing-agency',
+  '/tulare-marketing-agency',
+  '/sanger-marketing-agency'
 ]
 
 // https://vitejs.dev/config/
