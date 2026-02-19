@@ -18,6 +18,7 @@ app.use(express.json());
 // Serve static files from the React app
 import path from 'path';
 import fs from 'fs';
+import ssrSchemas from './ssr-schemas.js';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -1072,9 +1073,29 @@ app.get('/api/static-map', async (req, res) => {
     }
 });
 
-// All other GET requests not handled before will return the React app
+// All other GET requests — inject SSR schemas for city marketing pages
+
 app.use((req, res) => {
-    res.sendFile(path.join(DIST_DIR, 'index.html'));
+    const indexPath = path.join(DIST_DIR, 'index.html');
+    const schemas = ssrSchemas.get(req.path);
+
+    // Non-city routes: fast path, no file read
+    if (!schemas) {
+        return res.sendFile(indexPath);
+    }
+
+    // City marketing pages: inject JSON-LD into <head>
+    fs.readFile(indexPath, 'utf8', (err, html) => {
+        if (err) {
+            console.error('SSR Schema injection error:', err.message);
+            return res.sendFile(indexPath); // Fallback to unmodified
+        }
+        const tags = schemas.map(s =>
+            `<script type="application/ld+json">${JSON.stringify(s)}</script>`
+        ).join('\n    ');
+        const modified = html.replace('</head>', `    ${tags}\n  </head>`);
+        res.send(modified);
+    });
 });
 
 
