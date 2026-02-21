@@ -127,7 +127,7 @@ function ContactForm() {
                 name: e.target.value
               })
             }
-            placeholder="Joaquin Estrada"
+            placeholder="John Doe"
             className="w-full px-4 py-3.5 bg-light border border-gray-light rounded-xl text-dark font-medium placeholder:text-gray/40 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/10 transition-all" />
 
         </div>
