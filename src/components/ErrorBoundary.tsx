@@ -29,7 +29,8 @@ export class ErrorBoundary extends Component<Props, State> {
         if (
             error.name === 'ChunkLoadError' ||
             error.message.includes('Failed to fetch dynamically imported module') ||
-            error.message.includes('Importing a module script failed')
+            error.message.includes('Importing a module script failed') ||
+            error.message.includes('is not a valid JavaScript MIME type')
         ) {
             const isReloaded = sessionStorage.getItem('chunk_load_error_reloaded');
             if (!isReloaded) {
@@ -58,7 +59,8 @@ export class ErrorBoundary extends Component<Props, State> {
             const isChunkLoadError =
                 this.state.error?.name === 'ChunkLoadError' ||
                 this.state.error?.message.includes('Failed to fetch dynamically imported module') ||
-                this.state.error?.message.includes('Importing a module script failed');
+                this.state.error?.message.includes('Importing a module script failed') ||
+                this.state.error?.message.includes('is not a valid JavaScript MIME type');
 
             if (isChunkLoadError) {
                 // If it's a chunk load error but we already tried reloading once, suggest manual reload

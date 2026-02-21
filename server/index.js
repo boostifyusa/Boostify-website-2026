@@ -1335,7 +1335,12 @@ app.get('/api/partners/leads', async (req, res) => {
 
 // All other GET requests — inject SSR schemas for city marketing pages
 
-app.use((req, res) => {
+app.use((req, res, next) => {
+    // Prevent serving index.html for missing static assets (fixes MIME type errors on missing JS chunks)
+    if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot)$/) || req.path.startsWith('/assets/')) {
+        return res.status(404).send('Asset not found');
+    }
+
     const indexPath = path.join(DIST_DIR, 'index.html');
     const schemas = ssrSchemas.get(req.path);
     const isBlog = req.path.startsWith('/blog/');
