@@ -126,7 +126,7 @@ export function PartnerDashboardPage() {
             <Navigation />
 
             <main className="flex-1 pt-32 pb-20 px-6">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                     {/* Header Row */}
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
                         <div>

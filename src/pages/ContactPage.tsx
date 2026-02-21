@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { SeoHead } from '../components/SeoHead';
@@ -10,11 +10,8 @@ import {
   Phone,
   Mail,
   Clock,
-  Send,
-  CheckCircle,
-  ArrowRight
+  CheckCircle
 } from 'lucide-react';
-// @ts-ignore
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function ContactForm() {
@@ -138,7 +135,7 @@ function ContactForm() {
             Email *
           </label>
           <input
-            type="email"
+            type="text"
             name="email"
             required
             value={formData.email}
