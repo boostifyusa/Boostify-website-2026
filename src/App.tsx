@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import { AgencyHomePage } from './pages/AgencyHomePage';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 // Lazy load pages for better performance
 // AgencyHomePage is imported directly to improve LCP (Largest Contentful Paint) for the main landing page
@@ -69,45 +70,47 @@ export function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTopOrHash />
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white"><div className="w-12 h-12 border-4 border-orange/20 border-t-orange rounded-full animate-spin"></div></div>}>
-          <Routes>
-            <Route path="/" element={<AgencyHomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/web-design" element={<WebDesignPage />} />
-            <Route path="/local-seo" element={<LocalSEOPage />} />
-            <Route path="/local-marketing" element={<LocalMarketingPage />} />
-            <Route path="/maintenance" element={<MaintenancePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/work" element={<OurWorkPage />} />
-            <Route path="/privacy" element={<PrivacyPolicyPage />} />
-            <Route path="/terms" element={<TermsOfServicePage />} />
-            <Route path="/sms" element={<SMSProgramPage />} />
-            <Route path="/app-development" element={<AppDevelopmentPage />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
-            <Route path="/ai-automation" element={<AIPage />} />
-            <Route path="/seo-audit" element={<SEOAuditPage />} />
-            <Route path="/sitemap" element={<SitemapPage />} />
-            <Route path="/links" element={<LinksPage />} />
+        <ErrorBoundary>
+          <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white"><div className="w-12 h-12 border-4 border-orange/20 border-t-orange rounded-full animate-spin"></div></div>}>
+            <Routes>
+              <Route path="/" element={<AgencyHomePage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/web-design" element={<WebDesignPage />} />
+              <Route path="/local-seo" element={<LocalSEOPage />} />
+              <Route path="/local-marketing" element={<LocalMarketingPage />} />
+              <Route path="/maintenance" element={<MaintenancePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/work" element={<OurWorkPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsOfServicePage />} />
+              <Route path="/sms" element={<SMSProgramPage />} />
+              <Route path="/app-development" element={<AppDevelopmentPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+              <Route path="/ai-automation" element={<AIPage />} />
+              <Route path="/seo-audit" element={<SEOAuditPage />} />
+              <Route path="/sitemap" element={<SitemapPage />} />
+              <Route path="/links" element={<LinksPage />} />
 
-            <Route path="/partners" element={<ReferralProgramPage />} />
-            <Route path="/partners/login" element={<PartnerLoginPage />} />
-            <Route path="/partners/dashboard" element={<PartnerDashboardPage />} />
-            <Route path="/partners/qr/:partnerId" element={<PartnerQRPage />} />
-            <Route path="/referral/:partnerId" element={<PartnerLeadPage />} />
+              <Route path="/partners" element={<ReferralProgramPage />} />
+              <Route path="/partners/login" element={<PartnerLoginPage />} />
+              <Route path="/partners/dashboard" element={<PartnerDashboardPage />} />
+              <Route path="/partners/qr/:partnerId" element={<PartnerQRPage />} />
+              <Route path="/referral/:partnerId" element={<PartnerLeadPage />} />
 
-            <Route path="/fresno-marketing-agency" element={<FresnoMarketingAgencyPage />} />
-            <Route path="/clovis-marketing-agency" element={<ClovisMarketingAgencyPage />} />
-            <Route path="/visalia-marketing-agency" element={<VisaliaMarketingAgencyPage />} />
-            <Route path="/madera-marketing-agency" element={<MaderaMarketingAgencyPage />} />
-            <Route path="/hanford-marketing-agency" element={<HanfordMarketingAgencyPage />} />
-            <Route path="/merced-marketing-agency" element={<MercedMarketingAgencyPage />} />
-            <Route path="/tulare-marketing-agency" element={<TulareMarketingAgencyPage />} />
-            <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
+              <Route path="/fresno-marketing-agency" element={<FresnoMarketingAgencyPage />} />
+              <Route path="/clovis-marketing-agency" element={<ClovisMarketingAgencyPage />} />
+              <Route path="/visalia-marketing-agency" element={<VisaliaMarketingAgencyPage />} />
+              <Route path="/madera-marketing-agency" element={<MaderaMarketingAgencyPage />} />
+              <Route path="/hanford-marketing-agency" element={<HanfordMarketingAgencyPage />} />
+              <Route path="/merced-marketing-agency" element={<MercedMarketingAgencyPage />} />
+              <Route path="/tulare-marketing-agency" element={<TulareMarketingAgencyPage />} />
+              <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
 
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </Router>
     </HelmetProvider>
   );
