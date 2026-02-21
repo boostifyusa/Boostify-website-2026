@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
@@ -12,6 +12,11 @@ import {
   Clock,
   Tag,
   Share2,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Link2,
+  Check
 } from 'lucide-react';
 import { blogPosts } from '../data/posts';
 
@@ -52,6 +57,48 @@ const relatedPosts = [
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<any>(null);
+  const [isShareOpen, setIsShareOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const shareRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (shareRef.current && !shareRef.current.contains(event.target as Node)) {
+        setIsShareOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleShare = (platform: string) => {
+    if (!post) return;
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(post.title);
+
+    let shareUrl = '';
+    switch (platform) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`;
+        break;
+    }
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    }
+    setIsShareOpen(false);
+  };
 
   useEffect(() => {
     // Look up post based on slug from params
@@ -232,10 +279,41 @@ export function BlogPostPage() {
                     </span>
                   )}
               </div>
-              <button className="flex items-center gap-2 text-sm font-bold text-gray hover:text-orange transition-colors">
-                <Share2 size={14} />
-                Share
-              </button>
+              <div className="relative" ref={shareRef}>
+                <button
+                  onClick={() => setIsShareOpen(!isShareOpen)}
+                  className="flex items-center gap-2 text-sm font-bold text-gray hover:text-orange transition-colors"
+                >
+                  <Share2 size={14} />
+                  Share
+                </button>
+
+                {isShareOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute right-0 bottom-full mb-2 w-48 bg-white rounded-xl shadow-xl border border-gray-light overflow-hidden z-20 p-1"
+                  >
+                    <button onClick={handleCopyLink} className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-dark hover:bg-light hover:text-orange rounded-lg transition-colors text-left">
+                      {copied ? <Check size={16} className="text-green-500" /> : <Link2 size={16} />}
+                      {copied ? 'Copied!' : 'Copy link'}
+                    </button>
+                    <button onClick={() => handleShare('facebook')} className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-dark hover:bg-light hover:text-orange rounded-lg transition-colors text-left">
+                      <Facebook size={16} />
+                      Share to Facebook
+                    </button>
+                    <button onClick={() => handleShare('twitter')} className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-dark hover:bg-light hover:text-orange rounded-lg transition-colors text-left">
+                      <Twitter size={16} />
+                      Share to X
+                    </button>
+                    <button onClick={() => handleShare('linkedin')} className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-dark hover:bg-light hover:text-orange rounded-lg transition-colors text-left">
+                      <Linkedin size={16} />
+                      Share to LinkedIn
+                    </button>
+                  </motion.div>
+                )}
+              </div>
             </div>
           </div>
         </article>
