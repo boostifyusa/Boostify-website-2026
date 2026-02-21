@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 export function HeroSection() {
   return (
-    <section className="relative pt-28 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden bg-white">
+    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 px-6 overflow-hidden bg-white">
       {/* Topographic Background Pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
@@ -31,7 +31,7 @@ export function HeroSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Centered Content */}
-        <div className="text-center max-w-4xl mx-auto mb-20 relative">
+        <div className="text-center max-w-4xl mx-auto mb-16 relative">
           <motion.div
             initial={{
               opacity: 0,
