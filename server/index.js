@@ -1338,23 +1338,77 @@ app.get('/api/partners/leads', async (req, res) => {
 app.use((req, res) => {
     const indexPath = path.join(DIST_DIR, 'index.html');
     const schemas = ssrSchemas.get(req.path);
+    const isBlog = req.path.startsWith('/blog/');
 
-    // Non-city routes: fast path, no file read
-    if (!schemas) {
-        return res.sendFile(indexPath);
-    }
-
-    // City marketing pages: inject JSON-LD into <head>
     fs.readFile(indexPath, 'utf8', (err, html) => {
         if (err) {
-            console.error('SSR Schema injection error:', err.message);
+            console.error('SSR injection error:', err?.message);
             return res.sendFile(indexPath); // Fallback to unmodified
         }
-        const tags = schemas.map(s =>
-            `< script type = "application/ld+json" > ${JSON.stringify(s)
-            }</script > `
-        ).join('\n    ');
-        const modified = html.replace('</head>', `    ${tags} \n  </head > `);
+
+        let modified = html;
+        const siteUrl = 'https://boostifyusa.com';
+
+        // Base Default OG Tags
+        let ogTitle = 'Boostify USA | Custom Web Design & Local SEO Agency';
+        let ogDesc = 'Generate more leads, rank higher on Google, and automate your operations. Boostify builds custom digital marketing solutions for local service businesses.';
+        let ogImage = `${siteUrl}/Group-116.png`;
+        let ogType = 'website';
+
+        // Dynamic Blog OG Tags
+        if (isBlog) {
+            const slug = req.path.split('/')[2];
+            try {
+                const postsPath = path.join(__dirname, '../src/data/posts.ts');
+                if (fs.existsSync(postsPath)) {
+                    const content = fs.readFileSync(postsPath, 'utf8');
+                    // Regex searches for the slug block, ending before `content:`
+                    const blockRegex = new RegExp(`'${slug}'\\s*:\\s*{([^}]+?content\\s*:)`, 's');
+                    const match = blockRegex.exec(content);
+
+                    if (match) {
+                        const block = match[1];
+                        const titleMatch = block.match(/title:\\s*(['"\`])(.*?)\\1,/s);
+                        const excerptMatch = block.match(/excerpt:\\s*(['"\`])(.*?)\\1,/s);
+                        const imageMatch = block.match(/featuredImage:\\s*(['"\`])(.*?)\\1,/s);
+
+                        if (titleMatch) ogTitle = titleMatch[2].trim();
+                        if (excerptMatch) ogDesc = excerptMatch[2].replace(/\\n/g, ' ').trim();
+                        if (imageMatch) {
+                            ogImage = imageMatch[2].trim();
+                            if (ogImage.startsWith('/')) ogImage = `${siteUrl}${ogImage}`;
+                        }
+                        ogType = 'article';
+                    }
+                }
+            } catch (e) {
+                console.error('Error parsing blog meta:', e.message);
+            }
+        }
+
+        // Construct the Meta Tags to inject
+        let ogTags = `
+    <!-- Dynamic Social Tags -->
+    <meta property="og:title" content="${ogTitle.replace(/"/g, '&quot;')}" />
+    <meta property="og:description" content="${ogDesc.replace(/"/g, '&quot;')}" />
+    <meta property="og:image" content="${ogImage}" />
+    <meta property="og:type" content="${ogType}" />
+    <meta property="og:url" content="${siteUrl}${req.path}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${ogTitle.replace(/"/g, '&quot;')}" />
+    <meta name="twitter:description" content="${ogDesc.replace(/"/g, '&quot;')}" />
+    <meta name="twitter:image" content="${ogImage}" />`;
+
+        // Inject City JSON-LD Schemas if applicable
+        if (schemas) {
+            const tags = schemas.map(s =>
+                `<script type="application/ld+json">${JSON.stringify(s)}</script>`
+            ).join('\\n    ');
+            ogTags += `\\n    ${tags}`;
+        }
+
+        // Inject into <head>
+        modified = modified.replace('</head>', `    ${ogTags}\\n  </head>`);
         res.send(modified);
     });
 });
