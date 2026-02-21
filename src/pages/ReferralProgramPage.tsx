@@ -179,7 +179,7 @@ export function ReferralProgramPage() {
                 </section>
 
                 {/* How it Works / Perks */}
-                <section className="bg-light py-24 md:py-32 px-6">
+                <section className="bg-light py-24 md:py-32 px-6 relative z-20 -mt-16 rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.03)] border-t border-gray-100">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-20">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">How the Program Works</h2>
