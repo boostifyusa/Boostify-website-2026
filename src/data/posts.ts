@@ -74,7 +74,7 @@ export const blogPosts: Record<string, any> = {
         <div class="bg-light rounded-2xl border border-gray-light p-8 !mt-12">
           <h3 class="text-xl font-bold text-dark mb-3">The Bottom Line</h3>
           <p class="!mb-0">
-            You don't need to be a software engineer to use AI in your local business. By implementing just two or three simple agentic workflows—like a voice AI receptionist or an automated review collector—local service businesses are saving dozens of hours of manual admin work every week and capturing thousands in revenue that would have otherwise slipped through the cracks. The businesses that adopt these operational agents early will dominate their local markets by 2026.
+            You don't need to be a software engineer to use AI in your local business. By implementing just two or three simple agentic workflows like a voice AI receptionist or an automated review collector, local service businesses are saving dozens of hours of manual admin work every week. More importantly, they are capturing thousands in revenue that would have otherwise slipped through the cracks. The businesses that adopt these operational agents early will dominate their regional markets by 2026.
           </p>
         </div>
     `
