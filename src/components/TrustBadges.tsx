@@ -144,22 +144,22 @@ function GoogleMarketingLogo() {
 
 }
 const logos = [
-{
-  id: 'sba',
-  component: SBALogo
-},
-{
-  id: 'fresno',
-  component: FresnoStateLogo
-},
-{
-  id: 'sbdc',
-  component: SBDCLogo
-},
-{
-  id: 'google',
-  component: GoogleMarketingLogo
-}];
+  {
+    id: 'sba',
+    component: SBALogo
+  },
+  {
+    id: 'fresno',
+    component: FresnoStateLogo
+  },
+  {
+    id: 'sbdc',
+    component: SBDCLogo
+  },
+  {
+    id: 'google',
+    component: GoogleMarketingLogo
+  }];
 
 export function TrustBadges() {
   return (
@@ -168,11 +168,11 @@ export function TrustBadges() {
         <p className="text-[10px] font-bold text-gray/50 uppercase tracking-[0.2em] text-center mb-6">
           Trusted by Organizations You Know
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-x-14">
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-14">
           {logos.map((logo) =>
-          <div
-            key={logo.id}
-            className="grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-default">
+            <div
+              key={logo.id}
+              className="grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-default">
 
               <logo.component />
             </div>

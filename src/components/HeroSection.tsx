@@ -63,11 +63,11 @@ export function HeroSection() {
               duration: 0.5,
               delay: 0.1
             }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-dark leading-[0.95] tracking-tighter mb-8">
+            className="text-5xl md:text-6xl lg:text-8xl font-black text-dark leading-[0.95] tracking-tighter mb-8">
 
 
             We Build Websites That{' '}
-            <span className="relative inline-block px-2 isolate">
+            <span className="relative inline-block px-2 isolate whitespace-nowrap">
               <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
               <span className="text-orange relative z-10">Actually</span>
             </span>{' '}
@@ -180,7 +180,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Portfolio Preview Cards - Browser Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start max-w-xl lg:max-w-none mx-auto">
           {/* Card 1 - Solar Energy Website */}
           <motion.div
             initial={{
@@ -242,7 +242,7 @@ export function HeroSection() {
               delay: 0.6,
               ease: 'easeOut'
             }}
-            className="relative group md:mt-16">
+            className="relative group lg:mt-16">
 
             <div className="bg-white rounded-xl shadow-2xl shadow-dark/10 overflow-hidden border border-gray-light transform transition-transform duration-500 hover:-translate-y-2">
               {/* Browser Header */}

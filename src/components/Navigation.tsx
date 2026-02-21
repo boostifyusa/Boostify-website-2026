@@ -86,12 +86,12 @@ export function Navigation() {
               alt="Boostify Logo"
               width="1184"
               height="152"
-              className="h-8 md:h-10 w-auto object-contain" />
+              className="h-8 lg:h-10 w-auto object-contain" />
 
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
             {navLinks.map((link) =>
               link.name === 'Services' ?
                 <div
@@ -184,7 +184,7 @@ export function Navigation() {
             {/* Phone Number → or → Book a Call */}
             <a
               href="tel:+15597853834"
-              className="flex items-center gap-2 group">
+              className="hidden lg:flex items-center gap-2 group">
 
               <span className="text-xl font-black text-dark tracking-tight group-hover:text-orange transition-colors">
                 (559) 785-3834
@@ -194,11 +194,11 @@ export function Navigation() {
               </span>
             </a>
 
-            <span className="text-sm font-medium text-gray/40 italic">or</span>
+            <span className="hidden lg:inline text-sm font-medium text-gray/40 italic">or</span>
 
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-colors duration-200 shadow-lg shadow-orange/20">
+              className="px-4 py-2 lg:px-6 lg:py-2.5 bg-orange text-white font-bold text-sm lg:text-base rounded-lg hover:bg-orange-hover transition-colors duration-200 shadow-lg shadow-orange/20">
 
               Book a Call
             </Link>
