@@ -1073,6 +1073,266 @@ app.get('/api/static-map', async (req, res) => {
     }
 });
 
+// ─── Partner Referral System ───
+
+const PARTNERS_STORE_PATH = path.join(__dirname, 'partners.json');
+const PARTNER_PINS_STORE_PATH = path.join(__dirname, 'partner-pins.json');
+const PARTNER_LEADS_STORE_PATH = path.join(__dirname, 'partner-leads.json');
+
+// Memory Stores
+const partnersStore = new Map();
+const partnerPinsStore = new Map();
+const partnerLeadsStore = new Map();
+
+// Helper to load stores
+function loadJSONStore(storeMap, filePath) {
+    try {
+        if (fs.existsSync(filePath)) {
+            const fileContent = fs.readFileSync(filePath, 'utf-8');
+            if (!fileContent.trim()) {
+                storeMap.clear();
+                return;
+            }
+            const data = JSON.parse(fileContent);
+            storeMap.clear();
+            for (const [key, value] of Object.entries(data)) {
+                storeMap.set(key, value);
+            }
+            console.log(`Loaded ${storeMap.size} records from ${path.basename(filePath)}`);
+        } else {
+            console.log(`${path.basename(filePath)} not found, starting fresh.`);
+        }
+    } catch (err) {
+        console.error(`Failed to load ${path.basename(filePath)}:`, err.message);
+    }
+}
+loadJSONStore(partnersStore, PARTNERS_STORE_PATH);
+loadJSONStore(partnerPinsStore, PARTNER_PINS_STORE_PATH);
+loadJSONStore(partnerLeadsStore, PARTNER_LEADS_STORE_PATH);
+
+// Helper to save stores
+function saveJSONStore(storeMap, filePath) {
+    try {
+        const obj = Object.fromEntries(storeMap);
+        fs.writeFileSync(filePath, JSON.stringify(obj, null, 2));
+    } catch (err) {
+        console.error(`Failed to save ${path.basename(filePath)}:`, err.message);
+    }
+}
+
+// Watch Partner Stores
+try {
+    fs.watch(__dirname, (eventType, filename) => {
+        if (!filename) return;
+        if (filename === 'partners.json') {
+            try { loadJSONStore(partnersStore, PARTNERS_STORE_PATH); } catch (e) { }
+        } else if (filename === 'partner-pins.json') {
+            try { loadJSONStore(partnerPinsStore, PARTNER_PINS_STORE_PATH); } catch (e) { }
+        } else if (filename === 'partner-leads.json') {
+            try { loadJSONStore(partnerLeadsStore, PARTNER_LEADS_STORE_PATH); } catch (e) { }
+        }
+    });
+} catch (err) { console.log('Watch partner store error:', err.message); }
+
+// Partner Signup
+app.post('/api/partners/signup', async (req, res) => {
+    try {
+        const { name, businessName, venmoPhone, commsPhone, email } = req.body;
+        if (!name || !email) {
+            return res.status(400).json({ error: 'Name and email are required' });
+        }
+        const emailLower = email.toLowerCase();
+
+        // Find existing partner or generate ID
+        let partnerId = null;
+        for (const [id, data] of partnersStore.entries()) {
+            if (data.email === emailLower) {
+                partnerId = id;
+                break;
+            }
+        }
+
+        if (!partnerId) {
+            partnerId = 'P-' + Math.random().toString(36).substring(2, 9).toUpperCase();
+            partnersStore.set(partnerId, { id: partnerId, name, businessName, venmoPhone, commsPhone, email: emailLower, joinedAt: Date.now() });
+            saveJSONStore(partnersStore, PARTNERS_STORE_PATH);
+        } else {
+            // Update details
+            partnersStore.set(partnerId, { ...partnersStore.get(partnerId), name, businessName, venmoPhone, commsPhone });
+            saveJSONStore(partnersStore, PARTNERS_STORE_PATH);
+        }
+
+        // Generate PIN
+        const pin = String(Math.floor(100000 + Math.random() * 900000));
+        const expiresAt = Date.now() + 15 * 60 * 1000; // 15 mins
+        partnerPinsStore.set(pin, { email: emailLower, partnerId, expiresAt });
+        saveJSONStore(partnerPinsStore, PARTNER_PINS_STORE_PATH);
+
+        // Send Email
+        if (process.env.BREVO_API_KEY) {
+            const emailPayload = {
+                sender: { name: "Boostify Partners", email: process.env.BREVO_SENDER_EMAIL || "no-reply@boostifyusa.com" },
+                to: [{ email: emailLower, name }],
+                subject: `Your Boostify Partner Code: ${pin}`,
+                htmlContent: `<div style="font-family:sans-serif;text-align:center;padding:20px;"><h2>Boostify Partner Login</h2><p>Your verification code is: <strong style="font-size: 24px;">${pin}</strong></p><p>This code will expire in 15 minutes.</p></div>`
+            };
+            fetch('https://api.brevo.com/v3/smtp/email', {
+                method: 'POST',
+                headers: { 'accept': 'application/json', 'api-key': process.env.BREVO_API_KEY, 'content-type': 'application/json' },
+                body: JSON.stringify(emailPayload)
+            }).catch(err => console.error('Brevo Partner PIN Error:', err));
+        } else {
+            console.log(`[DEV] Partner PIN for ${emailLower}: ${pin}`);
+        }
+
+        res.status(200).json({ success: true, message: 'PIN sent' });
+    } catch (error) {
+        console.error('Partner signup error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Partner Send PIN (Resend)
+app.post('/api/partners/send-pin', async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) return res.status(400).json({ error: 'Email is required' });
+        const emailLower = email.toLowerCase();
+
+        let partnerId = null;
+        for (const [id, data] of partnersStore.entries()) {
+            if (data.email === emailLower) {
+                partnerId = id;
+                break;
+            }
+        }
+        if (!partnerId) return res.status(404).json({ error: 'No partner account found with that email. Please sign up first.' });
+
+        const pin = String(Math.floor(100000 + Math.random() * 900000));
+        const expiresAt = Date.now() + 15 * 60 * 1000; // 15 mins
+        partnerPinsStore.set(pin, { email: emailLower, partnerId, expiresAt });
+        saveJSONStore(partnerPinsStore, PARTNER_PINS_STORE_PATH);
+
+        if (process.env.BREVO_API_KEY) {
+            const emailPayload = {
+                sender: { name: "Boostify Partners", email: process.env.BREVO_SENDER_EMAIL || "no-reply@boostifyusa.com" },
+                to: [{ email: emailLower }],
+                subject: `Your Boostify Partner Code: ${pin}`,
+                htmlContent: `<div style="font-family:sans-serif;text-align:center;padding:20px;"><h2>Boostify Partner Login</h2><p>Your verification code is: <strong style="font-size: 24px;">${pin}</strong></p><p>This code will expire in 15 minutes.</p></div>`
+            };
+            fetch('https://api.brevo.com/v3/smtp/email', {
+                method: 'POST',
+                headers: { 'accept': 'application/json', 'api-key': process.env.BREVO_API_KEY, 'content-type': 'application/json' },
+                body: JSON.stringify(emailPayload)
+            }).catch(err => console.error('Brevo Partner PIN Error:', err));
+        } else {
+            console.log(`[DEV] Partner PIN for ${emailLower}: ${pin}`);
+        }
+
+        res.status(200).json({ success: true, message: 'PIN sent' });
+    } catch (error) {
+        console.error('Partner send-pin error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Partner Verify PIN
+app.post('/api/partners/verify-pin', async (req, res) => {
+    try {
+        const { pin } = req.body;
+        if (!pin) return res.status(400).json({ error: 'PIN is required' });
+
+        const stored = partnerPinsStore.get(String(pin).trim());
+        if (!stored) return res.status(400).json({ error: 'Invalid PIN. Please try again.' });
+        if (Date.now() > stored.expiresAt) return res.status(400).json({ error: 'PIN expired. Please request a new one.' });
+
+        const partner = partnersStore.get(stored.partnerId);
+        if (!partner) return res.status(404).json({ error: 'Partner data missing' });
+
+        // Consume PIN
+        partnerPinsStore.delete(String(pin).trim());
+        saveJSONStore(partnerPinsStore, PARTNER_PINS_STORE_PATH);
+
+        res.status(200).json({ success: true, partnerId: partner.id, partner });
+    } catch (error) {
+        console.error('Partner verify-pin error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Partner Submit Lead
+app.post('/api/partners/leads', async (req, res) => {
+    try {
+        const { partnerId, clientName, clientBusiness, clientPhone, clientEmail, notes } = req.body;
+        if (!partnerId || !clientName || (!clientPhone && !clientEmail)) {
+            return res.status(400).json({ error: 'Missing required lead details or partnerId' });
+        }
+
+        const partner = partnersStore.get(partnerId);
+        if (!partner) return res.status(404).json({ error: 'Invalid partner ID' });
+
+        const leadId = 'L-' + Math.random().toString(36).substring(2, 9).toUpperCase();
+        const lead = {
+            id: leadId,
+            partnerId,
+            clientName,
+            clientBusiness,
+            clientPhone,
+            clientEmail,
+            notes,
+            status: 'New',
+            submittedAt: Date.now()
+        };
+        partnerLeadsStore.set(leadId, lead);
+        saveJSONStore(partnerLeadsStore, PARTNER_LEADS_STORE_PATH);
+
+        // Admin Notification
+        if (process.env.BREVO_API_KEY) {
+            const adminPayload = {
+                sender: { name: "Boostify Partner Leads", email: process.env.BREVO_SENDER_EMAIL || "no-reply@boostifyusa.com" },
+                to: [{ email: process.env.DESTINATION_EMAIL || "hello@boostifyusa.com", name: "Boostify Admin" }],
+                subject: `🤝 New Partner Lead from ${partner.name}`,
+                htmlContent: `<div style="font-family:sans-serif;padding:20px;"><h2>New Partner Lead</h2><p><strong>Partner:</strong> ${partner.name} (${partner.businessName})</p><hr><p><strong>Client Name:</strong> ${clientName}</p><p><strong>Client Business:</strong> ${clientBusiness}</p><p><strong>Client Phone:</strong> ${clientPhone}</p><p><strong>Client Email:</strong> ${clientEmail}</p><p><strong>Notes:</strong> ${notes}</p></div>`
+            };
+            fetch('https://api.brevo.com/v3/smtp/email', {
+                method: 'POST',
+                headers: { 'accept': 'application/json', 'api-key': process.env.BREVO_API_KEY, 'content-type': 'application/json' },
+                body: JSON.stringify(adminPayload)
+            }).catch(err => console.error('Brevo lead notify error:', err));
+        }
+
+        res.status(200).json({ success: true, lead });
+    } catch (error) {
+        console.error('Submit lead error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Partner Fetch Leads
+app.get('/api/partners/leads', async (req, res) => {
+    try {
+        const { partnerId } = req.query;
+        if (!partnerId) return res.status(400).json({ error: 'partnerId is required' });
+
+        const partner = partnersStore.get(partnerId);
+        if (!partner) return res.status(404).json({ error: 'Invalid partner ID' });
+
+        const leads = [];
+        for (const lead of partnerLeadsStore.values()) {
+            if (lead.partnerId === partnerId) {
+                leads.push(lead);
+            }
+        }
+
+        // Sort newest first
+        leads.sort((a, b) => b.submittedAt - a.submittedAt);
+        res.status(200).json({ leads });
+    } catch (error) {
+        console.error('Fetch leads error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 // All other GET requests — inject SSR schemas for city marketing pages
 
 app.use((req, res) => {
@@ -1091,9 +1351,10 @@ app.use((req, res) => {
             return res.sendFile(indexPath); // Fallback to unmodified
         }
         const tags = schemas.map(s =>
-            `<script type="application/ld+json">${JSON.stringify(s)}</script>`
+            `< script type = "application/ld+json" > ${JSON.stringify(s)
+            }</script > `
         ).join('\n    ');
-        const modified = html.replace('</head>', `    ${tags}\n  </head>`);
+        const modified = html.replace('</head>', `    ${tags} \n  </head > `);
         res.send(modified);
     });
 });

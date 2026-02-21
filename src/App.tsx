@@ -25,6 +25,12 @@ const AIPage = lazy(() => import('./pages/AIPage').then(module => ({ default: mo
 const SEOAuditPage = lazy(() => import('./pages/SEOAuditPage').then(module => ({ default: module.SEOAuditPage })));
 const LinksPage = lazy(() => import('./pages/LinksPage').then(module => ({ default: module.LinksPage })));
 
+const ReferralProgramPage = lazy(() => import('./pages/ReferralProgramPage').then(module => ({ default: module.ReferralProgramPage })));
+const PartnerLoginPage = lazy(() => import('./pages/PartnerLoginPage').then(module => ({ default: module.PartnerLoginPage })));
+const PartnerDashboardPage = lazy(() => import('./pages/PartnerDashboardPage').then(module => ({ default: module.PartnerDashboardPage })));
+const PartnerLeadPage = lazy(() => import('./pages/PartnerLeadPage').then(module => ({ default: module.PartnerLeadPage })));
+const PartnerQRPage = lazy(() => import('./pages/PartnerQRPage').then(module => ({ default: module.PartnerQRPage })));
+
 const FresnoMarketingAgencyPage = lazy(() => import('./pages/FresnoMarketingAgencyPage').then(module => ({ default: module.FresnoMarketingAgencyPage })));
 const ClovisMarketingAgencyPage = lazy(() => import('./pages/ClovisMarketingAgencyPage').then(module => ({ default: module.ClovisMarketingAgencyPage })));
 const VisaliaMarketingAgencyPage = lazy(() => import('./pages/VisaliaMarketingAgencyPage').then(module => ({ default: module.VisaliaMarketingAgencyPage })));
@@ -83,6 +89,12 @@ export function App() {
             <Route path="/seo-audit" element={<SEOAuditPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
             <Route path="/links" element={<LinksPage />} />
+
+            <Route path="/partners" element={<ReferralProgramPage />} />
+            <Route path="/partners/login" element={<PartnerLoginPage />} />
+            <Route path="/partners/dashboard" element={<PartnerDashboardPage />} />
+            <Route path="/partners/qr/:partnerId" element={<PartnerQRPage />} />
+            <Route path="/referral/:partnerId" element={<PartnerLeadPage />} />
 
             <Route path="/fresno-marketing-agency" element={<FresnoMarketingAgencyPage />} />
             <Route path="/clovis-marketing-agency" element={<ClovisMarketingAgencyPage />} />
