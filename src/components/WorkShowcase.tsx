@@ -5,6 +5,14 @@ import { ArrowRight, ArrowUpRight, Sparkles, BookOpen } from 'lucide-react';
 
 const posts = [
   {
+    title: 'The AI Revolution in Local Business: Automate Your Growth in 2026',
+    category: 'AI & Automation',
+    tag: 'Insights',
+    tagIcon: 'mockup',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    slug: 'ai-automation-local-business'
+  },
+  {
     title: '5 SEO Mistakes Fresno Businesses Keep Making',
     category: 'Local SEO',
     tag: 'Article',
@@ -27,14 +35,6 @@ const posts = [
     tagIcon: 'article',
     image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     slug: 'google-ads-vs-lsa'
-  },
-  {
-    title: 'How to Get More Google Reviews (Without Being Annoying)',
-    category: 'Local SEO',
-    tag: 'Guide',
-    tagIcon: 'article',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    slug: 'dental-redesign'
   }
 ];
 
