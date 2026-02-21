@@ -144,9 +144,11 @@ export function Footer() {
             <ul className="space-y-4 text-white/60 font-medium">
               <li>hello@boostifyusa.com</li>
               <li>
-                6362 N Figarden Dr Ste 118
-                <br />
-                Fresno, CA 93722
+                <a href="https://maps.app.goo.gl/wcW9CiExcah6B5bS9" target="_blank" rel="noopener noreferrer" className="hover:text-orange transition-colors">
+                  6362 N Figarden Dr Ste 118
+                  <br />
+                  Fresno, CA 93722
+                </a>
               </li>
               <li>
                 <a href="tel:+15597853834" className="hover:text-orange transition-colors">
