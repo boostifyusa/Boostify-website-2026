@@ -67,7 +67,7 @@ export function HanfordMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Marketing Agency Hanford CA | Digital Ads & SEO | Boostify USA" description="Boostify USA is a trusted Hanford marketing agency offering custom web design, local SEO, and Google Ads management for Kings County businesses." canonicalUrl="/hanford-marketing-agency" />
+            <SeoHead title="Hanford Marketing Agency: Proven Digital Advertising" description="Boostify USA is a trusted Hanford marketing agency offering custom web design, local SEO, and Google Ads management for Kings County businesses." canonicalUrl="/hanford-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

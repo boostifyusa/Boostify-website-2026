@@ -67,7 +67,7 @@ export function MaderaMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Marketing Agency Madera CA | Web Design & SEO | Boostify USA" description="Boostify USA helps Madera businesses grow with custom web design, local SEO, and targeted Google Ads. Your gateway to digital growth in Madera County." canonicalUrl="/madera-marketing-agency" />
+            <SeoHead title="Madera Marketing Agency: Grow Your Local Business" description="Boostify USA helps Madera businesses grow with custom web design, local SEO, and targeted Google Ads. Your gateway to digital growth in Madera County." canonicalUrl="/madera-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

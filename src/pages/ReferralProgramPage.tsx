@@ -53,7 +53,7 @@ export function ReferralProgramPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Boostify Referral Partner Program"
+                title="Agency Partner Program: High Paying Referrals"
                 description="Partner with Boostify USA. Refer local businesses to us and earn $100 per successful sign-up. Simple, transparent, local."
                 canonicalUrl="/partners"
             />

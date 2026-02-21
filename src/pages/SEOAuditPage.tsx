@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
 import { Footer } from '../components/Footer';
 import { StepLeadCapture } from '../components/seo-audit/StepLeadCapture';
 import { StepSelectBusiness } from '../components/seo-audit/StepSelectBusiness';
@@ -624,6 +625,11 @@ export function SEOAuditPage() {
 
     return (
         <div className="min-h-screen bg-slate-50 selection:bg-orange selection:text-white font-sans">
+            <SeoHead
+                title="Free SEO Audit: Scan Your Fresno Website Now"
+                description="Get a free local SEO audit and visibility report for your Fresno business. Find out why your competitors are outranking you on Google Maps."
+                canonicalUrl="/seo-audit"
+            />
             <Navigation />
 
             {/* Dynamic Background Elements */}

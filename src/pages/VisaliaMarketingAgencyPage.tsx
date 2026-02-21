@@ -67,7 +67,7 @@ export function VisaliaMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Marketing Agency Visalia CA | SEO & Web Design | Boostify USA" description="Boostify USA is a leading Visalia marketing agency. Custom web design, local SEO, and Google Ads that drive real growth for Tulare County businesses." canonicalUrl="/visalia-marketing-agency" />
+            <SeoHead title="Visalia Marketing Agency: Top-Rated Web Design & SEO" description="Boostify USA is a leading Visalia marketing agency. Custom web design, local SEO, and Google Ads that drive real growth for Tulare County businesses." canonicalUrl="/visalia-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

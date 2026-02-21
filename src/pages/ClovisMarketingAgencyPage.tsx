@@ -142,7 +142,7 @@ export function ClovisMarketingAgencyPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Marketing Agency Clovis CA | Web Design & SEO | Boostify USA"
+                title="Clovis Marketing Agency: Attract More Local Customers"
                 description="Boostify USA is a top Clovis marketing agency specializing in custom web design, Local SEO, and Google Ads. We help Clovis businesses grow with data-driven strategies."
                 canonicalUrl="/clovis-marketing-agency"
             />

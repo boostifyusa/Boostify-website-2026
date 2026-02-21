@@ -131,7 +131,7 @@ export function PartnerDashboardPage() {
             </div>
 
             <SeoHead
-                title="Partner Dashboard - Boostify USA"
+                title="Partner Dashboard | Boostify USA Referral Portal"
                 description="Manage your referrals and payouts."
                 canonicalUrl="/partners/dashboard"
             />

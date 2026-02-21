@@ -67,7 +67,7 @@ export function SangerMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Marketing Agency Sanger CA | Web Design & Local SEO | Boostify USA" description="Boostify USA helps Sanger businesses grow online with custom web design, local SEO, and Google Ads. Small-town pride, big results." canonicalUrl="/sanger-marketing-agency" />
+            <SeoHead title="Sanger Marketing Agency: Custom Websites That Convert" description="Boostify USA helps Sanger businesses grow online with custom web design, local SEO, and Google Ads. Small-town pride, big results." canonicalUrl="/sanger-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

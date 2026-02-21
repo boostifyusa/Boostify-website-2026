@@ -59,7 +59,7 @@ export function OurWorkPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Our Work & Portfolio - Boostify USA"
+        title="Web Design Portfolio: Real Results & Case Studies"
         description="Explore our portfolio of custom websites, SEO success stories, and digital marketing campaigns for Fresno businesses."
         canonicalUrl="/work"
       />

@@ -22,7 +22,7 @@ export function ServicesPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Digital Marketing Services - Boostify USA"
+        title="Marketing Services | Web Design, SEO & Google Ads"
         description="Web Design, Local SEO, and Google Ads management for Fresno businesses. Built for speed, security, and local growth."
         canonicalUrl="/services"
       />

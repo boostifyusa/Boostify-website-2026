@@ -91,7 +91,7 @@ export function PartnerLoginPage() {
     return (
         <div className="min-h-screen bg-gray-50 selection:bg-orange selection:text-white flex flex-col">
             <SeoHead
-                title="Partner Login - Boostify USA"
+                title="Partner Login | Secure Access to Boostify USA"
                 description="Secure login for Boostify USA partners."
                 canonicalUrl="/partners/login"
             />

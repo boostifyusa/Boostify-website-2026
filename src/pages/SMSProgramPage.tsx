@@ -7,7 +7,7 @@ export function SMSProgramPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="SMS Program Terms - Boostify USA"
+        title="SMS Program Terms | Boostify USA Communications"
         description="Terms and details regarding Boostify USA LLC's SMS program."
         canonicalUrl="/sms-program"
       />

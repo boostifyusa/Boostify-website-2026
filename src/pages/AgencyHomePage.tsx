@@ -16,7 +16,7 @@ export function AgencyHomePage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Boostify USA - Web Design & SEO Agency Fresno"
+        title="SEO & Web Design: Craftsmanship for Local Growth"
         description="Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson."
         keywords="Boostify USA Web Design & SEO, Website designer in Fresno, Fresno Web Design, Central Valley SEO, Small business marketing"
         canonicalUrl="/"

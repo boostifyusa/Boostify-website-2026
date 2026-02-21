@@ -20,7 +20,7 @@ export function PartnerQRPage() {
 
     return (
         <div className="min-h-[100dvh] flex flex-col items-center justify-center bg-gray-50 selection:bg-orange selection:text-white p-6 relative">
-            <SeoHead title="Scan to claim your local marketing consultation" description="Boostify Partner Referral" />
+            <SeoHead title="Claim Your Free Consultation | Boostify USA" description="Boostify Partner Referral" />
 
             {/* Background elements */}
             <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>

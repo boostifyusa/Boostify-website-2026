@@ -86,7 +86,7 @@ export function MaintenancePage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Website Maintenance Plans - Boostify USA"
+        title="Care & Maintenance: Secure, Fast & Reliable Hosting"
         description="Keep your website secure, fast, and up-to-date with our comprehensive maintenance plans. Daily backups, security scans, and 24/7 monitoring."
         canonicalUrl="/maintenance"
       />

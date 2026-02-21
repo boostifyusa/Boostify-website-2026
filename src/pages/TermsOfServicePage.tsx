@@ -7,7 +7,7 @@ export function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Terms of Service - Boostify USA"
+        title="Terms of Service | Boostify USA Agreements"
         description="Terms and Conditions for using Boostify USA LLC services."
         canonicalUrl="/terms"
       />

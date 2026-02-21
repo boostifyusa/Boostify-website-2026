@@ -7,7 +7,7 @@ export function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Privacy Policy - Boostify USA"
+        title="Privacy Policy | Boostify USA Data Security"
         description="Privacy Policy for Boostify USA LLC. Learn how we collect, use, and protect your data."
         canonicalUrl="/privacy"
         noIndex={true} // Usually legal pages can be indexed, but some prefer not to clutter search results. I'll leave it indexed by default (remove noIndex) unless specific request. Actually, let's keep it indexed but typically low priority. The prompt asked for SEO fixes.

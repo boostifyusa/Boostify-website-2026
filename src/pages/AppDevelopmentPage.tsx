@@ -23,7 +23,7 @@ export function AppDevelopmentPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="App Development & MVP Services - Boostify USA"
+        title="App Development: Custom Web Apps Launched in Weeks"
         description="Turn your app idea into a reality. We build investor-ready MVPs and custom applications for startups and businesses in Fresno."
         canonicalUrl="/app-development"
       />

@@ -49,7 +49,7 @@ export function WebDesignPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Custom Web Design Fresno - Boostify USA"
+        title="Web Design: High-Converting Custom Local Websites"
         description="Custom, SEO-optimized web design for Fresno businesses. Mobile-first, fast loading, and built to convert visitors into customers."
         canonicalUrl="/web-design"
       />

@@ -97,7 +97,7 @@ export function LinksPage() {
     return (
         <div className="min-h-screen bg-[#0A0A0A] selection:bg-orange selection:text-white overflow-hidden relative">
             <SeoHead
-                title="Boostify USA — Links"
+                title="Link Tree: Websites That Bring Your Vision To Life"
                 description="Your one-stop gateway to Boostify USA. Explore our work, book a call, or follow us on social media."
                 canonicalUrl="/links"
             />

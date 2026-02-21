@@ -134,7 +134,7 @@ export function FresnoMarketingAgencyPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Marketing Agency Fresno | Digital Advertising & SEO | Boostify USA"
+                title="Fresno Marketing Agency: Drive Local Revenue & Growth"
                 description="Boostify USA is the top-rated Fresno marketing agency. We specialize in custom web design, Local SEO, and Google Ads to drive revenue for local businesses."
                 canonicalUrl="/fresno-marketing-agency"
             />

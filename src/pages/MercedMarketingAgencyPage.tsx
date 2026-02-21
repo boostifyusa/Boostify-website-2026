@@ -67,7 +67,7 @@ export function MercedMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Marketing Agency Merced CA | Web Design & Digital Ads | Boostify USA" description="Boostify USA is a premier Merced marketing agency. Custom websites, local SEO, and Google Ads built for Merced County's booming market." canonicalUrl="/merced-marketing-agency" />
+            <SeoHead title="Merced Marketing Agency: Expert Web Design & SEO" description="Boostify USA is a premier Merced marketing agency. Custom websites, local SEO, and Google Ads built for Merced County's booming market." canonicalUrl="/merced-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

@@ -299,7 +299,7 @@ export function ContactPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Contact Boostify USA - Fresno Web Design Agency"
+        title="Contact Boostify USA | Schedule Your Free Consultation"
         description="Get in touch with Boostify USA. Web design, SEO, and marketing services in Fresno, CA. Call (559) 785-3834."
         canonicalUrl="/contact"
       />

@@ -27,7 +27,7 @@ export function AIPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="AI Automation for Local Business - Boostify USA"
+                title="AI Automation: Save Time & Reduce Operational Costs"
                 description="Automate your busywork. AI Chatbots, Missed Call Text-Back, and Review Management for Fresno businesses."
                 canonicalUrl="/ai-automation"
             />
