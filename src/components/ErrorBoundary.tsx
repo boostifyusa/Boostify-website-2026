@@ -17,36 +17,45 @@ export class ErrorBoundary extends Component<Props, State> {
     };
 
     public static getDerivedStateFromError(error: Error): State {
+        // Evaluate if this is a chunk load or MIME type error
+        const isChunkLoadError =
+            error.name === 'ChunkLoadError' ||
+            error.message.includes('Failed to fetch dynamically imported module') ||
+            error.message.includes('Importing a module script failed') ||
+            error.message.includes('is not a valid JavaScript MIME type') ||
+            error.message.includes('dynamically imported module');
+
+        if (isChunkLoadError) {
+            const isReloaded = sessionStorage.getItem('chunk_load_error_reloaded');
+
+            // If we haven't tried reloading yet, trigger a reload immediately
+            if (!isReloaded) {
+                sessionStorage.setItem('chunk_load_error_reloaded', 'true');
+                // We use a small timeout to ensure the state updates, then force reload
+                setTimeout(() => {
+                    window.location.reload();
+                }, 100);
+
+                // Return no error state temporarily while we reload
+                return { hasError: false, error: null };
+            }
+        }
+
+        // Standard error handling or if we already tried to reload
         return { hasError: true, error };
     }
 
     public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         console.error('Uncaught error caught by ErrorBoundary:', error, errorInfo);
-
-        // Automatically reload the page if it's a chunk load error
-        // This happens frequently when deploying a new version while user has the app open
-        // or when the Vite dev server restarts and invalidates module chunks
-        if (
-            error.name === 'ChunkLoadError' ||
-            error.message.includes('Failed to fetch dynamically imported module') ||
-            error.message.includes('Importing a module script failed') ||
-            error.message.includes('is not a valid JavaScript MIME type')
-        ) {
-            const isReloaded = sessionStorage.getItem('chunk_load_error_reloaded');
-            if (!isReloaded) {
-                sessionStorage.setItem('chunk_load_error_reloaded', 'true');
-                window.location.reload();
-            }
-        }
     }
 
     public componentDidMount() {
         // Clear the reload flag if we successfully mounted
         if (sessionStorage.getItem('chunk_load_error_reloaded')) {
-            // Small delay to ensure we're stable
+            // Small delay to ensure we're stable before clearing the flag
             setTimeout(() => {
                 sessionStorage.removeItem('chunk_load_error_reloaded');
-            }, 1000);
+            }, 2000);
         }
     }
 
@@ -60,7 +69,8 @@ export class ErrorBoundary extends Component<Props, State> {
                 this.state.error?.name === 'ChunkLoadError' ||
                 this.state.error?.message.includes('Failed to fetch dynamically imported module') ||
                 this.state.error?.message.includes('Importing a module script failed') ||
-                this.state.error?.message.includes('is not a valid JavaScript MIME type');
+                this.state.error?.message.includes('is not a valid JavaScript MIME type') ||
+                this.state.error?.message.includes('dynamically imported module');
 
             if (isChunkLoadError) {
                 // If it's a chunk load error but we already tried reloading once, suggest manual reload
