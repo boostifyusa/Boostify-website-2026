@@ -19,6 +19,7 @@ import {
   Check
 } from 'lucide-react';
 import { blogPosts } from '../data/posts';
+import { NotFoundPage } from './NotFoundPage';
 
 const relatedPosts = [
   {
@@ -105,12 +106,12 @@ export function BlogPostPage() {
     if (slug && blogPosts[slug]) {
       setPost(blogPosts[slug]);
     } else {
-      // Default behavior or 404
-      // Use seo-mistakes if slug is missing or not found
-      setPost(blogPosts['seo-mistakes']);
+      // Post not found
+      setPost('not-found');
     }
   }, [slug]);
 
+  if (post === 'not-found') return <NotFoundPage />;
   if (!post) return null;
 
   return (
