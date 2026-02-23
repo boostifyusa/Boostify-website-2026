@@ -33,7 +33,7 @@ export function HomePageV2() {
             <SeoHead
                 title="SEO & Web Design: Craftsmanship for Local Growth"
                 description="Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson."
-                noIndex={true}
+                canonicalUrl="/"
             />
 
             <Navigation />
