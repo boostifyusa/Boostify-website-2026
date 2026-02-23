@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import { AgencyHomePage } from './pages/AgencyHomePage';
+import { HomePageV2 } from './pages/HomePageV2';
 import { ErrorBoundary } from './components/ErrorBoundary';
 
 // Lazy load pages for better performance
@@ -75,7 +76,8 @@ export function App() {
         <ErrorBoundary>
           <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white"><div className="w-12 h-12 border-4 border-orange/20 border-t-orange rounded-full animate-spin"></div></div>}>
             <Routes>
-              <Route path="/" element={<AgencyHomePage />} />
+              <Route path="/" element={<HomePageV2 />} />
+              <Route path="/v1" element={<AgencyHomePage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/web-design" element={<WebDesignPage />} />
               <Route path="/local-seo" element={<LocalSEOPage />} />
