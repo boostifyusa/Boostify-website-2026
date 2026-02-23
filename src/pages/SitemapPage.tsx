@@ -36,6 +36,8 @@ const sitemapLinks = [
             { name: 'Fresno Marketing Agency', path: '/fresno-marketing-agency' },
             { name: 'Clovis Marketing Agency', path: '/clovis-marketing-agency' },
             { name: 'Visalia Marketing Agency', path: '/visalia-marketing-agency' },
+            { name: 'Modesto Web Design', path: '/modesto-web-design' },
+            { name: 'Fresno Web Design', path: '/fresno-web-design' },
             { name: 'Madera Marketing Agency', path: '/madera-marketing-agency' },
             { name: 'Hanford Marketing Agency', path: '/hanford-marketing-agency' },
             { name: 'Merced Marketing Agency', path: '/merced-marketing-agency' },
