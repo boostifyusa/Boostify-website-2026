@@ -19,7 +19,11 @@ import {
     Globe2,
     ShieldCheck,
     TrendingUp,
-    Zap
+    Zap,
+    AlertTriangle,
+    Clock,
+    Search,
+    X
 } from 'lucide-react';
 
 // FAQ Data
@@ -27,7 +31,7 @@ const faqs = [
     {
         question: 'What makes you different from other Modesto web design agencies?',
         answer:
-            "Most agencies use bloated drag-and-drop templates like WordPress or Wix that slow down your site and limit brand creativity. We hand-code our websites from scratch. This guarantees lightning-fast load times, better Google rankings, and a completely unique Brand Website Design that sets your Modesto business apart."
+            "Most agencies use bloated drag-and-drop templates like WordPress or Wix that slow down your site and limit brand creativity. We use a combination of expert hand-coding and advanced AI to build your site from scratch. This delivers premium websites cheaper and faster for small business owners, guaranteeing lightning-fast load times, better Google rankings, and a completely unique Brand Website Design that sets your Modesto business apart."
     },
     {
         question: 'Do you offer Ecommerce Web Design?',
@@ -117,7 +121,6 @@ const faqSchema = {
 
 export function WebDesignModestoPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const [sliderPosition, setSliderPosition] = useState(50);
 
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
@@ -138,7 +141,7 @@ export function WebDesignModestoPage() {
 
             <main>
                 {/* 
-                  ───── HERO INTRO (Consistent Styling with WebDesignPage) ───── 
+                  ───── HERO INTRO ───── 
                 */}
                 <section className="px-6 relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32">
                     {/* Topographic Background Pattern */}
@@ -192,7 +195,7 @@ export function WebDesignModestoPage() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-xl md:text-2xl text-gray font-medium leading-relaxed max-w-2xl mb-10"
                         >
-                            We hand-code premium digital storefronts that turn Modesto traffic into paying customers. Faster load times. Better SEO. More revenue.
+                            We combine expert hand-coding and AI to build affordable websites that turn Modesto traffic into customers. Faster load times. Better SEO. More revenue.
                         </motion.p>
 
                         <motion.div
@@ -214,7 +217,7 @@ export function WebDesignModestoPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4 }}
-                            className="flex items-center gap-6 text-sm font-bold text-dark/60 mb-16"
+                            className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-sm sm:text-base font-bold text-dark/60 mb-16"
                         >
                             <span className="flex items-center gap-2">
                                 <Check size={16} className="text-green-500" strokeWidth={3} />
@@ -325,9 +328,130 @@ export function WebDesignModestoPage() {
                 <TrustBadges />
 
                 {/* 
-                  ───── MIDDLE: SERVICES (Consistent Styling) ───── 
+                  ───── NEW: PAIN POINTS (Sales Context) ───── 
                 */}
                 <section className="py-24 px-6 bg-light/50">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center max-w-3xl mx-auto mb-16">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="inline-flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-6">
+                                <motion.div
+                                    animate={{ rotate: [0, -8, 8, -8, 0] }}
+                                    transition={{ duration: 0.5, delay: 0.8, repeat: Infinity, repeatDelay: 4 }}>
+                                    <AlertTriangle size={32} className="text-red-500" strokeWidth={2.5} />
+                                </motion.div>
+                            </motion.div>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
+                                Most Modesto Websites Are {' '}
+                                <span className="text-red-500">Invisible!</span>
+                            </h2>
+                            <p className="text-xl text-gray font-medium">
+                                DIY builders and cheap templates from typical agencies are costing your local business money. If your Modesto site isn't actively working for you, it's working against you.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    title: 'Slow & Bloated',
+                                    desc: "WordPress templates are full of junk code that kills load speed. Mobile customers in Modesto won't wait more than 3 seconds before bouncing to a competitor.",
+                                    icon: Clock
+                                },
+                                {
+                                    title: 'Invisible to Local SEO',
+                                    desc: "Without proper Modesto SEO structure and local schema markup, Google completely ignores your site. You stay buried on page 10 where no one looks.",
+                                    icon: Search
+                                },
+                                {
+                                    title: 'Generic Design',
+                                    desc: "Looking exactly like everyone else in the Central Valley makes you forgettable. Your brand deserves a bespoke identity to stand out.",
+                                    icon: X
+                                }
+                            ].map((item, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
+                                    <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
+                                        <item.icon size={24} strokeWidth={2.5} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-dark mb-3">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-gray font-medium leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* 
+                  ───── VISUAL PROOF (Image Showcase) ───── 
+                */}
+                <section className="py-24 px-6 bg-white border-y border-gray-100 overflow-x-clip">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="flex justify-center relative max-w-5xl mx-auto">
+                            {/* Floating Badges */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20, x: -20 }}
+                                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.3, duration: 0.6 }}
+                                className="absolute -left-4 sm:-left-6 md:-left-12 top-6 sm:top-10 md:top-20 z-20 bg-white/95 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-2 sm:gap-4 scale-90 sm:scale-100"
+                            >
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 shrink-0">
+                                    <TrendingUp size={20} className="sm:w-6 sm:h-6" />
+                                </div>
+                                <div>
+                                    <div className="text-xl sm:text-2xl font-black text-dark leading-none pb-1">+45%</div>
+                                    <div className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">Conversions</div>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: -20, x: 20 }}
+                                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.5, duration: 0.6 }}
+                                className="absolute -right-4 sm:-right-6 md:-right-12 bottom-6 sm:bottom-10 md:bottom-20 z-20 bg-dark/95 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl border border-white/10 flex items-center gap-2 sm:gap-4 scale-90 sm:scale-100"
+                            >
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange/20 rounded-full flex items-center justify-center text-orange shrink-0">
+                                    <Zap size={20} className="sm:w-6 sm:h-6" fill="currentColor" />
+                                </div>
+                                <div>
+                                    <div className="text-xl sm:text-2xl font-black text-white leading-none pb-1">99/100</div>
+                                    <div className="text-[10px] sm:text-xs font-bold text-white/60 uppercase tracking-widest whitespace-nowrap">Speed Score</div>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-light bg-gray-50 p-2 relative z-10"
+                            >
+                                <img
+                                    src="/FTS-Mock.jpg"
+                                    alt="Premium Custom Website Design Example"
+                                    className="w-full h-auto rounded-2xl object-cover"
+                                />
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 
+                  ───── SERVICES ───── 
+                */}
+                <section className="py-24 px-6 bg-white">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center max-w-3xl mx-auto mb-20">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
@@ -335,19 +459,17 @@ export function WebDesignModestoPage() {
                                 <span className="text-orange">Local Leaders.</span>
                             </h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">
-                                We don't believe in one-size-fits-all. Every line of code is written to solve specific business problems and generate measurable ROI for your Modesto company.
+                                We don't believe in one-size-fits-all. Every line of code is forged by expert developers and AI to solve specific business problems affordably, generating measurable ROI for your Modesto company.
                             </p>
                         </div>
 
-                        {/* Staggered Grid matched to generic design system */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-
                             {/* Left Column (Brand Design) */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-white rounded-3xl p-8 lg:p-12 border border-gray-light shadow-sm flex flex-col h-[500px] hover:shadow-md transition-shadow"
+                                className="bg-light/30 rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-light shadow-sm flex flex-col min-h-[450px] md:h-[500px] hover:bg-white hover:shadow-md transition-all"
                             >
                                 <div className="w-14 h-14 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-8">
                                     <PenTool size={28} strokeWidth={2} />
@@ -372,7 +494,7 @@ export function WebDesignModestoPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="md:mt-16 bg-white rounded-3xl p-8 lg:p-12 border border-gray-light shadow-sm flex flex-col h-[500px] hover:shadow-md transition-shadow"
+                                className="mt-8 md:mt-16 bg-light/30 rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-light shadow-sm flex flex-col min-h-[450px] md:h-[500px] hover:bg-white hover:shadow-md transition-all"
                             >
                                 <div className="w-14 h-14 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-8">
                                     <ShoppingCart size={28} strokeWidth={2} />
@@ -390,98 +512,77 @@ export function WebDesignModestoPage() {
                                     ))}
                                 </ul>
                             </motion.div>
-
                         </div>
                     </div>
                 </section>
 
                 {/* 
-                  ───── INTERACTIVE SLIDER (Fixed logic & fully responsive styling) ───── 
+                  ───── NEW: STATIC COMPARISON (Us vs. Them) ───── 
                 */}
-                <section className="py-24 px-6 bg-white">
+                <section className="py-24 px-6 bg-light/50">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16 max-w-3xl mx-auto">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Feel the <span className="text-orange">Difference.</span>
+                                The Boostify <span className="text-orange">Difference.</span>
                             </h2>
-                            <p className="text-xl text-gray font-medium">Drag the slider to compare typical bloated templates vs. our custom hand-coded performance.</p>
+                            <p className="text-xl text-gray font-medium">Why settle for a slow, bloated template when you can have an AI-accelerated, handcrafted revenue-generating engine?</p>
                         </div>
 
-                        {/* 
-                          Container styling logic: 
-                          We use a max-w-4xl (which is 896px). 
-                          The inner items inside the slider must explicitly be sized 
-                          to prevent them from wrapping when the parent container's width changes.
-                        */}
-                        <div className="relative w-full max-w-4xl mx-auto h-[450px] sm:h-[400px] bg-white rounded-3xl shadow-2xl border border-gray-light overflow-hidden select-none">
-
-                            {/* Generic Template Side (Underneath/Right) */}
-                            <div className="absolute inset-0 bg-gray-50 flex items-center p-6 sm:p-12 z-0 overflow-hidden">
-                                {/* Invisible spacer block for left side */}
-                                <div className="hidden sm:block flex-1" />
-
-                                {/* Content centered in right side */}
-                                <div className="w-full min-w-[300px] max-w-md sm:flex-1 pl-8">
-                                    <div className="inline-block px-3 py-1 bg-red-100 text-red-600 font-bold text-xs uppercase rounded mb-4">Old Way: Template Builder</div>
-                                    <div className="w-3/4 h-8 bg-gray-200 rounded mb-4 animate-[pulse_2s_ease-in-out_infinite]" />
-                                    <div className="space-y-3 mb-8">
-                                        <div className="w-full h-4 bg-gray-200 rounded animate-[pulse_2s_ease-in-out_infinite]" />
-                                        <div className="w-5/6 h-4 bg-gray-200 rounded animate-[pulse_2s_ease-in-out_infinite]" />
-                                        <div className="w-4/6 h-4 bg-gray-200 rounded animate-[pulse_2s_ease-in-out_infinite]" />
-                                    </div>
-                                    <div className="flex gap-4 items-center">
-                                        <div className="w-10 h-10 rounded-full border-4 border-red-500 border-l-transparent animate-spin" />
-                                        <span className="text-red-500 font-bold text-sm">Loading (5.2s)</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Custom Hand-Coded Side (Top) */}
-                            <div
-                                className="absolute inset-y-0 left-0 bg-dark border-r-[6px] border-orange z-10 overflow-hidden"
-                                style={{ width: `${sliderPosition}%` }}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+                            {/* Generic Agency (Them) */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-light shadow-sm flex flex-col"
                             >
-                                {/* Fixed size inner container for non-wrapping content */}
-                                {/* Setting width to roughly the max-w of parent to ensure text always aligns nicely. Uses media queries to fit smaller screens. */}
-                                <div className="absolute inset-0 w-[100vw] max-w-[896px] h-full flex items-center p-6 sm:p-12">
-                                    <div className="w-full min-w-[300px] max-w-md">
-                                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 text-green-400 font-bold text-xs uppercase rounded mb-4">
-                                            <Zap size={12} fill="currentColor" /> The Boostify Way: Hand-Coded
-                                        </div>
-                                        <h3 className="text-3xl font-black text-white mb-4">Instant Polish & Speed</h3>
-                                        <p className="text-white/70 font-medium mb-8 leading-relaxed">
-                                            Zero bloat. Instant interactions. 100/100 PageSpeed scores right out of the box, building trust with your Modesto customers faster than your competition.
-                                        </p>
-                                        <div className="flex gap-4 items-center">
-                                            <div className="w-10 h-10 rounded-full border-4 border-green-500 flex items-center justify-center text-green-500 font-bold text-xs tracking-tighter">
-                                                0.8s
-                                            </div>
-                                            <span className="text-green-500 font-bold text-sm">Loaded instantly</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <div className="inline-block px-3 py-1 bg-red-100 text-red-600 font-bold text-xs uppercase rounded mb-6 self-start">The Old Way</div>
+                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Template Builders</h3>
+                                <ul className="space-y-4 mb-8 flex-1">
+                                    {[
+                                        'Bloated WordPress or Wix code',
+                                        'Slow 5+ second load times',
+                                        'Generic designs that look like competitors',
+                                        'Poor mobile optimization out of the box',
+                                        'Vulnerable to endless plugin hacks'
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 font-medium text-gray">
+                                            <X size={20} className="text-red-500 shrink-0 mt-0.5" strokeWidth={2.5} />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
 
-                            {/* Slider Handle (Invisible native range input handles interaction) */}
-                            <input
-                                type="range"
-                                min="0"
-                                max="100"
-                                value={sliderPosition}
-                                onChange={(e) => setSliderPosition(Number(e.target.value))}
-                                className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20"
-                            />
-
-                            {/* Visual Drag Handle Guide */}
-                            <div
-                                className="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-white border-4 border-orange rounded-full shadow-2xl z-10 flex items-center justify-center pointer-events-none"
-                                style={{ left: `calc(${sliderPosition}% - 24px)` }}
+                            {/* Boostify (Us - Dark Theme) */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="bg-dark rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl flex flex-col relative overflow-hidden"
                             >
-                                <div className="w-1 h-5 bg-transparent rounded-full flex gap-1 justify-center">
-                                    <div className="w-[2px] h-4 bg-gray-400 rounded-full" />
-                                    <div className="w-[2px] h-4 bg-gray-400 rounded-full" />
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-orange/10 rounded-full blur-[60px] pointer-events-none" />
+                                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 pointer-events-none" />
+                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 text-green-400 font-bold text-xs uppercase rounded mb-6 self-start relative z-10">
+                                    <Zap size={12} fill="currentColor" /> The Boostify Way
                                 </div>
-                            </div>
+                                <h3 className="text-3xl font-black text-white tracking-tight mb-4 relative z-10">Hand-Coded & AI Augmented</h3>
+                                <ul className="space-y-4 mb-8 flex-1 relative z-10">
+                                    {[
+                                        'AI-accelerated custom react architecture',
+                                        'Sub-second instant load times',
+                                        'Bespoke brand identities that stand out',
+                                        'Mobile-first responsive scaling',
+                                        'Military-grade modern security'
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 font-medium text-white/80">
+                                            <Check size={20} className="text-green-500 shrink-0 mt-0.5" strokeWidth={3} />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
                         </div>
                     </div>
                 </section>
