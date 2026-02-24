@@ -73,6 +73,7 @@ app.use((req, res, next) => {
 import path from 'path';
 import fs from 'fs';
 import ssrSchemas from './ssr-schemas.js';
+import ssrMeta from './ssr-meta.js';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -139,6 +140,7 @@ loadAuditConfig();
 // Watch for changes
 // Config watcher included in central watcher below
 app.use(express.static(DIST_DIR, {
+    index: false, // Don't serve index.html for '/' — let catch-all handler inject SSR meta tags
     maxAge: '1d', // Default to 1 day
     setHeaders: (res, path) => {
         if (path.includes('assets')) {
@@ -1408,9 +1410,26 @@ app.use((req, res, next) => {
         let modified = html;
         const siteUrl = 'https://boostifyusa.com';
 
+        // ─── SSR Meta: title, description, canonical ────────────────────────
+        const defaultMeta = {
+            title: 'Boostify USA | Custom Web Design & Local SEO Agency',
+            description: 'Generate more leads, rank higher on Google, and automate your operations. Boostify builds custom digital marketing solutions for local service businesses.',
+            canonical: `${siteUrl}${req.path === '/' ? '/' : req.path}`
+        };
+        const meta = ssrMeta.get(req.path) || defaultMeta;
+        const metaTitle = meta.title || defaultMeta.title;
+        const metaDesc = meta.description || defaultMeta.description;
+        const metaCanonical = meta.canonical || defaultMeta.canonical;
+
+        let ssrTags = `
+    <!-- SSR Meta Tags -->
+    <title>${metaTitle.replace(/</g, '&lt;')}</title>
+    <meta name="description" content="${metaDesc.replace(/"/g, '&quot;')}" />
+    <link rel="canonical" href="${metaCanonical}" />`;
+
         // Base Default OG Tags
-        let ogTitle = 'Boostify USA | Custom Web Design & Local SEO Agency';
-        let ogDesc = 'Generate more leads, rank higher on Google, and automate your operations. Boostify builds custom digital marketing solutions for local service businesses.';
+        let ogTitle = metaTitle;
+        let ogDesc = metaDesc;
         let ogImage = `${siteUrl}/Group-116.png`;
         let ogType = 'website';
 
@@ -1438,6 +1457,13 @@ app.use((req, res, next) => {
                             if (ogImage.startsWith('/')) ogImage = `${siteUrl}${ogImage}`;
                         }
                         ogType = 'article';
+
+                        // Override SSR title/desc for blog posts too
+                        ssrTags = `
+    <!-- SSR Meta Tags -->
+    <title>${ogTitle.replace(/</g, '&lt;')}</title>
+    <meta name="description" content="${ogDesc.replace(/"/g, '&quot;')}" />
+    <link rel="canonical" href="${siteUrl}${req.path}" />`;
                     }
                 }
             } catch (e) {
@@ -1445,7 +1471,7 @@ app.use((req, res, next) => {
             }
         }
 
-        // Construct the Meta Tags to inject
+        // Construct the OG / Social Tags to inject
         let ogTags = `
     <!-- Dynamic Social Tags -->
     <meta property="og:title" content="${ogTitle.replace(/"/g, '&quot;')}" />
@@ -1462,12 +1488,12 @@ app.use((req, res, next) => {
         if (schemas) {
             const tags = schemas.map(s =>
                 `<script type="application/ld+json">${JSON.stringify(s)}</script>`
-            ).join('\\n    ');
-            ogTags += `\\n    ${tags}`;
+            ).join('\n    ');
+            ogTags += `\n    ${tags}`;
         }
 
-        // Inject into <head>
-        modified = modified.replace('</head>', `    ${ogTags}\\n  </head>`);
+        // Inject into <head>: SSR meta tags first, then OG/social tags
+        modified = modified.replace('</head>', `    ${ssrTags}\n    ${ogTags}\n  </head>`);
         res.send(modified);
     });
 });
