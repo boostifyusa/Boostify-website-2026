@@ -115,6 +115,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/blog/free-contractor-tools"
+                  className="hover:text-orange transition-colors">
+
+                  Free Tools for Contractors
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/privacy"
                   className="hover:text-orange transition-colors">
 

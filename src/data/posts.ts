@@ -565,5 +565,346 @@ export const blogPosts: Record<string, any> = {
         </div>
     `
 
+  },
+  'free-contractor-tools': {
+    title: '21 Free Tools to Grow Your Contracting Business',
+    excerpt:
+      "A complete, free resource guide for contractors: how to get found online, look professional, and get reviews without begging.",
+    date: 'February 23, 2026',
+    readTime: '8 min read',
+    author: 'Joaquin Estrada',
+    authorImage: "/1733568683912.jpg",
+
+    category: 'Free Resource',
+    featuredImage: '/california-coast-hero.jpg',
+    tags: ['Business Growth', 'Contractor Marketing', 'Free Tools'],
+    content: `
+        <div class="bg-orange/10 border-l-4 border-orange p-6 my-8 rounded-r-xl">
+            <p class="!mb-0 text-dark">
+                <strong>Note:</strong> We made this page because we see too many contractors paying thousands of dollars a month to agencies for "SEO" when they haven't even claimed their free Google listings. Start here first. It's completely free, and it works.
+            </p>
+        </div>
+
+        <!-- SECTION 1 -->
+        <div class="pt-12">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="text-orange w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </div>
+                <h2 class="text-3xl font-black text-dark tracking-tight !mb-0">
+                    Section 1: "Get Found" (Free Tools)
+                </h2>
+            </div>
+            <p>The foundation of local marketing is showing up where your customers are already looking. Spoiler alert: they aren't looking at the Yellow Pages.</p>
+            
+            <div class="space-y-6 mt-8">
+                <!-- Point 1 -->
+                <div class="bg-white border border-gray-light rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">1</div>
+                        <h3 class="text-xl font-bold text-dark !mb-0">Google Business Profile</h3>
+                    </div>
+                    <p class="text-sm mb-4">Your absolute most valuable digital asset. This is the "map pack" that shows up at the top of Google searches.</p>
+                    <div class="bg-light rounded-xl p-4">
+                        <strong class="block mb-2 text-dark">5-Step Setup Checklist:</strong>
+                        <ul class="list-none space-y-2 text-sm text-dark mt-2 p-0 m-0">
+                            <li class="flex items-center gap-2">
+                                <svg class="text-orange w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Claim & Verify your business (they will send you a postcard or do a video call).
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="text-orange w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Fill out every single field. Add exact service areas.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="text-orange w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Add at least 10 high-quality photos of your truck and past jobs.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="text-orange w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Get 5 reviews immediately (ask family, friends, or best clients).
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="text-orange w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Post a job update or photo once a week.
+                            </li>
+                        </ul>
+                        <a href="https://www.google.com/business/" target="_blank" rel="noreferrer" class="inline-block mt-4 text-orange font-bold text-sm hover:underline">Claim Your Profile →</a>
+                    </div>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="bg-white border border-gray-light rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">2</div>
+                        <h3 class="text-xl font-bold text-dark !mb-0">Google Search Console</h3>
+                    </div>
+                    <p class="text-sm mb-4">See exactly what people type into Google to find your website. It's free and takes 5 minutes to connect.</p>
+                    <a href="https://search.google.com/search-console/about" target="_blank" rel="noreferrer" class="text-orange font-bold text-sm hover:underline">Setup Search Console →</a>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="bg-white border border-gray-light rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">3</div>
+                        <h3 class="text-xl font-bold text-dark !mb-0">Bing Places</h3>
+                    </div>
+                    <p class="text-sm mb-4">Don't laugh! Bing has about 7% of the search market (usually older demographics with higher incomes). You can import your Google Business Profile directly to Bing Places in exactly two clicks. Free leads that most contractors completely ignore.</p>
+                    <a href="https://www.bingplaces.com/" target="_blank" rel="noreferrer" class="text-orange font-bold text-sm hover:underline">Import to Bing Places →</a>
+                </div>
+
+                <!-- Point 4 -->
+                <div class="bg-white border border-gray-light rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">4</div>
+                        <h3 class="text-xl font-bold text-dark !mb-0">Nextdoor Business</h3>
+                    </div>
+                    <p class="text-sm mb-4">When a pipe bursts or a roof leaks, people often ask their neighbors before they ask Google. Claiming your Nextdoor page lets neighbors tag you directly.</p>
+                    <a href="https://business.nextdoor.com/en-us" target="_blank" rel="noreferrer" class="text-orange font-bold text-sm hover:underline">Claim Nextdoor Page →</a>
+                </div>
+
+                <!-- Point 5 -->
+                <div class="bg-white border border-gray-light rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">5</div>
+                        <h3 class="text-xl font-bold text-dark !mb-0">Yelp for Business</h3>
+                    </div>
+                    <p class="text-sm mb-4">Claim and optimize the profile, but ignore the salespeople that call you every week trying to sell Yelp Ads. The free profile is enough.</p>
+                    <a href="https://biz.yelp.com/" target="_blank" rel="noreferrer" class="text-orange font-bold text-sm hover:underline">Claim Yelp Page →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="pt-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="text-orange w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h2 class="text-3xl font-black text-dark tracking-tight !mb-0">
+                    Section 2: "Look Professional" (Free/Cheap)
+                </h2>
+            </div>
+            <p>If you have an AOL email address and no logo, you are automatically losing jobs to guys who charge 30% more but have a decent website. It doesn't cost an arm and a leg to look premium.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <!-- Point 6 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-light">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">6</div>
+                        <h3 class="font-bold text-dark !mb-0">Canva (Free)</h3>
+                    </div>
+                    <p class="text-sm">Stop paying people on Fiverr. Make beautiful truck wraps, business cards, yard signs, and social posts instantly.</p>
+                </div>
+
+                <!-- Point 7 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-light">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">7</div>
+                        <h3 class="font-bold text-dark !mb-0">Looka (Cheap)</h3>
+                    </div>
+                    <p class="text-sm">Don't have a logo yet? Type your business name into Looka, and its AI will generate hundreds of professional logos for around $65.</p>
+                </div>
+
+                <!-- Point 8 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-light">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">8</div>
+                        <h3 class="font-bold text-dark !mb-0">Google Sites (Free)</h3>
+                    </div>
+                    <p class="text-sm">Don't have a website at all? Don't stress. Build a simple, clean, mobile-friendly page using Google Sites for free tonight. It's better than nothing.</p>
+                </div>
+
+                <!-- Point 9 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-light">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">9</div>
+                        <h3 class="font-bold text-dark !mb-0">Housecall Pro</h3>
+                    </div>
+                    <p class="text-sm">These apps make you look like a multi-million dollar company. Professional estimates, modern invoicing, and customers can pay online.</p>
+                </div>
+
+                <!-- Point 10 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-light md:col-span-2">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">10</div>
+                        <h3 class="font-bold text-dark !mb-0">Square</h3>
+                    </div>
+                    <p class="text-sm">If you can't take credit cards on-site in 2026, you are losing money. Get a free reader from Square.</p>
+                </div>
+
+                <!-- Point 16 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-light">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">16</div>
+                        <h3 class="font-bold text-dark !mb-0">Calendly (Free)</h3>
+                    </div>
+                    <p class="text-sm">Stop playing phone tag. Let customers book estimates directly on your site or via text. It syncs with Google Calendar so you never double-book.</p>
+                </div>
+                
+                <!-- Point 17 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-light">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">17</div>
+                        <h3 class="font-bold text-dark !mb-0">Unsplash / Pexels</h3>
+                    </div>
+                    <p class="text-sm">If you don't have good photos yet, stop stealing them from Google Images. Use high-quality, 100% free stock photos of houses, roofs, and pipes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="pt-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="text-orange w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <h2 class="text-3xl font-black text-dark tracking-tight !mb-0">
+                    Section 3: "Get Reviews Without Begging"
+                </h2>
+            </div>
+            <p>Reviews are the currency of local service businesses. Here is the exact system you should use.</p>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 my-8 relative">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">11</div>
+                    <h3 class="font-bold text-dark text-xl !mb-0">The Copy-Paste Review Text Script</h3>
+                </div>
+                <button 
+                  class="copy-text-btn w-full text-left bg-white rounded-xl border border-gray-light p-6 shadow-sm hover:shadow-md hover:border-orange transition-all mb-4 group cursor-pointer flex flex-col md:flex-row gap-4 items-start md:items-center justify-between"
+                  data-copytext="Hey [name], thanks for choosing us today. If you've got 30 seconds, a Google review helps our small business a ton: [Your Review Link]"
+                >
+                    <p class="!mb-0 text-dark font-mono text-base flex-1">
+                        "Hey [name], thanks for choosing us today. If you've got 30 seconds, a Google review helps our small business a ton: [Your Review Link]"
+                    </p>
+                    <div class="text-gray/50 group-hover:text-orange transition-colors flex items-center gap-2 text-sm font-sans font-bold whitespace-nowrap bg-light px-3 py-1.5 rounded-lg border border-gray-light group-hover:bg-orange/5 group-hover:border-orange/20 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        <span>Click to copy</span>
+                    </div>
+                </button>
+                <p class="text-sm text-gray !mb-0">
+                    <strong>Pro Tip:</strong> Send this text <strong>within 2 hours</strong> of finishing the job. That's when they're happiest. Don't wait until the next day!
+                </p>
+            </div>
+            
+            <div class="pl-4 border-l-4 border-gray-light mb-8">
+                <strong class="text-dark block mb-2">How to create your direct review link:</strong>
+                <ol class="list-decimal pl-6 space-y-2 text-sm">
+                    <li>Go to your Google Business Profile</li>
+                    <li>Look for the button that says "Ask for reviews"</li>
+                    <li>Copy that exact short link and save it in your phone's notepad.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="pt-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="text-orange w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                </div>
+                <h2 class="text-3xl font-black text-dark tracking-tight !mb-0">
+                    Section 4: "Track Your Leads"
+                </h2>
+            </div>
+            <p>Because half of marketing is just figuring out what actually worked.</p>
+
+            <div class="space-y-8 mt-8">
+                <!-- Point 12 -->
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">12</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-dark !mb-1">Google Ads Call Tracking</h3>
+                        <p class="text-sm text-gray mt-1 !mb-0">If you ever run Google Ads, turn on Call Tracking first. It uses a forwarding number so you know exactly which phone calls came from the ad, and which ones found you organically.</p>
+                    </div>
+                </div>
+
+                <!-- Point 13 -->
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">13</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-dark !mb-1">CallRail</h3>
+                        <p class="text-sm text-gray mt-1 !mb-0">Stop guessing. Get a CallRail trial and put a different phone number on your trucks, your yard signs, and your website. It forwards to your main cell phone, but it whispers "This is a call from a yard sign" before you answer.</p>
+                    </div>
+                </div>
+
+                <!-- Point 14 -->
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">14</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-dark !mb-1">A Simple Google Sheet</h3>
+                        <p class="text-sm text-gray mt-1 !mb-0">Every time the phone rings, ask "By the way, how did you find us today?" and write it down. You don't need a $200/month CRM yet. A free spreadsheet works perfectly.</p>
+                    </div>
+                </div>
+
+                <!-- Point 18 -->
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">18</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-dark !mb-1">Google Analytics 4 (Free)</h3>
+                        <p class="text-sm text-gray mt-1 !mb-0">You don't need to be a data scientist. Just connect it to see <em>where</em> your website traffic is coming from (Facebook, Google, direct) so you know what's working and what isn't.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5 -->
+        <div class="pt-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="text-orange w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                </div>
+                <h2 class="text-3xl font-black text-dark tracking-tight !mb-0">
+                    Section 5: "Stuff Your Competition Isn't Doing"
+                </h2>
+            </div>
+            <p>Want a fast unfair advantage? Across California — from Sacramento to San Diego — maybe 5% of contractors do any of this.</p>
+
+            <!-- Point 15 -->
+            <div class="bg-light rounded-2xl p-6 border-l-4 border-orange my-8">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">15</div>
+                    <h3 class="text-xl font-bold text-dark !mb-0">The $0 Content Strategy</h3>
+                </div>
+                <p class="mb-4 text-sm mt-2">Most contractors think they need a massive blog. You don't. You just need proof of life.</p>
+                <strong class="text-dark block mb-2">The Strategy:</strong>
+                <p class="text-sm mt-2 !mb-0">Take one photo of the job site before you leave. <b>Rename the file on your phone</b> from 'IMG_4392.jpg' to exactly what it is: 'kitchen-remodel-sacramento-ca.jpg' (or whatever your city is). Then post it to your Google Business Profile as an update. That takes 30 seconds, requires zero writing skills, and you will outrank 80% of your competitors within six months.</p>
+            </div>
+
+            <!-- Point 19 -->
+            <div class="bg-light rounded-2xl p-6 border-l-4 border-orange my-8">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">19</div>
+                    <h3 class="text-xl font-bold text-dark !mb-0">ChatGPT (Free Version)</h3>
+                </div>
+                <p class="text-sm mt-2 !mb-0">Use it to write professional email responses to angry customers, generate 50 local FAQ ideas for your website, or write the first draft of your service page descriptions. Contractors who use AI for admin work save 5+ hours a week.</p>
+            </div>
+
+            <!-- Point 20 -->
+            <div class="bg-light rounded-2xl p-6 border-l-4 border-orange my-8">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">20</div>
+                    <h3 class="text-xl font-bold text-dark !mb-0">A 'Leave Behind' Flyer (Canva + Local Printer)</h3>
+                </div>
+                <p class="text-sm mt-2 !mb-0">While everyone obsessively focuses online, the physical world is wide open. Create a beautiful "$50 Off Your Next Service" flyer in Canva and leave it on the 3 houses to the left and 3 houses to the right of every job you finish. Neighborhoods share recommendations.</p>
+            </div>
+
+            <!-- Point 21 -->
+            <div class="bg-light rounded-2xl p-6 border-l-4 border-orange my-8">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">21</div>
+                    <h3 class="text-xl font-bold text-dark !mb-0">Video Quotes (Loom - Free)</h3>
+                </div>
+                <p class="text-sm mt-2 !mb-0">Instead of just emailing a PDF estimate that looks identical to the other 3 quotes the homeowner got, use Loom to record your screen for 2 minutes explaining <em>why</em> you are recommending this specific AC unit and walking them through the pricing. Your closing rate will double.</p>
+            </div>
+
+            <div class="bg-light rounded-2xl border border-gray-light p-8 !mt-12">
+                <h3 class="text-xl font-bold text-dark mb-3 flex items-center gap-3">Bonus: Schema Markup</h3>
+                <p class="text-sm !mb-0">
+                    Schema markup is invisible code on your website. In human language: This is the code that explicitly tells Google's robots "Hey, I am a licensed HVAC contractor in [your city], not just a random website that mentions AC." Most cheap websites don't have it. If you build one, ask your developer to include <code>LocalBusiness</code> schema.
+                </p>
+            </div>
+        </div>
+    `
   }
 };

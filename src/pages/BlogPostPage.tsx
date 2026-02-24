@@ -61,6 +61,7 @@ export function BlogPostPage() {
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const shareRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -110,6 +111,34 @@ export function BlogPostPage() {
       setPost('not-found');
     }
   }, [slug]);
+
+  useEffect(() => {
+    // Add event listener to the content container to handle clicks on copy buttons
+    const contentEl = contentRef.current;
+    if (!contentEl) return;
+
+    const handleContentClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const copyBtn = target.closest('.copy-text-btn') as HTMLElement;
+
+      if (copyBtn && copyBtn.dataset.copytext) {
+        navigator.clipboard.writeText(copyBtn.dataset.copytext);
+
+        // Visual feedback
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!</span>';
+        copyBtn.classList.add('text-green-600', 'bg-green-50', 'border-green-200');
+
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+          copyBtn.classList.remove('text-green-600', 'bg-green-50', 'border-green-200');
+        }, 2000);
+      }
+    };
+
+    contentEl.addEventListener('click', handleContentClick);
+    return () => contentEl.removeEventListener('click', handleContentClick);
+  }, [post]);
 
   if (post === 'not-found') return <NotFoundPage />;
   if (!post) return null;
@@ -262,8 +291,11 @@ export function BlogPostPage() {
               }}
               className="prose prose-lg max-w-none mb-16">
 
-              <div className="space-y-6 text-gray font-medium leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: post.content }}>
-              </div>
+              <div
+                ref={contentRef}
+                className="space-y-6 text-gray font-medium leading-relaxed text-lg"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
             </motion.div>
 
             {/* Share / Tags */}
