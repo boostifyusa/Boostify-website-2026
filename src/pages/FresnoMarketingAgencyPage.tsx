@@ -70,7 +70,7 @@ const advertiserSchema = {
     "description": "Premier Fresno marketing agency specializing in custom web design, local SEO, and digital advertising strategies.",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "6362 N Figarden Dr Ste 118",
+        "streetAddress": "6362 N Figarden Dr. #118",
         "addressLocality": "Fresno",
         "addressRegion": "CA",
         "postalCode": "93722",

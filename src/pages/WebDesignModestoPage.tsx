@@ -64,7 +64,7 @@ const advertiserSchema = {
     "description": "Premium Website Design Modesto. Top web design agency building fast, custom, ecommerce, and brand websites for Stanislaus County.",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "6362 N Figarden Dr Ste 118",
+        "streetAddress": "6362 N Figarden Dr. #118",
         "addressLocality": "Fresno",
         "addressRegion": "CA",
         "postalCode": "93722",

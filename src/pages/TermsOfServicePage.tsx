@@ -235,7 +235,7 @@ export function TermsOfServicePage() {
                         +1 559-785-3834
                       </a>
                     </p>
-                    <p>Address: 6362 N Figarden Dr Ste 118, Fresno, CA 93722</p>
+                    <p>Address: 6362 N Figarden Dr. #118, Fresno, CA 93722</p>
                   </div>
                 </section>
               </div>

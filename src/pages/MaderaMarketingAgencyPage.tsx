@@ -27,7 +27,7 @@ const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA", "url": "https://boostifyusa.com/madera-marketing-agency",
     "description": "Madera's trusted marketing agency for custom web design, local SEO, and Google Ads. Helping Madera County businesses grow their digital presence.",
-    "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr Ste 118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
+    "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr. #118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
     "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [{ "@type": "City", "name": "Madera" }, { "@type": "City", "name": "Fresno" }, { "@type": "City", "name": "Clovis" }, { "@type": "City", "name": "Merced" }],
     "hasOfferCatalog": {

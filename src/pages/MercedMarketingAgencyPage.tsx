@@ -27,7 +27,7 @@ const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA", "url": "https://boostifyusa.com/merced-marketing-agency",
     "description": "Premier Merced marketing agency offering custom web design, local SEO, and Google Ads. Helping Merced County businesses thrive in a growing market.",
-    "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr Ste 118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
+    "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr. #118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
     "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [{ "@type": "City", "name": "Merced" }, { "@type": "City", "name": "Atwater" }, { "@type": "City", "name": "Fresno" }, { "@type": "City", "name": "Madera" }],
     "hasOfferCatalog": {

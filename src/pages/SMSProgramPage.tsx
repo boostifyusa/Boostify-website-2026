@@ -127,7 +127,7 @@ export function SMSProgramPage() {
                   Boostify USA LLC
                 </p>
                 <div className="space-y-2">
-                  <p>6362 N Figarden Dr Ste 118, Fresno, CA 93722</p>
+                  <p>6362 N Figarden Dr. #118, Fresno, CA 93722</p>
                   <p>
                     <a
                       href="mailto:support@boostifyusa.com"

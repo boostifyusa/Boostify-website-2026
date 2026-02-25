@@ -27,7 +27,7 @@ const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA", "url": "https://boostifyusa.com/visalia-marketing-agency",
     "description": "Visalia's premier marketing agency offering custom web design, local SEO, and paid advertising for Tulare County businesses.",
-    "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr Ste 118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
+    "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr. #118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
     "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [{ "@type": "City", "name": "Visalia" }, { "@type": "City", "name": "Tulare" }, { "@type": "City", "name": "Fresno" }, { "@type": "City", "name": "Hanford" }],
     "hasOfferCatalog": {

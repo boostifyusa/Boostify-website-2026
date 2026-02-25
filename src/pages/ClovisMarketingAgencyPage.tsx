@@ -71,7 +71,7 @@ const advertiserSchema = {
     "description": "Leading Clovis marketing agency delivering custom web design, local SEO, and targeted digital advertising for Central Valley businesses.",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "6362 N Figarden Dr Ste 118",
+        "streetAddress": "6362 N Figarden Dr. #118",
         "addressLocality": "Fresno",
         "addressRegion": "CA",
         "postalCode": "93722",

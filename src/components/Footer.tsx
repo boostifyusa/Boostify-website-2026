@@ -153,7 +153,7 @@ export function Footer() {
               <li>hello@boostifyusa.com</li>
               <li>
                 <a href="https://maps.app.goo.gl/wcW9CiExcah6B5bS9" target="_blank" rel="noopener noreferrer" className="hover:text-orange transition-colors">
-                  6362 N Figarden Dr Ste 118
+                  6362 N Figarden Dr. #118
                   <br />
                   Fresno, CA 93722
                 </a>

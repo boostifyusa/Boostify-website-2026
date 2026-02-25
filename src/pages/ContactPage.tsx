@@ -466,7 +466,7 @@ export function ContactPage() {
                       <div className="text-gray font-medium text-sm leading-relaxed">
                         <strong>Boostify USA LLC</strong>
                         <br />
-                        6362 N Figarden Dr Ste 118
+                        6362 N Figarden Dr. #118
                         <br />
                         Fresno, CA 93722
                       </div>
