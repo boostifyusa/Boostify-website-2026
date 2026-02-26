@@ -82,7 +82,7 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 z-50">
             <img
-              src="/Group-116.png"
+              src="/Group-116.webp"
               alt="Boostify Logo"
               width="1184"
               height="152"

@@ -35,7 +35,7 @@ export function HomePageV2() {
                 description="Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson."
                 canonicalUrl="/"
             >
-                <link rel="preload" as="image" href="/hero-bg-pattern-opt.webp" />
+                <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
             </SeoHead>
 
             <Navigation />
@@ -47,7 +47,7 @@ export function HomePageV2() {
                     <div
                         className="absolute inset-0 pointer-events-none opacity-[0.4]"
                         style={{
-                            backgroundImage: 'url(/hero-bg-pattern-opt.webp)',
+                            backgroundImage: 'url(/hero-bg-pattern-micro.webp)',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             backgroundRepeat: 'no-repeat'
@@ -207,7 +207,7 @@ export function HomePageV2() {
                             {/* Portfolio Image — taller aspect ratio */}
                             <div className="bg-gray-100 aspect-[16/10] w-full rounded-b-lg overflow-hidden relative">
                                 <img
-                                    src="/FTS-Mock.webp"
+                                    src="/FTS-Mock-opt.webp"
                                     loading="lazy"
                                     fetchPriority="high"
                                     alt="Fresno Truck Wash Portfolio Preview"

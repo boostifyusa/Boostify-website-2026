@@ -31,7 +31,7 @@ export function PartnerQRPage() {
                 className="bg-white rounded-[2.5rem] shadow-2xl shadow-dark/5 border border-gray-light p-8 md:p-12 w-full max-w-sm text-center relative z-10"
             >
                 <Link to="/" className="inline-block mb-8">
-                    <img src="/Group-116.png" alt="Boostify" className="h-8 object-contain mx-auto" />
+                    <img src="/Group-116.webp" alt="Boostify" className="h-8 object-contain mx-auto" />
                 </Link>
 
                 <h1 className="text-2xl font-black text-dark mb-2 tracking-tight">Free Consultation</h1>

@@ -9,7 +9,7 @@ const posts = [
     category: 'AI & Automation',
     tag: 'Insights',
     tagIcon: 'mockup',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=60&w=800',
     slug: 'ai-automation-local-business'
   },
   {

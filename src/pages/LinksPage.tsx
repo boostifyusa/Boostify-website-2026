@@ -158,7 +158,7 @@ export function LinksPage() {
                     {/* Logo */}
                     <div className="bg-white/[0.08] backdrop-blur-xl px-5 py-2 rounded-xl border border-white/[0.08] mb-4">
                         <img
-                            src="/Group-116.png"
+                            src="/Group-116.webp"
                             alt="Boostify USA"
                             className="h-6 w-auto object-contain brightness-0 invert"
                         />

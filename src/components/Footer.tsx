@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-1 text-left">
             <div className="bg-white p-2 inline-flex rounded mb-8">
               <img
-                src="/Group-116.png"
+                src="/Group-116.webp"
                 alt="Boostify Logo"
                 width="1184"
                 height="152"
