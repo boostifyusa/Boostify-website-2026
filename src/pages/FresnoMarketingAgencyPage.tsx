@@ -368,12 +368,12 @@ export function FresnoMarketingAgencyPage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all">
-                                    <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 mb-6">
-                                        <item.icon size={24} strokeWidth={2.5} />
+                                    className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
+                                    <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-500 mb-6 border border-red-100 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                        <item.icon size={26} strokeWidth={2.5} />
                                     </div>
-                                    <h3 className="text-xl font-bold text-dark mb-3">{item.title}</h3>
-                                    <p className="text-gray font-medium leading-relaxed">{item.desc}</p>
+                                    <h3 className="text-2xl font-black text-dark mb-3 tracking-tight group-hover:text-red-500 transition-colors duration-300">{item.title}</h3>
+                                    <p className="text-dark/70 font-medium leading-relaxed">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -639,10 +639,10 @@ export function FresnoMarketingAgencyPage() {
                                     transition={{ delay: i * 0.08 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
                                     <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 group-hover:bg-orange group-hover:text-white transition-colors">
-                                        <item.icon size={24} strokeWidth={2.5} />
+                                        <item.icon size={26} strokeWidth={2.5} />
                                     </div>
-                                    <h3 className="text-xl font-bold text-dark mb-3">{item.title}</h3>
-                                    <p className="text-gray font-medium leading-relaxed">{item.desc}</p>
+                                    <h3 className="text-2xl font-black text-dark mb-3 tracking-tight group-hover:text-red-500 transition-colors duration-300">{item.title}</h3>
+                                    <p className="text-dark/70 font-medium leading-relaxed">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

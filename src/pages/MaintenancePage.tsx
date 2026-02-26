@@ -447,15 +447,15 @@ export function MaintenancePage() {
                   transition={{
                     delay: i * 0.08
                   }}
-                  className="bg-white p-8 rounded-2xl border border-gray-light shadow-sm hover:shadow-md transition-all group">
+                  className="bg-white p-8 rounded-2xl border border-gray-light/50 shadow-lg shadow-dark/5 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-orange/20 transition-all duration-300 group">
 
-                  <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon size={24} strokeWidth={2} />
+                  <div className="w-14 h-14 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-6 border border-orange/20 group-hover:bg-orange group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                    <feature.icon size={26} strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-xl font-bold text-dark mb-3 tracking-tight">
+                  <h3 className="text-2xl font-black text-dark mb-3 tracking-tight group-hover:text-orange transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray font-medium leading-relaxed">
+                  <p className="text-dark/70 font-medium leading-relaxed">
                     {feature.desc}
                   </p>
                 </motion.div>
@@ -479,7 +479,7 @@ export function MaintenancePage() {
               viewport={{
                 once: true
               }}
-              className="bg-white rounded-3xl border-2 border-orange/20 shadow-xl p-10 md:p-14 relative overflow-hidden">
+              className="bg-white rounded-3xl border border-gray-light/50 shadow-2xl shadow-dark/5 p-10 md:p-14 relative overflow-hidden transform hover:-translate-y-2 hover:shadow-orange/10 transition-all duration-500">
 
               <div className="absolute top-0 right-0 w-64 h-64 bg-orange/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
