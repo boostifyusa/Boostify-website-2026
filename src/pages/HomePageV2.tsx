@@ -70,6 +70,7 @@ export function HomePageV2() {
                         {/* Centered Content */}
                         <div className="text-center max-w-4xl mx-auto mb-16 relative">
                             <motion.div
+                                suppressHydrationWarning
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
@@ -80,6 +81,7 @@ export function HomePageV2() {
                             </motion.div>
 
                             <motion.h1
+                                suppressHydrationWarning
                                 initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-5xl md:text-6xl lg:text-[5.7rem] font-black text-dark leading-[0.95] tracking-tighter mb-8"
@@ -88,6 +90,7 @@ export function HomePageV2() {
                                 <span className="relative inline-block px-2 isolate whitespace-nowrap">
                                     <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
                                     <motion.span
+                                        suppressHydrationWarning
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.5, delay: 0.2 }}
@@ -98,6 +101,7 @@ export function HomePageV2() {
                             </motion.h1>
 
                             <motion.p
+                                suppressHydrationWarning
                                 initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
@@ -106,6 +110,7 @@ export function HomePageV2() {
                             </motion.p>
 
                             <motion.div
+                                suppressHydrationWarning
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -127,6 +132,7 @@ export function HomePageV2() {
                             </motion.div>
 
                             <motion.div
+                                suppressHydrationWarning
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -155,6 +161,7 @@ export function HomePageV2() {
                     <div className="max-w-6xl mx-auto px-6 -mt-10 md:-mt-20 relative">
                         {/* Floating Badges — dark, bold, blur out on scroll */}
                         <motion.div
+                            suppressHydrationWarning
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 0.5, ease: 'easeOut' }}
@@ -171,6 +178,7 @@ export function HomePageV2() {
                         </motion.div>
 
                         <motion.div
+                            suppressHydrationWarning
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 1.1, duration: 0.5, ease: 'easeOut' }}
@@ -188,6 +196,7 @@ export function HomePageV2() {
 
                         {/* Browser Mockup — taller */}
                         <motion.div
+                            suppressHydrationWarning
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.4 }}
