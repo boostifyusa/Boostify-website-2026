@@ -34,7 +34,9 @@ export function HomePageV2() {
                 title="SEO & Web Design: Craftsmanship for Local Growth"
                 description="Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson."
                 canonicalUrl="/"
-            />
+            >
+                <link rel="preload" as="image" href="/hero-bg-pattern-opt.webp" />
+            </SeoHead>
 
             <Navigation />
 
@@ -45,7 +47,7 @@ export function HomePageV2() {
                     <div
                         className="absolute inset-0 pointer-events-none opacity-[0.4]"
                         style={{
-                            backgroundImage: 'url(/hero-bg-pattern.webp)',
+                            backgroundImage: 'url(/hero-bg-pattern-opt.webp)',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             backgroundRepeat: 'no-repeat'
@@ -78,23 +80,26 @@ export function HomePageV2() {
                             </motion.div>
 
                             <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.1 }}
                                 className="text-5xl md:text-6xl lg:text-[5.7rem] font-black text-dark leading-[0.95] tracking-tighter mb-8"
                             >
                                 We Build Websites That{' '}
                                 <span className="relative inline-block px-2 isolate whitespace-nowrap">
                                     <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                                    <span className="text-orange relative z-10">Actually</span>
+                                    <motion.span
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.5, delay: 0.2 }}
+                                        className="text-orange relative z-10"
+                                    >Actually</motion.span>
                                 </span>{' '}
                                 Bring Customers In.
                             </motion.h1>
 
                             <motion.p
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                             >
                                 Handcrafted design & search systems built to scale local service businesses from the Central Valley to the Coast.
@@ -203,6 +208,8 @@ export function HomePageV2() {
                             <div className="bg-gray-100 aspect-[16/10] w-full rounded-b-lg overflow-hidden relative">
                                 <img
                                     src="/FTS-Mock.webp"
+                                    loading="lazy"
+                                    fetchPriority="high"
                                     alt="Fresno Truck Wash Portfolio Preview"
                                     className="absolute inset-0 w-full h-full object-cover object-top"
                                 />

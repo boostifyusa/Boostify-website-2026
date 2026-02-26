@@ -8,6 +8,7 @@ interface SeoHeadProps {
     ogImage?: string;
     ogType?: 'website' | 'article' | 'profile';
     noIndex?: boolean;
+    children?: React.ReactNode;
 }
 
 export function SeoHead({
@@ -17,7 +18,8 @@ export function SeoHead({
     canonicalUrl,
     ogImage = '/icon.png',
     ogType = 'website',
-    noIndex = false
+    noIndex = false,
+    children
 }: SeoHeadProps) {
     const siteUrl = 'https://boostifyusa.com';
     const fullCanonicalUrl = canonicalUrl
@@ -52,6 +54,8 @@ export function SeoHead({
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={fullOgImage} />
+
+            {children}
         </Helmet>
     );
 }
