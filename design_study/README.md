@@ -11,6 +11,8 @@ This folder contains a comprehensive breakdown of the design system used in the 
 5.  [**Complex Graphics (Mocks)**](./06_complex_graphics.md) - Code-based mocks for PageSpeed, Browser frames, and Dashboards.
 6.  [**Layout & Structure**](./05_layout_structure.md) - Spacing, grids, and container max-widths.
 7.  [**Copy & Branding Guide**](./07_copy_branding.md) - Voice, tone, and copywriting patterns (PAS, vocabulary).
+8.  [**SEO Copy Structure**](./08_seo_copy_structure.md) - Guidelines for SEO-friendly page titles, meta descriptions, and schema.
+9.  [**Tech Stack & Packages**](./09_tech_stack_packages.md) - Packages used for animations, layout, and UI styling.
 
 ## Key Takeaways
 - **No Images for UI**: Most "graphics" (like the glowing orbs or browser windows) are created with **CSS/Tailwind**, not images.
