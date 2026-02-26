@@ -25,7 +25,7 @@ const relatedPosts = [
   {
     title: "Why Your Website Isn't Getting Leads",
     category: 'Web Design',
-    image: "/pexels-noviana-27910251.jpg",
+    image: "/pexels-noviana-27910251.webp",
 
     date: 'January 8, 2026',
     slug: 'website-leads'

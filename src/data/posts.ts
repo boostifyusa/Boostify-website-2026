@@ -198,7 +198,7 @@ export const blogPosts: Record<string, any> = {
     authorImage: "/1733568683912.jpg",
 
     category: 'Web Design',
-    featuredImage: "/pexels-noviana-27910251.jpg",
+    featuredImage: "/pexels-noviana-27910251.webp",
 
     tags: ['Conversion Rate', 'UX Design', 'Small Business'],
     content: `
@@ -576,7 +576,7 @@ export const blogPosts: Record<string, any> = {
     authorImage: "/1733568683912.jpg",
 
     category: 'Free Resource',
-    featuredImage: '/california-coast-hero.jpg',
+    featuredImage: '/california-coast-hero.webp',
     tags: ['Business Growth', 'Contractor Marketing', 'Free Tools'],
     content: `
         <div class="bg-orange/10 border-l-4 border-orange p-6 my-8 rounded-r-xl">

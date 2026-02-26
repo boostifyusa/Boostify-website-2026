@@ -1,10 +1,10 @@
-import React from 'react';
+
 function SBALogo() {
   return (
     <div className="flex items-center gap-3">
       <svg
-        width="48"
-        height="48"
+        width="52"
+        height="52"
         viewBox="0 0 40 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -26,10 +26,10 @@ function SBALogo() {
         <rect x="8" y="31" width="24" height="2" fill="#CC0000" />
       </svg>
       <div>
-        <div className="text-xs font-bold text-dark/80 uppercase tracking-wide leading-tight">
+        <div className="text-sm font-bold text-dark/70 uppercase tracking-wide leading-tight">
           U.S. Small Business
         </div>
-        <div className="text-xs font-bold text-dark/80 uppercase tracking-wide leading-tight">
+        <div className="text-sm font-bold text-dark/70 uppercase tracking-wide leading-tight">
           Administration
         </div>
       </div>
@@ -40,8 +40,8 @@ function FresnoStateLogo() {
   return (
     <div className="flex items-center gap-2.5">
       <svg
-        width="40"
-        height="40"
+        width="46"
+        height="46"
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -60,10 +60,10 @@ function FresnoStateLogo() {
         </text>
       </svg>
       <div>
-        <div className="text-base font-black text-dark/80 uppercase tracking-wider leading-none">
+        <div className="text-lg font-black text-dark/70 uppercase tracking-wider leading-none">
           Fresno
         </div>
-        <div className="text-base font-black text-dark/80 uppercase tracking-wider leading-none">
+        <div className="text-lg font-black text-dark/70 uppercase tracking-wider leading-none">
           State
         </div>
       </div>
@@ -74,8 +74,8 @@ function SBDCLogo() {
   return (
     <div className="flex items-center gap-2.5">
       <svg
-        width="44"
-        height="44"
+        width="50"
+        height="50"
         viewBox="0 0 36 36"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -91,10 +91,10 @@ function SBDCLogo() {
         <circle cx="18" cy="20" r="3" fill="#E8590C" />
       </svg>
       <div>
-        <div className="text-xs font-black text-dark/80 uppercase tracking-wider leading-tight">
+        <div className="text-sm font-black text-dark/70 uppercase tracking-wider leading-tight">
           Valley Sierra
         </div>
-        <div className="text-lg font-black text-dark/80 uppercase tracking-wider leading-tight">
+        <div className="text-xl font-black text-dark/70 uppercase tracking-wider leading-tight">
           SBDC
         </div>
       </div>
@@ -106,8 +106,8 @@ function GoogleMarketingLogo() {
     <div className="flex items-center gap-3">
       <svg
         viewBox="0 0 24 24"
-        width="36"
-        height="36"
+        width="42"
+        height="42"
         xmlns="http://www.w3.org/2000/svg">
 
         <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
@@ -130,12 +130,12 @@ function GoogleMarketingLogo() {
         </g>
       </svg>
       <div>
-        <div className="text-xs font-bold text-dark/80 leading-tight">
+        <div className="text-sm font-bold text-dark/70 leading-tight">
           Google Marketing
         </div>
-        <div className="text-xs font-bold text-dark/80 leading-tight">
+        <div className="text-sm font-bold text-dark/70 leading-tight">
           Platform{' '}
-          <span className="text-[11px] font-medium text-gray/60">
+          <span className="text-xs font-medium text-gray/50">
             Certified
           </span>
         </div>
@@ -163,22 +163,22 @@ const logos = [
 
 export function TrustBadges() {
   return (
-    <section className="py-8 bg-light border-y border-gray-light/50">
+    <section className="py-10 md:py-12 bg-light/50 border-b border-gray-light/50">
       <div className="max-w-6xl mx-auto px-6">
-        <p className="text-[10px] font-bold text-gray/50 uppercase tracking-[0.2em] text-center mb-6">
+        <p className="text-xs font-bold text-gray/60 uppercase tracking-[0.25em] text-center mb-10">
           Trusted by Organizations You Know
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-14">
-          {logos.map((logo) =>
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-20">
+          {logos.map((logo) => (
             <div
               key={logo.id}
-              className="grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-default">
-
+              className="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-default"
+            >
               <logo.component />
             </div>
-          )}
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

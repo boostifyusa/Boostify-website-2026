@@ -439,7 +439,7 @@ export function WebDesignModestoPage() {
                                 className="w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-light bg-gray-50 p-2 relative z-10"
                             >
                                 <img
-                                    src="/FTS-Mock.jpg"
+                                    src="/FTS-Mock.webp"
                                     alt="Premium Custom Website Design Example"
                                     className="w-full h-auto rounded-2xl object-cover"
                                 />

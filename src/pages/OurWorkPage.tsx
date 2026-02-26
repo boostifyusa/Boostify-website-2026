@@ -14,7 +14,7 @@ const projects = [
     category: 'WEB DESIGN & SEO',
     stat: 'PAGE 1 RANKINGS',
     description: 'Custom website build with full local SEO strategy. Hand-coded for speed, optimized for conversions, and ranking on page one for competitive automotive keywords in Fresno.',
-    image: '/FTS-Mock.jpg',
+    image: '/FTS-Mock.webp',
     link: 'https://fullthrottlesuspension.com'
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     category: 'WEB DESIGN & SEO',
     stat: '3× ORGANIC TRAFFIC',
     description: 'Full website redesign for a Fresno-based solar energy company. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.',
-    image: '/Slide-4_3-5.png',
+    image: '/Slide-4_3-5.webp',
     link: 'https://martinenergyinc.com'
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     category: 'WEB DEVELOPMENT',
     stat: '50K+ MONTHLY VISITORS',
     description: 'Built the official Fresno State news website from the ground up. A high-traffic, content-heavy platform serving students, faculty, and the Fresno community.',
-    image: '/Slide-4_3-4.png',
+    image: '/Slide-4_3-4.webp',
     link: 'https://fresnostatetoday.com'
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     category: 'WEB DESIGN & LOCAL SEO',
     stat: '2× SERVICE BOOKINGS',
     description: 'Complete website and brand presence for a Fresno pool servicing company. Designed to showcase services, build trust, and drive appointment bookings from local homeowners.',
-    image: '/Slide-4_3-1.png',
+    image: '/Slide-4_3-1.webp',
     link: 'https://benchmarkpoolsupply.com'
   },
   {

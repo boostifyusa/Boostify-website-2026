@@ -248,7 +248,7 @@ export function WebDesignPage() {
                 </div>
                 {/* Screenshot */}
                 <img
-                  src="/FTS-Mock.jpg"
+                  src="/FTS-Mock.webp"
                   alt="Full Throttle Suspension website design by Boostify"
                   className="w-full h-auto object-cover object-top" />
 

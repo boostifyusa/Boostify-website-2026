@@ -497,7 +497,7 @@ export function LocalSEOPage() {
               <div className="order-1 lg:order-2 bg-white rounded-3xl aspect-square relative overflow-hidden border border-gray-light shadow-2xl p-8 flex items-center justify-center">
                 {/* Subtle Topographic Background */}
                 <img
-                  src="/279000632_61847a32-e2d1-49e5-bbbb-6ea5c145d830-1-1.png"
+                  src="/279000632_61847a32-e2d1-49e5-bbbb-6ea5c145d830-1-1.webp"
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" />
 

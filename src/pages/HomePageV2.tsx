@@ -202,7 +202,7 @@ export function HomePageV2() {
                             {/* Portfolio Image — taller aspect ratio */}
                             <div className="bg-gray-100 aspect-[16/10] w-full rounded-b-lg overflow-hidden relative">
                                 <img
-                                    src="/FTS-Mock.jpg"
+                                    src="/FTS-Mock.webp"
                                     alt="Fresno Truck Wash Portfolio Preview"
                                     className="absolute inset-0 w-full h-full object-cover object-top"
                                 />
