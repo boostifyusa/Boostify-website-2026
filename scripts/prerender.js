@@ -73,18 +73,10 @@ async function prerender() {
         try {
             await page.goto(`http://localhost:${PORT}${url}`, { waitUntil: 'networkidle0', timeout: 30000 });
 
-            // Wait a moment for any framer-motion animations or final state updates
+            // Wait a moment for React to finish its initial mounting (but animations will be frozen)
             await new Promise(resolve => setTimeout(resolve, 500));
 
             let html = await page.content();
-
-            // CRITICAL HYDRATION FIX:
-            // Framer motion injects inline `style="..."` tags into elements when they finish animating.
-            // If Puppeteer saves this animated HTML, React throws Hydration Error #418 & #423 on load 
-            // because it expects the initial un-animated state.
-            // We strip out the framer-motion specific styles so hydration succeeds.
-            html = html.replace(/style="[^"]*opacity:\s*1[^"]*transform:\s*none[^"]*"/g, '');
-            html = html.replace(/style="[^"]*opacity:\s*1[^"]*transform:\s*translateY\(0px\)[^"]*"/g, '');
 
             // Clean up injected Vite dev scripts if running in Dev mode
             html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
