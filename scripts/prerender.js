@@ -40,76 +40,76 @@ async function prerender() {
         res.sendFile(path.join(DIST_DIR, 'index.html'));
     });
 
-    const PORT = 5174;
-    const server = app.listen(PORT, () => {
+    const server = app.listen(0, async () => {
+        const PORT = server.address().port;
         console.log(`Static server running on port ${PORT}`);
-    });
 
-    // 3. Launch Puppeteer
-    console.log('Launching Puppeteer...');
-    const browser = await puppeteer.launch({
-        headless: 'new',
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
-    const page = await browser.newPage();
+        // 3. Launch Puppeteer
+        console.log('Launching Puppeteer...');
+        const browser = await puppeteer.launch({
+            headless: 'new',
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
+        const page = await browser.newPage();
 
-    // Speed up rendering
-    await page.setRequestInterception(true);
-    page.on('request', (req) => {
-        const resourceType = req.resourceType();
-        if (['image', 'stylesheet', 'font'].includes(resourceType)) {
-            req.continue();
-        } else {
-            req.continue();
-        }
-    });
-
-    // 4. Visit each route and capture HTML
-    for (const url of urls) {
-        if (url.includes('.xml') || url.includes('.txt')) continue; // skip non-pages
-
-        console.log(`Pre-rendering: ${url}`);
-
-        try {
-            await page.goto(`http://localhost:${PORT}${url}`, { waitUntil: 'networkidle0', timeout: 30000 });
-
-            // Wait a moment for React to finish its initial mounting (but animations will be frozen)
-            await new Promise(resolve => setTimeout(resolve, 500));
-
-            let html = await page.content();
-
-            // Clean up injected Vite dev scripts if running in Dev mode
-            html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
-            html = html.replace(/<script type="module">import \{ injectIntoGlobalHook \}.*?<\/script>/s, '');
-
-            // Fix index.tsx vs main.tsx script source pointing issue for production
-            html = html.replace(/<script type="module" src="\/src\/main\.tsx[^>]*><\/script>/g, '<script type="module" src="/src/index.tsx"></script>');
-
-            // Determine save path
-            let savePath;
-            if (url === '/') {
-                savePath = path.join(DIST_DIR, 'index.html'); // Overwrite main index
+        // Speed up rendering
+        await page.setRequestInterception(true);
+        page.on('request', (req) => {
+            const resourceType = req.resourceType();
+            if (['image', 'stylesheet', 'font'].includes(resourceType)) {
+                req.continue();
             } else {
-                const routeDir = path.join(DIST_DIR, url);
-                if (!fs.existsSync(routeDir)) {
-                    fs.mkdirSync(routeDir, { recursive: true });
-                }
-                savePath = path.join(routeDir, 'index.html');
+                req.continue();
             }
+        });
 
-            fs.writeFileSync(savePath, html, 'utf8');
-            console.log(`Saved: ${savePath.replace(DIST_DIR, '')}`);
+        // 4. Visit each route and capture HTML
+        for (const url of urls) {
+            if (url.includes('.xml') || url.includes('.txt')) continue; // skip non-pages
 
-        } catch (err) {
-            console.error(`Error pre-rendering ${url}:`, err.message);
+            console.log(`Pre-rendering: ${url}`);
+
+            try {
+                await page.goto(`http://localhost:${PORT}${url}`, { waitUntil: 'networkidle0', timeout: 30000 });
+
+                // Wait a moment for React to finish its initial mounting (but animations will be frozen)
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                let html = await page.content();
+
+                // Clean up injected Vite dev scripts if running in Dev mode
+                html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
+                html = html.replace(/<script type="module">import \{ injectIntoGlobalHook \}.*?<\/script>/s, '');
+
+                // Fix index.tsx vs main.tsx script source pointing issue for production
+                html = html.replace(/<script type="module" src="\/src\/main\.tsx[^>]*><\/script>/g, '<script type="module" src="/src/index.tsx"></script>');
+
+                // Determine save path
+                let savePath;
+                if (url === '/') {
+                    savePath = path.join(DIST_DIR, 'index.html'); // Overwrite main index
+                } else {
+                    const routeDir = path.join(DIST_DIR, url);
+                    if (!fs.existsSync(routeDir)) {
+                        fs.mkdirSync(routeDir, { recursive: true });
+                    }
+                    savePath = path.join(routeDir, 'index.html');
+                }
+
+                fs.writeFileSync(savePath, html, 'utf8');
+                console.log(`Saved: ${savePath.replace(DIST_DIR, '')}`);
+
+            } catch (err) {
+                console.error(`Error pre-rendering ${url}:`, err.message);
+            }
         }
-    }
 
-    // 5. Cleanup
-    console.log('Closing browser and server...');
-    await browser.close();
-    server.close();
-    console.log('Pre-rendering complete.');
+        // 5. Cleanup
+        console.log('Closing browser and server...');
+        await browser.close();
+        server.close();
+        console.log('Pre-rendering complete.');
+    });
 }
 
 prerender().catch(err => {

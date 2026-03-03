@@ -218,7 +218,7 @@ export function HomePageV2() {
                                 <img
                                     src="/FTS-Mock-opt.webp"
                                     loading="lazy"
-                                    fetchPriority="high"
+                                    {...{ fetchpriority: "high" }}
                                     alt="Fresno Truck Wash Portfolio Preview"
                                     className="absolute inset-0 w-full h-full object-cover object-top"
                                 />
