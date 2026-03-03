@@ -177,7 +177,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40 font-medium">
           <p>
-            © {new Date().getFullYear()} Boostify USA. All rights reserved.
+            © 2026 Boostify USA. All rights reserved.
           </p>
           <p>❤️ Proudly serving businesses in Fresno, CA and across all California</p>
         </div>

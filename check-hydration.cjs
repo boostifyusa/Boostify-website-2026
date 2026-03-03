@@ -14,7 +14,7 @@ const puppeteer = require('puppeteer');
         });
 
         console.log("Navigating to preview server...");
-        await page.goto('http://localhost:4175/services', { waitUntil: 'load' });
+        await page.goto('http://localhost:4176/', { waitUntil: 'load' });
         // wait for a few seconds to let any hydration finish
         await new Promise(r => setTimeout(r, 5000));
         await browser.close();

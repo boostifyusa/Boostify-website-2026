@@ -84,6 +84,9 @@ async function prerender() {
                 // Fix index.tsx vs main.tsx script source pointing issue for production
                 html = html.replace(/<script type="module" src="\/src\/main\.tsx[^>]*><\/script>/g, '<script type="module" src="/src/index.tsx"></script>');
 
+                // Strip data-discover attributes injected by React Router to fix Hydration mismatch
+                html = html.replace(/ data-discover="true"/g, '');
+
                 // Determine save path
                 let savePath;
                 if (url === '/') {

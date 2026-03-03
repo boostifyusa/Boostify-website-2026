@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer');
         '/fresno-marketing-agency', '/modesto-web-design'
     ];
 
-    console.log("Starting hydration test against Dev server at http://localhost:5173");
+    console.log("Starting hydration test against Dev server at http://localhost:4192");
 
     const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
@@ -17,22 +17,23 @@ const puppeteer = require('puppeteer');
     // Listen for hydration error logs specifically
     page.on('console', msg => {
         const text = msg.text();
-        if (text.includes('Minified React error') || text.includes('Warning: Text content did not match') || text.includes('Warning: Expected server HTML to contain') || text.includes('Warning: React does not recognize')) {
+        if (text.includes('Minified React error') || text.includes('Warning: Text content did not match') || text.includes('Warning: Expected server HTML to contain') || text.includes('Warning: React does not recognize') || text.includes('Hydration failed')) {
             console.error(`[Hydration Error on ${page.url()}] ${text}`);
             totalErrors++;
         }
     });
 
     page.on('pageerror', err => {
-        if (err.message.includes('Minified React error #418') || err.message.includes('Minified React error #423')) {
+        if (err.message.includes('Minified React error #418') || err.message.includes('Minified React error #423') || err.message.includes('Hydration failed') || err.message.includes('Text content did not match')) {
             console.error(`[Page Error on ${page.url()}] ${err.message}`);
+            console.error(err.stack);
             totalErrors++;
         }
     });
 
     for (let url of urls) {
         console.log(`Checking ${url}...`);
-        await page.goto(`http://localhost:5173${url}`, { waitUntil: 'load' });
+        await page.goto(`http://localhost:4194${url}`, { waitUntil: 'load' });
         // wait to let React hydrate
         await new Promise(r => setTimeout(r, 2000));
     }
