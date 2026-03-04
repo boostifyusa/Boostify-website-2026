@@ -214,10 +214,20 @@ app.use((req, res, next) => {
         modified = modified.replace('</head>', `${ssrHeader}</head>`);
 
         if (schemas) {
-            modified = modified.replace('</body>', `${schemas}</body>`);
+            let schemaTags = '';
+            if (Array.isArray(schemas)) {
+                schemaTags = schemas.map(schema => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`).join('\n    ');
+            } else {
+                schemaTags = `<script type="application/ld+json">${JSON.stringify(schemas)}</script>`;
+            }
+            modified = modified.replace('</body>', `\n    ${schemaTags}\n</body>`);
         }
 
-        res.send(modified);
+        if (!isPrerendered && normalizedPath !== '/' && normalizedPath !== '') {
+            res.status(404).send(modified);
+        } else {
+            res.status(200).send(modified);
+        }
     });
 });
 
