@@ -139,15 +139,95 @@ loadAuditConfig();
 
 // Watch for changes
 // Config watcher included in central watcher below
+// ─── SSR Middleware ──────────────────────────────────────────────────
+// Handle all page requests, serving prerendered HTML or dynamic skeletons.
+// Assets are excluded via the first guard inside the middleware.
+app.use((req, res, next) => {
+    // Prevent serving index.html for missing static assets
+    if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot)$/) || req.path.startsWith('/assets/')) {
+        return next(); // Let express.static handle assets or 404
+    }
+
+    // 1. Try to serve a pre-rendered index.html for this specific route (SEO best practice)
+    // Normalize path: remove trailing slash for lookups
+    const normalizedPath = req.path.endsWith('/') && req.path.length > 1
+        ? req.path.slice(0, -1)
+        : req.path;
+
+    const specificIndexPath = path.join(DIST_DIR, normalizedPath, 'index.html');
+    const isPrerendered = fs.existsSync(specificIndexPath);
+
+    const indexPath = isPrerendered ? specificIndexPath : path.join(DIST_DIR, 'index.html');
+
+    const schemas = ssrSchemas.get(normalizedPath) || ssrSchemas.get(req.path);
+    const isBlog = normalizedPath.startsWith('/blog/');
+
+    fs.readFile(indexPath, 'utf8', (err, html) => {
+        if (err) {
+            console.error('SSR injection error:', err?.message);
+            return res.sendFile(indexPath); // Fallback to unmodified
+        }
+
+        // If we serve a pre-rendered file, it already has meta tags and content.
+        // We skip the dynamic injection to avoid "double" tags and ensure the best content is served.
+        if (isPrerendered) {
+            return res.status(200).send(html);
+        }
+
+        let modified = html;
+        const siteUrl = 'https://boostifyusa.com';
+
+        // ─── SSR Meta: title, description, canonical ────────────────────────
+        const defaultMeta = {
+            title: 'Boostify USA | Custom Web Design & Local SEO Agency',
+            description: 'Generate more leads, rank higher on Google, and automate your operations. Boostify builds custom digital marketing solutions for local service businesses.',
+            image: `https://boostifyusa.com/Group-116.png`
+        };
+
+        const pageMeta = ssrMeta.get(normalizedPath) || ssrMeta.get(req.path) || defaultMeta;
+        const canonicalUrl = `${siteUrl}${req.path}`;
+
+        // Use normalized path for title/desc lookup too
+        const pageTitle = pageMeta.title || defaultMeta.title;
+        const pageDesc = pageMeta.description || defaultMeta.description;
+        const pageImage = pageMeta.image || defaultMeta.image;
+
+        // Pruning logic for skeleton
+        modified = modified.replace(/<title>.*?<\/title>/s, `<title>${pageTitle}</title>`);
+        modified = modified.replace(/<meta name="description" content=".*?"\/?>/s, `<meta name="description" content="${pageDesc}" />`);
+
+        // Inject SSR-specific headers etc.
+        const ssrHeader = `
+    <!-- SSR Meta Tags -->
+    <title>${pageTitle}</title>
+    <meta name="description" content="${pageDesc}" />
+    <link rel="canonical" href="${canonicalUrl}" />
+    
+    <!-- Dynamic Social Tags -->
+    <meta property="og:title" content="${pageTitle}" />
+    <meta property="og:description" content="${pageDesc}" />
+    <meta property="og:image" content="${pageImage}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${canonicalUrl}" />
+`;
+
+        modified = modified.replace('</head>', `${ssrHeader}</head>`);
+
+        if (schemas) {
+            modified = modified.replace('</body>', `${schemas}</body>`);
+        }
+
+        res.send(modified);
+    });
+});
+
 app.use(express.static(DIST_DIR, {
-    index: false, // Don't serve index.html for '/' — let catch-all handler inject SSR meta tags
-    maxAge: '1d', // Default to 1 day
+    index: false, // Catch-all handles HTML, express.static handles assets
+    maxAge: '1d',
     setHeaders: (res, path) => {
         if (path.includes('assets')) {
-            // Hashed assets (JS/CSS) get 1 year cache
             res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
         } else {
-            // Other static files (images, etc) get 1 day
             res.setHeader('Cache-Control', 'public, max-age=86400');
         }
     }
@@ -1397,105 +1477,7 @@ app.use((req, res, next) => {
         return res.status(404).send('Asset not found');
     }
 
-    const indexPath = path.join(DIST_DIR, 'index.html');
-    const schemas = ssrSchemas.get(req.path);
-    const isBlog = req.path.startsWith('/blog/');
-
-    fs.readFile(indexPath, 'utf8', (err, html) => {
-        if (err) {
-            console.error('SSR injection error:', err?.message);
-            return res.sendFile(indexPath); // Fallback to unmodified
-        }
-
-        let modified = html;
-        const siteUrl = 'https://boostifyusa.com';
-
-        // ─── SSR Meta: title, description, canonical ────────────────────────
-        const defaultMeta = {
-            title: 'Boostify USA | Custom Web Design & Local SEO Agency',
-            description: 'Generate more leads, rank higher on Google, and automate your operations. Boostify builds custom digital marketing solutions for local service businesses.',
-            canonical: `${siteUrl}${req.path === '/' ? '/' : req.path}`
-        };
-        const meta = ssrMeta.get(req.path) || defaultMeta;
-        const metaTitle = meta.title || defaultMeta.title;
-        const metaDesc = meta.description || defaultMeta.description;
-        const metaCanonical = meta.canonical || defaultMeta.canonical;
-
-        let ssrTags = `
-    <!-- SSR Meta Tags -->
-    <title>${metaTitle.replace(/</g, '&lt;')}</title>
-    <meta name="description" content="${metaDesc.replace(/"/g, '&quot;')}" />
-    <link rel="canonical" href="${metaCanonical}" />`;
-
-        // Base Default OG Tags
-        let ogTitle = metaTitle;
-        let ogDesc = metaDesc;
-        let ogImage = `${siteUrl}/Group-116.png`;
-        let ogType = 'website';
-
-        // Dynamic Blog OG Tags
-        if (isBlog) {
-            const slug = req.path.split('/')[2];
-            try {
-                const postsPath = path.join(__dirname, '../src/data/posts.ts');
-                if (fs.existsSync(postsPath)) {
-                    const content = fs.readFileSync(postsPath, 'utf8');
-                    // Regex searches for the slug block, ending before `content:`
-                    const blockRegex = new RegExp(`'${slug}'\\s*:\\s*{([^}]+?content\\s*:)`, 's');
-                    const match = blockRegex.exec(content);
-
-                    if (match) {
-                        const block = match[1];
-                        const titleMatch = block.match(/title:\\s*(['"\`])(.*?)\\1,/s);
-                        const excerptMatch = block.match(/excerpt:\\s*(['"\`])(.*?)\\1,/s);
-                        const imageMatch = block.match(/featuredImage:\\s*(['"\`])(.*?)\\1,/s);
-
-                        if (titleMatch) ogTitle = titleMatch[2].trim();
-                        if (excerptMatch) ogDesc = excerptMatch[2].replace(/\\n/g, ' ').trim();
-                        if (imageMatch) {
-                            ogImage = imageMatch[2].trim();
-                            if (ogImage.startsWith('/')) ogImage = `${siteUrl}${ogImage}`;
-                        }
-                        ogType = 'article';
-
-                        // Override SSR title/desc for blog posts too
-                        ssrTags = `
-    <!-- SSR Meta Tags -->
-    <title>${ogTitle.replace(/</g, '&lt;')}</title>
-    <meta name="description" content="${ogDesc.replace(/"/g, '&quot;')}" />
-    <link rel="canonical" href="${siteUrl}${req.path}" />`;
-                    }
-                }
-            } catch (e) {
-                console.error('Error parsing blog meta:', e.message);
-            }
-        }
-
-        // Construct the OG / Social Tags to inject
-        let ogTags = `
-    <!-- Dynamic Social Tags -->
-    <meta property="og:title" content="${ogTitle.replace(/"/g, '&quot;')}" />
-    <meta property="og:description" content="${ogDesc.replace(/"/g, '&quot;')}" />
-    <meta property="og:image" content="${ogImage}" />
-    <meta property="og:type" content="${ogType}" />
-    <meta property="og:url" content="${siteUrl}${req.path}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${ogTitle.replace(/"/g, '&quot;')}" />
-    <meta name="twitter:description" content="${ogDesc.replace(/"/g, '&quot;')}" />
-    <meta name="twitter:image" content="${ogImage}" />`;
-
-        // Inject City JSON-LD Schemas if applicable
-        if (schemas) {
-            const tags = schemas.map(s =>
-                `<script type="application/ld+json">${JSON.stringify(s)}</script>`
-            ).join('\n    ');
-            ogTags += `\n    ${tags}`;
-        }
-
-        // Inject into <head>: SSR meta tags first, then OG/social tags
-        modified = modified.replace('</head>', `    ${ssrTags}\n    ${ogTags}\n  </head>`);
-        res.send(modified);
-    });
+    // SSR handling moved to the top of the middleware chain for priority.
 });
 
 

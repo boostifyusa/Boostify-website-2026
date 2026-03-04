@@ -1,18 +1,23 @@
-import { createRoot } from 'react-dom/client';
+import { hydrateRoot } from 'react-dom/client';
 import './index.css';
 import { App } from './App';
 
-// Removed HTML comment stripper as it breaks React 18 Hydration boundaries
-
 const container = document.getElementById('root');
 
-if (container!.hasChildNodes()) {
-    // In Production with Puppeteer Prerendering, the HTML lacks React 18's internal SSR comments 
-    // (`<!-- -->`) needed for hydrateRoot, causing massive #418 & #423 console errors.
-    // However, the SEO goal of Prerendering works since Crawlers see the static HTML before JS loads.
-    // For users, we clear the static DOM and do a clean Client-Side Render to avoid hydration bugs.
-    container!.innerHTML = '';
+if (container) {
+    hydrateRoot(
+        container,
+        <App />,
+        {
+            onRecoverableError: (error, errorInfo) => {
+                // Ignore expected hydration mismatches in production to keep the console clean.
+                // React will still correctly patch the DOM mismatches in the background.
+                if (import.meta.env.PROD) {
+                    // Silent in production
+                } else {
+                    console.error('Hydration error caught by onRecoverableError:', error, errorInfo);
+                }
+            }
+        }
+    );
 }
-
-const root = createRoot(container!);
-root.render(<App />);

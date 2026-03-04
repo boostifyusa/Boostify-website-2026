@@ -70,19 +70,16 @@ async function prerender() {
             console.log(`Pre-rendering: ${url}`);
 
             try {
-                await page.goto(`http://localhost:${PORT}${url}`, { waitUntil: 'networkidle0', timeout: 30000 });
+                await page.goto(`http://localhost:${PORT}${url}`, { waitUntil: 'networkidle0', timeout: 60000 });
 
-                // Wait a moment for React to finish its initial mounting (but animations will be frozen)
-                await new Promise(resolve => setTimeout(resolve, 500));
+                // Wait a moment for React to finish its initial mounting and any lazy components to load
+                await new Promise(resolve => setTimeout(resolve, 2000));
 
                 let html = await page.content();
 
-                // Clean up injected Vite dev scripts if running in Dev mode
+                // Clean up injected Vite dev scripts if running in Dev mode (robust check)
                 html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
                 html = html.replace(/<script type="module">import \{ injectIntoGlobalHook \}.*?<\/script>/s, '');
-
-                // Fix index.tsx vs main.tsx script source pointing issue for production
-                html = html.replace(/<script type="module" src="\/src\/main\.tsx[^>]*><\/script>/g, '<script type="module" src="/src/index.tsx"></script>');
 
                 // Strip data-discover attributes injected by React Router to fix Hydration mismatch
                 html = html.replace(/ data-discover="true"/g, '');
