@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -131,6 +131,28 @@ const faqSchema = {
 
 export function FresnoMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [ranks, setRanks] = useState<Record<number, { rank: number | string, colorClass: string }>>({});
+
+    useEffect(() => {
+        const initialRanks: Record<number, { rank: number | string, colorClass: string }> = {};
+        for (let i = 0; i < 49; i++) {
+            const row = Math.floor(i / 7);
+            const col = i % 7;
+            const dist = Math.sqrt(Math.pow(row - 3, 2) + Math.pow(col - 3, 2));
+            let rank: number | string, colorClass: string;
+            if (dist < 4) {
+                rank = Math.floor(Math.random() * 2) + 1;
+                colorClass = "bg-green-500 text-white shadow-green-500/20";
+            } else {
+                rank = Math.floor(Math.random() * 3) + 2;
+                colorClass = rank > 3
+                    ? "bg-orange text-white shadow-orange/20"
+                    : "bg-green-500 text-white shadow-green-500/20";
+            }
+            initialRanks[i] = { rank, colorClass };
+        }
+        setRanks(initialRanks);
+    }, []);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
@@ -489,16 +511,13 @@ export function FresnoMarketingAgencyPage() {
                                             const col = i % 7;
                                             const dist = Math.sqrt(Math.pow(row - 3, 2) + Math.pow(col - 3, 2));
 
-                                            let rank, colorClass;
-
-                                            if (dist < 4) {
-                                                rank = Math.floor(Math.random() * 2) + 1;
-                                                colorClass = "bg-green-500 text-white shadow-green-500/20";
+                                            let rank: number | string, colorClass: string;
+                                            if (ranks[i]) {
+                                                rank = ranks[i].rank;
+                                                colorClass = ranks[i].colorClass;
                                             } else {
-                                                rank = Math.floor(Math.random() * 3) + 2;
-                                                colorClass = rank > 3
-                                                    ? "bg-orange text-white shadow-orange/20"
-                                                    : "bg-green-500 text-white shadow-green-500/20";
+                                                if (dist < 4) { rank = 1; colorClass = "bg-green-500 text-white shadow-green-500/20"; }
+                                                else { rank = "-"; colorClass = "bg-orange text-white shadow-orange/20"; }
                                             }
 
                                             if (row === 3 && col === 3) {

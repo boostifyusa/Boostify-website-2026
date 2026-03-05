@@ -41,6 +41,7 @@ export function SeoHead({
 
             {/* Canonical URL */}
             {fullCanonicalUrl && <link rel="canonical" href={fullCanonicalUrl} />}
+            {fullCanonicalUrl && <link rel="alternate" hreflang="en-US" href={fullCanonicalUrl} />}
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={ogType} />

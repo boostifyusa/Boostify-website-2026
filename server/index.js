@@ -139,6 +139,19 @@ loadAuditConfig();
 
 // Watch for changes
 // Config watcher included in central watcher below
+// ─── Trailing Slash Redirect Middleware ──────────────────────────────
+app.use((req, res, next) => {
+    if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot)$/) || req.path.startsWith('/assets/')) {
+        return next();
+    }
+    if (req.path.endsWith('/') && req.path.length > 1) {
+        const query = req.url.slice(req.path.length);
+        const safepath = req.path.slice(0, -1).replace(/\/+/g, '/');
+        return res.redirect(301, safepath + query);
+    }
+    next();
+});
+
 // ─── SSR Middleware ──────────────────────────────────────────────────
 // Handle all page requests, serving prerendered HTML or dynamic skeletons.
 // Assets are excluded via the first guard inside the middleware.
@@ -202,6 +215,7 @@ app.use((req, res, next) => {
     <title>${pageTitle}</title>
     <meta name="description" content="${pageDesc}" />
     <link rel="canonical" href="${canonicalUrl}" />
+    <link rel="alternate" hreflang="en-US" href="${canonicalUrl}" />
     
     <!-- Dynamic Social Tags -->
     <meta property="og:title" content="${pageTitle}" />

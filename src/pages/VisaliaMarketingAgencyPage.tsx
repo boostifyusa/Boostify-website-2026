@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -65,6 +65,22 @@ const areaCities = [
 
 export function VisaliaMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [ranks, setRanks] = useState<Record<number, { rank: number | string, colorClass: string }>>({});
+
+    useEffect(() => {
+        const initialRanks: Record<number, { rank: number | string, colorClass: string }> = {};
+        for (let i = 0; i < 49; i++) {
+            const row = Math.floor(i / 7);
+            const col = i % 7;
+            const dist = Math.sqrt(Math.pow(row - 3, 2) + Math.pow(col - 3, 2));
+            let rank: number | string, colorClass: string;
+            if (dist < 3) { rank = 1; colorClass = "bg-green-500 text-white shadow-green-500/20"; }
+            else if (dist < 4.5) { rank = Math.floor(Math.random() * 2) + 1; colorClass = "bg-green-500 text-white shadow-green-500/20"; }
+            else { rank = Math.floor(Math.random() * 4) + 2; colorClass = rank > 3 ? "bg-orange text-white shadow-orange/20" : "bg-green-500 text-white shadow-green-500/20"; }
+            initialRanks[i] = { rank, colorClass };
+        }
+        setRanks(initialRanks);
+    }, []);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead title="Visalia Marketing Agency: Top-Rated Web Design & SEO" description="Boostify USA is a leading Visalia marketing agency. Custom web design, local SEO, and Google Ads that drive real growth for Tulare County businesses." canonicalUrl="/visalia-marketing-agency" />
@@ -209,10 +225,15 @@ export function VisaliaMarketingAgencyPage() {
                                         {Array.from({ length: 49 }).map((_, i) => {
                                             const row = Math.floor(i / 7); const col = i % 7;
                                             const dist = Math.sqrt(Math.pow(row - 3, 2) + Math.pow(col - 3, 2));
-                                            let rank: number, colorClass: string;
-                                            if (dist < 3) { rank = 1; colorClass = "bg-green-500 text-white shadow-green-500/20"; }
-                                            else if (dist < 4.5) { rank = Math.floor(Math.random() * 2) + 1; colorClass = "bg-green-500 text-white shadow-green-500/20"; }
-                                            else { rank = Math.floor(Math.random() * 4) + 2; colorClass = rank > 3 ? "bg-orange text-white shadow-orange/20" : "bg-green-500 text-white shadow-green-500/20"; }
+                                            let rank: number | string, colorClass: string;
+                                            if (ranks[i]) {
+                                                rank = ranks[i].rank;
+                                                colorClass = ranks[i].colorClass;
+                                            } else {
+                                                if (dist < 3) { rank = 1; colorClass = "bg-green-500 text-white shadow-green-500/20"; }
+                                                else if (dist < 4.5) { rank = 1; colorClass = "bg-green-500 text-white shadow-green-500/20"; }
+                                                else { rank = "-"; colorClass = "bg-orange text-white shadow-orange/20"; }
+                                            }
                                             if (row === 3 && col === 3) return (<motion.div key={i} initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5, type: "spring" }} className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white border-2 border-gray-100 shadow-xl flex items-center justify-center z-20"><MapPin size={14} className="text-dark" fill="currentColor" /></motion.div>);
                                             return (<motion.div key={i} initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ delay: dist * 0.05, type: "spring", stiffness: 200 }} className={`w-6 h-6 md:w-8 md:h-8 rounded-full ${colorClass} shadow-lg flex items-center justify-center text-[10px] md:text-xs font-bold border border-white/50`}>{rank}</motion.div>);
                                         })}

@@ -442,6 +442,7 @@ export function WebDesignFresnoPage() {
                                     src="/FTS-Mock.webp"
                                     alt="Premium Custom Website Design Example"
                                     className="w-full h-auto rounded-2xl object-cover"
+                                    fetchPriority="high"
                                 />
                             </motion.div>
                         </div>

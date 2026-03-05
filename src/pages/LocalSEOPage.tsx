@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
@@ -72,6 +72,32 @@ const faqs = [
 
 export function LocalSEOPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [ranks, setRanks] = useState<Record<number, { rank: number | string, colorClass: string, delay: number }>>({});
+
+  useEffect(() => {
+    const initialRanks: Record<number, { rank: number | string, colorClass: string, delay: number }> = {};
+    for (let i = 0; i < 49; i++) {
+      const row = Math.floor(i / 7);
+      const col = i % 7;
+      const dist = Math.sqrt(Math.pow(row - 3, 2) + Math.pow(col - 3, 2));
+      let rank: number | string, colorClass: string, delay: number;
+      if (dist < 4) {
+        rank = Math.floor(Math.random() * 3) + 1;
+        colorClass = "bg-green-500 text-white shadow-green-500/20";
+        delay = dist * 0.05;
+      } else {
+        rank = Math.floor(Math.random() * 3) + 2;
+        if (rank > 3) {
+          colorClass = "bg-orange text-white shadow-orange/20";
+        } else {
+          colorClass = "bg-green-500 text-white shadow-green-500/20";
+        }
+        delay = dist * 0.05;
+      }
+      initialRanks[i] = { rank, colorClass, delay };
+    }
+    setRanks(initialRanks);
+  }, []);
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
@@ -287,20 +313,22 @@ export function LocalSEOPage() {
                       const col = i % 7;
                       const dist = Math.sqrt(Math.pow(row - 3, 2) + Math.pow(col - 3, 2));
 
-                      let rank, colorClass, delay;
+                      let rank: number | string, colorClass: string, delay: number;
 
-                      if (dist < 4) {
-                        rank = Math.floor(Math.random() * 3) + 1;
-                        colorClass = "bg-green-500 text-white shadow-green-500/20";
-                        delay = dist * 0.05;
+                      if (ranks[i]) {
+                        rank = ranks[i].rank;
+                        colorClass = ranks[i].colorClass;
+                        delay = ranks[i].delay;
                       } else {
-                        rank = Math.floor(Math.random() * 3) + 2;
-                        if (rank > 3) {
-                          colorClass = "bg-orange text-white shadow-orange/20";
-                        } else {
+                        if (dist < 4) {
+                          rank = 1;
                           colorClass = "bg-green-500 text-white shadow-green-500/20";
+                          delay = dist * 0.05;
+                        } else {
+                          rank = "-";
+                          colorClass = "bg-orange text-white shadow-orange/20";
+                          delay = dist * 0.05;
                         }
-                        delay = dist * 0.05;
                       }
 
                       if (row === 3 && col === 3) {
@@ -570,6 +598,12 @@ export function LocalSEOPage() {
                   </span>
                 </div>
 
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3"
+                  alt="Local SEO Analytics Dashboard"
+                  className="w-full h-auto object-cover rounded-[2rem] shadow-2xl"
+                  fetchPriority="high"
+                />
                 {/* Chart */}
                 <div className="h-32 w-full mb-8 relative">
                   <svg
