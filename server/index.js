@@ -156,6 +156,16 @@ app.use((req, res, next) => {
 // Handle all page requests, serving prerendered HTML or dynamic skeletons.
 // Assets are excluded via the first guard inside the middleware.
 app.use((req, res, next) => {
+    // Only intercept GET requests
+    if (req.method !== 'GET') {
+        return next();
+    }
+
+    // Prevent serving index.html for API requests
+    if (req.path.startsWith('/api/')) {
+        return next();
+    }
+
     // Prevent serving index.html for missing static assets
     if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot)$/) || req.path.startsWith('/assets/')) {
         return next(); // Let express.static handle assets or 404
