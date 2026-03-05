@@ -164,7 +164,7 @@ export function BlogPostPage() {
           },
           publisher: {
             "@type": "Organization",
-            "name": "Boostify USA",
+            "name": "Boostify USA Web Design & SEO",
             "logo": {
               "@type": "ImageObject",
               "url": "https://boostifyusa.com/icon.png"

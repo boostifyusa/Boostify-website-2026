@@ -66,7 +66,7 @@ const faqs = [
 const advertiserSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Boostify USA",
+    "name": "Boostify USA Web Design & SEO",
     "url": "https://boostifyusa.com/clovis-marketing-agency",
     "description": "Leading Clovis marketing agency delivering custom web design, local SEO, and targeted digital advertising for Central Valley businesses.",
     "address": {
@@ -106,9 +106,7 @@ const advertiserSchema = {
     "email": "hello@boostifyusa.com",
     "logo": "https://boostifyusa.com/icon.png",
     "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "19:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }
     ]
 };
 

@@ -25,9 +25,16 @@ const faqs = [
 
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
-    "name": "Boostify USA", "url": "https://boostifyusa.com/hanford-marketing-agency",
+    "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/hanford-marketing-agency",
     "description": "Hanford's reliable marketing agency for custom web design, local SEO, and digital advertising. Serving Kings County businesses with data-driven strategies.",
-    "address": { "@type": "PostalAddress", "streetAddress": "6362 N Figarden Dr. #118", "addressLocality": "Fresno", "addressRegion": "CA", "postalCode": "93722", "addressCountry": "US" },
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6362 N Figarden Dr. #118",
+        "addressLocality": "Fresno",
+        "addressRegion": "CA",
+        "postalCode": "93722",
+        "addressCountry": "US"
+    },
     "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [{ "@type": "City", "name": "Hanford" }, { "@type": "City", "name": "Lemoore" }, { "@type": "City", "name": "Visalia" }, { "@type": "City", "name": "Fresno" }],
     "hasOfferCatalog": {
@@ -45,9 +52,7 @@ const advertiserSchema = {
     "email": "hello@boostifyusa.com",
     "logo": "https://boostifyusa.com/icon.png",
     "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "19:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }
     ]
 };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) };

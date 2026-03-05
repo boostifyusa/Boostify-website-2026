@@ -25,7 +25,7 @@ export function AgencyHomePage() {
         type="LocalBusiness"
         data={{
           "@id": "https://boostifyusa.com/#localbusiness",
-          "name": "Boostify USA",
+          "name": "Boostify USA Web Design & SEO",
           "url": "https://boostifyusa.com",
           "telephone": "+1-559-785-3834",
           "contactPoint": [
@@ -48,24 +48,7 @@ export function AgencyHomePage() {
             "longitude": -119.84
           },
           "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-              "opens": "09:00",
-              "closes": "19:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Friday",
-              "opens": "09:00",
-              "closes": "17:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Saturday",
-              "opens": "09:00",
-              "closes": "12:00"
-            }
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }
           ],
           "priceRange": "$$",
           "sameAs": [

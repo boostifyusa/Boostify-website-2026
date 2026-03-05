@@ -307,8 +307,16 @@ export function ContactPage() {
         type="LocalBusiness" // Using LocalBusiness again as it's the contact page
         data={{
           "@id": "https://boostifyusa.com/#localbusiness",
-          "name": "Boostify USA",
+          "name": "Boostify USA Web Design & SEO",
           "url": "https://boostifyusa.com/contact",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6362 N Figarden Dr. #118",
+            "addressLocality": "Fresno",
+            "addressRegion": "CA",
+            "postalCode": "93722",
+            "addressCountry": "US"
+          },
           "contactPoint": [
             {
               "@type": "ContactPoint",
@@ -329,9 +337,7 @@ export function ContactPage() {
           "email": "hello@boostifyusa.com",
           "logo": "https://boostifyusa.com/icon.png",
           "openingHoursSpecification": [
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "19:00" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }
           ]
         }}
       />

@@ -35,7 +35,7 @@ export function AppDevelopmentPage() {
           provider: {
             "@type": "ProfessionalService",
             "@id": "https://boostifyusa.com/#localbusiness",
-            "name": "Boostify USA",
+            "name": "Boostify USA Web Design & SEO",
             "url": "https://boostifyusa.com",
             "telephone": "+1-559-785-3834",
             "email": "hello@boostifyusa.com",

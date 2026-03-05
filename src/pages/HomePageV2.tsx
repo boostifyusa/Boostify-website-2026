@@ -11,6 +11,53 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Check, Zap, Globe, Search, MapPin } from 'lucide-react';
 import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
 
+const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Boostify USA Web Design & SEO",
+    "url": "https://boostifyusa.com/",
+    "description": "Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson.",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6362 N Figarden Dr. #118",
+        "addressLocality": "Fresno",
+        "addressRegion": "CA",
+        "postalCode": "93722",
+        "addressCountry": "US"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.8250248,
+        "longitude": -119.8684005
+    },
+    "areaServed": [
+        { "@type": "City", "name": "Fresno" },
+        { "@type": "City", "name": "Clovis" },
+        { "@type": "City", "name": "Madera" },
+        { "@type": "City", "name": "Central Valley" }
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing Services",
+        "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Optimization" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local Marketing" } }
+        ]
+    },
+    "priceRange": "$$",
+    "telephone": "+1-559-785-3834",
+    "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
+        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+    ],
+    "email": "hello@boostifyusa.com",
+    "logo": "https://boostifyusa.com/icon.png",
+    "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }
+    ]
+};
+
 export function HomePageV2() {
     const { scrollY } = useScroll();
 
@@ -36,6 +83,9 @@ export function HomePageV2() {
                 canonicalUrl="/"
             >
                 <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
+                <script type="application/ld+json">
+                    {JSON.stringify(homeSchema)}
+                </script>
             </SeoHead>
 
             <Navigation />

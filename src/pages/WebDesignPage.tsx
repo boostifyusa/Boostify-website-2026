@@ -61,11 +61,22 @@ export function WebDesignPage() {
           provider: {
             "@type": "ProfessionalService",
             "@id": "https://boostifyusa.com/#localbusiness",
-            "name": "Boostify USA",
+            "name": "Boostify USA Web Design & SEO",
             "url": "https://boostifyusa.com",
             "telephone": "+1-559-785-3834",
             "email": "hello@boostifyusa.com",
             "logo": "https://boostifyusa.com/icon.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "6362 N Figarden Dr. #118",
+              "addressLocality": "Fresno",
+              "addressRegion": "CA",
+              "postalCode": "93722",
+              "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }
+            ],
             "contactPoint": [
               { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
               { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
