@@ -49,5 +49,18 @@
     "typescript": "^5.5.4",
     "vite": "^5.2.0",
     "vite-plugin-sitemap": "^0.8.2"
-  }
+  },
+  "description": "1. Run `npm install` 2. Run `npm run dev`",
+  "main": "optimize-images.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boostifyusa/Boostify-website-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boostifyusa/Boostify-website-2026/issues"
+  },
+  "homepage": "https://github.com/boostifyusa/Boostify-website-2026#readme"
 }
