@@ -32,13 +32,8 @@ async function generateRedirects() {
     if (redirectsMap.length > 0) {
         const redirectsDest = path.join(PUBLIC_DIR, '_redirects');
 
-        // Preserve existing redirects if any
-        let existingContent = '';
-        if (fs.existsSync(redirectsDest)) {
-            existingContent = fs.readFileSync(redirectsDest, 'utf8') + '\n\n';
-        }
-
-        const finalContent = existingContent + '# Auto-generated Trailing Slash Removes\n' + redirectsMap.join('\n');
+        // Overwrite the file completely to avoid Cloudflare duplicate parsing failures
+        const finalContent = '# Auto-generated Trailing Slash Removes\n' + redirectsMap.join('\n');
         fs.writeFileSync(redirectsDest, finalContent, 'utf8');
 
         // Also write to dist directly since this might run after public is copied
