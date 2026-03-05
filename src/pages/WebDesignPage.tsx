@@ -246,13 +246,13 @@ export function WebDesignPage() {
                     </span>
                   </div>
                 </div>
-                {/* Screenshot */}
                 <img
-                  src="/Group-117.webp"
-                  alt="Fresno Web Design Agency Portfolio"
-                  className="w-full h-[300px] md:h-auto md:aspect-[4/3] object-cover rounded-2xl md:rounded-[2rem] shadow-2xl relative z-10"
+                  src="/FTS-Mock.webp"
+                  alt="Full Throttle Suspension website design by Boostify"
+                  className="w-full h-auto object-cover object-top"
                   fetchPriority="high"
                 />
+
               </div>
 
               {/* Decorative Blob */}
