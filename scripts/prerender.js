@@ -29,7 +29,11 @@ async function prerender() {
         urls.push(uri || '/');
     }
 
-    console.log(`Found ${urls.length} routes to pre-render.`);
+    console.log(`Found ${urls.length} routes from sitemap.`);
+
+    // Add a dummy route to prerender the 404 page
+    urls.push('/this-route-returns-a-404-during-build');
+    console.log(`Prerendering ${urls.length} total paths (including 404 fallback).`);
 
     // 2. Start a simple static server
     const app = express();
@@ -88,6 +92,8 @@ async function prerender() {
                 let savePath;
                 if (url === '/') {
                     savePath = path.join(DIST_DIR, 'index.html'); // Overwrite main index
+                } else if (url === '/this-route-returns-a-404-during-build') {
+                    savePath = path.join(DIST_DIR, '404.html'); // Native Cloudflare/Netlify 404 page
                 } else {
                     const routeDir = path.join(DIST_DIR, url);
                     if (!fs.existsSync(routeDir)) {
