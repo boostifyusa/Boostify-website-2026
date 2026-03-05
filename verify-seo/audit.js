@@ -74,6 +74,7 @@ async function runAudit() {
             });
 
             if (heroImageMetrics) {
+                console.log(`   [LCP] Largest image source: ${heroImageMetrics.src}`);
                 if (heroImageMetrics.fetchPriority === 'high') {
                     console.log(`   ✅ [LCP] Hero image has fetchpriority="high"`);
                 } else {

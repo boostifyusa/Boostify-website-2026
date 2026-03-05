@@ -86,6 +86,7 @@ export function Navigation() {
               alt="Boostify Logo"
               width="1184"
               height="152"
+              fetchPriority="high"
               className="h-8 lg:h-10 w-auto object-contain" />
 
           </Link>
