@@ -237,23 +237,23 @@ export function CampaignLandingPage() {
             />
 
             {/* Simplified Header with Real Logo */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-4 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
-                <div className="flex items-center gap-2">
+            <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-3 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
+                <div className="flex items-center gap-2 shrink overflow-hidden">
                     <img
                         src="/Group-116.webp"
                         alt="Boostify Logo"
                         width="1184"
                         height="152"
                         fetchPriority="high"
-                        className="h-8 md:h-10 w-auto object-contain"
+                        className="h-6 sm:h-8 md:h-10 w-auto object-contain"
                     />
                 </div>
                 <a
                     href="tel:5597853834"
-                    className="flex flex-col items-end group"
+                    className="flex flex-col items-end group shrink-0 ml-2"
                 >
-                    <span className="text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight">(559) 785-3834</span>
-                    <span className="text-[10px] md:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1.5 md:px-2 py-0.5 rounded mt-0.5">
+                    <span className="text-base md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight whitespace-nowrap">(559) 785-3834</span>
+                    <span className="text-[9px] md:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1.5 md:px-2 py-0.5 rounded mt-0.5 whitespace-nowrap">
                         CALL OR TEXT
                     </span>
                 </a>
@@ -306,18 +306,14 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.1 }}
-                                    className="text-[3.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl font-black text-dark tracking-tighter mb-6 md:mb-8 max-w-[800px] mx-auto lg:mx-0 flex flex-col sm:block"
+                                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-dark leading-[1.05] sm:leading-[1.05] tracking-tighter mb-4 md:mb-8 max-w-[800px] mx-auto lg:mx-0"
                                 >
-                                    <span>Custom Websites</span>{' '}
-                                    <span className="flex flex-wrap sm:inline justify-center items-center gap-x-2">
-                                        <span>That</span>{' '}
-                                        <span className="relative inline-block px-1 isolate whitespace-nowrap">
-                                            <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                                            <span className="text-orange relative z-10">Win You</span>
-                                        </span>{' '}
-                                        <span>More</span>
-                                        <span>Clients</span>
-                                    </span>
+                                    Custom Websites That{' '}
+                                    <span className="relative inline-block px-1 isolate whitespace-nowrap mt-1 sm:mt-0">
+                                        <span className="absolute inset-x-0 bottom-0 top-[10%] bg-orange/20 -skew-y-2 rounded-sm -z-10" />
+                                        <span className="text-orange relative z-10">Win You</span>
+                                    </span>{' '}
+                                    More Clients
                                 </motion.h1>
 
                                 <motion.p
