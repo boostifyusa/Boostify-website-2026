@@ -43,6 +43,7 @@ const TulareMarketingAgencyPage = lazy(() => import('./pages/TulareMarketingAgen
 const SangerMarketingAgencyPage = lazy(() => import('./pages/SangerMarketingAgencyPage').then(module => ({ default: module.SangerMarketingAgencyPage })));
 const WebDesignModestoPage = lazy(() => import('./pages/WebDesignModestoPage').then(module => ({ default: module.WebDesignModestoPage })));
 const WebDesignFresnoPage = lazy(() => import('./pages/WebDesignFresnoPage').then(module => ({ default: module.WebDesignFresnoPage })));
+const CampaignLandingPage = lazy(() => import('./pages/CampaignLandingPage').then(module => ({ default: module.CampaignLandingPage })));
 
 
 export function ScrollToTopOrHash() {
@@ -112,6 +113,7 @@ export function App() {
               <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
               <Route path="/modesto-web-design" element={<WebDesignModestoPage />} />
               <Route path="/fresno-web-design" element={<WebDesignFresnoPage />} />
+              <Route path="/campaign" element={<CampaignLandingPage />} />
 
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

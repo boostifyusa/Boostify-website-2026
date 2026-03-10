@@ -41,7 +41,7 @@ export default defineConfig({
     Sitemap({
       hostname: 'https://boostifyusa.com',
       dynamicRoutes,
-      exclude: ['/404'],
+      exclude: ['/404', '/campaign'],
       readable: true,
       generateRobotsTxt: true,
     })
