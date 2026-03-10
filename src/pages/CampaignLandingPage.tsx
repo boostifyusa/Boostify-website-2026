@@ -179,10 +179,10 @@ const AuditForm = () => {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full flex items-center justify-center px-6 py-4 bg-dark text-white text-lg font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg mt-6 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center px-4 py-3.5 md:py-4 bg-dark text-white text-base md:text-lg font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg mt-6 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed group"
                 >
-                    {loading ? 'Submitting...' : 'Request a Free Quote & Strategy'}
-                    {!loading && <ArrowRight className="ml-2 h-5 w-5" />}
+                    <span className="text-center">{loading ? 'Submitting...' : 'Request a Free Quote & Strategy'}</span>
+                    {!loading && <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 shrink-0 group-hover:translate-x-1 transition-transform" />}
                 </button>
 
                 {error && (
@@ -237,7 +237,7 @@ export function CampaignLandingPage() {
             />
 
             {/* Simplified Header with Real Logo */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-3 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
+            <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-4 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
                 <div className="flex items-center gap-2">
                     <img
                         src="/Group-116.webp"
@@ -245,15 +245,15 @@ export function CampaignLandingPage() {
                         width="1184"
                         height="152"
                         fetchPriority="high"
-                        className="h-6 md:h-8 lg:h-10 w-auto object-contain"
+                        className="h-8 md:h-10 w-auto object-contain"
                     />
                 </div>
                 <a
                     href="tel:5597853834"
                     className="flex flex-col items-end group"
                 >
-                    <span className="text-base md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight">(559) 785-3834</span>
-                    <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1.5 md:px-2 py-0.5 rounded mt-0.5">
+                    <span className="text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight">(559) 785-3834</span>
+                    <span className="text-[10px] md:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1.5 md:px-2 py-0.5 rounded mt-0.5">
                         CALL OR TEXT
                     </span>
                 </a>
@@ -292,13 +292,13 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange font-bold text-xs md:text-sm tracking-widest uppercase mb-8 border border-orange/20"
+                                    className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-orange/10 text-orange font-bold text-[10px] md:text-sm tracking-widest uppercase mb-6 md:mb-8 border border-orange/20 mx-auto"
                                 >
-                                    <span className="relative flex h-2 w-2">
+                                    <span className="relative flex h-2 w-2 shrink-0">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-orange"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-orange shrink-0"></span>
                                     </span>
-                                    Recommended in Fresno • Central Valley Web Design
+                                    <span className="text-center">Recommended in Fresno • Central Valley Web Design</span>
                                 </motion.div>
 
                                 {/* Fixed Hanging Word */}
@@ -306,21 +306,25 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.1 }}
-                                    className="text-[2.75rem] leading-[1.05] md:text-6xl lg:text-7xl font-black text-dark tracking-tighter mb-6 md:mb-8 max-w-[800px] mx-auto lg:mx-0"
+                                    className="text-[3.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl font-black text-dark tracking-tighter mb-6 md:mb-8 max-w-[800px] mx-auto lg:mx-0 flex flex-col sm:block"
                                 >
-                                    Custom Websites That{' '}
-                                    <span className="relative inline-block px-1 isolate whitespace-nowrap">
-                                        <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                                        <span className="text-orange relative z-10">Win You</span>
-                                    </span>{' '}
-                                    More Clients
+                                    <span>Custom Websites</span>{' '}
+                                    <span className="flex flex-wrap sm:inline justify-center items-center gap-x-2">
+                                        <span>That</span>{' '}
+                                        <span className="relative inline-block px-1 isolate whitespace-nowrap">
+                                            <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
+                                            <span className="text-orange relative z-10">Win You</span>
+                                        </span>{' '}
+                                        <span>More</span>
+                                        <span>Clients</span>
+                                    </span>
                                 </motion.h1>
 
                                 <motion.p
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.2 }}
-                                    className="text-lg md:text-xl lg:text-2xl text-gray font-medium mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+                                    className="text-lg md:text-xl lg:text-2xl text-gray font-medium mb-8 md:mb-10 leading-relaxed max-w-xl md:max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0"
                                 >
                                     We design Central Valley websites that generate calls and leads. Plus Local SEO, Google Ads, and AI automations.
                                 </motion.p>
@@ -756,21 +760,21 @@ export function CampaignLandingPage() {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 100, opacity: 0 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-4 bg-white/95 backdrop-blur-md border-t border-gray-light shadow-[0_-10px_40px_rgba(0,0,0,0.1)] flex gap-3 pb-safe"
+                        className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-3 md:p-4 bg-white/95 backdrop-blur-md border-t border-gray-light shadow-[0_-10px_40px_rgba(0,0,0,0.1)] flex items-center gap-3 pb-6 md:pb-safe"
                     >
                         <a
                             href="tel:5597853834"
-                            className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-gray-50 text-dark rounded-xl border border-gray-light shadow-sm active:scale-95 transition-transform"
+                            className="flex-shrink-0 flex items-center justify-center w-[3.25rem] h-[3.25rem] bg-gray-50 text-dark rounded-xl border border-gray-light shadow-sm active:scale-95 transition-transform"
                             aria-label="Call Us"
                         >
-                            <Phone className="w-6 h-6 text-orange" strokeWidth={2.5} />
+                            <Phone className="w-5 h-5 text-orange" strokeWidth={2.5} />
                         </a>
                         <button
                             onClick={scrollToForm}
-                            className="flex-1 flex items-center justify-center bg-orange text-white font-bold text-lg rounded-xl shadow-lg shadow-orange/20 active:scale-95 transition-transform"
+                            className="flex-1 flex items-center justify-center bg-orange text-white font-bold text-[15px] h-[3.25rem] rounded-xl shadow-lg shadow-orange/20 active:scale-95 transition-transform"
                         >
-                            Get Custom Proposal
-                            <ArrowRight className="ml-2 w-5 h-5" />
+                            <span className="truncate">Get Custom Proposal</span>
+                            <ArrowRight className="ml-1.5 w-4 h-4 shrink-0" />
                         </button>
                     </motion.div>
                 )}
