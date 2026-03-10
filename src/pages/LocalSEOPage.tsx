@@ -170,8 +170,8 @@ export function LocalSEOPage() {
                 Local SEO Services
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Get Found <br></br>Faster Locally<br></br>{' '}
-                <span className="text-orange">On Google.</span>
+                Fresno Local<br></br>SEO Services<br></br>{' '}
+                <span className="text-orange">& Maps Ranking.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                 Stop being invisible on Google. We optimize your online presence
@@ -598,12 +598,7 @@ export function LocalSEOPage() {
                   </span>
                 </div>
 
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3"
-                  alt="Local SEO Analytics Dashboard"
-                  className="w-full h-auto object-cover rounded-[2rem] shadow-2xl"
-                  fetchPriority="high"
-                />
+
                 {/* Chart */}
                 <div className="h-32 w-full mb-8 relative">
                   <svg

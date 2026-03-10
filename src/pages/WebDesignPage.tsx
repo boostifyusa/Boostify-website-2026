@@ -129,8 +129,8 @@ export function WebDesignPage() {
                 Custom Web Design
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Websites That Work As{' '}
-                <span className="text-orange">Hard As You Do.</span>
+                Web Design <br></br>Services in <br></br>{' '}
+                <span className="text-orange">Fresno, CA.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                 Stop losing customers to ugly, slow websites. We build custom

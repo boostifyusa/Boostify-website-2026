@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
 import { motion } from 'framer-motion';
 import { Star, ArrowRight, Check } from 'lucide-react';
 const testimonials = [
-{
-  quote:
-  'WOW! From day one, Victor made me feel like a close friend. He was quick to communicate and very reasonably priced. The work was done under a tight deadline and he delivered.',
-  author: 'Heny Peter',
-  role: 'Local Guide',
-  rating: 5,
-  badge: 'Verified Review'
-},
-{
-  quote:
-  'Victor exceeded my expectations. Some things are automated which is great, and the team was always on top of task reminders and updates. Solid work all around.',
-  author: 'Frank J. Kaufmann',
-  role: 'Business Owner',
-  rating: 5,
-  badge: 'Verified Review'
-},
-{
-  quote:
-  'I recently had the pleasure of working with Victor for help with my WordPress website. As an older clinician, I often struggle with technology, but Victor made the entire process seamless and stress-free.',
-  author: 'David Johnson',
-  role: 'Healthcare Professional',
-  rating: 5,
-  badge: 'Verified Review'
-}];
+  {
+    quote:
+      'WOW! From day one, Victor made me feel like a close friend. He was quick to communicate and very reasonably priced. The work was done under a tight deadline and he delivered.',
+    author: 'Heny Peter',
+    role: 'Local Guide',
+    rating: 5,
+    badge: 'Verified Review'
+  },
+  {
+    quote:
+      'Victor exceeded my expectations. Some things are automated which is great, and the team was always on top of task reminders and updates. Solid work all around.',
+    author: 'Frank J. Kaufmann',
+    role: 'Business Owner',
+    rating: 5,
+    badge: 'Verified Review'
+  },
+  {
+    quote:
+      'I recently had the pleasure of working with Victor for help with my WordPress website. As an older clinician, I often struggle with technology, but Victor made the entire process seamless and stress-free.',
+    author: 'David Johnson',
+    role: 'Healthcare Professional',
+    rating: 5,
+    badge: 'Verified Review'
+  }];
 
 // Simple Google G Logo Component
 function GoogleLogo() {
@@ -109,7 +108,7 @@ export function TestimonialsSection() {
 
           {/* Google Rating Badge */}
           <motion.a
-            href="https://maps.app.goo.gl/bVTr8noESeDdmxSW6"
+            href="https://www.google.com/maps/place/Boostify+USA+Web+Design+%26+SEO/@36.8250248,-119.8709754,17z/data=!3m2!1e3!4b1!4m6!3m5!1s0x809479893e14f2eb:0x4f3d031e35ffc106!8m2!3d36.8250248!4d-119.8684005!16s%2Fg%2F11cmpmyllw"
             target="_blank"
             rel="noopener noreferrer"
             initial={{
@@ -137,7 +136,7 @@ export function TestimonialsSection() {
                 </span>
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) =>
-                  <Star key={i} size={14} fill="#FBBC05" strokeWidth={0} />
+                    <Star key={i} size={14} fill="#FBBC05" strokeWidth={0} />
                   )}
                 </div>
               </div>
@@ -151,24 +150,24 @@ export function TestimonialsSection() {
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial, index) =>
-          <motion.div
-            key={index}
-            initial={{
-              opacity: 0,
-              y: 30
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }}
-            viewport={{
-              once: true
-            }}
-            transition={{
-              delay: index * 0.1,
-              duration: 0.5
-            }}
-            className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 30
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0
+              }}
+              viewport={{
+                once: true
+              }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5
+              }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
 
               {/* Card Header */}
               <div className="flex items-center justify-between mb-6">
@@ -187,8 +186,8 @@ export function TestimonialsSection() {
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) =>
-              <Star key={i} size={18} fill="#FBBC05" strokeWidth={0} />
-              )}
+                  <Star key={i} size={18} fill="#FBBC05" strokeWidth={0} />
+                )}
               </div>
 
               {/* Quote */}
@@ -224,7 +223,7 @@ export function TestimonialsSection() {
           className="text-center">
 
           <a
-            href="https://maps.app.goo.gl/bVTr8noESeDdmxSW6"
+            href="https://www.google.com/maps/place/Boostify+USA+Web+Design+%26+SEO/@36.8250248,-119.8709754,17z/data=!3m2!1e3!4b1!4m6!3m5!1s0x809479893e14f2eb:0x4f3d031e35ffc106!8m2!3d36.8250248!4d-119.8684005!16s%2Fg%2F11cmpmyllw"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-orange font-bold hover:text-orange-hover transition-colors group">

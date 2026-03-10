@@ -88,8 +88,8 @@ export function AppDevelopmentPage() {
                 Startup MVPs
               </div>
               <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-[0.95]">
-                Your Idea. Built &amp; Launched in{' '}
-                <span className="text-orange">Weeks.</span>
+                Fresno Custom Web <br></br>App{' '}
+                <span className="text-orange">Development.</span>
               </h1>
               <p className="text-xl text-white/70 font-medium mb-10 leading-relaxed max-w-lg">
                 Stop burning runway on endless development. We build

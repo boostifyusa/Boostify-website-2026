@@ -152,8 +152,8 @@ export function MaintenancePage() {
               }}
               className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
 
-              Your Site, Always{' '}
-              <span className="text-orange">Taken Care Of.</span>
+              Fresno Website &amp; <br></br>
+              <span className="text-orange">Hosting Maintenance.</span>
             </motion.h1>
 
             <motion.p

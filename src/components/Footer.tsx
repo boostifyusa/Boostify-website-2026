@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="bg-dark border-t border-white/10 pt-24 pb-12 px-6 text-white">
@@ -84,6 +83,14 @@ export function Footer() {
                   Maintenance
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/ai-automation"
+                  className="hover:text-orange transition-colors">
+
+                  AI Automation
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -142,6 +149,11 @@ export function Footer() {
                   SMS Program
                 </Link>
               </li>
+              <li>
+                <Link to="/seo-audit" className="hover:text-orange transition-colors">
+                  Free SEO Audit
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -152,7 +164,7 @@ export function Footer() {
             <ul className="space-y-4 text-white/60 font-medium">
               <li>hello@boostifyusa.com</li>
               <li>
-                <a href="https://maps.app.goo.gl/wcW9CiExcah6B5bS9" target="_blank" rel="noopener noreferrer" className="hover:text-orange transition-colors">
+                <a href="https://www.google.com/maps/place/Boostify+USA+Web+Design+%26+SEO/@36.8250248,-119.8709754,17z/data=!3m2!1e3!4b1!4m6!3m5!1s0x809479893e14f2eb:0x4f3d031e35ffc106!8m2!3d36.8250248!4d-119.8684005!16s%2Fg%2F11cmpmyllw" target="_blank" rel="noopener noreferrer" className="hover:text-orange transition-colors">
                   6362 N Figarden Dr. #118
                   <br />
                   Fresno, CA 93722

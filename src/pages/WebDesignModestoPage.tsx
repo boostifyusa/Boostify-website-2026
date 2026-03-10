@@ -354,18 +354,18 @@ export function WebDesignModestoPage() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
                                 {
-                                    title: 'Slow & Bloated',
-                                    desc: "WordPress templates are full of junk code that kills load speed. Mobile customers in Modesto won't wait more than 3 seconds before bouncing to a competitor.",
+                                    title: 'Mobile Abandonment',
+                                    desc: "Shoppers in Stanislaus County use their phones first. If your website takes more than a few seconds to load, you've already lost the sale.",
                                     icon: Clock
                                 },
                                 {
-                                    title: 'Invisible to Local SEO',
-                                    desc: "Without proper Modesto SEO structure and local schema markup, Google completely ignores your site. You stay buried on page 10 where no one looks.",
+                                    title: 'Buried in Search',
+                                    desc: "Without dedicated Modesto local SEO structures, Google won't show your business for 'near me' queries. You're losing market share to local competitors.",
                                     icon: Search
                                 },
                                 {
-                                    title: 'Generic Design',
-                                    desc: "Looking exactly like everyone else in the Central Valley makes you forgettable. Your brand deserves a bespoke identity to stand out.",
+                                    title: 'Outdated Branding',
+                                    desc: "A stale design makes your company look untrustworthy. An instant visual impact is required to capture modern Modesto consumer attention.",
                                     icon: X
                                 }
                             ].map((item, i) => (
@@ -535,15 +535,15 @@ export function WebDesignModestoPage() {
                                 viewport={{ once: true }}
                                 className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-light shadow-sm flex flex-col"
                             >
-                                <div className="inline-block px-3 py-1 bg-red-100 text-red-600 font-bold text-xs uppercase rounded mb-6 self-start">The Old Way</div>
-                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Template Builders</h3>
+                                <div className="inline-block px-3 py-1 bg-red-100 text-red-600 font-bold text-xs uppercase rounded mb-6 self-start">The Problem</div>
+                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Off-The-Shelf Builders</h3>
                                 <ul className="space-y-4 mb-8 flex-1">
                                     {[
-                                        'Bloated WordPress or Wix code',
-                                        'Slow 5+ second load times',
-                                        'Generic designs that look like competitors',
-                                        'Poor mobile optimization out of the box',
-                                        'Vulnerable to endless plugin hacks'
+                                        'Heavy theme files slowing down performance',
+                                        'Frustrating mobile navigation',
+                                        'Designs that blend in with every other site',
+                                        'Constant need for security patches',
+                                        'Hidden fees for premium plugins'
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 font-medium text-gray">
                                             <X size={20} className="text-red-500 shrink-0 mt-0.5" strokeWidth={2.5} />
@@ -564,16 +564,16 @@ export function WebDesignModestoPage() {
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-orange/10 rounded-full blur-[60px] pointer-events-none" />
                                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 pointer-events-none" />
                                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 text-green-400 font-bold text-xs uppercase rounded mb-6 self-start relative z-10">
-                                    <Zap size={12} fill="currentColor" /> The Boostify Way
+                                    <Zap size={12} fill="currentColor" /> Our Solution
                                 </div>
-                                <h3 className="text-3xl font-black text-white tracking-tight mb-4 relative z-10">Hand-Coded & AI Augmented</h3>
+                                <h3 className="text-3xl font-black text-white tracking-tight mb-4 relative z-10">Bespoke Architecture</h3>
                                 <ul className="space-y-4 mb-8 flex-1 relative z-10">
                                     {[
-                                        'AI-accelerated custom react architecture',
-                                        'Sub-second instant load times',
-                                        'Bespoke brand identities that stand out',
-                                        'Mobile-first responsive scaling',
-                                        'Military-grade modern security'
+                                        'Code specifically tailored to your business',
+                                        'Instant page transitions and routing',
+                                        'Unique visual assets establishing authority',
+                                        'Seamless cross-device experiences',
+                                        'Built-in modern performance best practices'
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 font-medium text-white/80">
                                             <Check size={20} className="text-green-500 shrink-0 mt-0.5" strokeWidth={3} />
