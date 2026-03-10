@@ -238,21 +238,21 @@ export function CampaignLandingPage() {
 
             {/* Simplified Header with Real Logo */}
             <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-3 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
-                <div className="flex items-center gap-2 shrink overflow-hidden">
+                <div className="flex items-center gap-2">
                     <img
                         src="/Group-116.webp"
                         alt="Boostify Logo"
                         width="1184"
                         height="152"
                         fetchPriority="high"
-                        className="h-6 sm:h-8 md:h-10 w-auto object-contain"
+                        className="h-7 sm:h-8 md:h-10 w-auto max-w-[140px] md:max-w-none object-contain shrink-0"
                     />
                 </div>
                 <a
                     href="tel:5597853834"
                     className="flex flex-col items-end group shrink-0 ml-2"
                 >
-                    <span className="text-base md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight whitespace-nowrap">(559) 785-3834</span>
+                    <span className="text-base sm:text-lg md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight whitespace-nowrap">(559) 785-3834</span>
                     <span className="text-[9px] md:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1.5 md:px-2 py-0.5 rounded mt-0.5 whitespace-nowrap">
                         CALL OR TEXT
                     </span>
@@ -292,13 +292,13 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-orange/10 text-orange font-bold text-[10px] md:text-sm tracking-widest uppercase mb-6 md:mb-8 border border-orange/20 mx-auto"
+                                    className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-orange/10 text-orange font-bold text-[9px] sm:text-[10px] md:text-sm tracking-widest uppercase mb-5 md:mb-8 border border-orange/20 mx-auto max-w-full overflow-hidden whitespace-nowrap"
                                 >
-                                    <span className="relative flex h-2 w-2 shrink-0">
+                                    <span className="relative flex h-1.5 w-1.5 md:h-2 md:w-2 shrink-0">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-orange shrink-0"></span>
+                                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2 md:w-2 bg-orange shrink-0"></span>
                                     </span>
-                                    <span className="text-center">Recommended in Fresno • Central Valley Web Design</span>
+                                    <span className="truncate">Top Rated Central Valley Web Design</span>
                                 </motion.div>
 
                                 {/* Fixed Hanging Word */}
@@ -306,14 +306,16 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.1 }}
-                                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-dark leading-[1.05] sm:leading-[1.05] tracking-tighter mb-4 md:mb-8 max-w-[800px] mx-auto lg:mx-0"
+                                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-dark leading-[1.05] sm:leading-[1.05] tracking-tighter mb-4 md:mb-8 max-w-[800px] mx-auto lg:mx-0 flex flex-col gap-1 sm:gap-0 sm:block"
                                 >
-                                    Custom Websites That{' '}
-                                    <span className="relative inline-block px-1 isolate whitespace-nowrap mt-1 sm:mt-0">
-                                        <span className="absolute inset-x-0 bottom-0 top-[10%] bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                                        <span className="text-orange relative z-10">Win You</span>
-                                    </span>{' '}
-                                    More Clients
+                                    <span>Custom Websites That</span>{' '}
+                                    <span className="whitespace-nowrap">
+                                        <span className="relative inline-block px-1 isolate">
+                                            <span className="absolute inset-x-0 bottom-0 top-[10%] bg-orange/20 -skew-y-2 rounded-sm -z-10" />
+                                            <span className="text-orange relative z-10">Win You</span>
+                                        </span>{' '}
+                                        More Clients
+                                    </span>
                                 </motion.h1>
 
                                 <motion.p
