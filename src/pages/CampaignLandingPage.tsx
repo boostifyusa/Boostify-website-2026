@@ -4,7 +4,7 @@ import { SeoHead } from '../components/SeoHead';
 import { TrustBadges } from '../components/TrustBadges';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, CheckCircle2, ChevronDown, Star, Layout, Search, MousePointerClick, Zap, Bot, ArrowRight, Check, CheckCircle } from 'lucide-react';
+import { Phone, ChevronDown, Star, Layout, Search, MousePointerClick, Zap, Bot, ArrowRight, Check, CheckCircle } from 'lucide-react';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const FAQItem = ({ question, answer }: { question: string; answer: React.ReactNode }) => {
@@ -717,32 +717,28 @@ export function CampaignLandingPage() {
                 </section>
 
                 {/* Final CTA Strip */}
-                <section className="py-24 md:py-32 px-6 bg-dark text-white text-center relative overflow-hidden">
-                    <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange rounded-full blur-[120px]" />
-                    </div>
-
+                <section className="py-16 md:py-32 px-4 md:px-6 bg-dark text-white text-center relative overflow-hidden border-t-8 border-orange/10">
                     <div className="max-w-4xl mx-auto relative z-10">
-                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tighter">Ready to Stop<br />Losing Leads?</h2>
-                        <p className="text-xl md:text-2xl text-gray-300 mb-14 max-w-2xl mx-auto font-medium">
+                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 md:mb-8 tracking-tighter">Ready to Stop<br />Losing Leads?</h2>
+                        <p className="text-lg md:text-2xl text-gray-400 mb-10 md:mb-14 max-w-2xl mx-auto font-medium px-2 md:px-0">
                             Get a custom website that actually brings in customers. Free quote and strategy, no obligation.
                         </p>
 
                         <button
                             onClick={scrollToForm}
-                            className="inline-flex items-center justify-center px-10 py-6 bg-orange text-white text-xl font-bold rounded-xl hover:bg-orange-hover transition-all duration-300 shadow-xl shadow-orange/20 hover:shadow-orange/30 transform hover:-translate-y-1 mb-10 w-full sm:w-auto"
+                            className="inline-flex items-center justify-center px-6 py-4 md:px-10 md:py-5 bg-orange text-white text-base md:text-xl font-bold rounded-xl md:rounded-2xl hover:bg-orange-hover transition-all duration-300 shadow-xl shadow-orange/20 hover:shadow-orange/30 transform hover:-translate-y-1 mb-8 md:mb-10 w-full sm:w-auto max-w-md mx-auto group"
                         >
-                            Request a Free Quote & Strategy
-                            <ArrowRight className="ml-2 h-6 w-6" />
+                            <span className="whitespace-nowrap">Request a Free Quote & Strategy</span>
+                            <ArrowRight className="ml-2 w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
                         </button>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm font-bold text-gray-400 tracking-widest uppercase">
-                            <a href="tel:5597853834" className="hover:text-white transition-colors flex items-center gap-2">
-                                <Phone size={16} /> (559) 785-3834
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 text-xs md:text-sm font-bold text-gray-500 tracking-widest uppercase">
+                            <a href="tel:5597853834" className="hover:text-white transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg sm:bg-transparent sm:px-0 sm:py-0 w-full justify-center sm:w-auto">
+                                <Phone size={16} className="text-white/60" /> (559) 785-3834
                             </a>
-                            <span className="hidden sm:inline">•</span>
-                            <span className="flex items-center gap-2">
-                                <CheckCircle2 size={16} className="text-green-500" /> FREE CONSULTATION
+                            <span className="hidden sm:inline text-gray-700">•</span>
+                            <span className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg sm:bg-transparent sm:px-0 sm:py-0 w-full justify-center sm:w-auto">
+                                <CheckCircle size={16} className="text-orange" /> FREE CONSULTATION
                             </span>
                         </div>
                     </div>
