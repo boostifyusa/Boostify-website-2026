@@ -248,7 +248,14 @@ export function Navigation() {
                 damping: 30,
                 stiffness: 300
               }}
-              className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-50 shadow-2xl md:hidden flex flex-col pt-24 px-8 border-l border-gray-light overflow-y-auto">
+              className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-[60] shadow-2xl md:hidden flex flex-col pt-24 px-8 border-l border-gray-light overflow-y-auto">
+
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-5 right-5 p-2 text-dark hover:text-orange transition-colors focus:outline-none"
+                aria-label="Close menu">
+                <X size={28} />
+              </button>
 
               <div className="flex flex-col gap-6">
                 <Link
