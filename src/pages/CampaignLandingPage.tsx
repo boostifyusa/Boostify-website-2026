@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { SeoHead } from '../components/SeoHead';
 import { TrustBadges } from '../components/TrustBadges';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -236,24 +237,24 @@ export function CampaignLandingPage() {
                 noIndex={true}
             />
 
-            {/* Simplified Header with Real Logo */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-3 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
-                <div className="flex items-center gap-2">
+            {/* Header with Safely Scaling Logo */}
+            <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-3 px-3 sm:px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
+                <Link to="/" className="flex items-center shrink">
                     <img
                         src="/Group-116.webp"
                         alt="Boostify Logo"
                         width="1184"
                         height="152"
                         fetchPriority="high"
-                        className="h-7 sm:h-8 md:h-10 w-auto max-w-[140px] md:max-w-none object-contain shrink-0"
+                        className="h-8 md:h-10 w-auto max-w-[55vw] sm:max-w-none object-contain"
                     />
-                </div>
+                </Link>
                 <a
                     href="tel:5597853834"
-                    className="flex flex-col items-end group shrink-0 ml-2"
+                    className="flex flex-col items-end group shrink-0 ml-1 sm:ml-2"
                 >
-                    <span className="text-base sm:text-lg md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight whitespace-nowrap">(559) 785-3834</span>
-                    <span className="text-[9px] md:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1.5 md:px-2 py-0.5 rounded mt-0.5 whitespace-nowrap">
+                    <span className="text-sm xs:text-base md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight whitespace-nowrap">(559) 785-3834</span>
+                    <span className="text-[8px] xs:text-[9px] md:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1 md:px-2 py-0.5 rounded mt-0.5 whitespace-nowrap">
                         CALL OR TEXT
                     </span>
                 </a>
@@ -306,16 +307,14 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.1 }}
-                                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-dark leading-[1.05] sm:leading-[1.05] tracking-tighter mb-4 md:mb-8 max-w-[800px] mx-auto lg:mx-0 flex flex-col gap-1 sm:gap-0 sm:block"
+                                    className="text-[2.75rem] xs:text-5xl md:text-6xl lg:text-7xl font-black text-dark leading-[1.05] tracking-tighter mb-4 md:mb-8 max-w-[800px] mx-auto lg:mx-0"
                                 >
-                                    <span>Custom Websites That</span>{' '}
-                                    <span className="whitespace-nowrap">
-                                        <span className="relative inline-block px-1 isolate">
-                                            <span className="absolute inset-x-0 bottom-0 top-[10%] bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                                            <span className="text-orange relative z-10">Win You</span>
-                                        </span>{' '}
-                                        More Clients
-                                    </span>
+                                    Custom Websites That{' '}
+                                    <span className="relative inline-block px-1 isolate whitespace-nowrap mt-1 sm:mt-0">
+                                        <span className="absolute inset-x-0 bottom-0 top-[10%] bg-orange/20 -skew-y-2 rounded-sm -z-10" />
+                                        <span className="text-orange relative z-10">Win You</span>
+                                    </span>{' '}
+                                    More Clients
                                 </motion.h1>
 
                                 <motion.p
@@ -395,7 +394,7 @@ export function CampaignLandingPage() {
                 <section className="py-24 md:py-32 px-6 bg-white relative overflow-hidden">
                     <div className="max-w-6xl mx-auto relative z-10">
                         <div className="text-center mb-20">
-                            <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter">Sound Familiar?</h2>
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter">Sound Familiar?</h2>
                             <p className="text-xl text-gray font-medium max-w-2xl mx-auto tracking-tight">
                                 We talk to small business owners every day who are frustrated with their current online presence.
                             </p>
@@ -460,7 +459,7 @@ export function CampaignLandingPage() {
                         </div>
 
                         <div className="mt-20 text-center">
-                            <h3 className="text-4xl font-black mb-10 tracking-tight">We fix all of this.</h3>
+                            <h3 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">We fix all of this.</h3>
                             <button
                                 onClick={scrollToForm}
                                 className="inline-flex py-4 px-8 bg-orange text-white text-lg font-bold rounded-xl hover:bg-orange-hover transition-all duration-300 shadow-xl shadow-orange/20 hover:shadow-orange/30 transform hover:-translate-y-1"
@@ -475,7 +474,7 @@ export function CampaignLandingPage() {
                 <section className="py-24 md:py-32 px-6 bg-light/30 border-y border-gray-light/50">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-20">
-                            <h2 className="text-5xl md:text-6xl lg:text-[4rem] font-black mb-6 tracking-tighter leading-none">Every Site We Build<br />Comes With</h2>
+                            <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-black mb-6 tracking-tighter leading-none">Every Site We Build<br />Comes With</h2>
                             <p className="text-xl text-gray font-medium max-w-2xl mx-auto mt-6">
                                 No fluff. Just the features proven to build trust and make it incredibly easy for customers to contact you.
                             </p>
@@ -689,7 +688,7 @@ export function CampaignLandingPage() {
                 {/* FAQs */}
                 <section className="py-24 md:py-32 px-6 bg-white shrink-0">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-5xl md:text-6xl font-black mb-16 text-center tracking-tight">Common Questions</h2>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-16 text-center tracking-tight">Common Questions</h2>
 
                         <div className="bg-white rounded-3xl border border-gray-light p-8 md:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.04)]">
                             <FAQItem
@@ -724,7 +723,7 @@ export function CampaignLandingPage() {
                     </div>
 
                     <div className="max-w-4xl mx-auto relative z-10">
-                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 tracking-tighter">Ready to Stop<br />Losing Leads?</h2>
+                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tighter">Ready to Stop<br />Losing Leads?</h2>
                         <p className="text-xl md:text-2xl text-gray-300 mb-14 max-w-2xl mx-auto font-medium">
                             Get a custom website that actually brings in customers. Free quote and strategy, no obligation.
                         </p>
