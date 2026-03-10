@@ -237,7 +237,7 @@ export function CampaignLandingPage() {
             />
 
             {/* Simplified Header with Real Logo */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-light py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+            <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-light py-3 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300">
                 <div className="flex items-center gap-2">
                     <img
                         src="/Group-116.webp"
@@ -245,15 +245,15 @@ export function CampaignLandingPage() {
                         width="1184"
                         height="152"
                         fetchPriority="high"
-                        className="h-8 lg:h-10 w-auto object-contain"
+                        className="h-6 md:h-8 lg:h-10 w-auto object-contain"
                     />
                 </div>
                 <a
                     href="tel:5597853834"
                     className="flex flex-col items-end group"
                 >
-                    <span className="text-lg md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight">(559) 785-3834</span>
-                    <span className="text-[10px] md:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-2 rounded-sm mt-0.5">
+                    <span className="text-base md:text-xl font-black text-dark group-hover:text-orange transition-colors tracking-tight">(559) 785-3834</span>
+                    <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-orange tracking-widest uppercase flex items-center gap-1 bg-orange/10 px-1.5 md:px-2 py-0.5 rounded mt-0.5">
                         CALL OR TEXT
                     </span>
                 </a>
@@ -306,7 +306,7 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.1 }}
-                                    className="text-5xl md:text-6xl lg:text-7xl font-black text-dark leading-[1.05] tracking-tighter mb-8 max-w-[800px] mx-auto lg:mx-0"
+                                    className="text-[2.75rem] leading-[1.05] md:text-6xl lg:text-7xl font-black text-dark tracking-tighter mb-6 md:mb-8 max-w-[800px] mx-auto lg:mx-0"
                                 >
                                     Custom Websites That{' '}
                                     <span className="relative inline-block px-1 isolate whitespace-nowrap">
@@ -320,7 +320,7 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.2 }}
-                                    className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+                                    className="text-lg md:text-xl lg:text-2xl text-gray font-medium mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0"
                                 >
                                     We design Central Valley websites that generate calls and leads. Plus Local SEO, Google Ads, and AI automations.
                                 </motion.p>
@@ -338,15 +338,15 @@ export function CampaignLandingPage() {
                                         ))}
                                         <span className="font-black text-xl ml-2 text-dark tracking-tight">5.0</span>
                                     </div>
-                                    <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 text-sm font-bold text-dark uppercase tracking-wide">
-                                        <span className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-orange" strokeWidth={3} /> Trusted by 50+ Local SMBs
+                                    <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3 text-xs md:text-sm font-bold text-dark uppercase tracking-wide">
+                                        <span className="flex items-center gap-1.5 md:gap-2">
+                                            <Check className="w-3 h-3 md:w-4 md:h-4 text-orange" strokeWidth={3} /> Trusted by 50+ Local SMBs
                                         </span>
-                                        <span className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-orange" strokeWidth={3} /> Web Design
+                                        <span className="flex items-center gap-1.5 md:gap-2">
+                                            <Check className="w-3 h-3 md:w-4 md:h-4 text-orange" strokeWidth={3} /> Web Design
                                         </span>
-                                        <span className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-orange" strokeWidth={3} /> Local SEO
+                                        <span className="flex items-center gap-1.5 md:gap-2">
+                                            <Check className="w-3 h-3 md:w-4 md:h-4 text-orange" strokeWidth={3} /> Local SEO
                                         </span>
                                     </div>
                                 </motion.div>
@@ -356,12 +356,12 @@ export function CampaignLandingPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.5 }}
-                                    className="mt-10 p-5 bg-gray-50/80 rounded-2xl border border-gray-100 flex items-center lg:items-start gap-4 text-left max-w-xl mx-auto lg:mx-0 shadow-sm"
+                                    className="mt-8 md:mt-10 p-4 md:p-5 bg-gray-50/80 rounded-2xl border border-gray-100 flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left max-w-xl mx-auto lg:mx-0 shadow-sm"
                                 >
-                                    <img src="/1733568683912.jpg" alt="Joaquin Estrada" className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shadow-md shrink-0 border-2 border-white" />
+                                    <img src="/1733568683912.jpg" alt="Joaquin Estrada" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shadow-md shrink-0 border-2 border-white" />
                                     <div>
-                                        <p className="font-bold text-dark mb-1">Joaquin Estrada, Founder</p>
-                                        <p className="text-sm text-gray font-medium leading-snug">
+                                        <p className="font-bold text-dark mb-1 text-sm md:text-base">Joaquin Estrada, Founder</p>
+                                        <p className="text-xs md:text-sm text-gray font-medium leading-snug">
                                             Invited by the SBA to speak on SEO and AI, Joaquin's data-driven strategies have doubled conversions for local businesses.
                                         </p>
                                     </div>
