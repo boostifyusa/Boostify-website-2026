@@ -134,8 +134,8 @@ export function LocalMarketingPage() {
                 Local Advertising
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Grow Your Business With{' '}
-                <span className="text-orange">Fresno Google Ads.</span>
+                Stop Waiting for Leads. Start Getting Them{' '}
+                <span className="text-orange">Today.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                 Google Ads and Local Service Ads put your business at the top of

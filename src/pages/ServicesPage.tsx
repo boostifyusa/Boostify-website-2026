@@ -109,10 +109,10 @@ export function ServicesPage() {
               }}
               className="text-5xl md:text-7xl font-black text-dark mb-8 tracking-tighter leading-[0.95]">
 
-              Fresno Digital <br></br>Marketing{' '}
+              Digital Craftsmanship for{' '}
               <span className="relative inline-block px-2 isolate">
                 <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                Services
+                Local Growth
               </span>
             </motion.h1>
 

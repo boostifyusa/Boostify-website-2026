@@ -20,38 +20,38 @@ const ssrMeta = new Map([
 
     // ─── Core Service Pages ──────────────────────────────────────────────────
     ['/services', {
-        title: 'Marketing Services Fresno | Web Design, SEO & Google Ads',
-        description: 'Web Design, Local SEO, and Google Ads management for Fresno businesses. Built for speed, security, and local growth.',
+        title: 'Marketing Services | Web Design, SEO & Google Ads',
+        description: 'Web Design, Local SEO, and Google Ads management for Central Valley businesses. Built for speed, security, and local growth.',
         canonical: `${SITE_URL}/services`
     }],
     ['/web-design', {
-        title: 'Web Design Fresno: High-Converting Custom Local Websites',
-        description: 'Custom, SEO-optimized web design for Fresno businesses. Mobile-first, fast loading, and built to convert visitors into customers.',
+        title: 'Web Design: High-Converting Custom Local Websites',
+        description: 'Custom, SEO-optimized web design for Central Valley businesses. Mobile-first, fast loading, and built to convert visitors into customers.',
         canonical: `${SITE_URL}/web-design`
     }],
     ['/local-seo', {
-        title: 'Local SEO Fresno: Rank Higher & Get Found by Customers',
-        description: 'Dominate Google Maps and local search results in Fresno. Our local SEO strategies help you get found by neighbors who need your services.',
+        title: 'Local SEO: Rank Higher & Get Found by Customers',
+        description: 'Dominate Google Maps and local search results in the Central Valley. Our local SEO strategies help you get found by neighbors who need your services.',
         canonical: `${SITE_URL}/local-seo`
     }],
     ['/local-marketing', {
-        title: 'Local Marketing Fresno: Generate Consistent High-Quality Leads',
-        description: 'Maximize your ROI with precision-targeted Google Ads and Local Service Ads. We help Fresno businesses get more leads instantly.',
+        title: 'Local Marketing: Generate Consistent High-Quality Leads',
+        description: 'Maximize your ROI with precision-targeted Google Ads and Local Service Ads. We help Central Valley businesses get more leads instantly.',
         canonical: `${SITE_URL}/local-marketing`
     }],
     ['/maintenance', {
-        title: 'Website Maintenance Fresno: Secure, Fast & Reliable Hosting',
+        title: 'Care & Maintenance: Secure, Fast & Reliable Hosting',
         description: 'Keep your website secure, fast, and up-to-date with our comprehensive maintenance plans. Daily backups, security scans, and 24/7 monitoring.',
         canonical: `${SITE_URL}/maintenance`
     }],
     ['/app-development', {
-        title: 'App Development Fresno: Custom Web Apps Launched in Weeks',
-        description: 'Turn your app idea into a reality. We build investor-ready MVPs and custom applications for startups and businesses in Fresno.',
+        title: 'App Development: Custom Web Apps Launched in Weeks',
+        description: 'Turn your app idea into a reality. We build investor-ready MVPs and custom applications for startups and businesses in the Central Valley.',
         canonical: `${SITE_URL}/app-development`
     }],
     ['/ai-automation', {
-        title: 'AI Automation Fresno: Save Time & Reduce Operational Costs',
-        description: 'Automate your busywork. AI Chatbots, Missed Call Text-Back, and Review Management for Fresno businesses.',
+        title: 'AI Automation: Save Time & Reduce Operational Costs',
+        description: 'Automate your busywork. AI Chatbots, Missed Call Text-Back, and Review Management for Central Valley businesses.',
         canonical: `${SITE_URL}/ai-automation`
     }],
 

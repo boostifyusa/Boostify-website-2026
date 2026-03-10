@@ -87,7 +87,7 @@ export function AIPage() {
                                 New Service
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Fresno AI Automation & <span className="text-orange">Virtual Assistants.</span>
+                                Automate the Busywork. Focus on <span className="text-orange">Growth.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 You're drowning in admin tasks. Our AI agents answer calls, book appointments, and chase leads 24/7 so you don't have to.

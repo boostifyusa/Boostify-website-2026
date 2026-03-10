@@ -170,8 +170,8 @@ export function LocalSEOPage() {
                 Local SEO Services
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Fresno Local<br></br>SEO Services<br></br>{' '}
-                <span className="text-orange">& Maps Ranking.</span>
+                Get Found <br></br>Faster Locally<br></br>{' '}
+                <span className="text-orange">On Google.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                 Stop being invisible on Google. We optimize your online presence
