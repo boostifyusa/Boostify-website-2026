@@ -4,8 +4,8 @@ export function Footer() {
   return (
     <footer className="bg-dark border-t border-white/10 pt-24 pb-12 px-6 text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-          <div className="col-span-1 md:col-span-1 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-24">
+          <div className="text-left">
             <div className="bg-white p-2 inline-flex rounded mb-8">
               <img
                 src="/Group-116.webp"
@@ -152,6 +152,44 @@ export function Footer() {
               <li>
                 <Link to="/seo-audit" className="hover:text-orange transition-colors">
                   Free SEO Audit
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-white text-lg mb-8 tracking-tight">
+              Service Areas
+            </h3>
+            <ul className="space-y-4 text-white/60 font-medium">
+              <li>
+                <Link to="/fresno-web-design" className="hover:text-orange transition-colors">
+                  Fresno Web Design
+                </Link>
+              </li>
+              <li>
+                <Link to="/fresno-marketing-agency" className="hover:text-orange transition-colors">
+                  Fresno Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/clovis-marketing-agency" className="hover:text-orange transition-colors">
+                  Clovis Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/visalia-marketing-agency" className="hover:text-orange transition-colors">
+                  Visalia Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/modesto-web-design" className="hover:text-orange transition-colors">
+                  Modesto Web Design
+                </Link>
+              </li>
+              <li>
+                <Link to="/local-marketing" className="text-orange font-bold hover:text-white transition-colors">
+                  View All Areas →
                 </Link>
               </li>
             </ul>

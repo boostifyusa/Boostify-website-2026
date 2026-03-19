@@ -29,29 +29,29 @@ import {
 // FAQ Data
 const faqs = [
     {
-        question: 'What makes you different from other Fresno web design agencies?',
+        question: 'What makes your Fresno web design agency different?',
         answer:
-            "Unlike traditional agencies that rely on slow, cookie-cutter templates like WordPress, we custom-code every website from the ground up using advanced AI tools. This approach allows us to deliver ultra-fast, highly optimized digital storefronts for Fresno businesses at a fraction of the cost, ensuring you rank higher and stand out in the local market."
+            "While many local agencies push out slow WordPress templates, we hand-code our sites right here in the Central Valley using modern React frameworks. Whether your customers are browsing from Figarden or downtown Fresno, our sites load instantly, driving more leads and higher local search rankings."
     },
     {
-        question: 'Do you offer Ecommerce Web Design?',
+        question: 'Do you work with local Fresno agricultural or service businesses?',
         answer:
-            "Absolutely! As a dedicated Ecommerce Web Design Agency, we specialize in creating digital storefronts that convert visitors into customers. From custom headless builds to streamlined Shopify integrations, we design frictionless buying experiences tailored to your products."
+            "Absolutely. We understand the heartbeat of the Central Valley economy. From Ag-tech companies needing robust B2B platforms to local HVAC and plumbing services in Clovis and Fresno needing fast lead-generation sites, we tailor our builds to your specific local market."
     },
     {
-        question: 'Do you build bilingual sites or offer Diseño Web services?',
+        question: 'Do you offer bilingual Diseño Web for the Central Valley?',
         answer:
-            "Yes, we do. With a large Spanish-speaking demographic in the Central Valley, offering 'Diseño Web' is crucial. We can develop fully functional bilingual websites in both English and Spanish, allowing you to seamlessly connect with a wider local audience in Fresno."
+            "Yes. We know that reaching the Hispanic demographic in Fresno County is vital for growth. Our Diseño Web services include full structural bilingual support, ensuring your brand message resonates perfectly in both English and Spanish."
     },
     {
         question: 'How much does a custom website cost in Fresno?',
         answer:
-            "Our bespoke, handcrafted sites begin at $1,995. For businesses needing a rapid launch or working with a tighter budget, our performance-optimized template options start at $649. We view your website as an investment, focusing heavily on delivering a strong ROI."
+            "Our bespoke, handcrafted sites begin at $1,995, designed to give Fresno businesses a dominant unfair advantage online. For newer businesses needing a rapid launch, our performance-built template sites start at $649."
     },
     {
         question: 'Will my website work well on mobile phones?',
         answer:
-            "Yes. Since mobile devices account for the majority of local traffic in Fresno, we adopt a 'mobile-first' design philosophy. We guarantee your site will not only look stunning but also perform perfectly on all smartphones and tablets before we finalize the desktop experience."
+            "Mobile is critical in Fresno. With over 70% of local searches happening on smartphones, we design 'mobile-first'. Your website will perform flawlessly on all devices before we even look at the desktop version."
     }
 ];
 
@@ -193,7 +193,7 @@ export function WebDesignFresnoPage() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-xl md:text-2xl text-gray font-medium leading-relaxed max-w-2xl mb-10"
                         >
-                            Stop losing to slow templates. We use custom code and Fresno Digital Marketing to generate traffic to your website and scale your business.
+                            Stop losing customers to out-of-town competitors. We build ultra-fast, custom websites tailored specifically for Fresno businesses to dominate the Central Valley market.
                         </motion.p>
 
                         <motion.div
@@ -343,29 +343,29 @@ export function WebDesignFresnoPage() {
                                 </motion.div>
                             </motion.div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Most Fresno Websites Are {' '}
-                                <span className="text-red-500">Invisible!</span>
+                                Fresno Businesses Are Losing To {' '}
+                                <span className="text-red-500">Bad Web Design</span>
                             </h2>
                             <p className="text-xl text-gray font-medium">
-                                Drag-and-drop website builders are actively harming local businesses. If your Fresno site isn't generating leads and sales, it’s a liability, not an asset.
+                                If your website doesn't load instantly when someone searches from River Park or the Tower District, they are calling your competitor instead.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
                                 {
-                                    title: 'Terrible Load Times',
-                                    desc: "Heavy plugins and terrible WordPress code crater your site speed. Today's mobile users in Fresno expect instant load times, or they'll bounce immediately.",
-                                    icon: Clock
-                                },
-                                {
-                                    title: 'Local SEO Failures',
-                                    desc: "Without a rock-solid Fresno SEO foundation and precise local schema data, you're invisible to search engines and stuck at the bottom of Google.",
+                                    title: 'Losing Local Traffic',
+                                    desc: "Without proper Fresno-based SEO schema and localized content, search engines simply pass over your business in favor of national brands.",
                                     icon: Search
                                 },
                                 {
-                                    title: 'Boring, Cloned Designs',
-                                    desc: "Using the same templates as every other Central Valley competitor makes your brand entirely forgettable. You need a unique edge to stand out.",
+                                    title: 'Slow Mobile Speeds',
+                                    desc: "Most Central Valley users are searching on 5G or LTE. If your site relies on bloated templates, it will fail to load fast enough to capture the lead.",
+                                    icon: Clock
+                                },
+                                {
+                                    title: 'Generic Branding',
+                                    desc: "A cookie-cutter site tells Fresno customers you don't take your business seriously. You need a premium aesthetic that instantly builds local trust.",
                                     icon: X
                                 }
                             ].map((item, i) => (
@@ -454,11 +454,11 @@ export function WebDesignFresnoPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center max-w-3xl mx-auto mb-20">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Marketing Agency <br />
-                                <span className="text-orange">Fresno.</span>
+                                Dominating The <br />
+                                <span className="text-orange">Fresno Market.</span>
                             </h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">
-                                We reject template-driven development. Our developers leverage cutting-edge AI and expert hand-coding to engineer custom platforms that solve real business problems, delivering a tangible ROI for your Fresno enterprise.
+                                We are Central Valley locals who understand what drives business here. Our developers leverage cutting-edge tech to engineer digital platforms that out-compete established Fresno enterprises.
                             </p>
                         </div>
 
@@ -473,9 +473,9 @@ export function WebDesignFresnoPage() {
                                 <div className="w-14 h-14 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-8">
                                     <PenTool size={28} strokeWidth={2} />
                                 </div>
-                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Fresno Web Designer</h3>
+                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Fresno Brand Design</h3>
                                 <p className="text-lg text-gray font-medium leading-relaxed mb-8 flex-1">
-                                    Your website acts as your most crucial, always-on employee. We design exceptional brand aesthetics and high-impact layouts that instantly build trust with Fresno residents. Through intelligent UX design and smart retargeting campaigns, we drive true value.
+                                    Your website is your 24/7 digital storefront. We design exceptional aesthetics that resonate with the Central Valley demographic, building instant credibility and turning local traffic into booked jobs.
                                 </p>
                                 <ul className="space-y-3 mt-auto">
                                     {['Custom Typography & Graphics', 'High-End Aesthetic Integration', 'Lead Generating Layouts'].map((item, i) => (

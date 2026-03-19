@@ -78,7 +78,7 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="SEO & Web Design: Craftsmanship for Local Growth"
+                title="Web Design Fresno | Top Local SEO Agency | Boostify USA"
                 description="Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson."
                 canonicalUrl="/"
             >
@@ -127,7 +127,7 @@ export function HomePageV2() {
                                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8"
                             >
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Local Digital Growth Studio
+                                Fresno Web Design & SEO
                             </motion.div>
 
                             <motion.h1
@@ -156,7 +156,7 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                             >
-                                Handcrafted design & search systems built to scale local service businesses from the Central Valley to the Coast.
+                                Handcrafted web design & local search systems built to scale Fresno and Central Valley service businesses.
                             </motion.p>
 
                             <motion.div
@@ -282,8 +282,10 @@ export function HomePageV2() {
                             <div className="text-3xl font-black text-dark tracking-tighter">2024</div>
                         </div>
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
-                            <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">Local Reach</div>
-                            <div className="text-3xl font-black text-dark tracking-tighter">Central Valley</div>
+                            <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">HQ & Local Reach</div>
+                            <div className="text-3xl font-black text-dark tracking-tighter">
+                                <Link to="/fresno-web-design" className="hover:text-orange transition-colors">Fresno, CA</Link>
+                            </div>
                         </div>
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
                             <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">Focus</div>
@@ -528,7 +530,7 @@ export function HomePageV2() {
                                                 Local Marketing
                                             </h3>
                                             <p className="text-gray font-medium leading-relaxed">
-                                                Digital strategies that drive real foot traffic. From Google Ads to Local Service Ads, we put your business at the top.
+                                                Digital strategies that drive real foot traffic. From <Link to="/fresno-marketing-agency" className="text-dark font-bold hover:text-orange transition-colors">Fresno marketing</Link> campaigns to Local Service Ads, we put your business at the top.
                                             </p>
                                             <div className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/50 group-hover:text-orange transition-colors duration-200 mt-4">
                                                 Learn more

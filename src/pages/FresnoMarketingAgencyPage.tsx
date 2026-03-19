@@ -26,7 +26,6 @@ import {
     Globe,
     Megaphone,
     MousePointerClick,
-    Users,
     Zap,
     Building2,
     DollarSign
@@ -35,29 +34,29 @@ import {
 // FAQ Data
 const faqs = [
     {
-        question: 'Why should I hire a Fresno marketing agency vs. a big-city firm?',
+        question: 'Why should my Fresno business hire a local agency instead of a national firm?',
         answer:
-            "A local agency understands the Central Valley market. We know your customers, your competitors, and the seasonal rhythms of this area. Big-city agencies charge more and treat you like a number. We treat you like a neighbor — because you are one."
+            "A local Fresno marketing agency understands the Central Valley economy. We know the difference between marketing to North Fresno vs. Tower District, and we understand the seasonal agricultural impacts on local spending. A national firm treats you like a number; we treat you like a partner."
     },
     {
-        question: 'How much does it cost to work with Boostify USA?',
+        question: 'What do your Fresno marketing services cost?',
         answer:
-            "Every project is different. Custom web design starts at $1,995 and template-based sites start at $649. Our Local SEO packages start at $595/mo with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/mo that includes hosting, web design, and maintenance. We'll build a plan based on your goals and budget — never a cookie-cutter package."
+            "Our custom local SEO and digital advertising packages are tailored to your specific Fresno competition level, typically starting around $595/mo. For new local businesses, we also offer a comprehensive 'Local Launch' package at $249/mo that covers your website, hosting, and foundational Google Maps optimization."
     },
     {
-        question: 'How long until I see results from local SEO?',
+        question: 'How long until my Fresno business ranks on Google?',
         answer:
-            "SEO is a long-term investment. You'll typically see movement in 3-4 months, with significant traffic growth around months 6-9. Paid ads deliver leads within 48 hours. We recommend a combined approach for immediate and lasting results."
+            "Local SEO in a competitive market like Fresno takes aggressive optimization. You'll usually see movement in 3-4 months, with strong lead generation around months 6-9. If you need immediate phone calls, we run highly targeted Fresno Google Ads."
     },
     {
-        question: 'Do you work with businesses outside of Fresno?',
+        question: 'Do you only serve the city of Fresno?',
         answer:
-            'Yes! While we specialize in the Central Valley — Fresno, Clovis, Visalia, Madera, and beyond — we work with businesses across California and nationally. Our roots are local, but our expertise scales.'
+            'While our primary focus is the Fresno metro area, we aggressively scale campaigns for clients across the entire Central Valley, including Clovis, Madera, Visalia, and Hanford.'
     },
     {
-        question: 'What makes Boostify different from other digital marketing companies?',
+        question: 'What makes Boostify the best marketing agency in Fresno?',
         answer:
-            "We're not a template factory. Every website is custom-coded, every SEO campaign is hand-built, and every ad dollar is tracked. No fluff, no bloat, no long-term contracts. Just receipts."
+            "We focus purely on ROI. We don't sell vanity metrics or long-term contracts. Every campaign we build for our Fresno clients is custom-coded and meticulously tracked to ensure every ad dollar turns into a profitable lead."
     }
 ];
 
@@ -204,12 +203,10 @@ export function FresnoMarketingAgencyPage() {
                                 Marketing Agency Fresno
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Fresno's Growth <span className="text-orange">Starts Here.</span>
+                                Fresno SEO & <br/><span className="text-orange">Advertising.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Boostify USA is a full-service advertising agency built for local
-                                businesses. From custom website design to Local SEO services and
-                                Google Ads — we drive real revenue, not vanity metrics.
+                                Dominate the Central Valley market. We are a premier Fresno marketing agency specializing in high-converting Local SEO, strategic Google Ads, and custom digital storefronts.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -355,30 +352,29 @@ export function FresnoMarketingAgencyPage() {
                                 </motion.div>
                             </motion.div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Is Your Digital Marketing Company <br />
-                                <span className="text-red-500">Actually Working?</span>
+                                Fresno Advertising That <br />
+                                <span className="text-red-500">Burns Money?</span>
                             </h2>
                             <p className="text-xl text-gray font-medium">
-                                Most Fresno businesses are paying for marketing that doesn't
-                                deliver. If any of these sound familiar, it's time for a change.
+                                Many Central Valley businesses are paying monthly retainers with zero visibility into their actual Return on Ad Spend. It's time to stop the bleeding.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
                                 {
-                                    title: 'Invisible on Google',
-                                    desc: "You're paying for SEO but you still can't find yourself on page one. 92% of clicks go to the first page — if you're not there, you don't exist.",
+                                    title: 'Lost in the Map Pack',
+                                    desc: "If your Fresno business isn't showing up in the Google Map Pack when locals search, you are hemorrhaging daily revenue to your competitors.",
                                     icon: Search
                                 },
                                 {
-                                    title: 'Burning Ad Budget',
-                                    desc: "Your Google Ads are running but leads aren't coming. Without proper targeting and conversion tracking, you're paying for clicks that never convert.",
+                                    title: 'Wasted Ad Spend',
+                                    desc: "Running generic Google Ads without strict negative keywords and local radius targeting means you're buying clicks from people who will never convert.",
                                     icon: DollarSign
                                 },
                                 {
-                                    title: 'Template Website',
-                                    desc: "Your website looks like every other business in Fresno. A cookie-cutter template doesn't build trust or convert visitors into paying customers.",
+                                    title: 'Poor Website Conversions',
+                                    desc: "Driving traffic to a slow, outdated website is useless. Fresno consumers have high standards, and a poor digital experience destroys buyer trust.",
                                     icon: Globe
                                 }
                             ].map((item, i) => (
@@ -409,13 +405,13 @@ export function FresnoMarketingAgencyPage() {
                                     <Target size={24} strokeWidth={2.5} />
                                 </div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">
-                                    Data-Driven Advertising Strategies for Local Business
+                                    Fresno Google Ads Management
                                 </h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
-                                    As a full-service advertising agency, we build laser-focused Google
-                                    Ads and Local Service Ads campaigns that target the exact customers
-                                    searching for your services in Fresno and the Central Valley.
-                                    Every dollar is tracked, optimized, and working hard.
+                                    Stop wasting budget on clicks from outside the Central Valley. We build laser-focused Google
+                                    Ads campaigns that target the exact customers
+                                    searching for your services in Fresno, Clovis, and Madera.
+                                    Every dollar is tracked, optimized, and working hard to deliver hyper-local leads.
                                 </p>
                                 <ul className="space-y-3">
                                     {[
@@ -573,12 +569,12 @@ export function FresnoMarketingAgencyPage() {
                                     <BarChart3 size={24} strokeWidth={2.5} />
                                 </div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">
-                                    Local SEO & Map Pack Optimization
+                                    Dominating the Fresno Map Pack
                                 </h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
                                     Our local SEO services put your business at the top of Google Maps
-                                    and organic search results. When someone in Fresno searches for
-                                    your services, you show up first — not your competitors.
+                                    and organic search results. Whether someone is searching from Woodward Park or Sunnyside,
+                                    you show up first — pushing out your local competitors.
                                 </p>
                                 <ul className="space-y-3">
                                     {[
@@ -606,12 +602,12 @@ export function FresnoMarketingAgencyPage() {
                                 <Globe size={24} strokeWidth={2.5} />
                             </div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Custom Web Design That <span className="text-orange">Converts</span>
+                                Fresno Web Design That <span className="text-orange">Converts</span>
                             </h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">
-                                Your custom website design isn't just a digital brochure — it's your hardest-working
-                                salesperson. We build fast, mobile-first, conversion-optimized websites that turn
-                                visitors into paying customers.
+                                Don't send your paid traffic to a generic template. Your custom website design isn't just a digital brochure — it's your hardest-working
+                                local asset. We build fast, mobile-first websites that turn
+                                central valley visitors into paying customers.
                             </p>
                         </div>
 

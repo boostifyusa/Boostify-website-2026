@@ -141,7 +141,7 @@ loadAuditConfig();
 // Config watcher included in central watcher below
 // ─── Trailing Slash Redirect Middleware ──────────────────────────────
 app.use((req, res, next) => {
-    if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot)$/) || req.path.startsWith('/assets/')) {
+    if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot|txt|xml)$/) || req.path.startsWith('/assets/')) {
         return next();
     }
     if (req.path.endsWith('/') && req.path.length > 1) {
@@ -167,7 +167,7 @@ app.use((req, res, next) => {
     }
 
     // Prevent serving index.html for missing static assets
-    if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot)$/) || req.path.startsWith('/assets/')) {
+    if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot|txt|xml)$/) || req.path.startsWith('/assets/')) {
         return next(); // Let express.static handle assets or 404
     }
 
