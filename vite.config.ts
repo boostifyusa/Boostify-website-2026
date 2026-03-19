@@ -43,7 +43,7 @@ export default defineConfig({
       dynamicRoutes,
       exclude: ['/404', '/campaign'],
       readable: true,
-      generateRobotsTxt: true,
+      generateRobotsTxt: false,
     })
   ],
   build: {
