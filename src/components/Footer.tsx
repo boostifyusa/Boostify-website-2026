@@ -28,7 +28,7 @@ export function Footer() {
                 <Instagram size={24} />
               </a>
               <a
-                href="https://www.facebook.com/hyperboostusa/"
+                href="https://www.facebook.com/boostifyusa/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/40 hover:text-orange transition-colors">

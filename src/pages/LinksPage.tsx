@@ -52,7 +52,7 @@ const socialLinks = [
     },
     {
         label: 'Facebook',
-        href: 'https://www.facebook.com/hyperboostusa/',
+        href: 'https://www.facebook.com/boostifyusa/',
         icon: Facebook,
     },
     {

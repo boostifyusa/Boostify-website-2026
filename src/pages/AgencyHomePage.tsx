@@ -53,7 +53,7 @@ export function AgencyHomePage() {
           "priceRange": "$$",
           "sameAs": [
             "https://www.instagram.com/boostifyusa/",
-            "https://www.facebook.com/hyperboostusa/"
+            "https://www.facebook.com/boostifyusa/"
           ]
         }}
       />
