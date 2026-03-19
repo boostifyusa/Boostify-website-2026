@@ -195,12 +195,15 @@ export function AboutPage() {
                 delay: 0.2
               }}>
 
-              <p className="text-xl md:text-2xl text-gray font-medium leading-relaxed mb-8 max-w-3xl">
+              <p className="text-xl md:text-2xl text-gray font-medium leading-relaxed mb-6 max-w-3xl">
                 Joaquin's websites and SEO strategies turn small businesses into
                 lead-generating juggernauts. Invited by the SBA to speak on SEO
-                and AI, he's built Fresno State's news site and doubled
+                and AI, he's built Fresno State's news platform and doubled
                 conversions for local businesses with ruthless, data-driven
                 designs.
+              </p>
+              <p className="text-xl md:text-2xl text-gray font-medium leading-relaxed mb-8 max-w-3xl">
+                Outside of Boostify, Joaquin focuses on advanced research as the founder of the defense technology startup DarkSigma. He brings that exact same standard of rigorous engineering directly to your local marketing campaigns.
               </p>
               <p className="text-xl md:text-2xl text-dark font-bold leading-relaxed mb-10 max-w-3xl">
                 Ignoring Boostify is a choice to let competitors win.

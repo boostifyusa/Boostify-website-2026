@@ -279,7 +279,7 @@ export function HomePageV2() {
                     <div className="max-w-6xl mx-auto px-6 border-t border-gray-light py-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 bg-white">
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
                             <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">Established</div>
-                            <div className="text-3xl font-black text-dark tracking-tighter">2024</div>
+                            <div className="text-3xl font-black text-dark tracking-tighter">2014</div>
                         </div>
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
                             <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">HQ & Local Reach</div>
