@@ -163,16 +163,6 @@ export function Footer() {
             </h3>
             <ul className="space-y-4 text-white/60 font-medium">
               <li>
-                <Link to="/fresno-web-design" className="hover:text-orange transition-colors">
-                  Fresno Web Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/fresno-marketing-agency" className="hover:text-orange transition-colors">
-                  Fresno Marketing
-                </Link>
-              </li>
-              <li>
                 <Link to="/clovis-marketing-agency" className="hover:text-orange transition-colors">
                   Clovis Marketing
                 </Link>
@@ -180,6 +170,31 @@ export function Footer() {
               <li>
                 <Link to="/visalia-marketing-agency" className="hover:text-orange transition-colors">
                   Visalia Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/madera-marketing-agency" className="hover:text-orange transition-colors">
+                  Madera Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/hanford-marketing-agency" className="hover:text-orange transition-colors">
+                  Hanford Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/merced-marketing-agency" className="hover:text-orange transition-colors">
+                  Merced Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/tulare-marketing-agency" className="hover:text-orange transition-colors">
+                  Tulare Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/sanger-marketing-agency" className="hover:text-orange transition-colors">
+                  Sanger Marketing
                 </Link>
               </li>
               <li>

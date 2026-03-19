@@ -33,7 +33,6 @@ const PartnerDashboardPage = lazy(() => import('./pages/PartnerDashboardPage').t
 const PartnerLeadPage = lazy(() => import('./pages/PartnerLeadPage').then(module => ({ default: module.PartnerLeadPage })));
 const PartnerQRPage = lazy(() => import('./pages/PartnerQRPage').then(module => ({ default: module.PartnerQRPage })));
 
-const FresnoMarketingAgencyPage = lazy(() => import('./pages/FresnoMarketingAgencyPage').then(module => ({ default: module.FresnoMarketingAgencyPage })));
 const ClovisMarketingAgencyPage = lazy(() => import('./pages/ClovisMarketingAgencyPage').then(module => ({ default: module.ClovisMarketingAgencyPage })));
 const VisaliaMarketingAgencyPage = lazy(() => import('./pages/VisaliaMarketingAgencyPage').then(module => ({ default: module.VisaliaMarketingAgencyPage })));
 const MaderaMarketingAgencyPage = lazy(() => import('./pages/MaderaMarketingAgencyPage').then(module => ({ default: module.MaderaMarketingAgencyPage })));
@@ -42,7 +41,6 @@ const MercedMarketingAgencyPage = lazy(() => import('./pages/MercedMarketingAgen
 const TulareMarketingAgencyPage = lazy(() => import('./pages/TulareMarketingAgencyPage').then(module => ({ default: module.TulareMarketingAgencyPage })));
 const SangerMarketingAgencyPage = lazy(() => import('./pages/SangerMarketingAgencyPage').then(module => ({ default: module.SangerMarketingAgencyPage })));
 const WebDesignModestoPage = lazy(() => import('./pages/WebDesignModestoPage').then(module => ({ default: module.WebDesignModestoPage })));
-const WebDesignFresnoPage = lazy(() => import('./pages/WebDesignFresnoPage').then(module => ({ default: module.WebDesignFresnoPage })));
 const CampaignLandingPage = lazy(() => import('./pages/CampaignLandingPage').then(module => ({ default: module.CampaignLandingPage })));
 
 
@@ -103,7 +101,6 @@ export function App() {
               <Route path="/partners/qr/:partnerId" element={<PartnerQRPage />} />
               <Route path="/referral/:partnerId" element={<PartnerLeadPage />} />
 
-              <Route path="/fresno-marketing-agency" element={<FresnoMarketingAgencyPage />} />
               <Route path="/clovis-marketing-agency" element={<ClovisMarketingAgencyPage />} />
               <Route path="/visalia-marketing-agency" element={<VisaliaMarketingAgencyPage />} />
               <Route path="/madera-marketing-agency" element={<MaderaMarketingAgencyPage />} />
@@ -112,7 +109,6 @@ export function App() {
               <Route path="/tulare-marketing-agency" element={<TulareMarketingAgencyPage />} />
               <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
               <Route path="/modesto-web-design" element={<WebDesignModestoPage />} />
-              <Route path="/fresno-web-design" element={<WebDesignFresnoPage />} />
               <Route path="/campaign" element={<CampaignLandingPage />} />
 
               <Route path="*" element={<NotFoundPage />} />

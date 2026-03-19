@@ -49,14 +49,14 @@ export function WebDesignPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Web Design: High-Converting Custom Local Websites"
+        title="Fresno Web Design: High-Converting Custom Local Websites"
         description="Custom, SEO-optimized web design for Fresno businesses. Mobile-first, fast loading, and built to convert visitors into customers."
         canonicalUrl="/web-design"
       />
       <SchemaJSON
         type="Service"
         data={{
-          name: "Custom Web Design",
+          name: "Fresno Web Design",
           description: "Professional web design services for local businesses in Fresno, CA.",
           provider: {
             "@type": "ProfessionalService",
@@ -126,10 +126,10 @@ export function WebDesignPage() {
 
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                Custom Web Design
+                Fresno Web Design
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Websites That Work As{' '}
+                Fresno Web Design That Works As{' '}
                 <span className="text-orange">Hard As You Do.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">

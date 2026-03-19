@@ -101,14 +101,14 @@ export function LocalSEOPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Local SEO: Rank Higher & Get Found by Customers"
+        title="Fresno SEO: Rank Higher & Get Found by Customers"
         description="Dominate Google Maps and local search results in Fresno. Our local SEO strategies help you get found by neighbors who need your services."
         canonicalUrl="/local-seo"
       />
       <SchemaJSON
         type="Service"
         data={{
-          name: "Local SEO Services",
+          name: "Fresno SEO Expert",
           description: "Search Engine Optimization services focused on local ranking in Fresno, CA.",
           provider: {
             "@type": "ProfessionalService",
@@ -167,11 +167,11 @@ export function LocalSEOPage() {
 
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                Local SEO Services
+                Fresno SEO
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Get Found <br></br>Faster Locally<br></br>{' '}
-                <span className="text-orange">On Google.</span>
+                Get Found <br></br>Faster By Fresno<br></br>{' '}
+                <span className="text-orange">Customers.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                 Stop being invisible on Google. We optimize your online presence

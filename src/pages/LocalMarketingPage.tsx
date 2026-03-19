@@ -66,14 +66,14 @@ export function LocalMarketingPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Local Marketing: Generate Consistent High-Quality Leads"
-        description="Maximize your ROI with precision-targeted Google Ads and Local Service Ads. We help Fresno businesses get more leads instantly."
+        title="Fresno Marketing Agency: Generate Consistent High-Quality Leads"
+        description="Top Fresno marketing agency. Maximize your ROI with precision-targeted Google Ads and Local Service Ads. We help local businesses get more leads instantly."
         canonicalUrl="/local-marketing"
       />
       <SchemaJSON
         type="Service"
         data={{
-          name: "Local Marketing Services",
+          name: "Fresno Marketing Agency",
           description: "Google Ads (PPC) and Local Service Ads management for businesses in Fresno, CA.",
           provider: {
             "@type": "ProfessionalService",
@@ -131,11 +131,11 @@ export function LocalMarketingPage() {
 
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                Local Advertising
+                Fresno Marketing Agency
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Stop Waiting for Leads. Start Getting Them{' '}
-                <span className="text-orange">Today.</span>
+                Fresno Marketing Agency That Actually Gets{' '}
+                <span className="text-orange">Results.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                 Google Ads and Local Service Ads put your business at the top of

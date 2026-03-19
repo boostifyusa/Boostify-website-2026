@@ -22,7 +22,6 @@ const dynamicRoutes = [
   '/seo-audit',
   '/sitemap',
   '/links',
-  '/fresno-marketing-agency',
   '/clovis-marketing-agency',
   '/visalia-marketing-agency',
   '/madera-marketing-agency',
@@ -30,8 +29,7 @@ const dynamicRoutes = [
   '/merced-marketing-agency',
   '/tulare-marketing-agency',
   '/sanger-marketing-agency',
-  '/modesto-web-design',
-  '/fresno-web-design'
+  '/modesto-web-design'
 ]
 
 // https://vitejs.dev/config/

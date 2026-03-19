@@ -124,11 +124,6 @@ const ssrMeta = new Map([
     }],
 
     // ─── City Marketing Agency Pages ─────────────────────────────────────────
-    ['/fresno-marketing-agency', {
-        title: 'Fresno Marketing Agency: Drive Local Revenue & Growth',
-        description: 'Boostify USA is the top-rated Fresno marketing agency. We specialize in custom web design, Local SEO, and Google Ads to drive revenue for local businesses.',
-        canonical: `${SITE_URL}/fresno-marketing-agency`
-    }],
     ['/clovis-marketing-agency', {
         title: 'Clovis Marketing Agency: Attract More Local Customers',
         description: 'Boostify USA is a top Clovis marketing agency specializing in custom web design, Local SEO, and Google Ads. We help Clovis businesses grow with data-driven strategies.',
@@ -170,11 +165,6 @@ const ssrMeta = new Map([
         title: 'Website Design Modesto | Top Web Design Agencies | Boostify USA',
         description: 'Looking for Website Design in Modesto? We are a top web design agency specializing in Ecommerce, Brand Website Design, and Diseño Web.',
         canonical: `${SITE_URL}/modesto-web-design`
-    }],
-    ['/fresno-web-design', {
-        title: 'Website Design Fresno | Top Web Design Agencies | Boostify USA',
-        description: 'Looking for Website Design in Fresno? We are a top web design agency specializing in Ecommerce, Brand Website Design, and Diseño Web.',
-        canonical: `${SITE_URL}/fresno-web-design`
     }],
 ]);
 

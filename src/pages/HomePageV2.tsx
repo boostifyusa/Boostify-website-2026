@@ -14,9 +14,9 @@ import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motio
 const homeSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Boostify USA Web Design & SEO",
+    "name": "Boostify USA: Fresno Web Design & Marketing Agency",
     "url": "https://boostifyusa.com/",
-    "description": "Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson.",
+    "description": "Boostify USA is a top-rated Fresno Web Design and Marketing Agency building high-converting websites and SEO strategies for local businesses in the Central Valley.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -78,8 +78,8 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Web Design Fresno | Top Local SEO Agency | Boostify USA"
-                description="Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson."
+                title="Fresno Web Design & Marketing Agency | Boostify USA"
+                description="Boostify USA is a top-rated Fresno Web Design and Marketing Agency. We build high-converting websites and local SEO strategies for Central Valley businesses."
                 canonicalUrl="/"
             >
                 <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
@@ -127,7 +127,7 @@ export function HomePageV2() {
                                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8"
                             >
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Fresno Web Design & SEO
+                                Fresno Web Design & Marketing Agency
                             </motion.div>
 
                             <motion.h1
@@ -395,8 +395,9 @@ export function HomePageV2() {
                                 Everything You Need to{' '}
                                 <span className="relative inline-block px-2 isolate">
                                     <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                                    <span className="text-orange relative z-10">Grow Online</span>
-                                </span>
+                                    <span className="text-orange relative z-10">Actually</span>
+                                </span>{' '}
+                                Grow Fresno Businesses.
                             </motion.h2>
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
