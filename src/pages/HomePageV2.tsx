@@ -415,7 +415,7 @@ export function HomePageV2() {
                             {/* Card 1: Web Design (Tall, Left) */}
                             <Link
                                 to="/web-design"
-                                className="bg-gradient-to-b from-gray-50/80 to-white rounded-3xl p-8 md:p-10 border-4 border-white shadow-[0_4px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] hover:border-orange/20 transition-all duration-300 flex flex-col relative overflow-hidden group"
+                                className="bg-gradient-to-b from-gray-50/80 to-white rounded-3xl p-8 md:p-10 shadow-[0_4px_30px_rgba(0,0,0,0.04)] shadow-dark/5 hover:shadow-2xl hover:shadow-dark/10 hover:-translate-y-1 transition-all duration-500 flex flex-col relative overflow-hidden group"
                             >
                                 <div className="relative z-10">
                                     <div className="w-11 h-11 bg-orange/10 rounded-lg flex items-center justify-center text-orange mb-5">
@@ -484,7 +484,7 @@ export function HomePageV2() {
                                 {/* Card 2: SEO */}
                                 <Link
                                     to="/local-seo"
-                                    className="bg-gradient-to-b from-gray-50/80 to-white rounded-3xl p-8 md:p-10 border-4 border-white shadow-[0_4px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] hover:border-orange/20 transition-all duration-300 flex-1 relative overflow-hidden group"
+                                    className="bg-gradient-to-b from-gray-50/80 to-white rounded-3xl p-8 md:p-10 shadow-[0_4px_30px_rgba(0,0,0,0.04)] shadow-dark/5 hover:shadow-2xl hover:shadow-dark/10 hover:-translate-y-1 transition-all duration-500 flex-1 relative overflow-hidden group"
                                 >
                                     <div className="flex flex-col md:flex-row gap-6 items-start relative z-10">
                                         <div className="flex-1">
@@ -519,7 +519,7 @@ export function HomePageV2() {
                                 {/* Card 3: Local Marketing */}
                                 <Link
                                     to="/local-marketing"
-                                    className="bg-gradient-to-b from-gray-50/80 to-white rounded-3xl p-8 md:p-10 border-4 border-white shadow-[0_4px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] hover:border-orange/20 transition-all duration-300 flex-1 relative overflow-hidden group"
+                                    className="bg-gradient-to-b from-gray-50/80 to-white rounded-3xl p-8 md:p-10 shadow-[0_4px_30px_rgba(0,0,0,0.04)] shadow-dark/5 hover:shadow-2xl hover:shadow-dark/10 hover:-translate-y-1 transition-all duration-500 flex-1 relative overflow-hidden group"
                                 >
                                     <div className="flex flex-col md:flex-row gap-6 items-start relative z-10">
                                         <div className="flex-1">

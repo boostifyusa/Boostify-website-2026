@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Globe, Search, MapPin, ArrowUpRight, BarChart3 } from 'lucide-react';
+import { Globe, Search, MapPin, ArrowUpRight } from 'lucide-react';
 const MotionLink = motion(Link);
 
 export function ServicesSection() {
@@ -76,7 +75,7 @@ export function ServicesSection() {
               duration: 0.5,
               delay: 0.2
             }}
-            className="bg-white rounded-3xl p-8 md:p-12 border border-gray-light shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col relative overflow-hidden group">
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-dark/5 hover:shadow-2xl hover:shadow-dark/10 hover:-translate-y-1 transition-all duration-500 flex flex-col relative overflow-hidden group">
 
             <div className="relative z-10">
               <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6">
@@ -162,7 +161,7 @@ export function ServicesSection() {
                 duration: 0.5,
                 delay: 0.3
               }}
-              className="bg-white rounded-3xl p-8 md:p-10 border border-gray-light shadow-lg hover:shadow-xl transition-all duration-300 flex-1 relative overflow-hidden group">
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-dark/5 hover:shadow-2xl hover:shadow-dark/10 hover:-translate-y-1 transition-all duration-500 flex-1 relative overflow-hidden group">
 
               <div className="flex flex-col md:flex-row gap-8 items-start relative z-10">
                 <div className="flex-1">
@@ -229,7 +228,7 @@ export function ServicesSection() {
                 duration: 0.5,
                 delay: 0.4
               }}
-              className="bg-white rounded-3xl p-8 md:p-10 border border-gray-light shadow-lg hover:shadow-xl transition-all duration-300 flex-1 relative overflow-hidden group">
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-dark/5 hover:shadow-2xl hover:shadow-dark/10 hover:-translate-y-1 transition-all duration-500 flex-1 relative overflow-hidden group">
 
               <div className="flex flex-col md:flex-row gap-8 items-start relative z-10">
                 <div className="flex-1">
