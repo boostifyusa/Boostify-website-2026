@@ -16,7 +16,7 @@ const homeSchema = {
     "@type": "ProfessionalService",
     "name": "Boostify USA: Fresno Web Design & Marketing Agency",
     "url": "https://boostifyusa.com/",
-    "description": "Boostify USA is a top-rated Fresno Web Design and Marketing Agency building high-converting websites and SEO strategies for local businesses in the Central Valley.",
+    "description": "Most Fresno businesses lose money on websites that don't convert. Boostify USA builds custom web design & SEO systems that generate leads 24/7 for local businesses.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -78,8 +78,8 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Fresno Web Design & Marketing Agency | Boostify USA"
-                description="Boostify USA is a top-rated Fresno Web Design and Marketing Agency. We build high-converting websites and local SEO strategies for Central Valley businesses."
+                title="Fresno Web Design Agency | Your Site Should Be Your #1 Closer"
+                description="Most Fresno businesses lose money on websites that don't convert. We fix that. Custom web design & SEO built to generate leads 24/7. See what we can do for you."
                 canonicalUrl="/"
             >
                 <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
@@ -119,7 +119,7 @@ export function HomePageV2() {
                     <div className="max-w-7xl mx-auto relative z-10">
                         {/* Centered Content */}
                         <div className="text-center max-w-4xl mx-auto mb-16 relative">
-                            <motion.div
+                            <motion.h1
                                 suppressHydrationWarning
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -129,9 +129,9 @@ export function HomePageV2() {
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse shrink-0" />
                                 <span className="md:hidden whitespace-nowrap">Fresno Web Design</span>
                                 <span className="hidden md:inline whitespace-nowrap">Fresno Web Design & Marketing Agency</span>
-                            </motion.div>
+                            </motion.h1>
 
-                            <motion.h1
+                            <motion.p
                                 suppressHydrationWarning
                                 initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export function HomePageV2() {
                                     >Actually</motion.span>
                                 </span>{' '}
                                 Bring Customers In.
-                            </motion.h1>
+                            </motion.p>
 
                             <motion.p
                                 suppressHydrationWarning
