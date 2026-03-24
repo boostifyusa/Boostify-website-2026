@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import { AgencyHomePage } from './pages/AgencyHomePage';
 import { HomePageV2 } from './pages/HomePageV2';
@@ -110,6 +110,10 @@ export function App() {
               <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
               <Route path="/modesto-web-design" element={<WebDesignModestoPage />} />
               <Route path="/campaign" element={<CampaignLandingPage />} />
+
+              {/* SEO 301 Redirects — old Fresno pages → generic service pages */}
+              <Route path="/fresno-marketing-agency" element={<Navigate to="/local-marketing" replace />} />
+              <Route path="/fresno-web-design" element={<Navigate to="/web-design" replace />} />
 
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

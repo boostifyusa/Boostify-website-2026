@@ -157,7 +157,7 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                             >
-                                Handcrafted web design & local search systems built to scale Fresno and Central Valley service businesses.
+                                Fresno's marketing agency for handcrafted web design & local search systems built to scale Central Valley service businesses.
                             </motion.p>
 
                             <motion.div
@@ -285,7 +285,7 @@ export function HomePageV2() {
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
                             <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">HQ & Local Reach</div>
                             <div className="text-3xl font-black text-dark tracking-tighter">
-                                <Link to="/fresno-web-design" className="hover:text-orange transition-colors">Fresno, CA</Link>
+                                <Link to="/web-design" className="hover:text-orange transition-colors">Fresno, CA</Link>
                             </div>
                         </div>
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
@@ -305,7 +305,7 @@ export function HomePageV2() {
                     {/* Slogan / Bridge */}
                     <div className="max-w-6xl mx-auto px-6 py-10 text-center">
                         <p className="text-lg md:text-xl text-gray font-medium tracking-tight">
-                            Precision-built websites & search strategies, <span className="text-dark font-bold">trusted by businesses across California.</span>
+                            Fresno's full-service marketing agency — precision-built websites & search strategies, <span className="text-dark font-bold">trusted by businesses across California.</span>
                         </p>
                     </div>
                 </section>
@@ -407,7 +407,7 @@ export function HomePageV2() {
                                 transition={{ duration: 0.5, delay: 0.1 }}
                                 className="text-lg md:text-xl text-gray font-medium"
                             >
-                                From custom websites to search dominance. Every service is{' '}
+                                From custom websites to search dominance. Every service from our Fresno marketing agency is{' '}
                                 <span className="text-dark font-bold">precision-built for results</span>, not templates.
                             </motion.p>
                         </div>
@@ -532,7 +532,7 @@ export function HomePageV2() {
                                                 Local Marketing
                                             </h3>
                                             <p className="text-gray font-medium leading-relaxed">
-                                                Digital strategies that drive real foot traffic. From <Link to="/fresno-marketing-agency" className="text-dark font-bold hover:text-orange transition-colors">Fresno marketing</Link> campaigns to Local Service Ads, we put your business at the top.
+                                                Digital strategies that drive real foot traffic. From <Link to="/local-marketing" className="text-dark font-bold hover:text-orange transition-colors">Fresno marketing</Link> campaigns to Local Service Ads, we put your business at the top.
                                             </p>
                                             <div className="inline-flex items-center gap-1.5 text-sm font-bold text-dark/50 group-hover:text-orange transition-colors duration-200 mt-4">
                                                 Learn more

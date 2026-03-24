@@ -139,6 +139,18 @@ loadAuditConfig();
 
 // Watch for changes
 // Config watcher included in central watcher below
+
+// ─── SEO 301 Redirects ──────────────────────────────────────────────
+const seoRedirects = {
+    '/fresno-marketing-agency': '/local-marketing',
+    '/fresno-web-design': '/web-design',
+};
+app.use((req, res, next) => {
+    const target = seoRedirects[req.path];
+    if (target) return res.redirect(301, target);
+    next();
+});
+
 // ─── Trailing Slash Redirect Middleware ──────────────────────────────
 app.use((req, res, next) => {
     if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot|txt|xml)$/) || req.path.startsWith('/assets/')) {

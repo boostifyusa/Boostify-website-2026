@@ -63,19 +63,6 @@ function makeFaqSchema(faqs) {
 
 const cityData = [
     {
-        path: '/fresno-marketing-agency',
-        url: 'https://boostifyusa.com/fresno-marketing-agency',
-        description: 'Premier Fresno marketing agency specializing in custom web design, local SEO, and digital advertising strategies.',
-        areaServed: ['Fresno', 'Clovis', 'Visalia', 'Madera'],
-        faqs: [
-            { question: 'What makes Boostify different from other Fresno marketing agencies?', answer: "We don't use templates. Every website is hand-coded for performance, every SEO campaign is custom-built around your business, and every ad dollar is tracked to revenue. We never lock you into a long-term contract — we earn your business with results." },
-            { question: 'How much does it cost to work with a Fresno marketing agency?', answer: "Our services range from $500/month for focused local SEO to $3,000+/month for full-service digital marketing. During your free strategy call, we'll recommend the right starting point for your budget and goals." },
-            { question: 'How long does it take to see results from SEO in Fresno?', answer: "Most clients see measurable improvements in 60-90 days: higher rankings, more traffic, and increased calls. SEO is a compounding investment — the longer you invest, the stronger your position becomes." },
-            { question: 'Do you work with businesses outside of Fresno?', answer: "Yes. While Fresno is our home base, we serve businesses throughout the entire Central Valley — from Bakersfield to Merced. Our local strategies are designed for each specific market." },
-            { question: 'Can Boostify manage my Google Ads and SEO at the same time?', answer: "Absolutely — and we recommend it. Running both channels together creates a compounding effect: ads drive immediate traffic while SEO builds long-term organic dominance. We coordinate both to maximize your total return." }
-        ]
-    },
-    {
         path: '/clovis-marketing-agency',
         url: 'https://boostifyusa.com/clovis-marketing-agency',
         description: "Clovis's top-rated marketing agency for custom web design, local SEO, and Google Ads. Helping Clovis businesses dominate the digital landscape.",
