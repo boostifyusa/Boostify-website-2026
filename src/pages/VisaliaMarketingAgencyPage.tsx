@@ -11,13 +11,13 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 
 import {
     Check, ChevronDown, ChevronUp, ShieldCheck, AlertTriangle, MapPin, TrendingUp,
-    BarChart3, Star, Phone, ArrowRight, Search, Target, Globe, Megaphone,
+    BarChart3, Star, Phone, ArrowRight, Search, Target, Globe,
     MousePointerClick, Users, Zap, Building2, DollarSign, Sprout
 } from 'lucide-react';
 
 const faqs = [
     { question: 'What kind of businesses in Visalia do you work with?', answer: 'We partner with service-based businesses, retail shops, medical practices, restaurants, and professional firms throughout Tulare County. If you serve local customers, our strategies are built for you.' },
-    { question: 'How is Boostify different from other Visalia marketing companies?', answer: "We're not a template shop. Every website is hand-coded, every SEO campaign is custom-built, and every ad dollar is tracked to revenue. We operate on results, not promises — and we never lock you into a contract." },
+    { question: 'How is Boostify different from other Visalia marketing companies?', answer: "We're not a template shop. Every website is hand-coded, every SEO campaign is custom-built, and every ad dollar is tracked to revenue. We operate on results, not promises, and we never lock you into a contract." },
     { question: 'Do I need a new website, or can you improve my current one?', answer: "Both. If your current site is structurally sound, we can optimize it for speed, SEO, and conversions. If it's outdated or template-based, a custom rebuild will deliver dramatically better results." },
     { question: 'How much should a Visalia business spend on digital marketing?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month that includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. We always start with a free strategy call to find the right fit for your budget.` },
     { question: 'Can you manage our social media too?', answer: 'Yes. While our core strengths are SEO, Google Ads, and web design, we offer social media management as an add-on service. We focus on platforms that actually drive business — not just vanity likes.' },
@@ -313,14 +313,14 @@ export function VisaliaMarketingAgencyPage() {
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><Globe size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Websites That Work as Hard as <span className="text-orange">You Do</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">Your website should be your best employee — generating leads 24/7. We design and build custom sites that load fast, look incredible, and convert visitors into paying customers.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">Your website should be your best employee, generating leads 24/7. We design and build custom sites that load fast, look incredible, and convert visitors into paying customers.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
                                 { icon: Zap, title: 'Blazing Performance', desc: 'Sub-2-second load times that keep visitors engaged and boost your Google rankings.' },
                                 { icon: Phone, title: 'Mobile-First Always', desc: 'Most of your customers browse on phones. Every design decision starts with mobile.' },
                                 { icon: Target, title: 'Conversion Architecture', desc: 'Strategic page flows, CTAs, and trust signals that guide visitors toward action.' },
-                                { icon: Search, title: 'SEO Built In', desc: 'Proper heading structure, schema markup, and clean code — SEO isn\'t an afterthought.' },
+                                { icon: Search, title: 'SEO Built In', desc: "Proper heading structure, schema markup, and clean code: SEO isn't an afterthought." },
                                 { icon: ShieldCheck, title: 'Secure & Reliable', desc: 'SSL, daily backups, and proactive maintenance keep your site safe and online.' },
                                 { icon: Users, title: 'Easy to Manage', desc: 'We train you on simple updates. Need bigger changes? We\'re always a call away.' },
                             ].map((item, i) => (
@@ -341,7 +341,7 @@ export function VisaliaMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Visalia & the <span className="text-orange">Entire Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">We know Tulare County — the agricultural heartbeat, the small-business spirit, and the growth opportunity. Our digital strategies are tuned for this unique market.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">We know Tulare County: the agricultural heartbeat, the small-business spirit, and the growth opportunity. Our digital strategies are tuned for this unique market.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (

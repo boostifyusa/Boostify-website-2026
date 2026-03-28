@@ -26,19 +26,18 @@ import {
     Globe,
     Megaphone,
     MousePointerClick,
-    Users,
     Zap,
     Building2,
     DollarSign,
     HeartHandshake
 } from 'lucide-react';
 
-// FAQ Data — Clovis-specific
+// FAQ Data: Clovis-specific
 const faqs = [
     {
         question: 'Why choose a marketing agency near Clovis instead of a national firm?',
         answer:
-            'A local team knows the Clovis market — from Old Town foot traffic to the new developments along Willow and Herndon. National firms rely on generic playbooks. We build campaigns rooted in how people actually search and buy in the Central Valley.'
+            'A local team knows the Clovis market, from Old Town foot traffic to the new developments along Willow and Herndon. National firms rely on generic playbooks. We build campaigns rooted in how people actually search and buy in the Central Valley.'
     },
     {
         question: 'What marketing services do you offer Clovis businesses?',
@@ -58,11 +57,11 @@ const faqs = [
     {
         question: 'Can you help a brand-new Clovis business get started online?',
         answer:
-            'Absolutely. We specialize in launching new businesses with a complete digital presence — logo, website, Google Business Profile, SEO foundation, and initial ad campaigns. We get you visible fast.'
+            'Absolutely. We specialize in launching new businesses with a complete digital presence: logo, website, Google Business Profile, SEO foundation, and initial ad campaigns. We get you visible fast.'
     }
 ];
 
-// AdvertisingAgency JSON-LD Schema — Clovis
+// AdvertisingAgency JSON-LD Schema: Clovis
 const advertiserSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -193,8 +192,8 @@ export function ClovisMarketingAgencyPage() {
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Clovis businesses deserve a marketing team that understands the
                                 community, not a faceless agency across the country. Boostify USA
-                                builds custom digital strategies — from web design to local
-                                advertising — that drive measurable revenue.
+                                builds custom digital strategies (from web design to local
+                                advertising) that drive measurable revenue.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -353,7 +352,7 @@ export function ClovisMarketingAgencyPage() {
                                     as professional as you are.
                                 </p>
                                 <ul className="space-y-3">
-                                    {['100% custom — no templates, ever', 'Mobile-optimized for on-the-go customers', 'Built-in SEO foundation from day one', 'Conversion-focused layouts & CTAs'].map((item, i) => (
+                                    {['100% custom: no templates, ever', 'Mobile-optimized for on-the-go customers', 'Built-in SEO foundation from day one', 'Conversion-focused layouts & CTAs'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
                                     ))}
                                 </ul>
@@ -448,7 +447,7 @@ export function ClovisMarketingAgencyPage() {
                                 </h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
                                     When someone in Clovis searches for your services, you need to
-                                    be the first result — in the Map Pack and in organic results.
+                                    be the first result, in the Map Pack and in organic results.
                                     Our local SEO strategies are built specifically for the Central
                                     Valley market.
                                 </p>
@@ -480,11 +479,11 @@ export function ClovisMarketingAgencyPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { icon: Target, title: 'Precision Targeting', desc: 'Geo-fenced campaigns that reach customers in Clovis, Fresno, and surrounding zip codes — not wasted on irrelevant areas.' },
+                                { icon: Target, title: 'Precision Targeting', desc: 'Geo-fenced campaigns that reach customers in Clovis, Fresno, and surrounding zip codes and not wasted on irrelevant areas.' },
                                 { icon: DollarSign, title: 'Transparent ROI', desc: 'Real-time dashboards showing exactly how your ad spend translates into leads and revenue. No smoke and mirrors.' },
                                 { icon: Zap, title: 'Fast Results', desc: 'Leads start flowing within 48 hours of campaign launch. We optimize daily to improve performance and lower cost-per-lead.' },
                                 { icon: Phone, title: 'Call Tracking', desc: 'Every phone call from your ads is recorded, attributed, and analyzed. Know exactly which campaigns drive real business.' },
-                                { icon: Megaphone, title: 'Multi-Platform Reach', desc: 'Google Search Ads, Display, Local Service Ads, and remarketing — we meet your customers wherever they are online.' },
+                                { icon: Megaphone, title: 'Multi-Platform Reach', desc: 'Google Search Ads, Display, Local Service Ads, and remarketing; we meet your customers wherever they are online.' },
                                 { icon: ShieldCheck, title: 'Google Certified Team', desc: 'Our strategists hold active Google Ads certifications. Your campaigns are managed by certified professionals, not interns.' },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
@@ -546,7 +545,7 @@ export function ClovisMarketingAgencyPage() {
                         <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">
                             No long-term contracts. No hidden fees. No agency jargon. If we
                             don't deliver measurable results for your Clovis business, you
-                            walk away — simple as that.
+                            walk away; it's as simple as that.
                         </p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">
                             Month-to-Month • Cancel Anytime

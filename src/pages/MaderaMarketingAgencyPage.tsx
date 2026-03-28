@@ -11,16 +11,16 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 
 import {
     Check, ChevronDown, ChevronUp, ShieldCheck, AlertTriangle, MapPin, TrendingUp,
-    BarChart3, Star, Phone, ArrowRight, Search, Target, Globe, Megaphone,
-    MousePointerClick, Users, Zap, Building2, DollarSign, Mountain
+    BarChart3, Star, ArrowRight, Search, Target, Globe, Megaphone,
+    MousePointerClick, Users, Zap, Building2, Mountain
 } from 'lucide-react';
 
 const faqs = [
     { question: 'Is Boostify USA based in Madera?', answer: "Our headquarters are in Fresno, just minutes from Madera. We serve Madera County businesses with the same local expertise and availability as our Fresno clients. We're close enough to meet in person whenever needed." },
-    { question: 'What results can a Madera business expect from SEO?', answer: "Most clients see meaningful ranking improvements within 3-4 months and significant lead growth by month 6. Because Madera is a smaller market, competition is lower — meaning faster results than in bigger cities." },
-    { question: 'How much should I budget for digital marketing?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month — which includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. We always start with a free consultation to recommend the right investment based on your goals.` },
-    { question: 'Do you build websites for Madera businesses?', answer: "Absolutely. Every website we build is 100% custom — no templates. We design for your specific audience, optimize for mobile and speed, and include SEO foundations so you start ranking from launch day." },
-    { question: 'Can you help me compete with bigger businesses in Fresno?', answer: "That's exactly what we do. Local SEO levels the playing field. When someone in Madera searches for your service, we make sure you appear first — not the Fresno chain with a bigger budget." },
+    { question: 'What results can a Madera business expect from SEO?', answer: "Most clients see meaningful ranking improvements within 3-4 months and significant lead growth by month 6. Because Madera is a smaller market, competition is lower, meaning faster results than in bigger cities." },
+    { question: 'How much should I budget for digital marketing?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month, which includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. We always start with a free consultation to recommend the right investment based on your goals.` },
+    { question: 'Do you build websites for Madera businesses?', answer: "Absolutely. Every website we build is 100% custom with no templates. We design for your specific audience, optimize for mobile and speed, and include SEO foundations so you start ranking from launch day." },
+    { question: 'Can you help me compete with bigger businesses in Fresno?', answer: "That's exactly what we do. Local SEO levels the playing field. When someone in Madera searches for your service, we make sure you appear first, not the Fresno chain with a bigger budget." },
 ];
 
 const advertiserSchema = {
@@ -96,7 +96,7 @@ export function MaderaMarketingAgencyPage() {
                                 Small Town. <span className="text-orange">Big Time Growth.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Madera is growing — and your business should grow with it. Boostify
+                                Madera is growing, and your business should grow with it. Boostify
                                 USA delivers enterprise-grade marketing to local businesses:
                                 custom websites, local SEO dominance, and Google Ads that turn
                                 clicks into customers.
@@ -136,7 +136,7 @@ export function MaderaMarketingAgencyPage() {
                                     {[
                                         { channel: 'Google Search Ads', metric: '32 Leads', spend: '$680', roas: '3.8x', color: 'bg-orange', barW: '75%' },
                                         { channel: 'Local SEO', metric: '48 Calls', spend: '$0 (organic)', roas: '∞', color: 'bg-green-500', barW: '90%' },
-                                        { channel: 'Website Forms', metric: '26 Submissions', spend: '—', roas: '—', color: 'bg-blue-500', barW: '55%' },
+                                        { channel: 'Website Forms', metric: '26 Submissions', spend: 'N/A', roas: 'N/A', color: 'bg-blue-500', barW: '55%' },
                                         { channel: 'Google Maps', metric: '154 Views', spend: '$0 (organic)', roas: '∞', color: 'bg-purple-500', barW: '95%' },
                                     ].map((item, i) => (
                                         <div key={i} className="bg-white/5 rounded-lg p-3 border border-white/5">
@@ -208,7 +208,7 @@ export function MaderaMarketingAgencyPage() {
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Digital Advertising That Puts Madera on the Map</h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
                                     Stop burning ad budget on broad campaigns. Our Google Ads strategies
-                                    are hyper-targeted to Madera County — reaching the exact people
+                                    are hyper-targeted to Madera County, reaching the exact people
                                     searching for your services right now.
                                 </p>
                                 <ul className="space-y-3">
@@ -264,7 +264,7 @@ export function MaderaMarketingAgencyPage() {
                             <div>
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Globe size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Custom Websites for Madera's Growing Market</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A great website isn't a luxury — it's the foundation of every successful marketing campaign. We build fast, beautiful, conversion-focused websites that make your Madera business stand out.</p>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A great website isn't a luxury; it's the foundation of every successful marketing campaign. We build fast, beautiful, conversion-focused websites that make your Madera business stand out.</p>
                                 <ul className="space-y-3">
                                     {['Custom-coded, no template shortcuts', 'Mobile-first responsive design', 'SEO-ready from launch', 'Secure hosting & ongoing support'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
@@ -290,7 +290,7 @@ export function MaderaMarketingAgencyPage() {
                                 { icon: Star, title: 'Review Management', desc: 'More 5-star reviews = higher rankings. We implement systems to generate authentic reviews from happy customers.' },
                                 { icon: Globe, title: 'Citation Building', desc: 'Consistent business listings across 60+ directories strengthen your local authority and improve rankings.' },
                                 { icon: BarChart3, title: 'Monthly Reports', desc: 'Transparent ranking reports, call tracking data, and ROI analysis delivered every month.' },
-                                { icon: Zap, title: 'Technical SEO', desc: 'Site speed, mobile optimization, schema markup, and core web vitals — the factors Google actually cares about.' },
+                                { icon: Zap, title: 'Technical SEO', desc: 'Site speed, mobile optimization, schema markup, and core web vitals: the factors Google actually cares about.' },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
@@ -335,7 +335,7 @@ export function MaderaMarketingAgencyPage() {
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
                         <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Small Town Trust, Big Time Results</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We believe in earning your business every month — not locking you in. No contracts, no hidden fees, and a standing promise: if we don't deliver, you don't pay.</p>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We believe in earning your business every month and not locking you in. No contracts, no hidden fees, and a standing promise: if we don't deliver, you don't pay.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Zero Risk • 100% Commitment</div>
                     </div>
                 </section>

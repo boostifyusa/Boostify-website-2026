@@ -16,11 +16,11 @@ import {
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Why should a Merced business invest in digital marketing?', answer: "Merced is booming — UC Merced's growth is bringing thousands of new residents and businesses. The companies that establish a strong digital presence now will dominate this market for years. Early movers win." },
-    { question: 'Do you specialize in Merced or serve it from far away?', answer: "Our office is in Fresno, just an hour from Merced. We serve Merced County as a core market — not an afterthought. We know the area, the competition, and the customers. We're available for in-person meetings anytime." },
+    { question: 'Why should a Merced business invest in digital marketing?', answer: "Merced is booming; UC Merced's growth is bringing thousands of new residents and businesses. The companies that establish a strong digital presence now will dominate this market for years. Early movers win." },
+    { question: 'Do you specialize in Merced or serve it from far away?', answer: "Our office is in Fresno, just an hour from Merced. We serve Merced County as a core market, not an afterthought. We know the area, the competition, and the customers. We're available for in-person meetings anytime." },
     { question: 'What makes your web design different from cheap website builders?', answer: "DIY builders give you generic templates that look like everyone else. We hand-code every site for speed, SEO, and conversion. Our sites consistently load in under 2 seconds, score 95+ on Google PageSpeed, and generate 3-5x more leads." },
     { question: 'How fast can you get my Google Ads running?', answer: "We can typically launch a campaign within 5-7 business days of onboarding. That includes keyword research, ad copywriting, landing page setup, and conversion tracking. You'll see leads within the first week of launch." },
-    { question: 'What if I already have a website that I like?', answer: "Great — we can work with it. We'll audit your current site for speed, SEO, and conversion opportunities, then optimize what's there. Not every client needs a full redesign; sometimes strategic improvements deliver the best ROI." },
+    { question: 'What if I already have a website that I like?', answer: "Great, we can work with it. We'll audit your current site for speed, SEO, and conversion opportunities, then optimize what's there. Not every client needs a full redesign; sometimes strategic improvements deliver the best ROI." },
 ];
 
 const advertiserSchema = {
@@ -148,7 +148,7 @@ export function MercedMarketingAgencyPage() {
                                 </div>
 
                                 <div className="bg-white/5 rounded-xl p-4 border border-white/5 mb-4">
-                                    <div className="text-white/30 text-[10px] font-bold uppercase tracking-wider mb-3">Revenue Generated — Last 12 Months</div>
+                                    <div className="text-white/30 text-[10px] font-bold uppercase tracking-wider mb-3">Revenue Generated in the last 12 months</div>
                                     <div className="flex items-end gap-1 h-16">
                                         {[35, 42, 38, 55, 62, 58, 72, 80, 75, 88, 95, 100].map((h, i) => (
                                             <motion.div key={i} initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }} transition={{ delay: i * 0.05, duration: 0.4 }}
@@ -205,7 +205,7 @@ export function MercedMarketingAgencyPage() {
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Local SEO Built for Merced's Growing Market</h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
                                     As Merced grows, so does search volume. We position your business at
-                                    the top of Google for the keywords that matter — from "plumber Merced"
+                                    the top of Google for the keywords that matter, such as "plumber Merced"
                                     to "restaurant near UC Merced." Early SEO investment compounds into
                                     long-term dominance.
                                 </p>
@@ -267,7 +267,7 @@ export function MercedMarketingAgencyPage() {
                             <div className="order-1 lg:order-2">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Globe size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Websites That Capture Merced's Growth</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A custom website is your 24/7 sales machine. We build fast, stunning sites optimized for the Merced market — designed to convert the wave of new residents and customers into loyal buyers.</p>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A custom website is your 24/7 sales machine. We build fast, stunning sites optimized for the Merced market and designed to convert the wave of new residents and customers into loyal buyers.</p>
                                 <ul className="space-y-3">
                                     {['100% custom, hand-coded design', 'Sub-2-second load times', 'Conversion-optimized page architecture', 'Ongoing maintenance & support'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
@@ -312,7 +312,7 @@ export function MercedMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Merced & the <span className="text-orange">Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">We serve Merced County and beyond — from the university corridor to agricultural communities across the Valley.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">We serve Merced County and beyond, from the university corridor to agricultural communities across the Valley.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (
@@ -338,7 +338,7 @@ export function MercedMarketingAgencyPage() {
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
                         <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Growth Is the Only Metric That Matters</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We stake our reputation on your results. No contracts, no excuses. If your Merced business isn't growing, we haven't done our job — and we'll keep working until we do.</p>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We stake our reputation on your results. No contracts, no excuses. If your Merced business isn't growing, we haven't done our job, and we'll keep working until we do.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Results First • Always</div>
                     </div>
                 </section>

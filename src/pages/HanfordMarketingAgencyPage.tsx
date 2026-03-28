@@ -12,15 +12,15 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 import {
     Check, ChevronDown, ChevronUp, ShieldCheck, AlertTriangle, MapPin, TrendingUp,
     BarChart3, Star, Phone, ArrowRight, Search, Target, Globe,
-    MousePointerClick, Users, Zap, Building2, DollarSign, Handshake
+    MousePointerClick, Users, Zap, Building2, Handshake
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Do you work with businesses in Kings County?', answer: 'Yes — Hanford is one of our priority markets. We also serve Lemoore, Avenal, Corcoran, and surrounding Kings County communities. Our strategies are tailored to the unique dynamics of this area.' },
+    { question: 'Do you work with businesses in Kings County?', answer: 'Yes, Hanford is one of our priority markets. We also serve Lemoore, Avenal, Corcoran, and surrounding Kings County communities. Our strategies are tailored to the unique dynamics of this area.' },
     { question: 'How is working with Boostify different from a freelancer?', answer: "Freelancers juggle dozens of clients with limited resources. We're a full-service team with dedicated strategists, designers, and ad specialists. You get the depth of an agency with the attention of a local partner." },
     { question: 'What kind of ROI should I expect?', answer: 'Most clients see 3-5x return on their marketing investment within 6 months. Paid ads generate leads within the first week, while SEO compounds over time. We track every metric so you always know your ROI.' },
     { question: 'Is there a minimum contract length?', answer: "No. We work month-to-month. No long-term contracts, no cancellation penalties. We earn your business with results, not paperwork." },
-    { question: 'Can you help my Hanford business rank above Visalia competitors?', answer: "Absolutely. Local SEO is about relevance and proximity. When someone in Hanford searches for your services, we make sure your business — not a Visalia or Fresno competitor — appears first." },
+    { question: 'Can you help my Hanford business rank above Visalia competitors?', answer: "Absolutely. Local SEO is about relevance and proximity. When someone in Hanford searches for your services, we make sure your business, and not a Visalia or Fresno competitor, appears first." },
 ];
 
 const advertiserSchema = {
@@ -97,7 +97,7 @@ export function HanfordMarketingAgencyPage() {
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Kings County businesses need marketing partners who understand
                                 tight-knit communities. Boostify USA brings big-agency expertise
-                                with small-town accountability — custom websites, local SEO, and
+                                with small-town accountability: custom websites, local SEO, and
                                 ad campaigns built for Hanford.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -197,12 +197,12 @@ export function HanfordMarketingAgencyPage() {
                     </div>
                 </section>
 
-                {/* ───── SERVICES GRID (unique layout for Hanford — all 3 services in grid) ───── */}
+                {/* ───── SERVICES GRID (unique layout for Hanford: all 3 services in grid) ───── */}
                 <section className="py-24 px-6">
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Everything Your Hanford Business Needs to <span className="text-orange">Grow Online</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">From your first Google listing to a full-stack digital strategy, we handle it all — so you can focus on running your business.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">From your first Google listing to a full-stack digital strategy, we handle it all so you can focus on running your business.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
@@ -211,7 +211,7 @@ export function HanfordMarketingAgencyPage() {
                                 { icon: MousePointerClick, title: 'Google Ads', desc: 'Geo-targeted ad campaigns that bring Hanford customers to your door. Every click tracked, every dollar optimized.' },
                                 { icon: Phone, title: 'Call Tracking', desc: 'Know exactly which marketing channels drive real phone calls. Complete attribution from first click to closed deal.' },
                                 { icon: Star, title: 'Review Generation', desc: 'Build a 5-star reputation that dominates local search. We automate review requests from your happiest customers.' },
-                                { icon: BarChart3, title: 'Monthly Analytics', desc: 'Transparent reporting on rankings, traffic, leads, and revenue. No vanity metrics — just the numbers that matter.' },
+                                { icon: BarChart3, title: 'Monthly Analytics', desc: 'Transparent reporting on rankings, traffic, leads, and revenue. No vanity metrics; just the numbers that matter.' },
                                 { icon: Target, title: 'Competitor Analysis', desc: "We reverse-engineer what's working for your top Hanford competitors and build campaigns to outperform them." },
                                 { icon: Zap, title: 'Speed Optimization', desc: 'We optimize your site for sub-2-second load times. Faster sites rank higher and convert more visitors.' },
                                 { icon: ShieldCheck, title: 'Ongoing Support', desc: 'Your dedicated account manager is always a phone call away. We maintain, update, and protect your digital assets.' },
@@ -259,7 +259,7 @@ export function HanfordMarketingAgencyPage() {
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
                         <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">The Handshake Guarantee</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">In Hanford, your word means something. So does ours. We don't do contracts — we do results. If you're not happy, you walk away. Period.</p>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">In Hanford, your word means something. So does ours. We don't do contracts; we do results. If you're not happy, you walk away. Period.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">No Contracts • No Hidden Fees</div>
                     </div>
                 </section>

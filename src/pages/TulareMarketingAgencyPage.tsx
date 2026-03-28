@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Does Boostify work with businesses in Tulare specifically?', answer: "Yes — Tulare is a core market for us. We've built campaigns for Tulare County businesses in agriculture, retail, healthcare, and professional services. We understand the local economy and what drives customers here." },
+    { question: 'Does Boostify work with businesses in Tulare specifically?', answer: "Yes, Tulare is a core market for us. We've built campaigns for Tulare County businesses in agriculture, retail, healthcare, and professional services. We understand the local economy and what drives customers here." },
     { question: 'What sets Boostify apart from other agencies in the Valley?', answer: "Three things: we never use templates (every site is custom-coded), we never require contracts (month-to-month only), and we track every lead back to its source (so you know exactly what's working). Most agencies can't offer all three." },
     { question: 'How do you handle businesses that serve multiple Valley cities?', answer: "Multi-location SEO is one of our specialties. We build city-specific landing pages, optimize separate Google Business Profiles where applicable, and create ad campaigns with geo-targeting for each area you serve." },
     { question: 'What should I expect in the first 30 days?', answer: "In month one, we audit your current presence, build your strategy, launch your Google Ads (if applicable), and begin SEO foundation work. You'll have a dedicated strategist, a live reporting dashboard, and your first leads from paid campaigns within weeks." },
@@ -111,7 +111,7 @@ export function TulareMarketingAgencyPage() {
                                 Built for Tulare's <span className="text-orange">Hardest Workers.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Tulare is powered by industry and grit — your marketing should
+                                Tulare is powered by industry and grit; your marketing should
                                 match that energy. Boostify USA helps Tulare businesses dominate
                                 online with custom websites, local SEO, and paid advertising
                                 that delivers measurable returns.
@@ -202,8 +202,8 @@ export function TulareMarketingAgencyPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: 'Relying on Foot Traffic Alone', desc: "Foot traffic keeps the lights on, but digital marketing scales your business. 97% of consumers learn about local companies online — if you're not there, someone else is.", icon: Building2 },
-                                { title: 'Outdated or No Website', desc: "Your website is your first impression. A slow, dated, or non-existent site tells customers you're behind the times — and sends them to the competitor with a better online presence.", icon: Globe },
+                                { title: 'Relying on Foot Traffic Alone', desc: "Foot traffic keeps the lights on, but digital marketing scales your business. 97% of consumers learn about local companies online; if you're not there, someone else is.", icon: Building2 },
+                                { title: 'Outdated or No Website', desc: "Your website is your first impression. A slow, dated, or non-existent site tells customers you're behind the times, sending them to the competitor with a better online presence.", icon: Globe },
                                 { title: "Can't Measure What Works", desc: "You know you need marketing, but you're not sure what's working. Without tracking and analytics, every marketing dollar is a gamble. We eliminate the guesswork.", icon: BarChart3 },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
@@ -248,7 +248,7 @@ export function TulareMarketingAgencyPage() {
                             <div>
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Target size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Paid Advertising Engineered for Tulare's Market</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">We build Google Ads campaigns from the ground up for Tulare — targeting the exact zip codes, keywords, and customer intent that matter to your business. No broad targeting, no wasted spend.</p>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">We build Google Ads campaigns from the ground up for Tulare, targeting the exact zip codes, keywords, and customer intent that matter to your business. No broad targeting, no wasted spend.</p>
                                 <ul className="space-y-3">
                                     {['Tulare County geo-fencing', 'Search, Local Service & Display ads', 'Call tracking with recording', 'Weekly performance optimization'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
@@ -262,7 +262,7 @@ export function TulareMarketingAgencyPage() {
                             <div className="order-2 lg:order-1">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Search size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Own Google Search Results in Tulare</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">When Tulare residents search for your services, you should be #1. Our SEO strategies are designed for the Central Valley — not generic national playbooks that ignore local dynamics.</p>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">When Tulare residents search for your services, you should be #1. Our SEO strategies are designed for the Central Valley, not generic national playbooks that ignore local dynamics.</p>
                                 <ul className="space-y-3">
                                     {['Google Business Profile mastery', 'Tulare-specific keyword targeting', 'Link building from Valley publications', 'Monthly ranking & ROI reports'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
@@ -310,14 +310,14 @@ export function TulareMarketingAgencyPage() {
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><Globe size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Custom Websites for <span className="text-orange">Tulare Businesses</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">A great website isn't optional anymore — it's the foundation of every successful digital strategy. We build sites that load fast, look incredible, and convert visitors into customers.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">A great website isn't optional anymore; it's the foundation of every successful digital strategy. We build sites that load fast, look incredible, and convert visitors into customers.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
                                 { icon: Zap, title: 'Lightning Fast', desc: 'Every site we build loads in under 2 seconds. Speed matters for rankings and customer experience.' },
                                 { icon: Phone, title: 'Mobile-First', desc: 'The majority of your customers browse on phones. We design for mobile first, then expand to desktop.' },
                                 { icon: Target, title: 'Conversion Focused', desc: 'Every page is structured to guide visitors toward calling you, filling out a form, or making a purchase.' },
-                                { icon: Search, title: 'SEO Foundation', desc: 'Proper structure, schema markup, and optimized content from day one — so your site ranks as soon as it launches.' },
+                                { icon: Search, title: 'SEO Foundation', desc: 'Proper structure, schema markup, and optimized content from day one, so your site ranks as soon as it launches.' },
                                 { icon: ShieldCheck, title: 'Secure & Maintained', desc: 'SSL certificates, regular backups, and ongoing security monitoring keep your site protected.' },
                                 { icon: Users, title: 'Easy CMS', desc: 'Make simple updates yourself, or let us handle everything. Either way, your site stays current.' },
                             ].map((item, i) => (
@@ -364,7 +364,7 @@ export function TulareMarketingAgencyPage() {
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
                         <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Results You Can Measure, Guaranteed</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We put our money where our mouth is. No contracts, no gimmicks. If your Tulare business isn't growing with us, we keep working until it does — at no additional cost.</p>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We put our money where our mouth is. No contracts, no gimmicks. If your Tulare business isn't growing with us, we keep working until it does: at no additional cost.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Performance Guaranteed</div>
                     </div>
                 </section>

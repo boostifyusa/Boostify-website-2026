@@ -46,7 +46,7 @@ const faqs = [
     {
         question: 'How much does a custom website cost in Modesto?',
         answer:
-            "Our bespoke custom websites start at $1,995. If you're looking for a faster turnaround or have a strict budget, we offer highly optimized template-based sites starting at $649. We focus on ROI—your website should generate more revenue than it costs."
+            "Our bespoke custom websites start at $1,995. If you're looking for a faster turnaround or have a strict budget, we offer highly optimized template-based sites starting at $649. We focus on ROI: your website should generate more revenue than it costs."
     },
     {
         question: 'Will my website work well on mobile phones?',

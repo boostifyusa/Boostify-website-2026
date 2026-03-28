@@ -10,17 +10,17 @@ import { TrustBadges } from '../components/TrustBadges';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 
 import {
-    Check, ChevronDown, ChevronUp, ShieldCheck, AlertTriangle, MapPin, TrendingUp,
+    Check, ChevronDown, ChevronUp, ShieldCheck, AlertTriangle, MapPin,
     BarChart3, ArrowRight, Search, Globe,
     MousePointerClick, Building2, DollarSign, Award
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Why does a Sanger business need a marketing agency?', answer: "Sanger may be a smaller market, but your customers are searching online just like everyone else. In fact, smaller markets offer a huge advantage — less competition means faster results and lower advertising costs. A focused digital strategy can help you dominate your local area quickly." },
-    { question: 'How close is Boostify to Sanger?', answer: "We're based in Fresno — just 15 minutes from Sanger. We serve Sanger as a priority market, not a distant afterthought. We're always available for in-person meetings and local strategy sessions." },
+    { question: 'Why does a Sanger business need a marketing agency?', answer: "Sanger may be a smaller market, but your customers are searching online just like everyone else. In fact, smaller markets offer a huge advantage: less competition means faster results and lower advertising costs. A focused digital strategy can help you dominate your local area quickly." },
+    { question: 'How close is Boostify to Sanger?', answer: "We're based in Fresno, just 15 minutes from Sanger. We serve Sanger as a priority market, not a distant afterthought. We're always available for in-person meetings and local strategy sessions." },
     { question: 'What kind of budget do I need to get started?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month that includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. Because competition is lower in Sanger, your marketing dollars go further. We always recommend a free strategy call to find the right fit.` },
-    { question: 'Will you build my website or just do marketing?', answer: "Both. We offer complete digital solutions — from custom website design and development to ongoing SEO and Google Ads management. Most clients start with a website and SEO, then add paid advertising once their foundation is solid." },
-    { question: 'How do you track results for my Sanger business?', answer: "Every client gets access to a live reporting dashboard showing rankings, traffic, leads, calls, and revenue attribution. We track every phone call and form submission back to its source — so you always know exactly what's working." },
+    { question: 'Will you build my website or just do marketing?', answer: "Both. We offer complete digital solutions, from custom website design and development to ongoing SEO and Google Ads management. Most clients start with a website and SEO, then add paid advertising once their foundation is solid." },
+    { question: 'How do you track results for my Sanger business?', answer: "Every client gets access to a live reporting dashboard showing rankings, traffic, leads, calls, and revenue attribution. We track every phone call and form submission back to its source, so you always know exactly what's working." },
 ];
 
 const advertiserSchema = {
@@ -186,9 +186,9 @@ export function SangerMarketingAgencyPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: "Fresno's Shadow", desc: "Sanger businesses get buried under Fresno results. Without a hyper-local SEO strategy, Google treats you like a suburb — not a destination. We fix that.", icon: Building2 },
+                                { title: "Fresno's Shadow", desc: "Sanger businesses get buried under Fresno results. Without a hyper-local SEO strategy, Google treats you like a suburb, not a destination. We fix that.", icon: Building2 },
                                 { title: 'No Digital Storefront', desc: "If you don't have a professional website, customers assume you're either closed or not serious. 75% of people judge a business's credibility by its website.", icon: Globe },
-                                { title: 'Spending Without Tracking', desc: "You've paid for a website, maybe boosted a Facebook post. But can you point to a single customer it generated? Without tracking, marketing is just a cost — not an investment.", icon: DollarSign },
+                                { title: 'Spending Without Tracking', desc: "You've paid for a website, maybe boosted a Facebook post. But can you point to a single customer it generated? Without tracking, marketing is just a cost, not an investment.", icon: DollarSign },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -201,17 +201,17 @@ export function SangerMarketingAgencyPage() {
                     </div>
                 </section>
 
-                {/* ───── FULL SERVICES (stacked cards — unique layout for Sanger) ───── */}
+                {/* ───── FULL SERVICES (stacked cards: unique layout for Sanger) ───── */}
                 <section className="py-24 px-6">
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Our Complete <span className="text-orange">Digital Toolkit</span> for Sanger</h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">Everything your Sanger business needs under one roof — no juggling freelancers or multiple vendors.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">Everything your Sanger business needs under one roof with no juggling freelancers or multiple vendors.</p>
                         </div>
 
                         <div className="space-y-6">
                             {[
-                                { icon: Globe, title: 'Custom Website Design & Development', desc: 'Hand-coded, mobile-first websites built to convert. We design for your brand, your audience, and your goals — not from a template library.', highlight: 'Sub-2s Load Time • 95+ PageSpeed Score' },
+                                { icon: Globe, title: 'Custom Website Design & Development', desc: 'Hand-coded, mobile-first websites built to convert. We design for your brand, your audience, and your goals, not from a template library.', highlight: 'Sub-2s Load Time • 95+ PageSpeed Score' },
                                 { icon: Search, title: 'Local SEO & Google Maps Optimization', desc: "Dominate Sanger search results. We optimize your Google Business Profile, build local citations, target East Valley keywords, and generate authentic reviews.", highlight: '#1 Rankings in 3-6 Months • Full Reporting' },
                                 { icon: MousePointerClick, title: 'Google Ads & Paid Advertising', desc: "Geo-targeted campaigns that put your business in front of Sanger customers right now. We track every call, form, and dollar so you always know your ROI.", highlight: '$15-$25 Cost Per Lead • Weekly Optimization' },
                             ].map((item, i) => (
