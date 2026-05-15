@@ -45,7 +45,7 @@ export function PartnerLeadPage() {
             <div className="min-h-screen bg-white">
                 <Navigation />
                 <div className="min-h-[80vh] flex items-center justify-center p-6 mt-20">
-                    <SeoHead title="Request Received | We Will Be In Touch Shortly" description="We will be in touch shortly." />
+                    <SeoHead title="Request Received | We Will Be In Touch Shortly" description="We will be in touch shortly." canonicalUrl="/referral" noIndex={true} />
                     <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-light p-12 text-center rounded-[2.5rem] border border-gray-light shadow-2xl max-w-lg w-full">
                         <div className="w-20 h-20 bg-green-50 rounded-full mx-auto flex items-center justify-center mb-6">
                             <CheckCircle2 size={40} className="text-green-500" />
@@ -64,7 +64,7 @@ export function PartnerLeadPage() {
 
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white font-sans">
-            <SeoHead title="Grow Your Local Business - Boostify USA" description="Get a free marketing consultation with Boostify USA." />
+            <SeoHead title="Grow Your Local Business - Boostify USA" description="Get a free marketing consultation with Boostify USA." canonicalUrl="/referral" noIndex={true} />
             <Navigation />
 
             {/* Dynamic Background Elements */}

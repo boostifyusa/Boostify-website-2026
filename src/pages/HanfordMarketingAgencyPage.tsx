@@ -35,7 +35,6 @@ const advertiserSchema = {
         "postalCode": "93722",
         "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [{ "@type": "City", "name": "Hanford" }, { "@type": "City", "name": "Lemoore" }, { "@type": "City", "name": "Visalia" }, { "@type": "City", "name": "Fresno" }],
     "hasOfferCatalog": {
         "@type": "OfferCatalog", "name": "Digital Marketing Services", "itemListElement": [
@@ -92,7 +91,7 @@ export function HanfordMarketingAgencyPage() {
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Hanford Marketing Agency
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Kings County. <span className="text-orange">Your Growth Partner.</span>
+                                Hanford Marketing Agency. <span className="text-orange">Kings County's Growth Partner.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Kings County businesses need marketing partners who understand

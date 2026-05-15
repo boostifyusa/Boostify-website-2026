@@ -119,7 +119,7 @@ export function HomePageV2() {
                     <div className="max-w-7xl mx-auto relative z-10">
                         {/* Centered Content */}
                         <div className="text-center max-w-4xl mx-auto mb-16 relative">
-                            <motion.h1
+                            <motion.div
                                 suppressHydrationWarning
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -129,9 +129,9 @@ export function HomePageV2() {
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse shrink-0" />
                                 <span className="md:hidden whitespace-nowrap">Fresno Web Design</span>
                                 <span className="hidden md:inline whitespace-nowrap">Fresno Web Design & Marketing Agency</span>
-                            </motion.h1>
+                            </motion.div>
 
-                            <motion.p
+                            <motion.h1
                                 suppressHydrationWarning
                                 initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export function HomePageV2() {
                                     >Actually</motion.span>
                                 </span>{' '}
                                 Bring Customers In.
-                            </motion.p>
+                            </motion.h1>
 
                             <motion.p
                                 suppressHydrationWarning
