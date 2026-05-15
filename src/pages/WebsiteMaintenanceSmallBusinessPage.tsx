@@ -46,7 +46,7 @@ const faqs = [
 ];
 
 const comparisonRows = [
-  { feature: 'Monthly cost', diy: 'Your time (4 to 8 hrs)', agency: '$200 to $500', boost: '$99, $249, or $595' },
+  { feature: 'Starting price', diy: 'Your time (4 to 8 hrs)', agency: '$200/mo with contract', boost: 'From $99/mo, no contract' },
   { feature: 'Contract length', diy: 'N/A', agency: '6 to 12 months', boost: 'Month to month' },
   { feature: 'Response time', diy: 'When you have time', agency: '24 to 72 hours', boost: 'Same day' },
   { feature: 'Tested updates', diy: 'Click and pray', agency: 'Sometimes', boost: 'Staged first, every time' },
@@ -475,19 +475,20 @@ export function WebsiteMaintenanceSmallBusinessPage() {
                     The hidden number
                   </p>
                   <p className="text-5xl md:text-6xl font-black text-white tracking-tighter mb-3">
-                    $3,184
+                    $8,840
                   </p>
                   <p className="text-white/70 font-medium leading-snug text-balance">
                     What the average unmanaged small business site costs its
-                    owner per year.
+                    owner per year. Every plan pays for itself before the year
+                    is out.
                   </p>
                 </div>
                 <div className="md:col-span-3 grid grid-cols-2 gap-x-6 gap-y-4">
                   {[
-                    { v: '$1,280', l: 'Downtime revenue loss' },
-                    { v: '$960', l: 'Emergency dev hours' },
-                    { v: '$684', l: 'Malware / hack recovery' },
-                    { v: '$260', l: 'SEO drop from neglect' },
+                    { v: '$2,880', l: 'Downtime revenue loss' },
+                    { v: '$2,400', l: 'Emergency dev hours' },
+                    { v: '$2,500', l: 'Malware / hack recovery' },
+                    { v: '$1,060', l: 'SEO drop from neglect' },
                   ].map((s, i) => (
                     <div key={i} className="border-l-2 border-orange/40 pl-4">
                       <p className="text-2xl md:text-3xl font-black text-white tracking-tight">
