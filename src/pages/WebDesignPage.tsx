@@ -49,8 +49,8 @@ export function WebDesignPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Fresno Web Design: High-Converting Custom Local Websites"
-        description="Custom, SEO-optimized web design for Fresno businesses. Mobile-first, fast loading, and built to convert visitors into customers."
+        title="Web Design Services Fresno: Custom, Fast, SEO-Ready | Boostify USA"
+        description="Custom web design in Fresno built to convert. Mobile-first, fast-loading, and SEO-optimized sites for Central Valley businesses. See pricing and examples."
         canonicalUrl="/web-design"
       />
       <SchemaJSON

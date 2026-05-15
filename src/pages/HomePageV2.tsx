@@ -78,8 +78,8 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Fresno Web Design Agency | Your Site Should Be Your #1 Closer"
-                description="Most Fresno businesses lose money on websites that don't convert. We fix that. Custom web design & SEO built to generate leads 24/7. See what we can do for you."
+                title="Web Design Fresno: Custom Sites + SEO That Convert | Boostify USA"
+                description="Top-rated Fresno web design and SEO. We build fast, mobile-first websites that rank on Google and turn visitors into customers. Get a free quote today."
                 canonicalUrl="/"
             >
                 <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
