@@ -194,9 +194,9 @@ export function Footer() {
               </li>
             </ul>
 
-            {/* By Business Type: compact keyword landing pages for specific audiences/industries. Same column as Service Areas to preserve grid. */}
+            {/* Maintenance Spokes: compact keyword landing pages for specific audiences and intents. Same column as Service Areas to preserve grid. */}
             <h4 className="font-bold text-white/70 text-[11px] uppercase tracking-wider mt-10 mb-4">
-              By Business Type
+              Maintenance
             </h4>
             <ul className="space-y-3 text-white/60 font-medium text-sm">
               <li>
@@ -206,6 +206,15 @@ export function Footer() {
                   title="Website maintenance for small business"
                 >
                   Small Business Maintenance
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/website-maintenance-cost"
+                  className="hover:text-orange transition-colors leading-snug inline-block"
+                  title="Website maintenance cost and pricing"
+                >
+                  Pricing &amp; Cost
                 </Link>
               </li>
             </ul>
