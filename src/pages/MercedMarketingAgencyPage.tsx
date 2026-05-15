@@ -35,7 +35,6 @@ const advertiserSchema = {
         "postalCode": "93722",
         "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [{ "@type": "City", "name": "Merced" }, { "@type": "City", "name": "Atwater" }, { "@type": "City", "name": "Fresno" }, { "@type": "City", "name": "Madera" }],
     "hasOfferCatalog": {
         "@type": "OfferCatalog", "name": "Digital Marketing Services", "itemListElement": [

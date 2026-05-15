@@ -35,7 +35,6 @@ const advertiserSchema = {
         "postalCode": "93722",
         "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [{ "@type": "City", "name": "Madera" }, { "@type": "City", "name": "Fresno" }, { "@type": "City", "name": "Clovis" }, { "@type": "City", "name": "Merced" }],
     "hasOfferCatalog": {
         "@type": "OfferCatalog", "name": "Digital Marketing Services", "itemListElement": [
@@ -93,7 +92,7 @@ export function MaderaMarketingAgencyPage() {
                                 Madera Marketing Agency
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Small Town. <span className="text-orange">Big Time Growth.</span>
+                                Madera Marketing Agency. <span className="text-orange">Small Town, Big-Time Growth.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Madera is growing, and your business should grow with it. Boostify
