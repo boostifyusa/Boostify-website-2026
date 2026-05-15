@@ -183,21 +183,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/merced-marketing-agency" className="hover:text-orange transition-colors">
-                  Merced Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/tulare-marketing-agency" className="hover:text-orange transition-colors">
-                  Tulare Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/sanger-marketing-agency" className="hover:text-orange transition-colors">
-                  Sanger Marketing
-                </Link>
-              </li>
-              <li>
                 <Link to="/modesto-web-design" className="hover:text-orange transition-colors">
                   Modesto Web Design
                 </Link>
@@ -205,6 +190,22 @@ export function Footer() {
               <li>
                 <Link to="/local-marketing" className="text-orange font-bold hover:text-white transition-colors">
                   View All Areas →
+                </Link>
+              </li>
+            </ul>
+
+            {/* By Business Type: compact keyword landing pages for specific audiences/industries. Same column as Service Areas to preserve grid. */}
+            <h4 className="font-bold text-white/70 text-[11px] uppercase tracking-wider mt-10 mb-4">
+              By Business Type
+            </h4>
+            <ul className="space-y-3 text-white/60 font-medium text-sm">
+              <li>
+                <Link
+                  to="/website-maintenance-small-business"
+                  className="hover:text-orange transition-colors leading-snug inline-block"
+                  title="Website maintenance for small business"
+                >
+                  Small Business Maintenance
                 </Link>
               </li>
             </ul>

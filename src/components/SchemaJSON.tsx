@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 interface SchemaJSONProps {
-    type: 'LocalBusiness' | 'Organization' | 'Service' | 'Article' | 'BreadcrumbList' | 'FAQPage' | 'CollectionPage';
+    type: 'LocalBusiness' | 'Organization' | 'Service' | 'Article' | 'BreadcrumbList' | 'FAQPage' | 'CollectionPage' | 'WebPage' | 'Product' | 'ItemList';
     data: Record<string, any>;
 }
 

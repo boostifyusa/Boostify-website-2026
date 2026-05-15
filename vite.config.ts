@@ -11,6 +11,7 @@ const dynamicRoutes = [
   '/local-seo',
   '/local-marketing',
   '/maintenance',
+  '/website-maintenance-small-business',
   '/about',
   '/contact',
   '/work',

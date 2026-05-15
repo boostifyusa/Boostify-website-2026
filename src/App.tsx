@@ -11,6 +11,7 @@ const WebDesignPage = lazy(() => import('./pages/WebDesignPage').then(module => 
 const LocalSEOPage = lazy(() => import('./pages/LocalSEOPage').then(module => ({ default: module.LocalSEOPage })));
 const LocalMarketingPage = lazy(() => import('./pages/LocalMarketingPage').then(module => ({ default: module.LocalMarketingPage })));
 const MaintenancePage = lazy(() => import('./pages/MaintenancePage').then(module => ({ default: module.MaintenancePage })));
+const WebsiteMaintenanceSmallBusinessPage = lazy(() => import('./pages/WebsiteMaintenanceSmallBusinessPage').then(module => ({ default: module.WebsiteMaintenanceSmallBusinessPage })));
 const AboutPage = lazy(() => import('./pages/AboutPage').then(module => ({ default: module.AboutPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then(module => ({ default: module.ContactPage })));
 const OurWorkPage = lazy(() => import('./pages/OurWorkPage').then(module => ({ default: module.OurWorkPage })));
@@ -80,6 +81,7 @@ export function App() {
               <Route path="/local-seo" element={<LocalSEOPage />} />
               <Route path="/local-marketing" element={<LocalMarketingPage />} />
               <Route path="/maintenance" element={<MaintenancePage />} />
+              <Route path="/website-maintenance-small-business" element={<WebsiteMaintenanceSmallBusinessPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/work" element={<OurWorkPage />} />
@@ -109,7 +111,7 @@ export function App() {
               <Route path="/modesto-web-design" element={<WebDesignModestoPage />} />
               <Route path="/campaign" element={<CampaignLandingPage />} />
 
-              {/* SEO 301 Redirects — old Fresno pages → generic service pages */}
+              {/* SEO 301 Redirects: old Fresno pages -> generic service pages */}
               <Route path="/fresno-marketing-agency" element={<Navigate to="/local-marketing" replace />} />
               <Route path="/fresno-web-design" element={<Navigate to="/web-design" replace />} />
 
