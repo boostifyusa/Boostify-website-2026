@@ -148,9 +148,13 @@ export function WebDesignLocationTemplate() {
 
                         {/* Headline: stacked, massive */}
                         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-5xl sm:text-6xl md:text-8xl font-black text-dark tracking-tighter leading-[0.9] mb-6">
-                            {CITY} Web Design That<br />
-                            <span className="text-orange">Makes You Money.</span>
+                            className="text-5xl sm:text-6xl lg:text-7xl font-black text-dark tracking-tighter leading-[0.95] mb-6">
+                            {CITY} Web Design<br />
+                            That Makes You{' '}
+                            <span className="relative inline-block whitespace-nowrap">
+                                <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
+                                <span className="text-orange relative z-10">Money.</span>
+                            </span>
                         </motion.h1>
 
                         {/* Subhead */}
@@ -163,28 +167,22 @@ export function WebDesignLocationTemplate() {
 
                         {/* CTAs: centered */}
                         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-                            className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-                            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-                                Get a Free Quote <ArrowRight className="w-5 h-5 ml-2" />
+                            className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                            <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg shadow-orange/20 hover:-translate-y-1">
+                                Get My Free Quote <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                             </Link>
                             <Link to="/work" className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
                                 See Our Work
                             </Link>
                         </motion.div>
 
-                        {/* Stats strip: horizontal metrics bar */}
+                        {/* De-risking trust row (replaces stats strip) */}
                         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}
-                            className="flex flex-wrap justify-center gap-8 md:gap-14 mb-16">
-                            {[
-                                { value: '<2s', label: 'Load Time' },
-                                { value: '95+', label: 'PageSpeed Score' },
-                                { value: '3.2x', label: 'More Conversions' },
-                                { value: '100%', label: 'Hand-Coded' },
-                            ].map((stat, i) => (
-                                <div key={i} className="text-center">
-                                    <div className="text-3xl md:text-4xl font-black text-dark tracking-tight">{stat.value}</div>
-                                    <div className="text-xs font-bold text-gray uppercase tracking-wider mt-1">{stat.label}</div>
-                                </div>
+                            className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2.5 mb-16">
+                            {['No Contracts', 'You Own Everything', 'Pay When You Love It', 'Launch in ~2 Weeks'].map((item, i) => (
+                                <span key={i} className="inline-flex items-center gap-2 text-sm font-bold text-dark/70">
+                                    <Check size={15} className="text-green-500" strokeWidth={3} /> {item}
+                                </span>
                             ))}
                         </motion.div>
                     </div>
@@ -205,40 +203,68 @@ export function WebDesignLocationTemplate() {
                                 <div><div className="text-xs font-black text-white leading-none">Mobile-First</div><div className="text-[10px] text-white/50 font-medium">Always</div></div>
                             </motion.div>
 
-                            {/* Browser window */}
-                            <div className="bg-dark rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
-                                <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/10">
+                            {/* Browser window: polished mini-site preview */}
+                            <div className="bg-white rounded-2xl border border-gray-light shadow-2xl overflow-hidden text-left">
+                                {/* Browser chrome */}
+                                <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-light">
                                     <div className="flex gap-1.5">
-                                        <div className="w-3 h-3 rounded-full bg-red-400/60" />
-                                        <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                                        <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                                        <div className="w-3 h-3 rounded-full bg-red-400" />
+                                        <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                                        <div className="w-3 h-3 rounded-full bg-green-400" />
                                     </div>
-                                    <div className="flex-1 mx-3 bg-white/10 rounded-lg px-3 py-1 text-xs text-white/40 font-mono">yourbusiness.com</div>
+                                    <div className="flex-1 mx-3 bg-white border border-gray-light rounded-lg px-3 py-1 text-xs text-gray font-mono flex items-center gap-1.5">
+                                        <span className="text-green-500 text-[8px]">●</span> goldenvalleydental.com
+                                    </div>
                                 </div>
-                                <div className="p-6 md:p-8 space-y-4">
-                                    <div className="flex items-center justify-between">
-                                        <div className="w-24 h-3 bg-orange/40 rounded-full" />
-                                        <div className="flex gap-3"><div className="w-14 h-2 bg-white/15 rounded-full" /><div className="w-14 h-2 bg-white/15 rounded-full" /><div className="w-14 h-2 bg-white/15 rounded-full" /><div className="w-20 h-7 bg-orange/40 rounded-md" /></div>
+
+                                {/* Site nav */}
+                                <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-6 h-6 rounded-md bg-orange" />
+                                        <div className="w-20 h-2.5 bg-dark/80 rounded-full" />
                                     </div>
-                                    <div className="pt-8 pb-4 space-y-3 max-w-md">
-                                        <div className="w-4/5 h-6 bg-white/20 rounded-full" />
-                                        <div className="w-3/5 h-6 bg-orange/30 rounded-full" />
-                                        <div className="w-3/4 h-2.5 bg-white/10 rounded-full mt-5" />
-                                        <div className="w-2/3 h-2.5 bg-white/10 rounded-full" />
-                                        <div className="flex gap-3 pt-5">
-                                            <div className="w-32 h-9 bg-orange/50 rounded-lg" />
-                                            <div className="w-32 h-9 bg-white/10 rounded-lg border border-white/10" />
+                                    <div className="hidden sm:flex items-center gap-4">
+                                        <div className="w-9 h-2 bg-gray-200 rounded-full" />
+                                        <div className="w-9 h-2 bg-gray-200 rounded-full" />
+                                        <div className="w-9 h-2 bg-gray-200 rounded-full" />
+                                        <div className="px-3 py-1.5 bg-orange rounded-md text-[10px] font-black text-white">Book Now</div>
+                                    </div>
+                                </div>
+
+                                {/* Site hero */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 py-7 items-center bg-gradient-to-br from-orange/[0.05] to-white">
+                                    <div>
+                                        <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-orange/10 text-orange text-[9px] font-black uppercase tracking-wider mb-3">★ Trusted in {CITY}</div>
+                                        <div className="text-xl md:text-2xl font-black text-dark leading-tight tracking-tight mb-2">Healthy Smiles,<br />Built to Last.</div>
+                                        <div className="space-y-1.5 mb-4">
+                                            <div className="w-full h-1.5 bg-gray-200 rounded-full" />
+                                            <div className="w-4/5 h-1.5 bg-gray-200 rounded-full" />
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="px-3 py-1.5 bg-orange rounded-md text-[10px] font-black text-white shadow-sm shadow-orange/30">Book Appointment</div>
+                                            <div className="px-3 py-1.5 border border-gray-200 rounded-md text-[10px] font-bold text-dark/60">Call Now</div>
                                         </div>
                                     </div>
-                                    <div className="grid grid-cols-3 gap-4 pt-4">
-                                        {[1, 2, 3].map(i => (
-                                            <div key={i} className="bg-white/5 rounded-lg p-4 border border-white/5">
-                                                <div className="w-10 h-10 bg-orange/20 rounded-lg mb-3" />
-                                                <div className="w-full h-2.5 bg-white/10 rounded-full mb-2" />
-                                                <div className="w-3/4 h-2.5 bg-white/10 rounded-full" />
+                                    <div className="relative">
+                                        <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-dark to-dark/80 flex items-center justify-center overflow-hidden">
+                                            <Smartphone size={26} className="text-white/20" />
+                                            <div className="absolute bottom-2 left-2 bg-white rounded-lg px-2 py-1 flex items-center gap-1 shadow-md">
+                                                <span className="text-[9px] font-black text-dark">5.0</span>
+                                                <span className="text-[8px] text-yellow-400">★★★★★</span>
                                             </div>
-                                        ))}
+                                        </div>
                                     </div>
+                                </div>
+
+                                {/* Site feature strip */}
+                                <div className="grid grid-cols-3 gap-3 px-6 pb-6">
+                                    {[Gauge, ShieldCheck, Search].map((Icon, i) => (
+                                        <div key={i} className="rounded-lg border border-gray-100 p-3 flex flex-col gap-2">
+                                            <div className="w-7 h-7 rounded-md bg-orange/10 flex items-center justify-center"><Icon size={14} className="text-orange" strokeWidth={2.5} /></div>
+                                            <div className="w-full h-1.5 bg-gray-200 rounded-full" />
+                                            <div className="w-2/3 h-1.5 bg-gray-100 rounded-full" />
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                             <div className="absolute -bottom-6 -right-6 w-full h-full bg-orange/5 rounded-3xl -z-10 hidden md:block" />
