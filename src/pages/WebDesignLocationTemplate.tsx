@@ -133,143 +133,58 @@ export function WebDesignLocationTemplate() {
             <Navigation />
 
             <main>
-                {/* ───── HERO: Centered editorial layout ───── */}
-                <section className="relative overflow-hidden pt-32 pb-0 md:pt-44">
-                    {/* Animated gradient bg */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-orange/[0.03] via-white to-white" />
-                    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-orange/[0.06] rounded-full blur-[150px] pointer-events-none" />
+                {/* ───── HERO ───── */}
+                <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+                    {/* Topographic background pattern (matches the rest of the site) */}
+                    <div
+                        className="absolute inset-0 pointer-events-none opacity-[0.35]"
+                        style={{ backgroundImage: 'url(/hero-bg-pattern.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 100%)' }} />
 
-                    <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
+                    <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
                         {/* Badge */}
-                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8 mx-auto">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                             <Code2 size={14} strokeWidth={3} /> Hand-Coded in {CITY}
-                        </motion.div>
+                        </div>
 
-                        {/* Headline: stacked, massive */}
-                        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-5xl sm:text-6xl lg:text-7xl font-black text-dark tracking-tighter leading-[0.95] mb-6">
+                        {/* Headline */}
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-dark tracking-tighter leading-[0.95] mb-6">
                             {CITY} Web Design<br />
                             That Makes You{' '}
                             <span className="relative inline-block whitespace-nowrap">
                                 <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
                                 <span className="text-orange relative z-10">Money.</span>
                             </span>
-                        </motion.h1>
+                        </h1>
 
                         {/* Subhead */}
-                        <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
-                            className="text-lg md:text-xl text-gray font-medium leading-relaxed max-w-2xl mx-auto mb-10">
+                        <p className="text-lg md:text-xl text-gray font-medium leading-relaxed max-w-2xl mx-auto mb-10">
                             {CITY} web design that turns visitors into paying customers, not just
                             pretty pages that sit there. We hand-code fast, conversion-focused
                             websites for {REGION} businesses.
-                        </motion.p>
+                        </p>
 
-                        {/* CTAs: centered */}
-                        <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-                            className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                            <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg shadow-orange/20 hover:-translate-y-1">
+                        {/* CTAs */}
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                            <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-colors shadow-lg shadow-orange/20">
                                 Get My Free Quote <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                             </Link>
-                            <Link to="/work" className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
+                            <Link to="/work" className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-colors">
                                 See Our Work
                             </Link>
-                        </motion.div>
+                        </div>
 
-                        {/* De-risking trust row (replaces stats strip) */}
-                        <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}
-                            className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2.5 mb-16">
+                        {/* De-risking trust row */}
+                        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2.5">
                             {['No Contracts', 'You Own Everything', 'Pay When You Love It', 'Launch in ~2 Weeks'].map((item, i) => (
                                 <span key={i} className="inline-flex items-center gap-2 text-sm font-bold text-dark/70">
                                     <Check size={15} className="text-green-500" strokeWidth={3} /> {item}
                                 </span>
                             ))}
-                        </motion.div>
-                    </div>
-
-                    {/* Browser mockup: centered showpiece, overlaps into next section */}
-                    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
-                        className="max-w-4xl mx-auto px-6 relative z-10 -mb-32 md:-mb-48">
-                        <div className="relative">
-                            {/* Floating badges */}
-                            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.2, duration: 0.4 }}
-                                className="absolute -top-4 -right-4 z-20 bg-white rounded-xl shadow-lg border border-gray-light px-4 py-2.5 flex items-center gap-2 hidden md:flex">
-                                <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center"><Gauge size={16} className="text-green-500" strokeWidth={3} /></div>
-                                <div><div className="text-xs font-black text-dark leading-none">98/100</div><div className="text-[10px] text-gray font-medium">PageSpeed</div></div>
-                            </motion.div>
-                            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.4, duration: 0.4 }}
-                                className="absolute -bottom-4 -left-4 z-20 bg-dark rounded-xl shadow-lg px-4 py-2.5 flex items-center gap-2 hidden md:flex">
-                                <div className="w-8 h-8 rounded-full bg-orange/20 flex items-center justify-center"><Smartphone size={14} className="text-orange" strokeWidth={3} /></div>
-                                <div><div className="text-xs font-black text-white leading-none">Mobile-First</div><div className="text-[10px] text-white/50 font-medium">Always</div></div>
-                            </motion.div>
-
-                            {/* Browser window: polished mini-site preview */}
-                            <div className="bg-white rounded-2xl border border-gray-light shadow-2xl overflow-hidden text-left">
-                                {/* Browser chrome */}
-                                <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-light">
-                                    <div className="flex gap-1.5">
-                                        <div className="w-3 h-3 rounded-full bg-red-400" />
-                                        <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                                        <div className="w-3 h-3 rounded-full bg-green-400" />
-                                    </div>
-                                    <div className="flex-1 mx-3 bg-white border border-gray-light rounded-lg px-3 py-1 text-xs text-gray font-mono flex items-center gap-1.5">
-                                        <span className="text-green-500 text-[8px]">●</span> goldenvalleydental.com
-                                    </div>
-                                </div>
-
-                                {/* Site nav */}
-                                <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-md bg-orange" />
-                                        <div className="w-20 h-2.5 bg-dark/80 rounded-full" />
-                                    </div>
-                                    <div className="hidden sm:flex items-center gap-4">
-                                        <div className="w-9 h-2 bg-gray-200 rounded-full" />
-                                        <div className="w-9 h-2 bg-gray-200 rounded-full" />
-                                        <div className="w-9 h-2 bg-gray-200 rounded-full" />
-                                        <div className="px-3 py-1.5 bg-orange rounded-md text-[10px] font-black text-white">Book Now</div>
-                                    </div>
-                                </div>
-
-                                {/* Site hero */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 py-7 items-center bg-gradient-to-br from-orange/[0.05] to-white">
-                                    <div>
-                                        <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-orange/10 text-orange text-[9px] font-black uppercase tracking-wider mb-3">★ Trusted in {CITY}</div>
-                                        <div className="text-xl md:text-2xl font-black text-dark leading-tight tracking-tight mb-2">Healthy Smiles,<br />Built to Last.</div>
-                                        <div className="space-y-1.5 mb-4">
-                                            <div className="w-full h-1.5 bg-gray-200 rounded-full" />
-                                            <div className="w-4/5 h-1.5 bg-gray-200 rounded-full" />
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="px-3 py-1.5 bg-orange rounded-md text-[10px] font-black text-white shadow-sm shadow-orange/30">Book Appointment</div>
-                                            <div className="px-3 py-1.5 border border-gray-200 rounded-md text-[10px] font-bold text-dark/60">Call Now</div>
-                                        </div>
-                                    </div>
-                                    <div className="relative">
-                                        <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-dark to-dark/80 flex items-center justify-center overflow-hidden">
-                                            <Smartphone size={26} className="text-white/20" />
-                                            <div className="absolute bottom-2 left-2 bg-white rounded-lg px-2 py-1 flex items-center gap-1 shadow-md">
-                                                <span className="text-[9px] font-black text-dark">5.0</span>
-                                                <span className="text-[8px] text-yellow-400">★★★★★</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Site feature strip */}
-                                <div className="grid grid-cols-3 gap-3 px-6 pb-6">
-                                    {[Gauge, ShieldCheck, Search].map((Icon, i) => (
-                                        <div key={i} className="rounded-lg border border-gray-100 p-3 flex flex-col gap-2">
-                                            <div className="w-7 h-7 rounded-md bg-orange/10 flex items-center justify-center"><Icon size={14} className="text-orange" strokeWidth={2.5} /></div>
-                                            <div className="w-full h-1.5 bg-gray-200 rounded-full" />
-                                            <div className="w-2/3 h-1.5 bg-gray-100 rounded-full" />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="absolute -bottom-6 -right-6 w-full h-full bg-orange/5 rounded-3xl -z-10 hidden md:block" />
                         </div>
-                    </motion.div>
+                    </div>
                 </section>
 
                 <TrustBadges />
