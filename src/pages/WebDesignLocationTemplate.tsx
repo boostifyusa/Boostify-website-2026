@@ -42,7 +42,7 @@ export function WebDesignLocationTemplate() {
     ];
 
     const features = [
-        { icon: Zap, title: 'Sub-2s Load Time', desc: 'Every millisecond counts. Our sites load in under 2 seconds, faster than 95% of competitors.' },
+        { icon: Zap, title: 'Sub-2s Load Time', desc: 'Every millisecond counts. We hand-code lean sites that load in under 2 seconds.' },
         { icon: Smartphone, title: 'Mobile-First Design', desc: "Designed for thumbs first, mice second. Over 65% of traffic is mobile: we don't treat it as an afterthought." },
         { icon: Search, title: 'SEO Built-In', desc: 'Schema markup, meta tags, semantic HTML, image optimization: SEO is in the foundation, not bolted on after.' },
         { icon: Lock, title: 'Security Hardened', desc: 'SSL certificates, secure headers, automated backups. Your site is locked down from day one.' },
@@ -63,7 +63,7 @@ export function WebDesignLocationTemplate() {
     const tabs = [
         {
             label: 'Speed', icon: Timer,
-            title: 'Lightning Fast Load Times',
+            title: 'Built for Speed',
             desc: "Slow websites kill revenue. 53% of mobile users abandon sites that take over 3 seconds to load. Our hand-coded sites load in under 2 seconds, giving your visitors zero reason to leave.",
             stat: '1.4s', statLabel: 'Average Load Time',
             visual: [
@@ -99,7 +99,7 @@ export function WebDesignLocationTemplate() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title={`${CITY} Web Design: Custom Sites Built to Convert`}
+                title={`${CITY} Web Design | Custom Sites That Convert | Boostify USA`}
                 description={`Custom, SEO-optimized web design for ${CITY} businesses. Mobile-first, fast-loading sites built to turn local visitors into paying customers.`}
                 canonicalUrl={`/${CITY_SLUG}-web-design`}
             />

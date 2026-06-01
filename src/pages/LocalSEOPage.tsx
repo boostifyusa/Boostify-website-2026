@@ -101,7 +101,7 @@ export function LocalSEOPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="SEO Fresno: Local SEO Services That Rank You on Google | Boostify USA"
+        title="Local SEO Fresno | Get Found on Google | Boostify USA"
         description="Fresno local SEO services that get you found on Google Maps and search. Proven results for Central Valley businesses. Free SEO audit included."
         canonicalUrl="/local-seo"
       />

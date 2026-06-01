@@ -66,7 +66,7 @@ export function LocalMarketingPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Fresno Marketing Agency: Generate Consistent High-Quality Leads"
+        title="Fresno Marketing Agency | Consistent High-Quality Leads | Boostify USA"
         description="Top Fresno marketing agency. Maximize your ROI with precision-targeted Google Ads and Local Service Ads. We help local businesses get more leads instantly."
         canonicalUrl="/local-marketing"
       />

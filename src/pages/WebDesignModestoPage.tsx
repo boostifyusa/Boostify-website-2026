@@ -118,7 +118,7 @@ export function WebDesignModestoPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Website Design Modesto | Top Web Design Agencies | Boostify USA"
+                title="Website Design Modesto | Custom Sites That Convert | Boostify USA"
                 description="Looking for Website Design in Modesto? We are a top web design agency specializing in Ecommerce, Brand Website Design, and Diseño Web."
                 canonicalUrl="/modesto-web-design"
             />

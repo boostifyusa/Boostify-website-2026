@@ -49,7 +49,7 @@ export function WebDesignPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Web Design: High-Converting Custom Local Websites"
+        title="Web Design | High-Converting Custom Websites | Boostify USA"
         description="Custom, hand-coded web design for Central Valley businesses. Fast, mobile-first, and SEO-ready sites built to turn visitors into customers."
         canonicalUrl="/web-design"
       />

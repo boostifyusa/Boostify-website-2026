@@ -626,7 +626,7 @@ export function SEOAuditPage() {
     return (
         <div className="min-h-screen bg-slate-50 selection:bg-orange selection:text-white font-sans">
             <SeoHead
-                title="Free Fresno SEO Audit: Instant Visibility Report | Boostify USA"
+                title="Free Fresno SEO Audit | Instant Visibility Report | Boostify USA"
                 description="Get a free SEO audit for your Fresno business in under 60 seconds. See why competitors outrank you on Google Maps and how to fix it. No signup required."
                 canonicalUrl="/seo-audit"
             />

@@ -162,7 +162,7 @@ export function WebsiteMaintenanceSmallBusinessPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Website Maintenance for Small Business: From $99/mo, No Contract"
+        title="Small Business Website Maintenance | From $99/mo, No Contract | Boostify USA"
         description="Honest website maintenance for small businesses. From $99/mo, no contracts. Daily backups, security, same-day edits, 4-hour SLA. 5-star rated on Google."
         canonicalUrl="/website-maintenance-small-business"
         keywords="website maintenance for small business, small business website maintenance, affordable website maintenance, website maintenance pricing, website maintenance cost for small business, wordpress maintenance small business, website maintenance plans"

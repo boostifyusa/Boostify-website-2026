@@ -97,7 +97,7 @@ export function MaintenancePage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Website Maintenance Services: Plans From $99/mo, No Contract"
+        title="Website Maintenance | Plans From $99/mo, No Contract | Boostify USA"
         description="Website maintenance services that keep your site fast, secure, and updated. Plans from $99/month, no contracts. Daily backups, 60-second uptime monitoring, same-day edits."
         canonicalUrl="/maintenance"
         keywords="website maintenance services, website maintenance, website maintenance plans, website maintenance company, wordpress maintenance services, website maintenance pricing"

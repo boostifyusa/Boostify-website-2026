@@ -87,7 +87,7 @@ export function TulareMarketingAgencyPage() {
     }, []);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Tulare Marketing Agency: Turn Clicks Into Customers" description="Boostify USA is Tulare's results-driven marketing agency. Custom websites, local SEO, and Google Ads that grow Tulare County businesses." canonicalUrl="/tulare-marketing-agency" />
+            <SeoHead title="Tulare Marketing Agency | Turn Clicks Into Customers | Boostify USA" description="Boostify USA is Tulare's results-driven marketing agency. Custom websites, local SEO, and Google Ads that grow Tulare County businesses." canonicalUrl="/tulare-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

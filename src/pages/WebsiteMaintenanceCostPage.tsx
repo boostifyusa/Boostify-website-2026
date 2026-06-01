@@ -125,7 +125,7 @@ export function WebsiteMaintenanceCostPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Website Maintenance Cost: Real Pricing in 2026 (No Quotes Needed)"
+        title="Website Maintenance Cost | Real Pricing, No Quote Needed | Boostify USA"
         description="Honest website maintenance pricing for 2026. Plans from $99/month, no contracts. See exactly what each tier costs and includes. No quote forms, no sales calls required."
         canonicalUrl="/website-maintenance-cost"
         keywords="website maintenance cost, website maintenance pricing, charges for website maintenance, price for website maintenance, website maintenance cost for small business, wordpress maintenance cost"
