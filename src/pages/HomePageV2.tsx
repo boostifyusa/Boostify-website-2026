@@ -78,8 +78,8 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Web Design Fresno: Custom Sites + SEO That Convert | Boostify USA"
-                description="Top-rated Fresno web design and SEO. We build fast, mobile-first websites that rank on Google and turn visitors into customers. Get a free quote today."
+                title="Boostify USA: Web Design & Local Marketing in Fresno"
+                description="Fresno's web design and local marketing studio. We build fast, SEO-ready websites that turn Central Valley visitors into paying customers."
                 canonicalUrl="/"
             >
                 <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
@@ -285,7 +285,7 @@ export function HomePageV2() {
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
                             <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">HQ & Local Reach</div>
                             <div className="text-3xl font-black text-dark tracking-tighter">
-                                <Link to="/web-design" className="hover:text-orange transition-colors">Fresno, CA</Link>
+                                <Link to="/fresno-web-design" className="hover:text-orange transition-colors">Fresno, CA</Link>
                             </div>
                         </div>
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">

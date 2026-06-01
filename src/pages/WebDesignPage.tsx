@@ -49,14 +49,14 @@ export function WebDesignPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Web Design Services Fresno: Custom, Fast, SEO-Ready | Boostify USA"
-        description="Custom web design in Fresno built to convert. Mobile-first, fast-loading, and SEO-optimized sites for Central Valley businesses. See pricing and examples."
+        title="Web Design: High-Converting Custom Local Websites"
+        description="Custom, hand-coded web design for Central Valley businesses. Fast, mobile-first, and SEO-ready sites built to turn visitors into customers."
         canonicalUrl="/web-design"
       />
       <SchemaJSON
         type="Service"
         data={{
-          name: "Fresno Web Design",
+          name: "Web Design",
           description: "Professional web design services for local businesses in Fresno, CA.",
           provider: {
             "@type": "ProfessionalService",
@@ -126,10 +126,10 @@ export function WebDesignPage() {
 
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                Fresno Web Design
+                Custom Web Design
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                Fresno Web Design That Works As{' '}
+                Web Design That Works As{' '}
                 <span className="text-orange">Hard As You Do.</span>
               </h1>
               <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
@@ -681,7 +681,11 @@ export function WebDesignPage() {
                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
                   Most designers don't know SEO. We build every site with the
                   proper structure, schema markup, and local keywords needed to
-                  rank in Fresno and beyond.
+                  rank. Based in Fresno? See our dedicated{' '}
+                  <Link to="/fresno-web-design" className="text-orange font-bold hover:underline">
+                    Fresno web design
+                  </Link>{' '}
+                  services.
                 </p>
                 <ul className="space-y-3">
                   {[

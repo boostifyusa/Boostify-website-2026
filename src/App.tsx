@@ -41,6 +41,7 @@ const MercedMarketingAgencyPage = lazy(() => import('./pages/MercedMarketingAgen
 const TulareMarketingAgencyPage = lazy(() => import('./pages/TulareMarketingAgencyPage').then(module => ({ default: module.TulareMarketingAgencyPage })));
 const SangerMarketingAgencyPage = lazy(() => import('./pages/SangerMarketingAgencyPage').then(module => ({ default: module.SangerMarketingAgencyPage })));
 const WebDesignModestoPage = lazy(() => import('./pages/WebDesignModestoPage').then(module => ({ default: module.WebDesignModestoPage })));
+const WebDesignFresnoPage = lazy(() => import('./pages/WebDesignLocationTemplate').then(module => ({ default: module.WebDesignLocationTemplate })));
 const CampaignLandingPage = lazy(() => import('./pages/CampaignLandingPage').then(module => ({ default: module.CampaignLandingPage })));
 
 
@@ -111,11 +112,11 @@ export function App() {
               <Route path="/tulare-marketing-agency" element={<TulareMarketingAgencyPage />} />
               <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
               <Route path="/modesto-web-design" element={<WebDesignModestoPage />} />
+              <Route path="/fresno-web-design" element={<WebDesignFresnoPage />} />
               <Route path="/campaign" element={<CampaignLandingPage />} />
 
-              {/* SEO 301 Redirects: old Fresno pages -> generic service pages */}
+              {/* SEO 301 Redirect: legacy Fresno marketing URL -> local marketing hub */}
               <Route path="/fresno-marketing-agency" element={<Navigate to="/local-marketing" replace />} />
-              <Route path="/fresno-web-design" element={<Navigate to="/web-design" replace />} />
 
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

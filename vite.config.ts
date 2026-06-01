@@ -31,7 +31,8 @@ const dynamicRoutes = [
   '/merced-marketing-agency',
   '/tulare-marketing-agency',
   '/sanger-marketing-agency',
-  '/modesto-web-design'
+  '/modesto-web-design',
+  '/fresno-web-design'
 ]
 
 // https://vitejs.dev/config/
