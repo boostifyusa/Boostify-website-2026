@@ -143,7 +143,6 @@ loadAuditConfig();
 // ─── SEO 301 Redirects ──────────────────────────────────────────────
 const seoRedirects = {
     '/fresno-marketing-agency': '/local-marketing',
-    '/fresno-web-design': '/web-design',
 };
 app.use((req, res, next) => {
     const target = seoRedirects[req.path];
