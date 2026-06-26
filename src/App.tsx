@@ -44,6 +44,12 @@ const WebDesignModestoPage = lazy(() => import('./pages/WebDesignModestoPage').t
 const WebDesignFresnoPage = lazy(() => import('./pages/WebDesignLocationTemplate').then(module => ({ default: module.WebDesignLocationTemplate })));
 const CampaignLandingPage = lazy(() => import('./pages/CampaignLandingPage').then(module => ({ default: module.CampaignLandingPage })));
 
+// Table Mountain 2026 — /check QR landing flow
+const CheckHubPage = lazy(() => import('./pages/check/CheckHubPage').then(module => ({ default: module.CheckHubPage })));
+const CheckConsultPage = lazy(() => import('./pages/check/CheckConsultPage').then(module => ({ default: module.CheckConsultPage })));
+const CheckAuditPage = lazy(() => import('./pages/check/CheckAuditPage').then(module => ({ default: module.CheckAuditPage })));
+const CheckAppointmentPage = lazy(() => import('./pages/check/CheckAppointmentPage').then(module => ({ default: module.CheckAppointmentPage })));
+
 
 export function ScrollToTopOrHash() {
   const { pathname, hash } = useLocation();
@@ -114,6 +120,12 @@ export function App() {
               <Route path="/modesto-web-design" element={<WebDesignModestoPage />} />
               <Route path="/fresno-web-design" element={<WebDesignFresnoPage />} />
               <Route path="/campaign" element={<CampaignLandingPage />} />
+
+              {/* Table Mountain 2026 — QR landing flow (fixes the deck/banner /check 404) */}
+              <Route path="/check" element={<CheckHubPage />} />
+              <Route path="/check/consult" element={<CheckConsultPage />} />
+              <Route path="/check/audit" element={<CheckAuditPage />} />
+              <Route path="/check/appointment" element={<CheckAppointmentPage />} />
 
               {/* SEO 301 Redirect: legacy Fresno marketing URL -> local marketing hub */}
               <Route path="/fresno-marketing-agency" element={<Navigate to="/local-marketing" replace />} />
