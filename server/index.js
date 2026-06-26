@@ -287,6 +287,12 @@ app.post('/api/contact', async (req, res) => {
 
         console.log('Received Form Data:', { name, email, service, consentPromo, consentService });
 
+        // Durable capture FIRST — log every real submission to disk before
+        // reCAPTCHA / Brevo can reject or fail, so a lead is never lost.
+        if (email || phone || name) {
+            logLead({ source: service || 'Contact Form', name, email, phone, service, message, consentPromo, consentService });
+        }
+
         // Basic validation
         if (!name || !email || !message) {
             return res.status(400).json({ error: 'Missing required fields' });
@@ -706,23 +712,24 @@ app.post('/api/audit/check-email', (req, res) => {
     res.status(200).json({ allowed: true });
 });
 
-// ─── Durable audit-lead capture ──────────────────────────────────────
-// Append every lead's form data to disk the moment we see it, BEFORE any
-// email/API call can fail. Guarantees we never lose a lead even if Brevo,
-// the network, or the audit itself errors out afterward.
-const AUDIT_LEADS_PATH = path.join(__dirname, 'audit-leads.json');
-function captureAuditLead(lead) {
+// ─── Durable lead capture ────────────────────────────────────────────
+// Append EVERY lead to disk the moment it arrives, BEFORE any reCAPTCHA /
+// email / external API step that could reject or fail. Guarantees no lead is
+// ever lost even if Brevo, reCAPTCHA, the network, or the audit errors out.
+// One file for all forms: contact, /check consult & appointment, SEO audit.
+const LEADS_PATH = path.join(__dirname, 'leads.json');
+function logLead(record) {
     try {
         let leads = [];
-        if (fs.existsSync(AUDIT_LEADS_PATH)) {
-            const raw = fs.readFileSync(AUDIT_LEADS_PATH, 'utf-8').trim();
+        if (fs.existsSync(LEADS_PATH)) {
+            const raw = fs.readFileSync(LEADS_PATH, 'utf-8').trim();
             if (raw) leads = JSON.parse(raw);
         }
-        leads.push({ ...lead, capturedAt: new Date().toISOString() });
-        fs.writeFileSync(AUDIT_LEADS_PATH, JSON.stringify(leads, null, 2), 'utf-8');
-        console.log(`Captured audit lead to disk: ${lead.email} (${leads.length} total)`);
+        leads.push({ ...record, capturedAt: new Date().toISOString() });
+        fs.writeFileSync(LEADS_PATH, JSON.stringify(leads, null, 2), 'utf-8');
+        console.log(`Lead logged to disk [${record.source || 'unknown'}]: ${record.email || record.phone || 'no-contact'} (${leads.length} total)`);
     } catch (err) {
-        console.error('captureAuditLead error (non-fatal):', err.message);
+        console.error('logLead error (non-fatal):', err.message);
     }
 }
 
@@ -735,7 +742,7 @@ app.post('/api/audit/send-pin', async (req, res) => {
         if (!email) return res.status(400).json({ error: 'Email is required' });
 
         // Durable capture FIRST — survives any later failure.
-        captureAuditLead({ email, name, phone, businessName, stage: 'pin-requested' });
+        logLead({ source: 'SEO Audit (PIN requested)', email, name, phone, businessName });
 
         if (!process.env.BREVO_API_KEY) {
             return res.status(500).json({ error: 'Server configuration error' });
