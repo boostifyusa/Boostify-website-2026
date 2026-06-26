@@ -706,6 +706,26 @@ app.post('/api/audit/check-email', (req, res) => {
     res.status(200).json({ allowed: true });
 });
 
+// ─── Durable audit-lead capture ──────────────────────────────────────
+// Append every lead's form data to disk the moment we see it, BEFORE any
+// email/API call can fail. Guarantees we never lose a lead even if Brevo,
+// the network, or the audit itself errors out afterward.
+const AUDIT_LEADS_PATH = path.join(__dirname, 'audit-leads.json');
+function captureAuditLead(lead) {
+    try {
+        let leads = [];
+        if (fs.existsSync(AUDIT_LEADS_PATH)) {
+            const raw = fs.readFileSync(AUDIT_LEADS_PATH, 'utf-8').trim();
+            if (raw) leads = JSON.parse(raw);
+        }
+        leads.push({ ...lead, capturedAt: new Date().toISOString() });
+        fs.writeFileSync(AUDIT_LEADS_PATH, JSON.stringify(leads, null, 2), 'utf-8');
+        console.log(`Captured audit lead to disk: ${lead.email} (${leads.length} total)`);
+    } catch (err) {
+        console.error('captureAuditLead error (non-fatal):', err.message);
+    }
+}
+
 // Send PIN to user's email
 app.post('/api/audit/send-pin', async (req, res) => {
     try {
@@ -713,6 +733,9 @@ app.post('/api/audit/send-pin', async (req, res) => {
         const { email, name, phone, businessName } = req.body;
 
         if (!email) return res.status(400).json({ error: 'Email is required' });
+
+        // Durable capture FIRST — survives any later failure.
+        captureAuditLead({ email, name, phone, businessName, stage: 'pin-requested' });
 
         if (!process.env.BREVO_API_KEY) {
             return res.status(500).json({ error: 'Server configuration error' });
@@ -806,7 +829,7 @@ app.post('/api/audit/send-pin', async (req, res) => {
               </div>
               
               <p style="margin:0;font-size:14px;color:#888888;">
-                This code will expire in 15 minutes.
+                Enter this code on the audit page to see your rankings.
               </p>
             </td>
           </tr>
@@ -848,10 +871,14 @@ app.post('/api/audit/send-pin', async (req, res) => {
         });
 
         if (!emailRes.ok) {
-            const errData = await emailRes.json();
+            const errData = await emailRes.json().catch(() => ({}));
             console.error('Brevo PIN Email Error:', errData);
-            // Still continue — PIN is in memory and visible in server logs for dev
             console.log(`⚠️  Email failed but PIN is available: ${pin} (for ${email})`);
+            // Don't lie to the user with success:true — the lead is already
+            // captured on disk, so tell them to retry or call us.
+            return res.status(502).json({
+                error: "We couldn't send your code right now. Please try again in a moment, or call us at (559) 785-3834 and we'll run it with you."
+            });
         }
 
         // Also notify admin about the new lead
@@ -932,7 +959,7 @@ app.get('/api/test-email-view', (req, res) => {
               </div>
               
               <p style="margin:0;font-size:14px;color:#888888;">
-                This code will expire in 15 minutes.
+                Enter this code on the audit page to see your rankings.
               </p>
             </td>
           </tr>

@@ -1,6 +1,6 @@
 {
     "business": {
-        "maxRuns": 5,
+        "maxRuns": 25,
         "limitResetDays": 30
     },
     "pin": {
