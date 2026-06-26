@@ -122,6 +122,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/blog/best-web-design-agencies-fresno"
+                  className="hover:text-orange transition-colors">
+
+                  Top 10 Fresno Web Design Agencies
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/blog/free-contractor-tools"
                   className="hover:text-orange transition-colors">
 

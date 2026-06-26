@@ -23,6 +23,13 @@ import { NotFoundPage } from './NotFoundPage';
 
 const relatedPosts = [
   {
+    title: 'Top 10 Web Design Agencies in Fresno, CA (2026)',
+    category: 'Fresno Agencies',
+    image: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp',
+    date: 'May 20, 2026',
+    slug: 'best-web-design-agencies-fresno'
+  },
+  {
     title: "Why Your Website Isn't Getting Leads",
     category: 'Web Design',
     image: "/pexels-noviana-27910251.webp",
@@ -171,12 +178,16 @@ export function BlogPostPage() {
             }
           },
           datePublished: post.date, // Note: Should ideally be ISO format
+          dateModified: post.dateModified || post.date,
           mainEntityOfPage: {
             "@type": "WebPage",
             "@id": `https://boostifyusa.com/blog/${slug}`
           }
         }}
       />
+      {Array.isArray(post.extraSchema) && post.extraSchema.map((s: any, i: number) => (
+        <SchemaJSON key={i} type={s.type} data={s.data} />
+      ))}
       <Navigation />
 
       <main className="pt-28 md:pt-40">

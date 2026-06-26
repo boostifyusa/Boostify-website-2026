@@ -1,4 +1,589 @@
 export const blogPosts: Record<string, any> = {
+  'best-web-design-agencies-fresno': {
+    title: 'Top 10 Web Design Agencies in Fresno, CA (2026)',
+    excerpt:
+      "A ranking of the 10 best web design agencies in Fresno, Clovis, and the Central Valley for 2026, with notes on who each one fits, what they cost, and how to pick.",
+    date: 'May 20, 2026',
+    dateModified: 'May 20, 2026',
+    readTime: '12 min read',
+    author: 'Joaquin Estrada',
+    authorImage: '/1733568683912.jpg',
+    category: 'Fresno Agencies',
+    featuredImage: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp',
+    tags: ['Fresno', 'Web Design', 'Agencies', 'Local Business', '2026'],
+    extraSchema: [
+      {
+        type: 'ItemList',
+        data: {
+          name: 'Top 10 Web Design Agencies in Fresno, CA (2026)',
+          itemListOrder: 'https://schema.org/ItemListOrderAscending',
+          numberOfItems: 10,
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'Boostify USA Web Design & SEO',
+                url: 'https://boostifyusa.com',
+                telephone: '+1-559-785-3834',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '6362 N Figarden Dr. #118',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93722',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'AMARQUEZ',
+                url: 'https://amarquez.agency',
+                telephone: '+1-559-408-5150',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93720',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'Nettra Media',
+                url: 'https://www.nettramedia.com',
+                telephone: '+1-559-981-5181',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '744 P St, Suite 330',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93721',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 4,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'WorldLight Media',
+                url: 'https://worldlightmedia.com',
+                telephone: '+1-559-933-7446',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '4539 N Brawley Ave, Suite 102',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93722',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 5,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'Netricks, Inc.',
+                url: 'https://netricks.com',
+                telephone: '+1-559-222-2500',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '6446 N. Selland Ave',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93711',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 6,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'BCT Consulting, Inc.',
+                url: 'https://bctconsulting.com',
+                telephone: '+1-559-579-1400',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 7,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'ADvine',
+                url: 'https://advineagency.com',
+                telephone: '+1-559-283-0465',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '770 E Shaw Ave, Ste 230',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93710',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 8,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'Meshup Studio',
+                url: 'https://meshupstudio.com',
+                telephone: '+1-559-492-0118',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 9,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'JIT Outsource',
+                url: 'https://www.jitoutsource.com',
+                telephone: '+1-559-485-4335',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '7815 North Palm Avenue #200',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93711',
+                  addressCountry: 'US'
+                }
+              }
+            },
+            {
+              '@type': 'ListItem',
+              position: 10,
+              item: {
+                '@type': 'LocalBusiness',
+                name: 'Buildicus',
+                url: 'https://buildicus.com',
+                telephone: '+1-559-281-2855',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '700 Van Ness Ave',
+                  addressLocality: 'Fresno',
+                  addressRegion: 'CA',
+                  postalCode: '93721',
+                  addressCountry: 'US'
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        type: 'FAQPage',
+        data: {
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'Who is the best web design agency in Fresno?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence: identifying gaps and weaknesses in specific competitors' strategies and exploiting them to outrank. AI is a consulting and future-readiness capability rather than a packaged product. Founder Joaquin Estrada has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms."
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'How much does web design cost in Fresno, CA?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Pricing in Fresno ranges from around $2,500 for a basic small-business site at boutique studios like Meshup, up to $25,000 or more for custom-coded builds with AI integration at agencies like Boostify or Nettra Media. Most Central Valley small businesses spend between $5,000 and $12,000 for a professionally built site. Ongoing maintenance runs $50 to $500 a month depending on what is bundled in."
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'Should I hire a Fresno web design agency or a national one?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "For businesses targeting Central Valley customers, a Fresno-based agency wins almost every time. Local agencies know the Fresno, Clovis, Madera, and Visalia markets, build content that ranks in the local pack, and can meet you in person. National agencies may have flashier portfolios, but most of them do not know how local SEO works in the Valley, how Google Business Profile signals behave here, or how to write for the industries that dominate the region (agriculture, contractors, healthcare)."
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'What is the difference between web design and SEO?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Web design is how your site looks, feels, and works. SEO is what gets people to find that site on Google. The best Fresno agencies, including Boostify, AMARQUEZ, Nettra Media, and WorldLight, offer both. A pretty site nobody finds is worthless. A top-ranked site that converts at half a percent is leaving money behind."
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'How long does it take to build a new website in Fresno?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Most reputable Fresno agencies deliver a custom website in 4 to 8 weeks. Hand-coded builds with AI integration (Boostify’s typical timeline) usually land at 6 to 10 weeks. Boutique template-based shops can ship in 2 to 4 weeks. DIY hybrid services like Buildicus advertise 15-minute setup with optional concierge polish layered on in days."
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'Do Fresno web design agencies handle hosting and ongoing maintenance?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Most agencies on this list offer bundled hosting, security, backups, and maintenance plans. Boostify, Netricks, BCT Consulting, and JIT Outsource run their own managed hosting environments. AMARQUEZ and Nettra Media include site management as part of their marketing retainers. Plan on $50 to $500 a month for managed maintenance, depending on site complexity and content cadence."
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'How did you rank these Fresno web design agencies?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "We weighed years in business, Google review count and rating, presence on Clutch, DesignRush, Expertise.com, and Sortlist, portfolio depth, the technical performance of each agency’s own site (PageSpeed and Core Web Vitals), fit for Central Valley businesses, and credentialed partnerships such as Google Partner, HubSpot Solutions Partner, and AAF membership. Boostify published this guide. We work in this industry and these are the agencies we respect."
+              }
+            }
+          ]
+        }
+      }
+    ],
+    content: `
+        <!-- TL;DR / Answer-First Block -->
+        <div class="bg-orange/10 border-l-4 border-orange p-6 my-4 rounded-r-xl">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-orange">Updated May 2026</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-gray">12 min read</span>
+          </div>
+          <p class="!mb-0 text-dark text-base leading-relaxed">
+            <strong>Short answer:</strong> The 10 top web design agencies in Fresno for 2026 are <strong>Boostify USA Web Design &amp; SEO</strong>, <strong>AMARQUEZ</strong>, <strong>Nettra Media</strong>, <strong>WorldLight Media</strong>, <strong>Netricks, Inc.</strong>, <strong>BCT Consulting, Inc.</strong>, <strong>ADvine</strong>, <strong>Meshup Studio</strong>, <strong>JIT Outsource</strong>, and <strong>Buildicus</strong>. Below we cover who each one fits, what they cost, and how to pick.
+          </p>
+        </div>
+
+        <p>
+          Picking a web design agency in Fresno comes down to fit. A shop that nails enterprise bank work will overcharge a solo plumber. A boutique studio that wins on price will struggle with a 50-page e-commerce build. We have worked in this market for over a decade and watched all of these agencies ship real projects. The list below is who we would recommend in 2026, with notes on who each one fits.
+        </p>
+
+        <p>
+          These 10 agencies show up across Clutch, DesignRush, Expertise.com, Sortlist, and Google Maps. They have portfolios you can verify, reviews you can read, and clients in the Central Valley. We picked names by combining directory presence with our own experience of what each one is good at.
+        </p>
+
+        <!-- Comparison Table -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
+          Quick Comparison: Top 10 Fresno Web Design Agencies (2026)
+        </h2>
+        <div class="overflow-x-auto -mx-2 my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-dark text-white">
+                <th class="text-left p-3 font-bold">#</th>
+                <th class="text-left p-3 font-bold">Agency</th>
+                <th class="text-left p-3 font-bold hidden md:table-cell">Founded</th>
+                <th class="text-left p-3 font-bold hidden md:table-cell">Location</th>
+                <th class="text-left p-3 font-bold">Best For</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">1</td><td class="p-3 font-bold">Boostify USA</td><td class="p-3 hidden md:table-cell">2014</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Methodical web dev + competitive SEO &amp; Ads + AI consulting</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">2</td><td class="p-3 font-bold">AMARQUEZ</td><td class="p-3 hidden md:table-cell">n/a</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Conversion-focused SMB sites + paid media</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">3</td><td class="p-3 font-bold">Nettra Media</td><td class="p-3 hidden md:table-cell">n/a</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Banks, credit unions, attorneys, enterprise</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">4</td><td class="p-3 font-bold">WorldLight Media</td><td class="p-3 hidden md:table-cell">2005</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">B2B inbound + HubSpot funnels</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">5</td><td class="p-3 font-bold">Netricks, Inc.</td><td class="p-3 hidden md:table-cell">n/a</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Web + hosting bundled, e-commerce</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">6</td><td class="p-3 font-bold">BCT Consulting</td><td class="p-3 hidden md:table-cell">1996</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Hybrid IT + web for established businesses</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">7</td><td class="p-3 font-bold">ADvine</td><td class="p-3 hidden md:table-cell">n/a</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Full-funnel paid + creative + AI search</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">8</td><td class="p-3 font-bold">Meshup Studio</td><td class="p-3 hidden md:table-cell">n/a</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Budget-friendly custom SMB sites</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold text-orange">9</td><td class="p-3 font-bold">JIT Outsource</td><td class="p-3 hidden md:table-cell">n/a</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">Full-stack IT + web + dev</td></tr>
+              <tr><td class="p-3 font-bold text-orange">10</td><td class="p-3 font-bold">Buildicus</td><td class="p-3 hidden md:table-cell">n/a</td><td class="p-3 hidden md:table-cell">Fresno</td><td class="p-3">DIY-friendly with concierge polish</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-sm text-gray italic">
+          Methodology: we weighed years in business, Google review count and rating, presence on Clutch, DesignRush, Expertise.com, and Sortlist, portfolio depth, the technical performance of each agency’s own site, fit for Central Valley businesses, and credentialed partnerships such as Google Partner, HubSpot Solutions Partner, and AAF membership. Updated May 2026.
+        </p>
+
+        <!-- ENTRY 1: BOOSTIFY -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          1. Boostify USA Web Design &amp; SEO. Best for SMB owners who want methodical web development and competitive SEO and Ads from a lean specialist team.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/01-boostify.webp" alt="Boostify USA Web Design and SEO, Fresno specialist for methodical web development, competitive SEO, and Google Ads" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-orange/5 border border-orange/20 rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Central Valley SMB owners and service businesses that want a hands-on specialist team for web development, competitive SEO, and Google Ads, with AI consulting depth for what is coming next. &nbsp;|&nbsp; <strong class="text-dark">Founded:</strong> 2014 &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 6362 N Figarden Dr. #118, Fresno, CA &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 785-3834 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$$</p>
+        </div>
+        <p>
+          Boostify started in 2014 in Fresno. The team is lean and specialist. No bloated agency overhead. The work centers on three things Central Valley SMB owners can actually use: <strong>methodical, handcrafted web development</strong>, <strong>competitive SEO</strong>, and <strong>Google Ads management</strong>. Sites are precision-built for speed, conversion, and the scale local service businesses need to actually bring customers in. Builds typically score <strong>98 or higher on PageSpeed</strong> and 100 on accessibility and SEO audits. No WordPress themes. Most projects launch in weeks, not months.
+        </p>
+        <p>
+          SEO is run on competitive intelligence. The team identifies gaps and weaknesses in specific competitors’ rankings, content, and ad strategies, then exploits those gaps to outrank them. Every decision is backed by analytics, not opinions. Per their own published results, Boostify has <strong>doubled conversion rates</strong> for local service business clients using this approach.
+        </p>
+        <p>
+          Where Boostify is poised differently from other Fresno agencies is the founder’s depth in AI. Joaquin Estrada has extensive hands-on experience with machine learning and large language models, deeper than the typical agency operator, and that shows up as <strong>AI consulting and integration capability</strong> rather than a packaged AI product line. Boostify is trusted by organizations you know: the U.S. Small Business Administration and the Valley Sierra SBDC have hired Boostify to teach small business owners about emerging AI technology with live speaking and product demos, and Fresno State hired Boostify to build their news website.
+        </p>
+        <p>
+          Outside Boostify, Joaquin is the founder of defense technology startup DarkSigma, and brings that same standard of rigorous engineering directly to local marketing campaigns. <strong>5.0 Google rating</strong>, Google Marketing Platform Certified. Code is written by hand at the Fresno HQ. American operated, no outsourcing.
+        </p>
+        <p>
+          The team comes out of a blue-collar family-business background, so they understand what SMB owners actually need from a website (leads, calls, jobs booked) versus what most agencies sell them (vanity metrics and oversized retainers).
+        </p>
+        <p>
+          <strong class="text-dark">Pick Boostify if:</strong> You are an SMB owner who wants a methodical web build, a competitive SEO and Ads operator, and an agency that is also ready to advise you on AI as it matures.
+        </p>
+        <p>
+          <a href="https://boostifyusa.com" class="text-orange hover:underline font-bold">Visit Boostify USA →</a>
+        </p>
+
+        <!-- ENTRY 2: AMARQUEZ -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          2. AMARQUEZ. Best for SMBs that want web and Google Ads run by the same team.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/02-amarquez.webp" alt="AMARQUEZ, Fresno web design and Google Ads agency" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Established SMBs running Google Ads. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> Fresno, CA (ZIP 93720) &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 408-5150 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
+        </div>
+        <p>
+          AMARQUEZ is a Fresno-based agency founded by <strong>Aaron Marquez</strong>. Their portfolio leans toward local SMBs where every visitor is a high-value lead: dentists, attorneys, healthcare practices, and professional services. They pair web design with paid search and SEO so the site and the campaigns sending traffic to it are run by the same team.
+        </p>
+        <p>
+          Awards and recognition (per their About page): <strong>AAF Fresno “Rising Star Agency” 2025</strong>, UpCity Excellence Awards 2021, 2022, and 2023, and Fresno Bee Reader’s Choice gold and silver awards in 2025.
+        </p>
+        <p>
+          <strong class="text-dark">Pick AMARQUEZ if:</strong> You want one team handling the site, the paid ads, and the tracking.
+        </p>
+        <p>
+          <a href="https://amarquez.agency" class="text-orange hover:underline font-bold">Visit AMARQUEZ →</a>
+        </p>
+
+        <!-- ENTRY 3: NETTRA MEDIA -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          3. Nettra Media. Best for banks, credit unions, law firms, and enterprise budgets.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/03-nettra-media.webp" alt="Nettra Media, Fresno digital agency for banks, credit unions, and law firms" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Regulated industries and enterprise budgets. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 744 P St, Suite 330, Fresno &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$$ to $$$$</p>
+        </div>
+        <p>
+          Nettra Media works out of 744 P Street in downtown Fresno. Per their own site, they are a national <strong>Google and Facebook (Meta) Partner</strong> managing over <strong>$24 million in ad spend</strong> across both platforms. Their client work leans on banks, credit unions, law firms, and multi-location service businesses.
+        </p>
+        <p>
+          The work tends to be enterprise scale: longer sales cycles, CRM integration, brand systems, and careful compliance review on regulated marketing.
+        </p>
+        <p>
+          <strong class="text-dark">Pick Nettra Media if:</strong> You have 25 or more employees, a real marketing budget, and you operate in a regulated industry.
+        </p>
+        <p>
+          <a href="https://www.nettramedia.com" class="text-orange hover:underline font-bold">Visit Nettra Media →</a>
+        </p>
+
+        <!-- ENTRY 4: WORLDLIGHT MEDIA -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          4. WorldLight Media. Best for B2B inbound marketing tied to HubSpot.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/04-worldlight-media.webp" alt="WorldLight Media, Fresno B2B inbound marketing agency and HubSpot Solutions Partner" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> B2B with complex sales funnels. &nbsp;|&nbsp; <strong class="text-dark">Founded:</strong> 2005 &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 4539 N Brawley Ave, Suite 102, Fresno &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 933-7446 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$$</p>
+        </div>
+        <p>
+          WorldLight Media was founded in 2005 by <strong>Nathan and Jenni Solla</strong> and relocated to Fresno in 2010. Per their site, they self-identify as a HubSpot Certified Partner, which puts them in a small group of Fresno shops that work in lead scoring, nurture sequences, content offers, and attribution.
+        </p>
+        <p>
+          Services lean toward strategic branding, content-driven SEO, podcast and video production, and B2B inbound work.
+        </p>
+        <p>
+          <strong class="text-dark">Pick WorldLight if:</strong> You sell to other businesses and want the website wired to HubSpot from launch.
+        </p>
+        <p>
+          <a href="https://www.worldlightmedia.com" class="text-orange hover:underline font-bold">Visit WorldLight Media →</a>
+        </p>
+
+        <!-- ENTRY 5: NETRICKS -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          5. Netricks, Inc. Best for web, hosting, and e-commerce under one vendor.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/05-netricks.webp" alt="Netricks Inc, long-running Fresno web design and hosting agency" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Businesses that want one company for build, hosting, and custom development. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 6446 N. Selland Ave, Fresno, CA 93711 &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 222-2500 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
+        </div>
+        <p>
+          Netricks, Inc. is a Fresno full-service shop. Per their site, services include web design and hosting, graphic design, marketing solutions, merchant services, and network services. They handle build, host, maintain, and custom database or e-commerce work in house.
+        </p>
+        <p>
+          Their model is built for owners who do not want to juggle three or four vendors for one site. One number to call when something breaks.
+        </p>
+        <p>
+          <a href="https://www.netricks.com" class="text-orange hover:underline font-bold">Visit Netricks →</a>
+        </p>
+
+        <!-- ENTRY 6: BCT CONSULTING -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          6. BCT Consulting, Inc. Best for businesses that need web plus managed IT.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/06-bct-consulting.webp" alt="BCT Consulting, Fresno IT and web development firm, nine-time Inc. 5000 honoree" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Established SMBs needing both web and IT services. &nbsp;|&nbsp; <strong class="text-dark">Founded:</strong> 1996 &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> Fresno HQ, with offices in Bakersfield, San Francisco, Santa Monica, LA, Chicago, Portland, and Scottsdale &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 579-1400 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$$</p>
+        </div>
+        <p>
+          Eric Rawn founded BCT Consulting in 1996. Per the founder’s public records, the firm has been named to the <strong>Inc. 5000 list in multiple years</strong> between 2010 and 2018. Service mix covers web design, custom app development, managed IT, hosting, and cybersecurity.
+        </p>
+        <p>
+          Right pick for SMBs that want their website partner to be the same company managing workstations, email, and backups.
+        </p>
+        <p>
+          <a href="https://bctconsulting.com" class="text-orange hover:underline font-bold">Visit BCT Consulting →</a>
+        </p>
+
+        <!-- ENTRY 7: ADVINE -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          7. ADvine. Best for creative, paid media, and AI search optimization from one team.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/07-advine.webp" alt="ADvine, Fresno full-service marketing agency with AI search optimization focus" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Businesses wanting full creative and paid media from one team. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 770 E Shaw Ave, Ste 230, Fresno, CA 93710 (and Vero Beach, FL) &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 283-0465 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
+        </div>
+        <p>
+          ADvine has offices on East Shaw in Fresno and in Vero Beach, Florida. Per their site, services include social media, Google Ads, video production, photography, web design, graphic design, media strategy and buying, traditional media, and AI search optimization. They are one of the few Fresno shops openly marketing services for ChatGPT, Gemini, and Perplexity visibility.
+        </p>
+        <p>
+          <a href="https://advineagency.com" class="text-orange hover:underline font-bold">Visit ADvine →</a>
+        </p>
+
+        <!-- ENTRY 8: MESHUP STUDIO -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          8. Meshup Studio. Best for small business budgets that still want custom work.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/08-meshup-studio.webp" alt="Meshup Studio, family-run Fresno web design shop" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Small businesses on a tight budget. &nbsp;|&nbsp; <strong class="text-dark">Service area:</strong> Fresno, Clovis, Madera &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 492-0118 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $</p>
+        </div>
+        <p>
+          Meshup Studio is a local, family-owned shop serving Fresno, Clovis, and Madera. Per their site, services include web design, SEO, eCommerce, website hosting, and digital marketing. Their published pricing page (<a href="https://meshupstudio.com/pricing" target="_blank" rel="noopener">meshupstudio.com/pricing</a>) and website calculator let you scope a project before reaching out.
+        </p>
+        <p>
+          Right call for new businesses, sole proprietors, and community organizations that need a real site but cannot justify the price tag of the larger agencies on this list.
+        </p>
+        <p>
+          <a href="https://www.meshupstudio.com" class="text-orange hover:underline font-bold">Visit Meshup Studio →</a>
+        </p>
+
+        <!-- ENTRY 9: JIT OUTSOURCE -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          9. JIT Outsource. Best for full-stack IT plus web from a single Fresno shop.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/09-jit-outsource.webp" alt="JIT Outsource, Fresno full-stack IT and web development shop" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Businesses that want web, IT, and dev all from one vendor. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 7815 North Palm Avenue #200, Fresno, CA 93711 &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 485-4335 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
+        </div>
+        <p>
+          JIT Outsource is a Fresno full-stack technology shop. Per their site, services span web design and development, SEO, SEM, IT services, VoIP, e-commerce, database applications, email hosting, social media management, and Google Ads management. Their tagline: “Solving business problems with technology.”
+        </p>
+        <p>
+          Compared to the marketing-first agencies elsewhere on this list, JIT leans dev and IT. Right pick when the website is one piece of a larger tech stack you want one team owning.
+        </p>
+        <p>
+          <a href="https://www.jitoutsource.com" class="text-orange hover:underline font-bold">Visit JIT Outsource →</a>
+        </p>
+
+        <!-- ENTRY 10: BUILDICUS -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          10. Buildicus. Best for owners who want to drive the build themselves.
+        </h2>
+        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
+          <img src="/blog-images/best-web-design-agencies-fresno/10-buildicus.webp" alt="Buildicus, Fresno hybrid DIY site builder and concierge web design service" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
+          <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Founders who want self-service control with optional polish. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 700 Van Ness Ave, Fresno, CA 93721 &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 281-2855 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $</p>
+        </div>
+        <p>
+          Buildicus, a product of Edit LLC, is a Fresno hybrid. Part DIY site builder, part concierge build service. Per their site, the pitch is a 15-minute setup using their own template themes (Barstow, Blackstone, Capistrano, Catalina, Sunbelt, Sierra), plus an optional Buildicus Concierge layer that polishes the result. Integrations include Google Analytics, MailChimp, Hello Bar, and DRIP.
+        </p>
+        <p>
+          <a href="https://buildicus.com" class="text-orange hover:underline font-bold">Visit Buildicus →</a>
+        </p>
+
+        <!-- HOW TO CHOOSE -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          How to pick the right Fresno web design agency
+        </h2>
+        <p>
+          Ten options is too many. Here is a shorter way to narrow it down:
+        </p>
+        <ul class="list-disc pl-6 space-y-3">
+          <li><strong>SMB owner who wants methodical web dev and competitive SEO and Ads, with AI consulting depth for the future?</strong> → <a href="https://boostifyusa.com" class="text-orange hover:underline font-bold">Boostify USA</a>. Custom-coded sites, PageSpeed numbers among the highest in the city, competitive-intelligence SEO, and a founder with hands-on ML and LLM experience. Trusted by the SBA and SBDC to teach small business owners on emerging AI tech with live speaking and demos.</li>
+          <li><strong>SMB wanting design and Google Ads run together?</strong> → <a href="https://amarquez.agency" class="text-orange hover:underline font-bold">AMARQUEZ</a>. Founder Aaron Marquez and team, AAF Fresno Rising Star Agency 2025.</li>
+          <li><strong>Bank, credit union, law firm, or enterprise budget?</strong> → <a href="https://www.nettramedia.com" class="text-orange hover:underline font-bold">Nettra Media</a>. Per their site, they manage over $24M in ad spend and built for regulated industries.</li>
+          <li><strong>B2B with a complex funnel?</strong> → WorldLight Media (self-identified HubSpot Certified Partner, founded by Nathan and Jenni Solla in 2005).</li>
+          <li><strong>Need web plus hosting plus e-commerce in one place?</strong> → Netricks.</li>
+          <li><strong>Want managed IT plus web from one vendor?</strong> → BCT Consulting (founded 1996 by Eric Rawn) or JIT Outsource for a more dev-heavy stack.</li>
+          <li><strong>Tight budget but want real custom work?</strong> → Meshup Studio.</li>
+          <li><strong>Want to drive the build yourself?</strong> → Buildicus.</li>
+          <li><strong>Want creative plus paid plus AI search from one team?</strong> → ADvine.</li>
+        </ul>
+
+        <!-- FAQ -->
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
+          Frequently asked questions
+        </h2>
+
+        <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">Who is the best web design agency in Fresno?</h3>
+        <p>Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence, identifying gaps and weaknesses in specific competitors’ strategies and exploiting them to outrank. AI is positioned as a consulting and future-readiness capability rather than a packaged product: founder Joaquin Estrada has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms.</p>
+
+        <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">How much does web design cost in Fresno, CA?</h3>
+        <p>Pricing in Fresno ranges from around $2,500 for a basic small-business site at boutique studios like Meshup, up to $25,000 or more for custom-coded builds with AI integration at agencies like Boostify or Nettra Media. Most Central Valley small businesses spend between $5,000 and $12,000 for a professionally built site. Ongoing maintenance runs $50 to $500 a month depending on what is bundled in.</p>
+
+        <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">Should I hire a Fresno web design agency or a national one?</h3>
+        <p>For businesses targeting Central Valley customers, a Fresno-based agency wins almost every time. Local agencies know the Fresno, Clovis, Madera, and Visalia markets, build content that ranks in the local pack, and can meet you in person. National agencies may have flashier portfolios, but most of them do not know how local SEO works in the Valley, how Google Business Profile signals behave here, or how to write for the industries that dominate the region (agriculture, contractors, healthcare).</p>
+
+        <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">What is the difference between web design and SEO?</h3>
+        <p>Web design is how your site looks, feels, and works. SEO is what gets people to find that site on Google. The best Fresno agencies, including Boostify, AMARQUEZ, Nettra Media, and WorldLight, offer both. A pretty site nobody finds is worthless. A top-ranked site that converts at half a percent is leaving money behind. See our <a href="/local-seo" class="text-orange hover:underline font-bold">Fresno Local SEO</a> page for more on the SEO side.</p>
+
+        <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">How long does it take to build a new website in Fresno?</h3>
+        <p>Most reputable Fresno agencies deliver a custom website in 4 to 8 weeks. Hand-coded builds with AI integration (Boostify’s typical timeline) usually land at 6 to 10 weeks. Boutique template-based shops can ship in 2 to 4 weeks. DIY hybrid services like Buildicus advertise 15-minute setup with optional concierge polish layered on in days.</p>
+
+        <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">Do Fresno web design agencies handle hosting and ongoing maintenance?</h3>
+        <p>Most agencies on this list offer bundled hosting, security, backups, and maintenance plans. Boostify, Netricks, BCT Consulting, and JIT Outsource run their own managed hosting environments. AMARQUEZ and Nettra Media include site management as part of their marketing retainers. Plan on $50 to $500 a month for managed maintenance, depending on site complexity and content cadence. See our <a href="/website-maintenance-cost" class="text-orange hover:underline font-bold">maintenance cost guide</a> for more.</p>
+
+        <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">How did you rank these agencies?</h3>
+        <p>We weighed years in business, Google review count and rating, presence on Clutch, DesignRush, Expertise.com, and Sortlist, portfolio depth, the technical performance of each agency’s own site (PageSpeed and Core Web Vitals), fit for Central Valley businesses, and credentialed partnerships such as Google Partner, HubSpot Solutions Partner, and AAF membership. Boostify published this guide. We work in this industry and these are the agencies we respect.</p>
+
+        <!-- BOTTOM CTA -->
+        <div class="bg-light rounded-2xl border border-gray-light p-8 !mt-12">
+          <h3 class="text-xl font-bold text-dark mb-3">The bottom line</h3>
+          <p class="!mb-0">
+            Every agency on this list is a real Fresno-area shop doing real work. The right pick depends on your stage, budget, and what you need the website to actually do. If you want to talk through whether <a href="/" class="text-orange hover:underline font-bold">Boostify</a> fits, or you just want a second opinion on a quote you got from one of the others, <a href="/contact" class="text-orange hover:underline font-bold">reach out</a>. We will give you a straight answer either way.
+          </p>
+        </div>
+    `
+  },
   'ai-automation-local-business': {
     title: 'The AI Revolution in Local Business: Automate Your Growth in 2026',
     excerpt:

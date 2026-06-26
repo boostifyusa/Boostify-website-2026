@@ -5,12 +5,12 @@ import { ArrowRight, ArrowUpRight, Sparkles, BookOpen } from 'lucide-react';
 
 const posts = [
   {
-    title: 'The AI Revolution in Local Business: Automate Your Growth in 2026',
-    category: 'AI & Automation',
-    tag: 'Insights',
+    title: 'Top 10 Web Design Agencies in Fresno, CA (2026)',
+    category: 'Fresno Agencies',
+    tag: 'Ranked Guide',
     tagIcon: 'mockup',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=60&w=800',
-    slug: 'ai-automation-local-business'
+    image: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp',
+    slug: 'best-web-design-agencies-fresno'
   },
   {
     title: '5 SEO Mistakes Fresno Businesses Keep Making',
