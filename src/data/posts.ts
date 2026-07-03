@@ -420,9 +420,6 @@ export const blogPosts: Record<string, any> = {
         <h2 class="text-3xl font-black text-dark tracking-tight !mt-16 !mb-4">
           5. Netricks, Inc. Best for web, hosting, and e-commerce under one vendor.
         </h2>
-        <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/05-netricks.webp" alt="Netricks Inc, long-running Fresno web design and hosting agency" class="w-full h-full object-cover" />
-        </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Businesses that want one company for build, hosting, and custom development. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 6446 N. Selland Ave, Fresno, CA 93711 &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 222-2500 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
         </div>
