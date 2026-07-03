@@ -9,7 +9,7 @@ export const blogPosts: Record<string, any> = {
     author: 'Joaquin Estrada',
     authorImage: '/1733568683912.jpg',
     category: 'Fresno Agencies',
-    featuredImage: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp',
+    featuredImage: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp?v=2',
     tags: ['Fresno', 'Web Design', 'Agencies', 'Local Business', '2026'],
     extraSchema: [
       {
@@ -320,7 +320,7 @@ export const blogPosts: Record<string, any> = {
           1. Boostify USA Web Design &amp; SEO. Best for SMB owners who want methodical web development and competitive SEO and Ads from a lean specialist team.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/01-boostify.webp" alt="Boostify USA Web Design and SEO, Fresno specialist for methodical web development, competitive SEO, and Google Ads" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/01-boostify.webp?v=2" alt="Boostify USA Web Design and SEO, Fresno specialist for methodical web development, competitive SEO, and Google Ads" class="w-full h-full object-cover" />
         </div>
         <div class="bg-orange/5 border border-orange/20 rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Central Valley SMB owners and service businesses that want a hands-on specialist team for web development, competitive SEO, and Google Ads, with AI consulting depth for what is coming next. &nbsp;|&nbsp; <strong class="text-dark">Founded:</strong> 2014 &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 6362 N Figarden Dr. #118, Fresno, CA &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 785-3834 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$$</p>
@@ -352,7 +352,7 @@ export const blogPosts: Record<string, any> = {
           2. AMARQUEZ. Best for SMBs that want web and Google Ads run by the same team.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/02-amarquez.webp" alt="AMARQUEZ, Fresno web design and Google Ads agency" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/02-amarquez.webp?v=2" alt="AMARQUEZ, Fresno web design and Google Ads agency" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Established SMBs running Google Ads. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> Fresno, CA (ZIP 93720) &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 408-5150 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
@@ -375,7 +375,7 @@ export const blogPosts: Record<string, any> = {
           3. Nettra Media. Best for banks, credit unions, law firms, and enterprise budgets.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/03-nettra-media.webp" alt="Nettra Media, Fresno digital agency for banks, credit unions, and law firms" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/03-nettra-media.webp?v=2" alt="Nettra Media, Fresno digital agency for banks, credit unions, and law firms" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Regulated industries and enterprise budgets. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 744 P St, Suite 330, Fresno &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$$ to $$$$</p>
@@ -398,7 +398,7 @@ export const blogPosts: Record<string, any> = {
           4. WorldLight Media. Best for B2B inbound marketing tied to HubSpot.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/04-worldlight-media.webp" alt="WorldLight Media, Fresno B2B inbound marketing agency and HubSpot Solutions Partner" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/04-worldlight-media.webp?v=2" alt="WorldLight Media, Fresno B2B inbound marketing agency and HubSpot Solutions Partner" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> B2B with complex sales funnels. &nbsp;|&nbsp; <strong class="text-dark">Founded:</strong> 2005 &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 4539 N Brawley Ave, Suite 102, Fresno &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 933-7446 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$$</p>
@@ -438,7 +438,7 @@ export const blogPosts: Record<string, any> = {
           6. BCT Consulting, Inc. Best for businesses that need web plus managed IT.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/06-bct-consulting.webp" alt="BCT Consulting, Fresno IT and web development firm, nine-time Inc. 5000 honoree" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/06-bct-consulting.webp?v=2" alt="BCT Consulting, Fresno IT and web development firm, nine-time Inc. 5000 honoree" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Established SMBs needing both web and IT services. &nbsp;|&nbsp; <strong class="text-dark">Founded:</strong> 1996 &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> Fresno HQ, with offices in Bakersfield, San Francisco, Santa Monica, LA, Chicago, Portland, and Scottsdale &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 579-1400 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$$</p>
@@ -458,7 +458,7 @@ export const blogPosts: Record<string, any> = {
           7. ADvine. Best for creative, paid media, and AI search optimization from one team.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/07-advine.webp" alt="ADvine, Fresno full-service marketing agency with AI search optimization focus" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/07-advine.webp?v=2" alt="ADvine, Fresno full-service marketing agency with AI search optimization focus" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Businesses wanting full creative and paid media from one team. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 770 E Shaw Ave, Ste 230, Fresno, CA 93710 (and Vero Beach, FL) &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 283-0465 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
@@ -475,7 +475,7 @@ export const blogPosts: Record<string, any> = {
           8. Meshup Studio. Best for small business budgets that still want custom work.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/08-meshup-studio.webp" alt="Meshup Studio, family-run Fresno web design shop" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/08-meshup-studio.webp?v=2" alt="Meshup Studio, family-run Fresno web design shop" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Small businesses on a tight budget. &nbsp;|&nbsp; <strong class="text-dark">Service area:</strong> Fresno, Clovis, Madera &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 492-0118 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $</p>
@@ -495,7 +495,7 @@ export const blogPosts: Record<string, any> = {
           9. JIT Outsource. Best for full-stack IT plus web from a single Fresno shop.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/09-jit-outsource.webp" alt="JIT Outsource, Fresno full-stack IT and web development shop" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/09-jit-outsource.webp?v=2" alt="JIT Outsource, Fresno full-stack IT and web development shop" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Businesses that want web, IT, and dev all from one vendor. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 7815 North Palm Avenue #200, Fresno, CA 93711 &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 485-4335 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $$ to $$$</p>
@@ -515,7 +515,7 @@ export const blogPosts: Record<string, any> = {
           10. Buildicus. Best for owners who want to drive the build themselves.
         </h2>
         <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-gray-light">
-          <img src="/blog-images/best-web-design-agencies-fresno/10-buildicus.webp" alt="Buildicus, Fresno hybrid DIY site builder and concierge web design service" class="w-full h-full object-cover" />
+          <img src="/blog-images/best-web-design-agencies-fresno/10-buildicus.webp?v=2" alt="Buildicus, Fresno hybrid DIY site builder and concierge web design service" class="w-full h-full object-cover" />
         </div>
         <div class="bg-light border border-gray-light rounded-xl p-5 mb-6">
           <p class="!mb-0 text-sm"><strong class="text-dark">Best for:</strong> Founders who want self-service control with optional polish. &nbsp;|&nbsp; <strong class="text-dark">Location:</strong> 700 Van Ness Ave, Fresno, CA 93721 &nbsp;|&nbsp; <strong class="text-dark">Phone:</strong> (559) 281-2855 &nbsp;|&nbsp; <strong class="text-dark">Pricing:</strong> $</p>

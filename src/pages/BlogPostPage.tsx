@@ -25,7 +25,7 @@ const relatedPosts = [
   {
     title: 'Top 10 Web Design Agencies in Fresno, CA (2026)',
     category: 'Fresno Agencies',
-    image: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp',
+    image: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp?v=2',
     date: 'May 20, 2026',
     slug: 'best-web-design-agencies-fresno'
   },
