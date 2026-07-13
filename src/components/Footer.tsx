@@ -53,10 +53,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/fresno-seo"
+                  className="hover:text-orange transition-colors">
+
+                  Fresno SEO
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/local-seo"
                   className="hover:text-orange transition-colors">
 
-                  SEO Optimization
+                  Local SEO
                 </Link>
               </li>
               <li>

@@ -9,6 +9,7 @@ const dynamicRoutes = [
   '/services',
   '/web-design',
   '/local-seo',
+  '/fresno-seo',
   '/local-marketing',
   '/maintenance',
   '/website-maintenance-small-business',

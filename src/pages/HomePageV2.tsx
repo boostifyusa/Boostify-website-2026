@@ -52,10 +52,7 @@ const homeSchema = {
         { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
     ],
     "email": "hello@boostifyusa.com",
-    "logo": "https://boostifyusa.com/icon.png",
-    "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }
-    ]
+    "logo": "https://boostifyusa.com/icon.png"
 };
 
 export function HomePageV2() {
@@ -78,8 +75,8 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Boostify USA: Web Design & Local Marketing in Fresno"
-                description="Fresno's web design and local marketing studio. We build fast, SEO-ready websites that turn Central Valley visitors into paying customers."
+                title="Web Design Fresno | Custom Websites & SEO | Boostify USA"
+                description="Web design and SEO in Fresno since 2014. Hand-coded, fast websites for Central Valley businesses, built and hosted from our office on N Figarden Dr."
                 canonicalUrl="/"
             >
                 <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
@@ -137,7 +134,7 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-5xl md:text-6xl lg:text-[5.7rem] font-black text-dark leading-[0.95] tracking-tighter mb-8"
                             >
-                                We Build Websites That{' '}
+                                We Build Fresno Websites That{' '}
                                 <span className="relative inline-block px-2 isolate whitespace-nowrap">
                                     <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
                                     <motion.span
@@ -157,7 +154,7 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                             >
-                                Fresno's marketing agency for handcrafted web design & local search systems built to scale Central Valley service businesses.
+                                Hand-coded websites and local SEO for Central Valley service businesses. Built, hosted, and ranked from our office in northwest Fresno.
                             </motion.p>
 
                             <motion.div

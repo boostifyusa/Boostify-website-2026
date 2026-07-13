@@ -23,6 +23,7 @@ const sitemapLinks = [
             { name: 'All Services', path: '/services' },
             { name: 'Custom Web Design', path: '/web-design' },
             { name: 'Local SEO', path: '/local-seo' },
+            { name: 'Fresno SEO', path: '/fresno-seo' },
             { name: 'Local Marketing', path: '/local-marketing' },
             { name: 'Website Maintenance', path: '/maintenance' },
             { name: 'Website Maintenance for Small Business', path: '/website-maintenance-small-business' },
