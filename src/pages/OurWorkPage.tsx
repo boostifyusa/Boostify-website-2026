@@ -19,6 +19,15 @@ const projects = [
   },
   {
     id: '02',
+    title: 'Fresno Management Company',
+    category: 'WEB DESIGN & LOCAL SEO',
+    stat: 'SITE + SEO PROGRAM',
+    description: 'Full rebuild for a Fresno property management firm serving owners and tenants since 2004. Owner-first pages, vacancy search, and an ongoing local SEO program aimed at winning management contracts.',
+    image: '/work/fresno-management-company.webp',
+    link: 'https://fresnopmc.net'
+  },
+  {
+    id: '03',
     title: 'Martin Energy Inc',
     category: 'WEB DESIGN & SEO',
     stat: '3× ORGANIC TRAFFIC',
@@ -27,7 +36,16 @@ const projects = [
     link: 'https://martinenergyinc.com'
   },
   {
-    id: '03',
+    id: '04',
+    title: 'Pro One Design',
+    category: 'ECOMMERCE',
+    stat: 'CATALOG + CHECKOUT',
+    description: 'Storefront for a Central Valley manufacturer of truck lift and leveling kits. Shop-by-platform navigation for RAM, Chevy, GMC, and Ford, with warranty and install docs built into the catalog.',
+    image: '/work/pro-one-design.webp',
+    link: ''
+  },
+  {
+    id: '05',
     title: 'Fresno State Today',
     category: 'WEB DEVELOPMENT',
     stat: '50K+ MONTHLY VISITORS',
@@ -36,7 +54,16 @@ const projects = [
     link: 'https://fresnostatetoday.com'
   },
   {
-    id: '04',
+    id: '06',
+    title: 'BLC Custom Homes',
+    category: 'WEB DESIGN',
+    stat: 'FULL REDESIGN',
+    description: 'A licensed Fresno general contractor building since 1997. The new site puts the project gallery and quote flow front and center, with service pages for kitchens, baths, and whole-home remodels.',
+    image: '/work/blc-custom-homes.webp',
+    link: ''
+  },
+  {
+    id: '07',
     title: 'Benchmark Pool Supply',
     category: 'WEB DESIGN & LOCAL SEO',
     stat: '2× SERVICE BOOKINGS',
@@ -45,13 +72,40 @@ const projects = [
     link: 'https://benchmarkpoolsupply.com'
   },
   {
-    id: '05',
+    id: '08',
+    title: 'Precision Aire',
+    category: 'WEB DESIGN & SEO',
+    stat: 'FULL REBUILD',
+    description: 'Family-owned Fresno HVAC company on N Marks Ave. Fast service pages, offers, and appointment booking, structured for the searches that matter in a two-season town: AC repair and heating.',
+    image: '/work/precision-aire.webp',
+    link: ''
+  },
+  {
+    id: '09',
     title: 'Tint Headquarters',
     category: 'WEB DESIGN & GOOGLE ADS',
     stat: '#1 FOR WINDOW TINT FRESNO',
     description: 'Bold, high-converting website for Fresno\'s top-rated ceramic window tint shop. Paired with Google Ads to dominate local search and drive same-day appointment requests.',
     image: '/2024-04-30-2.jpg',
     link: 'https://tintheadquarters.com'
+  },
+  {
+    id: '10',
+    title: 'Barmaids Mobile Bar',
+    category: 'WEB DESIGN & BRAND',
+    stat: 'BOOKING-FIRST BUILD',
+    description: 'Photography-forward site for a mobile bar serving weddings and events across the Central Valley. Built around two jobs: show the setup, book the date.',
+    image: '/work/barmaids-mobile-bar.webp',
+    link: ''
+  },
+  {
+    id: '11',
+    title: 'TDC Tech',
+    category: 'WEB DESIGN',
+    stat: 'CUSTOM BUILD',
+    description: 'Tesla software programming and customization shop in Seattle. A dark, product-focused site with quoting and booking built in. Proof we travel well beyond the 559.',
+    image: '/work/tdc-tech.webp',
+    link: ''
   }
 ];
 
