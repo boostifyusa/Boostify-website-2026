@@ -504,6 +504,20 @@ export function HomePageV2() {
     // velocity to a short inertial glide on release so it does not dead-stop.
     const dragState = useRef({ active: false, startX: 0, startScroll: 0, moved: 0, vx: 0, lastX: 0, lastT: 0 });
     const glideRef = useRef<number | null>(null);
+    const draggedRef = useRef(false);
+
+    // One permanent capture listener decides it, rather than one attached and
+    // torn down inside every pointerup.
+    useEffect(() => {
+        const el = railRef.current;
+        if (!el) return;
+        const onClick = (ev: MouseEvent) => {
+            if (draggedRef.current) { ev.preventDefault(); ev.stopPropagation(); }
+            draggedRef.current = false;
+        };
+        el.addEventListener('click', onClick, true);
+        return () => el.removeEventListener('click', onClick, true);
+    }, []);
 
     const onRailPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
         if (e.pointerType !== 'mouse' || e.button !== 0) return;
@@ -512,11 +526,6 @@ export function HomePageV2() {
 
         if (glideRef.current) { cancelAnimationFrame(glideRef.current); glideRef.current = null; }
         el.classList.add('is-dragging');
-        // setPointerCapture throws NotFoundError on a pointerId the element does
-        // not have. Unguarded it aborts this handler after the class is applied
-        // but before the move/up listeners bind, stranding the rail in the
-        // dragging state with snap switched off.
-        try { el.setPointerCapture?.(e.pointerId); } catch { /* capture is optional */ }
 
         dragState.current = {
             active: true, startX: e.clientX, startScroll: el.scrollLeft,
@@ -569,12 +578,8 @@ export function HomePageV2() {
                 glideRef.current = requestAnimationFrame(step);
             }
 
-            // a drag past 5px must not also navigate
-            if (d.moved > 5) {
-                const swallow = (ce: MouseEvent) => { ce.preventDefault(); ce.stopPropagation(); };
-                el.addEventListener('click', swallow, { capture: true, once: true });
-                window.setTimeout(() => el.removeEventListener('click', swallow, { capture: true }), 0);
-            }
+            // a drag past 5px must not also navigate; a plain click must.
+            draggedRef.current = d.moved > 5;
         };
 
         window.addEventListener('pointermove', onMove, { passive: false });

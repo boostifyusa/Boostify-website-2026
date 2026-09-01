@@ -47,6 +47,31 @@ const logos = [
 
 export function TrustBadges() {
   return (
+    <>
+      {/* Only Google Partner is marked as a credential, because it is the only
+          one of the four that is one. Per the About page the SBA is a speaking
+          invitation and Fresno State is a client we built a news platform for,
+          and marking either as a certification would be the same kind of false
+          claim as a self-issued review rating. Valley Sierra SBDC is displayed
+          without a documented relationship, so nothing is asserted about it. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            '@id': 'https://boostifyusa.com/#organization',
+            name: 'Boostify USA',
+            url: 'https://boostifyusa.com',
+            hasCredential: {
+              '@type': 'EducationalOccupationalCredential',
+              credentialCategory: 'certification',
+              name: 'Google Partner',
+              recognizedBy: { '@type': 'Organization', name: 'Google', url: 'https://www.google.com' }
+            }
+          })
+        }}
+      />
     <section className="py-10 md:py-12 bg-light/50 border-b border-gray-light/50">
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-xs font-bold text-gray uppercase tracking-[0.25em] text-center mb-10">
@@ -70,5 +95,6 @@ export function TrustBadges() {
         </div>
       </div>
     </section>
+    </>
   );
 }
