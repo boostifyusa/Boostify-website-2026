@@ -6,16 +6,29 @@ export function CTASection() {
   return (
     <section
       id="contact"
-      className="py-32 px-6 bg-dark relative overflow-hidden">
+      className="pt-32 pb-40 md:pb-56 px-6 bg-dark relative overflow-hidden">
 
-      {/* Geometric accents */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/3" />
+      {/* Section art. Replaced two blurred colour blobs; the band is drawn on the
+          same #111111 as the section so it sits flush with no seam, and its whole
+          middle is empty because the headline goes there. */}
+      {/* Boost: a planet horizon with a trajectory arcing into a starfield. Its
+          top two thirds are empty #111111, the same ground as the section, so it
+          needs no scrim and the visible art stays a band along the bottom. */}
+      <img
+        src="/section-art/cta-band-dark.webp"
+        alt=""
+        aria-hidden="true"
+        width={1584}
+        height={672}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-x-0 bottom-0 w-full h-auto pointer-events-none select-none"
+      />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.h2
           initial={{
-            opacity: 0,
+            opacity: 1,
             y: 30
           }}
           whileInView={{
@@ -33,7 +46,7 @@ export function CTASection() {
 
         <motion.p
           initial={{
-            opacity: 0,
+            opacity: 1,
             y: 30
           }}
           whileInView={{
@@ -54,7 +67,7 @@ export function CTASection() {
 
         <motion.div
           initial={{
-            opacity: 0,
+            opacity: 1,
             y: 30
           }}
           whileInView={{

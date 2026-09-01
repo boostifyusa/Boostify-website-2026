@@ -13,6 +13,7 @@ export default {
         orange: {
           DEFAULT: '#E8590C',
           hover: '#C44908',
+          deep: '#B8460A',
           light: '#FFF0E6',
         },
         gray: {

@@ -9,7 +9,9 @@ const posts = [
     category: 'Fresno Agencies',
     tag: 'Ranked Guide',
     tagIcon: 'mockup',
-    image: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp',
+    // Card art only. The post's own hero at /blog-images/best-web-design-agencies-fresno/
+    // featured-hero.webp is untouched.
+    image: '/blog-images/showcase/fresno-agencies.webp',
     slug: 'best-web-design-agencies-fresno'
   },
   {
@@ -25,7 +27,9 @@ const posts = [
     category: 'Web Design',
     tag: 'Guide',
     tagIcon: 'article',
-    image: "/pexels-noviana-27910251.webp",
+    // Generated card art (risograph funnel), not stock. Plan + prompt in
+    // WEBSITE-LEADS-IMAGE-PLAN.md.
+    image: '/blog-images/showcase/website-leads.webp',
     slug: 'website-leads'
   },
   {
@@ -43,7 +47,7 @@ export function WorkShowcase() {
 
   return (
     <section id="showcase" className="py-32 px-6 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-3xl">

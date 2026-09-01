@@ -9,7 +9,7 @@ export const blogPosts: Record<string, any> = {
     author: 'Joaquin Estrada',
     authorImage: '/1733568683912.jpg',
     category: 'Fresno Agencies',
-    featuredImage: '/blog-images/best-web-design-agencies-fresno/featured-hero.webp?v=2',
+    featuredImage: '/blog-images/showcase/fresno-agencies-hero.webp',
     tags: ['Fresno', 'Web Design', 'Agencies', 'Local Business', '2026'],
     extraSchema: [
       {
@@ -780,7 +780,7 @@ export const blogPosts: Record<string, any> = {
     authorImage: "/1733568683912.jpg",
 
     category: 'Web Design',
-    featuredImage: "/pexels-noviana-27910251.webp",
+    featuredImage: '/blog-images/showcase/website-leads-hero.webp',
 
     tags: ['Conversion Rate', 'UX Design', 'Small Business'],
     content: `

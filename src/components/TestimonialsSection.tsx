@@ -64,7 +64,7 @@ export function TestimonialsSection() {
         <div className="text-center mb-16">
           <motion.h2
             initial={{
-              opacity: 0,
+              opacity: 1,
               y: 20
             }}
             whileInView={{
@@ -87,7 +87,7 @@ export function TestimonialsSection() {
           </motion.h2>
           <motion.p
             initial={{
-              opacity: 0,
+              opacity: 1,
               y: 20
             }}
             whileInView={{
@@ -112,7 +112,7 @@ export function TestimonialsSection() {
             target="_blank"
             rel="noopener noreferrer"
             initial={{
-              opacity: 0,
+              opacity: 1,
               scale: 0.9
             }}
             whileInView={{
@@ -153,7 +153,7 @@ export function TestimonialsSection() {
             <motion.div
               key={index}
               initial={{
-                opacity: 0,
+                opacity: 1,
                 y: 30
               }}
               whileInView={{
@@ -209,7 +209,7 @@ export function TestimonialsSection() {
         {/* CTA */}
         <motion.div
           initial={{
-            opacity: 0
+            opacity: 1
           }}
           whileInView={{
             opacity: 1

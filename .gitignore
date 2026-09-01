@@ -27,6 +27,7 @@ dist-ssr
 .env
 .env.local
 .env.*
+.mcp.json
 roadmap/
 server/pin-store.json
 server/biz-store.json
@@ -34,3 +35,9 @@ server/biz-store.json
 # Home page variation experiment
 src/pages/HomeVariation1.tsx
 
+
+# ai-images generator artifacts
+image-gen/
+
+# local Claude Code settings and worktrees
+.claude/
