@@ -14,7 +14,7 @@ const logos = [
     width: 250,
     height: 70,
     // ratio 3.6, wordmark fills most of the box
-    className: 'h-8 md:h-11',
+    className: 'h-10 md:h-14',
   },
   {
     id: 'fresno-state',
@@ -23,7 +23,7 @@ const logos = [
     width: 400,
     height: 85,
     // ratio 4.7, the widest and thinnest, but h-7 left it visibly the smallest
-    className: 'h-7 md:h-9',
+    className: 'h-8 md:h-11',
   },
   {
     id: 'valley-sierra-sbdc',
@@ -32,7 +32,7 @@ const logos = [
     width: 452,
     height: 140,
     // ratio 3.2, dense two-part lockup: h-14 made it dominate the row
-    className: 'h-9 md:h-11',
+    className: 'h-11 md:h-14',
   },
   {
     id: 'google-partner',
@@ -41,7 +41,7 @@ const logos = [
     width: 440,
     height: 220,
     // ratio 2.0, stacked: needs the most height to match on area
-    className: 'h-11 md:h-14',
+    className: 'h-14 md:h-[4.5rem]',
   },
 ];
 

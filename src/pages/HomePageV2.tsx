@@ -67,7 +67,7 @@ const homeSchema = {
 // ─── Service rail ───────────────────────────────────────────────────────────
 const services = [
     { to: '/web-design', kind: 'web', featured: true, name: 'Web Design', cta: 'See the build spec',
-      blurb: 'Hand-coded, never assembled from a purchased theme. Loads in under two seconds on a phone, and you can still edit the parts you need to edit.' },
+      blurb: 'Hand-coded, or WordPress on a lean setup. Loads in under two seconds on a phone, and you can still edit the parts you need to edit.' },
     { to: '/local-seo', kind: 'seo', name: 'Local SEO', cta: 'How ranking works',
       blurb: 'The work that decides whether you show up in the three-result map pack.' },
     { to: '/local-marketing', kind: 'map', name: 'Local Marketing', cta: 'Campaigns and LSAs',
@@ -75,7 +75,7 @@ const services = [
     { to: '/app-development', kind: 'app', name: 'App Development', cta: 'What we build',
       blurb: 'Customer portals, booking, and internal tools when a website is not the right shape for the job.' },
     { to: '/ai-automation', kind: 'ai', name: 'AI Automation', cta: 'Where it helps',
-      blurb: 'Intake, follow-up, and the after-hours replies that otherwise wait until somebody opens the laptop.' },
+      blurb: 'Intake, follow-up, and the after-hours replies that otherwise wait for Monday morning.' },
     { to: '/maintenance', kind: 'care', name: 'Website Care', cta: 'Plans from $99',
       blurb: 'Updates, backups, uptime and form monitoring, and content changes on request.' },
 ];
@@ -94,17 +94,17 @@ function ServiceVisual({ kind }: { kind: string }) {
                         <span className="w-2 h-2 rounded-full bg-gray-light" />
                         <span className="w-2 h-2 rounded-full bg-gray-light" />
                         <span className="ml-1.5 flex-1 max-w-[10rem] rounded bg-light px-2 py-0.5 text-[8px] font-medium text-gray truncate">
-                            fresnotruckwash.com
+                            yourshopname.com
                         </span>
                     </div>
                     <div className="px-4 py-3.5">
                         <p className="text-[8px] font-bold uppercase tracking-[0.14em] text-orange-hover mb-1">Fresno &amp; Clovis</p>
                         <p className="text-[15px] font-black text-dark leading-[1.05] tracking-tight mb-2">
-                            Fleet washing,<br />done overnight.
+                            The service they<br />searched for.
                         </p>
                         <div className="flex items-center gap-2">
                             <span className="sv-cta inline-block rounded bg-orange px-2.5 py-1 text-[8px] font-bold text-white">
-                                (559) 785-3834
+                                Call now
                             </span>
                             <span className="text-[8px] font-bold text-gray">Open 24 hrs</span>
                         </div>
@@ -259,36 +259,40 @@ function ServiceVisual({ kind }: { kind: string }) {
 }
 
 // ─── What ships with every build (concrete spec, not adjectives) ─────────────
+// Each item leads with what it means for the owner and keeps the spec as the
+// proof underneath. Nobody hires an agency because they want JSON-LD; they hire
+// because the phone is quiet. The technical line still earns the search traffic
+// and gives them something to hold us to.
 const included = [
     {
         icon: Code2,
-        title: 'Hand-coded front end',
-        body: 'No WordPress theme, no page builder, no plugin stack. The site compiles to static HTML, which means a visitor downloads finished pages instead of waiting on a server to assemble one out of a database and thirty extensions. Nothing to patch on a Tuesday. Nothing that breaks when a plugin author quits.',
+        title: 'It loads before they give up',
+        body: 'Hand-coded when the site rarely changes, WordPress when you want to edit it yourself. About half of what we build is WordPress. Either way it goes out on a lean setup. Most slow WordPress sites are running a bought theme and thirty or forty plugins, and we don\u2019t build them that way.',
     },
     {
         icon: Gauge,
-        title: 'Core Web Vitals inside Google’s thresholds',
-        body: 'LCP under 2.5 seconds, CLS under 0.1, measured on a mid-range Android over 4G. That last part is the part agencies skip. Your site was designed on a Mac wired to fiber, and that is not the machine Google grades you on, or the one your customer is holding in a truck cab.',
+        title: 'Fast on a phone, not just on your laptop',
+        body: 'LCP under 2.5 seconds and CLS under 0.1, measured on a mid-range Android over 4G. That last part is the part agencies skip. Your site was designed on a Mac wired to fiber, and that\u2019s not the machine your customer is holding in a truck cab.',
     },
     {
         icon: Braces,
-        title: 'Structured data on every page',
-        body: 'JSON-LD for LocalBusiness with real coordinates, Service, Breadcrumb, and FAQPage where the content earns it. This is the code that puts your hours, your phone number, and your answers directly into the search result, instead of leaving Google to guess them off your footer.',
+        title: 'Your hours and number show up in the search result',
+        body: 'Not just on the page, in the result itself. That\u2019s what JSON-LD does: it hands Google your address, hours and phone in a format it can\u2019t misread, instead of leaving it to guess them off your footer and get them wrong.',
     },
     {
         icon: FileText,
-        title: 'A CMS only where you need one',
-        body: 'Most service businesses edit five things and only five: hours, phone, staff, prices, photos. Those get wired to an editor you can actually use, and everything else stays static, which is the part that matters, because a content change on a Tuesday afternoon cannot take the site down on Wednesday morning when there is nothing sitting there to break.',
+        title: 'You can change your own prices and hours',
+        body: 'Most shops need to edit five things: hours, phone, staff, prices, photos. Those get wired to an editor you can use without calling anyone. Everything else stays fixed, so a Tuesday content change can\u2019t take the site down on Wednesday.',
     },
     {
         icon: Building2,
-        title: 'Google Business Profile wired to the site',
-        body: 'Primary and secondary categories, service areas, products, and UTM-tagged links back to the site. Do that once and GA4 can finally separate the calls that came from the map pack from the ones that came from organic. Skip it and every lead reports as direct, which tells you nothing.',
+        title: 'You can tell which calls came from the map',
+        body: 'Your Google Business Profile gets its categories, service areas and tagged links set up properly. Do that once and you can finally separate map-pack calls from organic ones. Skip it and the leads all report as direct, which tells you very little.',
     },
     {
         icon: ServerCog,
-        title: 'Hosting, SSL, DNS, and the redirect map',
-        body: 'Every URL on the old site gets inventoried and pointed at its replacement with a 301 redirect before anything goes live, because the alternative is that Google keeps sending people to addresses that no longer exist and quietly stops sending them at all. The map is a spreadsheet and you get a copy of it. Check our work.',
+        title: 'You keep the rankings you already have',
+        body: 'Every URL on the old site gets inventoried and pointed at its replacement with a 301 before launch. This is the step that gets skipped, and skipping it\u2019s why a redesign so often quietly costs a business its traffic. The map is a spreadsheet and you get a copy.',
     },
 ];
 
@@ -323,7 +327,7 @@ const industries = [
     {
         icon: Tractor,
         name: 'Agriculture and equipment',
-        body: 'Growers and equipment dealers sell on spec sheets and service radius, and almost every ag site in the Valley buries both under a stock photo of a sunset over a field. Searchable implement lists. A real service-area map. A quote form that reaches a phone somebody picks up during harvest.',
+        body: 'Growers and equipment dealers sell on spec sheets and service radius, and almost every ag site in the Valley buries both under a stock photo of a sunset over a field. Searchable implement lists. A real service-area map. A quote form that reaches a phone your crew answers during harvest.',
     },
     {
         icon: Wrench,
@@ -333,22 +337,22 @@ const industries = [
     {
         icon: Scale,
         name: 'Legal practices',
-        body: 'One page per practice area, because a single services page cannot rank for seven different things at once. Attorney bios carrying real bar numbers. Intake forms hardened against the bot traffic that buries a small firm’s inbox until nobody checks it anymore.',
+        body: 'One page per practice area, because a single services page can\u2019t rank for seven different things at once. Attorney bios carrying real bar numbers. Intake forms hardened against the bot traffic that fills a small firm’s inbox until it stops getting read.',
     },
     {
         icon: Stethoscope,
         name: 'Dental and medical',
-        body: 'New-patient paperwork and appointment requests that never travel by plain email. Type set large enough to read at arm’s length, which sounds like a small thing until you look at who is actually filling out the form.',
+        body: 'New-patient paperwork and appointment requests that stay off plain email. Type set large enough to read at arm’s length, which sounds minor until you look at who is filling out the form.',
     },
     {
         icon: UtensilsCrossed,
         name: 'Restaurants and food',
-        body: 'Your menu as real HTML text, not a PDF and not a photograph of a printed menu. That one change is the entire reason most restaurant sites are invisible when somebody searches the dish by name. Google cannot read a picture of the word birria.',
+        body: 'Your menu as HTML text rather than a PDF or a photograph of a printed board, because Google can\u2019t read a picture of the word birria, and that single detail is why most restaurant sites are missing from a search for the dish by name.',
     },
     {
         icon: Truck,
         name: 'Auto, truck, and fleet',
-        body: 'Bay counts, turnaround times, and fleet account pages, plus hours that actually match between the site and the Google listing, which on most shop sites they quietly do not, and that mismatch is what sends somebody to a competitor at 6:40 on a Friday. Fresno Truck Wash is the build at the top of this page.',
+        body: 'Bay counts, turnaround times, and fleet account pages, plus hours that match between the site and the Google listing, which on most shop sites they quietly do not, and that mismatch sends a customer to a competitor at 6:40 on a Friday. Full Throttle Suspension is one of ours. It\u2019s the build at the top of this page.',
     },
 ];
 
@@ -374,27 +378,27 @@ const cityPages = [
 const turndown = [
     {
         job: 'A site built to rank in a city you do not operate in',
-        why: 'Fake addresses and rented virtual offices get Google Business Profiles suspended, and the suspension follows the owner, not the listing. Build in the city you actually work in.',
+        why: 'Fake addresses and rented virtual offices get Google Business Profiles suspended, and because the suspension follows the owner rather than the listing, it can take the rest of your locations with it.',
         instead: 'Nowhere. Do not buy this from anyone.',
     },
     {
         job: 'A $200 website',
-        why: 'Nobody can design, write, and build one for that. What you would be paying for is a template somebody else already made, marked up.',
+        why: 'No shop can design, write and build one for that. You would be paying for a template that already existed, with a markup on it.',
         instead: 'Go straight to Squarespace or Wix and do it yourself in a weekend. You will get the same result and keep the difference.',
     },
     {
         job: 'A store carrying more than a few hundred products',
         why: 'Inventory sync, tax tables, shipping rules, and returns are a separate trade with its own specialists, and taking the job would mean learning it on your money and your launch date.',
-        instead: 'A Shopify Plus partner. Ask us and we will name two in the Valley.',
+        instead: 'A Shopify Plus partner. Ask us and we\u2019ll name two in the Valley.',
     },
     {
         job: 'Guaranteed number one on Google',
-        why: 'No agency controls the ranking, and the ones who guarantee it are either targeting a phrase nobody searches or planning to blame you in month four.',
-        instead: 'Hire on process and reporting. Anyone selling a guarantee is telling you what they are.',
+        why: 'No agency controls the ranking, and the ones who guarantee it are either targeting a phrase with no search volume or planning to blame you in month four.',
+        instead: 'Hire on process and reporting. Anyone selling a guarantee is telling you what they\u2019re.',
     },
     {
         job: 'Live in 48 hours',
-        why: 'Rushed launches skip the redirect map, and that is the one step that costs you rankings you already had.',
+        why: 'Rushed launches skip the redirect map, and that\u2019s the one step that costs you rankings you already had.',
         instead: 'If the old site is up, we can patch what is broken this week and build the replacement properly behind it.',
     },
 ];
@@ -403,54 +407,54 @@ const turndown = [
 const vetting = [
     {
         q: 'Who owns the domain and the hosting account the day I leave?',
-        a: 'If the answer is anything but you, that is a lease. Ask for it in writing. Ours says you, and it costs nothing to transfer.',
+        a: 'If the answer is anything but you, what you have is a lease rather than an asset, so get the answer in writing before you pay a deposit. Ours says you own it and the transfer is free.',
     },
     {
         q: 'What did the last three sites you shipped score on PageSpeed?',
-        a: 'Anybody can promise a number for a site that does not exist yet. Ask for three live URLs, open pagespeed.web.dev while you are still on the phone, and run them yourself.',
+        a: 'Any shop can promise a number for a site that doesn\u2019t exist yet. Ask for three live URLs, open pagespeed.web.dev while you\u2019re still on the phone, and run them yourself.',
     },
     {
         q: 'Are the reviews on your website real, and where do I read them?',
-        a: 'Ours sit on our Google Business Profile. There are nine and they are all five stars. Nine is a small number and we would rather you see the real count than a badge we drew ourselves in Illustrator.',
+        a: 'Ours sit on our Google Business Profile. There are nine and they\u2019re all five stars. Nine is a small number and we would rather you see the real count than a badge we drew ourselves in Illustrator.',
     },
     {
         q: 'What happens to my rankings during the rebuild?',
-        a: 'If the word redirect does not come out of their mouth without prompting, your traffic is going to fall and it will be described to you as a redesign.',
+        a: 'If the word redirect doesn\u2019t come out of their mouth without prompting, your traffic is going to fall and it will be described to you as a redesign.',
     },
     {
         q: 'Who picks up the phone in six months?',
-        a: 'Ours is (559) 785-3834 and it rings in Fresno. Ask where the number you are dialing actually rings, and ask before you sign, not after.',
+        a: 'Ours is (559) 785-3834 and it rings in Fresno. Ask where the number you\u2019re dialing rings, and ask before you sign anything.',
     },
 ];
 
 // ─── FAQ (rendered in HTML, mirrored into FAQPage schema) ───────────────────
 const faqs = [
     {
-        q: 'I called two agencies and neither one would give me a number. What does a website actually cost?',
-        a: 'Template build, $649, paid once. Custom build, $1,995 and up depending on how many pages and how much of it has to be built rather than assembled. Care plan, $99 a month, optional, cancel whenever. Those are the numbers we say on the phone, which is the only reason they are printed here. An agency that will not quote a range before a discovery call is protecting its ability to price you off your reaction, and you should read it that way.',
+        q: 'I called two agencies and neither one would give me a number. What does a website cost?',
+        a: 'Template build, $649, paid once. Custom build, $1,995 and up depending on how many pages and how much of it has to be built rather than assembled. Care plan, $99 a month, optional, cancel whenever. Those are the numbers we say on the phone, which is the only reason they\u2019re printed here. An agency that won\u2019t quote a range before a discovery call is protecting its ability to price you off your reaction, and you should read it that way.',
     },
     {
-        q: 'My busy season starts in six weeks. Can you actually be live by then?',
-        a: 'A template build, yes, comfortably. A custom build takes 3 to 5 weeks and six is not much margin, so we would tell you on the first call whether we believe it. You get a staging link on day one and it stays live the whole time, so you are never waiting on a reveal to find out where it stands.',
+        q: 'My busy season starts in six weeks. Can you be live by then?',
+        a: 'A template build, yes, comfortably. A custom build takes 3 to 5 weeks and six isn\u2019t much margin, so we would tell you on the first call whether we believe it. You get a staging link on day one and it stays live the whole time, so you\u2019re never waiting on a reveal to find out where it stands.',
     },
     {
-        q: 'My last guy still has my domain and will not hand it over. Who owns what when we are done?',
-        a: 'You do. Domain, hosting account, code, content, analytics. We transfer all of it on request, in writing, for free. Get that answer from anyone you hire before you pay them a deposit, because the version of this you are living through right now is extremely common and almost impossible to unwind afterward.',
+        q: 'My last guy still has my domain and won\u2019t hand it over. Who owns what when we\u2019re done?',
+        a: 'You do. Domain, hosting account, code, content, analytics. We transfer all of it on request, in writing, for free. Get that answer from anyone you hire before you pay them a deposit, because the version of this you\u2019re living through right now is extremely common and almost impossible to unwind afterward.',
     },
     {
         q: 'I rank on the first page right now and I am scared a rebuild kills it. Does it?',
-        a: 'It does when nobody maps the URLs, which is most of the time. Here is the actual mechanism: your old pages have addresses, Google has those addresses indexed, and a new site with new addresses orphans every one of them unless each old URL is pointed at its replacement with a 301 redirect before launch. We inventory the old site first, write the redirect map, keep the titles and headings that are already earning the ranking, and watch Search Console for two weeks after. Ask whoever you hire to describe that process. If redirects do not come up on their own, walk.',
+        a: 'It does when the URLs go unmapped, which is most of the time. Here is the actual mechanism: your old pages have addresses, Google has those addresses indexed, and a new site with new addresses orphans every one of them unless each old URL is pointed at its replacement with a 301 redirect before launch. We inventory the old site first, write the redirect map, keep the titles and headings that are already earning the ranking, and watch Search Console for two weeks after. Ask whoever you hire to describe that process. If redirects do not come up on their own, walk.',
     },
     {
         q: 'I am in Visalia, not Fresno. Does that change anything?',
-        a: 'No. Most of our work is Fresno and Clovis, and we build across Madera, Sanger, Visalia, Tulare, Hanford, Merced, and Modesto. Being local means we will drive to your shop, not that we refuse work that is an hour out.',
+        a: 'No. Most of our work is Fresno and Clovis, and we build across Madera, Sanger, Visalia, Tulare, Hanford, Merced, and Modesto. We\u2019ll drive out to your shop. Being local doesn\u2019t mean we turn down work an hour away.',
     },
     {
-        q: 'I already paid for a website two years ago. Do I really have to start over?',
-        a: 'Often not. If the platform is current and the problem is speed, structure, or thin content, fixing it costs less than replacing it and we will say so. If it is an abandoned theme carrying forty plugins, the repair costs more than the rebuild, because every fix has to be re-tested against every plugin. We will tell you which one you have before you pay us anything.',
+        q: 'I already paid for a website two years ago. Do I have to start over?',
+        a: 'Often not. If the platform is current and the problem is speed, structure, or thin content, fixing it costs less than replacing it and we\u2019ll say so. If it\u2019s an abandoned theme carrying forty plugins, the repair costs more than the rebuild, because every fix has to be re-tested against every plugin. We\u2019ll tell you which one you\u2019ve before you pay us anything.',
     },
     {
-        q: 'Do I have to hire somebody else for SEO after the site is built?',
+        q: 'Do I have to hire a second company for SEO after the site is built?',
         a: 'No, and you should be suspicious of anyone who structures it that way. Schema, page structure, internal links, and Google Business Profile setup ship inside the custom build. SEO sold as a separate retainer immediately after a launch usually means it was left out of the launch on purpose.',
     },
 ];
@@ -615,7 +619,7 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Boostify USA: Web Design & Local Marketing in Fresno"
+                title="Fresno Marketing Agency | SEO, Web Design & Ads | Boostify USA"
                 description="Fresno's web design and local marketing studio. We build fast, SEO-ready websites that turn Central Valley visitors into paying customers."
                 canonicalUrl="/"
             >
@@ -657,7 +661,7 @@ export function HomePageV2() {
                         <div className="text-center max-w-4xl mx-auto mb-16 relative">
                             <motion.div
                                 suppressHydrationWarning
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 1, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
                                 className="inline-flex items-center gap-2.5 text-xs md:text-sm font-bold uppercase tracking-[0.13em] text-orange-hover mb-8"
@@ -671,20 +675,20 @@ export function HomePageV2() {
                                 suppressHydrationWarning
                                 initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-5xl md:text-6xl lg:text-[5.7rem] font-black text-dark leading-[0.95] tracking-tighter mb-8"
+                                className="text-5xl md:text-6xl lg:text-[5.2rem] font-black text-dark leading-[0.95] tracking-tighter mb-8 max-w-[15ch] mx-auto"
                             >
-                                We Build Websites That{' '}
-                                <span className="relative inline-block px-2 isolate whitespace-nowrap">
+                                Fresno Marketing That{' '}
+                                <span className="relative inline-block px-2 isolate">
                                     <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
                                     <motion.span
                                         suppressHydrationWarning
-                                        initial={{ opacity: 0 }}
+                                        initial={{ opacity: 1 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.5, delay: 0.2 }}
                                         className="text-orange relative z-10"
                                     >Actually</motion.span>
                                 </span>{' '}
-                                Bring Customers In.
+                                Makes the Phone Ring.
                             </motion.h1>
 
                             <motion.p
@@ -693,14 +697,14 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                             >
-                                Most small business websites are a brochure nobody asked for. Yours should
-                                answer the question somebody typed into Google at 9pm and then make it easy
-                                to call you. That is the whole job.
+                                The site, the search rankings, the Google listing, and the follow-up that
+                                catches the calls you would otherwise miss. All of it in house, and the
+                                prices are published below.
                             </motion.p>
 
                             <motion.div
                                 suppressHydrationWarning
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 1, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
                                 className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
@@ -712,17 +716,17 @@ export function HomePageV2() {
                                     Book a Free Call
                                     <ArrowRight className="ml-2 h-6 w-6" />
                                 </Link>
-                                <Link
-                                    to="/work"
-                                    className="inline-flex items-center justify-center px-10 py-5 bg-white text-dark border-2 border-gray-light font-bold text-lg rounded-lg hover:border-dark hover:bg-dark hover:text-white transition-all duration-300 w-full sm:w-auto"
+                                <a
+                                    href="#pricing"
+                                    className="inline-flex items-center justify-center px-10 py-5 bg-white text-dark border-2 border-dark font-bold text-lg rounded-lg hover:bg-dark hover:text-white transition-all duration-300 w-full sm:w-auto"
                                 >
-                                    View Our Work
-                                </Link>
+                                    See What It Costs
+                                </a>
                             </motion.div>
 
                             <motion.div
                                 suppressHydrationWarning
-                                initial={{ opacity: 0 }}
+                                initial={{ opacity: 1 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.4 }}
                                 className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-bold text-dark uppercase tracking-wide mb-6"
@@ -751,7 +755,7 @@ export function HomePageV2() {
                         {/* Floating badges, leave on scroll */}
                         <motion.div
                             suppressHydrationWarning
-                            initial={{ opacity: 0, scale: 0.8 }}
+                            initial={{ opacity: 1, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 0.5, ease: 'easeOut' }}
                             style={{ opacity: badge1Opacity, y: badge1Y, x: badge1X }}
@@ -768,7 +772,7 @@ export function HomePageV2() {
 
                         <motion.div
                             suppressHydrationWarning
-                            initial={{ opacity: 0, scale: 0.8 }}
+                            initial={{ opacity: 1, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 1.1, duration: 0.5, ease: 'easeOut' }}
                             style={{ opacity: badge2Opacity, y: badge2Y, x: badge2X }}
@@ -786,7 +790,7 @@ export function HomePageV2() {
                         {/* Browser mockup */}
                         <motion.div
                             suppressHydrationWarning
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 1, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.4 }}
                             className="bg-white rounded-xl border border-gray-light shadow-[0_30px_70px_-30px_rgba(17,17,17,0.45)] mb-16 overflow-hidden relative z-10"
@@ -812,7 +816,7 @@ export function HomePageV2() {
                                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="text-dark/30 shrink-0" aria-hidden="true">
                                         <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
                                     </svg>
-                                    <span className="text-[11px] font-medium text-dark/55 truncate">fresnotruckwash.com</span>
+                                    <span className="text-[11px] font-medium text-dark/55 truncate">fullthrottlesuspension.com</span>
                                 </div>
 
                                 <div className="hidden sm:flex items-center gap-[3px] shrink-0 text-dark/20">
@@ -826,7 +830,7 @@ export function HomePageV2() {
                                 <img
                                     src="/FTS-Mock.webp"
                                     fetchPriority="high"
-                                    alt="Fresno Truck Wash Portfolio Preview"
+                                    alt="Full Throttle Suspension website, built by Boostify USA"
                                     className="absolute inset-0 w-full h-full object-cover object-top"
                                 />
                             </div>
@@ -884,11 +888,11 @@ export function HomePageV2() {
                         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-20 items-end mb-14">
                             <div>
                                 <h2 className="text-4xl md:text-5xl lg:text-[4.25rem] font-black text-dark tracking-tighter leading-[0.95] max-w-[13ch] mb-6">
-                                    Seven services, all of them in house.
+                                    Six services, all of them in house.
                                 </h2>
                                 <p className="lede text-lg md:text-xl text-gray font-medium leading-relaxed max-w-[52ch]">
-                                    Design, search, and the local listings work that ties the two together.
-                                    None of it subcontracted. None of it built on a template somebody else made.
+                                    Design, search, and the listings work that ties them together. Hand-coded or
+                                    WordPress, whichever suits how often you change it. None of it subcontracted.
                                 </p>
                             </div>
 
@@ -901,7 +905,7 @@ export function HomePageV2() {
                                         Which one do I need
                                     </p>
                                     <p className="lede text-dark font-medium leading-relaxed max-w-[44ch]">
-                                        Most clients start with one and add a second inside a year, almost always in
+                                        Most clients start with one and add a second inside a year, usually in
                                         the same order: build the site, fix the listings, then pay for traffic.
                                         Running ads at a site that does not convert is how people decide that
                                         marketing does not work.
@@ -1030,11 +1034,12 @@ export function HomePageV2() {
                 <section className="py-20 md:py-24 px-6 bg-light">
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight max-w-[22ch] mb-5">
-                            What a Boostify build actually includes.
+                            What a Boostify build includes.
                         </h2>
                         <p className="lede text-lg text-gray font-medium leading-relaxed max-w-[58ch] mb-14">
-                            Every agency on earth says fast and mobile-friendly. Nobody says what they mean
-                            by it. This is the spec, in numbers you can check on a site we already shipped.
+                            Every agency says fast and mobile-friendly and none of them say what they mean.
+                            Here is what you get, in plain terms, with the number underneath each
+                            one so you can hold us to it.
                         </p>
 
                         <dl className="border-t border-dark/15">
@@ -1055,7 +1060,7 @@ export function HomePageV2() {
                 {/* ─── PRICING ───
                     Primitive: full-width rows, not a three-card pricing table. Price sits
                     in the left rail at display size; one CTA for the section, not three. */}
-                <section className="py-28 md:py-36 px-6 bg-dark text-white relative overflow-hidden">
+                <section id="pricing" className="py-28 md:py-36 px-6 bg-dark text-white relative overflow-hidden">
                     {/* Dot texture, masked so it fades to nothing before it reaches the
                         copy. CSS rather than an image: this is the section that claims a
                         speed budget, so it should not ship a background download. */}
@@ -1076,9 +1081,9 @@ export function HomePageV2() {
                             What it costs, before you call us.
                         </h2>
                         <p className="lede text-lg md:text-xl text-white/60 font-medium leading-relaxed max-w-[58ch] mb-16">
-                            Most Fresno agencies make you sit through a discovery call before anybody says a
-                            number, and the reason is that a price quoted after forty minutes of rapport can
-                            be shaped by how much you seem able to pay. Here are ours, in advance, in public.
+                            Most Fresno agencies make you sit through a discovery call before anyone quotes a
+                            number, because a price quoted after forty minutes of rapport can be shaped by how
+                            much you seem able to pay, so ours are printed here instead.
                         </p>
 
                         <div className="border-t border-white/15">
@@ -1198,7 +1203,7 @@ export function HomePageV2() {
 
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-[0.13em] text-gray mb-6">
-                                    Cities with their own page
+                                    Where we work
                                 </h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
                                     {cityPages.map(city => (
@@ -1245,7 +1250,7 @@ export function HomePageV2() {
                             <p className="lede text-lg md:text-xl text-gray font-medium leading-relaxed max-w-[62ch]">
                                 These come in most weeks and get turned down, which costs us money and saves you
                                 more. Two of them go somewhere better and we will make the introduction. One of
-                                them nobody should sell you at any price.
+                                them should not be sold to you at any price.
                             </p>
                         </div>
 

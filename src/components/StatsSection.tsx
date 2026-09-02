@@ -36,7 +36,7 @@ export function StatsSection() {
           {/* Left Header */}
           <motion.div
             initial={{
-              opacity: 0,
+              opacity: 1,
               x: -20
             }}
             whileInView={{
@@ -65,7 +65,7 @@ export function StatsSection() {
             <motion.div
               key={index}
               initial={{
-                opacity: 0,
+                opacity: 1,
                 y: 20
               }}
               whileInView={{

@@ -36,7 +36,7 @@ export function ServicesAccordion() {
 
       <motion.div
         initial={{
-          opacity: 0,
+          opacity: 1,
           y: 40
         }}
         whileInView={{
@@ -62,7 +62,7 @@ export function ServicesAccordion() {
         <motion.div
           key={service.id}
           initial={{
-            opacity: 0,
+            opacity: 1,
             y: 20
           }}
           whileInView={{

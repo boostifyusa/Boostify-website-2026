@@ -226,13 +226,10 @@ export function WebsiteMaintenanceSmallBusinessPage() {
             { '@type': 'Country', name: 'United States' },
           ],
           audience: { '@type': 'BusinessAudience', audienceType: 'Small Business' },
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5.0',
-            reviewCount: '9',
-            bestRating: '5',
-            worstRating: '1',
-          },
+          // aggregateRating removed 2026-09-01. Self-serving review markup on our
+          // own service pages breaks Google's structured data policy and risks a
+          // manual action against every rich result on the domain. The reviews
+          // live on the Google Business Profile, which is where they belong.
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
             name: 'Website Maintenance Plans',

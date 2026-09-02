@@ -79,7 +79,7 @@ function ProjectCard({ project }: {project: Project;}) {
       <div className="absolute inset-0 bg-black/20 hover:bg-black/40 transition-colors duration-300 p-8 flex flex-col justify-end transform translate-z-20">
         <motion.div
           initial={{
-            opacity: 0,
+            opacity: 1,
             y: 20
           }}
           whileInView={{
@@ -112,7 +112,7 @@ export function FeaturedWork() {
 
       <motion.div
         initial={{
-          opacity: 0,
+          opacity: 1,
           y: 40
         }}
         whileInView={{

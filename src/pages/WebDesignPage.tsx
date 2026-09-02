@@ -39,7 +39,7 @@ const jobs = [
       'Most of your work already comes from referrals',
       'People Google your name before they call you back',
       'You are booked, and you want better jobs rather than more'],
-    does: 'Shows up when somebody searches your business name, answers the five questions every caller asks anyway, and puts a phone number where a thumb already is. That is the entire job, and it is a real one.',
+    does: 'Turns up on a search for your name, answers the handful of things every caller asks anyway, and makes the number easy to hit on a phone. That\u2019s the whole job, and it\u2019s a real one.',
     price: 'From $649',
     span: '2 to 3 weeks'
   },
@@ -47,36 +47,35 @@ const jobs = [
     key: 'machine',
     kicker: 'Job two',
     name: 'A conversion machine',
-    line: 'You need the phone to ring from people who have never heard of you.',
+    line: 'You need work from people outside your referral circle.',
     who: [
-      'You are buying attention with ads, SEO, or both',
-      'You are fighting for the three-result map pack',
+      'Strangers land on you cold and have to be convinced',
+      'You are paying for traffic through ads or SEO and it has nowhere good to land',
       'A booked calendar is the difference between two trucks and four'],
-    does: 'One page per service so each can rank on its own, call tracking on every one, forms hardened against the bot traffic that buries a small inbox, a speed budget it has to pass before launch, and schema so Google can read the whole thing.',
+    does: 'A page for each thing you sell instead of one page listing everything, so an ad or a search lands on the right one. Tracking on the calls, forms that survive spam, and a speed budget it has to clear before launch.',
     price: 'From $1,995',
     span: '3 to 5 weeks'
   }];
 
 const platforms = [
-  { you: 'You publish several posts a month and want to do it yourself', build: 'WordPress', why: 'The editor is the product. For volume publishing by a non-developer, nothing has beaten it yet.' },
-  { you: 'You sell physical products with inventory, tax and shipping', build: 'Shopify, with a partner', why: 'That is a separate trade. We hand it off and name two shops in the Valley rather than learn it on your launch date.' },
-  { you: 'You have five to twenty pages that change a few times a year', build: 'Hand-coded and static', why: 'No database, no login, no plugin stack to patch monthly. It loads instantly and there is nothing there to break.' },
+  { you: 'You want to publish and edit the site yourself', build: 'WordPress', why: 'Roughly half our work. The editor is the whole reason, and for an owner changing things weekly without a developer it is still the best tool for the job.' },
+  { you: 'You sell physical products with inventory, tax and shipping', build: 'Shopify or headless commerce', why: 'We build the store. Inventory sync, tax tables and shipping rules are their own scope, so they get quoted separately rather than hidden in a page count.' },
+  { you: 'You have five to twenty pages that change a few times a year', build: 'Hand-coded and static', why: 'No database, no login, no plugin stack to patch monthly. It loads instantly and there is very little that can break.' },
   { you: 'You need booking, a customer portal, or a real calculator', build: 'A custom application', why: 'A website is the wrong shape for this. Forcing it into one is how you get six plugins doing one job badly.' },
-  { you: 'You already run WordPress and it got slow', build: 'Repair before replace', why: 'It is usually the theme plus forty plugins, not WordPress. Fixing that costs less than a rebuild and we will say so.' }];
+  { you: 'You already run WordPress and it got slow', build: 'Repair before replace', why: 'Usually it\u2019s the theme and the plugin count causing it. That\u2019s cheaper to fix than to rebuild, and we\u2019ll tell you when that\u2019s the case.' }];
 
 const buildIncludes = [
-  { name: 'Design', body: 'Drawn for your business, not adapted from a theme somebody else bought. You see the layout before a line of code exists.' },
-  { name: 'Copywriting', body: 'We write it. Most small business sites fail on the words, not the pixels, and "quality you can trust" has never made a phone ring.' },
+  { name: 'Design', body: 'We design the layout for your business and show it to you before any code gets written. Changes at that stage are free.' },
+  { name: 'Copywriting', body: 'We write it. Most small business sites lose people on the words rather than the design, and lines like "quality you can trust" do not tell anyone anything.' },
   // Outbound links anchored on the jargon itself, the way Rossmann anchors
   // "PC-3000" rather than a service name. Every spec we claim to build to points
   // at the published standard, so the claim is checkable instead of asserted.
-  { name: 'The build', body: 'Hand-coded, mobile first, and measured against Core Web Vitals on a mid-range Android over 4G rather than the Mac it was designed on.',
+  { name: 'The build', body: 'Hand-coded and built mobile first. We check it against Core Web Vitals on a mid-priced phone before launch, because that\u2019s what most of your visitors are holding.',
     href: 'https://web.dev/articles/vitals', linkText: 'Core Web Vitals' },
   { name: 'SEO foundation', body: 'Page structure, internal links, titles, and JSON-LD with your real coordinates, written to Google\u2019s published spec.',
     href: 'https://developers.google.com/search/docs/appearance/structured-data/local-business', linkText: 'LocalBusiness spec' },
-  { name: 'Google Business Profile', body: 'Categories, service areas, and UTM-tagged links so you can finally tell map-pack calls apart from organic ones.',
-    href: 'https://support.google.com/business/answer/3038177', linkText: 'category guidelines' },
-  { name: 'Hosting, DNS and redirects', body: 'Every old URL inventoried and pointed at its replacement with a 301 before launch. You get the redirect map as a spreadsheet.',
+  { name: 'Forms that reach you', body: 'Tested on a phone, filtered against spam, and delivered to an address you check. We set up where they go during the build.' },
+  { name: 'Hosting, DNS and redirects', body: 'Your existing page addresses keep working after the switch. It\u2019s the step most rebuilds skip, and it\u2019s why traffic often drops after a redesign.',
     href: 'https://developers.google.com/search/docs/crawling-indexing/301-redirects', linkText: '301 redirect' }];
 
 // Restructured for the comparison: a named dimension plus two SHORT cells.
@@ -84,28 +83,28 @@ const buildIncludes = [
 // scan as a table no matter how it was laid out.
 const outcomes = [
   {
-    dim: 'Somebody searches your name',
-    before: 'A Facebook page, last posted to in 2019',
-    after: 'A site that loads before they lose interest',
-    why: 'The cheapest problem on this list, and the one most businesses are still losing to.'
+    dim: 'They open it on a phone',
+    before: 'Pinch, zoom, hunt for the number',
+    after: 'The number is a button, before they scroll',
+    why: 'Most of your visitors are on a five-inch screen and standing somewhere noisy.'
   },
   {
-    dim: 'Where your ads land',
-    before: 'A homepage about everything you do',
-    after: 'The page for the one service they searched',
-    why: 'Same budget, same clicks. The page just answers the question that was asked.'
+    dim: 'They want to know what you charge',
+    before: 'Call for a quote, so they don\u2019t',
+    after: 'A price or an honest range, on the page',
+    why: 'The ones who leave over this were not going to call and ask.'
   },
   {
-    dim: 'How you measure it',
-    before: 'It feels busier than last month',
-    after: 'Every call traced to the source that made it',
-    why: 'You cannot cut the half that is wasted until you can see which half it is.'
+    dim: 'They came for one specific service',
+    before: 'Everything lives on the homepage',
+    after: 'A page built around that one service',
+    why: 'Also the thing that lets each one earn its own search traffic later.'
   },
   {
-    dim: 'When you need a change',
+    dim: 'Your hours or prices change',
     before: 'Email the guy, wait, follow up twice',
-    after: 'Edit it yourself, or it ships the same week',
-    why: 'Hours and prices are the things that go stale fastest and cost you calls.'
+    after: 'You edit it yourself in about a minute',
+    why: 'Hours and prices go stale fastest, and stale ones cost you the call.'
   }];
 
 const areas = [
@@ -120,26 +119,34 @@ const areas = [
   { name: 'Modesto', to: '/modesto-web-design' }];
 
 // FAQ Data
+// Replaced the four originals (how long, do I own it, mobile, changes later).
+// They were written for the old page, duplicated the homepage vetting section,
+// and carried the 4-6 week timeline that contradicted the 2-3 and 3-5 weeks
+// quoted elsewhere on this same page.
 const faqs = [
   {
-    question: 'How long does it take to build a website?',
-    answer:
-      'Typically 4-6 weeks from kickoff to launch. We move fast but never rush the details. The timeline depends on how quickly we can get content and feedback from you.'
+    question: 'I have a guy who does websites for $500. Why would I pay more?',
+    answer: 'Sometimes you should not, and if he delivers something that loads fast and you own outright, take it. What $500 usually skips is the copy, the redirect map, and anyone answering the phone in eight months. Ask him who owns the domain and what happens when it breaks, because those two answers tell you more about the next three years than the quote does.'
   },
   {
-    question: 'Do I own the website?',
-    answer:
-      "100%. Once the project is paid for, you own everything: the code, the design, and the content. We don't hold your site hostage."
+    question: 'Can I just use Squarespace myself?',
+    answer: 'For a simple site, yes. A weekend and a subscription gets you something respectable and we would rather say that than sell you a build you didn\u2019t need. It stops working around the point you need a dozen service pages, real speed on a phone, and tracking that tells you where calls came from, which is also the point the subscription stops being the cheaper option.'
   },
   {
-    question: 'Will it work on mobile phones?',
-    answer:
-      'Absolutely. We design mobile-first, meaning your site will look and perform perfectly on iPhones, Androids, tablets, and desktops.'
+    question: 'How long does this take?',
+    answer: 'Two to three weeks for a simple site, three to five for a custom build. What moves that number isn\u2019t us, it\u2019s how fast photos and feedback come back. You get a staging link in the second week and it stays up, so you\u2019re never waiting on a reveal to find out where it stands.'
   },
   {
-    question: 'What if I need to make changes later?',
-    answer:
-      'We offer affordable maintenance plans to handle updates for you, or we can build the site on a CMS so you can make simple edits yourself.'
+    question: 'What happens if I want to leave?',
+    answer: 'You take everything. Domain, hosting, code, content, analytics, transferred on request in writing at no charge. There\u2019s no proprietary builder to be trapped in and no cancellation call to sit through. If an agency can\u2019t answer that in one sentence, that\u2019s your answer.'
+  },
+  {
+    question: 'Do I have to write the content?',
+    answer: 'No. We interview you for about an hour and write it, then you fix what we got wrong, which is a much easier job than a blank page. What we do need is photos of your actual work. Stock photos of another company\u2019s crew are visible from orbit and they cost you trust on the exact page where you were about to earn it.'
+  },
+  {
+    question: 'What does it cost to keep running?',
+    answer: 'Hosting and the domain are roughly $20 to $30 a month and you can pay those directly rather than through us. Our care plan is $99 a month, it\u2019s optional, and plenty of clients launch, take the keys, and we don\u2019t hear from them again until they open a second location.'
   }];
 
 export function WebDesignPage() {
@@ -147,7 +154,7 @@ export function WebDesignPage() {
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
         title="Custom Web Design for Small Business | Boostify USA"
-        description="Two kinds of website: one that makes you look legitimate, one built to generate calls. Straight answers on scope, WordPress, pricing and what each is actually for."
+        description="Two kinds of website: one that makes you look legitimate, one built to generate calls. Straight answers on scope, WordPress, pricing and what each one is for."
         canonicalUrl="/web-design"
       />
       <SchemaJSON
@@ -466,31 +473,31 @@ export function WebDesignPage() {
                   strokeWidth={2.5} />
               </motion.div>
               <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                Most Local Websites Are{' '}
-                <span className="text-red-500">Invisible!</span>
+                Three ways the work goes{' '}
+                <span className="text-red-500">somewhere else.</span>
               </h2>
-              <p className="text-xl text-gray font-medium">
-                DIY builders and cheap templates are costing you money. If your
-                site isn't working for you, it's working against you.
+              <p className="text-xl text-gray font-medium max-w-[68ch] mx-auto">
+                All three happen after a customer has already found you, which means the visit is
+                paid for before the site gets a chance to lose it.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: 'Slow & Bloated',
-                  desc: "Templates are full of junk code that kills load speed. Customers won't wait more than 3 seconds.",
+                  title: 'They left before it loaded',
+                  desc: 'On cell service, a heavy site takes long enough that people back out before it draws.',
                   icon: Clock
                 },
                 {
-                  title: 'Invisible to Google',
-                  desc: 'Without proper structure and schema, Google ignores your site. You stay buried on page 10.',
-                  icon: Search
+                  title: 'It looks like nobody is home',
+                  desc: 'Copyright 2019, stock photos of a crew that\u2019s not yours, prices long out of date, and people read all of it as a business that might not pick up.',
+                  icon: X
                 },
                 {
-                  title: 'Generic Design',
-                  desc: 'Looking like everyone else makes you forgettable. Your brand deserves to stand out.',
-                  icon: X
+                  title: 'They could not find it',
+                  desc: 'The number is an image, the service they wanted is three clicks in, and the form asks nine questions before it will submit.',
+                  icon: Search
                 }].
                 map((item, i) =>
                   <motion.div
@@ -733,10 +740,10 @@ export function WebDesignPage() {
                     #1
                   </div>
                   <div className="text-orange text-xs font-medium mb-1 truncate">
-                    valleyproplumbing.com
+                    yourbusiness.com
                   </div>
                   <div className="text-white font-bold text-sm mb-1">
-                    Valley Pro Plumbing, Fresno Drain and Water Heater Repair
+                    Your business, and the service they searched for
                   </div>
                   <div className="text-white/40 text-xs leading-relaxed mb-2">
                     Fast, reliable plumbing services in Fresno & Clovis.
@@ -754,7 +761,7 @@ export function WebDesignPage() {
                       </svg>
                     )}
                     <span className="text-white/30 text-[10px] font-bold ml-1">
-                      4.9 (127)
+                      
                     </span>
                   </div>
                 </div>
@@ -921,14 +928,13 @@ export function WebDesignPage() {
         <section className="py-20 md:py-24 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight max-w-[18ch] mb-5">
-              Do you actually need WordPress?
+              Do you need WordPress?
             </h2>
             <p className="text-lg text-gray font-medium leading-relaxed max-w-[66ch] mb-12">
               <a href="https://w3techs.com/technologies/details/cm-wordpress" target="_blank" rel="noopener noreferrer" className="text-dark font-bold hover:text-orange transition-colors">WordPress runs a huge share of the web</a>{' '}
               and it is a good tool doing the job it was built for. It is also why a lot of small business sites are slow, because a
               brochure site does not need a database, a login screen, and forty plugins that
-              want patching every month. The question is not which platform wins. It is how
-              often you actually change your site.
+              want patching every month. The question is not which platform wins. It is how often you change your site.
             </p>
 
             <div className="overflow-x-auto -mx-6 px-6">
@@ -953,9 +959,9 @@ export function WebDesignPage() {
             </div>
 
             <p className="text-gray font-medium leading-relaxed max-w-[64ch] mt-8">
-              We build on all of these and we do not get paid more for picking one. If the
-              honest answer is that you should keep what you have, that is a cheaper
-              conversation for you and a shorter one for us, and a{' '}
+              We build on all of these in house and we do not get paid more for picking
+              one. If the honest answer is that you should keep what you have, that is a
+              cheaper conversation for you and a shorter one for us, and a{' '}
               <Link to="/maintenance" className="text-dark font-bold hover:text-orange transition-colors">care plan</Link>{' '}
               usually fixes a slow WordPress site for less than a rebuild costs. When the
               job turns out to need booking, a portal, or logins, that is{' '}
@@ -1041,7 +1047,7 @@ export function WebDesignPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-[16rem_1fr] gap-8 lg:gap-16 items-start">
               <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight lg:sticky lg:top-28">
-                What you are actually paying for.
+                What you are paying for.
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
                 {buildIncludes.map((item) =>
@@ -1107,9 +1113,8 @@ export function WebDesignPage() {
                     U.S. Small Business Administration
                   </a>{' '}
                   to speak on SEO and AI, and runs the defense technology startup DarkSigma
-                  outside of Boostify. The engineering standard from that work is the reason
-                  this page publishes a speed budget and a redirect process instead of
-                  adjectives.
+                  outside of Boostify. That is why you get a speed number and a redirect
+                  process in writing instead of adjectives.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -1162,8 +1167,7 @@ export function WebDesignPage() {
                   What usually comes next.
                 </h2>
                 <p className="text-gray font-medium leading-relaxed">
-                  A site is the foundation, not the whole job. Here is the order most
-                  clients actually add things in, and the point at which each one starts
+                  A site is the foundation, not the whole job. Here is the order most clients add things in, and the point at which each one starts
                   paying for itself.
                 </p>
               </div>
@@ -1174,31 +1178,31 @@ export function WebDesignPage() {
                     when: 'Once the site is live and you want strangers, not just referrals',
                     to: '/local-seo',
                     name: 'Local SEO',
-                    body: 'Ranking in the three-result map pack is a different job from having a good website. It is the one that decides whether people who have never heard of you ever see you.'
+                    body: 'Getting into the three-result map pack is separate work from building the site. It\u2019s what puts you in front of people who haven\u2019t heard of you yet.'
                   },
                   {
                     when: 'When you need calls this month rather than next quarter',
                     to: '/local-marketing',
                     name: 'Local marketing and LSAs',
-                    body: 'Google Business Profile management, Local Service Ads, reviews, and the call tracking that tells you which of them actually produced the phone call.'
+                    body: 'Google Business Profile management, Local Service Ads, reviews, and the call tracking that tells you which one produced the phone call.'
                   },
                   {
                     when: 'The day after launch, if you would rather not think about it again',
                     to: '/maintenance',
                     name: 'Website care, from $99 a month',
-                    body: 'Updates, backups, uptime and form monitoring, and content changes on request. Optional, no contract, and you can start it later.'
+                    body: 'Updates, backups, uptime and form monitoring, and content changes on request, with no contract and nothing stopping you from starting it a year after launch.'
                   },
                   {
                     when: 'When the same question reaches you fifty times a month',
                     to: '/ai-automation',
                     name: 'AI automation',
-                    body: 'Intake, follow-up, and the after-hours replies that otherwise sit in an inbox until somebody opens a laptop on Monday.'
+                    body: 'Intake, follow-up, and the after-hours replies that otherwise sit in an inbox until Monday.'
                   },
                   {
                     when: 'When a website is the wrong shape for the problem',
                     to: '/app-development',
                     name: 'App development',
-                    body: 'Booking flows, customer portals, and internal tools. If you are trying to force this into a website with six plugins, stop.'
+                    body: 'Booking flows, customer portals, and internal tools. If you\u2019re trying to force this into a website with six plugins, stop.'
                   }
                 ].map((r) =>
                   <Link key={r.to} to={r.to} className="group grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-2 md:gap-10 py-6 hover:bg-light/60 transition-colors -mx-4 px-4">
@@ -1254,8 +1258,7 @@ export function WebDesignPage() {
                   and we would rather meet at your shop than ours.
                 </p>
                 <p className="text-gray font-medium leading-relaxed">
-                  Each city below has its own page with local pricing, examples, and the
-                  questions businesses there actually ask.
+                  Pick your city for local pricing, work we&rsquo;ve done nearby, and the questions businesses there ask us most.
                 </p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -1322,7 +1325,7 @@ export function WebDesignPage() {
                   References
                 </h2>
                 <p className="text-xs text-gray font-medium leading-relaxed max-w-[30ch]">
-                  The published specs behind the claims on this page.
+                  The published standards behind the numbers we quote.
                 </p>
               </div>
 
@@ -1331,8 +1334,7 @@ export function WebDesignPage() {
                   { t: 'Core Web Vitals thresholds', s: 'web.dev', h: 'https://web.dev/articles/vitals' },
                   { t: 'LocalBusiness structured data', s: 'Google Search Central', h: 'https://developers.google.com/search/docs/appearance/structured-data/local-business' },
                   { t: '301 redirects and site moves', s: 'Google Search Central', h: 'https://developers.google.com/search/docs/crawling-indexing/301-redirects' },
-                  { t: 'Business Profile categories', s: 'Google', h: 'https://support.google.com/business/answer/3038177' },
-                  { t: 'PageSpeed Insights', s: 'Test any URL yourself', h: 'https://pagespeed.web.dev/' },
+                    { t: 'PageSpeed Insights', s: 'Test any URL yourself', h: 'https://pagespeed.web.dev/' },
                   { t: 'CMS usage across the web', s: 'W3Techs survey', h: 'https://w3techs.com/technologies/details/cm-wordpress' }
                 ].map((r) =>
                   <li key={r.h} className="py-2.5">

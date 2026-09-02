@@ -13,7 +13,7 @@ const steps = [
     days: 1,
     title: 'Discovery call',
     description:
-      'Forty-five minutes on the phone. What you sell, who buys it, and which jobs you would rather stop taking. If we are not the right shop we say so here, not after a deposit clears.',
+      'Forty-five minutes on the phone. What you sell, who buys it, and which jobs you would rather stop taking. If we\u2019re not the right shop we say so here, before any money changes hands.',
     from: 'Your three best jobs from last year, and your worst one.',
   },
   {
@@ -22,7 +22,7 @@ const steps = [
     days: 5,
     title: 'Sitemap and copy',
     description:
-      'Every page mapped before anything is designed. If you already have a site, this is where its URLs go into the redirect map that protects the rankings you have.',
+      'Every page mapped before anything is designed. If you already have a site, this is where its URLs go into the redirect map that protects the rankings you\u2019ve got.',
     from: 'Photos of real work, and an hour to review the outline.',
   },
   {
@@ -31,7 +31,7 @@ const steps = [
     days: 14,
     title: 'Build',
     description:
-      'Hand-coded against the spec published further up this page. A staging link goes up on the first day of this phase and stays up, so you watch it come together instead of waiting for a reveal.',
+      'Built to the spec we agreed on. A staging link goes up on the first day of this phase and stays up, so you watch it come together instead of waiting for a reveal.',
     from: 'Notes on the staging site, whenever you get to them.',
   },
   {
@@ -41,7 +41,7 @@ const steps = [
     title: 'Launch, then watch',
     description:
       'Redirects go in before the DNS switch, not after. Analytics, Search Console and call tracking get wired up, then we watch the index for two weeks and fix whatever moves the wrong way.',
-    from: 'Access to your domain registrar. That is the whole list.',
+    from: 'Access to your domain registrar. That\u2019s the whole list.',
   },
 ];
 
@@ -93,7 +93,7 @@ export function ProcessSection() {
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 1, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
