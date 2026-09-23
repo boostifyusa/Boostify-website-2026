@@ -9,7 +9,7 @@ export function SMSProgramPage() {
       <SeoHead
         title="SMS Program Terms | Boostify USA Communications"
         description="Terms and details regarding Boostify USA LLC's SMS program."
-        canonicalUrl="/sms-program"
+        canonicalUrl="/sms"
       />
       <Navigation />
 

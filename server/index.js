@@ -15,6 +15,64 @@ app.use(compression());
 app.use(cors());
 app.use(express.json());
 
+// ─── Canonical Host ──────────────────────────────────────────────────
+// nginx hands every hostname on :443 to this app, so www., the old
+// hyperboost.us domain and the bare droplet IP all land here. Everything
+// that isn't boostifyusa.com gets a single 301 to it. hyperboost.us paths
+// map to the closest live page so its old links and rankings carry over.
+const CANONICAL_HOST = 'boostifyusa.com';
+const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '::1', '[::1]']);
+
+const hyperboostRedirects = {
+    '/about': '/about',
+    '/about-us': '/about',
+    '/our-team': '/about',
+    '/author/victor': '/about',
+    '/contact-us': '/contact',
+    '/support': '/contact',
+    '/faq': '/contact',
+    '/free-quote': '/contact',
+    '/request': '/contact',
+    '/request-e-quote': '/contact',
+    '/request-work': '/contact',
+    '/book-now': '/contact',
+    '/get-started-now': '/contact',
+    '/get-started-on-your-new-site-today': '/contact',
+    '/seo-get-started': '/contact',
+    '/onboarding-questionnaire': '/contact',
+    '/marketing-analysis': '/seo-audit',
+    '/web-design': '/fresno-web-design',
+    '/web-design-pricing': '/fresno-web-design',
+    '/offer': '/fresno-web-design',
+    '/web-development': '/web-design',
+    '/blog/daily-news/why-is-web-design-so-expensive': '/web-design',
+    '/our-services': '/services',
+    '/what-we-do-at-hyperboost-web-design': '/services',
+    '/blog/thexfiles/empowering-fresno-businesses-a-closer-look-at-our-lead-gen-seo-ppc-and-web-design-services': '/services',
+    '/seo': '/local-seo',
+    '/seo-link-building': '/local-seo',
+    '/why-seo-matters-and-what-it-can-do-for-your-company': '/local-seo',
+    '/blog/seo/maximizing-small-business-growth-essential-seo-strategies-explained': '/local-seo',
+    '/social-media-marketing': '/local-marketing',
+    '/case-studies': '/work',
+    '/privacy-policy-2': '/privacy',
+};
+
+function hyperboostTarget(reqPath) {
+    const p = reqPath.toLowerCase().replace(/\/+$/, '') || '/';
+    if (hyperboostRedirects[p]) return hyperboostRedirects[p];
+    if (p.startsWith('/portfolio/')) return '/work';
+    return '/';
+}
+
+app.use((req, res, next) => {
+    const host = (req.hostname || '').toLowerCase();
+    if (!host || host === CANONICAL_HOST || LOCAL_HOSTS.has(host)) return next();
+    const isOldDomain = host === 'hyperboost.us' || host === 'www.hyperboost.us';
+    const target = isOldDomain ? hyperboostTarget(req.path) : req.originalUrl;
+    res.redirect(301, `https://${CANONICAL_HOST}${target}`);
+});
+
 // Googlebot Notification Middleware
 let lastGooglebotNotifyTime = 0;
 app.use((req, res, next) => {
@@ -141,11 +199,50 @@ loadAuditConfig();
 // Config watcher included in central watcher below
 
 // ─── SEO 301 Redirects ──────────────────────────────────────────────
+// Includes every URL from the old WordPress site (pre Feb 2026) so its
+// links and rankings land on the live equivalent instead of a 404.
+// Lookups ignore case and trailing slashes so each one is a single hop.
 const seoRedirects = {
     '/fresno-marketing-agency': '/local-marketing',
+    '/sms-program': '/sms',
+    '/service/web-design/fresno-ca': '/fresno-web-design',
+    '/service/web-design/web-design-fresno': '/fresno-web-design',
+    '/service/web-design': '/web-design',
+    '/service/lead-generation': '/local-seo',
+    '/web-design/fresno': '/fresno-web-design',
+    '/web-design/why-web-design-fresno-is-broken-and-how-boostify-usa-is-fixing-it': '/fresno-web-design',
+    '/why-web-design-fresno-is-broken-and-how-boostify-usa-is-fixing-it': '/fresno-web-design',
+    '/development/how-quality-web-design-transforms-businesses-in-fresno': '/fresno-web-design',
+    '/how-quality-web-design-transforms-businesses-in-fresno': '/fresno-web-design',
+    '/development/revolutionizing-website-design-key-strategies-for-modern-businesses': '/web-design',
+    '/revolutionizing-website-design-key-strategies-for-modern-businesses': '/web-design',
+    '/ppc/mastering-paid-search-a-comprehensive-guide-for-businesses': '/blog/google-ads-vs-lsa',
+    '/mastering-paid-search-a-comprehensive-guide-for-businesses': '/blog/google-ads-vs-lsa',
+    '/seo/unraveling-the-mysteries-of-search-engines-how-they-work-and-why-they-matter-for-your-business': '/local-seo',
+    '/unraveling-the-mysteries-of-search-engines-how-they-work-and-why-they-matter-for-your-business': '/local-seo',
+    '/guides/taking-photos': '/web-design',
+    '/support-policy': '/terms',
+    '/tos': '/terms',
+    '/blog': '/',
+    '/category/web-design': '/web-design',
+    '/category/development': '/web-design',
+    '/category/ui-ux-design': '/web-design',
+    '/category/seo': '/local-seo',
+    '/category/ppc': '/blog/google-ads-vs-lsa',
+    '/category/fresno': '/fresno-web-design',
+    '/tag/web-design-fresno': '/fresno-web-design',
+    '/tag/fresno': '/fresno-web-design',
+    '/tag/fresno-county': '/fresno-web-design',
+    '/tag/search-engines': '/local-seo',
+    '/tag/bing-ads': '/blog/google-ads-vs-lsa',
+    '/author/hyperboostusa': '/about',
 };
+// Anything else under the old WordPress archive prefixes goes home.
+const legacyArchivePrefix = /^\/(category|tag|author|\d{4})(\/|$)/;
+
 app.use((req, res, next) => {
-    const target = seoRedirects[req.path];
+    const p = req.path.toLowerCase().replace(/\/+$/, '') || '/';
+    const target = seoRedirects[p] || (legacyArchivePrefix.test(p) ? '/' : null);
     if (target) return res.redirect(301, target);
     next();
 });
@@ -167,8 +264,10 @@ app.use((req, res, next) => {
 // Handle all page requests, serving prerendered HTML or dynamic skeletons.
 // Assets are excluded via the first guard inside the middleware.
 app.use((req, res, next) => {
-    // Only intercept GET requests
-    if (req.method !== 'GET') {
+    // Only intercept GET and HEAD. HEAD used to fall through to
+    // express.static, which 301s /page to /page/ and loops with the
+    // trailing slash middleware.
+    if (req.method !== 'GET' && req.method !== 'HEAD') {
         return next();
     }
 
@@ -268,6 +367,7 @@ app.use((req, res, next) => {
 
 app.use(express.static(DIST_DIR, {
     index: false, // Catch-all handles HTML, express.static handles assets
+    redirect: false, // never 301 /page -> /page/ (fights the trailing slash middleware)
     maxAge: '1d',
     setHeaders: (res, path) => {
         if (path.includes('assets')) {
@@ -1550,13 +1650,16 @@ app.get('/api/partners/leads', async (req, res) => {
 
 // All other GET requests — inject SSR schemas for city marketing pages
 
-app.use((req, res, next) => {
+app.use((req, res) => {
     // Prevent serving index.html for missing static assets (fixes MIME type errors on missing JS chunks)
     if (req.path.match(/\.(js|css|json|png|jpg|jpeg|gif|ico|svg|map|woff|woff2|ttf|eot)$/) || req.path.startsWith('/assets/')) {
         return res.status(404).send('Asset not found');
     }
 
     // SSR handling moved to the top of the middleware chain for priority.
+    // Anything that reaches here (missing .xml/.txt, POST to a page) used to
+    // hang until nginx timed out with a 504. Answer it.
+    res.status(404).send('Not found');
 });
 
 

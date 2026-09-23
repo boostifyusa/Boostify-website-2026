@@ -49,7 +49,10 @@ export default defineConfig({
       hostname: 'https://boostifyusa.com',
       dynamicRoutes,
       exclude: ['/404', '/campaign'],
-      readable: true,
+      // Compact <loc> values. The readable format padded every URL with
+      // newlines and spaces. scripts/clean-sitemap.js prunes the file after
+      // prerender (prerender reads its route list from this sitemap).
+      readable: false,
       generateRobotsTxt: false,
     })
   ],

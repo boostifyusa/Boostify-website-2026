@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
+import { SeoHead } from '../components/SeoHead';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { ArrowRight, Map } from 'lucide-react';
@@ -66,6 +67,11 @@ const sitemapLinks = [
 export function SitemapPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
+            <SeoHead
+                title="Sitemap | All Pages | Boostify USA"
+                description="Every page on boostifyusa.com in one place: services, locations, blog posts, and company pages."
+                canonicalUrl="/sitemap"
+            />
             <Navigation />
 
             <main className="pt-28 md:pt-40">

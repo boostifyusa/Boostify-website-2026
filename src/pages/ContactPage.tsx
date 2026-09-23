@@ -516,9 +516,9 @@ export function ContactPage() {
                     <div>
                       <div className="text-dark font-bold text-sm">Hours</div>
                       <div className="text-gray font-medium text-sm leading-relaxed">
-                        Mon–Fri: 9am – 6pm
+                        Open 24/7
                         <br />
-                        Sat–Sun: By appointment
+                        Call or text any time
                       </div>
                     </div>
                   </div>
