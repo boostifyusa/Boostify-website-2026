@@ -664,7 +664,7 @@ export function HomePageV2() {
                                 initial={{ opacity: 1, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="inline-flex items-center gap-2.5 text-xs md:text-sm font-bold uppercase tracking-[0.13em] text-orange-hover mb-8"
+                                className="inline-flex items-center gap-2.5 text-xs md:text-sm font-bold uppercase tracking-[0.13em] text-orange-hover mb-8 text-wrap"
                             >
                                 <MapPin size={14} strokeWidth={3} className="shrink-0" />
                                 <span className="md:hidden">Fresno web design, since 2014</span>
