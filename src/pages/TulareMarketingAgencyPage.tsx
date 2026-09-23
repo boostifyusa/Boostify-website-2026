@@ -295,7 +295,7 @@ export function TulareMarketingAgencyPage() {
                                     </div>
                                     <div className="absolute bottom-4 z-30 bg-white/90 backdrop-blur-md rounded-xl p-3 shadow-xl border border-gray-100 flex items-center gap-3">
                                         <div className="w-10 h-10 bg-orange/10 rounded-lg shrink-0 flex items-center justify-center"><span className="text-orange font-black text-sm">B</span></div>
-                                        <div><div className="text-xs font-black text-dark mb-0.5">Boostify USA</div><div className="flex items-center gap-1"><div className="flex text-yellow-500 gap-0.5">{[...Array(5)].map((_, j) => (<Star key={j} size={8} fill="currentColor" />))}</div><span className="text-[9px] text-gray-500 font-bold">5.0 (48)</span></div></div>
+                                        <div><div className="text-xs font-black text-dark mb-0.5">Boostify USA</div><div className="flex items-center gap-1"><div className="flex text-yellow-500 gap-0.5">{[...Array(5)].map((_, j) => (<Star key={j} size={8} fill="currentColor" />))}</div><span className="text-[9px] text-gray-500 font-bold">5.0 (8)</span></div></div>
                                     </div>
                                 </div>
                             </div>

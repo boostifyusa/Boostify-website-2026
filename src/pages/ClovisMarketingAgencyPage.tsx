@@ -281,7 +281,7 @@ export function ClovisMarketingAgencyPage() {
                                             <div className="text-xs font-black text-dark mb-0.5">Boostify USA</div>
                                             <div className="flex items-center gap-1">
                                                 <div className="flex text-yellow-500 gap-0.5">{[...Array(5)].map((_, j) => (<Star key={j} size={8} fill="currentColor" />))}</div>
-                                                <span className="text-[9px] text-gray-500 font-bold">5.0 (48)</span>
+                                                <span className="text-[9px] text-gray-500 font-bold">5.0 (8)</span>
                                             </div>
                                         </div>
                                     </div>
