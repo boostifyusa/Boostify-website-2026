@@ -76,11 +76,11 @@ export function WebDesignLocationTemplate() {
             label: 'Conversion', icon: MousePointerClick,
             title: 'Designed to Convert',
             desc: "A pretty website is useless if it doesn't generate leads. We design every page around a single goal: getting your visitors to take action, like call, click, submit, or buy.",
-            stat: '3.2x', statLabel: 'More Conversions',
+            stat: '1', statLabel: 'Goal Per Page',
             visual: [
-                { label: 'Before Redesign', value: 20, color: 'bg-red-400', time: '1.2%' },
-                { label: 'Industry Average', value: 35, color: 'bg-yellow-400', time: '2.1%' },
-                { label: 'Boostify Sites', value: 65, color: 'bg-green-400', time: '6.8%' },
+                { label: 'Cluttered Page', value: 20, color: 'bg-red-400', time: 'Low' },
+                { label: 'Typical Template', value: 35, color: 'bg-yellow-400', time: 'Average' },
+                { label: 'Single-Goal Page', value: 65, color: 'bg-green-400', time: 'High' },
             ]
         },
         {

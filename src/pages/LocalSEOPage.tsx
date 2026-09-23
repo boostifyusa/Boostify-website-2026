@@ -101,8 +101,8 @@ export function LocalSEOPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Local SEO Fresno | Get Found on Google | Boostify USA"
-        description="Fresno local SEO services that get you found on Google Maps and search. Proven results for Central Valley businesses. Free SEO audit included."
+        title="Local SEO Services | Google Maps & Map Pack | Boostify USA"
+        description="Local SEO that gets service businesses found on Google Maps and search. Profile optimization, reviews, citations, and monthly reports. Free SEO audit included."
         canonicalUrl="/local-seo"
       />
       <SchemaJSON
@@ -566,11 +566,11 @@ export function LocalSEOPage() {
                       </div>
                       <div className="flex items-center gap-3 text-sm text-gray">
                         <Phone size={16} />
-                        <span>(559) 555-0123</span>
+                        <span>Your phone number</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-gray">
                         <MapPin size={16} />
-                        <span>123 Main St, Fresno, CA</span>
+                        <span>Your address, Fresno, CA</span>
                       </div>
                     </div>
 

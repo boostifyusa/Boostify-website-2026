@@ -126,7 +126,7 @@ export function MercedMarketingAgencyPage() {
                             <div className="bg-dark rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative z-10 p-6 aspect-[4/3] flex flex-col">
                                 <div className="flex items-center justify-between mb-5">
                                     <div className="flex items-center gap-2"><BarChart3 size={16} className="text-orange" /><span className="text-white/60 text-xs font-bold uppercase tracking-wider">Growth Scorecard</span></div>
-                                    <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" /><span className="text-green-400 text-xs font-bold">LIVE</span></div>
+                                    <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" /><span className="text-green-400 text-xs font-bold">EXAMPLE</span></div>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-3 mb-4">
@@ -147,7 +147,7 @@ export function MercedMarketingAgencyPage() {
                                 </div>
 
                                 <div className="bg-white/5 rounded-xl p-4 border border-white/5 mb-4">
-                                    <div className="text-white/30 text-[10px] font-bold uppercase tracking-wider mb-3">Revenue Generated in the last 12 months</div>
+                                    <div className="text-white/30 text-[10px] font-bold uppercase tracking-wider mb-3">Example client, revenue over 12 months</div>
                                     <div className="flex items-end gap-1 h-16">
                                         {[35, 42, 38, 55, 62, 58, 72, 80, 75, 88, 95, 100].map((h, i) => (
                                             <motion.div key={i} initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }} transition={{ delay: i * 0.05, duration: 0.4 }}
@@ -157,7 +157,7 @@ export function MercedMarketingAgencyPage() {
                                 </div>
 
                                 <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-                                    <div className="text-white font-black text-lg">$1.8M+ <span className="text-white/40 font-medium text-sm">Revenue Driven</span></div>
+                                    <div className="text-white font-black text-lg">12 Months <span className="text-white/40 font-medium text-sm">Example Trend</span></div>
                                     <div className="text-green-400 text-sm font-bold flex items-center gap-1"><TrendingUp size={14} /> +47%</div>
                                 </div>
                             </div>
@@ -222,10 +222,10 @@ export function MercedMarketingAgencyPage() {
                                 </div>
                                 <div className="space-y-2.5 flex-1">
                                     {[
-                                        { keyword: '"marketing agency merced"', rank: '#1', trend: '↑ 6' },
-                                        { keyword: '"web design merced ca"', rank: '#1', trend: '↑ 9' },
-                                        { keyword: '"seo services merced"', rank: '#2', trend: '↑ 4' },
-                                        { keyword: '"google ads merced"', rank: '#1', trend: '↑ 5' },
+                                        { keyword: '"plumber merced"', rank: '#1', trend: '↑ 6' },
+                                        { keyword: '"hvac repair merced ca"', rank: '#1', trend: '↑ 9' },
+                                        { keyword: '"roofer merced"', rank: '#2', trend: '↑ 4' },
+                                        { keyword: '"electrician merced"', rank: '#1', trend: '↑ 5' },
                                     ].map((item, i) => (
                                         <div key={i} className="bg-white/5 rounded-lg p-3 border border-white/5 flex items-center justify-between">
                                             <span className="text-white/70 text-sm font-medium truncate">{item.keyword}</span>

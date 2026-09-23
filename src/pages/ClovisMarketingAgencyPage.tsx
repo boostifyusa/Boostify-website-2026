@@ -223,8 +223,8 @@ export function ClovisMarketingAgencyPage() {
                                 className="absolute -bottom-4 -right-4 z-20 bg-dark rounded-xl shadow-lg px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
                                 <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center"><TrendingUp size={16} className="text-green-400" strokeWidth={3} /></div>
                                 <div>
-                                    <div className="text-xs font-black text-white leading-none">+156%</div>
-                                    <div className="text-[10px] text-white/50 font-medium">Avg. Traffic Growth</div>
+                                    <div className="text-xs font-black text-white leading-none">5.0 Stars</div>
+                                    <div className="text-[10px] text-white/50 font-medium">On Google</div>
                                 </div>
                             </motion.div>
 
@@ -415,10 +415,10 @@ export function ClovisMarketingAgencyPage() {
                                 </div>
                                 <div className="space-y-2.5 flex-1">
                                     {[
-                                        { keyword: '"marketing agency clovis"', rank: '#1', trend: '↑ 4', color: 'bg-green-500' },
-                                        { keyword: '"web design clovis ca"', rank: '#2', trend: '↑ 7', color: 'bg-green-500' },
-                                        { keyword: '"seo company clovis"', rank: '#1', trend: '↑ 3', color: 'bg-green-500' },
-                                        { keyword: '"digital advertising central valley"', rank: '#3', trend: '↑ 5', color: 'bg-orange' },
+                                        { keyword: '"plumber clovis"', rank: '#1', trend: '↑ 4', color: 'bg-green-500' },
+                                        { keyword: '"hvac repair clovis ca"', rank: '#2', trend: '↑ 7', color: 'bg-green-500' },
+                                        { keyword: '"roofing contractor clovis"', rank: '#1', trend: '↑ 3', color: 'bg-green-500' },
+                                        { keyword: '"emergency plumber central valley"', rank: '#3', trend: '↑ 5', color: 'bg-orange' },
                                     ].map((item, i) => (
                                         <div key={i} className="bg-white/5 rounded-lg p-3 border border-white/5 flex items-center justify-between">
                                             <span className="text-white/70 text-sm font-medium truncate">{item.keyword}</span>

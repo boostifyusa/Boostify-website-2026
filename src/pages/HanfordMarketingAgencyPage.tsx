@@ -18,7 +18,7 @@ import {
 const faqs = [
     { question: 'Do you work with businesses in Kings County?', answer: 'Yes, Hanford is one of our priority markets. We also serve Lemoore, Avenal, Corcoran, and surrounding Kings County communities. Our strategies are tailored to the unique dynamics of this area.' },
     { question: 'How is working with Boostify different from a freelancer?', answer: "Freelancers juggle dozens of clients with limited resources. We're a full-service team with dedicated strategists, designers, and ad specialists. You get the depth of an agency with the attention of a local partner." },
-    { question: 'What kind of ROI should I expect?', answer: 'Most clients see 3-5x return on their marketing investment within 6 months. Paid ads generate leads within the first week, while SEO compounds over time. We track every metric so you always know your ROI.' },
+    { question: 'What kind of ROI should I expect?', answer: 'It depends on your service, your market, and your budget, so we will not promise a multiple. Paid ads can start producing calls in the first week, while SEO builds over months and keeps compounding. We track calls, forms, and rankings every month so you can see exactly what you are getting back.' },
     { question: 'Is there a minimum contract length?', answer: "No. We work month-to-month. No long-term contracts, no cancellation penalties. We earn your business with results, not paperwork." },
     { question: 'Can you help my Hanford business rank above Visalia competitors?', answer: "Absolutely. Local SEO is about relevance and proximity. When someone in Hanford searches for your services, we make sure your business, and not a Visalia or Fresno competitor, appears first." },
 ];
@@ -130,7 +130,7 @@ export function HanfordMarketingAgencyPage() {
                             <div className="bg-dark rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative z-10 p-6 aspect-[4/3] flex flex-col">
                                 <div className="flex items-center justify-between mb-5">
                                     <div className="flex items-center gap-2"><Target size={16} className="text-orange" /><span className="text-white/60 text-xs font-bold uppercase tracking-wider">Lead Pipeline</span></div>
-                                    <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" /><span className="text-green-400 text-xs font-bold">ACTIVE</span></div>
+                                    <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" /><span className="text-green-400 text-xs font-bold">EXAMPLE</span></div>
                                 </div>
 
                                 {/* Pipeline stages */}

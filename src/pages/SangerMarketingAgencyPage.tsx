@@ -125,7 +125,7 @@ export function SangerMarketingAgencyPage() {
 
                             <div className="bg-dark rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative z-10 p-6 aspect-[4/3] flex flex-col">
                                 <div className="flex items-center justify-between mb-5">
-                                    <div className="flex items-center gap-2"><BarChart3 size={16} className="text-orange" /><span className="text-white/60 text-xs font-bold uppercase tracking-wider">Before & After</span></div>
+                                    <div className="flex items-center gap-2"><BarChart3 size={16} className="text-orange" /><span className="text-white/60 text-xs font-bold uppercase tracking-wider">Example: Before & After</span></div>
                                     <div className="text-orange text-xs font-bold">90-Day Transformation</div>
                                 </div>
 
@@ -163,7 +163,7 @@ export function SangerMarketingAgencyPage() {
                                 </div>
 
                                 <div className="pt-4 border-t border-white/10 flex items-center justify-center">
-                                    <div className="text-green-400 font-black text-lg">1,467% More Leads <span className="text-white/30 font-medium text-sm">in 90 Days</span></div>
+                                    <div className="text-green-400 font-black text-lg">Month to Month <span className="text-white/30 font-medium text-sm">No long-term contract</span></div>
                                 </div>
                             </div>
                             <div className="absolute -bottom-10 -right-10 w-full h-full bg-orange/5 rounded-3xl -z-10 hidden lg:block" />

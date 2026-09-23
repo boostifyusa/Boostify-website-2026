@@ -9,6 +9,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then(module => ({ default: module.ServicesPage })));
 const WebDesignPage = lazy(() => import('./pages/WebDesignPage').then(module => ({ default: module.WebDesignPage })));
 const LocalSEOPage = lazy(() => import('./pages/LocalSEOPage').then(module => ({ default: module.LocalSEOPage })));
+const FresnoSEOPage = lazy(() => import('./pages/FresnoSEOPage').then(module => ({ default: module.FresnoSEOPage })));
 const LocalMarketingPage = lazy(() => import('./pages/LocalMarketingPage').then(module => ({ default: module.LocalMarketingPage })));
 const MaintenancePage = lazy(() => import('./pages/MaintenancePage').then(module => ({ default: module.MaintenancePage })));
 const WebsiteMaintenanceSmallBusinessPage = lazy(() => import('./pages/WebsiteMaintenanceSmallBusinessPage').then(module => ({ default: module.WebsiteMaintenanceSmallBusinessPage })));
@@ -87,6 +88,7 @@ export function App() {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/web-design" element={<WebDesignPage />} />
               <Route path="/local-seo" element={<LocalSEOPage />} />
+              <Route path="/fresno-seo" element={<FresnoSEOPage />} />
               <Route path="/local-marketing" element={<LocalMarketingPage />} />
               <Route path="/maintenance" element={<MaintenancePage />} />
               <Route path="/website-maintenance-small-business" element={<WebsiteMaintenanceSmallBusinessPage />} />
