@@ -67,15 +67,15 @@ const homeSchema = {
 // ─── Service rail ───────────────────────────────────────────────────────────
 const services = [
     { to: '/web-design', kind: 'web', featured: true, name: 'Web Design', cta: 'See the build spec',
-      blurb: 'Hand-coded, or WordPress on a lean setup. Loads in under two seconds on a phone, and you can still edit the parts you need to edit.' },
+      blurb: 'Hand-coded or WordPress on a lean setup. It loads in under two seconds on a phone and you can still edit the parts you need to edit.' },
     { to: '/local-seo', kind: 'seo', name: 'Local SEO', cta: 'How ranking works',
-      blurb: 'The work that decides whether you show up in the three-result map pack.' },
+      blurb: 'Everything that decides if you show up in the top three on Google Maps.' },
     { to: '/local-marketing', kind: 'map', name: 'Local Marketing', cta: 'Campaigns and LSAs',
       blurb: 'Profile management, Local Service Ads, reviews, and the call tracking that shows which one paid.' },
     { to: '/app-development', kind: 'app', name: 'App Development', cta: 'What we build',
-      blurb: 'Customer portals, booking, and internal tools when a website is not the right shape for the job.' },
+      blurb: 'Customer portals, booking, and internal tools for when a regular website is not the right fit.' },
     { to: '/ai-automation', kind: 'ai', name: 'AI Automation', cta: 'Where it helps',
-      blurb: 'Intake, follow-up, and the after-hours replies that otherwise wait for Monday morning.' },
+      blurb: 'Intake, follow-up, and after-hours replies so your leads aren\u2019t sitting there until Monday.' },
     { to: '/maintenance', kind: 'care', name: 'Website Care', cta: 'Plans from $99',
       blurb: 'Updates, backups, uptime and form monitoring, and content changes on request.' },
 ];
@@ -267,7 +267,7 @@ const included = [
     {
         icon: Code2,
         title: 'It loads before they give up',
-        body: 'Hand-coded when the website rarely changes, WordPress when you want to edit it yourself. About half of what we build is WordPress. Either way it goes out on a lean setup. Most slow WordPress sites are running a bought theme and thirty or forty plugins, and we don\u2019t build them that way.',
+        body: 'Hand-coded if the website rarely changes, WordPress if you want to be able to edit it yourself. About half of what we build is WordPress. Either way it goes out on a lean setup. Most slow WordPress sites are running a paid theme with thirty or forty plugins on it, we don\u2019t build them like that.',
     },
     {
         icon: Gauge,
@@ -277,17 +277,17 @@ const included = [
     {
         icon: Braces,
         title: 'Your hours and number show up in the search result',
-        body: 'Not just on the page, in the result itself. That\u2019s what JSON-LD does: it hands Google your address, hours and phone in a format it can\u2019t misread, instead of leaving it to guess them off your footer and get them wrong.',
+        body: 'Not just on your website, right in the Google result. We add schema (JSON-LD) that gives Google your address, hours and phone in a format it can\u2019t get wrong, so it isn\u2019t guessing from your footer and getting it wrong.',
     },
     {
         icon: FileText,
         title: 'You can change your own prices and hours',
-        body: 'Most shops need to edit five things: hours, phone, staff, prices, photos. Those get wired to an editor you can use without calling anyone. Everything else stays fixed, so a Tuesday content change can\u2019t take the site down on Wednesday.',
+        body: 'Most shops only need to edit five things: hours, phone, staff, prices and photos. We set those up so you can change them yourself without calling anyone. Everything else stays locked so a quick edit on Tuesday can\u2019t break the whole site.',
     },
     {
         icon: Building2,
         title: 'You can tell which calls came from the map',
-        body: 'Your Google Business Profile gets its categories, service areas and tagged links set up properly. Do that once and you can finally separate map-pack calls from organic ones. Skip it and the leads all report as direct, which tells you very little.',
+        body: 'We set up your Google Business Profile with the right categories, service areas and tracked links. Once that\u2019s done you can finally see which calls came from the map and which came from search. Without it every lead just shows up as direct.',
     },
     {
         icon: ServerCog,
@@ -302,14 +302,14 @@ const tiers = [
         name: 'Template build',
         price: '$649',
         unit: 'one time',
-        who: 'A business that needs to exist online this month and does not need anything custom.',
+        who: 'A business that needs a website up this month and does not need anything custom.',
         points: ['Up to 5 pages', 'Your branding on a proven layout', 'Mobile, SSL, and basic schema', 'Live in about a week'],
     },
     {
         name: 'Custom build',
         price: '$1,995',
         unit: 'starting',
-        who: 'A business that competes on search and needs the site to carry weight.',
+        who: 'A business that competes on Google and needs a site that brings in work.',
         points: ['Designed and coded for you', 'Core Web Vitals work included', 'Full schema and GBP setup', 'Live in 3 to 5 weeks'],
         featured: true,
     },
@@ -317,7 +317,7 @@ const tiers = [
         name: 'Care plan',
         price: '$99',
         unit: 'per month',
-        who: 'Anyone who does not want to think about updates, backups, or a broken form.',
+        who: 'Anyone who doesn\u2019t want to worry about updates, backups, or a broken form.',
         points: ['Content changes on request', 'Uptime and form monitoring', 'Security patches and backups', 'Cancel any month'],
     },
 ];
@@ -327,22 +327,22 @@ const industries = [
     {
         icon: Tractor,
         name: 'Agriculture and equipment',
-        body: 'Growers and equipment dealers sell on spec sheets and service radius, and almost every ag site in the Valley buries both under a stock photo of a sunset over a field. Searchable implement lists. A real service-area map. A quote form that reaches a phone your crew answers during harvest.',
+        body: 'Growers and equipment dealers sell on spec sheets and service area, and almost every ag website in the Valley hides both under a stock photo of a field at sunset. We build searchable equipment lists, a real service area map, and a quote form that goes to a phone your crew answers during harvest.',
     },
     {
         icon: Wrench,
         name: 'HVAC, plumbing, roofing, electrical',
-        body: 'Trade work is won in the map pack at 9pm in July by whoever loads first and shows a number. One page per service so each one can rank on its own, call tracking on every one of them, and the phone number where a thumb already is.',
+        body: 'Trade jobs are won on Google Maps at 9pm in July by whoever loads first and shows a phone number. We build one page per service so each one can rank on its own, add call tracking to every one of them, and keep the number easy to tap.',
     },
     {
         icon: Scale,
         name: 'Legal practices',
-        body: 'One page per practice area, because a single services page can\u2019t rank for seven different things at once. Attorney bios carrying real bar numbers. Intake forms hardened against the bot traffic that fills a small firm’s inbox until it stops getting read.',
+        body: 'One page per practice area, because one services page can\u2019t rank for seven different things at once. Attorney bios with their real bar numbers. Intake forms that block the spam bots that fill a small firm\u2019s inbox until nobody reads it anymore.',
     },
     {
         icon: Stethoscope,
         name: 'Dental and medical',
-        body: 'New-patient paperwork and appointment requests that stay off plain email. Type set large enough to read at arm’s length, which sounds minor until you look at who is filling out the form.',
+        body: 'New patient paperwork and appointment requests that don\u2019t go through regular email. Text big enough to read at arm\u2019s length, which matters once you see who is filling out the form.',
     },
     {
         icon: UtensilsCrossed,
@@ -352,7 +352,7 @@ const industries = [
     {
         icon: Truck,
         name: 'Auto, truck, and fleet',
-        body: 'Bay counts, turnaround times, and fleet account pages, plus hours that match between the site and the Google listing, which on most shop sites they quietly do not, and that mismatch sends a customer to a competitor at 6:40 on a Friday. Full Throttle Suspension is one of ours. It\u2019s the build at the top of this page.',
+        body: 'Bay counts, turnaround times, and fleet account pages, plus hours that match between your website and your Google listing. On most shop sites they don\u2019t, and that sends customers to a competitor at 6:40 on a Friday. Full Throttle Suspension is one of ours, it\u2019s the website you see at the top of this page.',
     },
 ];
 
@@ -378,28 +378,28 @@ const cityPages = [
 const turndown = [
     {
         job: 'A site built to rank in a city you do not operate in',
-        why: 'Fake addresses and rented virtual offices get Google Business Profiles suspended, and because the suspension follows the owner rather than the listing, it can take the rest of your locations with it.',
+        why: 'Fake addresses and virtual offices get Google Business Profiles suspended. The suspension follows the owner and not just the listing, so it can end up taking down the rest of your locations with it.',
         instead: 'Nowhere. Do not buy this from anyone.',
     },
     {
         job: 'A $200 website',
-        why: 'No shop can design, write and build one for that. You would be paying for a template that already existed, with a markup on it.',
+        why: 'Nobody can design, write and build a real website for that. You\u2019d be paying for a template that already exists, with a markup.',
         instead: 'Go straight to Squarespace or Wix and do it yourself in a weekend. You will get the same result and keep the difference.',
     },
     {
         job: 'A store carrying more than a few hundred products',
-        why: 'Inventory sync, tax tables, shipping rules, and returns are a separate trade with its own specialists, and taking the job would mean learning it on your money and your launch date.',
+        why: 'Inventory sync, sales tax, shipping rules and returns are their own specialty with their own experts. If we took the job we would be learning it on your money and on your launch date.',
         instead: 'A Shopify Plus partner. Ask us and we\u2019ll name two in the Valley.',
     },
     {
         job: 'Guaranteed number one on Google',
-        why: 'No agency controls the ranking, and the ones who guarantee it are either targeting a phrase with no search volume or planning to blame you in month four.',
-        instead: 'Hire on process and reporting. Anyone selling a guarantee is telling you what they\u2019re.',
+        why: 'No agency controls Google. The ones who guarantee number one are either picking a keyword nobody searches or they\u2019re planning to blame you in month four.',
+        instead: 'Hire someone who shows you their process and reports. Skip anyone selling a guarantee.',
     },
     {
         job: 'Live in 48 hours',
-        why: 'Rushed launches skip the redirect map, and that\u2019s the one step that costs you rankings you already had.',
-        instead: 'If the old site is up, we can patch what is broken this week and build the replacement properly behind it.',
+        why: 'Rushed launches skip the redirects, and that\u2019s the one step that protects the rankings you already have.',
+        instead: 'If your old site is still up, we can fix what\u2019s broken this week and build the new one properly behind it.',
     },
 ];
 
@@ -407,11 +407,11 @@ const turndown = [
 const vetting = [
     {
         q: 'Who owns the domain and the hosting account the day I leave?',
-        a: 'If the answer is anything but you, what you have is a lease rather than an asset, so get the answer in writing before you pay a deposit. Ours says you own it and the transfer is free.',
+        a: 'If the answer is anything but you, you\u2019re just renting your website, you don\u2019t own it. Get that in writing before you pay a deposit. Ours says you own it and the transfer is always free.',
     },
     {
         q: 'What did the last three sites you shipped score on PageSpeed?',
-        a: 'Any shop can promise a number for a site that doesn\u2019t exist yet. Ask for three live URLs, open pagespeed.web.dev while you\u2019re still on the phone, and run them yourself.',
+        a: 'Anyone can promise a score for a site that doesn\u2019t exist yet. Ask for three live websites, open pagespeed.web.dev while you\u2019re still on the phone, and test them yourself.',
     },
     {
         q: 'Are the reviews on your website real, and where do I read them?',
@@ -419,7 +419,7 @@ const vetting = [
     },
     {
         q: 'What happens to my rankings during the rebuild?',
-        a: 'If the word redirect doesn\u2019t come out of their mouth without prompting, your traffic is going to fall and it will be described to you as a redesign.',
+        a: 'If they don\u2019t bring up redirects on their own, your traffic is probably going to drop after launch and they\u2019ll tell you it\u2019s normal for a redesign.',
     },
     {
         q: 'Who picks up the phone in six months?',
@@ -905,10 +905,7 @@ export function HomePageV2() {
                                         Which one do I need
                                     </p>
                                     <p className="lede text-dark font-medium leading-relaxed max-w-[44ch]">
-                                        Most clients start with one and add a second inside a year, usually in
-                                        the same order: build the site, fix the listings, then pay for traffic.
-                                        Running ads at a site that does not convert is how people decide that
-                                        marketing does not work.
+                                        Most of our clients start with one and add another within a year, usually in this order: build the website, fix the listings, then pay for traffic. Running ads to a site that doesn’t convert is why a lot of owners think marketing doesn’t work.
                                     </p>
                                 </div>
 
@@ -1141,8 +1138,7 @@ export function HomePageV2() {
                             The Fresno businesses we know well.
                         </h2>
                         <p className="lede text-lg text-gray font-medium leading-relaxed max-w-[62ch] mb-12">
-                            A restaurant website and a roofing site fail for completely different reasons. These
-                            are the ones we have built enough of to know where each breaks before it breaks.
+                            A restaurant website and a roofing website fail for different reasons. These are the industries we’ve built enough sites for to know what goes wrong before it does.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-9">
@@ -1174,10 +1170,7 @@ export function HomePageV2() {
                                     Where we work.
                                 </h2>
                                 <p className="text-lg text-gray font-medium leading-relaxed mb-6">
-                                    The office is at 6362 N Figarden Dr. #118, off Figarden between Herndon and
-                                    Bullard. Most clients are inside twenty minutes of that door. We would still
-                                    rather meet at your shop, because the things worth putting on the site are
-                                    usually sitting in your yard.
+                                    Our office is at 6362 N Figarden Dr. #118, off Figarden between Herndon and Bullard. Most of our clients are within twenty minutes of us. We would still rather meet at your shop, because the best stuff to put on your website is usually sitting in your yard.
                                 </p>
                                 <p className="text-lg text-gray font-medium leading-relaxed mb-8">
                                     We take walk-ins and on-site meetings across{' '}
@@ -1248,9 +1241,7 @@ export function HomePageV2() {
                                 Work we turn down, and where to send it.
                             </h2>
                             <p className="lede text-lg md:text-xl text-gray font-medium leading-relaxed max-w-[62ch]">
-                                These come in most weeks and get turned down, which costs us money and saves you
-                                more. Two of them go somewhere better and we will make the introduction. One of
-                                them should not be sold to you at any price.
+                                We get asked for these most weeks and we say no, even though it costs us money. Two of them are better handled by someone else and we’ll introduce you. One of them nobody should be selling you at any price.
                             </p>
                         </div>
 

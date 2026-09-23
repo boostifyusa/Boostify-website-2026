@@ -13,7 +13,7 @@ const steps = [
     days: 1,
     title: 'Discovery call',
     description:
-      'Forty-five minutes on the phone. What you sell, who buys it, and which jobs you would rather stop taking. If we\u2019re not the right shop we say so here, before any money changes hands.',
+      'About forty-five minutes on the phone. What you sell, who buys it, and which jobs you\u2019d rather stop taking. If we\u2019re not the right fit we\u2019ll tell you right there, before you pay anything.',
     from: 'Your three best jobs from last year, and your worst one.',
   },
   {
@@ -56,8 +56,7 @@ export function ProcessSection() {
             How we work.
           </h2>
           <p className="text-lg text-white/55 font-medium leading-relaxed max-w-[46ch] lg:text-right lg:pb-2">
-            Four phases, twenty-five working days, and a staging link you can open
-            from the second week on.
+            Four phases, about twenty-five working days, and a preview link you can open from week two on.
           </p>
         </div>
 
