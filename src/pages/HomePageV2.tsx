@@ -267,12 +267,12 @@ const included = [
     {
         icon: Code2,
         title: 'It loads before they give up',
-        body: 'Hand-coded when the site rarely changes, WordPress when you want to edit it yourself. About half of what we build is WordPress. Either way it goes out on a lean setup. Most slow WordPress sites are running a bought theme and thirty or forty plugins, and we don\u2019t build them that way.',
+        body: 'Hand-coded when the website rarely changes, WordPress when you want to edit it yourself. About half of what we build is WordPress. Either way it goes out on a lean setup. Most slow WordPress sites are running a bought theme and thirty or forty plugins, and we don\u2019t build them that way.',
     },
     {
         icon: Gauge,
         title: 'Fast on a phone, not just on your laptop',
-        body: 'LCP under 2.5 seconds and CLS under 0.1, measured on a mid-range Android over 4G. That last part is the part agencies skip. Your site was designed on a Mac wired to fiber, and that\u2019s not the machine your customer is holding in a truck cab.',
+        body: 'LCP under 2.5 seconds and CLS under 0.1, measured on a mid-range Android over 4G. That last part is the part agencies skip. Your website was designed on a Mac wired to fiber, and that\u2019s not the machine your customer is holding in a truck cab.',
     },
     {
         icon: Braces,
@@ -697,7 +697,7 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                             >
-                                The site, the search rankings, the Google listing, and the follow-up that
+                                The website, the search rankings, the Google listing, and the follow-up that
                                 catches the calls you would otherwise miss. All of it in house, and the
                                 prices are published below.
                             </motion.p>
@@ -1141,7 +1141,7 @@ export function HomePageV2() {
                             The Fresno businesses we know well.
                         </h2>
                         <p className="lede text-lg text-gray font-medium leading-relaxed max-w-[62ch] mb-12">
-                            A restaurant site and a roofing site fail for completely different reasons. These
+                            A restaurant website and a roofing site fail for completely different reasons. These
                             are the ones we have built enough of to know where each breaks before it breaks.
                         </p>
 
