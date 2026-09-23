@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
 import { SeoHead } from '../components/SeoHead';
 import { Footer } from '../components/Footer';
@@ -656,19 +656,11 @@ export function WebDesignModestoPage() {
                                             <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />
                                         )}
                                     </button>
-                                    <AnimatePresence>
-                                        {openFaq === i && (
-                                            <motion.div
-                                                initial={{ height: 0 }}
-                                                animate={{ height: 'auto' }}
-                                                exit={{ height: 0 }}
-                                                className="overflow-hidden">
+                                    <motion.div initial={false} animate={{ height: openFaq === i ? 'auto' : 0 }} className="overflow-hidden">
                                                 <div className="px-8 pb-8 text-gray font-medium leading-relaxed">
                                                     {faq.answer}
                                                 </div>
                                             </motion.div>
-                                        )}
-                                    </AnimatePresence>
                                 </div>
                             ))}
                         </div>

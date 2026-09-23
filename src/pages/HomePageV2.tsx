@@ -619,8 +619,8 @@ export function HomePageV2() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Fresno Marketing Agency | SEO, Web Design & Ads | Boostify USA"
-                description="Fresno's web design and local marketing studio. We build fast, SEO-ready websites that turn Central Valley visitors into paying customers."
+                title="Web Design Fresno | Custom Websites & SEO | Boostify USA"
+                description="Fresno web design studio since 2014. We build fast, SEO-ready websites that turn Central Valley visitors into paying customers."
                 canonicalUrl="/"
             >
                 <link rel="preload" as="image" href="/hero-bg-pattern-micro.webp" />
@@ -659,7 +659,7 @@ export function HomePageV2() {
                     <div className="max-w-7xl mx-auto relative z-10">
                         {/* Centered Content */}
                         <div className="text-center max-w-4xl mx-auto mb-16 relative">
-                            <motion.div
+                            <motion.h1
                                 suppressHydrationWarning
                                 initial={{ opacity: 1, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -669,9 +669,9 @@ export function HomePageV2() {
                                 <MapPin size={14} strokeWidth={3} className="shrink-0" />
                                 <span className="md:hidden">Fresno web design, since 2014</span>
                                 <span className="hidden md:inline">Fresno web design &amp; marketing agency, since 2014</span>
-                            </motion.div>
+                            </motion.h1>
 
-                            <motion.h1
+                            <motion.h2
                                 suppressHydrationWarning
                                 initial={{ opacity: 1, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -689,7 +689,7 @@ export function HomePageV2() {
                                     >Actually</motion.span>
                                 </span>{' '}
                                 Makes the Phone Ring.
-                            </motion.h1>
+                            </motion.h2>
 
                             <motion.p
                                 suppressHydrationWarning
