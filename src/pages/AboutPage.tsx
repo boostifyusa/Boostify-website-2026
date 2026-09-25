@@ -86,8 +86,8 @@ export function AboutPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="About Joaquin Estrada: Founder of Boostify USA"
-        description="Meet the team behind Boostify USA. Founded by Joaquin Estrada, serving Fresno businesses with data-driven web design and SEO."
+        title="About Victor Joaquin: Founder of Boostify USA"
+        description="Meet the team behind Boostify USA. Founded by Victor Joaquin, serving Fresno businesses with data-driven web design and SEO."
         canonicalUrl="/about"
       />
       <SchemaJSON
@@ -104,7 +104,7 @@ export function AboutPage() {
           ],
           founder: {
             "@type": "Person",
-            "name": "Joaquin Estrada",
+            "name": "Victor Joaquin",
             "jobTitle": "Founder & Lead Strategist"
           }
         }}
@@ -152,7 +152,7 @@ export function AboutPage() {
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-gray-light shadow-lg">
                   <img
                     src="/1733568683912.jpg"
-                    alt="Joaquin Estrada"
+                    alt="Victor Joaquin"
                     className="w-full h-full object-cover" />
 
                 </div>
@@ -173,7 +173,7 @@ export function AboutPage() {
                 }}>
 
                 <h1 className="text-4xl md:text-5xl font-black text-dark tracking-tighter leading-[0.95] mb-2">
-                  Joaquin Estrada
+                  Victor Joaquin
                 </h1>
                 <p className="text-orange font-bold text-lg tracking-tight">
                   Founder & Lead Strategist

@@ -237,7 +237,7 @@ export function WebDesignPage() {
           primaryImageOfPage: "https://boostifyusa.com/FTS-Mock.webp",
           author: {
             "@type": "Person",
-            name: "Joaquin Estrada",
+            name: "Victor Joaquin",
             jobTitle: "Founder & Lead Strategist",
             url: "https://boostifyusa.com/about",
             worksFor: { "@type": "Organization", "@id": "https://boostifyusa.com/#localbusiness", name: "Boostify USA Web Design & SEO" },
@@ -1082,7 +1082,7 @@ export function WebDesignPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-start">
               <img
                 src="/1733568683912.jpg"
-                alt="Joaquin Estrada, founder of Boostify USA"
+                alt="Victor Joaquin, founder of Boostify USA"
                 width={200}
                 height={200}
                 loading="lazy"
@@ -1095,7 +1095,7 @@ export function WebDesignPage() {
                   Who does the work
                 </p>
                 <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-4">
-                  Joaquin Estrada builds these himself.
+                  Victor Joaquin builds these himself.
                 </h2>
                 <p className="text-lg text-gray font-medium leading-relaxed max-w-[68ch] mb-4">
                   Not a project manager relaying notes to a contractor in another time zone.

@@ -146,7 +146,7 @@ export function LinksPage() {
                         <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-orange/40 shadow-xl shadow-orange/10 relative z-10">
                             <img
                                 src="/1733568683912.jpg"
-                                alt="Joaquin Estrada — Founder of Boostify USA"
+                                alt="Victor Joaquin — Founder of Boostify USA"
                                 className="w-full h-full object-cover"
                             />
                         </div>

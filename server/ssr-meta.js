@@ -57,8 +57,8 @@ const ssrMeta = new Map([
 
     // ─── Company Pages ───────────────────────────────────────────────────────
     ['/about', {
-        title: 'About Joaquin Estrada | Central Valley Web Design',
-        description: 'Meet the team behind Boostify USA. Founded by Joaquin Estrada, serving Fresno businesses with data-driven web design and SEO.',
+        title: 'About Victor Joaquin | Central Valley Web Design',
+        description: 'Meet the team behind Boostify USA. Founded by Victor Joaquin, serving Fresno businesses with data-driven web design and SEO.',
         canonical: `${SITE_URL}/about`
     }],
     ['/contact', {

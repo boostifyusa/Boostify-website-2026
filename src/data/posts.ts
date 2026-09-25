@@ -6,7 +6,7 @@ export const blogPosts: Record<string, any> = {
     date: 'May 20, 2026',
     dateModified: 'May 20, 2026',
     readTime: '12 min read',
-    author: 'Joaquin Estrada',
+    author: 'Victor Joaquin',
     authorImage: '/1733568683912.jpg',
     category: 'Fresno Agencies',
     featuredImage: '/blog-images/showcase/fresno-agencies-hero.webp',
@@ -206,7 +206,7 @@ export const blogPosts: Record<string, any> = {
               name: 'Who is the best web design agency in Fresno?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence: identifying gaps and weaknesses in specific competitors' strategies and exploiting them to outrank. AI is a consulting and future-readiness capability rather than a packaged product. Founder Joaquin Estrada has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms."
+                text: "Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence: identifying gaps and weaknesses in specific competitors' strategies and exploiting them to outrank. AI is a consulting and future-readiness capability rather than a packaged product. Founder Victor Joaquin has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms."
               }
             },
             {
@@ -332,7 +332,7 @@ export const blogPosts: Record<string, any> = {
           SEO is run on competitive intelligence. The team identifies gaps and weaknesses in specific competitors’ rankings, content, and ad strategies, then exploits those gaps to outrank them. Every decision is backed by analytics, not opinions. Per their own published results, Boostify has <strong>doubled conversion rates</strong> for local service business clients using this approach.
         </p>
         <p>
-          Where Boostify is poised differently from other Fresno agencies is the founder’s depth in AI. Joaquin Estrada has extensive hands-on experience with machine learning and large language models, deeper than the typical agency operator, and that shows up as <strong>AI consulting and integration capability</strong> rather than a packaged AI product line. Boostify is trusted by organizations you know: the U.S. Small Business Administration and the Valley Sierra SBDC have hired Boostify to teach small business owners about emerging AI technology with live speaking and product demos, and Fresno State hired Boostify to build their news website.
+          Where Boostify is poised differently from other Fresno agencies is the founder’s depth in AI. Victor Joaquin has extensive hands-on experience with machine learning and large language models, deeper than the typical agency operator, and that shows up as <strong>AI consulting and integration capability</strong> rather than a packaged AI product line. Boostify is trusted by organizations you know: the U.S. Small Business Administration and the Valley Sierra SBDC have hired Boostify to teach small business owners about emerging AI technology with live speaking and product demos, and Fresno State hired Boostify to build their news website.
         </p>
         <p>
           Outside Boostify, Joaquin is the founder of defense technology startup DarkSigma, and brings that same standard of rigorous engineering directly to local marketing campaigns. <strong>5.0 Google rating</strong>, Google Marketing Platform Certified. Code is written by hand at the Fresno HQ. American operated, no outsourcing.
@@ -552,7 +552,7 @@ export const blogPosts: Record<string, any> = {
         </h2>
 
         <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">Who is the best web design agency in Fresno?</h3>
-        <p>Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence, identifying gaps and weaknesses in specific competitors’ strategies and exploiting them to outrank. AI is positioned as a consulting and future-readiness capability rather than a packaged product: founder Joaquin Estrada has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms.</p>
+        <p>Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence, identifying gaps and weaknesses in specific competitors’ strategies and exploiting them to outrank. AI is positioned as a consulting and future-readiness capability rather than a packaged product: founder Victor Joaquin has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms.</p>
 
         <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">How much does web design cost in Fresno, CA?</h3>
         <p>Pricing in Fresno ranges from around $2,500 for a basic small-business site at boutique studios like Meshup, up to $25,000 or more for custom-coded builds with AI integration at agencies like Boostify or Nettra Media. Most Central Valley small businesses spend between $5,000 and $12,000 for a professionally built site. Ongoing maintenance runs $50 to $500 a month depending on what is bundled in.</p>
@@ -587,7 +587,7 @@ export const blogPosts: Record<string, any> = {
       "AI isn't just for tech giants anymore. Local service businesses are using AI automation, intelligent agents, and tools like OpenClaw to answer calls, book appointments, and follow up with leads 24/7.",
     date: 'February 20, 2026',
     readTime: '8 min read',
-    author: 'Joaquin Estrada',
+    author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
 
     category: 'AI & Automation',
@@ -667,7 +667,7 @@ export const blogPosts: Record<string, any> = {
       "Most local businesses are leaving money on the table with these common SEO mistakes. Here's how to fix them and start ranking higher on Google.",
     date: 'January 15, 2026',
     readTime: '6 min read',
-    author: 'Joaquin Estrada',
+    author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
 
     category: 'Local SEO',
@@ -776,7 +776,7 @@ export const blogPosts: Record<string, any> = {
       "Traffic means nothing if it doesn't convert. If your phone isn't ringing, your website might be guilty of these conversion killers.",
     date: 'January 8, 2026',
     readTime: '5 min read',
-    author: 'Joaquin Estrada',
+    author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
 
     category: 'Web Design',
@@ -887,7 +887,7 @@ export const blogPosts: Record<string, any> = {
       "Confused by Google's advertising options? We break down the differences between traditional PPC and the new Local Service Ads (Google Guaranteed).",
     date: 'December 20, 2025',
     readTime: '7 min read',
-    author: 'Joaquin Estrada',
+    author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
 
     category: 'Paid Ads',
@@ -1000,7 +1000,7 @@ export const blogPosts: Record<string, any> = {
       "Google reviews are the #1 trust signal for local businesses. Here's a simple, repeatable system to get more 5-star reviews without pestering your customers.",
     date: 'December 5, 2025',
     readTime: '6 min read',
-    author: 'Joaquin Estrada',
+    author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
 
     category: 'Local SEO',
@@ -1154,7 +1154,7 @@ export const blogPosts: Record<string, any> = {
       "A complete, free resource guide for contractors: how to get found online, look professional, and get reviews without begging.",
     date: 'February 23, 2026',
     readTime: '8 min read',
-    author: 'Joaquin Estrada',
+    author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
 
     category: 'Free Resource',

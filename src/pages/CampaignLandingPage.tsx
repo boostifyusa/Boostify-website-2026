@@ -359,9 +359,9 @@ export function CampaignLandingPage() {
                                     transition={{ duration: 0.5, delay: 0.5 }}
                                     className="mt-8 md:mt-10 p-4 md:p-5 bg-gray-50/80 rounded-2xl border border-gray-100 flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left max-w-xl mx-auto lg:mx-0 shadow-sm"
                                 >
-                                    <img src="/1733568683912.jpg" alt="Joaquin Estrada" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shadow-md shrink-0 border-2 border-white" />
+                                    <img src="/1733568683912.jpg" alt="Victor Joaquin" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shadow-md shrink-0 border-2 border-white" />
                                     <div>
-                                        <p className="font-bold text-dark mb-1 text-sm md:text-base">Joaquin Estrada, Founder</p>
+                                        <p className="font-bold text-dark mb-1 text-sm md:text-base">Victor Joaquin, Founder</p>
                                         <p className="text-xs md:text-sm text-gray font-medium leading-snug">
                                             Invited by the SBA to speak on SEO and AI, Joaquin's data-driven strategies have doubled conversions for local businesses.
                                         </p>
