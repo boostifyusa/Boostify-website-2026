@@ -93,7 +93,7 @@ export function AboutPage() {
       <SchemaJSON
         type="Organization"
         data={{
-          name: "Boostify USA",
+          name: "Boostify USA Web Design & SEO",
           url: "https://boostifyusa.com/about",
           telephone: "+1-559-785-3834",
           email: "hello@boostifyusa.com",

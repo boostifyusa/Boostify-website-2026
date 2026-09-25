@@ -240,7 +240,7 @@ export function WebDesignPage() {
             name: "Joaquin Estrada",
             jobTitle: "Founder & Lead Strategist",
             url: "https://boostifyusa.com/about",
-            worksFor: { "@type": "Organization", name: "Boostify USA" },
+            worksFor: { "@type": "Organization", "@id": "https://boostifyusa.com/#localbusiness", name: "Boostify USA Web Design & SEO" },
             hasCredential: [
               {
                 "@type": "EducationalOccupationalCredential",

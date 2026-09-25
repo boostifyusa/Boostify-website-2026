@@ -216,9 +216,10 @@ export function WebsiteMaintenanceSmallBusinessPage() {
               addressCountry: 'US',
             },
             sameAs: [
-              'https://www.facebook.com/boostifyusa',
-              'https://www.instagram.com/boostifyusa',
-              'https://www.linkedin.com/company/boostifyusa',
+              'https://www.google.com/maps?cid=5709723330865512710',
+              'https://www.facebook.com/boostifyusa/',
+              'https://www.instagram.com/boostifyusa/',
+              'https://www.yelp.com/biz/boostify-usa-web-design-and-seo-fresno-5',
             ],
           },
           areaServed: [

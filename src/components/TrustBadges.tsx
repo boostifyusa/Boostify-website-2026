@@ -60,8 +60,8 @@ export function TrustBadges() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            '@id': 'https://boostifyusa.com/#organization',
-            name: 'Boostify USA',
+            '@id': 'https://boostifyusa.com/#localbusiness',
+            name: 'Boostify USA Web Design & SEO',
             url: 'https://boostifyusa.com',
             hasCredential: {
               '@type': 'EducationalOccupationalCredential',

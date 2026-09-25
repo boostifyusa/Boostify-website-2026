@@ -20,9 +20,19 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const homeSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Boostify USA: Fresno Web Design & Marketing Agency",
+    "@id": "https://boostifyusa.com/#localbusiness",
+    // Name and description match the Google Business Profile word for word
+    // (source of truth: Boostify Brain wiki/design/boostify-nap.md).
+    "name": "Boostify USA Web Design & SEO",
     "url": "https://boostifyusa.com/",
-    "description": "Most Fresno businesses lose money on websites that don't convert. Boostify USA builds custom web design & SEO systems that generate leads 24/7 for local businesses.",
+    "description": "Boostify USA Web Design & SEO is an agency in Fresno. We build small-business websites and help owners get found online and use AI. I'm Victor Joaquin. I started building websites at 16 and spent time inside several of the bigger agencies in town before starting my own. We did the WordPress build for Fresno State's news site and trained their staff on it, and I've run workshops for the SBA. You own your website and your domain.",
+    "hasMap": "https://www.google.com/maps?cid=5709723330865512710",
+    "sameAs": [
+        "https://www.google.com/maps?cid=5709723330865512710",
+        "https://www.facebook.com/boostifyusa/",
+        "https://www.instagram.com/boostifyusa/",
+        "https://www.yelp.com/biz/boostify-usa-web-design-and-seo-fresno-5"
+    ],
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -37,10 +47,9 @@ const homeSchema = {
         "longitude": -119.8684005
     },
     "areaServed": [
-        { "@type": "City", "name": "Fresno" },
-        { "@type": "City", "name": "Clovis" },
-        { "@type": "City", "name": "Madera" },
-        { "@type": "City", "name": "Central Valley" }
+        { "@type": "AdministrativeArea", "name": "Fresno County, CA" },
+        { "@type": "AdministrativeArea", "name": "Madera County, CA" },
+        { "@type": "AdministrativeArea", "name": "Tulare County, CA" }
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
