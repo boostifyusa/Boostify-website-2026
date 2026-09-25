@@ -327,7 +327,7 @@ export function ContactPage() {
             },
             {
               "@type": "ContactPoint",
-              "telephone": "+1-559-201-8706",
+              "telephone": "+1-559-785-3834",
               "contactType": "customer service",
               "areaServed": "US",
               "availableLanguage": "English"

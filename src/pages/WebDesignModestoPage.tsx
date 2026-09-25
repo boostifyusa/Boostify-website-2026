@@ -90,7 +90,7 @@ const advertiserSchema = {
     "telephone": "+1-559-785-3834",
     "contactPoint": [
         { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "sales" },
-        { "@type": "ContactPoint", "telephone": "+1-559-201-8706", "contactType": "customer service" }
+        { "@type": "ContactPoint", "telephone": "+1-559-785-3834", "contactType": "customer service" }
     ],
     "email": "hello@boostifyusa.com",
     "logo": "https://boostifyusa.com/icon.png",
