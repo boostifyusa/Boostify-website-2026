@@ -6,7 +6,7 @@ const stats = [
   label: 'Stars on Google'
 },
 {
-  value: '9',
+  value: '8',
   label: 'Five-Star Reviews'
 },
 {

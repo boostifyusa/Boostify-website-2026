@@ -276,17 +276,17 @@ const included = [
     {
         icon: Code2,
         title: 'It loads before they give up',
-        body: 'Hand-coded if the website rarely changes, WordPress if you want to be able to edit it yourself. About half of what we build is WordPress. Either way it goes out on a lean setup. Most slow WordPress sites are running a paid theme with thirty or forty plugins on it, we don\u2019t build them like that.',
+        body: 'Hand-coded if the website rarely changes, WordPress if you want to be able to edit it yourself. About half of what we build is WordPress, and all of it goes out lean. Most slow WordPress sites run a paid theme with thirty or forty plugins, and a plugin can load its scripts on every page.',
     },
     {
         icon: Gauge,
-        title: 'Fast on a phone, not just on your laptop',
-        body: 'LCP under 2.5 seconds and CLS under 0.1, measured on a mid-range Android over 4G. That last part is the part agencies skip. Your website was designed on a Mac wired to fiber, and that\u2019s not the machine your customer is holding in a truck cab.',
+        title: 'Fast on the phones your customers use',
+        body: 'LCP under 2.5 seconds and CLS under 0.1, measured on a mid-range Android over 4G. Many web designers skip that last part. Your website was designed on a Mac wired to fiber, and that\u2019s not the machine your customer is holding in a truck cab.',
     },
     {
         icon: Braces,
         title: 'Your hours and number show up in the search result',
-        body: 'Not just on your website, right in the Google result. We add schema (JSON-LD) that gives Google your address, hours and phone in a format it can\u2019t get wrong, so it isn\u2019t guessing from your footer and getting it wrong.',
+        body: 'People see them before they click through. We add schema (JSON-LD) that gives Google your address, hours and phone in a format it can\u2019t get wrong, so it isn\u2019t guessing from your footer and getting it wrong.',
     },
     {
         icon: FileText,
@@ -361,7 +361,7 @@ const industries = [
     {
         icon: Truck,
         name: 'Auto, truck, and fleet',
-        body: 'Bay counts, turnaround times, and fleet account pages, plus hours that match between your website and your Google listing. On most shop sites they don\u2019t, and that sends customers to a competitor at 6:40 on a Friday. Full Throttle Suspension is one of ours, it\u2019s the website you see at the top of this page.',
+        body: 'Bay counts, turnaround times, and fleet account pages, plus hours that match between your website and your Google listing. On most shop sites they don\u2019t, and that sends customers to a competitor at 6:40 on a Friday. Full Throttle Suspension is one of ours, and it\u2019s the website you see at the top of this page.',
     },
 ];
 
@@ -373,10 +373,10 @@ const neighborhoods = [
 
 const cityPages = [
     { name: 'Fresno', to: '/' },
-    { name: 'Clovis', to: '/clovis-marketing-agency' },
+    { name: 'Clovis', to: '/clovis-web-design' },
     { name: 'Madera', to: '/madera-marketing-agency' },
     { name: 'Sanger', to: '/sanger-marketing-agency' },
-    { name: 'Visalia', to: '/visalia-marketing-agency' },
+    { name: 'Visalia', to: '/visalia-web-design' },
     { name: 'Tulare', to: '/tulare-marketing-agency' },
     { name: 'Hanford', to: '/hanford-marketing-agency' },
     { name: 'Merced', to: '/merced-marketing-agency' },
@@ -387,12 +387,12 @@ const cityPages = [
 const turndown = [
     {
         job: 'A site built to rank in a city you do not operate in',
-        why: 'Fake addresses and virtual offices get Google Business Profiles suspended. The suspension follows the owner and not just the listing, so it can end up taking down the rest of your locations with it.',
+        why: 'Fake addresses and virtual offices get Google Business Profiles suspended. The suspension follows the owner as well as the listing, so it can end up taking down the rest of your locations along with it.',
         instead: 'Nowhere. Do not buy this from anyone.',
     },
     {
         job: 'A $200 website',
-        why: 'Nobody can design, write and build a real website for that. You\u2019d be paying for a template that already exists, with a markup.',
+        why: 'Nobody can write and build a real site from scratch for $200. You\u2019d be paying for a template that already exists, with a markup.',
         instead: 'Go straight to Squarespace or Wix and do it yourself in a weekend. You will get the same result and keep the difference.',
     },
     {
@@ -416,7 +416,7 @@ const turndown = [
 const vetting = [
     {
         q: 'Who owns the domain and the hosting account the day I leave?',
-        a: 'If the answer is anything but you, you\u2019re just renting your website, you don\u2019t own it. Get that in writing before you pay a deposit. Ours says you own it and the transfer is always free.',
+        a: 'If the answer is anything but you, the site lives in their account and stays with them. Get that in writing before you pay a deposit. Ours says you own it and the transfer is always free.',
     },
     {
         q: 'What did the last three sites you shipped score on PageSpeed?',
@@ -424,7 +424,7 @@ const vetting = [
     },
     {
         q: 'Are the reviews on your website real, and where do I read them?',
-        a: 'Ours sit on our Google Business Profile. There are nine and they\u2019re all five stars. Nine is a small number and we would rather you see the real count than a badge we drew ourselves in Illustrator.',
+        a: 'Ours sit on our Google Business Profile. There are eight and they\u2019re all five stars. Eight is a small number and we would rather you see the real count than a badge we drew ourselves in Illustrator.',
     },
     {
         q: 'What happens to my rankings during the rebuild?',
@@ -439,20 +439,20 @@ const vetting = [
 // ─── FAQ (rendered in HTML, mirrored into FAQPage schema) ───────────────────
 const faqs = [
     {
-        q: 'I called two agencies and neither one would give me a number. What does a website cost?',
+        q: 'I called two web designers and neither would give me a number. What does a website cost?',
         a: 'Template build, $649, paid once. Custom build, $1,995 and up depending on how many pages and how much of it has to be built rather than assembled. Care plan, $99 a month, optional, cancel whenever. Those are the numbers we say on the phone, which is the only reason they\u2019re printed here. An agency that won\u2019t quote a range before a discovery call is protecting its ability to price you off your reaction, and you should read it that way.',
     },
     {
         q: 'My busy season starts in six weeks. Can you be live by then?',
-        a: 'A template build, yes, comfortably. A custom build takes 3 to 5 weeks and six isn\u2019t much margin, so we would tell you on the first call whether we believe it. You get a staging link on day one and it stays live the whole time, so you\u2019re never waiting on a reveal to find out where it stands.',
+        a: 'A template build, yes, comfortably. A custom build takes 3 to 5 weeks and six isn\u2019t much margin, so we would tell you on the first call whether we believe it. The staging link goes up in week two, when the build phase starts, and stays live until launch so you can check where it stands.',
     },
     {
-        q: 'My last guy still has my domain and won\u2019t hand it over. Who owns what when we\u2019re done?',
-        a: 'You do. Domain, hosting account, code, content, analytics. We transfer all of it on request, in writing, for free. Get that answer from anyone you hire before you pay them a deposit, because the version of this you\u2019re living through right now is extremely common and almost impossible to unwind afterward.',
+        q: 'My last web designer won\u2019t hand over my domain. Who owns what when we\u2019re all done?',
+        a: 'You do. Domain, hosting account, code, content, analytics. We transfer all of it on request, in writing, for free. Get that answer from anyone you hire before you pay them a deposit. A domain is controlled by whoever holds the registrar login, no matter who paid the invoice, and right now that login is still theirs.',
     },
     {
         q: 'I rank on the first page right now and I am scared a rebuild kills it. Does it?',
-        a: 'It does when the URLs go unmapped, which is most of the time. Here is the actual mechanism: your old pages have addresses, Google has those addresses indexed, and a new site with new addresses orphans every one of them unless each old URL is pointed at its replacement with a 301 redirect before launch. We inventory the old site first, write the redirect map, keep the titles and headings that are already earning the ranking, and watch Search Console for two weeks after. Ask whoever you hire to describe that process. If redirects do not come up on their own, walk.',
+        a: 'It does when the URLs go unmapped, which is most of the time. Your old pages have addresses, Google has those addresses indexed, and a new site with new addresses orphans every one of them unless each old URL is pointed at its replacement with a 301 redirect before launch. Ask whoever you hire what happens to your rankings, and notice if they bring up redirects on their own. We inventory the old site first, write the redirect map, keep the titles and headings that are already earning the ranking, and watch Search Console for two weeks after we launch.',
     },
     {
         q: 'I am in Visalia, not Fresno. Does that change anything?',
@@ -460,7 +460,7 @@ const faqs = [
     },
     {
         q: 'I already paid for a website two years ago. Do I have to start over?',
-        a: 'Often not. If the platform is current and the problem is speed, structure, or thin content, fixing it costs less than replacing it and we\u2019ll say so. If it\u2019s an abandoned theme carrying forty plugins, the repair costs more than the rebuild, because every fix has to be re-tested against every plugin. We\u2019ll tell you which one you\u2019ve before you pay us anything.',
+        a: 'Often not. If the platform is current and the problem is speed, structure, or thin content, fixing it costs less than replacing it and we\u2019ll say so. If it\u2019s an abandoned theme carrying forty plugins, the repair costs more than the rebuild, because every fix has to be re-tested against every plugin. We\u2019ll tell you which one you\u2019ve got before you pay anything.',
     },
     {
         q: 'Do I have to hire a second company for SEO after the site is built?',
@@ -686,7 +686,7 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-5xl md:text-6xl lg:text-[5.2rem] font-black text-dark leading-[0.95] tracking-tighter mb-8 max-w-[15ch] mx-auto"
                             >
-                                Fresno Marketing That{' '}
+                                Fresno Web Design That{' '}
                                 <span className="relative inline-block px-2 isolate">
                                     <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
                                     <motion.span
@@ -868,15 +868,15 @@ export function HomePageV2() {
                                     <svg key={i} className="w-5 h-5 text-orange" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                                 ))}
                             </div>
-                            <div className="text-lg font-bold text-dark tracking-tight">5.0 on 9 Google reviews</div>
+                            <div className="text-lg font-bold text-dark tracking-tight">5.0 on 8 Google reviews</div>
                         </div>
                     </div>
 
                     {/* Slogan / Bridge */}
                     <div className="max-w-6xl mx-auto px-6 py-10 text-center">
                         <p className="text-lg md:text-xl text-gray font-medium tracking-tight max-w-3xl mx-auto">
-                            We are a family-operated shop on N Figarden Drive. Every site on this page was
-                            designed, coded, and launched by the same three people who answer the phone at{' '}
+                            We are a family-operated web design shop on N Figarden Drive. Every site on this
+                            page was designed and coded by the same three people who answer the phone at{' '}
                             <a href="tel:+15597853834" className="text-dark font-bold hover:text-orange transition-colors">(559) 785-3834</a>.
                         </p>
                     </div>
@@ -900,8 +900,9 @@ export function HomePageV2() {
                                     Six services, all of them in house.
                                 </h2>
                                 <p className="lede text-lg md:text-xl text-gray font-medium leading-relaxed max-w-[52ch]">
-                                    Design, search, and the listings work that ties them together. Hand-coded or
-                                    WordPress, whichever suits how often you change it. None of it subcontracted.
+                                    Web design, search, and the listings that tie them together. Hand-coded or
+                                    WordPress, whichever suits how often you change it. None of it
+                                    subcontracted.
                                 </p>
                             </div>
 
@@ -911,7 +912,7 @@ export function HomePageV2() {
                             <div className="lg:pb-2">
                                 <div className="border-l-2 border-orange pl-6">
                                     <p className="text-[0.7rem] font-bold uppercase tracking-[0.13em] text-orange-hover mb-2">
-                                        Which one do I need
+                                        Which one do I need?
                                     </p>
                                     <p className="lede text-dark font-medium leading-relaxed max-w-[44ch]">
                                         Most of our clients start with one and add another within a year, usually in this order: build the website, fix the listings, then pay for traffic. Running ads to a site that doesn’t convert is why a lot of owners think marketing doesn’t work.
@@ -1018,10 +1019,10 @@ export function HomePageV2() {
 
                         <div className="border-t border-dark/15 pt-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-12 items-start">
                             <p className="text-lg text-gray font-medium leading-relaxed max-w-[62ch]">
-                                <span className="text-dark font-bold">All seven ship against the same build spec.</span>{' '}
-                                The $649 template and the $1,995 custom build get the same redirect map, the
-                                same schema, and the same speed budget, because the cheap version of that work
-                                is not cheaper, it is just missing.
+                                <span className="text-dark font-bold">Each site we build ships against the same build spec.</span>{' '}
+                                The $649 template and the $1,995 custom build both get a redirect map, schema
+                                and a speed budget, since those are the parts a cheaper quote usually leaves
+                                out to hit a lower number.
                             </p>
                             <Link
                                 to="/services"
@@ -1040,12 +1041,12 @@ export function HomePageV2() {
                 <section className="py-20 md:py-24 px-6 bg-light">
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight max-w-[22ch] mb-5">
-                            What a Boostify build includes.
+                            What’s included in my website?
                         </h2>
                         <p className="lede text-lg text-gray font-medium leading-relaxed max-w-[58ch] mb-14">
-                            Every agency says fast and mobile-friendly and none of them say what they mean.
-                            Here is what you get, in plain terms, with the number underneath each
-                            one so you can hold us to it.
+                            Lots of web designers promise fast and mobile-friendly, and few say what that
+                            means. Here is what you get, in plain terms, with the number underneath each one
+                            so you can hold us to it.
                         </p>
 
                         <dl className="border-t border-dark/15">
@@ -1084,12 +1085,12 @@ export function HomePageV2() {
                     <div className="max-w-6xl mx-auto relative z-10">
                         <p className="text-xs font-bold uppercase tracking-[0.13em] text-orange mb-5">Pricing</p>
                         <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.95] max-w-[16ch] mb-8">
-                            What it costs, before you call us.
+                            Can I get a price before I have to call?
                         </h2>
                         <p className="lede text-lg md:text-xl text-white/60 font-medium leading-relaxed max-w-[58ch] mb-16">
-                            Most Fresno agencies make you sit through a discovery call before anyone quotes a
-                            number, because a price quoted after forty minutes of rapport can be shaped by how
-                            much you seem able to pay, so ours are printed here instead.
+                            Many Fresno web designers make you sit through a discovery call before anyone
+                            quotes a number, because a price quoted after forty minutes of rapport can be
+                            shaped by how much you seem able to pay, so ours are printed here.
                         </p>
 
                         <div className="border-t border-white/15">
@@ -1147,7 +1148,7 @@ export function HomePageV2() {
                             The Fresno businesses we know well.
                         </h2>
                         <p className="lede text-lg text-gray font-medium leading-relaxed max-w-[62ch] mb-12">
-                            A restaurant website and a roofing website fail for different reasons. These are the industries we’ve built enough sites for to know what goes wrong before it does.
+                            A restaurant website and a roofing website fail for different reasons. We’ve built enough of them in these industries to know what goes wrong before it does.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-9">
@@ -1294,7 +1295,7 @@ export function HomePageV2() {
                         <div className="grid grid-cols-1 lg:grid-cols-[19rem_1fr] gap-10 lg:gap-20 items-start">
                             <div className="lg:sticky lg:top-28">
                                 <h2 className="text-2xl md:text-3xl font-black text-dark mb-3 tracking-tight">
-                                    Five questions that separate an agency from a lead-gen mill.
+                                    What should I ask a web designer before I pay a deposit?
                                 </h2>
                                 <p className="lede text-gray font-medium leading-relaxed">
                                     Ask us. Then ask the next three shops you call. A portfolio only shows you

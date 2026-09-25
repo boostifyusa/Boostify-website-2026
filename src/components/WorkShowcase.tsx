@@ -66,7 +66,7 @@ export function WorkShowcase() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-6xl font-black text-dark mb-6 tracking-tight leading-[0.95]">
-              Stories, Tips & Fresh Ideas
+              Before you hire anyone
             </motion.h2>
             <motion.p
               initial={{ opacity: 1, y: 20 }}
@@ -74,7 +74,7 @@ export function WorkShowcase() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray font-medium max-w-2xl">
-              Local business insights, digital marketing tips, and actionable guides, straight from our team.
+              Longer answers on Fresno web design, local SEO and Google Ads than we can fit on this page.
             </motion.p>
           </div>
 

@@ -141,7 +141,7 @@ export function TestimonialsSection() {
                 </div>
               </div>
               <span className="text-xs font-medium text-gray/60 uppercase tracking-wide">
-                Based on 9 Google Reviews
+                Based on 8 Google Reviews
               </span>
             </div>
           </motion.a>
