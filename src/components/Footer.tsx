@@ -179,7 +179,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-4 text-white/60 font-medium">
               <li>
-                <Link to="/fresno-web-design" className="hover:text-orange transition-colors">
+                <Link to="/" className="hover:text-orange transition-colors">
                   Fresno Web Design
                 </Link>
               </li>

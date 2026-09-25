@@ -372,7 +372,7 @@ const neighborhoods = [
 ];
 
 const cityPages = [
-    { name: 'Fresno', to: '/fresno-web-design' },
+    { name: 'Fresno', to: '/' },
     { name: 'Clovis', to: '/clovis-marketing-agency' },
     { name: 'Madera', to: '/madera-marketing-agency' },
     { name: 'Sanger', to: '/sanger-marketing-agency' },
@@ -855,7 +855,7 @@ export function HomePageV2() {
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">
                             <div className="text-sm text-gray font-bold tracking-widest uppercase mb-1">HQ & Local Reach</div>
                             <div className="text-3xl font-black text-dark tracking-tighter">
-                                <Link to="/fresno-web-design" className="hover:text-orange transition-colors">Fresno, CA</Link>
+                                Fresno, CA
                             </div>
                         </div>
                         <div className="text-center md:text-left flex-1 border-b md:border-b-0 md:border-r border-gray-light pb-8 md:pb-0 md:pr-8">

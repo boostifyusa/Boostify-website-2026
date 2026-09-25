@@ -205,6 +205,9 @@ loadAuditConfig();
 // Lookups ignore case and trailing slashes so each one is a single hop.
 const seoRedirects = {
     '/fresno-marketing-agency': '/local-marketing',
+    // The standalone Fresno page competed with the homepage for "web design
+    // fresno" (Google never indexed it). Folded into the homepage 2026-09-25.
+    '/fresno-web-design': '/',
     '/sms-program': '/sms',
     '/service/web-design/fresno-ca': '/',
     '/service/web-design/web-design-fresno': '/',

@@ -42,7 +42,6 @@ const MercedMarketingAgencyPage = lazy(() => import('./pages/MercedMarketingAgen
 const TulareMarketingAgencyPage = lazy(() => import('./pages/TulareMarketingAgencyPage').then(module => ({ default: module.TulareMarketingAgencyPage })));
 const SangerMarketingAgencyPage = lazy(() => import('./pages/SangerMarketingAgencyPage').then(module => ({ default: module.SangerMarketingAgencyPage })));
 const WebDesignModestoPage = lazy(() => import('./pages/WebDesignModestoPage').then(module => ({ default: module.WebDesignModestoPage })));
-const WebDesignFresnoPage = lazy(() => import('./pages/WebDesignLocationTemplate').then(module => ({ default: module.WebDesignLocationTemplate })));
 const CampaignLandingPage = lazy(() => import('./pages/CampaignLandingPage').then(module => ({ default: module.CampaignLandingPage })));
 
 // Table Mountain 2026 — /check QR landing flow
@@ -120,7 +119,7 @@ export function App() {
               <Route path="/tulare-marketing-agency" element={<TulareMarketingAgencyPage />} />
               <Route path="/sanger-marketing-agency" element={<SangerMarketingAgencyPage />} />
               <Route path="/modesto-web-design" element={<WebDesignModestoPage />} />
-              <Route path="/fresno-web-design" element={<WebDesignFresnoPage />} />
+              <Route path="/fresno-web-design" element={<Navigate to="/" replace />} />
               <Route path="/campaign" element={<CampaignLandingPage />} />
 
               {/* Table Mountain 2026 — QR landing flow (fixes the deck/banner /check 404) */}

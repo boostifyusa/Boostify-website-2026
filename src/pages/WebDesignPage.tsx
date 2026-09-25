@@ -23,8 +23,8 @@ import {
   'lucide-react';
 
 // ─── Page positioning ───────────────────────────────────────────────────────
-// This page and /fresno-web-design were competing for the same term with the
-// same closing sections. /fresno-web-design keeps the city term. This page owns
+// The homepage owns "web design fresno" (/fresno-web-design was folded into it
+// with a 301 on 2026-09-25, it had never been indexed). This page owns
 // the DECISION: which kind of site you need, whether WordPress is right, what is
 // in the build, and what changes after. City content here is a hub that links
 // out to the geo pages rather than duplicating them.
@@ -108,7 +108,7 @@ const outcomes = [
   }];
 
 const areas = [
-  { name: 'Fresno', to: '/fresno-web-design' },
+  { name: 'Fresno', to: '/' },
   { name: 'Clovis', to: '/clovis-marketing-agency' },
   { name: 'Visalia', to: '/visalia-marketing-agency' },
   { name: 'Madera', to: '/madera-marketing-agency' },
@@ -837,7 +837,7 @@ export function WebDesignPage() {
                   Most designers don't know SEO. We build every site with the
                   proper structure, schema markup, and local keywords needed to
                   rank. Based in Fresno? See our dedicated{' '}
-                  <Link to="/fresno-web-design" className="text-orange font-bold hover:underline">
+                  <Link to="/" className="text-orange font-bold hover:underline">
                     Fresno web design
                   </Link>{' '}
                   services.
@@ -1305,7 +1305,7 @@ export function WebDesignPage() {
 
             <p className="mt-10 text-gray font-medium leading-relaxed max-w-[64ch]">
               Looking for Fresno specifically? The{' '}
-              <Link to="/fresno-web-design" className="text-dark font-bold hover:text-orange transition-colors">Fresno web design page</Link>{' '}
+              <Link to="/" className="text-dark font-bold hover:text-orange transition-colors">Fresno web design page</Link>{' '}
               covers local pricing and examples. Otherwise call{' '}
               <a href="tel:+15597853834" className="text-dark font-bold hover:text-orange transition-colors">(559) 785-3834</a>{' '}
               and we will tell you which of the two jobs above you are hiring for.

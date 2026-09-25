@@ -33,7 +33,6 @@ const dynamicRoutes = [
   '/tulare-marketing-agency',
   '/sanger-marketing-agency',
   '/modesto-web-design',
-  '/fresno-web-design',
   // Table Mountain 2026 QR landing flow — must be prerendered so the server
   // returns 200 (not a soft-404) when the QR is scanned directly.
   '/check',
