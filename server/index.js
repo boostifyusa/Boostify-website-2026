@@ -208,6 +208,9 @@ const seoRedirects = {
     // The standalone Fresno page competed with the homepage for "web design
     // fresno" (Google never indexed it). Folded into the homepage 2026-09-25.
     '/fresno-web-design': '/',
+    // City pages retargeted to what people search (2026-09-25).
+    '/clovis-marketing-agency': '/clovis-web-design',
+    '/visalia-marketing-agency': '/visalia-web-design',
     '/sms-program': '/sms',
     '/service/web-design/fresno-ca': '/',
     '/service/web-design/web-design-fresno': '/',

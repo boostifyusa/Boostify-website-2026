@@ -13,8 +13,8 @@ const SITE_URL = 'https://boostifyusa.com';
 const ssrMeta = new Map([
     // ─── Homepage ────────────────────────────────────────────────────────────
     ['/', {
-        title: 'SEO & Web Design: Craftsmanship for Local Growth',
-        description: 'Boostify USA builds high-converting websites and SEO strategies for local businesses in Fresno and the Central Valley. Turn your website into a 24/7 salesperson.',
+        title: 'Web Design Fresno | Custom Websites & SEO | Boostify USA',
+        description: 'Fresno web design studio since 2014. We build fast, SEO-ready websites that turn Central Valley visitors into paying customers.',
         canonical: `${SITE_URL}/`
     }],
 
@@ -124,15 +124,15 @@ const ssrMeta = new Map([
     }],
 
     // ─── City Marketing Agency Pages ─────────────────────────────────────────
-    ['/clovis-marketing-agency', {
-        title: 'Clovis Marketing Agency: Attract More Local Customers',
-        description: 'Boostify USA is a top Clovis marketing agency specializing in custom web design, Local SEO, and Google Ads. We help Clovis businesses grow with data-driven strategies.',
-        canonical: `${SITE_URL}/clovis-marketing-agency`
+    ['/clovis-web-design', {
+        title: 'Web Design Clovis, CA | Custom Websites | Boostify USA',
+        description: 'Clovis web design from a Fresno office at 6362 N Figarden Dr. Template sites are $649, custom builds start at $1,995, and you own the domain.',
+        canonical: `${SITE_URL}/clovis-web-design`
     }],
-    ['/visalia-marketing-agency', {
-        title: 'Visalia Marketing Agency: Top-Rated Web Design & SEO',
-        description: 'Boostify USA is a leading Visalia marketing agency. Custom web design, local SEO, and Google Ads that drive real growth for Tulare County businesses.',
-        canonical: `${SITE_URL}/visalia-marketing-agency`
+    ['/visalia-web-design', {
+        title: 'Web Design Visalia, CA | Custom Websites | Boostify USA',
+        description: 'Web design for Visalia and Tulare County businesses from Boostify USA in Fresno. Custom sites from $1,995, templates from $649, and you own the domain.',
+        canonical: `${SITE_URL}/visalia-web-design`
     }],
     ['/madera-marketing-agency', {
         title: 'Madera Marketing Agency: Grow Your Local Business',
@@ -162,8 +162,8 @@ const ssrMeta = new Map([
 
     // ─── City Web Design Pages ───────────────────────────────────────────────
     ['/modesto-web-design', {
-        title: 'Website Design Modesto | Top Web Design Agencies | Boostify USA',
-        description: 'Looking for Website Design in Modesto? We are a top web design agency specializing in Ecommerce, Brand Website Design, and Diseño Web.',
+        title: 'Website Design Modesto & Modesto SEO | Boostify USA',
+        description: 'Web design and Modesto SEO from Boostify USA, a Fresno shop that works remotely. Templates from $649, custom from $1,995, and you own the domain.',
         canonical: `${SITE_URL}/modesto-web-design`
     }],
 ]);

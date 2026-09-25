@@ -109,8 +109,8 @@ const outcomes = [
 
 const areas = [
   { name: 'Fresno', to: '/' },
-  { name: 'Clovis', to: '/clovis-marketing-agency' },
-  { name: 'Visalia', to: '/visalia-marketing-agency' },
+  { name: 'Clovis', to: '/clovis-web-design' },
+  { name: 'Visalia', to: '/visalia-web-design' },
   { name: 'Madera', to: '/madera-marketing-agency' },
   { name: 'Merced', to: '/merced-marketing-agency' },
   { name: 'Tulare', to: '/tulare-marketing-agency' },

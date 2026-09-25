@@ -32,42 +32,85 @@ import {
     HeartHandshake
 } from 'lucide-react';
 
+// ─── Page positioning ───────────────────────────────────────────────────────
+// Retargeted from "clovis marketing agency" (no rankings) to "web design clovis"
+// and "clovis web design". Moves to /clovis-web-design with a 301 from the old
+// URL. Lead proof is Benchmark Pool Supply, a site we built for a business with
+// a store at 811 Barstow Ave, Clovis (address from benchmarkpoolsupply.com).
+
 // FAQ Data: Clovis-specific
 const faqs = [
     {
-        question: 'Why choose a marketing agency near Clovis instead of a national firm?',
+        question: 'Why would I hire a Fresno web designer for a Clovis business?',
         answer:
-            'A local team knows the Clovis market, from Old Town foot traffic to the new developments along Willow and Herndon. National firms rely on generic playbooks. We build campaigns rooted in how people actually search and buy in the Central Valley.'
+            "Clovis and Fresno share a border, and most of our work is already in one city or the other. We would rather meet at your shop than ours. Benchmark Pool Supply, whose Clovis store is at 811 Barstow Ave, is one of the businesses we built a website for. Whoever you hire, ask who owns the domain after you leave, because whoever holds that login controls the site and the email that runs on it."
     },
     {
-        question: 'What marketing services do you offer Clovis businesses?',
+        question: 'How much does a website cost in Clovis?',
         answer:
-            'We offer the full stack: custom website design, Local SEO to dominate Google Maps, Google Ads management, social media strategy, and brand identity. Every service is tailored to your specific industry and local competition.'
+            "A template site is $649, paid once. A custom build starts at $1,995 and goes up with the number of pages and how much of it has to be built from scratch. Care is $99 a month and optional, and hosting plus the domain run about $20 to $30 a month, which you can pay directly."
     },
     {
-        question: 'How quickly can I expect to see results?',
+        question: 'How long until my site is live?',
         answer:
-            "Paid advertising (Google Ads, Local Service Ads) generates leads within days. SEO builds momentum over 3-6 months, compounding month over month. We recommend a combined approach so you're winning now and building for later."
+            "A template site takes 2 to 3 weeks and a custom build takes 3 to 5. What moves that number is how fast your photos and feedback come back, so having twenty photos of real jobs ready before the first call shortens it."
     },
     {
-        question: 'Do you require long-term contracts?',
+        question: 'Do I have to sign a contract?',
         answer:
-            "Never. We earn your business every single month. No lock-in contracts, no cancellation fees. If we're not delivering results, you shouldn't be stuck paying us."
+            "There's no contract. A website is a one-time price, and care and Local SEO are month to month, so you can stop after any month. You own your website and your domain either way."
     },
     {
-        question: 'Can you help a brand-new Clovis business get started online?',
+        question: 'I just opened in Clovis. Do I need a custom site?',
         answer:
-            'Absolutely. We specialize in launching new businesses with a complete digital presence: logo, website, Google Business Profile, SEO foundation, and initial ad campaigns. We get you visible fast.'
+            "Probably not yet. If most of your work comes from referrals and people look you up by name, the $649 template covers that. If you'd rather build it yourself, Squarespace and a weekend gets you something respectable and you keep the $649."
+    },
+    {
+        question: 'My site is only a couple of years old. Do I have to start over?',
+        answer:
+            "Often you don't. If the platform is current and the complaint is speed or structure, fixing it costs less than replacing it, and we'll say so before quoting a rebuild. If it's an old theme carrying forty plugins, the repair costs more than the rebuild, because every fix has to be re-tested against every plugin."
     }
 ];
 
-// AdvertisingAgency JSON-LD Schema: Clovis
+// Pricing: same two-panel pattern as WebDesignPage "THE TWO JOBS". Prices and
+// timelines are the ones already published on the homepage and /web-design.
+const plans = [
+    {
+        key: 'template',
+        kicker: 'Mostly referrals',
+        name: 'A template site',
+        line: 'People already know your name and look you up before they call back.',
+        who: [
+            'Most of your work comes from referrals',
+            'You need to be live before your busy season'
+        ],
+        does: 'Built on a ready-made layout with your own photos and wording, and the phone number is a tap-to-call button. It gets the same schema and redirect map as the custom build.',
+        price: '$649',
+        span: '2 to 3 weeks'
+    },
+    {
+        key: 'custom',
+        kicker: 'Mostly new customers',
+        name: 'A custom site',
+        line: 'You need calls from people who have never heard of you.',
+        who: [
+            'You sell several services and each one needs its own page',
+            'You pay for ads or SEO and that traffic needs a good place to land'
+        ],
+        does: 'Designed and coded for your business, with the copy written after an interview with you. Every service gets its own page, and call tracking comes set up.',
+        price: 'From $1,995',
+        span: '3 to 5 weeks'
+    }
+];
+
+// ProfessionalService JSON-LD: Clovis web design
 const advertiserSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO",
-    "url": "https://boostifyusa.com/clovis-marketing-agency",
-    "description": "Leading Clovis marketing agency delivering custom web design, local SEO, and targeted digital advertising for Central Valley businesses.",
+    "url": "https://boostifyusa.com/clovis-web-design",
+    "description": "Web design for Clovis businesses from an office at 6362 N Figarden Dr in Fresno. Template sites are $649 and custom builds start at $1,995. You own your website and your domain.",
+    "hasMap": "https://www.google.com/maps?cid=5709723330865512710",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -76,19 +119,38 @@ const advertiserSchema = {
         "postalCode": "93722",
         "addressCountry": "US"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [
         { "@type": "City", "name": "Clovis" },
-        { "@type": "City", "name": "Fresno" },
-        { "@type": "City", "name": "Visalia" },
-        { "@type": "City", "name": "Madera" }
+        { "@type": "City", "name": "Fresno" }
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Digital Marketing Services",
+        "name": "Web design",
         "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local SEO" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Management" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
+            {
+                "@type": "Offer",
+                "name": "Template website",
+                "price": "649",
+                "priceCurrency": "USD",
+                "itemOffered": { "@type": "Service", "name": "Website design" }
+            },
+            {
+                "@type": "Offer",
+                "name": "Custom website",
+                "price": "1995",
+                "priceCurrency": "USD",
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1995", "priceCurrency": "USD" },
+                "itemOffered": { "@type": "Service", "name": "Website design" }
+            },
+            {
+                "@type": "Offer",
+                "name": "Local SEO",
+                "price": "595",
+                "priceCurrency": "USD",
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "595", "priceCurrency": "USD", "unitText": "MONTH" },
+                "itemOffered": { "@type": "Service", "name": "Local SEO" }
+            }
         ]
     },
     "priceRange": "$$",
@@ -117,11 +179,21 @@ const faqSchema = {
     }))
 };
 
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boostifyusa.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Web Design", "item": "https://boostifyusa.com/web-design" },
+        { "@type": "ListItem", "position": 3, "name": "Clovis Web Design", "item": "https://boostifyusa.com/clovis-web-design" }
+    ]
+};
+
 // City cross-link data
 const areaCities = [
-    { city: 'Fresno', path: '/fresno-marketing-agency', highlight: false },
-    { city: 'Clovis', path: '/clovis-marketing-agency', highlight: true },
-    { city: 'Visalia', path: '/visalia-marketing-agency', highlight: false },
+    { city: 'Fresno', path: '/', highlight: false },
+    { city: 'Clovis', path: '/clovis-web-design', highlight: true },
+    { city: 'Visalia', path: '/visalia-web-design', highlight: false },
     { city: 'Madera', path: '/madera-marketing-agency', highlight: false },
     { city: 'Hanford', path: '/hanford-marketing-agency', highlight: false },
     { city: 'Merced', path: '/merced-marketing-agency', highlight: false },
@@ -150,9 +222,9 @@ export function ClovisMarketingAgencyPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Clovis Marketing Agency | Web Design, SEO & Google Ads | Boostify USA"
-                description="Boostify USA is a top Clovis marketing agency specializing in custom web design, Local SEO, and Google Ads. We help Clovis businesses grow with data-driven strategies."
-                canonicalUrl="/clovis-marketing-agency"
+                title="Web Design Clovis, CA | Custom Websites | Boostify USA"
+                description="Clovis web design from a Fresno office at 6362 N Figarden Dr. Template sites are $649, custom builds start at $1,995, and you own the domain."
+                canonicalUrl="/clovis-web-design"
             />
             <Helmet>
                 <script type="application/ld+json">
@@ -160,6 +232,9 @@ export function ClovisMarketingAgencyPage() {
                 </script>
                 <script type="application/ld+json">
                     {JSON.stringify(faqSchema)}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbSchema)}
                 </script>
             </Helmet>
             <Navigation />
@@ -179,30 +254,29 @@ export function ClovisMarketingAgencyPage() {
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Clovis Marketing Agency
+                                Web Design Clovis, CA
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Clovis Roots. <span className="text-orange">Real Results.</span>
+                                Clovis Web Design <span className="text-orange">From a Fresno Office</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Clovis businesses deserve a marketing team that understands the
-                                community, not a faceless agency across the country. Boostify USA
-                                builds custom digital strategies (from web design to local
-                                advertising) that drive measurable revenue.
+                                Benchmark Pool Supply runs a store at 811 Barstow Ave in Clovis,
+                                and we built their website. The office that built it is at 6362 N
+                                Figarden Dr, Suite 118, in Fresno, and you can come visit it.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                                <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-                                    Get a Free Consultation
+                                <a href="tel:+15597853834" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
+                                    Call (559) 785-3834
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Link>
-                                <Link to="/seo-audit" className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
-                                    Free SEO Audit
+                                </a>
+                                <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
+                                    Get a Quote
                                 </Link>
                             </div>
 
                             <div className="flex items-center gap-6 text-sm font-bold text-dark/60">
-                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> Central Valley Based</span>
+                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> You Own the Domain</span>
                                 <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> No Contracts</span>
                                 <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> Google Partner</span>
                             </div>
@@ -214,8 +288,8 @@ export function ClovisMarketingAgencyPage() {
                                 className="absolute -top-4 -left-4 z-20 bg-white rounded-xl shadow-lg border border-gray-light px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
                                 <div className="w-8 h-8 rounded-full bg-orange/10 flex items-center justify-center"><HeartHandshake size={16} className="text-orange" strokeWidth={3} /></div>
                                 <div>
-                                    <div className="text-xs font-black text-dark leading-none">Family Owned</div>
-                                    <div className="text-[10px] text-gray font-medium">Community First</div>
+                                    <div className="text-xs font-black text-dark leading-none">Meet in Person</div>
+                                    <div className="text-[10px] text-gray font-medium">N Figarden Dr, Fresno</div>
                                 </div>
                             </motion.div>
 
@@ -306,19 +380,20 @@ export function ClovisMarketingAgencyPage() {
                                 </motion.div>
                             </motion.div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Clovis Businesses Are <span className="text-red-500">Losing Customers Online</span>
+                                I need a website for my Clovis business. <span className="text-red-500">Where do I start?</span>
                             </h2>
                             <p className="text-xl text-gray font-medium">
-                                Your neighbors are searching for your services right now. If they
-                                can't find you, they're finding your competitor.
+                                Before you call any web designer, us included, get these done
+                                yourself. They cost nothing, and they are the pieces a designer
+                                has to wait on the owner for.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: 'Stuck Below the Fold', desc: "Your competitors rank above you on Google Maps and search results. Every position you drop is a customer you lose to the shop down the street.", icon: Search },
-                                { title: "Website Doesn't Convert", desc: "Traffic means nothing if visitors leave without calling. A slow, outdated, or confusing website is silently costing you thousands in missed revenue.", icon: Globe },
-                                { title: 'No Tracking, No Proof', desc: "You're spending on marketing but have no idea what's working. Without proper analytics and call tracking, you're flying blind.", icon: BarChart3 },
+                                { title: 'Find out who owns your domain', desc: "Log in to the registrar and check which email the domain is registered to, because that email is the owner no matter who paid the invoice. If your email address ends in your domain, whoever holds that login also controls your inbox.", icon: Search },
+                                { title: 'Shoot twenty photos of real jobs', desc: "Your phone is good enough, and your own crew and your own shop are the subject. Stock photos of another company's crew cost you trust on the exact page where a visitor decides whether to call.", icon: Globe },
+                                { title: 'Check who owns your Google listing', desc: "Your Google Business Profile has its own owner, separate from the website. If that login sits with a former employee or your last web guy, the new site can't be added to the listing until you get access back.", icon: BarChart3 },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -334,20 +409,62 @@ export function ClovisMarketingAgencyPage() {
                 {/* ───── BENEFIT 1: Custom Web Design (leads for Clovis) ───── */}
                 <section className="py-24 px-6">
                     <div className="max-w-7xl mx-auto space-y-24">
+                        {/* ───── PROOF: Benchmark Pool Supply (same two-column pattern as the
+                            blocks below; the image is the /work mockup of the site we built) ───── */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div className="order-2 lg:order-1">
+                                <img
+                                    src="/Slide-4_3-1.webp"
+                                    alt="Benchmark Pool Supply website built by Boostify USA"
+                                    width={1024}
+                                    height={768}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="w-full h-auto rounded-3xl border border-gray-light"
+                                />
+                            </div>
+
+                            <div className="order-1 lg:order-2">
+                                <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><MapPin size={24} strokeWidth={2.5} /></div>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">
+                                    A Clovis store we built the website for
+                                </h2>
+                                <p className="text-lg text-gray font-medium mb-4 leading-relaxed">
+                                    Benchmark Pool Supply sells pool supplies and replacement parts
+                                    from two stores, one at 811 Barstow Ave in Clovis and one at 3017 W
+                                    Bullard Ave in Fresno. We did the web design and the local SEO for
+                                    them.
+                                </p>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
+                                    If your business has more than one location, each one needs its
+                                    own address and phone number on the site, because Google matches
+                                    those against each location's Business Profile.
+                                </p>
+                                <Link to="/work" className="inline-flex items-center font-bold text-dark hover:text-orange transition-colors">
+                                    See the Benchmark build and the rest of our work
+                                    <ArrowRight className="w-5 h-5 ml-2" />
+                                </Link>
+                            </div>
+                        </div>
+
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div>
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Globe size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">
-                                    Custom Website Design Built for Clovis Businesses
+                                    Custom web design for Clovis businesses
                                 </h2>
+                                <p className="text-lg text-gray font-medium mb-4 leading-relaxed">
+                                    Victor Joaquin builds it. He started building websites at 16 and
+                                    spent time inside several of the bigger agencies in town before
+                                    starting his own. He also did the WordPress build for Fresno
+                                    State's news site and trained their staff to run it.
+                                </p>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
-                                    Forget cookie-cutter templates. We hand-code every website to
-                                    reflect your brand, convert your visitors, and outperform your
-                                    competition. Fast, mobile-first, and designed to make you look
-                                    as professional as you are.
+                                    A custom build takes 3 to 5 weeks. What moves that number is how
+                                    fast your photos and feedback come back to us.
                                 </p>
                                 <ul className="space-y-3">
-                                    {['100% custom: no templates, ever', 'Mobile-optimized for on-the-go customers', 'Built-in SEO foundation from day one', 'Conversion-focused layouts & CTAs'].map((item, i) => (
+                                    {['Copy written after a one-hour interview with you', 'Tested on a mid-priced phone before launch', 'Schema and page titles set up at launch', 'Old page addresses kept alive with 301 redirects'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
                                     ))}
                                 </ul>
@@ -438,16 +555,24 @@ export function ClovisMarketingAgencyPage() {
                             <div className="order-1 lg:order-2">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><BarChart3 size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">
-                                    Local SEO That Puts Clovis Businesses on the Map
+                                    Will a new website get me on the Google map in Clovis?
                                 </h2>
+                                <p className="text-lg text-gray font-medium mb-4 leading-relaxed">
+                                    The build sets up the page titles and schema Google reads first,
+                                    and it connects the site to your Business Profile. Getting into the
+                                    map pack after launch is monthly work on that profile and on the
+                                    listings that point to it.
+                                </p>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
-                                    When someone in Clovis searches for your services, you need to
-                                    be the first result, in the Map Pack and in organic results.
-                                    Our local SEO strategies are built specifically for the Central
-                                    Valley market.
+                                    No agency controls Google, so a promise of number one usually means
+                                    someone picked a keyword nobody searches.{' '}
+                                    <Link to="/local-seo" className="text-dark font-bold hover:text-orange transition-colors">Local SEO</Link>{' '}
+                                    is $595 a month and Lite is $249 a month, both month to month. The{' '}
+                                    <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO page</Link>{' '}
+                                    lays out the first 90 days.
                                 </p>
                                 <ul className="space-y-3">
-                                    {['Google Business Profile optimization', 'Local citation building & cleanup', 'Review generation strategy', 'Hyper-targeted keyword campaigns'].map((item, i) => (
+                                    {['Google Business Profile work', 'Citation and listing cleanup', 'A review routine your staff will use', 'A monthly report with rankings and calls'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
                                     ))}
                                 </ul>
@@ -462,24 +587,23 @@ export function ClovisMarketingAgencyPage() {
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MousePointerClick size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Google Ads & Paid Advertising <span className="text-orange">That Delivers</span>
+                                Google Ads while the <span className="text-orange">SEO catches up</span>
                             </h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">
-                                Stop wasting ad budget on clicks that never convert. Our digital
-                                advertising campaigns are laser-targeted to Clovis and the
-                                surrounding area, with every dollar tracked and optimized for
-                                maximum return.
+                                Google Ads and Local Service Ads can bring in calls while the SEO
+                                builds, and both are covered on the{' '}
+                                <Link to="/local-marketing" className="text-dark font-bold hover:text-orange transition-colors">local marketing page</Link>.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { icon: Target, title: 'Precision Targeting', desc: 'Geo-fenced campaigns that reach customers in Clovis, Fresno, and surrounding zip codes and not wasted on irrelevant areas.' },
-                                { icon: DollarSign, title: 'Transparent ROI', desc: 'Real-time dashboards showing exactly how your ad spend translates into leads and revenue. No smoke and mirrors.' },
-                                { icon: Zap, title: 'Fast Results', desc: 'Leads start flowing within 48 hours of campaign launch. We optimize daily to improve performance and lower cost-per-lead.' },
-                                { icon: Phone, title: 'Call Tracking', desc: 'Every phone call from your ads is recorded, attributed, and analyzed. Know exactly which campaigns drive real business.' },
-                                { icon: Megaphone, title: 'Multi-Platform Reach', desc: 'Google Search Ads, Display, Local Service Ads, and remarketing; we meet your customers wherever they are online.' },
-                                { icon: ShieldCheck, title: 'Google Certified Team', desc: 'Our strategists hold active Google Ads certifications. Your campaigns are managed by certified professionals, not interns.' },
+                                { icon: Target, title: 'Clovis targeting', desc: 'Ads show in Clovis and the zip codes you pick.' },
+                                { icon: DollarSign, title: 'Cost per call', desc: 'Google Ads reports what each tracked call cost.' },
+                                { icon: Zap, title: 'Calls before SEO', desc: 'Ads can run once Google approves them, and SEO takes months.' },
+                                { icon: Phone, title: 'Call tracking', desc: 'Each call is tied to the ad or listing that produced it.' },
+                                { icon: Megaphone, title: 'Local Service Ads', desc: 'The ads with the Google badge, for trades that qualify.' },
+                                { icon: ShieldCheck, title: 'Google Partner', desc: 'Boostify USA holds Google Partner status.' },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
@@ -500,12 +624,14 @@ export function ClovisMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Proud to Serve Clovis & the <span className="text-orange">Central Valley</span>
+                                Is a Fresno web designer close enough for my <span className="text-orange">Clovis business?</span>
                             </h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">
-                                From Old Town Clovis to the new developments off Ashlan and
-                                Temperance, we know this community. That local insight powers
-                                smarter marketing strategies for every city we serve.
+                                The office is at 6362 N Figarden Dr, Suite 118, off Figarden between
+                                Herndon and Bullard, and we would rather meet at your shop than ours.
+                                Most of our work is already in Fresno and Clovis, and a Fresno
+                                agency's homepage ranked fifth on Google for "web design clovis"
+                                when we checked in September 2026.
                             </p>
                         </div>
 
@@ -531,16 +657,78 @@ export function ClovisMarketingAgencyPage() {
                     </div>
                 </section>
 
+                {/* ───── PRICING (same pattern as WebDesignPage "THE TWO JOBS") ───── */}
+                <section className="py-20 md:py-28 px-6 bg-light/50">
+                    <div className="max-w-7xl mx-auto">
+                        <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight max-w-[20ch] mb-5">
+                            What does a website cost in Clovis?
+                        </h2>
+                        <p className="text-lg text-gray font-medium leading-relaxed max-w-[64ch] mb-14">
+                            The same as it costs in Fresno. The prices are printed here because a
+                            quote that only shows up after a discovery call can be priced off your
+                            reaction. If most of your jobs come from referrals, the $649 template
+                            does the job.
+                        </p>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-6">
+                            {plans.map((plan) => {
+                                const dark = plan.key === 'custom';
+                                return (
+                                    <motion.div
+                                        key={plan.key}
+                                        initial={{ opacity: 1, y: 16 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, margin: '-80px' }}
+                                        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                                        className={`rounded-xl p-7 md:p-9 flex flex-col ${dark ? 'bg-dark text-white' : 'bg-white border border-gray-light'}`}>
+
+                                        <p className={`text-xs font-bold uppercase tracking-[0.13em] mb-3 ${dark ? 'text-orange' : 'text-orange-hover'}`}>
+                                            {plan.kicker}
+                                        </p>
+                                        <h3 className={`text-2xl md:text-3xl font-black tracking-tight mb-3 ${dark ? 'text-white' : 'text-dark'}`}>
+                                            {plan.name}
+                                        </h3>
+                                        <p className={`text-lg font-bold leading-snug mb-6 ${dark ? 'text-white/90' : 'text-dark/80'}`}>
+                                            {plan.line}
+                                        </p>
+                                        <ul className="space-y-2.5 mb-6">
+                                            {plan.who.map((w) =>
+                                                <li key={w} className="flex items-start gap-2.5">
+                                                    <Check size={15} strokeWidth={3} className={`mt-1 shrink-0 ${dark ? 'text-orange' : 'text-orange-hover'}`} />
+                                                    <span className={`font-medium leading-relaxed ${dark ? 'text-white/70' : 'text-gray'}`}>{w}</span>
+                                                </li>
+                                            )}
+                                        </ul>
+                                        <p className={`font-medium leading-relaxed mb-7 max-w-[58ch] ${dark ? 'text-white/60' : 'text-gray'}`}>
+                                            {plan.does}
+                                        </p>
+                                        <div className={`mt-auto flex items-baseline gap-3 pt-5 border-t ${dark ? 'border-white/15' : 'border-gray-light'}`}>
+                                            <span className={`text-2xl font-black tracking-tighter ${dark ? 'text-orange' : 'text-dark'}`}>{plan.price}</span>
+                                            <span className={`text-sm font-bold ${dark ? 'text-white/50' : 'text-gray'}`}>{plan.span}</span>
+                                        </div>
+                                    </motion.div>);
+                            })}
+                        </div>
+
+                        <p className="text-gray font-medium leading-relaxed max-w-[64ch] mt-8">
+                            <Link to="/maintenance" className="text-dark font-bold hover:text-orange transition-colors">Care</Link>{' '}
+                            is $99 a month and optional. Hosting and the domain run about $20 to $30
+                            a month, and you can pay those directly. You own your website and your
+                            domain.
+                        </p>
+                    </div>
+                </section>
+
                 {/* ───── GUARANTEE ───── */}
                 <section className="py-20 px-6 bg-dark text-white relative overflow-hidden">
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange/20 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2" />
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Our "No Fine Print" Promise</h2>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">What happens if I want to leave?</h2>
                         <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">
-                            No long-term contracts. No hidden fees. No agency jargon. If we
-                            don't deliver measurable results for your Clovis business, you
-                            walk away; it's as simple as that.
+                            You take the site with you. You own the website and the domain, and
+                            both transfer to you on request at no charge. Care and Local SEO are
+                            month to month, so you can stop after any month.
                         </p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">
                             Month-to-Month • Cancel Anytime
@@ -553,7 +741,7 @@ export function ClovisMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Frequently Asked Questions</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Questions Clovis owners ask before they call</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">

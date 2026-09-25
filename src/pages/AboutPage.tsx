@@ -64,7 +64,7 @@ const team = [
   {
     role: 'Web Development',
     icon: Code,
-    desc: 'Custom-coded sites built for speed and conversion.'
+    desc: <><Link to="/" className="text-orange font-bold hover:underline">Custom-coded sites</Link> built for speed and conversion.</>
   },
   {
     role: 'Design & UX',
@@ -196,7 +196,7 @@ export function AboutPage() {
               }}>
 
               <p className="text-xl md:text-2xl text-gray font-medium leading-relaxed mb-6 max-w-3xl">
-                Joaquin's websites and SEO strategies turn small businesses into
+                Joaquin's websites and <Link to="/fresno-seo" className="text-orange font-bold hover:underline">SEO strategies</Link> turn small businesses into
                 lead-generating juggernauts. Invited by the SBA to speak on SEO
                 and AI, he's built Fresno State's news platform and doubled
                 conversions for local businesses with ruthless, data-driven

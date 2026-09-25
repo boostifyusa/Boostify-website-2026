@@ -91,9 +91,9 @@ const processSteps = [
 ];
 
 const areaCities = [
-    { city: 'Clovis', path: '/clovis-marketing-agency' },
+    { city: 'Clovis', path: '/clovis-web-design' },
     { city: 'Madera', path: '/madera-marketing-agency' },
-    { city: 'Visalia', path: '/visalia-marketing-agency' },
+    { city: 'Visalia', path: '/visalia-web-design' },
     { city: 'Merced', path: '/merced-marketing-agency' },
     { city: 'Hanford', path: '/hanford-marketing-agency' },
     { city: 'Tulare', path: '/tulare-marketing-agency' },
@@ -189,8 +189,8 @@ export function FresnoSEOPage() {
                         <h2 className="text-4xl md:text-5xl font-black text-dark mb-8 tracking-tight">Pricing, <span className="text-orange">Plainly</span></h2>
                         <p className="text-xl text-gray font-medium leading-relaxed mb-6">
                             Local SEO is $595 a month. Local SEO Lite is $249 a month and
-                            bundles hosting, maintenance, and baseline optimization. Custom
-                            websites start at $1,995, template builds at $649.
+                            bundles hosting, maintenance, and baseline optimization.{' '}
+                            <Link to="/" className="text-orange font-bold hover:underline">Custom websites</Link> start at $1,995, template builds at $649.
                         </p>
                         <p className="text-xl text-gray font-medium leading-relaxed mb-10">
                             Everything is month to month. If we don't deliver, you don't pay.

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Search, Mail, Loader2, Zap, AlertCircle, Lock, Star, CheckCircle, Clock, Shield, BarChart3, MapPin } from 'lucide-react';
 
 interface LeadForm {
@@ -74,6 +75,8 @@ export const StepLeadCapture = ({
                     </h1>
                     <p className="text-gray-500 text-lg mb-10 max-w-md">
                         See how your business ranks on Google Maps from every direction, in under a minute.
+                        If the results come back weak, here's{' '}
+                        <Link to="/fresno-seo" className="text-orange font-bold hover:underline">how we fix map rankings in Fresno</Link>, with the monthly price on the page.
                     </p>
 
                     <div className="space-y-5">

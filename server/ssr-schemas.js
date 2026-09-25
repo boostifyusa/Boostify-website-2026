@@ -63,32 +63,6 @@ function makeFaqSchema(faqs) {
 
 const cityData = [
     {
-        path: '/clovis-marketing-agency',
-        url: 'https://boostifyusa.com/clovis-marketing-agency',
-        description: "Clovis's top-rated marketing agency for custom web design, local SEO, and Google Ads. Helping Clovis businesses dominate the digital landscape.",
-        areaServed: ['Clovis', 'Fresno', 'Madera', 'Sanger'],
-        faqs: [
-            { question: 'Why should a Clovis business choose Boostify over a Fresno agency?', answer: "Because we treat Clovis as its own market — not a suburb of Fresno. We build hyper-local SEO campaigns targeting Clovis-specific keywords, optimize your Google Business Profile for Clovis searches, and run geo-targeted ads that reach your actual customers." },
-            { question: 'What industries in Clovis do you specialize in?', answer: "We work with service-based businesses, medical practices, home services, restaurants, real estate professionals, and retail shops. If your customers are local, our strategies are built for you." },
-            { question: 'How quickly can I expect leads from Google Ads?', answer: "Most clients see their first leads within the first week of campaign launch. We set up full conversion tracking from day one, so you'll know exactly which ads are driving calls and form submissions." },
-            { question: "I already have a website. Can you just do SEO?", answer: "Yes — if your current site is technically sound, we can focus purely on SEO. We'll audit your site first (for free) and let you know if it needs improvements before we begin optimization." },
-            { question: 'Do you require long-term contracts?', answer: "Never. We work month-to-month. Our clients stay because of results, not paperwork. If SEO or ads aren't delivering, you're free to walk away at any time." }
-        ]
-    },
-    {
-        path: '/visalia-marketing-agency',
-        url: 'https://boostifyusa.com/visalia-marketing-agency',
-        description: "Visalia's premier marketing agency offering custom web design, local SEO, and paid advertising for Tulare County businesses.",
-        areaServed: ['Visalia', 'Tulare', 'Fresno', 'Hanford'],
-        faqs: [
-            { question: 'What kind of businesses in Visalia do you work with?', answer: 'We partner with service-based businesses, retail shops, medical practices, restaurants, and professional firms throughout Tulare County. If you serve local customers, our strategies are built for you.' },
-            { question: 'How is Boostify different from other Visalia marketing companies?', answer: "We're not a template shop. Every website is hand-coded, every SEO campaign is custom-built, and every ad dollar is tracked to revenue. We operate on results, not promises — and we never lock you into a contract." },
-            { question: 'Do I need a new website, or can you improve my current one?', answer: "Both. If your current site is structurally sound, we can optimize it for speed, SEO, and conversions. If it's outdated or template-based, a custom rebuild will deliver dramatically better results." },
-            { question: 'How much should a Visalia business spend on digital marketing?', answer: 'It depends on your goals and competition. Most of our Tulare County clients invest $1,000–$3,000/month across SEO and ads. We always start with a free strategy call to find the right fit for your budget.' },
-            { question: 'Can you manage our social media too?', answer: 'Yes. While our core strengths are SEO, Google Ads, and web design, we offer social media management as an add-on service. We focus on platforms that actually drive business — not just vanity likes.' }
-        ]
-    },
-    {
         path: '/madera-marketing-agency',
         url: 'https://boostifyusa.com/madera-marketing-agency',
         description: "Madera's go-to marketing agency for custom web design, local SEO, and Google Ads. We help Madera County businesses grow with data-driven strategies.",

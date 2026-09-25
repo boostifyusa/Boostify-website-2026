@@ -37,8 +37,8 @@ const sitemapLinks = [
     {
         category: 'Locations',
         links: [
-            { name: 'Clovis Marketing Agency', path: '/clovis-marketing-agency' },
-            { name: 'Visalia Marketing Agency', path: '/visalia-marketing-agency' },
+            { name: 'Clovis Web Design', path: '/clovis-web-design' },
+            { name: 'Visalia Web Design', path: '/visalia-web-design' },
             { name: 'Modesto Web Design', path: '/modesto-web-design' },
             { name: 'Madera Marketing Agency', path: '/madera-marketing-agency' },
             { name: 'Hanford Marketing Agency', path: '/hanford-marketing-agency' },

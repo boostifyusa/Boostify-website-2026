@@ -174,14 +174,14 @@ export function WebsiteMaintenanceSmallBusinessPage() {
         <meta property="og:locale" content="en_US" />
         <meta property="article:published_time" content="2026-05-01T00:00:00-07:00" />
         <meta property="article:modified_time" content="2026-05-14T00:00:00-07:00" />
-        <meta property="article:author" content="Victor Estrada" />
+        <meta property="article:author" content="Victor Joaquin" />
         <meta name="twitter:site" content="@boostifyusa" />
         <meta name="twitter:creator" content="@boostifyusa" />
         <meta name="twitter:label1" content="Starts at" />
         <meta name="twitter:data1" content="$99/month" />
         <meta name="twitter:label2" content="Contract" />
         <meta name="twitter:data2" content="None, cancel anytime" />
-        <meta name="author" content="Victor Estrada" />
+        <meta name="author" content="Victor Joaquin" />
         <meta name="geo.region" content="US-CA" />
         <meta name="geo.placename" content="Fresno" />
         <meta name="geo.position" content="36.7378;-119.7871" />
@@ -351,7 +351,7 @@ export function WebsiteMaintenanceSmallBusinessPage() {
           breadcrumb: { '@id': 'https://boostifyusa.com/website-maintenance-small-business#breadcrumb' },
           author: {
             '@type': 'Person',
-            name: 'Victor Estrada',
+            name: 'Victor Joaquin',
             jobTitle: 'Founder',
             worksFor: { '@type': 'Organization', name: 'Boostify USA Web Design & SEO' },
             url: 'https://boostifyusa.com/about',
@@ -363,7 +363,7 @@ export function WebsiteMaintenanceSmallBusinessPage() {
           },
           reviewedBy: {
             '@type': 'Person',
-            name: 'Victor Estrada',
+            name: 'Victor Joaquin',
           },
           speakable: {
             '@type': 'SpeakableSpecification',
@@ -835,7 +835,7 @@ export function WebsiteMaintenanceSmallBusinessPage() {
 
             {/* Trust line: author + last reviewed date. E-E-A-T signal. */}
             <p className="text-center text-xs text-gray font-medium mt-8">
-              Reviewed by Victor Estrada, founder of Boostify USA Web Design &amp; SEO. Last updated May 2026.
+              Reviewed by Victor Joaquin, founder of Boostify USA Web Design &amp; SEO. Last updated May 2026.
             </p>
           </div>
         </section>

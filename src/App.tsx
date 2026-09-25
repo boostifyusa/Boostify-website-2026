@@ -111,8 +111,10 @@ export function App() {
               <Route path="/partners/qr/:partnerId" element={<PartnerQRPage />} />
               <Route path="/referral/:partnerId" element={<PartnerLeadPage />} />
 
-              <Route path="/clovis-marketing-agency" element={<ClovisMarketingAgencyPage />} />
-              <Route path="/visalia-marketing-agency" element={<VisaliaMarketingAgencyPage />} />
+              <Route path="/clovis-web-design" element={<ClovisMarketingAgencyPage />} />
+              <Route path="/clovis-marketing-agency" element={<Navigate to="/clovis-web-design" replace />} />
+              <Route path="/visalia-web-design" element={<VisaliaMarketingAgencyPage />} />
+              <Route path="/visalia-marketing-agency" element={<Navigate to="/visalia-web-design" replace />} />
               <Route path="/madera-marketing-agency" element={<MaderaMarketingAgencyPage />} />
               <Route path="/hanford-marketing-agency" element={<HanfordMarketingAgencyPage />} />
               <Route path="/merced-marketing-agency" element={<MercedMarketingAgencyPage />} />

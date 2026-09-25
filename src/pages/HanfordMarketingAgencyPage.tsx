@@ -57,9 +57,9 @@ const advertiserSchema = {
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) };
 
 const areaCities = [
-    { city: 'Fresno', path: '/fresno-marketing-agency', highlight: false },
-    { city: 'Clovis', path: '/clovis-marketing-agency', highlight: false },
-    { city: 'Visalia', path: '/visalia-marketing-agency', highlight: false },
+    { city: 'Fresno', path: '/', highlight: false },
+    { city: 'Clovis', path: '/clovis-web-design', highlight: false },
+    { city: 'Visalia', path: '/visalia-web-design', highlight: false },
     { city: 'Madera', path: '/madera-marketing-agency', highlight: false },
     { city: 'Hanford', path: '/hanford-marketing-agency', highlight: true },
     { city: 'Merced', path: '/merced-marketing-agency', highlight: false },

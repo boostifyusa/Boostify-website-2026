@@ -11,22 +11,41 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 
 import {
     Check, ChevronDown, ChevronUp, ShieldCheck, AlertTriangle, MapPin, TrendingUp,
-    BarChart3, Star, Phone, ArrowRight, Search, Target, Globe,
+    BarChart3, Star, Phone, ArrowRight, ArrowUpRight, Search, Target, Globe,
     MousePointerClick, Users, Zap, Building2, DollarSign, Sprout
 } from 'lucide-react';
 
+// ─── Page positioning ───────────────────────────────────────────────────────
+// Retargeted 2026-09-25 from "visalia marketing agency" (near-zero volume, the
+// URL only ranked for job-seeker queries) to "web design visalia" /
+// "visalia web design", with "visalia seo" as the secondary term. Moves to
+// /visalia-web-design with a 301 from /visalia-marketing-agency. Every price
+// and claim below is already printed elsewhere on the site or in the Google
+// Business Profile description. There is no Visalia client or office, and the
+// copy says so rather than implying one.
 const faqs = [
-    { question: 'What kind of businesses in Visalia do you work with?', answer: 'We partner with service-based businesses, retail shops, medical practices, restaurants, and professional firms throughout Tulare County. If you serve local customers, our strategies are built for you.' },
-    { question: 'How is Boostify different from other Visalia marketing companies?', answer: "We're not a template shop. Every website is hand-coded, every SEO campaign is custom-built, and every ad dollar is tracked to revenue. We operate on results, not promises, and we never lock you into a contract." },
-    { question: 'Do I need a new website, or can you improve my current one?', answer: "Both. If your current site is structurally sound, we can optimize it for speed, SEO, and conversions. If it's outdated or template-based, a custom rebuild will deliver dramatically better results." },
-    { question: 'How much should a Visalia business spend on digital marketing?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month that includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. We always start with a free strategy call to find the right fit for your budget.` },
-    { question: 'Can you manage our social media too?', answer: 'Yes. While our core strengths are SEO, Google Ads, and web design, we offer social media management as an add-on service. We focus on platforms that actually drive business — not just vanity likes.' },
+    { question: "I'm in Visalia. Why would I hire a web designer in Fresno?", answer: "You don't have to. Hire whoever puts the domain in your name and gives you a price in writing, even if that's a designer down the street. Tulare County is inside our service area, the office is about an hour up Highway 99 in Fresno, and we'll drive out to your shop." },
+    { question: 'Do I need a new website, or can you fix the one I have?', answer: "Often it can be fixed. If the platform is current and the problem is speed, structure or thin content, fixing it costs less than replacing it. If it's an abandoned WordPress theme carrying forty plugins, the repair costs more than a rebuild, because every fix has to be re-tested against every plugin. We'll tell you which one you have before you pay us anything." },
+    { question: 'How much should I budget for the website, and for SEO after it?', answer: 'The template build is $649, paid once. A custom build starts at $1,995 and goes up with the page count and with how much has to be built rather than assembled. After launch, Local SEO is $595 a month, and Local SEO Lite is $249 a month with hosting, maintenance and baseline optimization bundled in. Both plans are month to month.' },
+    { question: 'How long does the build take?', answer: "A custom build takes 3 to 5 weeks. Shoot twenty photos of real jobs on your phone before the first call, because stock photos of another company's crew cost you trust on the exact page where a visitor decides to call. What moves the timeline is how fast photos and feedback come back to us." },
+    { question: 'If I stop paying you, does my website go offline?', answer: "Not if the domain and hosting are in your name, and with us they are. The rented setup works differently. The agency registers your domain in its own account and builds on a platform only it can log in to, so canceling the monthly fee takes the site down with it. We transfer both to you on request, in writing, at no charge." },
+];
+
+// Published prices, same numbers as the homepage, /web-design and /fresno-seo.
+const pricing = [
+    { name: 'Template build, $649.', body: 'Paid once. Your logo and colors on a template layout, up to 5 pages, with mobile, SSL and basic schema.' },
+    { name: 'Custom build, from $1,995.', body: 'Designed and coded for your business and live in 3 to 5 weeks. The price goes up with the page count and with how much has to be built rather than assembled.' },
+    { name: 'Hosting and domain, about $20 to $30 a month.', body: 'You can pay those directly rather than through us, and both accounts are in your name.' },
+    { name: 'Care plan, $99 a month.', body: 'Optional, and it covers content changes on request, uptime and form monitoring, security patches and backups. Cancel any month.' },
+    { name: 'Local SEO, $595 a month.', body: 'Google Business Profile work, local rankings, and a report that shows what changed. Month to month.' },
+    { name: 'Local SEO Lite, $249 a month.', body: 'Hosting, maintenance and baseline optimization bundled together. Also month to month.' },
 ];
 
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
-    "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/visalia-marketing-agency",
-    "description": "Visalia's premier marketing agency offering custom web design, local SEO, and paid advertising for Tulare County businesses.",
+    "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/visalia-web-design",
+    "description": "Website design and local SEO for businesses in Visalia and Tulare County, from Boostify USA Web Design & SEO in Fresno, CA.",
+    "hasMap": "https://www.google.com/maps?cid=5709723330865512710",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -35,12 +54,12 @@ const advertiserSchema = {
         "postalCode": "93722",
         "addressCountry": "US"
     },
-    "areaServed": [{ "@type": "City", "name": "Visalia" }, { "@type": "City", "name": "Tulare" }, { "@type": "City", "name": "Fresno" }, { "@type": "City", "name": "Hanford" }],
+    "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
+    "areaServed": [{ "@type": "City", "name": "Visalia" }, { "@type": "City", "name": "Tulare" }, { "@type": "AdministrativeArea", "name": "Tulare County, CA" }],
     "hasOfferCatalog": {
-        "@type": "OfferCatalog", "name": "Digital Marketing Services", "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local SEO" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Management" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Design" } }
+        "@type": "OfferCatalog", "name": "Website design and local SEO", "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website design" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "649", "priceCurrency": "USD" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local SEO" }, "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": "249", "priceCurrency": "USD", "unitCode": "MON" } }
         ]
     }, "priceRange": "$$",
     "telephone": "+1-559-785-3834",
@@ -55,11 +74,32 @@ const advertiserSchema = {
     ]
 };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) };
+const breadcrumbSchema = {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boostifyusa.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Web Design", "item": "https://boostifyusa.com/web-design" },
+        { "@type": "ListItem", "position": 3, "name": "Visalia Web Design", "item": "https://boostifyusa.com/visalia-web-design" }
+    ]
+};
+const webPageSchema = {
+    "@context": "https://schema.org", "@type": "WebPage",
+    "@id": "https://boostifyusa.com/visalia-web-design#webpage",
+    "url": "https://boostifyusa.com/visalia-web-design",
+    "name": "Web Design Visalia, CA",
+    "dateModified": "2026-09-25",
+    "author": {
+        "@type": "Person",
+        "name": "Victor Joaquin",
+        "url": "https://boostifyusa.com/about",
+        "worksFor": { "@type": "Organization", "@id": "https://boostifyusa.com/#localbusiness", "name": "Boostify USA Web Design & SEO" }
+    }
+};
 
 const areaCities = [
-    { city: 'Fresno', path: '/fresno-marketing-agency', highlight: false },
-    { city: 'Clovis', path: '/clovis-marketing-agency', highlight: false },
-    { city: 'Visalia', path: '/visalia-marketing-agency', highlight: true },
+    { city: 'Fresno', path: '/', highlight: false },
+    { city: 'Clovis', path: '/clovis-web-design', highlight: false },
+    { city: 'Visalia', path: '/visalia-web-design', highlight: true },
     { city: 'Madera', path: '/madera-marketing-agency', highlight: false },
     { city: 'Hanford', path: '/hanford-marketing-agency', highlight: false },
     { city: 'Merced', path: '/merced-marketing-agency', highlight: false },
@@ -87,10 +127,12 @@ export function VisaliaMarketingAgencyPage() {
     }, []);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Visalia Marketing Agency | Custom Web Design & Local SEO | Boostify USA" description="Boostify USA is a leading Visalia marketing agency. Custom web design, local SEO, and Google Ads that drive real growth for Tulare County businesses." canonicalUrl="/visalia-marketing-agency" />
+            <SeoHead title="Web Design Visalia, CA | Custom Websites | Boostify USA" description="Web design for Visalia and Tulare County businesses from Boostify USA in Fresno. Custom sites from $1,995, templates from $649, and you own the domain." canonicalUrl="/visalia-web-design" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+                <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+                <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
             </Helmet>
             <Navigation />
 
@@ -105,28 +147,29 @@ export function VisaliaMarketingAgencyPage() {
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Visalia Marketing Agency
+                                Web Design in Visalia, CA
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Visalia Deserves <span className="text-orange">Better Marketing.</span>
+                                Visalia Web Design From a Fresno Shop <span className="text-orange">That Covers Tulare County</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Tulare County businesses need marketing that works as hard as they
-                                do. Boostify USA delivers custom websites, dominant local SEO, and
-                                paid advertising campaigns that turn searches into sales.
+                                Boostify USA builds websites for Visalia and Tulare County
+                                businesses from an office on Figarden Dr in Fresno. Custom builds
+                                start at $1,995 and template builds are $649. You own the domain
+                                and the code.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                                <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
-                                    Start Your Free Strategy Call <ArrowRight className="w-5 h-5 ml-2" />
-                                </Link>
-                                <Link to="/seo-audit" className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
-                                    Free SEO Audit
+                                <a href="tel:+15597853834" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
+                                    Call (559) 785-3834 <ArrowRight className="w-5 h-5 ml-2" />
+                                </a>
+                                <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
+                                    Get a Quote
                                 </Link>
                             </div>
                             <div className="flex items-center gap-6 text-sm font-bold text-dark/60">
-                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> Tulare County Experts</span>
-                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> No Long-Term Contracts</span>
-                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> Data-Driven</span>
+                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> You Own the Domain</span>
+                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> No Contracts</span>
+                                <span className="flex items-center gap-2"><Check size={16} className="text-green-500" strokeWidth={3} /> Fresno Office</span>
                             </div>
                         </motion.div>
 
@@ -191,15 +234,15 @@ export function VisaliaMarketingAgencyPage() {
                                 </motion.div>
                             </motion.div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Is Your Visalia Business <span className="text-red-500">Getting Found Online?</span>
+                                I Need a New Website. <span className="text-red-500">What Do I Sort Out Before I Call Anyone?</span>
                             </h2>
-                            <p className="text-xl text-gray font-medium">Most Tulare County businesses are hemorrhaging potential customers to competitors with better digital presence. Here's why.</p>
+                            <p className="text-xl text-gray font-medium">None of this costs anything, and every one of them shortens a build no matter who you end up hiring in Visalia or Fresno.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: 'Lost in Local Search', desc: "When someone googles your service in Visalia, they find your competitor first. 46% of all Google searches have local intent — if you're not ranking, you're invisible.", icon: MapPin },
-                                { title: 'Outdated Online Presence', desc: "Your website was built five years ago and it shows. Slow load times, no mobile optimization, and zero calls-to-action mean visitors bounce before they ever call.", icon: Globe },
-                                { title: 'Wasted Ad Spend', desc: "You tried Google Ads once and it 'didn't work.' The truth? Without proper keyword research, negative keywords, and conversion tracking, most ad budgets are wasted.", icon: DollarSign },
+                                { title: 'Find out who owns your Google listing', desc: "Sign in at business.google.com and check which email manages your Business Profile. If it's a former employee or your last web guy, move it to your own email first, because every vendor you hire after that needs access through that login.", icon: MapPin },
+                                { title: 'Track down your domain login', desc: "Look up which email your domain is registered to. That email is the owner no matter who paid the invoice, and whoever holds it also holds the DNS records that route your email.", icon: Globe },
+                                { title: 'Ask for a price before the sales call', desc: "A quote that only arrives after a discovery call can be priced off your reaction. Ours is printed further down this page. A template build is $649 and a custom build starts at $1,995.", icon: DollarSign },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -252,13 +295,22 @@ export function VisaliaMarketingAgencyPage() {
 
                             <div>
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><BarChart3 size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Dominate Local Search in Visalia & Tulare County</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">Our local SEO services are engineered to put your Visalia business at the top of Google search and Maps. We target the keywords your customers actually use and optimize every signal Google cares about.</p>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Will a New Website Get Me Into the Visalia Map Results?</h2>
+                                <p className="text-lg text-gray font-medium mb-6 leading-relaxed">
+                                    Not by itself. Google fills the three-business map pack from Business Profiles and ranks them on{' '}
+                                    <a href="https://support.google.com/business/answer/7091" target="_blank" rel="noopener noreferrer" className="text-dark font-bold hover:text-orange transition-colors">relevance, distance and prominence</a>,
+                                    so a Visalia business needs a verified Profile at its Visalia address first. The website is the page that Profile links to, and it's where Google reads what you actually do.
+                                </p>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">If anyone offers to put your listing at a Visalia address you don't operate from, say no. Google suspends Business Profiles on virtual offices, and the suspension follows the owner, so it can take your real location down with it.</p>
                                 <ul className="space-y-3">
-                                    {['Google Business Profile optimization & management', 'Keyword research tailored to Tulare County', 'Local link building & citation management', 'Transparent monthly performance reports'].map((item, i) => (
+                                    {['Google Business Profile setup in the custom build', 'One page per service, so each one can rank', 'LocalBusiness schema with your real coordinates', 'A 301 redirect map so current rankings carry over'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
                                     ))}
                                 </ul>
+                                <p className="text-lg text-gray font-medium mt-8 leading-relaxed">
+                                    Ongoing Visalia SEO after launch is our{' '}
+                                    <Link to="/local-seo" className="text-dark font-bold hover:text-orange transition-colors">Local SEO plan</Link>, at $595 a month, or $249 a month for Lite.
+                                </p>
                             </div>
                         </div>
 
@@ -266,18 +318,16 @@ export function VisaliaMarketingAgencyPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="order-2 lg:order-1">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Target size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Paid Advertising That Pays for Itself</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
-                                    Our Google Ads campaigns are built from the ground up for Visalia
-                                    and the Central Valley. We focus on high-intent keywords, precise
-                                    geo-targeting, and relentless optimization to ensure every dollar
-                                    drives measurable results.
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Do I Need a Separate Page for My Google Ads?</h2>
+                                <p className="text-lg text-gray font-medium mb-6 leading-relaxed">
+                                    If the page exists only for an ad campaign, Unbounce or Instapage
+                                    usually beats a page on your main website, because A/B testing is
+                                    built in and you can strip the page down to whatever converts.
                                 </p>
-                                <ul className="space-y-3">
-                                    {['Geo-targeted to Visalia, Tulare, Hanford & beyond', 'Full conversion & call tracking setup', 'Weekly optimization & bid management', 'Real-time reporting dashboard'].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
-                                    ))}
-                                </ul>
+                                <p className="text-lg text-gray font-medium leading-relaxed">
+                                    Running the ads themselves is covered on our{' '}
+                                    <Link to="/local-marketing" className="text-dark font-bold hover:text-orange transition-colors">local marketing</Link> page.
+                                </p>
                             </div>
 
                             <div className="order-1 lg:order-2 bg-dark rounded-3xl aspect-square relative overflow-hidden flex flex-col p-8">
@@ -311,17 +361,22 @@ export function VisaliaMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><Globe size={24} strokeWidth={2.5} /></div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Websites That Work as Hard as <span className="text-orange">You Do</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">Your website should be your best employee, generating leads 24/7. We design and build custom sites that load fast, look incredible, and convert visitors into paying customers.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">What's Actually <span className="text-orange">in the Build?</span></h2>
+                            <p className="text-xl text-gray font-medium leading-relaxed">
+                                A custom build starts at $1,995 and takes 3 to 5 weeks. The longer
+                                guide to which kind of site you need, and whether WordPress is right
+                                for it, is on our{' '}
+                                <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design page</Link>.
+                            </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { icon: Zap, title: 'Blazing Performance', desc: 'Sub-2-second load times that keep visitors engaged and boost your Google rankings.' },
-                                { icon: Phone, title: 'Mobile-First Always', desc: 'Most of your customers browse on phones. Every design decision starts with mobile.' },
-                                { icon: Target, title: 'Conversion Architecture', desc: 'Strategic page flows, CTAs, and trust signals that guide visitors toward action.' },
-                                { icon: Search, title: 'SEO Built In', desc: "Proper heading structure, schema markup, and clean code: SEO isn't an afterthought." },
-                                { icon: ShieldCheck, title: 'Secure & Reliable', desc: 'SSL, daily backups, and proactive maintenance keep your site safe and online.' },
-                                { icon: Users, title: 'Easy to Manage', desc: 'We train you on simple updates. Need bigger changes? We\'re always a call away.' },
+                                { icon: Zap, title: 'Checked on a Phone Before Launch', desc: "Tested against Core Web Vitals on a mid-priced phone before launch, because that's what most of your visitors are holding." },
+                                { icon: Phone, title: 'The Number Is a Button', desc: 'On a phone, your number is tap-to-call before anyone scrolls, and call tracking shows which page produced the call.' },
+                                { icon: Target, title: 'One Page per Service', desc: 'A page for each thing you sell instead of one page listing everything, so a search for that service lands on the right page.' },
+                                { icon: Search, title: 'Schema and GBP Setup', desc: 'Titles, internal links and LocalBusiness schema with your real coordinates ship inside the custom build, along with Google Business Profile setup.' },
+                                { icon: ShieldCheck, title: 'Your Rankings Carry Over', desc: 'Every old URL gets pointed at its replacement with a 301 redirect before launch. The redirect map is a spreadsheet, and you get a copy.' },
+                                { icon: Users, title: 'You Can Edit It Yourself', desc: 'Hours and prices go stale fastest, so you can change them yourself in about a minute, and the site stays registered in your name.' },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
@@ -334,13 +389,90 @@ export function VisaliaMarketingAgencyPage() {
                     </div>
                 </section>
 
+                {/* ───── PRICING ─────
+                    Reuses the "What is in the build" left-rail checklist from
+                    WebDesignPage.tsx. Same published numbers as the homepage,
+                    /web-design and /fresno-seo. */}
+                <section className="py-16 md:py-20 px-6 bg-white">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-[16rem_1fr] gap-8 lg:gap-16 items-start">
+                            <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight lg:sticky lg:top-28">
+                                What does a website cost in Visalia?
+                            </h2>
+                            <div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
+                                    {pricing.map((item) =>
+                                        <div key={item.name} className="flex gap-3">
+                                            <Check size={16} strokeWidth={3} className="text-orange-hover shrink-0 mt-1.5" />
+                                            <p className="text-gray font-medium leading-relaxed">
+                                                <span className="font-black text-dark">{item.name} </span>
+                                                {item.body}
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                                <p className="text-gray font-medium leading-relaxed max-w-[68ch] mt-10">
+                                    Being in Visalia doesn't change any of these numbers, and they're the ones we quote on the phone.
+                                    If all you need is one page with your phone number and a map, Squarespace and a weekend
+                                    does the job, and you keep the $649.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ───── WHO BUILDS IT ─────
+                    Reuses the "Who does the work" block from WebDesignPage.tsx.
+                    Every line about Victor comes from the Google Business Profile
+                    description. */}
+                <section className="py-16 md:py-20 px-6 bg-light/50 border-t border-gray-light">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-start">
+                            <img
+                                src="/1733568683912.jpg"
+                                alt="Victor Joaquin, founder of Boostify USA"
+                                width={200}
+                                height={200}
+                                loading="lazy"
+                                decoding="async"
+                                className="w-24 h-24 md:w-28 md:h-28 rounded-xl object-cover border border-gray-light shrink-0"
+                            />
+                            <div>
+                                <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-4">
+                                    Victor Joaquin builds it.
+                                </h2>
+                                <p className="text-lg text-gray font-medium leading-relaxed max-w-[68ch] mb-4">
+                                    Victor started building websites at 16 and spent time inside several of the
+                                    bigger agencies in town before starting his own. Boostify did the WordPress build
+                                    for Fresno State&rsquo;s news site and trained their staff on it, and Victor has
+                                    run workshops for the SBA.
+                                </p>
+                                <p className="text-gray font-medium leading-relaxed max-w-[68ch] mb-6">
+                                    The person on your first call is the person who writes the copy and builds the
+                                    pages. You own your website and your domain when it&rsquo;s done.
+                                </p>
+                                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                                    <Link to="/about" className="inline-flex items-center gap-1.5 font-bold text-dark hover:text-orange transition-colors">
+                                        More about Victor
+                                        <ArrowUpRight size={16} />
+                                    </Link>
+                                    <a href="tel:+15597853834" className="inline-flex items-center gap-2 font-bold text-dark hover:text-orange transition-colors">
+                                        <Phone size={16} className="text-orange" strokeWidth={2.5} />
+                                        (559) 785-3834
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* ───── AREA SERVED ───── */}
                 <section className="py-24 px-6">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Visalia & the <span className="text-orange">Entire Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">We know Tulare County: the agricultural heartbeat, the small-business spirit, and the growth opportunity. Our digital strategies are tuned for this unique market.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Tulare County Is Inside <span className="text-orange">Our Service Area</span></h2>
+                            <p className="text-xl text-gray font-medium leading-relaxed">Our Google Business Profile covers Fresno, Madera and Tulare counties, so Visalia and Tulare are both inside it. There&rsquo;s no Visalia office. The office is at 6362 N Figarden Dr Ste 118 in Fresno, about an hour up Highway 99, and we&rsquo;ll drive out to your shop.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (
@@ -369,9 +501,9 @@ export function VisaliaMarketingAgencyPage() {
                     <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">The Boostify Guarantee</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We're in the results business. If you don't see measurable improvement in traffic, leads, or revenue within 90 days, we'll work for free until you do. That's our handshake.</p>
-                        <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Results Guaranteed • No Lock-In</div>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">No Contract on Any of It</h2>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">The website is paid for once. The care plan and both Local SEO plans run month to month, so you can stop after any month. If you leave, we transfer the domain, the hosting account and the code on request, in writing, at no charge.</p>
+                        <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Month to Month • No Lock-In</div>
                     </div>
                 </section>
 
@@ -380,7 +512,7 @@ export function VisaliaMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Questions About Visalia Marketing</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Questions About Visalia Web Design</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">

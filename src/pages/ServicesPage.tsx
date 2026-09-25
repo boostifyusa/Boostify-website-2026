@@ -362,7 +362,8 @@ export function ServicesPage() {
               <p className="text-xl text-gray font-medium mb-8 leading-relaxed">
                 Dominate the search results in your specific service area. We
                 optimize your digital presence so when neighbors search for your
-                services, they find you first.
+                services, they find you first. In Fresno? The{' '}
+                <Link to="/fresno-seo" className="text-orange font-bold hover:underline">Fresno SEO pricing and timeline</Link> are on their own page.
               </p>
               <ul className="space-y-4 mb-10">
                 {[

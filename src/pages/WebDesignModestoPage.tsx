@@ -23,36 +23,98 @@ import {
     AlertTriangle,
     Clock,
     Search,
-    X
+    X,
+    Phone,
+    ArrowUpRight
 } from 'lucide-react';
 
+// ─── Page positioning ───────────────────────────────────────────────────────
+// Targets "web design modesto", "website design modesto" and "modesto seo".
+// Honest framing: Boostify's only office is in Fresno, Modesto (Stanislaus
+// County) is outside the GBP service area, and Modesto work runs remotely.
+// There is no Modesto client, so the page never implies one. The dashboard,
+// the FTS mock and its badges are illustrative art and stay as they are.
+
 // FAQ Data
+// Questions are written the way a Modesto owner would ask them. Every number
+// here is already published elsewhere on the site (homepage, /web-design,
+// /fresno-seo), and nothing promises a ranking.
 const faqs = [
     {
-        question: 'What makes you different from other Modesto web design agencies?',
+        question: "You're in Fresno. Why would a Modesto business hire you?",
         answer:
-            "Most agencies use bloated drag-and-drop templates like WordPress or Wix that slow down your site and limit brand creativity. We use a combination of expert hand-coding and advanced AI to build your site from scratch. This delivers premium websites cheaper and faster for small business owners, guaranteeing lightning-fast load times, better Google rankings, and a completely unique Brand Website Design that sets your Modesto business apart."
+            "If you want a designer who can stop by your shop every week, hire one in Modesto. If a phone call and a screen share work for you, you get the same build our Fresno clients get, with the same redirect map, schema and speed budget. Our office is at 6362 N Figarden Dr, Suite 118, and the number is (559) 785-3834."
     },
     {
-        question: 'Do you offer Ecommerce Web Design?',
+        question: "Can you guarantee I'll rank first on Google in Modesto?",
         answer:
-            "Yes! As a complete Ecommerce Web Design Agency, we build high-converting online stores. Whether you need a Shopify setup or a fully custom headless commerce solution, we ensure the buying process is frictionless and optimized for sales."
+            "No, and nobody can, because no agency controls Google. The ones who guarantee number one are either picking a keyword nobody searches or planning to blame you in month four. What you get from us is the process in writing and a monthly report with rankings, calls and form fills, slow months included."
     },
     {
-        question: 'Do you build bilingual sites or offer Diseño Web services?',
+        question: 'Can you do SEO for my Modesto business from Fresno?',
         answer:
-            "Absolutely. The Central Valley has a massive Spanish-speaking population. We offer 'Diseño Web' (web design) services and can build fully bilingual English/Spanish websites to help you capture a broader local market."
+            "Yes. Google ranks local results on relevance, distance from the searcher and popularity, and none of those depend on where the person doing the work sits. What does matter is that your Google Business Profile uses the address where you actually work, because Google's guidelines make a virtual office ineligible for a profile."
     },
     {
-        question: 'How much does a custom website cost in Modesto?',
+        question: 'How much does a website cost in Modesto?',
         answer:
-            "Our bespoke custom websites start at $1,995. If you're looking for a faster turnaround or have a strict budget, we offer highly optimized template-based sites starting at $649. We focus on ROI: your website should generate more revenue than it costs."
+            "A template build is $649, paid once, and it's live in about a week. A custom build is $1,995 and up depending on how many pages have to be built rather than assembled, and it takes 3 to 5 weeks. The care plan is $99 a month and optional, and hosting plus the domain run roughly $20 to $30 a month."
     },
     {
-        question: 'Will my website work well on mobile phones?',
+        question: 'I sell products online. Can you build my store?',
         answer:
-            "Yes. Over 70% of local Modesto traffic comes from mobile devices. We design 'mobile-first', meaning your site will look and function flawlessly on iPhones, Androids, and tablets before we even look at the desktop version."
+            "Yes, on Shopify or a custom build, with inventory sync, sales tax and shipping rules quoted separately. Past a few hundred products it turns into a specialty with its own experts, and we'll name two Shopify Plus partners in the Valley for you instead."
+    },
+    {
+        question: 'Can you build my site in Spanish too?',
+        answer:
+            "We can build a Spanish version of the pages, each at its own address with hreflang tags, so Google shows the Spanish page to people searching in Spanish. The translation should come from you or someone on your staff who already talks to those customers, since they know what your customers call each service."
+    },
+    {
+        question: 'Will my site work on a phone?',
+        answer:
+            "It's built for the phone first and tested on a mid-range Android over 4G before launch. The targets are LCP under 2.5 seconds and CLS under 0.1, and you can check any site we've built yourself at pagespeed.web.dev."
+    },
+    {
+        question: 'Who owns the site if I stop paying you?',
+        answer:
+            "You do. The domain, hosting account, code, content and analytics are yours, and we transfer all of it on request, in writing, at no charge."
     }
+];
+
+// SEO timeline for the #modesto-seo section. Adapted from the process on
+// /fresno-seo, with the Modesto-specific address rule added.
+const seoSteps = [
+    {
+        when: 'Weeks 1 to 2',
+        name: 'Audit, then your Google Business Profile',
+        body: "We pull where you rank today for the Modesto searches in your trade and crawl the site. The profile gets fixed first, starting with its categories and the services it lists, and you keep the audit whether you stay or not."
+    },
+    {
+        when: 'Weeks 3 to 6',
+        name: 'Fixes and the first service pages',
+        body: "Page titles and schema get cleaned up, and the first service pages go live, each one aimed at a search with real volume in Modesto. We don't write copies of one page with the town name swapped, because Google's spam policy calls those doorway pages."
+    },
+    {
+        when: 'Weeks 7 to 12',
+        name: 'Reviews and citations',
+        body: "A review ask your staff will actually send goes live, with no discounts for stars and no asking only the happy customers, since Google's review policy bans both. Your name, address and phone get matched on every directory that lists you, including old listings still showing a number you stopped using."
+    },
+    {
+        when: 'Every month after',
+        name: 'A report and the next target',
+        body: "Rankings, calls and form fills, plus what we did and what comes next. Visible movement usually takes 3 to 4 months, and if a month was slow, the report says so."
+    }
+];
+
+// Published prices only. Scope lines are copied from the homepage pricing cards
+// and /fresno-seo so the numbers never drift between pages.
+const prices = [
+    { item: 'Template build', price: '$649 once', covers: 'Up to 5 pages, your branding on a proven layout, mobile, SSL and basic schema. Live in about a week.' },
+    { item: 'Custom build', price: '$1,995 and up', covers: 'Designed and coded for you, with Core Web Vitals work, full schema and Google Business Profile setup. Live in 3 to 5 weeks.' },
+    { item: 'Care plan', price: '$99 a month', covers: 'Content changes on request, uptime and form monitoring, security patches and backups. Cancel any month.' },
+    { item: 'Local SEO', price: '$595 a month', covers: 'Your Google Business Profile, service pages, reviews and citations, with a report every month. Month to month.' },
+    { item: 'Local SEO Lite', price: '$249 a month', covers: 'Hosting, maintenance and baseline optimization on one bill. Month to month.' }
 ];
 
 // JSON-LD Schema
@@ -61,7 +123,7 @@ const advertiserSchema = {
     "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO",
     "url": "https://boostifyusa.com/modesto-web-design",
-    "description": "Premium Website Design Modesto. Top web design agency building fast, custom, ecommerce, and brand websites for Stanislaus County.",
+    "description": "Website design and local SEO for Modesto businesses, built remotely from the Boostify USA office in Fresno.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -70,20 +132,29 @@ const advertiserSchema = {
         "postalCode": "93722",
         "addressCountry": "US"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": 36.8250248, "longitude": -119.8684005 },
     "areaServed": [
-        { "@type": "City", "name": "Modesto" },
-        { "@type": "City", "name": "Turlock" },
-        { "@type": "City", "name": "Ceres" },
-        { "@type": "City", "name": "Oakdale" }
+        { "@type": "City", "name": "Modesto" }
     ],
+    "founder": {
+        "@type": "Person",
+        "name": "Victor Joaquin",
+        "url": "https://boostifyusa.com/about"
+    },
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Web Design Services",
+        "name": "Website design and Local SEO",
         "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design Modesto" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ecommerce Web Design Agency" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Website Design" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño Web" } }
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Website design" },
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": "649", "priceCurrency": "USD" }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Local SEO" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "595", "priceCurrency": "USD", "unitText": "MONTH" }
+            }
         ]
     },
     "priceRange": "$$",
@@ -112,14 +183,24 @@ const faqSchema = {
     }))
 };
 
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boostifyusa.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Web Design", "item": "https://boostifyusa.com/web-design" },
+        { "@type": "ListItem", "position": 3, "name": "Modesto Web Design & SEO", "item": "https://boostifyusa.com/modesto-web-design" }
+    ]
+};
+
 export function WebDesignModestoPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Website Design Modesto | Custom Sites That Convert | Boostify USA"
-                description="Looking for Website Design in Modesto? We are a top web design agency specializing in Ecommerce, Brand Website Design, and Diseño Web."
+                title="Website Design Modesto & Modesto SEO | Boostify USA"
+                description="Web design and Modesto SEO from Boostify USA, a Fresno shop that works remotely. Templates from $649, custom from $1,995, and you own the domain."
                 canonicalUrl="/modesto-web-design"
             />
             <Helmet>
@@ -128,6 +209,9 @@ export function WebDesignModestoPage() {
                 </script>
                 <script type="application/ld+json">
                     {JSON.stringify(faqSchema)}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbSchema)}
                 </script>
             </Helmet>
             <Navigation />
@@ -165,7 +249,7 @@ export function WebDesignModestoPage() {
                             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8"
                         >
                             <ShieldCheck size={16} className="text-orange" />
-                            Ranked Among Top Web Design Agencies
+                            Built at 6362 N Figarden Dr, Fresno
                         </motion.div>
 
                         <motion.div
@@ -174,10 +258,10 @@ export function WebDesignModestoPage() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                         >
                             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-dark leading-[0.95] tracking-tighter mb-6">
-                                Website Design<br />
+                                Modesto Web Design and SEO,<br />
                                 <span className="relative inline-block px-2 isolate">
                                     <span className="absolute inset-0 bg-orange/20 -skew-y-2 rounded-sm -z-10" />
-                                    <span className="text-orange relative z-10">Modesto.</span>
+                                    <span className="text-orange relative z-10">Built in Our Fresno Office.</span>
                                 </span>
                             </h1>
                         </motion.div>
@@ -188,7 +272,7 @@ export function WebDesignModestoPage() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-xl md:text-2xl text-gray font-medium leading-relaxed max-w-2xl mb-10"
                         >
-                            We combine expert hand-coding and AI to build affordable websites that turn Modesto traffic into customers. Faster load times. Better SEO. More revenue.
+                            Modesto projects run over the phone and a screen share, which makes no difference to the build. If you need someone who can stop by your shop every week, hire a designer in Modesto. For everyone else a template is $649 and a custom build starts at $1,995, with the domain registered to you.
                         </motion.p>
 
                         <motion.div
@@ -214,11 +298,11 @@ export function WebDesignModestoPage() {
                         >
                             <span className="flex items-center gap-2">
                                 <Check size={16} className="text-green-500" strokeWidth={3} />
-                                Local Support
+                                Fresno Office
                             </span>
                             <span className="flex items-center gap-2">
                                 <Check size={16} className="text-green-500" strokeWidth={3} />
-                                High Conversion
+                                Prices Published
                             </span>
                             <span className="flex items-center gap-2">
                                 <Check size={16} className="text-green-500" strokeWidth={3} />
@@ -338,29 +422,29 @@ export function WebDesignModestoPage() {
                                 </motion.div>
                             </motion.div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Most Modesto Websites Are {' '}
-                                <span className="text-red-500">Invisible!</span>
+                                People find my website. Why don't they{' '}
+                                <span className="text-red-500">call?</span>
                             </h2>
                             <p className="text-xl text-gray font-medium">
-                                DIY builders and cheap templates from typical agencies are costing your local business money. If your Modesto site isn't actively working for you, it's working against you.
+                                By the time someone lands on your site, you already paid for that visit with ad money or with the years it took to earn a referral. These are the three spots where a Modesto site usually loses the call after that, and all three can be fixed from our office in Fresno.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
                                 {
-                                    title: 'Mobile Abandonment',
-                                    desc: "Shoppers in Stanislaus County use their phones first. If your website takes more than a few seconds to load, you've already lost the sale.",
+                                    title: 'It loads too slowly on a phone',
+                                    desc: "A paid theme with thirty or forty plugins loads code for all of them on every page, so on cell service the visitor backs out before your number draws. We test every build on a mid-range Android over 4G before launch.",
                                     icon: Clock
                                 },
                                 {
-                                    title: 'Buried in Search',
-                                    desc: "Without dedicated Modesto local SEO structures, Google won't show your business for 'near me' queries. You're losing market share to local competitors.",
+                                    title: "It's missing from the map results",
+                                    desc: "The three map results on a 'near me' search come from Google Business Profiles, which Google ranks on relevance, distance and popularity. A website can't put you there without a profile that uses your real Modesto address.",
                                     icon: Search
                                 },
                                 {
-                                    title: 'Outdated Branding',
-                                    desc: "A stale design makes your company look untrustworthy. An instant visual impact is required to capture modern Modesto consumer attention.",
+                                    title: 'It looks closed',
+                                    desc: "A footer that still says 2019 and stock photos of somebody else's crew read as a business that might not pick up. Twenty phone photos of your own jobs cost nothing and replace the stock shots on the pages where people decide to call.",
                                     icon: X
                                 }
                             ].map((item, i) => (
@@ -433,7 +517,7 @@ export function WebDesignModestoPage() {
                             >
                                 <img
                                     src="/FTS-Mock.webp"
-                                    alt="Premium Custom Website Design Example"
+                                    alt="Full Throttle Suspension website, designed and built by Boostify USA in Fresno"
                                     className="w-full h-auto rounded-2xl object-cover"
                                     fetchPriority="high"
                                 />
@@ -449,11 +533,11 @@ export function WebDesignModestoPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center max-w-3xl mx-auto mb-20">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Custom Solutions for <br />
-                                <span className="text-orange">Local Leaders.</span>
+                                Do I need a regular website <br />
+                                <span className="text-orange">or an online store?</span>
                             </h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">
-                                We don't believe in one-size-fits-all. Every line of code is forged by expert developers and AI to solve specific business problems affordably, generating measurable ROI for your Modesto company.
+                                A regular website explains what you do and gets you a phone call, which is what most service businesses need. A store adds inventory, sales tax and shipping on top of that. Once a catalog passes a few hundred products we'll point you to a Shopify Plus partner, because that work is its own specialty.
                             </p>
                         </div>
 
@@ -468,12 +552,12 @@ export function WebDesignModestoPage() {
                                 <div className="w-14 h-14 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-8">
                                     <PenTool size={28} strokeWidth={2} />
                                 </div>
-                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Brand Website Design</h3>
+                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Service business websites</h3>
                                 <p className="text-lg text-gray font-medium leading-relaxed mb-8 flex-1">
-                                    Your website is your 24/7 digital storefront. We craft bespoke brand identities and stunning visual layouts that make your local business instantly trusted and memorable to Modesto residents.
+                                    Every service you sell gets a page with a price or an honest range next to it, and your number works as a tap-to-call button. A custom build takes 3 to 5 weeks.
                                 </p>
                                 <ul className="space-y-3 mt-auto">
-                                    {['Custom Styling & Typography', 'Premium Asset Integration', 'Conversion Optimized Layouts'].map((item, i) => (
+                                    {['Photos of your real jobs', 'Schema with your address and phone', 'Forms tested on a phone'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark">
                                             <Check size={18} className="text-green-500" strokeWidth={3} />
                                             {item}
@@ -493,12 +577,12 @@ export function WebDesignModestoPage() {
                                 <div className="w-14 h-14 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-8">
                                     <ShoppingCart size={28} strokeWidth={2} />
                                 </div>
-                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Ecommerce Web Design Agency</h3>
+                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Online stores</h3>
                                 <p className="text-lg text-gray font-medium leading-relaxed mb-8 flex-1">
-                                    Frictionless checkouts, high-resolution product galleries, and robust inventory management. We build fast online stores designed to turn browsers into buyers instantly.
+                                    Product pages and a checkout on Shopify or custom code. Inventory sync, tax tables and shipping rules get quoted separately, so they never hide inside a page count.
                                 </p>
                                 <ul className="space-y-3 mt-auto">
-                                    {['Shopify & Custom Solutions', 'Secure Payment Gateways', 'Abandoned Cart Recovery'].map((item, i) => (
+                                    {['Shopify or a custom build', 'Checkout tested on a phone', 'Tax and shipping quoted up front'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark">
                                             <Check size={18} className="text-green-500" strokeWidth={3} />
                                             {item}
@@ -517,9 +601,9 @@ export function WebDesignModestoPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16 max-w-3xl mx-auto">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                The Boostify <span className="text-orange">Difference.</span>
+                                My WordPress site is slow. Do I need <span className="text-orange">a new one?</span>
                             </h2>
-                            <p className="text-xl text-gray font-medium">Why settle for a slow, bloated template when you can have an AI-accelerated, handcrafted revenue-generating engine?</p>
+                            <p className="text-xl text-gray font-medium">Often you don't. If the install is current and speed is the only complaint, a cleanup costs less than a rebuild and we'll quote the cleanup first. If it's an abandoned theme carrying forty plugins, every fix has to be re-tested against every plugin, which is how a repair ends up costing more than the $1,995 rebuild.</p>
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
@@ -531,14 +615,14 @@ export function WebDesignModestoPage() {
                                 className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-light shadow-sm flex flex-col"
                             >
                                 <div className="inline-block px-3 py-1 bg-red-100 text-red-600 font-bold text-xs uppercase rounded mb-6 self-start">The Problem</div>
-                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">Off-The-Shelf Builders</h3>
+                                <h3 className="text-3xl font-black text-dark tracking-tight mb-4">A paid theme and forty plugins</h3>
                                 <ul className="space-y-4 mb-8 flex-1">
                                     {[
-                                        'Heavy theme files slowing down performance',
-                                        'Frustrating mobile navigation',
-                                        'Designs that blend in with every other site',
-                                        'Constant need for security patches',
-                                        'Hidden fees for premium plugins'
+                                        'Code for every plugin loads on every page',
+                                        'Menus built for a mouse, then squeezed onto a phone',
+                                        'A layout other shops in your trade bought too',
+                                        'A security patch for each plugin, every month',
+                                        'Yearly renewals on the premium plugins'
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 font-medium text-gray">
                                             <X size={20} className="text-red-500 shrink-0 mt-0.5" strokeWidth={2.5} />
@@ -561,14 +645,14 @@ export function WebDesignModestoPage() {
                                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 text-green-400 font-bold text-xs uppercase rounded mb-6 self-start relative z-10">
                                     <Zap size={12} fill="currentColor" /> Our Solution
                                 </div>
-                                <h3 className="text-3xl font-black text-white tracking-tight mb-4 relative z-10">Bespoke Architecture</h3>
+                                <h3 className="text-3xl font-black text-white tracking-tight mb-4 relative z-10">Hand-coded or lean WordPress</h3>
                                 <ul className="space-y-4 mb-8 flex-1 relative z-10">
                                     {[
-                                        'Code specifically tailored to your business',
-                                        'Instant page transitions and routing',
-                                        'Unique visual assets establishing authority',
-                                        'Seamless cross-device experiences',
-                                        'Built-in modern performance best practices'
+                                        'Only the code each page actually uses',
+                                        'LCP under 2.5 seconds on a mid-range Android',
+                                        'Photos of your own jobs in place of stock',
+                                        'A 301 redirect for every old URL before launch',
+                                        'Hours and prices you can edit yourself'
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 font-medium text-white/80">
                                             <Check size={20} className="text-green-500 shrink-0 mt-0.5" strokeWidth={3} />
@@ -577,6 +661,155 @@ export function WebDesignModestoPage() {
                                     ))}
                                 </ul>
                             </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/*
+                  ───── MODESTO SEO ─────
+                  Layout reused from the "What usually comes next" rows on
+                  /web-design: a short sticky intro on the left, a timeline of
+                  plain rows on the right. This section carries "modesto seo".
+                */}
+                <section id="modesto-seo" className="py-20 md:py-24 px-6 bg-white scroll-mt-24">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-[22rem_1fr] gap-10 lg:gap-20 items-start">
+                            <div className="lg:sticky lg:top-28">
+                                <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-4">
+                                    What Modesto SEO looks like in the first 90 days.
+                                </h2>
+                                <p className="text-gray font-medium leading-relaxed">
+                                    Modesto SEO is two separate jobs. The map results at the top of the page come from your Google Business Profile. The blue links under them come from your website, so working on only one of them leaves half the page to somebody else.
+                                </p>
+                            </div>
+
+                            <div>
+                                <div className="divide-y divide-gray-light border-y border-gray-light">
+                                    {seoSteps.map((s) =>
+                                        <div key={s.when} className="grid grid-cols-1 md:grid-cols-[10rem_1fr] gap-2 md:gap-10 py-6">
+                                            <p className="text-sm font-bold text-orange-hover leading-relaxed md:pt-0.5">
+                                                {s.when}
+                                            </p>
+                                            <div>
+                                                <h3 className="text-lg font-black text-dark tracking-tight mb-1.5">
+                                                    {s.name}
+                                                </h3>
+                                                <p className="text-gray font-medium leading-relaxed">{s.body}</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="mt-8 space-y-4 max-w-[68ch]">
+                                    <p className="text-gray font-medium leading-relaxed">
+                                        Your profile has to use the address where you actually work.{' '}
+                                        <a href="https://support.google.com/business/answer/3038177" target="_blank" rel="noopener noreferrer" className="text-dark font-bold hover:text-orange transition-colors">Google&rsquo;s guidelines</a>{' '}
+                                        make a virtual office ineligible for a Business Profile, and a profile built on one can be suspended along with the other listings its owner manages. We don&rsquo;t have a Modesto office, so we don&rsquo;t run a Modesto listing for ourselves either.
+                                    </p>
+                                    <p className="text-gray font-medium leading-relaxed">
+                                        Local SEO is $595 a month, and Local SEO Lite is $249 a month with hosting, maintenance and baseline optimization on one bill. Both are month to month. If referrals already keep you booked for months, don&rsquo;t buy SEO from us or anyone else, because it produces calls you have no room to take.
+                                    </p>
+                                    <p className="text-gray font-medium leading-relaxed">
+                                        The full list of what&rsquo;s included is on the{' '}
+                                        <Link to="/local-seo" className="text-dark font-bold hover:text-orange transition-colors">local SEO</Link>{' '}
+                                        page, and{' '}
+                                        <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO</Link>{' '}
+                                        runs the same process for businesses near our office.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/*
+                  ───── PRICING ─────
+                  Table pattern reused from "Do you need WordPress?" on
+                  /web-design. Published prices only.
+                */}
+                <section className="py-16 md:py-20 px-6 bg-light/50">
+                    <div className="max-w-7xl mx-auto">
+                        <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight max-w-[20ch] mb-5">
+                            What does website design cost in Modesto?
+                        </h2>
+                        <p className="text-lg text-gray font-medium leading-relaxed max-w-[66ch] mb-12">
+                            These are the same numbers we quote on the phone. They&rsquo;re printed here because a price that only shows up after a forty-minute discovery call can be shaped by how much you seem able to pay.
+                        </p>
+
+                        <div className="overflow-x-auto -mx-6 px-6">
+                            <table className="w-full min-w-[46rem] border-collapse text-left">
+                                <thead>
+                                    <tr className="border-b-2 border-dark/15">
+                                        <th className="py-3 pr-6 text-xs font-bold uppercase tracking-[0.13em] text-dark/50 w-[22%]">What you&rsquo;re buying</th>
+                                        <th className="py-3 pr-6 text-xs font-bold uppercase tracking-[0.13em] text-dark/50 w-[20%]">Price</th>
+                                        <th className="py-3 text-xs font-bold uppercase tracking-[0.13em] text-dark/50">What it covers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {prices.map((p) =>
+                                        <tr key={p.item} className="border-b border-dark/10 align-top">
+                                            <td className="py-5 pr-6 font-medium text-gray leading-relaxed">{p.item}</td>
+                                            <td className="py-5 pr-6 font-black text-dark leading-snug">{p.price}</td>
+                                            <td className="py-5 font-medium text-gray leading-relaxed">{p.covers}</td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p className="text-gray font-medium leading-relaxed max-w-[64ch] mt-8">
+                            There are no contracts on any of it. You own the domain, the hosting account and the code, and we transfer all three on request at no charge. The{' '}
+                            <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design</Link>{' '}
+                            page covers which of the two builds fits your business. Hosting and the domain run roughly $20 to $30 a month, and you can pay those directly.
+                        </p>
+                    </div>
+                </section>
+
+                {/*
+                  ───── WHO DOES THE WORK ─────
+                  Pattern reused from /web-design. Every claim about Victor is
+                  from the Google Business Profile description, nothing else.
+                */}
+                <section className="py-16 md:py-20 px-6 bg-white border-t border-gray-light">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-start">
+                            <img
+                                src="/1733568683912.jpg"
+                                alt="Victor Joaquin, founder of Boostify USA"
+                                width={200}
+                                height={200}
+                                loading="lazy"
+                                decoding="async"
+                                className="w-24 h-24 md:w-28 md:h-28 rounded-xl object-cover border border-gray-light shrink-0"
+                            />
+
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-[0.13em] text-orange-hover mb-3">
+                                    Who does the work
+                                </p>
+                                <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-4">
+                                    Victor Joaquin builds it.
+                                </h2>
+                                <p className="text-lg text-gray font-medium leading-relaxed max-w-[68ch] mb-4">
+                                    He started building websites at 16 and spent time inside several of the bigger agencies in Fresno before starting his own. The person on your first call is the person who writes the copy and builds the pages.
+                                </p>
+                                <p className="text-gray font-medium leading-relaxed max-w-[68ch] mb-6">
+                                    He did the WordPress build for Fresno State&rsquo;s news site and trained their staff on it, and he runs workshops for the SBA. Every site on{' '}
+                                    <Link to="/work" className="text-dark font-bold hover:text-orange transition-colors">our work page</Link>{' '}
+                                    is for a Fresno client, including Full Throttle Suspension, Martin Energy, Benchmark Pool Supply and Tint Headquarters.
+                                </p>
+
+                                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                                    <Link to="/about" className="inline-flex items-center gap-1.5 font-bold text-dark hover:text-orange transition-colors">
+                                        More about Victor
+                                        <ArrowUpRight size={16} />
+                                    </Link>
+                                    <a href="tel:+15597853834" className="inline-flex items-center gap-2 font-bold text-dark hover:text-orange transition-colors">
+                                        <Phone size={16} className="text-orange" strokeWidth={2.5} />
+                                        (559) 785-3834
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -600,24 +833,24 @@ export function WebDesignModestoPage() {
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
                                 <div>
                                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-dark/20 rounded-full font-bold text-sm tracking-wide mb-8 border border-white/20 backdrop-blur-sm">
-                                        <Globe2 size={16} /> Modesto Digital Marketing
+                                        <Globe2 size={16} /> Modesto Web Design &amp; SEO
                                     </div>
                                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tighter">
-                                        Dominate the <br /> Central Valley.
+                                        Call before you <br /> hire anyone.
                                     </h2>
                                     <p className="text-lg font-medium text-white/90 mb-10 leading-relaxed max-w-md">
-                                        Whether you need a high-end corporate build or targeted <strong>Diseño Web</strong> for the bilingual market, we craft the tools that drive revenue.
+                                        Ask every shop you call who will own the domain when the job is done, and get the answer in writing before you pay a deposit. Our answer is you, and <strong>(559) 785-3834</strong> rings at our office in Fresno.
                                     </p>
-                                    <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange font-bold rounded-lg hover:bg-gray-50 transition-all shadow-xl hover:-translate-y-1">
-                                        Get Your Free Proposal
-                                    </Link>
+                                    <a href="tel:+15597853834" className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange font-bold rounded-lg hover:bg-gray-50 transition-all shadow-xl hover:-translate-y-1">
+                                        Call (559) 785-3834
+                                    </a>
                                 </div>
 
                                 <div className="space-y-4">
                                     {[
-                                        { title: 'Local Focus', desc: 'We know Modesto, Ceres, and Turlock search behaviors.' },
-                                        { title: 'Bilingual Reach', desc: 'Capture Spanish-speakers with native Diseño Web.' },
-                                        { title: 'Zero Lock-In', desc: 'You own your code. No holding your business hostage.' }
+                                        { title: 'Remote builds', desc: 'Modesto projects run over the phone and a screen share, and the build is the same one Fresno clients get.' },
+                                        { title: 'Prices in writing', desc: '$649 for a template, $1,995 and up for custom, and $595 a month for Local SEO.' },
+                                        { title: 'No lock-in', desc: 'The domain, hosting account and code are yours, and the transfer is free.' }
                                     ].map((feature, i) => (
                                         <div key={i} className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-start gap-5">
                                             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-orange shrink-0 font-black text-xl shadow-inner">
@@ -639,7 +872,7 @@ export function WebDesignModestoPage() {
                 <section className="py-24 px-6 bg-white">
                     <div className="max-w-3xl mx-auto">
                         <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">
-                            Modesto Web Design FAQ
+                            Modesto web design and SEO questions
                         </h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
@@ -663,6 +896,48 @@ export function WebDesignModestoPage() {
                                             </motion.div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/*
+                  ───── REFERENCES ─────
+                  Appendix pattern reused from /web-design. The Google rules
+                  this page leans on, so each claim can be checked.
+                */}
+                <section className="py-12 md:py-14 px-6 bg-light/50 border-t border-gray-light">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-[15rem_1fr] gap-6 lg:gap-16">
+                            <div>
+                                <h2 className="text-xs font-bold uppercase tracking-[0.13em] text-dark mb-1.5">
+                                    References
+                                </h2>
+                                <p className="text-xs text-gray font-medium leading-relaxed max-w-[30ch]">
+                                    The published rules behind the claims on this page.
+                                </p>
+                            </div>
+
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 divide-y divide-gray-light sm:divide-y-0">
+                                {[
+                                    { t: 'How local results are ranked', s: 'Google Business Profile Help', h: 'https://support.google.com/business/answer/7091' },
+                                    { t: 'Address rules and virtual offices', s: 'Google Business Profile Help', h: 'https://support.google.com/business/answer/3038177' },
+                                    { t: 'Review incentives and gating', s: 'Google Maps content policy', h: 'https://support.google.com/contributionpolicy/answer/7400114' },
+                                    { t: 'Doorway pages', s: 'Google spam policies', h: 'https://developers.google.com/search/docs/essentials/spam-policies' },
+                                    { t: 'Spanish pages and hreflang', s: 'Google Search Central', h: 'https://developers.google.com/search/docs/specialty/international/localized-versions' },
+                                    { t: 'Core Web Vitals thresholds', s: 'web.dev', h: 'https://web.dev/articles/vitals' },
+                                    { t: 'PageSpeed Insights', s: 'Test any URL yourself', h: 'https://pagespeed.web.dev/' }
+                                ].map((r) =>
+                                    <li key={r.h} className="py-2.5">
+                                        <a href={r.h} target="_blank" rel="noopener noreferrer" className="group flex items-baseline gap-2">
+                                            <span className="text-sm font-bold text-dark group-hover:text-orange transition-colors">
+                                                {r.t}
+                                            </span>
+                                            <span className="text-xs font-medium text-gray shrink-0">{r.s}</span>
+                                            <ArrowUpRight size={12} className="text-gray/50 shrink-0 self-center group-hover:text-orange transition-colors" />
+                                        </a>
+                                    </li>
+                                )}
+                            </ul>
                         </div>
                     </div>
                 </section>

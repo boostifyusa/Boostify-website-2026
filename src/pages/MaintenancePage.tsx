@@ -107,13 +107,13 @@ export function MaintenancePage() {
         <meta property="og:site_name" content="Boostify USA Web Design & SEO" />
         <meta property="og:locale" content="en_US" />
         <meta property="article:modified_time" content="2026-05-15T00:00:00-07:00" />
-        <meta property="article:author" content="Victor Estrada" />
+        <meta property="article:author" content="Victor Joaquin" />
         <meta name="twitter:site" content="@boostifyusa" />
         <meta name="twitter:label1" content="Starts at" />
         <meta name="twitter:data1" content="$99/month" />
         <meta name="twitter:label2" content="Contract" />
         <meta name="twitter:data2" content="None, cancel anytime" />
-        <meta name="author" content="Victor Estrada" />
+        <meta name="author" content="Victor Joaquin" />
         <meta name="geo.region" content="US-CA" />
         <meta name="geo.placename" content="Fresno" />
       </SeoHead>
@@ -205,7 +205,7 @@ export function MaintenancePage() {
           breadcrumb: { '@id': 'https://boostifyusa.com/maintenance#breadcrumb' },
           author: {
             '@type': 'Person',
-            name: 'Victor Estrada',
+            name: 'Victor Joaquin',
             jobTitle: 'Founder',
             worksFor: { '@type': 'Organization', name: 'Boostify USA Web Design & SEO' },
             url: 'https://boostifyusa.com/about',

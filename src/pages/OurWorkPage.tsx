@@ -13,18 +13,18 @@ const projects = [
     title: 'Full Throttle Suspension',
     category: 'WEB DESIGN & SEO',
     stat: 'PAGE 1 RANKINGS',
-    description: 'Custom website build with full local SEO strategy. Hand-coded for speed, optimized for conversions, and ranking on page one for competitive automotive keywords in Fresno.',
+    description: <>Custom website build with <Link to="/fresno-seo" className="text-orange font-bold hover:underline">full local SEO strategy</Link>. Hand-coded for speed, optimized for conversions, and ranking on page one for competitive automotive keywords in Fresno.</>,
     image: '/FTS-Mock.webp',
-    link: 'https://fullthrottlesuspension.com'
+    link: 'https://ftskits.com'
   },
   {
     id: '02',
     title: 'Martin Energy Inc',
     category: 'WEB DESIGN & SEO',
     stat: '3× ORGANIC TRAFFIC',
-    description: 'Full website redesign for a Fresno-based solar energy company. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.',
+    description: <><Link to="/" className="text-orange font-bold hover:underline">Full website redesign</Link> for a Fresno-based solar energy company. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.</>,
     image: '/Slide-4_3-5.webp',
-    link: 'https://martinenergyinc.com'
+    link: 'https://martinenergyconsultingservices.com'
   },
   {
     id: '03',
@@ -33,7 +33,7 @@ const projects = [
     stat: '50K+ MONTHLY VISITORS',
     description: 'Built the official Fresno State news website from the ground up. A high-traffic, content-heavy platform serving students, faculty, and the Fresno community.',
     image: '/Slide-4_3-4.webp',
-    link: 'https://fresnostatetoday.com'
+    link: 'https://today.fresnostate.edu'
   },
   {
     id: '04',
@@ -51,7 +51,7 @@ const projects = [
     stat: '#1 FOR WINDOW TINT FRESNO',
     description: 'Bold, high-converting website for Fresno\'s top-rated ceramic window tint shop. Paired with Google Ads to dominate local search and drive same-day appointment requests.',
     image: '/2024-04-30-2.jpg',
-    link: 'https://tintheadquarters.com'
+    link: 'https://headquarterswindowtint.com'
   }
 ];
 

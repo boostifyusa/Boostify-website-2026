@@ -184,13 +184,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/clovis-marketing-agency" className="hover:text-orange transition-colors">
-                  Clovis Marketing
+                <Link to="/clovis-web-design" className="hover:text-orange transition-colors">
+                  Clovis Web Design
                 </Link>
               </li>
               <li>
-                <Link to="/visalia-marketing-agency" className="hover:text-orange transition-colors">
-                  Visalia Marketing
+                <Link to="/visalia-web-design" className="hover:text-orange transition-colors">
+                  Visalia Web Design
                 </Link>
               </li>
               <li>

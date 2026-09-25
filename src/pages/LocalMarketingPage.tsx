@@ -30,9 +30,9 @@ import {
   'lucide-react';
 
 const areaCities = [
-  { city: 'Fresno', path: '/fresno-marketing-agency' },
-  { city: 'Clovis', path: '/clovis-marketing-agency' },
-  { city: 'Visalia', path: '/visalia-marketing-agency' },
+  { city: 'Fresno', path: '/' },
+  { city: 'Clovis', path: '/clovis-web-design' },
+  { city: 'Visalia', path: '/visalia-web-design' },
   { city: 'Madera', path: '/madera-marketing-agency' },
   { city: 'Hanford', path: '/hanford-marketing-agency' },
   { city: 'Merced', path: '/merced-marketing-agency' },

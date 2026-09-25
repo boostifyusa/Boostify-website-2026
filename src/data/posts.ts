@@ -206,7 +206,7 @@ export const blogPosts: Record<string, any> = {
               name: 'Who is the best web design agency in Fresno?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence: identifying gaps and weaknesses in specific competitors' strategies and exploiting them to outrank. AI is a consulting and future-readiness capability rather than a packaged product. Founder Victor Joaquin has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms."
+                text: "Boostify USA Web Design & SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence: identifying gaps and weaknesses in specific competitors' strategies and exploiting them to outrank. AI is a consulting and future-readiness capability rather than a packaged product. Founder Victor Joaquin has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms."
               }
             },
             {
@@ -552,7 +552,7 @@ export const blogPosts: Record<string, any> = {
         </h2>
 
         <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">Who is the best web design agency in Fresno?</h3>
-        <p>Boostify USA Web Design and SEO is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence, identifying gaps and weaknesses in specific competitors’ strategies and exploiting them to outrank. AI is positioned as a consulting and future-readiness capability rather than a packaged product: founder Victor Joaquin has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms.</p>
+        <p><a href="/" class="text-orange hover:underline font-bold">Boostify USA Web Design &amp; SEO</a> is the top pick for SMB owners who want a lean specialist team for methodical web development, competitive SEO, and Google Ads. The web build is custom-coded, not template-based. SEO is run on competitive intelligence, identifying gaps and weaknesses in specific competitors’ strategies and exploiting them to outrank. AI is positioned as a consulting and future-readiness capability rather than a packaged product: founder Victor Joaquin has hands-on machine learning and LLM experience, and the SBA and Valley Sierra SBDC have hired Boostify to teach small business owners on emerging AI technology with live speaking and demos. 5.0 Google rating, PageSpeed 98+, in business since 2014. AMARQUEZ and Nettra Media are also strong picks. AMARQUEZ is built for SMBs running Google Ads. Nettra Media handles enterprise work for banks, credit unions, and law firms.</p>
 
         <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">How much does web design cost in Fresno, CA?</h3>
         <p>Pricing in Fresno ranges from around $2,500 for a basic small-business site at boutique studios like Meshup, up to $25,000 or more for custom-coded builds with AI integration at agencies like Boostify or Nettra Media. Most Central Valley small businesses spend between $5,000 and $12,000 for a professionally built site. Ongoing maintenance runs $50 to $500 a month depending on what is bundled in.</p>
@@ -561,7 +561,7 @@ export const blogPosts: Record<string, any> = {
         <p>For businesses targeting Central Valley customers, a Fresno-based agency wins almost every time. Local agencies know the Fresno, Clovis, Madera, and Visalia markets, build content that ranks in the local pack, and can meet you in person. National agencies may have flashier portfolios, but most of them do not know how local SEO works in the Valley, how Google Business Profile signals behave here, or how to write for the industries that dominate the region (agriculture, contractors, healthcare).</p>
 
         <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">What is the difference between web design and SEO?</h3>
-        <p>Web design is how your site looks, feels, and works. SEO is what gets people to find that site on Google. The best Fresno agencies, including Boostify, AMARQUEZ, Nettra Media, and WorldLight, offer both. A pretty site nobody finds is worthless. A top-ranked site that converts at half a percent is leaving money behind. See our <a href="/local-seo" class="text-orange hover:underline font-bold">Fresno Local SEO</a> page for more on the SEO side.</p>
+        <p>Web design is how your site looks, feels, and works. SEO is what gets people to find that site on Google. The best Fresno agencies, including Boostify, AMARQUEZ, Nettra Media, and WorldLight, offer both. A pretty site nobody finds is worthless. A top-ranked site that converts at half a percent is leaving money behind. For the SEO side, here's <a href="/fresno-seo" class="text-orange hover:underline font-bold">how we run SEO in Fresno</a>, price included.</p>
 
         <h3 class="text-xl font-bold text-dark !mt-8 !mb-3">How long does it take to build a new website in Fresno?</h3>
         <p>Most reputable Fresno agencies deliver a custom website in 4 to 8 weeks. Hand-coded builds with AI integration (Boostify’s typical timeline) usually land at 6 to 10 weeks. Boutique template-based shops can ship in 2 to 4 weeks. DIY hybrid services like Buildicus advertise 15-minute setup with optional concierge polish layered on in days.</p>
@@ -709,7 +709,7 @@ export const blogPosts: Record<string, any> = {
           <strong class="text-dark">The fix:</strong> Include your city,
           neighborhood, and service area naturally throughout your site. In
           headings, page titles, meta descriptions, and body copy. Think
-          "plumber in Fresno" not just "plumber." Need a <a href="/web-design" class="text-orange hover:underline font-bold">Fresno Web Design</a> expert to fix this? Let us know.
+          "plumber in Fresno" not just "plumber." If you're rebuilding anyway, our <a href="/" class="text-orange hover:underline font-bold">Fresno web design builds</a> ship with schema that gives Google your address and phone number in a format it can't get wrong.
         </p>
 
         <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
@@ -737,8 +737,8 @@ export const blogPosts: Record<string, any> = {
           whether you respond.
         </p>
         <p>
-          <strong class="text-dark">The fix:</strong> Create a simple system
-          to ask happy customers for reviews. Send a follow-up text or email
+          <strong class="text-dark">The fix:</strong> Create a <a href="/blog/dental-redesign" class="text-orange hover:underline font-bold">simple system
+          to ask happy customers for reviews</a>. Send a follow-up text or email
           with a direct link. And always respond, to positive and negative
           reviews alike.
         </p>
@@ -765,7 +765,7 @@ export const blogPosts: Record<string, any> = {
             SEO isn't magic. It's consistency, attention to detail, and
             understanding what Google (and your customers) actually want. Fix
             these five mistakes and you'll be ahead of 90% of your local
-            competition. If you need a dedicated <a href="/local-seo" class="text-orange hover:underline font-bold">Fresno SEO</a> partner, we are here to help.
+            competition. If you'd rather hand it off, our <a href="/fresno-seo" class="text-orange hover:underline font-bold">Fresno SEO</a> is $595 a month, month to month, and the price is printed on the page.
           </p>
         </div>
     `
@@ -793,7 +793,7 @@ export const blogPosts: Record<string, any> = {
           The truth is, most small business websites are designed to look
           pretty, not to sell. They function like digital brochures rather than
           24/7 salespeople. Here are the top reasons your website isn't
-          converting visitors into leads, and why investing in proper <a href="/web-design" class="text-orange hover:underline font-bold">Fresno Web Design</a> makes all the difference.
+          converting visitors into leads, and why investing in <a href="/" class="text-orange hover:underline font-bold">proper web design in Fresno</a> makes all the difference.
         </p>
 
         <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
@@ -989,7 +989,7 @@ export const blogPosts: Record<string, any> = {
         <p>
           <strong>Pro Tip:</strong> The best strategy is usually a hybrid
           approach. Run LSAs to capture high-intent leads at the top, and use
-          Google Ads to capture specific long-tail searches with the help of a <a href="/local-seo" class="text-orange hover:underline font-bold">Fresno SEO</a> and ads expert.
+          Google Ads to capture specific long-tail searches with the help of an <a href="/fresno-seo" class="text-orange hover:underline font-bold">SEO company in Fresno</a> that runs the ads too.
         </p>
     `
 
@@ -1011,7 +1011,7 @@ export const blogPosts: Record<string, any> = {
         <p>
           Let's be honest: asking customers for reviews feels awkward. Nobody
           wants to be that business owner who sends five follow-up texts begging
-          for a 5-star rating. But here's the reality — Google reviews are the
+          for a 5-star rating. But here's the reality. Google reviews are the
           single most powerful trust signal for local businesses, and they
           directly impact your search rankings.
         </p>
@@ -1041,15 +1041,15 @@ export const blogPosts: Record<string, any> = {
         </h2>
         <p>
           The #1 reason customers don't leave reviews isn't that they don't want
-          to — it's that it's too much friction. They have to find your business
+          to, it's that it's too much friction. They have to find your business
           on Google, click the right button, sign in, and type something out.
           Most people give up halfway through.
         </p>
         <p>
           <strong class="text-dark">The fix:</strong> Create a direct review
           link. Go to your Google Business Profile, click "Ask for reviews," and
-          copy the short link. This takes customers straight to the review form
-          — no searching required.
+          copy the short link. This takes customers straight to the review form,
+          no searching required.
         </p>
         <p>
           Put this link everywhere: in your email signature, on your invoices,
@@ -1061,7 +1061,7 @@ export const blogPosts: Record<string, any> = {
         </h2>
         <p>
           Timing is everything. Don't ask for a review a week after the job is
-          done — the emotional high has faded. Ask when the customer is at peak
+          done. The emotional high has faded. Ask when the customer is at peak
           satisfaction.
         </p>
         <p>
@@ -1105,7 +1105,7 @@ export const blogPosts: Record<string, any> = {
         </h2>
         <p>
           This is where most businesses drop the ball. Responding to reviews
-          isn't just good manners — Google has confirmed it's a ranking signal.
+          isn't just good manners. Google has confirmed it's a ranking signal.
           Businesses that respond to reviews are seen as more engaged and
           trustworthy.
         </p>
@@ -1125,7 +1125,7 @@ export const blogPosts: Record<string, any> = {
           Step 5: Don't Buy Fake Reviews (Seriously)
         </h2>
         <p>
-          We see it all the time — businesses buying 50 five-star reviews from
+          We see it all the time, businesses buying 50 five-star reviews from
           random accounts. Google's algorithm is getting smarter every month at
           detecting fake reviews. The penalty? Your entire review history can be
           wiped, and your listing can be suspended.
@@ -1142,7 +1142,7 @@ export const blogPosts: Record<string, any> = {
             your direct link, ask at the right moment with a simple text, and
             respond to every single review. Do this consistently and you'll
             build a review profile that crushes your competition and earns trust
-            before customers even pick up the phone. For more customized strategies, check out our <a href="/local-seo" class="text-orange hover:underline font-bold">Fresno SEO</a> services.
+            before customers even pick up the phone. Want the review routine set up for you? It's part of our <a href="/fresno-seo" class="text-orange hover:underline font-bold">Fresno SEO services</a>.
           </p>
         </div>
     `
@@ -1163,7 +1163,7 @@ export const blogPosts: Record<string, any> = {
     content: `
         <div class="bg-orange/10 border-l-4 border-orange p-6 my-8 rounded-r-xl">
             <p class="!mb-0 text-dark">
-                <strong>Note:</strong> We made this page because we see too many contractors paying thousands of dollars a month to a so-called <a href="/local-marketing" class="text-orange hover:underline font-bold">Fresno Marketing Agency</a> for "SEO" when they haven't even claimed their free Google listings. Start here first. It's completely free, and it works.
+                <strong>Note:</strong> We made this page because we see too many contractors paying thousands of dollars a month to a so-called Fresno Marketing Agency for "SEO" when they haven't even claimed their free Google listings. Start here first. It's completely free, and it works.
             </p>
         </div>
 
@@ -1211,6 +1211,7 @@ export const blogPosts: Record<string, any> = {
                                 Post a job update or photo once a week.
                             </li>
                         </ul>
+                        <p class="text-sm text-dark mt-4 !mb-0">Rather hand it off? Fixing the profile is the first two weeks of our <a href="/fresno-seo" class="text-orange hover:underline font-bold">Fresno SEO work</a>.</p>
                         <a href="https://www.google.com/business/" target="_blank" rel="noreferrer" class="inline-block mt-4 text-orange font-bold text-sm hover:underline">Claim Your Profile →</a>
                     </div>
                 </div>
@@ -1440,7 +1441,7 @@ export const blogPosts: Record<string, any> = {
                     Section 5: "Stuff Your Competition Isn't Doing"
                 </h2>
             </div>
-            <p>Want a fast unfair advantage? Across California — from Sacramento to San Diego — maybe 5% of contractors do any of this.</p>
+            <p>Want a fast unfair advantage? Across California, from Sacramento to San Diego, maybe 5% of contractors do any of this.</p>
 
             <!-- Point 15 -->
             <div class="bg-light rounded-2xl p-6 border-l-4 border-orange my-8">
@@ -1459,7 +1460,7 @@ export const blogPosts: Record<string, any> = {
                     <div class="w-8 h-8 rounded-full bg-dark text-white font-bold flex items-center justify-center shrink-0">19</div>
                     <h3 class="text-xl font-bold text-dark !mb-0">ChatGPT (Free Version)</h3>
                 </div>
-                <p class="text-sm mt-2 !mb-0">Use it to write professional email responses to angry customers, generate 50 local FAQ ideas for your website, or write the first draft of your service page descriptions. Contractors who use AI for admin work save 5+ hours a week.</p>
+                <p class="text-sm mt-2 !mb-0">Use it to write professional email responses to angry customers, generate 50 local FAQ ideas for your website, or write the first draft of your service page descriptions. Contractors who <a href="/blog/ai-automation-local-business" class="text-orange hover:underline font-bold">use AI for admin work</a> save 5+ hours a week.</p>
             </div>
 
             <!-- Point 20 -->
@@ -1483,7 +1484,7 @@ export const blogPosts: Record<string, any> = {
             <div class="bg-light rounded-2xl border border-gray-light p-8 !mt-12">
                 <h3 class="text-xl font-bold text-dark mb-3 flex items-center gap-3">Bonus: Schema Markup</h3>
                 <p class="text-sm !mb-0">
-                    Schema markup is invisible code on your website. In human language: This is the code that explicitly tells Google's robots "Hey, I am a licensed HVAC contractor in [your city], not just a random website that mentions AC." Most cheap websites don't have it. If you build one, ask your <a href="/web-design" class="text-orange hover:underline font-bold">Fresno Web Design</a> expert to include <code>LocalBusiness</code> schema.
+                    Schema markup is invisible code on your website. In human language: This is the code that explicitly tells Google's robots "Hey, I am a licensed HVAC contractor in [your city], not just a random website that mentions AC." Most cheap websites don't have it. If you build one, ask your web designer to include <code>LocalBusiness</code> schema. Every <a href="/" class="text-orange hover:underline font-bold">website we build in Fresno</a> ships with schema, the $649 template included.
                 </p>
             </div>
         </div>
