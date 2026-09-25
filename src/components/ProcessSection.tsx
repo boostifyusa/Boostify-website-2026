@@ -53,7 +53,7 @@ export function ProcessSection() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[0.95] max-w-[14ch]">
-            How we work.
+            How a web design project runs.
           </h2>
           <p className="text-lg text-white/55 font-medium leading-relaxed max-w-[46ch] lg:text-right lg:pb-2">
             Four phases, about twenty-five working days, and a preview link you can open from week two on.

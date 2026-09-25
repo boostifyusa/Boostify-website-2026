@@ -336,17 +336,17 @@ const industries = [
     {
         icon: Tractor,
         name: 'Agriculture and equipment',
-        body: 'Growers and equipment dealers sell on spec sheets and service area, and almost every ag website in the Valley hides both under a stock photo of a field at sunset. We build searchable equipment lists, a real service area map, and a quote form that goes to a phone your crew answers during harvest.',
+        body: 'Growers and dealers sell on spec sheets and service area, and most ag websites in the Valley hide both under a stock photo of a field. We build searchable equipment lists and a quote form that reaches a phone someone answers during harvest.',
     },
     {
         icon: Wrench,
         name: 'HVAC, plumbing, roofing, electrical',
-        body: 'Trade jobs are won on Google Maps at 9pm in July by whoever loads first and shows a phone number. We build one page per service so each one can rank on its own, add call tracking to every one of them, and keep the number easy to tap.',
+        body: 'Trade jobs are won on Google Maps at 9pm in July by whoever loads first and shows a phone number. One page per service, so each one can rank on its own, with call tracking on every one.',
     },
     {
         icon: Scale,
         name: 'Legal practices',
-        body: 'One page per practice area, because one services page can\u2019t rank for seven different things at once. Attorney bios with their real bar numbers. Intake forms that block the spam bots that fill a small firm\u2019s inbox until nobody reads it anymore.',
+        body: 'One page per practice area, because one services page can\u2019t rank for seven things at once. Attorney bios with real bar numbers, and intake forms that keep the spam bots out of a small firm\u2019s inbox.',
     },
     {
         icon: Stethoscope,
@@ -356,12 +356,12 @@ const industries = [
     {
         icon: UtensilsCrossed,
         name: 'Restaurants and food',
-        body: 'Your menu as HTML text rather than a PDF or a photograph of a printed board, because Google can\u2019t read a picture of the word birria, and that single detail is why most restaurant sites are missing from a search for the dish by name.',
+        body: 'Your menu as HTML text, not a PDF or a photo of the board, because Google can\u2019t read a picture of the word birria. That one detail is why most restaurant sites miss the search for the dish by name.',
     },
     {
         icon: Truck,
         name: 'Auto, truck, and fleet',
-        body: 'Bay counts, turnaround times, and fleet account pages, plus hours that match between your website and your Google listing. On most shop sites they don\u2019t, and that sends customers to a competitor at 6:40 on a Friday. Full Throttle Suspension is one of ours, and it\u2019s the website you see at the top of this page.',
+        body: 'Bay counts, turnaround times, fleet account pages, and hours that match your Google listing, because on most shop sites they don\u2019t. Full Throttle Suspension is one of ours, the website at the top of this page.',
     },
 ];
 
@@ -385,11 +385,6 @@ const cityPages = [
 
 // ─── Jobs we say no to, and where they should go instead ────────────────────
 const turndown = [
-    {
-        job: 'A site built to rank in a city you do not operate in',
-        why: 'Fake addresses and virtual offices get Google Business Profiles suspended. The suspension follows the owner as well as the listing, so it can end up taking down the rest of your locations along with it.',
-        instead: 'Nowhere. Do not buy this from anyone.',
-    },
     {
         job: 'A $200 website',
         why: 'Nobody can write and build a real site from scratch for $200. You\u2019d be paying for a template that already exists, with a markup.',
@@ -439,32 +434,36 @@ const vetting = [
 // ─── FAQ (rendered in HTML, mirrored into FAQPage schema) ───────────────────
 const faqs = [
     {
-        q: 'I called two web designers and neither would give me a number. What does a website cost?',
-        a: 'Template build, $649, paid once. Custom build, $1,995 and up depending on how many pages and how much of it has to be built rather than assembled. Care plan, $99 a month, optional, cancel whenever. Those are the numbers we say on the phone, which is the only reason they\u2019re printed here. An agency that won\u2019t quote a range before a discovery call is protecting its ability to price you off your reaction, and you should read it that way.',
+        q: 'I called two web designers and neither would give me a number. What does website design in Fresno cost?',
+        a: 'Template build, $649, paid once. Custom build, $1,995 and up, depending on how many pages have to be built rather than assembled. Care plan, $99 a month, optional, cancel whenever. An agency that won’t quote a range before a discovery call is keeping the option to price you off your reaction.',
+    },
+    {
+        q: 'Are you a web designer or a web developer?',
+        a: 'Both, and people searching for a Fresno web developer usually want the same thing as people searching for a designer: a site that loads fast and makes the phone ring. We hand-code the sites that rarely change and build in WordPress when you want to edit it yourself. We did the WordPress build for Fresno State’s news site and trained their staff on it.',
     },
     {
         q: 'My busy season starts in six weeks. Can you be live by then?',
-        a: 'A template build, yes, comfortably. A custom build takes 3 to 5 weeks and six isn\u2019t much margin, so we would tell you on the first call whether we believe it. The staging link goes up in week two, when the build phase starts, and stays live until launch so you can check where it stands.',
+        a: 'A template build, yes. A custom build takes 3 to 5 weeks, so we’ll tell you on the first call whether six is enough. The staging link goes up in week two and stays live until launch so you can check where it stands.',
     },
     {
-        q: 'My last web designer won\u2019t hand over my domain. Who owns what when we\u2019re all done?',
-        a: 'You do. Domain, hosting account, code, content, analytics. We transfer all of it on request, in writing, for free. Get that answer from anyone you hire before you pay them a deposit. A domain is controlled by whoever holds the registrar login, no matter who paid the invoice, and right now that login is still theirs.',
+        q: 'My last web designer won’t hand over my domain. Who owns what when we’re all done?',
+        a: 'You do. Domain, hosting account, code, content and analytics, transferred on request, in writing, for free. Whoever holds the registrar login controls the domain no matter who paid the invoice, so get that login in your name before you pay any web designer in Fresno a deposit, us included.',
     },
     {
         q: 'I rank on the first page right now and I am scared a rebuild kills it. Does it?',
-        a: 'It does when the URLs go unmapped, which is most of the time. Your old pages have addresses, Google has those addresses indexed, and a new site with new addresses orphans every one of them unless each old URL is pointed at its replacement with a 301 redirect before launch. Ask whoever you hire what happens to your rankings, and notice if they bring up redirects on their own. We inventory the old site first, write the redirect map, keep the titles and headings that are already earning the ranking, and watch Search Console for two weeks after we launch.',
-    },
-    {
-        q: 'I am in Visalia, not Fresno. Does that change anything?',
-        a: 'No. Most of our work is Fresno and Clovis, and we build across Madera, Sanger, Visalia, Tulare, Hanford, Merced, and Modesto. We\u2019ll drive out to your shop. Being local doesn\u2019t mean we turn down work an hour away.',
+        a: 'It does when the URLs go unmapped. Google has your old addresses indexed, and a new site with new addresses orphans every one of them unless each old URL gets a 301 redirect to its replacement before launch. We inventory the old site, write the redirect map, keep the titles and headings that are already earning the ranking, and watch Search Console for two weeks after launch.',
     },
     {
         q: 'I already paid for a website two years ago. Do I have to start over?',
-        a: 'Often not. If the platform is current and the problem is speed, structure, or thin content, fixing it costs less than replacing it and we\u2019ll say so. If it\u2019s an abandoned theme carrying forty plugins, the repair costs more than the rebuild, because every fix has to be re-tested against every plugin. We\u2019ll tell you which one you\u2019ve got before you pay anything.',
+        a: 'Often not. If the platform is current and the problem is speed or thin content, fixing it costs less than replacing it and we’ll say so. An abandoned theme carrying forty plugins costs more to repair than to rebuild, because every fix has to be re-tested against every plugin.',
+    },
+    {
+        q: 'I am in Visalia, not Fresno. Does that change anything?',
+        a: 'No. Most of our work is Fresno and Clovis, and we build across Madera, Sanger, Visalia, Tulare, Hanford, Merced and Modesto. We’ll drive out to your shop.',
     },
     {
         q: 'Do I have to hire a second company for SEO after the site is built?',
-        a: 'No, and you should be suspicious of anyone who structures it that way. Schema, page structure, internal links, and Google Business Profile setup ship inside the custom build. SEO sold as a separate retainer immediately after a launch usually means it was left out of the launch on purpose.',
+        a: 'No. Schema, page structure, internal links and Google Business Profile setup ship inside the custom build. SEO sold as a separate retainer right after launch usually means it was left out of the launch on purpose.',
     },
 ];
 
@@ -677,7 +676,7 @@ export function HomePageV2() {
                             >
                                 <MapPin size={14} strokeWidth={3} className="shrink-0" />
                                 <span className="md:hidden">Fresno web design, since 2014</span>
-                                <span className="hidden md:inline">Fresno web design &amp; marketing agency, since 2014</span>
+                                <span className="hidden md:inline">Fresno web design &amp; SEO, since 2014</span>
                             </motion.h1>
 
                             <motion.h2
@@ -897,7 +896,7 @@ export function HomePageV2() {
                         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-20 items-end mb-14">
                             <div>
                                 <h2 className="text-4xl md:text-5xl lg:text-[4.25rem] font-black text-dark tracking-tighter leading-[0.95] max-w-[13ch] mb-6">
-                                    Six services, all of them in house.
+                                    Web design first. The rest when you need it.
                                 </h2>
                                 <p className="lede text-lg md:text-xl text-gray font-medium leading-relaxed max-w-[52ch]">
                                     Web design, search, and the listings that tie them together. Hand-coded or
@@ -915,7 +914,7 @@ export function HomePageV2() {
                                         Which one do I need?
                                     </p>
                                     <p className="lede text-dark font-medium leading-relaxed max-w-[44ch]">
-                                        Most of our clients start with one and add another within a year, usually in this order: build the website, fix the listings, then pay for traffic. Running ads to a site that doesn’t convert is why a lot of owners think marketing doesn’t work.
+                                        Start with the website. Every other service here sends people to it, so it has to load fast and make the phone easy to tap first.
                                     </p>
                                 </div>
 
@@ -1085,7 +1084,7 @@ export function HomePageV2() {
                     <div className="max-w-6xl mx-auto relative z-10">
                         <p className="text-xs font-bold uppercase tracking-[0.13em] text-orange mb-5">Pricing</p>
                         <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.95] max-w-[16ch] mb-8">
-                            Can I get a price before I have to call?
+                            What does web design cost in Fresno?
                         </h2>
                         <p className="lede text-lg md:text-xl text-white/60 font-medium leading-relaxed max-w-[58ch] mb-16">
                             Many Fresno web designers make you sit through a discovery call before anyone
@@ -1145,10 +1144,10 @@ export function HomePageV2() {
                 <section className="py-16 md:py-20 px-6 bg-white">
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-3">
-                            The Fresno businesses we know well.
+                            Web design for the Fresno businesses we know well.
                         </h2>
                         <p className="lede text-lg text-gray font-medium leading-relaxed max-w-[62ch] mb-12">
-                            A restaurant website and a roofing website fail for different reasons. We’ve built enough of them in these industries to know what goes wrong before it does.
+                            A restaurant website and a roofing website fail for different reasons, and we’ve built enough of both to know which.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-9">
@@ -1248,10 +1247,10 @@ export function HomePageV2() {
                     <div className="max-w-6xl mx-auto">
                         <div className="mb-16">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-5 tracking-tight max-w-[20ch]">
-                                Work we turn down, and where to send it.
+                                Web design jobs we turn down, and where to send them.
                             </h2>
                             <p className="lede text-lg md:text-xl text-gray font-medium leading-relaxed max-w-[62ch]">
-                                We get asked for these most weeks and we say no, even though it costs us money. Two of them are better handled by someone else and we’ll introduce you. One of them nobody should be selling you at any price.
+                                We get asked for these most weeks and we say no, even though it costs us money. Some are better handled by someone else, and we’ll point you there.
                             </p>
                         </div>
 
