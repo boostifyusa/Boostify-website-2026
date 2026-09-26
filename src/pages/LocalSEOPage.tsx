@@ -694,8 +694,10 @@ export function LocalSEOPage() {
                 </h2>
                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
                   We don't chase vanity metrics. We target the exact keywords
-                  your customers are typing into Google — specific to your
-                  services and your service area.
+                  your customers are typing into Google, specific to your
+                  services and your service area. The{' '}
+                  <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO</Link>{' '}
+                  page lays out the first 90 days.
                 </p>
                 <ul className="space-y-3">
                   {[
