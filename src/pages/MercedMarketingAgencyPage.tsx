@@ -95,7 +95,7 @@ export function MercedMarketingAgencyPage() {
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 With UC Merced's expansion and a wave of new businesses, the opportunity
-                                is now. Boostify USA delivers custom websites, local SEO, and
+                                is now. Boostify USA delivers <Link to="/" className="text-orange font-bold hover:underline">web design from Fresno</Link>, local SEO, and
                                 performance-driven ad campaigns for Merced County's fastest-growing
                                 businesses.
                             </p>

@@ -96,7 +96,7 @@ export function SangerMarketingAgencyPage() {
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Sanger businesses have something big-city companies can't buy:
                                 real community roots. Now it's time your online presence matched
-                                your reputation. We build custom websites, run local SEO campaigns,
+                                your reputation. We build websites out of our <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link> office, run local SEO campaigns,
                                 and manage ads that bring East Valley customers to your door.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">

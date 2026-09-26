@@ -214,7 +214,7 @@ export function ServicesPage() {
                 Custom Web Design
               </h2>
               <p className="text-xl text-gray font-medium mb-8 leading-relaxed">
-                Your website is your 24/7 salesperson. We hand-code custom sites
+                Your website is your 24/7 salesperson. For <Link to="/" className="text-orange font-bold hover:underline">web design in Fresno</Link>, we hand-code custom sites
                 that capture your brand's unique personality and convert
                 visitors into paying customers.
               </p>

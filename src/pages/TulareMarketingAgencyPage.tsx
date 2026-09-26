@@ -112,7 +112,7 @@ export function TulareMarketingAgencyPage() {
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Tulare is powered by industry and grit; your marketing should
                                 match that energy. Boostify USA helps Tulare businesses dominate
-                                online with custom websites, local SEO, and paid advertising
+                                online with custom websites from our <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link> shop, local SEO, and paid advertising
                                 that delivers measurable returns.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">

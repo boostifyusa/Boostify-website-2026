@@ -96,7 +96,7 @@ export function HanfordMarketingAgencyPage() {
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Kings County businesses need marketing partners who understand
                                 tight-knit communities. Boostify USA brings big-agency expertise
-                                with small-town accountability: custom websites, local SEO, and
+                                with small-town accountability: <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, local SEO, and
                                 ad campaigns built for Hanford.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
