@@ -16,17 +16,18 @@ import {
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Why does a Sanger business need a marketing agency?', answer: "Sanger may be a smaller market, but your customers are searching online just like everyone else. In fact, smaller markets offer a huge advantage: less competition means faster results and lower advertising costs. A focused digital strategy can help you dominate your local area quickly." },
-    { question: 'How close is Boostify to Sanger?', answer: "We're based in Fresno, just 15 minutes from Sanger. We serve Sanger as a priority market, not a distant afterthought. We're always available for in-person meetings and local strategy sessions." },
-    { question: 'What kind of budget do I need to get started?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month that includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. Because competition is lower in Sanger, your marketing dollars go further. We always recommend a free strategy call to find the right fit.` },
-    { question: 'Will you build my website or just do marketing?', answer: "Both. We offer complete digital solutions, from custom website design and development to ongoing SEO and Google Ads management. Most clients start with a website and SEO, then add paid advertising once their foundation is solid." },
-    { question: 'How do you track results for my Sanger business?', answer: "Every client gets access to a live reporting dashboard showing rankings, traffic, leads, calls, and revenue attribution. We track every phone call and form submission back to its source, so you always know exactly what's working." },
+    { question: "Is a Fresno web designer close enough for my Sanger business?", answer: "The office is at 6362 N Figarden Dr, Suite 118, about half an hour from Sanger, and we would rather meet at your place than ours. The drive doesn't change the build. What Google looks at is the address and service area on your Business Profile and whether your site names Sanger, and we set up both." },
+    { question: "What does a website cost in Sanger?", answer: "The same as it costs in Fresno. A template build is $649, paid once, and a custom build starts at $1,995 and takes 3 to 5 weeks. Hosting and the domain run roughly $20 to $30 a month, and you can pay those directly." },
+    { question: "Is the $649 template enough for a small Sanger shop?", answer: "If most of your work comes from referrals and people mostly need your number, your hours and a few photos, it is. Custom makes sense when you want a page for each service or each East Valley town you work in, since each of those pages can rank on its own." },
+    { question: "Can a Sanger business pick up customers searching from Fresno?", answer: "In the map results it is hard, because Google weighs how close a business is to the person searching. In the regular results a page that names the service and the Fresno area can rank, and that is the usual route for East Valley businesses." },
+    { question: "Who owns the domain and my Google listing when we're done?", answer: "You do. The domain is registered in your name, or we work as a delegate inside your own GoDaddy account, and you stay the primary owner of the Business Profile. If you leave, the hosting account and the code transfer at no charge." },
+    { question: "How long until my Sanger business shows up on Google Maps?", answer: "No agency controls Google, so a promised date is a guess. A complete profile with real photos and a steady flow of reviews usually moves first, and pages that name Sanger help Google match you to searches made there." },
 ];
 
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/sanger-marketing-agency",
-    "description": "Sanger's dedicated marketing agency for custom web design, local SEO, and Google Ads. Helping East Valley businesses compete and win online.",
+    "description": "Web design and local SEO for Sanger businesses from a Fresno office about half an hour away. Template sites are $649 and custom builds start at $1,995.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -68,10 +69,10 @@ const areaCities = [
 ];
 
 export function SangerMarketingAgencyPage() {
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Sanger Marketing Agency | Custom Websites That Convert | Boostify USA" description="Boostify USA helps Sanger businesses grow online with custom web design, local SEO, and Google Ads. Small-town pride, big results." canonicalUrl="/sanger-marketing-agency" />
+            <SeoHead title="Web Design Sanger, CA & Local SEO | Boostify USA" description="Web design and local SEO for Sanger businesses from a Fresno office about half an hour away. Template sites are $649, custom builds start at $1,995." canonicalUrl="/sanger-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -88,16 +89,13 @@ export function SangerMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-[50px] relative z-10">
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
-                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Sanger Marketing Agency
+                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Sanger Web Design & SEO
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Small Town. <span className="text-orange">Big Digital Presence.</span>
+                                Sanger Web Design <span className="text-orange">From a Fresno Office.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Sanger businesses have something big-city companies can't buy:
-                                real community roots. Now it's time your online presence matched
-                                your reputation. We build websites out of our <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link> office, run local SEO campaigns,
-                                and manage ads that bring East Valley customers to your door.
+                                Sanger web design and local SEO from our office at 6362 N Figarden Dr, about half an hour from Academy Avenue. The prices are the same ones we quote for <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, and the first meeting can be at your shop.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
                                 <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
@@ -180,14 +178,14 @@ export function SangerMarketingAgencyPage() {
                             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="inline-flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-6">
                                 <motion.div animate={{ rotate: [0, -8, 8, -8, 0] }} transition={{ duration: 0.5, delay: 0.8, repeat: Infinity, repeatDelay: 4 }}><AlertTriangle size={32} className="text-red-500" strokeWidth={2.5} /></motion.div>
                             </motion.div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">East Valley Businesses <span className="text-red-500">Can't Afford to Wait</span></h2>
-                            <p className="text-xl text-gray font-medium">The longer you wait to invest in digital marketing, the harder it gets to catch up. Here's what we see holding Sanger businesses back.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Before you hire anyone for a <span className="text-red-500">Sanger website</span></h2>
+                            <p className="text-xl text-gray font-medium">These take ten minutes and protect you from the next vendor you hire, including us.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: "Fresno's Shadow", desc: "Sanger businesses get buried under Fresno results. Without a hyper-local SEO strategy, Google treats you like a suburb, not a destination. We fix that.", icon: Building2 },
-                                { title: 'No Digital Storefront', desc: "If you don't have a professional website, customers assume you're either closed or not serious. 75% of people judge a business's credibility by its website.", icon: Globe },
-                                { title: 'Spending Without Tracking', desc: "You've paid for a website, maybe boosted a Facebook post. But can you point to a single customer it generated? Without tracking, marketing is just a cost, not an investment.", icon: DollarSign },
+                                { title: "Search from Sanger, not from Fresno", desc: "Google ranks map results by relevance, distance and prominence, so a search made in Fresno fills up with Fresno shops. Check where you show up with a phone that is actually in Sanger.", icon: Building2 },
+                                { title: "Find out who owns your domain", desc: "Log in to the registrar and look at which email the domain is registered to. That email owns it, whoever paid the invoice, and the same login controls the records that deliver your email.", icon: Globe },
+                                { title: "Ask what the monthly fee gets you", desc: "If you pay a monthly website fee, ask for the registrar and hosting logins in writing. If all they can give you is a login to their own dashboard, canceling takes the site offline.", icon: DollarSign },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -204,15 +202,15 @@ export function SangerMarketingAgencyPage() {
                 <section className="py-24 px-6">
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Our Complete <span className="text-orange">Digital Toolkit</span> for Sanger</h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">Everything your Sanger business needs under one roof with no juggling freelancers or multiple vendors.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">What web design and SEO <span className="text-orange">cost in Sanger</span></h2>
+                            <p className="text-xl text-gray font-medium leading-relaxed">The prices are on the page because a quote that only shows up after a call can be priced off your reaction. The <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design page</Link> covers which build fits, and the <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO page</Link> lays out the first 90 days of SEO.</p>
                         </div>
 
                         <div className="space-y-6">
                             {[
-                                { icon: Globe, title: 'Custom Website Design & Development', desc: 'Hand-coded, mobile-first websites built to convert. We design for your brand, your audience, and your goals, not from a template library.', highlight: 'Sub-2s Load Time • 95+ PageSpeed Score' },
-                                { icon: Search, title: 'Local SEO & Google Maps Optimization', desc: "Dominate Sanger search results. We optimize your Google Business Profile, build local citations, target East Valley keywords, and generate authentic reviews.", highlight: '#1 Rankings in 3-6 Months • Full Reporting' },
-                                { icon: MousePointerClick, title: 'Google Ads & Paid Advertising', desc: "Geo-targeted campaigns that put your business in front of Sanger customers right now. We track every call, form, and dollar so you always know your ROI.", highlight: '$15-$25 Cost Per Lead • Weekly Optimization' },
+                                { icon: Globe, title: "Web design", desc: "Template builds are $649, paid once, and custom builds start at $1,995. Both get tested on a phone before launch, and the domain and hosting stay in your name.", highlight: "Template $649 \u2022 Custom from $1,995 \u2022 3 to 5 weeks" },
+                                { icon: Search, title: "Local SEO", desc: "The Google Business Profile, your directory listings and pages that name Sanger and the East Valley towns you work in.", highlight: "$595 a month \u2022 Lite $249 a month \u2022 Month to month" },
+                                { icon: MousePointerClick, title: "Google Ads", desc: "Ad spend is billed by Google, and most local service businesses start somewhere between $1,000 and $2,500 a month. The site should turn visitors into calls before you pay for clicks.", highlight: "Ad spend billed by Google \u2022 Calls counted by source" },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-light hover:shadow-md transition-all flex flex-col md:flex-row gap-6 items-start">
@@ -234,14 +232,14 @@ export function SangerMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Sanger & the <span className="text-orange">Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">From Academy Avenue to the orchards beyond, we know the East Valley. That local knowledge powers smarter marketing for every business we partner with.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">From the office it is about half an hour to Sanger, and Reedley, Parlier and Del Rey are the same trip. <Link to="/clovis-web-design" className="text-dark font-bold hover:text-orange transition-colors">Clovis</Link> is on the way, about 20 minutes from Sanger.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                                     {item.highlight ? (
                                         <div className="p-6 rounded-2xl border text-center bg-orange text-white border-orange shadow-lg shadow-orange/20">
-                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">You Are Here</div>
+                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">This page</div>
                                         </div>
                                     ) : (
                                         <Link to={item.path} className="block p-6 rounded-2xl border text-center bg-white border-gray-light hover:border-orange/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
@@ -259,8 +257,8 @@ export function SangerMarketingAgencyPage() {
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange/20 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2" />
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Small Business, Big Commitment</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We champion small businesses because we are one. No contracts, no corporate nonsense. Just a team that cares about your growth as much as you do.</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">What you keep</h2>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">You own the domain, the hosting account and the code, and we transfer all of it on request at no charge. Local SEO runs month to month, so you can stop the day it stops making sense.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Small Business Champions</div>
                     </div>
                 </section>
@@ -270,14 +268,14 @@ export function SangerMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Sanger Marketing FAQ</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Sanger web design questions</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">
                                     <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
-                                        {faq.question}{openFaq === i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
+                                        {faq.question}{openFaq !== i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
                                     </button>
-                                    <motion.div initial={false} animate={{ height: openFaq === i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
+                                    <motion.div initial={false} animate={{ height: openFaq !== i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
                                 </div>
                             ))}
                         </div>

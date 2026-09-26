@@ -62,7 +62,7 @@ const faqs = [
   }];
 
 export function LocalMarketingPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
@@ -752,14 +752,14 @@ export function LocalMarketingPage() {
                     className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
 
                     {faq.question}
-                    {openFaq === i ?
+                    {openFaq !== i ?
                       <ChevronUp size={20} className="text-orange" /> :
 
                       <ChevronDown size={20} className="text-gray/40" />
                     }
                   </button>
                   <AnimatePresence>
-                    {openFaq === i &&
+                    {openFaq !== i &&
                       <motion.div
                         initial={{
                           height: 0

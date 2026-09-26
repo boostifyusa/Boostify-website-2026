@@ -1288,7 +1288,7 @@ export function WebDesignPage() {
             </h2>
             <div className="border-t border-dark/15 max-w-5xl">
               {faqs.map((faq, i) =>
-                <details key={i} className="faq-details group border-b border-dark/10">
+                <details key={i} open className="faq-details group border-b border-dark/10">
                   <summary className="flex items-start justify-between gap-6 cursor-pointer py-6 -mx-3 px-3 rounded-md hover:bg-dark/[0.03] transition-colors">
                     <h3 className="text-lg md:text-xl font-black text-dark tracking-tight max-w-[52ch]">
                       {faq.question}

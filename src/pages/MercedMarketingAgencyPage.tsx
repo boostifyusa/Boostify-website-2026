@@ -16,11 +16,12 @@ import {
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Why should a Merced business invest in digital marketing?', answer: "Merced is booming; UC Merced's growth is bringing thousands of new residents and businesses. The companies that establish a strong digital presence now will dominate this market for years. Early movers win." },
-    { question: 'Do you specialize in Merced or serve it from far away?', answer: "Our office is in Fresno, just an hour from Merced. We serve Merced County as a core market, not an afterthought. We know the area, the competition, and the customers. We're available for in-person meetings anytime." },
-    { question: 'What makes your web design different from cheap website builders?', answer: "DIY builders give you generic templates that look like everyone else. We hand-code every site for speed, SEO, and conversion. Our sites consistently load in under 2 seconds, score 95+ on Google PageSpeed, and generate 3-5x more leads." },
-    { question: 'How fast can you get my Google Ads running?', answer: "We can typically launch a campaign within 5-7 business days of onboarding. That includes keyword research, ad copywriting, landing page setup, and conversion tracking. You'll see leads within the first week of launch." },
-    { question: 'What if I already have a website that I like?', answer: "Great, we can work with it. We'll audit your current site for speed, SEO, and conversion opportunities, then optimize what's there. Not every client needs a full redesign; sometimes strategic improvements deliver the best ROI." },
+    { question: "Is an SEO company in Fresno a good fit for a Merced business?", answer: "The office is at 6362 N Figarden Dr, Suite 118, about an hour south on 99, and we meet Merced clients in person for the first meeting. Google ranks you on your profile, your reviews and your pages, and none of that depends on where your agency sits." },
+    { question: "What does Merced SEO cost?", answer: "Local SEO is $595 a month and Lite is $249 a month, both month to month. Lite bundles hosting, maintenance and baseline optimization, and it fits a business that mostly needs to be found for its own name and one or two services." },
+    { question: "What does a website cost in Merced?", answer: "A template build is $649, paid once, and a custom build starts at $1,995 and takes 3 to 5 weeks. Hosting and the domain run roughly $20 to $30 a month, and you can pay those directly." },
+    { question: "I already have a website I like. Do I need a new one?", answer: "It depends on two things. If it loads fast on a phone and each service has its own page, SEO can build on what you have. If it takes five seconds to load or the whole business sits on one page, fixing it usually costs close to a rebuild." },
+    { question: "How fast can Google Ads bring calls in Merced?", answer: "Ads can start showing the day the campaign is approved, so the first calls can come within days. Whether they keep coming depends on the landing page, which is why the site gets looked at before your ad budget gets spent." },
+    { question: "Why don't I show up on Google Maps in Merced?", answer: "The usual reasons are a category that is too broad, a service area that leaves Merced out, or a few reviews against competitors with dozens. Check those before paying anyone, including us." },
 ];
 
 const advertiserSchema = {
@@ -68,7 +69,7 @@ const areaCities = [
 ];
 
 export function MercedMarketingAgencyPage() {
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead title="Merced SEO Company & Web Design | Boostify USA" description="Merced SEO and web design from Boostify USA's Fresno office, an hour from Merced. Local SEO from $595 a month, websites from $649, no contracts." canonicalUrl="/merced-marketing-agency" />
@@ -94,10 +95,8 @@ export function MercedMarketingAgencyPage() {
                                 Merced SEO &amp; Web Design. <span className="text-orange">Get Ahead Now.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Merced SEO and web design from our Fresno office, an hour away. With
-                                UC Merced's expansion bringing a wave of new businesses, Boostify USA delivers <Link to="/" className="text-orange font-bold hover:underline">web design from Fresno</Link>, local SEO, and
-                                performance-driven ad campaigns for Merced County's fastest-growing
-                                businesses.
+                                Merced SEO and web design from our Fresno office, an hour away. For Merced,
+                                the prices match what we quote for <Link to="/" className="text-orange font-bold hover:underline">web design from Fresno</Link>, and the first meeting can be at your place in Merced or Atwater.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
                                 <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
@@ -175,14 +174,14 @@ export function MercedMarketingAgencyPage() {
                             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="inline-flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-6">
                                 <motion.div animate={{ rotate: [0, -8, 8, -8, 0] }} transition={{ duration: 0.5, delay: 0.8, repeat: Infinity, repeatDelay: 4 }}><AlertTriangle size={32} className="text-red-500" strokeWidth={2.5} /></motion.div>
                             </motion.div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Merced Is Growing. <span className="text-red-500">Are You Keeping Up?</span></h2>
-                            <p className="text-xl text-gray font-medium">New businesses are opening every month. The ones investing in digital marketing are capturing new customers. The rest are watching from the sidelines.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Before you hire a <span className="text-red-500">Merced SEO company</span></h2>
+                            <p className="text-xl text-gray font-medium">Run these before any Merced SEO company, including us, touches your listing.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: 'New Competition Everywhere', desc: "UC Merced's growth attracts new businesses monthly. Without a strong digital presence, you're constantly losing ground to fresh competitors with modern websites and targeted ads.", icon: Building2 },
-                                { title: 'Missed Mobile Customers', desc: "72% of local searches happen on phones. If your site isn't mobile-optimized and fast, you're losing the majority of potential customers before they ever see your offer.", icon: Phone },
-                                { title: 'Zero Online Reviews Strategy', desc: "Businesses with 50+ Google reviews get 266% more leads. If you're not actively generating and managing reviews, you're handing an advantage to competitors who are.", icon: Star },
+                                { title: "Ask where the work happens", desc: "Ask any agency where its office is and who does the work. Then check that the address on its own Google listing matches what you were told.", icon: Building2 },
+                                { title: "Search from Merced, not from home", desc: "Google ranks map results by relevance, distance and prominence, so a search from Fresno shows you Fresno businesses. Check your rankings with a phone that is actually in Merced.", icon: Phone },
+                                { title: "Count reviews against the top three", desc: "Search your main service with Merced and count the reviews on the three businesses in the map. If they have dozens and you have a handful, that gap matters more than anything on your website.", icon: Star },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -203,13 +202,10 @@ export function MercedMarketingAgencyPage() {
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Search size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Merced SEO Built for a Growing Market</h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
-                                    As Merced grows, so does search volume. We position your business at
-                                    the top of Google for the keywords that matter, such as "plumber Merced"
-                                    to "restaurant near UC Merced." Early SEO investment compounds into
-                                    long-term dominance.
+                                    Merced SEO is $595 a month, or $249 a month for Lite, both month to month. The work is your Google Business Profile, the listings that point to it and pages that name Merced, Atwater and the towns you drive to. The <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO page</Link> lays out the first 90 days.
                                 </p>
                                 <ul className="space-y-3">
-                                    {['Google Business Profile mastery', 'Merced-specific keyword targeting', 'Citation building across 60+ directories', 'Competitor gap analysis & content strategy'].map((item, i) => (
+                                    {['Google Business Profile setup and posts', 'Pages written for Merced and Atwater searches', 'Listings corrected to one name, address and phone', 'A monthly report with rankings and calls'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
                                     ))}
                                 </ul>
@@ -266,9 +262,9 @@ export function MercedMarketingAgencyPage() {
                             <div className="order-1 lg:order-2">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Globe size={24} strokeWidth={2.5} /></div>
                                 <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Merced Web Design That Keeps Up With the Growth</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A custom website is your 24/7 sales machine. We build fast, stunning sites optimized for the Merced market and designed to convert the wave of new residents and customers into loyal buyers.</p>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A template build is $649, paid once, and a custom build starts at $1,995 and takes 3 to 5 weeks. The <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design page</Link> covers which one fits, and you own the domain either way.</p>
                                 <ul className="space-y-3">
-                                    {['100% custom, hand-coded design', 'Sub-2-second load times', 'Conversion-optimized page architecture', 'Ongoing maintenance & support'].map((item, i) => (
+                                    {['Hand-coded, or WordPress if you want to edit it', 'PageSpeed target of 95 or better on mobile', 'Your phone number one tap away on every page', 'Optional $99 a month care plan'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
                                     ))}
                                 </ul>
@@ -283,16 +279,16 @@ export function MercedMarketingAgencyPage() {
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MousePointerClick size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Google Ads for <span className="text-orange">Merced Businesses</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">Targeted ad campaigns that put your Merced business in front of customers the moment they search. Every click tracked, every dollar optimized for maximum return.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">Ad spend goes to Google, and most local service businesses start somewhere between $1,000 and $2,500 a month. If the site isn't turning visitors into calls yet, fix that first, because paid clicks land on the same page.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { icon: Target, title: 'Geo-Targeted Campaigns', desc: 'Ads focused on Merced, Atwater, Los Banos, and surrounding Merced County zips. No wasted spend on irrelevant areas.' },
-                                { icon: Phone, title: 'Call-First Strategy', desc: 'For service businesses, phone calls = revenue. We optimize every campaign to drive phone calls, not just clicks.' },
-                                { icon: DollarSign, title: 'Budget Efficiency', desc: 'We specialize in maximizing results for real-world budgets. Most Merced campaigns deliver 4-6x return on ad spend.' },
-                                { icon: BarChart3, title: 'Weekly Optimization', desc: 'We adjust bids, test ad copy, and refine targeting weekly. Your campaigns improve every single week.' },
-                                { icon: Zap, title: 'Fast Launch', desc: 'Campaigns go live within 5-7 days. You start generating leads within the first week of advertising.' },
-                                { icon: ShieldCheck, title: 'Full Transparency', desc: 'Access your own real-time dashboard. See exactly where every dollar goes and what it produces. No secrets.' },
+                                { icon: Target, title: "Limit the area", desc: "Set the campaign to Merced, Atwater, Los Banos and the zip codes you actually serve." },
+                                { icon: Phone, title: "Count calls separately", desc: "Track calls from ads apart from calls from your Google listing, or you can't tell which one is paying." },
+                                { icon: DollarSign, title: "Know where the money goes", desc: "Ad spend is billed by Google. Most local service businesses start somewhere between $1,000 and $2,500 a month." },
+                                { icon: BarChart3, title: "Read the search terms", desc: "The search terms report shows what people typed before they clicked, and junk searches go in as negatives." },
+                                { icon: Zap, title: "Send each ad to its page", desc: "Each ad should land on the page for the service it advertises." },
+                                { icon: ShieldCheck, title: "Fix the page first", desc: "If the page doesn't turn visitors into calls, paid clicks just make that more expensive." },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
@@ -311,14 +307,14 @@ export function MercedMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Merced & the <span className="text-orange">Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">We serve Merced County and beyond, from the university corridor to agricultural communities across the Valley.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">From the office it is about an hour to Merced, and we come to you for the first meeting. <Link to="/modesto-web-design" className="text-dark font-bold hover:text-orange transition-colors">Modesto</Link> is about 40 minutes further north on 99, with Atwater on the way.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                                     {item.highlight ? (
                                         <div className="p-6 rounded-2xl border text-center bg-orange text-white border-orange shadow-lg shadow-orange/20">
-                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">You Are Here</div>
+                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">This page</div>
                                         </div>
                                     ) : (
                                         <Link to={item.path} className="block p-6 rounded-2xl border text-center bg-white border-gray-light hover:border-orange/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
@@ -336,8 +332,8 @@ export function MercedMarketingAgencyPage() {
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange/20 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2" />
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Growth Is the Only Metric That Matters</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We stake our reputation on your results. No contracts, no excuses. If your Merced business isn't growing, we haven't done our job, and we'll keep working until we do.</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">What stays yours</h2>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">The domain, the hosting account and the code stay in your name, and we transfer them on request at no charge. SEO and ad management run month to month.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Results First • Always</div>
                     </div>
                 </section>
@@ -352,9 +348,9 @@ export function MercedMarketingAgencyPage() {
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">
                                     <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
-                                        {faq.question}{openFaq === i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
+                                        {faq.question}{openFaq !== i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
                                     </button>
-                                    <motion.div initial={false} animate={{ height: openFaq === i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
+                                    <motion.div initial={false} animate={{ height: openFaq !== i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
                                 </div>
                             ))}
                         </div>

@@ -65,14 +65,15 @@ const cityData = [
     {
         path: '/madera-marketing-agency',
         url: 'https://boostifyusa.com/madera-marketing-agency',
-        description: "Madera's go-to marketing agency for custom web design, local SEO, and Google Ads. We help Madera County businesses grow with data-driven strategies.",
+        description: "Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649 and custom builds start at $1,995.",
         areaServed: ['Madera', 'Fresno', 'Clovis', 'Chowchilla'],
         faqs: [
-            { question: 'Is digital marketing worth it for a small Madera business?', answer: "Absolutely. In fact, smaller markets like Madera offer one of the best ROIs in digital marketing. Less competition means lower ad costs and faster SEO results. A $500-$1,500/month investment can generate significant returns in a market this size." },
-            { question: 'How do you handle the Fresno vs Madera competition?', answer: "We make sure Google treats your Madera business as the local authority — not a Fresno afterthought. Through hyper-local SEO, Madera-specific content, and geo-targeted ads, we ensure Madera customers find YOU first." },
-            { question: 'What should I expect in the first month?', answer: "In month one, we complete your full digital audit, build your custom strategy, launch Google Ads (if applicable), and begin SEO foundation work. You'll have a dedicated strategist and a live results dashboard from day one." },
-            { question: 'Do you build websites for Madera businesses?', answer: "Yes — custom-coded, mobile-first websites built for speed and conversion. No templates, no page builders. Every site we build scores 95+ on Google PageSpeed and is designed to turn visitors into calls and leads." },
-            { question: 'Can I cancel anytime?', answer: "Yes. We work month-to-month with no cancellation fees or long-term commitments. We believe in earning your business every month with measurable results." }
+            { question: "Is Boostify based in Madera?", answer: "The office is in Fresno at 6362 N Figarden Dr, Suite 118, about 25 minutes south of Madera on 99. We meet Madera clients at their shop for the first meeting, and the rest of the build happens over a screen share." },
+            { question: "What does a website cost in Madera?", answer: "A template build is $649, paid once, and a custom build starts at $1,995. Hosting and the domain run roughly $20 to $30 a month, which you can pay directly so the accounts stay in your name." },
+            { question: "Fresno businesses show up when people in Madera search. Can I get ahead of them?", answer: "In the map results distance works for you, because Google favors listings close to the person searching. What usually holds a Madera business back is a thin Business Profile or a site that never says Madera, and both are fixable." },
+            { question: "How long does SEO take for a Madera business?", answer: "No agency controls Google, so any date is a guess. A complete profile and a steady flow of reviews tend to move first, and new pages usually need a few weeks after Google recrawls them before rankings settle." },
+            { question: "Can I update the site myself?", answer: "If you want to change your own hours, photos and specials, we build it in WordPress and show you how. If it rarely changes, we hand-code it, which keeps it faster, and small edits are part of the $99 a month care plan." },
+            { question: "Should I start with ads or with the website?", answer: "Start with the website and the Google profile. Ads send people to the same page, and a page that doesn't turn visitors into calls wastes the ad spend, which for most local service businesses runs $1,000 to $2,500 a month." }
         ]
     },
     {
@@ -81,11 +82,12 @@ const cityData = [
         description: "Hanford SEO and web design for Kings County businesses from a Fresno office. Local SEO, custom websites, and Google Ads.",
         areaServed: ['Hanford', 'Lemoore', 'Visalia', 'Fresno'],
         faqs: [
-            { question: 'Do you work with businesses in Kings County?', answer: 'Yes — Hanford is one of our priority markets. We also serve Lemoore, Avenal, Corcoran, and surrounding Kings County communities. Our strategies are tailored to the unique dynamics of this area.' },
-            { question: 'How is working with Boostify different from a freelancer?', answer: "Freelancers juggle dozens of clients with limited resources. We're a full-service team with dedicated strategists, designers, and ad specialists. You get the depth of an agency with the attention of a local partner." },
-            { question: 'What kind of ROI should I expect?', answer: 'Most clients see 3-5x return on their marketing investment within 6 months. Paid ads generate leads within the first week, while SEO compounds over time. We track every metric so you always know your ROI.' },
-            { question: 'Is there a minimum contract length?', answer: "No. We work month-to-month. No long-term contracts, no cancellation penalties. We earn your business with results, not paperwork." },
-            { question: 'Can you help my Hanford business rank above Visalia competitors?', answer: "Absolutely. Local SEO is about relevance and proximity. When someone in Hanford searches for your services, we make sure your business — not a Visalia or Fresno competitor — appears first." }
+            { question: "Do you work with businesses in Kings County outside Hanford?", answer: "Lemoore, Armona and Corcoran are part of the same trip, and one site can have a page for each town you actually serve. The office is at 6362 N Figarden Dr, Suite 118, in Fresno, about 45 minutes away." },
+            { question: "What does SEO cost for a Hanford business?", answer: "Local SEO is $595 a month and Lite is $249 a month, both month to month, and you can stop whenever it stops bringing in calls." },
+            { question: "Can my Hanford business rank above Visalia competitors?", answer: "For searches made in Hanford, distance already works in your favor, because Google weighs how close a business is to the person searching. For searches made in Visalia it is harder, and a page written for Visalia customers is the usual way in." },
+            { question: "What should I expect in the first month?", answer: "The first weeks go to the Google Business Profile, your listings and the pages that are already closest to ranking. Rankings usually take weeks to move after Google recrawls a change, so judge the work on calls over a few months." },
+            { question: "Is there a contract?", answer: "There is no long-term contract on SEO, ads or the care plan. Websites are paid per build, $649 for a template and $1,995 and up for custom." },
+            { question: "What ROI should I expect?", answer: "It depends on your service, your area and your budget, so we don't promise a multiple. Ads can bring calls in the first week, and SEO builds over months and keeps working after you stop paying for clicks." }
         ]
     },
     {
@@ -94,37 +96,40 @@ const cityData = [
         description: "Merced SEO and web design from a Fresno office an hour away. Local SEO, custom websites, and Google Ads for Merced County businesses.",
         areaServed: ['Merced', 'Atwater', 'Fresno', 'Madera'],
         faqs: [
-            { question: 'Why should a Merced business invest in digital marketing?', answer: "Merced is booming — UC Merced's growth is bringing thousands of new residents and businesses. The companies that establish a strong digital presence now will dominate this market for years. Early movers win." },
-            { question: 'Do you specialize in Merced or serve it from far away?', answer: "Our office is in Fresno, just an hour from Merced. We serve Merced County as a core market — not an afterthought. We know the area, the competition, and the customers. We're available for in-person meetings anytime." },
-            { question: 'What makes your web design different from cheap website builders?', answer: "DIY builders give you generic templates that look like everyone else. We hand-code every site for speed, SEO, and conversion. Our sites consistently load in under 2 seconds, score 95+ on Google PageSpeed, and generate 3-5x more leads." },
-            { question: 'How fast can you get my Google Ads running?', answer: "We can typically launch a campaign within 5-7 business days of onboarding. That includes keyword research, ad copywriting, landing page setup, and conversion tracking. You'll see leads within the first week of launch." },
-            { question: 'What if I already have a website that I like?', answer: "Great — we can work with it. We'll audit your current site for speed, SEO, and conversion opportunities, then optimize what's there. Not every client needs a full redesign; sometimes strategic improvements deliver the best ROI." }
+            { question: "Is an SEO company in Fresno a good fit for a Merced business?", answer: "The office is at 6362 N Figarden Dr, Suite 118, about an hour south on 99, and we meet Merced clients in person for the first meeting. Google ranks you on your profile, your reviews and your pages, and none of that depends on where your agency sits." },
+            { question: "What does Merced SEO cost?", answer: "Local SEO is $595 a month and Lite is $249 a month, both month to month. Lite bundles hosting, maintenance and baseline optimization, and it fits a business that mostly needs to be found for its own name and one or two services." },
+            { question: "What does a website cost in Merced?", answer: "A template build is $649, paid once, and a custom build starts at $1,995 and takes 3 to 5 weeks. Hosting and the domain run roughly $20 to $30 a month, and you can pay those directly." },
+            { question: "I already have a website I like. Do I need a new one?", answer: "It depends on two things. If it loads fast on a phone and each service has its own page, SEO can build on what you have. If it takes five seconds to load or the whole business sits on one page, fixing it usually costs close to a rebuild." },
+            { question: "How fast can Google Ads bring calls in Merced?", answer: "Ads can start showing the day the campaign is approved, so the first calls can come within days. Whether they keep coming depends on the landing page, which is why the site gets looked at before your ad budget gets spent." },
+            { question: "Why don't I show up on Google Maps in Merced?", answer: "The usual reasons are a category that is too broad, a service area that leaves Merced out, or a few reviews against competitors with dozens. Check those before paying anyone, including us." }
         ]
     },
     {
         path: '/tulare-marketing-agency',
         url: 'https://boostifyusa.com/tulare-marketing-agency',
-        description: "Tulare's results-driven marketing agency. Custom web design, local SEO, and Google Ads built for Tulare County businesses.",
+        description: "Web design and local SEO for Tulare businesses from a Fresno office about an hour up 99. Template sites are $649 and custom builds start at $1,995.",
         areaServed: ['Tulare', 'Visalia', 'Fresno', 'Hanford'],
         faqs: [
-            { question: 'Does Boostify work with businesses in Tulare specifically?', answer: "Yes — Tulare is a core market for us. We've built campaigns for Tulare County businesses in agriculture, retail, healthcare, and professional services. We understand the local economy and what drives customers here." },
-            { question: 'What sets Boostify apart from other agencies in the Valley?', answer: "Three things: we never use templates (every site is custom-coded), we never require contracts (month-to-month only), and we track every lead back to its source (so you know exactly what's working). Most agencies can't offer all three." },
-            { question: 'How do you handle businesses that serve multiple Valley cities?', answer: "Multi-location SEO is one of our specialties. We build city-specific landing pages, optimize separate Google Business Profiles where applicable, and create ad campaigns with geo-targeting for each area you serve." },
-            { question: 'What should I expect in the first 30 days?', answer: "In month one, we audit your current presence, build your strategy, launch your Google Ads (if applicable), and begin SEO foundation work. You'll have a dedicated strategist, a live reporting dashboard, and your first leads from paid campaigns within weeks." },
-            { question: 'Is digital marketing worth it for a small Tulare business?', answer: "Absolutely — in fact, it's where small businesses have the biggest advantage. Local SEO levels the playing field against bigger competitors. A $1,000/month investment in targeted digital marketing can generate $5,000-$10,000 in new revenue." }
+            { question: "Is an hour too far for a web designer to work with my Tulare business?", answer: "Most of the build happens over a screen share, so the drive only matters for the first meeting and the photos. We come to Tulare for both, because pictures of your actual trucks, crew and shop do more for the site than anything we could write. The office is at 6362 N Figarden Dr, Suite 118, in Fresno." },
+            { question: "What does a website cost in Tulare?", answer: "A template build is $649, paid once. A custom build starts at $1,995 and depends on how many pages have to be built from scratch rather than assembled. Hosting and the domain run roughly $20 to $30 a month, and you can pay those to the provider directly." },
+            { question: "I work in Tulare and Visalia. Do I need two websites?", answer: "One site is enough, with a page for each town that is written for that town and lists the work you actually do there. Two separate sites split your reviews and your links in half." },
+            { question: "Why doesn't my business show up on Google Maps in Tulare?", answer: "Start with your Business Profile. A category that is too broad, a hidden address with no service area, or a handful of reviews against competitors with dozens are the usual reasons. The website helps once the profile is right, because Google checks that the two match." },
+            { question: "Do I have to sign a contract for SEO?", answer: "Local SEO is $595 a month and Lite is $249 a month, and both are month to month. If it isn't producing calls, you can stop, and the pages and the profile stay yours." },
+            { question: "Can you fix my current site instead of rebuilding it?", answer: "It depends on what's under it. If it is a WordPress site with a handful of plugins, a cleanup and faster hosting can be enough. If it runs thirty or forty plugins on a theme nobody has updated in years, the repair usually costs more than a rebuild, because every fix has to be retested against everything else." }
         ]
     },
     {
         path: '/sanger-marketing-agency',
         url: 'https://boostifyusa.com/sanger-marketing-agency',
-        description: "Sanger's dedicated marketing agency for custom web design, local SEO, and Google Ads. Helping East Valley businesses compete and win online.",
+        description: "Web design and local SEO for Sanger businesses from a Fresno office about half an hour away. Template sites are $649 and custom builds start at $1,995.",
         areaServed: ['Sanger', 'Fresno', 'Reedley', 'Clovis'],
         faqs: [
-            { question: 'Why does a Sanger business need a marketing agency?', answer: "Sanger may be a smaller market, but your customers are searching online just like everyone else. In fact, smaller markets offer a huge advantage — less competition means faster results and lower advertising costs. A focused digital strategy can help you dominate your local area quickly." },
-            { question: 'How close is Boostify to Sanger?', answer: "We're based in Fresno — just 15 minutes from Sanger. We serve Sanger as a priority market, not a distant afterthought. We're always available for in-person meetings and local strategy sessions." },
-            { question: 'What kind of budget do I need to get started?', answer: 'Sanger businesses can see meaningful results starting at $500-$1,500/month depending on services. Because competition is lower in smaller markets, your marketing dollars go further. We always recommend starting with a free strategy call to find the right fit.' },
-            { question: 'Will you build my website or just do marketing?', answer: "Both. We offer complete digital solutions — from custom website design and development to ongoing SEO and Google Ads management. Most clients start with a website and SEO, then add paid advertising once their foundation is solid." },
-            { question: 'How do you track results for my Sanger business?', answer: "Every client gets access to a live reporting dashboard showing rankings, traffic, leads, calls, and revenue attribution. We track every phone call and form submission back to its source — so you always know exactly what's working." }
+            { question: "Is a Fresno web designer close enough for my Sanger business?", answer: "The office is at 6362 N Figarden Dr, Suite 118, about half an hour from Sanger, and we would rather meet at your place than ours. The drive doesn't change the build. What Google looks at is the address and service area on your Business Profile and whether your site names Sanger, and we set up both." },
+            { question: "What does a website cost in Sanger?", answer: "The same as it costs in Fresno. A template build is $649, paid once, and a custom build starts at $1,995 and takes 3 to 5 weeks. Hosting and the domain run roughly $20 to $30 a month, and you can pay those directly." },
+            { question: "Is the $649 template enough for a small Sanger shop?", answer: "If most of your work comes from referrals and people mostly need your number, your hours and a few photos, it is. Custom makes sense when you want a page for each service or each East Valley town you work in, since each of those pages can rank on its own." },
+            { question: "Can a Sanger business pick up customers searching from Fresno?", answer: "In the map results it is hard, because Google weighs how close a business is to the person searching. In the regular results a page that names the service and the Fresno area can rank, and that is the usual route for East Valley businesses." },
+            { question: "Who owns the domain and my Google listing when we're done?", answer: "You do. The domain is registered in your name, or we work as a delegate inside your own GoDaddy account, and you stay the primary owner of the Business Profile. If you leave, the hosting account and the code transfer at no charge." },
+            { question: "How long until my Sanger business shows up on Google Maps?", answer: "No agency controls Google, so a promised date is a guess. A complete profile with real photos and a steady flow of reviews usually moves first, and pages that name Sanger help Google match you to searches made there." }
         ]
     }
 ];

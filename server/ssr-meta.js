@@ -135,8 +135,8 @@ const ssrMeta = new Map([
         canonical: `${SITE_URL}/visalia-web-design`
     }],
     ['/madera-marketing-agency', {
-        title: 'Madera Marketing Agency: Grow Your Local Business',
-        description: 'Boostify USA helps Madera businesses grow with custom web design, local SEO, and targeted Google Ads. Your gateway to digital growth in Madera County.',
+        title: "Web Design Madera, CA & Local SEO | Boostify USA",
+        description: "Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649, custom builds start at $1,995.",
         canonical: `${SITE_URL}/madera-marketing-agency`
     }],
     ['/hanford-marketing-agency', {
@@ -150,13 +150,13 @@ const ssrMeta = new Map([
         canonical: `${SITE_URL}/merced-marketing-agency`
     }],
     ['/tulare-marketing-agency', {
-        title: 'Tulare Marketing Agency: Turn Clicks Into Customers',
-        description: "Boostify USA is Tulare's results-driven marketing agency. Custom websites, local SEO, and Google Ads that grow Tulare County businesses.",
+        title: "Web Design Tulare, CA & Local SEO | Boostify USA",
+        description: "Web design and local SEO for Tulare businesses from a Fresno office about an hour up 99. Template sites are $649, custom builds start at $1,995.",
         canonical: `${SITE_URL}/tulare-marketing-agency`
     }],
     ['/sanger-marketing-agency', {
-        title: 'Sanger Marketing Agency: Custom Websites That Convert',
-        description: 'Boostify USA helps Sanger businesses grow online with custom web design, local SEO, and Google Ads. Small-town pride, big results.',
+        title: "Web Design Sanger, CA & Local SEO | Boostify USA",
+        description: "Web design and local SEO for Sanger businesses from a Fresno office about half an hour away. Template sites are $649, custom builds start at $1,995.",
         canonical: `${SITE_URL}/sanger-marketing-agency`
     }],
 

@@ -16,17 +16,18 @@ import {
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Is Boostify USA based in Madera?', answer: "Our headquarters are in Fresno, just minutes from Madera. We serve Madera County businesses with the same local expertise and availability as our Fresno clients. We're close enough to meet in person whenever needed." },
-    { question: 'What results can a Madera business expect from SEO?', answer: "Most clients see meaningful ranking improvements within 3-4 months and significant lead growth by month 6. Because Madera is a smaller market, competition is lower, meaning faster results than in bigger cities." },
-    { question: 'How much should I budget for digital marketing?', answer: `Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Local SEO Lite plan in March at just $249/month, which includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649. We always start with a free consultation to recommend the right investment based on your goals.` },
-    { question: 'Do you build websites for Madera businesses?', answer: "Absolutely. Every website we build is 100% custom with no templates. We design for your specific audience, optimize for mobile and speed, and include SEO foundations so you start ranking from launch day." },
-    { question: 'Can you help me compete with bigger businesses in Fresno?', answer: "That's exactly what we do. Local SEO levels the playing field. When someone in Madera searches for your service, we make sure you appear first, not the Fresno chain with a bigger budget." },
+    { question: "Is Boostify based in Madera?", answer: "The office is in Fresno at 6362 N Figarden Dr, Suite 118, about 25 minutes south of Madera on 99. We meet Madera clients at their shop for the first meeting, and the rest of the build happens over a screen share." },
+    { question: "What does a website cost in Madera?", answer: "A template build is $649, paid once, and a custom build starts at $1,995. Hosting and the domain run roughly $20 to $30 a month, which you can pay directly so the accounts stay in your name." },
+    { question: "Fresno businesses show up when people in Madera search. Can I get ahead of them?", answer: "In the map results distance works for you, because Google favors listings close to the person searching. What usually holds a Madera business back is a thin Business Profile or a site that never says Madera, and both are fixable." },
+    { question: "How long does SEO take for a Madera business?", answer: "No agency controls Google, so any date is a guess. A complete profile and a steady flow of reviews tend to move first, and new pages usually need a few weeks after Google recrawls them before rankings settle." },
+    { question: "Can I update the site myself?", answer: "If you want to change your own hours, photos and specials, we build it in WordPress and show you how. If it rarely changes, we hand-code it, which keeps it faster, and small edits are part of the $99 a month care plan." },
+    { question: "Should I start with ads or with the website?", answer: "Start with the website and the Google profile. Ads send people to the same page, and a page that doesn't turn visitors into calls wastes the ad spend, which for most local service businesses runs $1,000 to $2,500 a month." },
 ];
 
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/madera-marketing-agency",
-    "description": "Madera's trusted marketing agency for custom web design, local SEO, and Google Ads. Helping Madera County businesses grow their digital presence.",
+    "description": "Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649 and custom builds start at $1,995.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -68,10 +69,10 @@ const areaCities = [
 ];
 
 export function MaderaMarketingAgencyPage() {
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Madera Marketing Agency | Grow Your Local Business | Boostify USA" description="Boostify USA helps Madera businesses grow with custom web design, local SEO, and targeted Google Ads. Your gateway to digital growth in Madera County." canonicalUrl="/madera-marketing-agency" />
+            <SeoHead title="Web Design Madera, CA & Local SEO | Boostify USA" description="Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649, custom builds start at $1,995." canonicalUrl="/madera-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -89,16 +90,13 @@ export function MaderaMarketingAgencyPage() {
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Madera Marketing Agency
+                                Madera Web Design & SEO
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Madera Marketing Agency. <span className="text-orange">Small Town, Big-Time Growth.</span>
+                                Madera Web Design &amp; SEO. <span className="text-orange">From a Fresno Office.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Madera is growing, and your business should grow with it. Boostify
-                                USA delivers enterprise-grade marketing to local businesses:
-                                custom websites, local SEO dominance, and Google Ads that turn
-                                clicks into customers.
+                                Madera web design and local SEO from our office in northwest Fresno, about 25 minutes south on 99. The prices match what we quote for <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, and the first meeting can be at your place.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
                                 <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
@@ -177,15 +175,15 @@ export function MaderaMarketingAgencyPage() {
                                 </motion.div>
                             </motion.div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">
-                                Madera Businesses Are <span className="text-red-500">Being Outpaced Online</span>
+                                Before you hire anyone for a <span className="text-red-500">Madera website</span>
                             </h2>
-                            <p className="text-xl text-gray font-medium">The businesses that invest in digital marketing now will own Madera's growth. The rest get left behind.</p>
+                            <p className="text-xl text-gray font-medium">Each of these takes a few minutes and protects you from the next vendor you hire, us included.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: 'No Online Visibility', desc: "Your business exists but Google doesn't know it. Without proper local SEO, you're invisible to the 87% of consumers who search online before buying.", icon: Search },
-                                { title: 'Losing to Fresno Competitors', desc: "Bigger Fresno businesses are showing up in Madera search results. Without a targeted local strategy, their marketing budgets drown out your presence.", icon: Users },
-                                { title: 'DIY Marketing Burnout', desc: "You've tried posting on social media and running your own ads. The results? Inconsistent, unmeasurable, and eating time you should spend running your business.", icon: AlertTriangle },
+                                { title: "Search yourself from Madera", desc: "Google ranks map results by relevance, distance and prominence. A search from a Fresno address shows you Fresno shops, so do the check standing in Madera where your customers are.", icon: Search },
+                                { title: "Check who owns your Google listing", desc: "Open the users list on your Business Profile. If the only owner is an old employee or the last agency, have them add you as primary owner before anyone else touches it.", icon: Users },
+                                { title: "Know where your domain lives", desc: "The email the domain is registered to owns it, whoever paid for it. Find that login before you change vendors, because it also controls the records that deliver your email.", icon: AlertTriangle },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -204,11 +202,9 @@ export function MaderaMarketingAgencyPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="order-2 lg:order-1">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><MousePointerClick size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Digital Advertising That Puts Madera on the Map</h2>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Google Ads for Madera, once the site converts</h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
-                                    Stop burning ad budget on broad campaigns. Our Google Ads strategies
-                                    are hyper-targeted to Madera County, reaching the exact people
-                                    searching for your services right now.
+                                    Most local service businesses start somewhere between $1,000 and $2,500 a month in ad spend, and that money goes to Google. If the landing page doesn't turn visitors into calls, paid clicks only make the problem more expensive, so the site comes first.
                                 </p>
                                 <ul className="space-y-3">
                                     {['Madera County geo-targeting', 'Local Service Ads setup & management', 'Phone call & form tracking', 'Monthly ROI reporting'].map((item, i) => (
@@ -262,8 +258,8 @@ export function MaderaMarketingAgencyPage() {
                             </div>
                             <div>
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Globe size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Custom Websites for Madera's Growing Market</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A great website isn't a luxury; it's the foundation of every successful marketing campaign. We build fast, beautiful, conversion-focused websites that make your Madera business stand out.</p>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">What a Madera website costs</h2>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A template build is $649, paid once. A custom build starts at $1,995 and takes 3 to 5 weeks, and the <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design page</Link> covers which one fits.</p>
                                 <ul className="space-y-3">
                                     {['Custom-coded, no template shortcuts', 'Mobile-first responsive design', 'SEO-ready from launch', 'Secure hosting & ongoing support'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
@@ -279,17 +275,17 @@ export function MaderaMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><Search size={24} strokeWidth={2.5} /></div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Local SEO for <span className="text-orange">Madera County</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">Own the search results in your backyard. Our local SEO strategies put Madera businesses ahead of the competition on Google Search and Maps.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Madera SEO, <span className="text-orange">month to month</span></h2>
+                            <p className="text-xl text-gray font-medium leading-relaxed">Local SEO is $595 a month and Lite is $249 a month, with no contract on either. North of Madera we also cover <Link to="/merced-marketing-agency" className="text-dark font-bold hover:text-orange transition-colors">Merced</Link> and <Link to="/modesto-web-design" className="text-dark font-bold hover:text-orange transition-colors">Modesto</Link>, and the <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO page</Link> lays out the first 90 days.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { icon: MapPin, title: 'Map Pack Dominance', desc: 'We optimize your Google Business Profile to rank in the coveted 3-pack for every service you offer in Madera.' },
-                                { icon: Search, title: 'Keyword Strategy', desc: 'We research what Madera residents actually search for and build content and pages to match that intent.' },
-                                { icon: Star, title: 'Review Management', desc: 'More 5-star reviews = higher rankings. We implement systems to generate authentic reviews from happy customers.' },
-                                { icon: Globe, title: 'Citation Building', desc: 'Consistent business listings across 60+ directories strengthen your local authority and improve rankings.' },
-                                { icon: BarChart3, title: 'Monthly Reports', desc: 'Transparent ranking reports, call tracking data, and ROI analysis delivered every month.' },
-                                { icon: Zap, title: 'Technical SEO', desc: 'Site speed, mobile optimization, schema markup, and core web vitals: the factors Google actually cares about.' },
+                                { icon: MapPin, title: "Google Business Profile", desc: "Categories, services, hours and photos filled out to match the site, because Google checks that the two agree." },
+                                { icon: Search, title: "Pages that name Madera", desc: "Each service gets a page that says what you do and that you do it in Madera, so Google can match it to searches made here." },
+                                { icon: Star, title: "A review routine", desc: "A short text your staff sends after each job with the direct link to your review form." },
+                                { icon: Globe, title: "Listings cleaned up", desc: "Directory listings that show an old phone or address get corrected or removed, so every listing points to the same name, address and number." },
+                                { icon: BarChart3, title: "A monthly report", desc: "Rankings, calls and form leads, sent once a month in plain language." },
+                                { icon: Zap, title: "Speed and page titles", desc: "Page titles, schema and load speed checked on every page, with a PageSpeed target of 95 or better on mobile." },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
@@ -308,14 +304,14 @@ export function MaderaMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Madera & the <span className="text-orange">Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">From the Gateway to Yosemite to the heart of the Central Valley, we help businesses across the region unlock their digital potential.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">From the office it is about 25 minutes to Madera, and we would rather meet at your shop than ask you to come to Figarden. Chowchilla and Madera Ranchos are the same trip.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                                     {item.highlight ? (
                                         <div className="p-6 rounded-2xl border text-center bg-orange text-white border-orange shadow-lg shadow-orange/20">
-                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">You Are Here</div>
+                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">This page</div>
                                         </div>
                                     ) : (
                                         <Link to={item.path} className="block p-6 rounded-2xl border text-center bg-white border-gray-light hover:border-orange/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
@@ -333,8 +329,8 @@ export function MaderaMarketingAgencyPage() {
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange/20 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Small Town Trust, Big Time Results</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We believe in earning your business every month and not locking you in. No contracts, no hidden fees, and a standing promise: if we don't deliver, you don't pay.</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">What you keep if you leave</h2>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">The domain, the hosting account and the code are yours, and we transfer them on request at no charge. SEO is month to month, so there is nothing to buy your way out of.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Zero Risk • 100% Commitment</div>
                     </div>
                 </section>
@@ -344,14 +340,14 @@ export function MaderaMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Madera Marketing Questions</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Madera web design questions</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">
                                     <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
-                                        {faq.question}{openFaq === i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
+                                        {faq.question}{openFaq !== i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
                                     </button>
-                                    <motion.div initial={false} animate={{ height: openFaq === i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
+                                    <motion.div initial={false} animate={{ height: openFaq !== i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
                                 </div>
                             ))}
                         </div>

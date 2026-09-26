@@ -120,7 +120,7 @@ const faqs = [
 ];
 
 export function WebsiteMaintenanceCostPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
 
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
@@ -656,13 +656,13 @@ export function WebsiteMaintenanceCostPage() {
                     className="w-full px-6 md:px-8 py-5 flex items-center justify-between text-left font-bold text-base md:text-lg text-dark hover:bg-gray-50 transition-colors gap-4"
                   >
                     <span>{faq.question}</span>
-                    {openFaq === i ? (
+                    {openFaq !== i ? (
                       <ChevronUp size={20} className="text-orange shrink-0" />
                     ) : (
                       <ChevronDown size={20} className="text-gray/40 shrink-0" />
                     )}
                   </button>
-                  <motion.div initial={false} animate={{ height: openFaq === i ? 'auto' : 0 }} className="overflow-hidden">
+                  <motion.div initial={false} animate={{ height: openFaq !== i ? 'auto' : 0 }} className="overflow-hidden">
                         <div className="px-6 md:px-8 pb-6 text-gray font-medium leading-relaxed text-pretty">
                           {faq.answer}
                         </div>

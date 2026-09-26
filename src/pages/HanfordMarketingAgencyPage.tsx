@@ -16,11 +16,12 @@ import {
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Do you work with businesses in Kings County?', answer: 'Yes, Hanford is one of our priority markets. We also serve Lemoore, Avenal, Corcoran, and surrounding Kings County communities. Our strategies are tailored to the unique dynamics of this area.' },
-    { question: 'How is working with Boostify different from a freelancer?', answer: "Freelancers juggle dozens of clients with limited resources. We're a full-service team with dedicated strategists, designers, and ad specialists. You get the depth of an agency with the attention of a local partner." },
-    { question: 'What kind of ROI should I expect?', answer: 'It depends on your service, your market, and your budget, so we will not promise a multiple. Paid ads can start producing calls in the first week, while SEO builds over months and keeps compounding. We track calls, forms, and rankings every month so you can see exactly what you are getting back.' },
-    { question: 'Is there a minimum contract length?', answer: "No. We work month-to-month. No long-term contracts, no cancellation penalties. We earn your business with results, not paperwork." },
-    { question: 'Can you help my Hanford business rank above Visalia competitors?', answer: "Absolutely. Local SEO is about relevance and proximity. When someone in Hanford searches for your services, we make sure your business, and not a Visalia or Fresno competitor, appears first." },
+    { question: "Do you work with businesses in Kings County outside Hanford?", answer: "Lemoore, Armona and Corcoran are part of the same trip, and one site can have a page for each town you actually serve. The office is at 6362 N Figarden Dr, Suite 118, in Fresno, about 45 minutes away." },
+    { question: "What does SEO cost for a Hanford business?", answer: "Local SEO is $595 a month and Lite is $249 a month, both month to month, and you can stop whenever it stops bringing in calls." },
+    { question: "Can my Hanford business rank above Visalia competitors?", answer: "For searches made in Hanford, distance already works in your favor, because Google weighs how close a business is to the person searching. For searches made in Visalia it is harder, and a page written for Visalia customers is the usual way in." },
+    { question: "What should I expect in the first month?", answer: "The first weeks go to the Google Business Profile, your listings and the pages that are already closest to ranking. Rankings usually take weeks to move after Google recrawls a change, so judge the work on calls over a few months." },
+    { question: "Is there a contract?", answer: "There is no long-term contract on SEO, ads or the care plan. Websites are paid per build, $649 for a template and $1,995 and up for custom." },
+    { question: "What ROI should I expect?", answer: "It depends on your service, your area and your budget, so we don't promise a multiple. Ads can bring calls in the first week, and SEO builds over months and keeps working after you stop paying for clicks." },
 ];
 
 const advertiserSchema = {
@@ -68,7 +69,7 @@ const areaCities = [
 ];
 
 export function HanfordMarketingAgencyPage() {
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead title="Hanford SEO Company | Kings County Web Design | Boostify USA" description="Hanford SEO and web design for Kings County businesses from Boostify USA's Fresno office. Local SEO from $595 a month, websites from $649, no contracts." canonicalUrl="/hanford-marketing-agency" />
@@ -95,9 +96,7 @@ export function HanfordMarketingAgencyPage() {
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
                                 Hanford SEO and web design for Kings County businesses, run from
-                                our Fresno office. Boostify USA brings big-agency expertise
-                                with small-town accountability: <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, local SEO, and
-                                ad campaigns built for Hanford.
+                                our Fresno office, about 45 minutes away. The prices match what we quote for <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
                                 <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
@@ -176,14 +175,14 @@ export function HanfordMarketingAgencyPage() {
                             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="inline-flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-6">
                                 <motion.div animate={{ rotate: [0, -8, 8, -8, 0] }} transition={{ duration: 0.5, delay: 0.8, repeat: Infinity, repeatDelay: 4 }}><AlertTriangle size={32} className="text-red-500" strokeWidth={2.5} /></motion.div>
                             </motion.div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Kings County Businesses <span className="text-red-500">Deserve Better Marketing</span></h2>
-                            <p className="text-xl text-gray font-medium">Most Hanford businesses settle for cookie-cutter solutions or no online presence at all. Sound familiar?</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Before you hire a <span className="text-red-500">Kings County SEO company</span></h2>
+                            <p className="text-xl text-gray font-medium">These take a few minutes and tell you more than any sales call, ours included.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: 'Word-of-Mouth Only', desc: "Referrals are great, but they're unpredictable. Without a digital presence, you're leaving growth on the table every time someone searches for your services online.", icon: Users },
-                                { title: 'Overshadowed by Bigger Cities', desc: "Visalia and Fresno businesses are appearing in Hanford search results. If you don't have a targeted local strategy, their bigger budgets win your customers.", icon: Building2 },
-                                { title: 'No Measurement', desc: "You're spending money on ads or a website but have no idea if it's working. Without proper tracking, your marketing is a guessing game.", icon: BarChart3 },
+                                { title: "Check the users on your Google listing", desc: "If the only owner on your Business Profile is an old employee or the last agency, get added as primary owner first. Every vendor after that needs access through that login.", icon: Users },
+                                { title: "Search from Hanford, not Visalia", desc: "Google ranks map results by relevance, distance and prominence, so a Visalia search shows Visalia businesses. Check where you rank with a phone that is actually in Hanford or Lemoore.", icon: Building2 },
+                                { title: "Count calls by source", desc: "If you can't tell whether a call came from the listing, the website or an ad, ask for call tracking before you pay anyone for more traffic.", icon: BarChart3 },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -201,19 +200,19 @@ export function HanfordMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Kings County SEO, Web Design &amp; <span className="text-orange">Google Ads</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">From your first Google listing to a full-stack digital strategy, we handle it all so you can focus on running your business.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">Local SEO is $595 a month or $249 for Lite, month to month, and websites start at $649. The <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO page</Link> lays out the first 90 days, and the <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design page</Link> covers which build fits.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { icon: Globe, title: 'Custom Web Design', desc: 'Hand-coded websites built for Hanford businesses. Fast, mobile-first, and designed to convert visitors into paying customers.' },
-                                { icon: Search, title: 'Local SEO', desc: 'Dominate Google Maps and search results in Kings County. We optimize every signal Google uses to rank local businesses.' },
-                                { icon: MousePointerClick, title: 'Google Ads', desc: 'Geo-targeted ad campaigns that bring Hanford customers to your door. Every click tracked, every dollar optimized.' },
-                                { icon: Phone, title: 'Call Tracking', desc: 'Know exactly which marketing channels drive real phone calls. Complete attribution from first click to closed deal.' },
-                                { icon: Star, title: 'Review Generation', desc: 'Build a 5-star reputation that dominates local search. We automate review requests from your happiest customers.' },
-                                { icon: BarChart3, title: 'Monthly Analytics', desc: 'Transparent reporting on rankings, traffic, leads, and revenue. No vanity metrics; just the numbers that matter.' },
-                                { icon: Target, title: 'Competitor Analysis', desc: "We reverse-engineer what's working for your top Hanford competitors and build campaigns to outperform them." },
-                                { icon: Zap, title: 'Speed Optimization', desc: 'We optimize your site for sub-2-second load times. Faster sites rank higher and convert more visitors.' },
-                                { icon: ShieldCheck, title: 'Ongoing Support', desc: 'Your dedicated account manager is always a phone call away. We maintain, update, and protect your digital assets.' },
+                                { icon: Globe, title: "Web design", desc: "A $649 template or a custom build from $1,995. You own the domain and the hosting account either way." },
+                                { icon: Search, title: "Local SEO", desc: "The Business Profile, your listings and pages that name Hanford, Lemoore and Kings County, month to month." },
+                                { icon: MousePointerClick, title: "Google Ads", desc: "Most local service businesses start between $1,000 and $2,500 a month in ad spend, billed by Google." },
+                                { icon: Phone, title: "Call tracking", desc: "Calls get counted by where they came from, so you can see which channel is paying for itself." },
+                                { icon: Star, title: "Review routine", desc: "A short text your staff sends after each job with the direct link to your review form." },
+                                { icon: BarChart3, title: "Monthly report", desc: "Rankings, calls and form leads, once a month, in plain language." },
+                                { icon: Target, title: "Competitor check", desc: "What the top three map results in Hanford have that you don't, starting with categories and reviews." },
+                                { icon: Zap, title: "Speed", desc: "A PageSpeed target of 95 or better on mobile, checked before launch." },
+                                { icon: ShieldCheck, title: "Care plan", desc: "Backups, updates and small edits for $99 a month, optional, cancel whenever." },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
@@ -232,14 +231,14 @@ export function HanfordMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Hanford & the <span className="text-orange">Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">We know Hanford and the surrounding communities. That local knowledge is the foundation of every campaign we build.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">From the office it is about 45 minutes to Hanford, and Lemoore and Armona are on the same trip. <Link to="/visalia-web-design" className="text-dark font-bold hover:text-orange transition-colors">Visalia</Link> is about 25 minutes east of Hanford.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                                     {item.highlight ? (
                                         <div className="p-6 rounded-2xl border text-center bg-orange text-white border-orange shadow-lg shadow-orange/20">
-                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">You Are Here</div>
+                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">This page</div>
                                         </div>
                                     ) : (
                                         <Link to={item.path} className="block p-6 rounded-2xl border text-center bg-white border-gray-light hover:border-orange/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
@@ -257,8 +256,8 @@ export function HanfordMarketingAgencyPage() {
                     <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">The Handshake Guarantee</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">In Hanford, your word means something. So does ours. We don't do contracts; we do results. If you're not happy, you walk away. Period.</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">What you own</h2>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">The domain, the hosting account and the code are yours, and we transfer them on request at no charge. SEO and ads run month to month, so you can walk away whenever it stops making sense.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">No Contracts • No Hidden Fees</div>
                     </div>
                 </section>
@@ -273,9 +272,9 @@ export function HanfordMarketingAgencyPage() {
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">
                                     <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
-                                        {faq.question}{openFaq === i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
+                                        {faq.question}{openFaq !== i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
                                     </button>
-                                    <motion.div initial={false} animate={{ height: openFaq === i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
+                                    <motion.div initial={false} animate={{ height: openFaq !== i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
                                 </div>
                             ))}
                         </div>

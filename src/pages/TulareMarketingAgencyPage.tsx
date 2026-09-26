@@ -16,17 +16,18 @@ import {
 } from 'lucide-react';
 
 const faqs = [
-    { question: 'Does Boostify work with businesses in Tulare specifically?', answer: "Yes, Tulare is a core market for us. We've built campaigns for Tulare County businesses in agriculture, retail, healthcare, and professional services. We understand the local economy and what drives customers here." },
-    { question: 'What sets Boostify apart from other agencies in the Valley?', answer: "Three things: we never use templates (every site is custom-coded), we never require contracts (month-to-month only), and we track every lead back to its source (so you know exactly what's working). Most agencies can't offer all three." },
-    { question: 'How do you handle businesses that serve multiple Valley cities?', answer: "Multi-location SEO is one of our specialties. We build city-specific landing pages, optimize separate Google Business Profiles where applicable, and create ad campaigns with geo-targeting for each area you serve." },
-    { question: 'What should I expect in the first 30 days?', answer: "In month one, we audit your current presence, build your strategy, launch your Google Ads (if applicable), and begin SEO foundation work. You'll have a dedicated strategist, a live reporting dashboard, and your first leads from paid campaigns within weeks." },
-    { question: 'Is digital marketing worth it for a small Tulare business?', answer: "Absolutely — in fact, it's where small businesses have the biggest advantage. Local SEO levels the playing field against bigger competitors. Our Local SEO plans start at $595/month with AI-powered tools, and we're launching a Lite plan in March at just $249/month that includes hosting, web design, and maintenance. Custom websites start at $1,995 and template-based sites start at $649." },
+    { question: "Is an hour too far for a web designer to work with my Tulare business?", answer: "Most of the build happens over a screen share, so the drive only matters for the first meeting and the photos. We come to Tulare for both, because pictures of your actual trucks, crew and shop do more for the site than anything we could write. The office is at 6362 N Figarden Dr, Suite 118, in Fresno." },
+    { question: "What does a website cost in Tulare?", answer: "A template build is $649, paid once. A custom build starts at $1,995 and depends on how many pages have to be built from scratch rather than assembled. Hosting and the domain run roughly $20 to $30 a month, and you can pay those to the provider directly." },
+    { question: "I work in Tulare and Visalia. Do I need two websites?", answer: "One site is enough, with a page for each town that is written for that town and lists the work you actually do there. Two separate sites split your reviews and your links in half." },
+    { question: "Why doesn't my business show up on Google Maps in Tulare?", answer: "Start with your Business Profile. A category that is too broad, a hidden address with no service area, or a handful of reviews against competitors with dozens are the usual reasons. The website helps once the profile is right, because Google checks that the two match." },
+    { question: "Do I have to sign a contract for SEO?", answer: "Local SEO is $595 a month and Lite is $249 a month, and both are month to month. If it isn't producing calls, you can stop, and the pages and the profile stay yours." },
+    { question: "Can you fix my current site instead of rebuilding it?", answer: "It depends on what's under it. If it is a WordPress site with a handful of plugins, a cleanup and faster hosting can be enough. If it runs thirty or forty plugins on a theme nobody has updated in years, the repair usually costs more than a rebuild, because every fix has to be retested against everything else." },
 ];
 
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/tulare-marketing-agency",
-    "description": "Tulare's results-driven marketing agency. Custom web design, local SEO, and Google Ads built for Tulare County businesses.",
+    "description": "Web design and local SEO for Tulare businesses from a Fresno office about an hour up 99. Template sites are $649 and custom builds start at $1,995.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -68,7 +69,7 @@ const areaCities = [
 ];
 
 export function TulareMarketingAgencyPage() {
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
     const [ranks, setRanks] = useState<Record<number, { rank: number | string, colorClass: string }>>({});
 
     useEffect(() => {
@@ -87,7 +88,7 @@ export function TulareMarketingAgencyPage() {
     }, []);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Tulare Marketing Agency | Turn Clicks Into Customers | Boostify USA" description="Boostify USA is Tulare's results-driven marketing agency. Custom websites, local SEO, and Google Ads that grow Tulare County businesses." canonicalUrl="/tulare-marketing-agency" />
+            <SeoHead title="Web Design Tulare, CA & Local SEO | Boostify USA" description="Web design and local SEO for Tulare businesses from a Fresno office about an hour up 99. Template sites are $649, custom builds start at $1,995." canonicalUrl="/tulare-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -104,16 +105,13 @@ export function TulareMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-[50px] relative z-10">
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
-                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Tulare Marketing Agency
+                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Tulare Web Design & SEO
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Built for Tulare's <span className="text-orange">Hardest Workers.</span>
+                                Tulare Web Design <span className="text-orange">From a Fresno Office.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Tulare is powered by industry and grit; your marketing should
-                                match that energy. Boostify USA helps Tulare businesses dominate
-                                online with custom websites from our <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link> shop, local SEO, and paid advertising
-                                that delivers measurable returns.
+                                Tulare web design and local SEO from our office on Figarden Drive in Fresno, about an hour up 99. A lot of Tulare County customers look you up on a phone between jobs, so the site is built for a phone first. The prices match what we quote for <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
                                 <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
@@ -196,14 +194,14 @@ export function TulareMarketingAgencyPage() {
                             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="inline-flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-6">
                                 <motion.div animate={{ rotate: [0, -8, 8, -8, 0] }} transition={{ duration: 0.5, delay: 0.8, repeat: Infinity, repeatDelay: 4 }}><AlertTriangle size={32} className="text-red-500" strokeWidth={2.5} /></motion.div>
                             </motion.div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Your Tulare Competitors Are <span className="text-red-500">Already Online</span></h2>
-                            <p className="text-xl text-gray font-medium">The businesses that invest in digital now will own Tulare's market for years. Here's what's holding most businesses back.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Before you hire anyone for a <span className="text-red-500">Tulare website</span></h2>
+                            <p className="text-xl text-gray font-medium">These take a few minutes and they protect you from whoever you hire next, us included.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: 'Relying on Foot Traffic Alone', desc: "Foot traffic keeps the lights on, but digital marketing scales your business. 97% of consumers learn about local companies online; if you're not there, someone else is.", icon: Building2 },
-                                { title: 'Outdated or No Website', desc: "Your website is your first impression. A slow, dated, or non-existent site tells customers you're behind the times, sending them to the competitor with a better online presence.", icon: Globe },
-                                { title: "Can't Measure What Works", desc: "You know you need marketing, but you're not sure what's working. Without tracking and analytics, every marketing dollar is a gamble. We eliminate the guesswork.", icon: BarChart3 },
+                                { title: "Find the email that owns your domain", desc: "Log in to the registrar and check which email the domain is registered to. That email owns it, whoever paid the bill, and the same login controls the records that deliver your email.", icon: Building2 },
+                                { title: "Make sure you own your Google listing", desc: "Open your Business Profile and look at the users. If a former employee or your last web guy is the only owner, get yourself added as primary owner before you change vendors.", icon: Globe },
+                                { title: "Search the way your customers do", desc: "Search your main service plus Tulare on your phone while you're in town. Google ranks map results by relevance, distance and prominence, so a search from Visalia or Fresno shows you a different list.", icon: BarChart3 },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                                     className="bg-white p-8 rounded-2xl shadow-lg shadow-dark/5 border border-gray-light/50 hover:shadow-xl hover:shadow-dark/10 hover:-translate-y-1 hover:border-red-500/20 transition-all duration-300 group">
@@ -246,8 +244,8 @@ export function TulareMarketingAgencyPage() {
                             </div>
                             <div>
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Target size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Paid Advertising Engineered for Tulare's Market</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">We build Google Ads campaigns from the ground up for Tulare, targeting the exact zip codes, keywords, and customer intent that matter to your business. No broad targeting, no wasted spend.</p>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Google Ads for Tulare, once the site is ready</h2>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">Ad spend goes straight to Google, and most local service businesses start somewhere between $1,000 and $2,500 a month. If the site doesn't turn visitors into calls yet, fix that first, because paid clicks land on the same page the free ones do.</p>
                                 <ul className="space-y-3">
                                     {['Tulare County geo-fencing', 'Search, Local Service & Display ads', 'Call tracking with recording', 'Weekly performance optimization'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
@@ -260,8 +258,8 @@ export function TulareMarketingAgencyPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="order-2 lg:order-1">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Search size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Own Google Search Results in Tulare</h2>
-                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">When Tulare residents search for your services, you should be #1. Our SEO strategies are designed for the Central Valley, not generic national playbooks that ignore local dynamics.</p>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Tulare SEO, month to month</h2>
+                                <p className="text-lg text-gray font-medium mb-8 leading-relaxed">Local SEO is $595 a month and Lite is $249 a month, with no contract on either. The work is your Google Business Profile, the listings that point to it and pages that name Tulare and the towns you drive to. The <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO page</Link> lays out the first 90 days.</p>
                                 <ul className="space-y-3">
                                     {['Google Business Profile mastery', 'Tulare-specific keyword targeting', 'Link building from Valley publications', 'Monthly ranking & ROI reports'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 font-bold text-dark"><Check size={18} className="text-green-500" strokeWidth={3} />{item}</li>
@@ -308,17 +306,17 @@ export function TulareMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><Globe size={24} strokeWidth={2.5} /></div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Custom Websites for <span className="text-orange">Tulare Businesses</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">A great website isn't optional anymore; it's the foundation of every successful digital strategy. We build sites that load fast, look incredible, and convert visitors into customers.</p>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">What a Tulare website <span className="text-orange">costs and includes</span></h2>
+                            <p className="text-xl text-gray font-medium leading-relaxed">A template build is $649, paid once, and a custom build starts at $1,995 and takes 3 to 5 weeks. The <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design page</Link> covers which of the two fits your business.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { icon: Zap, title: 'Lightning Fast', desc: 'Every site we build loads in under 2 seconds. Speed matters for rankings and customer experience.' },
-                                { icon: Phone, title: 'Mobile-First', desc: 'The majority of your customers browse on phones. We design for mobile first, then expand to desktop.' },
-                                { icon: Target, title: 'Conversion Focused', desc: 'Every page is structured to guide visitors toward calling you, filling out a form, or making a purchase.' },
-                                { icon: Search, title: 'SEO Foundation', desc: 'Proper structure, schema markup, and optimized content from day one, so your site ranks as soon as it launches.' },
-                                { icon: ShieldCheck, title: 'Secure & Maintained', desc: 'SSL certificates, regular backups, and ongoing security monitoring keep your site protected.' },
-                                { icon: Users, title: 'Easy CMS', desc: 'Make simple updates yourself, or let us handle everything. Either way, your site stays current.' },
+                                { icon: Zap, title: "Fast on a phone", desc: "Every build gets run through pagespeed.web.dev on the mobile tab before launch, and the target is 95 or better." },
+                                { icon: Phone, title: "Your number on every page", desc: "The phone number sits at the top of every page and dials with one tap, because most of your visitors are on a phone." },
+                                { icon: Target, title: "One service per page", desc: "Each service gets its own page, so someone searching for that service lands on a page that answers it." },
+                                { icon: Search, title: "Titles and schema at launch", desc: "Page titles, LocalBusiness schema and your service area are set before launch, so Google reads the site correctly from the first crawl." },
+                                { icon: ShieldCheck, title: "Backups and updates", desc: "The $99 a month care plan covers backups, updates and small edits. It is optional and you can cancel whenever." },
+                                { icon: Users, title: "Edit it yourself, or leave it", desc: "If you want to change your own hours and photos, we build it in WordPress. If the site rarely changes, we hand-code it and it stays faster." },
                             ].map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                                     className="bg-white p-8 rounded-2xl shadow-sm border border-gray-light hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
@@ -337,14 +335,14 @@ export function TulareMarketingAgencyPage() {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><MapPin size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Serving Tulare & the <span className="text-orange">Central Valley</span></h2>
-                            <p className="text-xl text-gray font-medium leading-relaxed">From the World Ag Expo grounds to downtown, we know Tulare. That insight powers smarter campaigns for every business we serve across the Valley.</p>
+                            <p className="text-xl text-gray font-medium leading-relaxed">From the office it is about an hour to Tulare, and we would rather see your yard or your shop than ask you to drive to Fresno. <Link to="/visalia-web-design" className="text-dark font-bold hover:text-orange transition-colors">Visalia</Link> is about 15 minutes away, and one site can name both towns if you work in each.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {areaCities.map((item, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                                     {item.highlight ? (
                                         <div className="p-6 rounded-2xl border text-center bg-orange text-white border-orange shadow-lg shadow-orange/20">
-                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">You Are Here</div>
+                                            <Building2 size={24} className="mx-auto mb-3 text-white" strokeWidth={2.5} /><div className="text-lg font-black mb-1 text-white">{item.city}</div><div className="text-sm font-medium text-white/80">This page</div>
                                         </div>
                                     ) : (
                                         <Link to={item.path} className="block p-6 rounded-2xl border text-center bg-white border-gray-light hover:border-orange/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
@@ -362,8 +360,8 @@ export function TulareMarketingAgencyPage() {
                     <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-dark mx-auto mb-8 shadow-xl shadow-orange/20"><ShieldCheck size={40} strokeWidth={2} /></div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Results You Can Measure, Guaranteed</h2>
-                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">We put our money where our mouth is. No contracts, no gimmicks. If your Tulare business isn't growing with us, we keep working until it does: at no additional cost.</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">What you own when we're done</h2>
+                        <p className="text-xl text-white/80 font-medium mb-10 leading-relaxed">You own the domain, the hosting account and the code, and we hand all of it over on request at no charge. SEO runs month to month, so you can stop whenever it stops paying for itself.</p>
                         <div className="inline-block px-6 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-bold uppercase tracking-wider">Performance Guaranteed</div>
                     </div>
                 </section>
@@ -373,14 +371,14 @@ export function TulareMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Tulare Marketing FAQ</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Tulare web design questions</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">
                                     <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-8 py-6 flex items-center justify-between text-left font-bold text-lg text-dark hover:bg-gray-50 transition-colors">
-                                        {faq.question}{openFaq === i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
+                                        {faq.question}{openFaq !== i ? <ChevronUp size={20} className="text-orange shrink-0 ml-4" /> : <ChevronDown size={20} className="text-gray/40 shrink-0 ml-4" />}
                                     </button>
-                                    <motion.div initial={false} animate={{ height: openFaq === i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
+                                    <motion.div initial={false} animate={{ height: openFaq !== i ? 'auto' : 0 }} className="overflow-hidden"><div className="px-8 pb-8 text-gray font-medium leading-relaxed">{faq.answer}</div></motion.div>
                                 </div>
                             ))}
                         </div>
