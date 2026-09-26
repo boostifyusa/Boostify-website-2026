@@ -439,7 +439,7 @@ const faqs = [
     },
     {
         q: 'Are you a web designer or a web developer?',
-        a: 'Both, and people searching for a Fresno web developer usually want the same thing as people searching for a designer: a site that loads fast and makes the phone ring. We hand-code the sites that rarely change and build in WordPress when you want to edit it yourself. We did the WordPress build for Fresno State’s news site and trained their staff on it.',
+        a: 'Both. We’re a Fresno web design company that also does website development, and people looking for a web developer in Fresno usually want the same thing as people looking for a designer: a site that loads fast and makes the phone ring. We hand-code the sites that rarely change and build in WordPress when you want to edit it yourself. We did the WordPress build for Fresno State’s news site and trained their staff on it.',
     },
     {
         q: 'My busy season starts in six weeks. Can you be live by then?',
@@ -705,8 +705,8 @@ export function HomePageV2() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-xl md:text-2xl text-gray font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                             >
-                                The website, the search rankings, the Google listing, and the follow-up that
-                                catches the calls you would otherwise miss. All of it in house, and the
+                                Web design in Fresno, CA, the rankings, the Google listing, and follow-up
+                                that catches calls you’d otherwise miss. All of it in house, and the
                                 prices are published below.
                             </motion.p>
 
@@ -1179,7 +1179,7 @@ export function HomePageV2() {
                                     Where we work.
                                 </h2>
                                 <p className="text-lg text-gray font-medium leading-relaxed mb-6">
-                                    Our office is at 6362 N Figarden Dr. #118, off Figarden between Herndon and Bullard. Most of our clients are within twenty minutes of us. We would still rather meet at your shop, because the best stuff to put on your website is usually sitting in your yard.
+                                    Our web design company is at 6362 N Figarden Dr. #118, near Herndon and Bullard. Most of our clients are within twenty minutes of us. We would still rather meet at your shop, because the best stuff to put on your website is usually sitting in your yard.
                                 </p>
                                 <p className="text-lg text-gray font-medium leading-relaxed mb-8">
                                     We take walk-ins and on-site meetings across{' '}

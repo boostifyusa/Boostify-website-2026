@@ -74,7 +74,7 @@ export function WorkShowcase() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray font-medium max-w-2xl">
-              Longer answers on Fresno web design, local SEO and Google Ads than we can fit on this page.
+              How to compare Fresno web design companies, plus more on local SEO and Google Ads.
             </motion.p>
           </div>
 
