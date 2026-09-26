@@ -140,13 +140,13 @@ const ssrMeta = new Map([
         canonical: `${SITE_URL}/madera-marketing-agency`
     }],
     ['/hanford-marketing-agency', {
-        title: 'Hanford Marketing Agency: Proven Digital Advertising',
-        description: 'Boostify USA is a trusted Hanford marketing agency offering custom web design, local SEO, and Google Ads management for Kings County businesses.',
+        title: 'Hanford SEO Company | Kings County Web Design | Boostify USA',
+        description: "Hanford SEO and web design for Kings County businesses from Boostify USA's Fresno office. Local SEO from $595 a month, websites from $649, no contracts.",
         canonical: `${SITE_URL}/hanford-marketing-agency`
     }],
     ['/merced-marketing-agency', {
-        title: 'Merced Marketing Agency: Expert Web Design & SEO',
-        description: "Boostify USA is a premier Merced marketing agency. Custom websites, local SEO, and Google Ads built for Merced County's booming market.",
+        title: 'Merced SEO Company & Web Design | Boostify USA',
+        description: "Merced SEO and web design from Boostify USA's Fresno office, an hour from Merced. Local SEO from $595 a month, websites from $649, no contracts.",
         canonical: `${SITE_URL}/merced-marketing-agency`
     }],
     ['/tulare-marketing-agency', {

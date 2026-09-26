@@ -26,7 +26,7 @@ const faqs = [
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/merced-marketing-agency",
-    "description": "Premier Merced marketing agency offering custom web design, local SEO, and Google Ads. Helping Merced County businesses thrive in a growing market.",
+    "description": "Merced SEO and web design from a Fresno office an hour away. Local SEO, custom websites, and Google Ads for Merced County businesses.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -71,7 +71,7 @@ export function MercedMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Merced Marketing Agency | Custom Web Design & Local SEO | Boostify USA" description="Boostify USA is a premier Merced marketing agency. Custom websites, local SEO, and Google Ads built for Merced County's booming market." canonicalUrl="/merced-marketing-agency" />
+            <SeoHead title="Merced SEO Company & Web Design | Boostify USA" description="Merced SEO and web design from Boostify USA's Fresno office, an hour from Merced. Local SEO from $595 a month, websites from $649, no contracts." canonicalUrl="/merced-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -88,14 +88,14 @@ export function MercedMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-[50px] relative z-10">
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
-                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Merced Marketing Agency
+                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Merced SEO & Web Design
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Merced Is Booming. <span className="text-orange">Get Ahead Now.</span>
+                                Merced SEO &amp; Web Design. <span className="text-orange">Get Ahead Now.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                With UC Merced's expansion and a wave of new businesses, the opportunity
-                                is now. Boostify USA delivers <Link to="/" className="text-orange font-bold hover:underline">web design from Fresno</Link>, local SEO, and
+                                Merced SEO and web design from our Fresno office, an hour away. With
+                                UC Merced's expansion bringing a wave of new businesses, Boostify USA delivers <Link to="/" className="text-orange font-bold hover:underline">web design from Fresno</Link>, local SEO, and
                                 performance-driven ad campaigns for Merced County's fastest-growing
                                 businesses.
                             </p>
@@ -201,7 +201,7 @@ export function MercedMarketingAgencyPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div>
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Search size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Local SEO Built for Merced's Growing Market</h2>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Merced SEO Built for a Growing Market</h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">
                                     As Merced grows, so does search volume. We position your business at
                                     the top of Google for the keywords that matter, such as "plumber Merced"
@@ -265,7 +265,7 @@ export function MercedMarketingAgencyPage() {
                             </div>
                             <div className="order-1 lg:order-2">
                                 <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6"><Globe size={24} strokeWidth={2.5} /></div>
-                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Websites That Capture Merced's Growth</h2>
+                                <h2 className="text-4xl font-black text-dark mb-6 tracking-tight">Merced Web Design That Keeps Up With the Growth</h2>
                                 <p className="text-lg text-gray font-medium mb-8 leading-relaxed">A custom website is your 24/7 sales machine. We build fast, stunning sites optimized for the Merced market and designed to convert the wave of new residents and customers into loyal buyers.</p>
                                 <ul className="space-y-3">
                                     {['100% custom, hand-coded design', 'Sub-2-second load times', 'Conversion-optimized page architecture', 'Ongoing maintenance & support'].map((item, i) => (
@@ -347,7 +347,7 @@ export function MercedMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Merced Marketing Questions</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Merced SEO &amp; Web Design Questions</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">

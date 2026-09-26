@@ -26,7 +26,7 @@ const faqs = [
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/hanford-marketing-agency",
-    "description": "Hanford's reliable marketing agency for custom web design, local SEO, and digital advertising. Serving Kings County businesses with data-driven strategies.",
+    "description": "Hanford SEO and web design for Kings County businesses from a Fresno office. Local SEO, custom websites, and Google Ads.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -71,7 +71,7 @@ export function HanfordMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Hanford Marketing Agency | Digital Advertising That Works | Boostify USA" description="Boostify USA is a trusted Hanford marketing agency offering custom web design, local SEO, and Google Ads management for Kings County businesses." canonicalUrl="/hanford-marketing-agency" />
+            <SeoHead title="Hanford SEO Company | Kings County Web Design | Boostify USA" description="Hanford SEO and web design for Kings County businesses from Boostify USA's Fresno office. Local SEO from $595 a month, websites from $649, no contracts." canonicalUrl="/hanford-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -88,14 +88,14 @@ export function HanfordMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-[50px] relative z-10">
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
-                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Hanford Marketing Agency
+                                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" /> Hanford SEO & Web Design
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Hanford Marketing Agency. <span className="text-orange">Kings County's Growth Partner.</span>
+                                Hanford SEO Company. <span className="text-orange">Kings County's Growth Partner.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Kings County businesses need marketing partners who understand
-                                tight-knit communities. Boostify USA brings big-agency expertise
+                                Hanford SEO and web design for Kings County businesses, run from
+                                our Fresno office. Boostify USA brings big-agency expertise
                                 with small-town accountability: <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, local SEO, and
                                 ad campaigns built for Hanford.
                             </p>
@@ -200,7 +200,7 @@ export function HanfordMarketingAgencyPage() {
                 <section className="py-24 px-6">
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Everything Your Hanford Business Needs to <span className="text-orange">Grow Online</span></h2>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Kings County SEO, Web Design &amp; <span className="text-orange">Google Ads</span></h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">From your first Google listing to a full-stack digital strategy, we handle it all so you can focus on running your business.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -268,7 +268,7 @@ export function HanfordMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Hanford Marketing FAQ</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Hanford SEO FAQ</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">

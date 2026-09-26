@@ -78,7 +78,7 @@ const cityData = [
     {
         path: '/hanford-marketing-agency',
         url: 'https://boostifyusa.com/hanford-marketing-agency',
-        description: "Hanford's reliable marketing agency for custom web design, local SEO, and digital advertising. Serving Kings County businesses with data-driven strategies.",
+        description: "Hanford SEO and web design for Kings County businesses from a Fresno office. Local SEO, custom websites, and Google Ads.",
         areaServed: ['Hanford', 'Lemoore', 'Visalia', 'Fresno'],
         faqs: [
             { question: 'Do you work with businesses in Kings County?', answer: 'Yes — Hanford is one of our priority markets. We also serve Lemoore, Avenal, Corcoran, and surrounding Kings County communities. Our strategies are tailored to the unique dynamics of this area.' },
@@ -91,7 +91,7 @@ const cityData = [
     {
         path: '/merced-marketing-agency',
         url: 'https://boostifyusa.com/merced-marketing-agency',
-        description: "Premier Merced marketing agency offering custom web design, local SEO, and Google Ads. Helping Merced County businesses thrive in a growing market.",
+        description: "Merced SEO and web design from a Fresno office an hour away. Local SEO, custom websites, and Google Ads for Merced County businesses.",
         areaServed: ['Merced', 'Atwater', 'Fresno', 'Madera'],
         faqs: [
             { question: 'Why should a Merced business invest in digital marketing?', answer: "Merced is booming — UC Merced's growth is bringing thousands of new residents and businesses. The companies that establish a strong digital presence now will dominate this market for years. Early movers win." },
