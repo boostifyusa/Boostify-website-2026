@@ -64,7 +64,7 @@ const team = [
   {
     role: 'Web Development',
     icon: Code,
-    desc: <><Link to="/" className="text-orange font-bold hover:underline">Custom-coded sites</Link> built for speed and conversion.</>
+    desc: <><Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, custom-coded for speed and conversion.</>
   },
   {
     role: 'Design & UX',

@@ -759,7 +759,7 @@ export function WebDesignModestoPage() {
 
                         <p className="text-gray font-medium leading-relaxed max-w-[64ch] mt-8">
                             There are no contracts on any of it. You own the domain, the hosting account and the code, and we transfer all three on request at no charge. The{' '}
-                            <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design</Link>{' '}
+                            <Link to="/" className="text-dark font-bold hover:text-orange transition-colors">Fresno web design</Link>{' '}
                             page covers which of the two builds fits your business. Hosting and the domain run roughly $20 to $30 a month, and you can pay those directly.
                         </p>
                     </div>

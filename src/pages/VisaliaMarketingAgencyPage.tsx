@@ -363,7 +363,8 @@ export function VisaliaMarketingAgencyPage() {
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><Globe size={24} strokeWidth={2.5} /></div>
                             <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">What's Actually <span className="text-orange">in the Build?</span></h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">
-                                A custom build starts at $1,995 and takes 3 to 5 weeks. The longer
+                                A custom build starts at $1,995 and takes 3 to 5 weeks, same as our{' '}
+                                <Link to="/" className="text-dark font-bold hover:text-orange transition-colors">Fresno web design</Link>. The longer
                                 guide to which kind of site you need, and whether WordPress is right
                                 for it, is on our{' '}
                                 <Link to="/web-design" className="text-dark font-bold hover:text-orange transition-colors">web design page</Link>.

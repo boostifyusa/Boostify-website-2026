@@ -22,7 +22,7 @@ const projects = [
     title: 'Martin Energy Inc',
     category: 'WEB DESIGN & SEO',
     stat: '3× ORGANIC TRAFFIC',
-    description: <><Link to="/" className="text-orange font-bold hover:underline">Full website redesign</Link> for a Fresno-based solar energy company. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.</>,
+    description: <><Link to="/" className="text-orange font-bold hover:underline">Website design in Fresno</Link> for a local solar energy company, a full redesign. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.</>,
     image: '/Slide-4_3-5.webp',
     link: 'https://martinenergyconsultingservices.com'
   },

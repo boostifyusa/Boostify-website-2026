@@ -190,7 +190,7 @@ export function FresnoSEOPage() {
                         <p className="text-xl text-gray font-medium leading-relaxed mb-6">
                             Local SEO is $595 a month. Local SEO Lite is $249 a month and
                             bundles hosting, maintenance, and baseline optimization.{' '}
-                            <Link to="/" className="text-orange font-bold hover:underline">Custom websites</Link> start at $1,995, template builds at $649.
+                            <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link> starts at $1,995 for a custom build and $649 for a template.
                         </p>
                         <p className="text-xl text-gray font-medium leading-relaxed mb-10">
                             Everything is month to month. If we don't deliver, you don't pay.

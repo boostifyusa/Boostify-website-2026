@@ -664,7 +664,7 @@ export function ClovisMarketingAgencyPage() {
                             What does a website cost in Clovis?
                         </h2>
                         <p className="text-lg text-gray font-medium leading-relaxed max-w-[64ch] mb-14">
-                            The same as it costs in Fresno. The prices are printed here because a
+                            The same as our <Link to="/" className="text-dark font-bold hover:text-orange transition-colors">Fresno web design</Link>. The prices are printed here because a
                             quote that only shows up after a discovery call can be priced off your
                             reaction. If most of your jobs come from referrals, the $649 template
                             does the job.
