@@ -90,7 +90,7 @@ export function AIPage() {
                                 Automate the Busywork. Focus on <span className="text-orange">Growth.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                You're drowning in admin tasks. Our AI agents answer calls, book appointments, and chase leads 24/7 so you don't have to.
+                                You're drowning in admin tasks. Our AI agents answer calls, book appointments, and chase leads 24/7 so you don't have to. The <Link to="/blog/ai-automation-local-business" className="text-dark font-bold hover:text-orange transition-colors">AI automation guide</Link> covers what is worth automating first.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -375,7 +375,7 @@ export function AIPage() {
                                 Turn Reviews into <span className="text-orange">Revenue</span>
                             </h2>
                             <p className="text-xl text-gray font-medium mb-8 leading-relaxed">
-                                Automatically request reviews from happy customers and let our AI draft the perfect response to every single one. Boost your Google ranking without lifting a finger.
+                                Automatically request reviews from happy customers and let our AI draft the perfect response to every single one. Boost your Google ranking without lifting a finger. The <Link to="/blog/get-more-google-reviews" className="text-dark font-bold hover:text-orange transition-colors">Google reviews guide</Link> covers how to ask.
                             </p>
                             <ul className="space-y-4 mb-10">
                                 {[

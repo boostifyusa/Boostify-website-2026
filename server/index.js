@@ -223,6 +223,7 @@ const seoRedirects = {
     '/how-quality-web-design-transforms-businesses-in-fresno': '/',
     '/development/revolutionizing-website-design-key-strategies-for-modern-businesses': '/web-design',
     '/revolutionizing-website-design-key-strategies-for-modern-businesses': '/web-design',
+    '/blog/dental-redesign': '/blog/get-more-google-reviews',
     '/ppc/mastering-paid-search-a-comprehensive-guide-for-businesses': '/blog/google-ads-vs-lsa',
     '/mastering-paid-search-a-comprehensive-guide-for-businesses': '/blog/google-ads-vs-lsa',
     '/seo/unraveling-the-mysteries-of-search-engines-how-they-work-and-why-they-matter-for-your-business': '/local-seo',

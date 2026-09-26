@@ -59,7 +59,7 @@ const relatedPosts = [
     image:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     date: 'December 5, 2025',
-    slug: 'dental-redesign'
+    slug: 'get-more-google-reviews'
   }];
 
 export function BlogPostPage() {

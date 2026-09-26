@@ -737,7 +737,7 @@ export const blogPosts: Record<string, any> = {
           whether you respond.
         </p>
         <p>
-          <strong class="text-dark">The fix:</strong> Create a <a href="/blog/dental-redesign" class="text-orange hover:underline font-bold">simple system
+          <strong class="text-dark">The fix:</strong> Create a <a href="/blog/get-more-google-reviews" class="text-orange hover:underline font-bold">simple system
           to ask happy customers for reviews</a>. Send a follow-up text or email
           with a direct link. And always respond, to positive and negative
           reviews alike.
@@ -771,10 +771,11 @@ export const blogPosts: Record<string, any> = {
     `
   },
   'website-leads': {
-    title: "Why Your Website Isn't Getting Leads (And How to Fix It)",
+    title: "Why Is My Website Not Getting Leads? What to Check First",
     excerpt:
-      "Traffic means nothing if it doesn't convert. If your phone isn't ringing, your website might be guilty of these conversion killers.",
+      "If your website gets visitors but no calls or form leads, check these in order: the form, the phone button, the searches you show up for, speed and trust.",
     date: 'January 8, 2026',
+    dateModified: 'September 25, 2026',
     readTime: '5 min read',
     author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
@@ -784,6 +785,7 @@ export const blogPosts: Record<string, any> = {
 
     tags: ['Conversion Rate', 'UX Design', 'Small Business'],
     content: `
+        <p><strong>Short answer:</strong> if your website is not getting leads, the problem is usually one of five things, in this order. The form or phone number is broken or hard to find, the visitors are the wrong people, the page is slow on a phone, nothing on it proves you are real, or leads come in and nobody answers fast enough. Test your own form tonight before you pay anyone to redesign anything.</p>
         <p>
           You spent thousands on a new website. It looks great. You're getting
           traffic. But your phone isn't ringing, and your inbox is empty. What
@@ -832,7 +834,7 @@ export const blogPosts: Record<string, any> = {
           <strong>What you need:</strong>
         </p>
         <ul class="list-disc pl-6 space-y-2">
-          <li>Real customer reviews (embedded from Google/Yelp)</li>
+          <li>Real customer reviews (embedded from Google/Yelp). If you only have a few, here is <a href="/blog/get-more-google-reviews" class="text-orange hover:underline font-bold">how to get more Google reviews</a> without making it awkward.</li>
           <li>Before & After photos of your work</li>
           <li>Badges of accreditations (BBB, Chamber of Commerce)</li>
           <li>License and insurance information</li>
@@ -842,7 +844,7 @@ export const blogPosts: Record<string, any> = {
           3. It's Not Mobile-Friendly
         </h2>
         <p>
-          Over 60% of local searches happen on mobile devices. If your site
+          Most local searches happen on a phone. If your site
           requires pinching and zooming, or if buttons are too small to tap,
           users will leave instantly.
         </p>
@@ -873,19 +875,34 @@ export const blogPosts: Record<string, any> = {
           rather, lack of speed kills conversions.
         </p>
         <p>
-          Amazon found that every 100ms of latency cost them 1% in sales. For a
-          local service business, a 3-second delay can cost you 50% of your
-          traffic. Optimize your images, use a fast host, and keep your code
+          Amazon found that every 100ms of latency cost them 1% in sales. Google's own research found that more than half of mobile visitors leave a page that takes longer than 3 seconds to load. Optimize your images, use a fast host, and keep your code
           clean.
         </p>
+    
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
+          Why am I not getting leads from my website when it gets traffic?
+        </h2>
+        <p>Start with the boring checks, because they are the most common cause. Fill out your own contact form from your phone and see whether the email shows up, and check the spam folder too. Some form submissions will always be spam, and when a mail provider sees enough of it, it can start filing your real leads there as well. Then call the number on the site from a phone that isn't yours and listen to what a customer hears.</p>
+        <p>If both work, look at where the traffic comes from. Google Search Console lists the searches your site shows up for. If most of them are people researching instead of hiring, the visits are real and the buyers aren't in them.</p>
+
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
+          I don't get many leads through my website. Is it the site or the traffic?
+        </h2>
+        <p>Compare two numbers for the same month. The first is clicks from Google in Search Console, and the second is calls plus form submissions. If you get a few dozen visitors a month, the site can't produce much no matter how it looks, and the fix is getting found for the searches that pay, which is what <a href="/fresno-seo" class="text-orange hover:underline font-bold">local SEO</a> is for. If you get hundreds of visitors and a handful of leads, the page is the problem, and the five fixes above are where to start.</p>
+
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
+          Why is my website not converting leads into customers?
+        </h2>
+        <p>If the leads come in but don't turn into jobs, look at what happens after the form. A lead that waits a day for a callback has usually called someone else by then. Check how long it takes someone on your team to answer a form, and whether missed calls get a text back. If the website is the part that needs work, our <a href="/" class="text-orange hover:underline font-bold">Fresno web design</a> page lists what a rebuild costs.</p>
     `
 
   },
   'google-ads-vs-lsa': {
-    title: 'Google Ads vs. Local Service Ads: Which Is Right for You?',
+    title: 'Google LSA vs Google Ads: The Difference, and Which to Run First',
     excerpt:
-      "Confused by Google's advertising options? We break down the differences between traditional PPC and the new Local Service Ads (Google Guaranteed).",
+      "Google Local Service Ads charge per lead and carry the Google badge. Google Ads charge per click and let you pick the keywords. Here is the difference and which a local service business should run first.",
     date: 'December 20, 2025',
+    dateModified: 'September 25, 2026',
     readTime: '7 min read',
     author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",
@@ -895,6 +912,7 @@ export const blogPosts: Record<string, any> = {
       'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     tags: ['PPC', 'Google Ads', 'Marketing Budget'],
     content: `
+        <p><strong>Short answer:</strong> Google Local Service Ads (LSAs) charge you per lead and show above everything else with a Google Guaranteed or Google Screened badge. Google Ads charge you per click and let you choose the exact keywords. If your trade qualifies for LSAs, start there, then add Google Ads for the services LSAs don't cover.</p>
         <p>
           When you search for a plumber or electrician on Google, you'll often
           see two different types of ads at the very top of the page.
@@ -991,14 +1009,37 @@ export const blogPosts: Record<string, any> = {
           approach. Run LSAs to capture high-intent leads at the top, and use
           Google Ads to capture specific long-tail searches with the help of an <a href="/fresno-seo" class="text-orange hover:underline font-bold">SEO company in Fresno</a> that runs the ads too.
         </p>
+    
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
+          What is the difference between Local Service Ads and Google Ads?
+        </h2>
+        <div class="overflow-x-auto my-6">
+          <table class="w-full text-left border-collapse">
+            <thead><tr class="border-b-2 border-dark"><th class="p-3"></th><th class="p-3 font-black">Local Service Ads</th><th class="p-3 font-black">Google Ads</th></tr></thead>
+            <tbody>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold">You pay for</td><td class="p-3">A lead (a call or message)</td><td class="p-3">A click, whether or not they call</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold">Where it shows</td><td class="p-3">The very top, with a Google badge</td><td class="p-3">Top and bottom, labeled Sponsored</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold">Who can run it</td><td class="p-3">Only eligible trades, after license and background checks</td><td class="p-3">Any business</td></tr>
+              <tr class="border-b border-gray-light"><td class="p-3 font-bold">Keyword control</td><td class="p-3">Almost none, Google matches by job type</td><td class="p-3">Full control over keywords and ad text</td></tr>
+              <tr><td class="p-3 font-bold">Where it sends people</td><td class="p-3">Your LSA profile, then a call</td><td class="p-3">A page on your website</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>That last row matters more than it looks. Google Ads send people to your website, so a slow page or a hidden phone number burns the budget. LSAs skip the website and put the call straight through, which is why they are the easier place to start.</p>
+
+        <h2 class="text-3xl font-black text-dark tracking-tight !mt-12 !mb-4">
+          Google LSA vs Google Ads for a Fresno service business
+        </h2>
+        <p>Ad spend goes to Google either way, and most local service businesses start somewhere between $1,000 and $2,500 a month. If you run Google Ads, check the search terms report every week, because it shows what people actually typed before they clicked, and the junk ones go in as negative keywords. If the page they land on doesn't turn visitors into calls, fix that before raising the budget. Our <a href="/local-marketing" class="text-orange hover:underline font-bold">local marketing</a> page covers how we set both up.</p>
     `
 
   },
-  'dental-redesign': {
+  'get-more-google-reviews': {
     title: 'How to Get More Google Reviews (Without Being Annoying)',
     excerpt:
       "Google reviews are the #1 trust signal for local businesses. Here's a simple, repeatable system to get more 5-star reviews without pestering your customers.",
     date: 'December 5, 2025',
+    dateModified: 'September 25, 2026',
     readTime: '6 min read',
     author: 'Victor Joaquin',
     authorImage: "/1733568683912.jpg",

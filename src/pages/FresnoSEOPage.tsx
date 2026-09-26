@@ -77,7 +77,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const services = [
     { icon: MapPin, title: 'Google Business Profile', desc: "Categories, services, photos, posts, and review replies, tuned so Google connects your profile to the searches that pay. The map pack is won or lost here." },
     { icon: Search, title: 'Pages that match real searches', desc: "We check what Fresno types into Google (volumes, not hunches) and build a page for each service and city worth targeting. No filler pages for towns nobody searches." },
-    { icon: Star, title: 'Review systems', desc: "A simple ask-and-remind routine your staff will use. Steady reviews are one of the strongest map pack signals there is." },
+    { icon: Star, title: 'Review systems', desc: <>A simple ask-and-remind routine your staff will use, the same one in our <Link to="/blog/get-more-google-reviews" className="text-dark font-bold hover:text-orange transition-colors">guide to getting more Google reviews</Link>. Steady reviews are one of the strongest map pack signals there is.</> },
     { icon: Globe, title: 'Citation and listing cleanup', desc: "Same name, address, and phone everywhere your business appears, from Yelp to the Chamber. Old listings under old names get fixed or removed." },
     { icon: Zap, title: 'Technical SEO', desc: "Titles, schema, speed, and indexing. Your pages return real 200s, load in about a second, and tell Google exactly what they are." },
     { icon: BarChart3, title: 'Monthly reporting', desc: "A short report with rankings, calls, and form fills, plus what we did and what's next. If a month was slow, the report says so." },
