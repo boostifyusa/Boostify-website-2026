@@ -1,0 +1,56 @@
+/* Portfolio: slides, showreel, grid. Scoped with .wk- prefixes; kept out of index.css on purpose. */
+
+/* ── Browser frame ───────────────────────────────────────────── */
+.wk-frame { container-type: inline-size; }
+.wk-screen { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0d0d0d; }
+.wk-screen img { display: block; width: 100%; height: auto; }
+
+/* A full-page capture inside a 16:10 screen. Scrolls to the bottom while .is-live is set.
+   62.5cqw is the screen height (16:10 of the frame width), so the travel is exact. */
+.wk-scroll { position: absolute; inset: 0 0 auto 0; transform: translateY(0); transition: transform var(--wk-out, 900ms) cubic-bezier(.45, 0, .2, 1), opacity 300ms ease; will-change: transform; }
+.wk-scroll.is-live { transform: translateY(var(--wk-to, calc(-100% + 62.5cqw))); transition: transform var(--wk-dur, 12s) cubic-bezier(.35, 0, .25, 1) var(--wk-delay, 600ms), opacity 300ms ease; }
+
+/* ── Tilted wall of work (showreel backdrop) ─────────────────── */
+.wk-wall { perspective: 1400px; }
+.wk-wall-plane { transform: rotateX(28deg) rotateZ(-10deg) scale(1.25); transform-origin: 50% 40%; }
+.wk-row { display: flex; gap: 18px; width: max-content; animation: wk-marquee var(--wk-speed, 80s) linear infinite; }
+.wk-row.is-reverse { animation-direction: reverse; }
+@keyframes wk-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── Showreel player ─────────────────────────────────────────── */
+.wk-wipe { position: absolute; inset: 0; background: #E8590C; transform: translateX(-101%); z-index: 30; pointer-events: none; }
+.wk-wipe.is-on { animation: wk-wipe 900ms cubic-bezier(.7, 0, .2, 1) forwards; }
+@keyframes wk-wipe { 0% { transform: translateX(-101%); } 45%, 55% { transform: translateX(0); } 100% { transform: translateX(101%); } }
+
+.wk-progress > span { transform-origin: left; transform: scaleX(0); }
+.wk-progress.is-done > span { transform: scaleX(1); }
+.wk-progress.is-active > span { animation: wk-fill var(--wk-slide, 7000ms) linear forwards; }
+.wk-progress.is-paused > span { animation-play-state: paused; }
+@keyframes wk-fill { to { transform: scaleX(1); } }
+
+/* Grain for the dark stages so flat #111 doesn't look like a void. */
+.wk-grain { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+@media (prefers-reduced-motion: reduce) {
+  .wk-row { animation: none; }
+  .wk-scroll.is-live { transform: none; transition: none; }
+  .wk-wipe.is-on { animation: none; }
+  .wk-progress.is-active > span { animation: none; transform: scaleX(1); }
+}
+
+/* ── Phone that scrolls the real mobile page (/web-design) ───── */
+/* The phone: font sizes follow the phone's width. The page area is 390x724 (status bar and Safari's
+   address bar take the rest of the 844), so 185.64cqw is its height in page widths. */
+.wk-phone { container-type: inline-size; }
+.wk-phone-status { font-size: 3.7cqw; }
+.wk-phone-bar { font-size: 3.3cqw; }
+.wk-pscreen { container-type: inline-size; }
+.wk-pscroll { position: absolute; inset: 0 0 auto 0; width: 100%; height: auto; will-change: transform; }
+.wk-pscroll.is-live { animation: wk-pscroll var(--wk-dur, 18s) cubic-bezier(.45, 0, .35, 1) infinite; }
+.wk-pscroll.is-paused { animation-play-state: paused; }
+@keyframes wk-pscroll {
+  0%, 9% { transform: translateY(0); }
+  86%, 93% { transform: translateY(calc(-100% + 185.64cqw)); }
+  100% { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) { .wk-pscroll.is-live { animation: none; } }

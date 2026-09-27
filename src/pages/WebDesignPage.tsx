@@ -7,6 +7,7 @@ import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
 import { TrustBadges } from '../components/TrustBadges';
 import { TestimonialsSection } from '../components/TestimonialsSection';
+import { BuiltOn } from '../components/work/BuiltOn';
 import {
   Check,
   X,
@@ -970,6 +971,10 @@ export function WebDesignPage() {
             </p>
           </div>
         </section>
+
+        {/* ─── BUILT ON ───
+            The platform table, proven: each answer with the client sites built on it. */}
+        <BuiltOn />
 
         {/* ─── OUTCOMES ───
             Comparison with the winning column as one continuous elevated panel.

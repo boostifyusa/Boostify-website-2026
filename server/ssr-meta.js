@@ -67,8 +67,8 @@ const ssrMeta = new Map([
         canonical: `${SITE_URL}/contact`
     }],
     ['/work', {
-        title: 'Web Design Portfolio: Real Results & Case Studies',
-        description: 'Explore our portfolio of custom websites, SEO success stories, and digital marketing campaigns for Fresno businesses.',
+        title: 'Web Design Portfolio | Client Websites in Fresno & the Valley | Boostify USA',
+        description: 'Websites we have designed and built for businesses in Fresno and the Central Valley. See each site on a desktop and a phone, and what we did for it.',
         canonical: `${SITE_URL}/work`
     }],
 

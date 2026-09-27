@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { ProcessSection } from '../components/ProcessSection';
 import { StatsSection } from '../components/StatsSection';
 import { WorkShowcase } from '../components/WorkShowcase';
+import { WorkSlides } from '../components/work/WorkSlides';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { CTASection } from '../components/CTASection';
 import { TrustBadges } from '../components/TrustBadges';
@@ -1163,6 +1164,9 @@ export function HomePageV2() {
                         </div>
                     </div>
                 </section>
+
+                {/* ─── SELECTED WORK: live client sites, scrolling in a browser frame ─── */}
+                <WorkSlides />
 
                 {/* ─── PROCESS (reused) ─── */}
                 <ProcessSection />

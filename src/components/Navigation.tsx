@@ -55,7 +55,7 @@ const serviceLinks = [
 
 const navLinks = [
   {
-    name: 'Work',
+    name: 'Our Work',
     href: '/work'
   },
   {
@@ -263,7 +263,7 @@ export function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className="text-3xl font-bold text-dark hover:text-orange transition-colors tracking-tight">
 
-                  Work
+                  Our Work
                 </Link>
 
                 {/* Mobile Services Accordion */}

@@ -1,0 +1,997 @@
+{
+ "blc-custom-homes": {
+  "hero": "/work/blc-custom-homes/hero.webp?v=83eeb5de",
+  "heroSm": "/work/blc-custom-homes/hero-sm.webp?v=705aaf90",
+  "full": {
+   "src": "/work/blc-custom-homes/full.webp?v=786fcef6",
+   "w": 900,
+   "h": 6400
+  },
+  "mobile": "/work/blc-custom-homes/mobile.webp?v=1f21d9cf",
+  "inner": [
+   {
+    "src": "/work/blc-custom-homes/inner-1.webp?v=e937b2f6",
+    "full": {
+     "src": "/work/blc-custom-homes/inner-1-full.webp?v=6b1c14fc",
+     "w": 900,
+     "h": 2353
+    },
+    "path": "/gallery",
+    "title": "Gallery"
+   },
+   {
+    "src": "/work/blc-custom-homes/inner-2.webp?v=b17f312e",
+    "full": {
+     "src": "/work/blc-custom-homes/inner-2-full.webp?v=fa89b133",
+     "w": 900,
+     "h": 1661
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/blc-custom-homes/inner-3.webp?v=1af322ab",
+    "full": {
+     "src": "/work/blc-custom-homes/inner-3-full.webp?v=05278a7a",
+     "w": 900,
+     "h": 3764
+    },
+    "path": "/custom-home-builder-in-fresno-ca",
+    "title": "Custom homes"
+   }
+  ],
+  "mobileTop": "#f8f8fa",
+  "mobileFull": {
+   "src": "/work/blc-custom-homes/mobile-full.webp?v=933ec9cc",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "triple-c-pressure-washing": {
+  "hero": "/work/triple-c-pressure-washing/hero.webp?v=5151fc46",
+  "heroSm": "/work/triple-c-pressure-washing/hero-sm.webp?v=3efb1d01",
+  "full": {
+   "src": "/work/triple-c-pressure-washing/full.webp?v=bee39d0d",
+   "w": 900,
+   "h": 5333
+  },
+  "mobile": "/work/triple-c-pressure-washing/mobile.webp?v=0ff3fb6f",
+  "inner": [
+   {
+    "src": "/work/triple-c-pressure-washing/inner-1.webp?v=4ca8da49",
+    "full": {
+     "src": "/work/triple-c-pressure-washing/inner-1-full.webp?v=fea4a7a1",
+     "w": 900,
+     "h": 2399
+    },
+    "path": "/services",
+    "title": "Services"
+   },
+   {
+    "src": "/work/triple-c-pressure-washing/inner-2.webp?v=e6c52981",
+    "full": {
+     "src": "/work/triple-c-pressure-washing/inner-2-full.webp?v=e5225e53",
+     "w": 900,
+     "h": 2923
+    },
+    "path": "/gallery",
+    "title": "Gallery"
+   },
+   {
+    "src": "/work/triple-c-pressure-washing/inner-3.webp?v=3ee15e22",
+    "full": {
+     "src": "/work/triple-c-pressure-washing/inner-3-full.webp?v=8bc24807",
+     "w": 900,
+     "h": 3279
+    },
+    "path": "/about",
+    "title": "About"
+   }
+  ],
+  "mobileTop": "#363333",
+  "mobileFull": {
+   "src": "/work/triple-c-pressure-washing/mobile-full.webp?v=babefb41",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "copper-crest": {
+  "hero": "/work/copper-crest/hero.webp?v=cbfe5e1d",
+  "heroSm": "/work/copper-crest/hero-sm.webp?v=b274a2d9",
+  "full": {
+   "src": "/work/copper-crest/full.webp?v=02e4bf54",
+   "w": 900,
+   "h": 5355
+  },
+  "mobile": "/work/copper-crest/mobile.webp?v=77374496",
+  "inner": [
+   {
+    "src": "/work/copper-crest/inner-1.webp?v=4b9a925f",
+    "full": {
+     "src": "/work/copper-crest/inner-1-full.webp?v=4e686e0f",
+     "w": 900,
+     "h": 3391
+    },
+    "path": "/our-story",
+    "title": "Our story"
+   },
+   {
+    "src": "/work/copper-crest/inner-2.webp?v=eabfbb35",
+    "full": {
+     "src": "/work/copper-crest/inner-2-full.webp?v=d556ce8a",
+     "w": 900,
+     "h": 2505
+    },
+    "path": "/venues",
+    "title": "Venues"
+   },
+   {
+    "src": "/work/copper-crest/inner-3.webp?v=d98ce3ce",
+    "full": {
+     "src": "/work/copper-crest/inner-3-full.webp?v=c3e8f35d",
+     "w": 900,
+     "h": 2868
+    },
+    "path": "/experience",
+    "title": "The experience"
+   }
+  ],
+  "mobileTop": "#5b6678",
+  "mobileFull": {
+   "src": "/work/copper-crest/mobile-full.webp?v=1a601f19",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "sequoia-air-co": {
+  "hero": "/work/sequoia-air-co/hero.webp?v=5fc50369",
+  "heroSm": "/work/sequoia-air-co/hero-sm.webp?v=34099f1b",
+  "full": {
+   "src": "/work/sequoia-air-co/full.webp?v=29a637ef",
+   "w": 900,
+   "h": 5813
+  },
+  "mobile": "/work/sequoia-air-co/mobile.webp?v=ea88b5f9",
+  "inner": [
+   {
+    "src": "/work/sequoia-air-co/inner-1.webp?v=6eef7521",
+    "full": {
+     "src": "/work/sequoia-air-co/inner-1-full.webp?v=b73cc01e",
+     "w": 900,
+     "h": 2646
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/sequoia-air-co/inner-2.webp?v=ab90925b",
+    "full": {
+     "src": "/work/sequoia-air-co/inner-2-full.webp?v=f0f48332",
+     "w": 900,
+     "h": 2883
+    },
+    "path": "/services/air-conditioning-repair",
+    "title": "AC repair"
+   },
+   {
+    "src": "/work/sequoia-air-co/inner-3.webp?v=b181171b",
+    "full": {
+     "src": "/work/sequoia-air-co/inner-3-full.webp?v=9d29ef83",
+     "w": 900,
+     "h": 2868
+    },
+    "path": "/services/air-conditioning-service",
+    "title": "AC tune-up"
+   }
+  ],
+  "mobileTop": "#ffffff",
+  "mobileFull": {
+   "src": "/work/sequoia-air-co/mobile-full.webp?v=6e3f519e",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "the-hmong-inc": {
+  "hero": "/work/the-hmong-inc/hero.webp?v=38afd6eb",
+  "heroSm": "/work/the-hmong-inc/hero-sm.webp?v=28b104b7",
+  "full": {
+   "src": "/work/the-hmong-inc/full.webp?v=6b1be9ca",
+   "w": 900,
+   "h": 5814
+  },
+  "mobile": "/work/the-hmong-inc/mobile.webp?v=2d7d913d",
+  "inner": [
+   {
+    "src": "/work/the-hmong-inc/inner-1.webp?v=f8b2eb6b",
+    "full": {
+     "src": "/work/the-hmong-inc/inner-1-full.webp?v=27c0561c",
+     "w": 900,
+     "h": 2622
+    },
+    "path": "/events",
+    "title": "Events"
+   },
+   {
+    "src": "/work/the-hmong-inc/inner-2.webp?v=7101d324",
+    "full": {
+     "src": "/work/the-hmong-inc/inner-2-full.webp?v=f4b93ef5",
+     "w": 900,
+     "h": 1843
+    },
+    "path": "/gallery",
+    "title": "Gallery"
+   },
+   {
+    "src": "/work/the-hmong-inc/inner-3.webp?v=2c38aa63",
+    "full": {
+     "src": "/work/the-hmong-inc/inner-3-full.webp?v=76c677e8",
+     "w": 900,
+     "h": 4459
+    },
+    "path": "/about",
+    "title": "About & board"
+   }
+  ],
+  "mobileTop": "#b3123a",
+  "mobileFull": {
+   "src": "/work/the-hmong-inc/mobile-full.webp?v=2c45ae46",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "apex-films": {
+  "hero": "/work/apex-films/hero.webp?v=482e6932",
+  "heroSm": "/work/apex-films/hero-sm.webp?v=7373f6d5",
+  "full": {
+   "src": "/work/apex-films/full.webp?v=5291f025",
+   "w": 900,
+   "h": 3426
+  },
+  "mobile": "/work/apex-films/mobile.webp?v=7647e1ed",
+  "inner": [
+   {
+    "src": "/work/apex-films/inner-1.webp?v=f99f4fa2",
+    "full": {
+     "src": "/work/apex-films/inner-1-full.webp?v=021c4985",
+     "w": 900,
+     "h": 4087
+    },
+    "path": "/services/ceramic-coatings",
+    "title": "Ceramic coatings"
+   },
+   {
+    "src": "/work/apex-films/inner-2.webp?v=a86d5f4f",
+    "full": {
+     "src": "/work/apex-films/inner-2-full.webp?v=bc0a80fc",
+     "w": 900,
+     "h": 2859
+    },
+    "path": "/gallery",
+    "title": "Gallery"
+   },
+   {
+    "src": "/work/apex-films/inner-3.webp?v=56eb38eb",
+    "full": {
+     "src": "/work/apex-films/inner-3-full.webp?v=c29161e2",
+     "w": 900,
+     "h": 2432
+    },
+    "path": "/about-us",
+    "title": "About"
+   }
+  ],
+  "mobileTop": "#121210",
+  "mobileFull": {
+   "src": "/work/apex-films/mobile-full.webp?v=d224dbef",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "green-and-clean": {
+  "hero": "/work/green-and-clean/hero.webp?v=ae749fd7",
+  "heroSm": "/work/green-and-clean/hero-sm.webp?v=2fc014b8",
+  "full": {
+   "src": "/work/green-and-clean/full.webp?v=0dee6cd6",
+   "w": 900,
+   "h": 3568
+  },
+  "mobile": "/work/green-and-clean/mobile.webp?v=7fae127b",
+  "inner": [
+   {
+    "src": "/work/green-and-clean/inner-1.webp?v=42ff5bba",
+    "full": {
+     "src": "/work/green-and-clean/inner-1-full.webp?v=d0209b00",
+     "w": 900,
+     "h": 6400
+    },
+    "path": "/our-recent-work",
+    "title": "Projects"
+   },
+   {
+    "src": "/work/green-and-clean/inner-2.webp?v=6fb05e06",
+    "full": {
+     "src": "/work/green-and-clean/inner-2-full.webp?v=6d5a1ad6",
+     "w": 900,
+     "h": 1648
+    },
+    "path": "/who-we-are",
+    "title": "About"
+   },
+   {
+    "src": "/work/green-and-clean/inner-3.webp?v=57f49652",
+    "full": {
+     "src": "/work/green-and-clean/inner-3-full.webp?v=65795c02",
+     "w": 900,
+     "h": 4489
+    },
+    "path": "/general-construction",
+    "title": "General contracting"
+   }
+  ],
+  "mobileTop": "#cad0cc",
+  "mobileFull": {
+   "src": "/work/green-and-clean/mobile-full.webp?v=a7370f36",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "fresno-management-company": {
+  "hero": "/work/fresno-management-company/hero.webp?v=2364cd47",
+  "heroSm": "/work/fresno-management-company/hero-sm.webp?v=4322ddde",
+  "full": {
+   "src": "/work/fresno-management-company/full.webp?v=8339e69d",
+   "w": 900,
+   "h": 3547
+  },
+  "mobile": "/work/fresno-management-company/mobile.webp?v=c78742a8",
+  "inner": [
+   {
+    "src": "/work/fresno-management-company/inner-1.webp?v=95fd9051",
+    "full": {
+     "src": "/work/fresno-management-company/inner-1-full.webp?v=c82ca13d",
+     "w": 900,
+     "h": 3471
+    },
+    "path": "/services",
+    "title": "Services"
+   },
+   {
+    "src": "/work/fresno-management-company/inner-2.webp?v=68a84e13",
+    "full": {
+     "src": "/work/fresno-management-company/inner-2-full.webp?v=0e5ddf13",
+     "w": 900,
+     "h": 3105
+    },
+    "path": "/residential-management",
+    "title": "Residential"
+   },
+   {
+    "src": "/work/fresno-management-company/inner-3.webp?v=7d48bac5",
+    "full": {
+     "src": "/work/fresno-management-company/inner-3-full.webp?v=8a92cadd",
+     "w": 900,
+     "h": 5159
+    },
+    "path": "/commercial-management",
+    "title": "Commercial"
+   }
+  ],
+  "mobileTop": "#f0f6fc",
+  "mobileFull": {
+   "src": "/work/fresno-management-company/mobile-full.webp?v=ff04cd4d",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "headquarters-window-tint": {
+  "hero": "/work/headquarters-window-tint/hero.webp?v=e47451c9",
+  "heroSm": "/work/headquarters-window-tint/hero-sm.webp?v=4a13bcc8",
+  "full": {
+   "src": "/work/headquarters-window-tint/full.webp?v=94fe9cb0",
+   "w": 900,
+   "h": 4051
+  },
+  "mobile": "/work/headquarters-window-tint/mobile.webp?v=940db908",
+  "inner": [
+   {
+    "src": "/work/headquarters-window-tint/inner-1.webp?v=50c0dc54",
+    "full": {
+     "src": "/work/headquarters-window-tint/inner-1-full.webp?v=19d4971e",
+     "w": 900,
+     "h": 3090
+    },
+    "path": "/services",
+    "title": "Services"
+   }
+  ],
+  "mobileTop": "#202020",
+  "mobileFull": {
+   "src": "/work/headquarters-window-tint/mobile-full.webp?v=b21cca22",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "shelby-pools": {
+  "hero": "/work/shelby-pools/hero.webp?v=5ee30ec6",
+  "heroSm": "/work/shelby-pools/hero-sm.webp?v=a7758b13",
+  "full": {
+   "src": "/work/shelby-pools/full.webp?v=d7d283ce",
+   "w": 900,
+   "h": 2761
+  },
+  "mobile": "/work/shelby-pools/mobile.webp?v=1948119b",
+  "inner": [
+   {
+    "src": "/work/shelby-pools/inner-1.webp?v=2bea278e",
+    "full": {
+     "src": "/work/shelby-pools/inner-1-full.webp?v=a2e33296",
+     "w": 900,
+     "h": 1729
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/shelby-pools/inner-2.webp?v=8d74bc6a",
+    "full": {
+     "src": "/work/shelby-pools/inner-2-full.webp?v=f8386927",
+     "w": 900,
+     "h": 2005
+    },
+    "path": "/our-services",
+    "title": "Services"
+   },
+   {
+    "src": "/work/shelby-pools/inner-3.webp?v=721ec7d4",
+    "full": {
+     "src": "/work/shelby-pools/inner-3-full.webp?v=16c77379",
+     "w": 900,
+     "h": 1588
+    },
+    "path": "/our-work",
+    "title": "Our work"
+   }
+  ],
+  "mobileTop": "#010610",
+  "mobileFull": {
+   "src": "/work/shelby-pools/mobile-full.webp?v=2aa217b6",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "martin-energy": {
+  "hero": "/work/martin-energy/hero.webp?v=aa193c11",
+  "heroSm": "/work/martin-energy/hero-sm.webp?v=13088088",
+  "full": {
+   "src": "/work/martin-energy/full.webp?v=cca44d44",
+   "w": 900,
+   "h": 2744
+  },
+  "mobile": "/work/martin-energy/mobile.webp?v=d598b3a7",
+  "inner": [
+   {
+    "src": "/work/martin-energy/inner-1.webp?v=171c8318",
+    "full": {
+     "src": "/work/martin-energy/inner-1-full.webp?v=63ccc631",
+     "w": 900,
+     "h": 2692
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/martin-energy/inner-2.webp?v=f4d00edc",
+    "full": {
+     "src": "/work/martin-energy/inner-2-full.webp?v=1e0e662d",
+     "w": 900,
+     "h": 2285
+    },
+    "path": "/services/solar-panel-monitoring",
+    "title": "Solar panels"
+   },
+   {
+    "src": "/work/martin-energy/inner-3.webp?v=cd71f672",
+    "full": {
+     "src": "/work/martin-energy/inner-3-full.webp?v=fa9d6031",
+     "w": 900,
+     "h": 2419
+    },
+    "path": "/services/battery-storage-solutions",
+    "title": "Battery storage"
+   }
+  ],
+  "mobileTop": "#f38910",
+  "mobileFull": {
+   "src": "/work/martin-energy/mobile-full.webp?v=3ce08a8b",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "fresno-state-today": {
+  "hero": "/work/fresno-state-today/hero.webp?v=d0f5384b",
+  "heroSm": "/work/fresno-state-today/hero-sm.webp?v=2f3267ce",
+  "full": {
+   "src": "/work/fresno-state-today/full.webp?v=f34970a5",
+   "w": 900,
+   "h": 3354
+  },
+  "mobile": "/work/fresno-state-today/mobile.webp?v=1c2fda28",
+  "inner": [
+   {
+    "src": "/work/fresno-state-today/inner-1.webp?v=e67454aa",
+    "full": {
+     "src": "/work/fresno-state-today/inner-1-full.webp?v=6cfb7116",
+     "w": 900,
+     "h": 898
+    },
+    "path": "/in-the-news",
+    "title": "In the news"
+   },
+   {
+    "src": "/work/fresno-state-today/inner-2.webp?v=15bfa7c9",
+    "full": {
+     "src": "/work/fresno-state-today/inner-2-full.webp?v=5fd02991",
+     "w": 900,
+     "h": 1238
+    },
+    "path": "/press-release",
+    "title": "Press releases"
+   },
+   {
+    "src": "/work/fresno-state-today/inner-3.webp?v=c8dfc68b",
+    "full": {
+     "src": "/work/fresno-state-today/inner-3-full.webp?v=9d4ea5c2",
+     "w": 900,
+     "h": 2608
+    },
+    "path": "/magazine",
+    "title": "Magazine"
+   }
+  ],
+  "mobileTop": "#b1102b",
+  "mobileFull": {
+   "src": "/work/fresno-state-today/mobile-full.webp?v=083ddc47",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "ac-pro-roofing": {
+  "hero": "/work/ac-pro-roofing/hero.webp?v=139f5b66",
+  "heroSm": "/work/ac-pro-roofing/hero-sm.webp?v=b2717886",
+  "full": {
+   "src": "/work/ac-pro-roofing/full.webp?v=a5a43fda",
+   "w": 900,
+   "h": 4506
+  },
+  "mobile": "/work/ac-pro-roofing/mobile.webp?v=15182066",
+  "inner": [
+   {
+    "src": "/work/ac-pro-roofing/inner-1.webp?v=60521901",
+    "full": {
+     "src": "/work/ac-pro-roofing/inner-1-full.webp?v=857b607e",
+     "w": 900,
+     "h": 2326
+    },
+    "path": "/about",
+    "title": "About"
+   },
+   {
+    "src": "/work/ac-pro-roofing/inner-2.webp?v=8c65bb72",
+    "full": {
+     "src": "/work/ac-pro-roofing/inner-2-full.webp?v=f64bb013",
+     "w": 900,
+     "h": 1551
+    },
+    "path": "/recent-work",
+    "title": "Recent work"
+   },
+   {
+    "src": "/work/ac-pro-roofing/inner-3.webp?v=2d12fe89",
+    "full": {
+     "src": "/work/ac-pro-roofing/inner-3-full.webp?v=7674100c",
+     "w": 900,
+     "h": 1963
+    },
+    "path": "/services/roof-installation",
+    "title": "Roof installation"
+   }
+  ],
+  "mobileTop": "#ea1826"
+ },
+ "barmaids": {
+  "hero": "/work/barmaids/hero.webp?v=73f281e5",
+  "heroSm": "/work/barmaids/hero-sm.webp?v=0576cc2e",
+  "full": {
+   "src": "/work/barmaids/full.webp?v=47fd28db",
+   "w": 900,
+   "h": 3604
+  },
+  "mobile": "/work/barmaids/mobile.webp?v=4a9abe0c",
+  "inner": [
+   {
+    "src": "/work/barmaids/inner-1.webp?v=ac5c535f",
+    "full": {
+     "src": "/work/barmaids/inner-1-full.webp?v=d056e1d1",
+     "w": 900,
+     "h": 2568
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/barmaids/inner-2.webp?v=dc6a46e3",
+    "full": {
+     "src": "/work/barmaids/inner-2-full.webp?v=98bc0044",
+     "w": 900,
+     "h": 2283
+    },
+    "path": "/gallery",
+    "title": "Gallery"
+   },
+   {
+    "src": "/work/barmaids/inner-3.webp?v=225480b0",
+    "full": {
+     "src": "/work/barmaids/inner-3-full.webp?v=e490f06f",
+     "w": 900,
+     "h": 2946
+    },
+    "path": "/bartending",
+    "title": "Bartending"
+   }
+  ],
+  "mobileTop": "#ffffff"
+ },
+ "deep-feels-therapy": {
+  "hero": "/work/deep-feels-therapy/hero.webp?v=dd6f8e75",
+  "heroSm": "/work/deep-feels-therapy/hero-sm.webp?v=401e96c3",
+  "full": {
+   "src": "/work/deep-feels-therapy/full.webp?v=40fc7fa8",
+   "w": 900,
+   "h": 5832
+  },
+  "mobile": "/work/deep-feels-therapy/mobile.webp?v=f7025cc6",
+  "inner": [
+   {
+    "src": "/work/deep-feels-therapy/inner-1.webp?v=af8fdc83",
+    "full": {
+     "src": "/work/deep-feels-therapy/inner-1-full.webp?v=d6c9cc71",
+     "w": 900,
+     "h": 3427
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/deep-feels-therapy/inner-2.webp?v=95390e1a",
+    "full": {
+     "src": "/work/deep-feels-therapy/inner-2-full.webp?v=4f00da59",
+     "w": 900,
+     "h": 2096
+    },
+    "path": "/services-page",
+    "title": "Services"
+   },
+   {
+    "src": "/work/deep-feels-therapy/inner-3.webp?v=18296c55",
+    "full": {
+     "src": "/work/deep-feels-therapy/inner-3-full.webp?v=de3c0dd3",
+     "w": 900,
+     "h": 2026
+    },
+    "path": "/services/anxiety",
+    "title": "Anxiety"
+   }
+  ],
+  "mobileTop": "#f4eff4"
+ },
+ "stelas-photography": {
+  "hero": "/work/stelas-photography/hero.webp?v=c999d4ec",
+  "heroSm": "/work/stelas-photography/hero-sm.webp?v=0e46caba",
+  "full": {
+   "src": "/work/stelas-photography/full.webp?v=e24319d9",
+   "w": 900,
+   "h": 4364
+  },
+  "mobile": "/work/stelas-photography/mobile.webp?v=e739092a",
+  "inner": [
+   {
+    "src": "/work/stelas-photography/inner-1.webp?v=04cea5ba",
+    "full": {
+     "src": "/work/stelas-photography/inner-1-full.webp?v=2614fcbc",
+     "w": 900,
+     "h": 1197
+    },
+    "path": "/about-me",
+    "title": "About"
+   },
+   {
+    "src": "/work/stelas-photography/inner-2.webp?v=18813825",
+    "full": {
+     "src": "/work/stelas-photography/inner-2-full.webp?v=b80c44a7",
+     "w": 900,
+     "h": 998
+    },
+    "path": "/portfolio/gallery",
+    "title": "Gallery"
+   }
+  ],
+  "mobileTop": "#ffffff"
+ },
+ "endo-supersystems": {
+  "hero": "/work/endo-supersystems/hero.webp?v=664517ef",
+  "heroSm": "/work/endo-supersystems/hero-sm.webp?v=712e7c5d",
+  "full": {
+   "src": "/work/endo-supersystems/full.webp?v=6afcc7a6",
+   "w": 900,
+   "h": 3903
+  },
+  "mobile": "/work/endo-supersystems/mobile.webp?v=2c1fb154",
+  "inner": [
+   {
+    "src": "/work/endo-supersystems/inner-1.webp?v=37e884c2",
+    "full": {
+     "src": "/work/endo-supersystems/inner-1-full.webp?v=4bf674e1",
+     "w": 900,
+     "h": 2839
+    },
+    "path": "/product",
+    "title": "Solutions"
+   },
+   {
+    "src": "/work/endo-supersystems/inner-2.webp?v=1b0d8612",
+    "full": {
+     "src": "/work/endo-supersystems/inner-2-full.webp?v=b978b272",
+     "w": 900,
+     "h": 3231
+    },
+    "path": "/product/endodontist",
+    "title": "The endodontist"
+   },
+   {
+    "src": "/work/endo-supersystems/inner-3.webp?v=8fb9c416",
+    "full": {
+     "src": "/work/endo-supersystems/inner-3-full.webp?v=86c43091",
+     "w": 900,
+     "h": 2444
+    },
+    "path": "/product/start-ups",
+    "title": "Starting up"
+   }
+  ],
+  "mobileTop": "#ffffff"
+ },
+ "compass-capital": {
+  "hero": "/work/compass-capital/hero.webp?v=c7426197",
+  "heroSm": "/work/compass-capital/hero-sm.webp?v=979e4cf8",
+  "full": {
+   "src": "/work/compass-capital/full.webp?v=7fbc9313",
+   "w": 900,
+   "h": 1373
+  },
+  "mobile": "/work/compass-capital/mobile.webp?v=b32a84c5",
+  "inner": [
+   {
+    "src": "/work/compass-capital/inner-1.webp?v=37591c7e",
+    "full": {
+     "src": "/work/compass-capital/inner-1-full.webp?v=35ac2219",
+     "w": 900,
+     "h": 1911
+    },
+    "path": "/who-we-are",
+    "title": "Philosophy"
+   },
+   {
+    "src": "/work/compass-capital/inner-2.webp?v=bbf808d2",
+    "full": {
+     "src": "/work/compass-capital/inner-2-full.webp?v=04956e07",
+     "w": 900,
+     "h": 2034
+    },
+    "path": "/our-approach",
+    "title": "Approach"
+   },
+   {
+    "src": "/work/compass-capital/inner-3.webp?v=9a35f095",
+    "full": {
+     "src": "/work/compass-capital/inner-3-full.webp?v=86a525f7",
+     "w": 900,
+     "h": 1299
+    },
+    "path": "/criteria",
+    "title": "Criteria"
+   }
+  ],
+  "mobileTop": "#274254"
+ },
+ "rfp-rocket": {
+  "hero": "/work/rfp-rocket/hero.webp?v=ab1357f1",
+  "heroSm": "/work/rfp-rocket/hero-sm.webp?v=fcc428db",
+  "full": {
+   "src": "/work/rfp-rocket/full.webp?v=cb7cdb3d",
+   "w": 900,
+   "h": 4604
+  },
+  "mobile": "/work/rfp-rocket/mobile.webp?v=d4c9420e",
+  "inner": [],
+  "mobileTop": "#ffffff"
+ },
+ "balanced-co": {
+  "hero": "/work/balanced-co/hero.webp?v=566eb9ba",
+  "heroSm": "/work/balanced-co/hero-sm.webp?v=cb205806",
+  "full": {
+   "src": "/work/balanced-co/full.webp?v=8819c915",
+   "w": 900,
+   "h": 1508
+  },
+  "mobile": "/work/balanced-co/mobile.webp?v=eac06384",
+  "inner": [
+   {
+    "src": "/work/balanced-co/inner-1.webp?v=72fecff4",
+    "full": {
+     "src": "/work/balanced-co/inner-1-full.webp?v=1461024e",
+     "w": 900,
+     "h": 1948
+    },
+    "path": "/services",
+    "title": "Services"
+   },
+   {
+    "src": "/work/balanced-co/inner-2.webp?v=aa3f0946",
+    "full": {
+     "src": "/work/balanced-co/inner-2-full.webp?v=c1ec89e1",
+     "w": 900,
+     "h": 2118
+    },
+    "path": "/materials",
+    "title": "Materials"
+   }
+  ],
+  "mobileTop": "#ffffff",
+  "mobileFull": {
+   "src": "/work/balanced-co/mobile-full.webp?v=cddc3cf2",
+   "w": 520,
+   "h": 6193
+  }
+ },
+ "clean-enterprises": {
+  "hero": "/work/clean-enterprises/hero.webp?v=141a3c27",
+  "heroSm": "/work/clean-enterprises/hero-sm.webp?v=b975db66",
+  "full": {
+   "src": "/work/clean-enterprises/full.webp?v=cd3c9c81",
+   "w": 900,
+   "h": 2127
+  },
+  "mobile": "/work/clean-enterprises/mobile.webp?v=6b387ccc",
+  "inner": [
+   {
+    "src": "/work/clean-enterprises/inner-1.webp?v=edc12771",
+    "full": {
+     "src": "/work/clean-enterprises/inner-1-full.webp?v=42958dde",
+     "w": 900,
+     "h": 1584
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/clean-enterprises/inner-2.webp?v=e168b605",
+    "full": {
+     "src": "/work/clean-enterprises/inner-2-full.webp?v=d6572452",
+     "w": 900,
+     "h": 2468
+    },
+    "path": "/rental-services",
+    "title": "Equipment rentals"
+   }
+  ],
+  "mobileTop": "#ffffff",
+  "mobileFull": {
+   "src": "/work/clean-enterprises/mobile-full.webp?v=3ebd02ef",
+   "w": 520,
+   "h": 6716
+  }
+ },
+ "tcd-tech": {
+  "hero": "/work/tcd-tech/hero.webp?v=76f1acb2",
+  "heroSm": "/work/tcd-tech/hero-sm.webp?v=dbd1e564",
+  "full": {
+   "src": "/work/tcd-tech/full.webp?v=3bfa7842",
+   "w": 900,
+   "h": 6351
+  },
+  "mobile": "/work/tcd-tech/mobile.webp?v=8bd7d9a1",
+  "inner": [],
+  "mobileTop": "#2e2e2f",
+  "mobileFull": {
+   "src": "/work/tcd-tech/mobile-full.webp?v=5030823e",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "darksigma": {
+  "hero": "/work/darksigma/hero.webp?v=9411d5b8",
+  "heroSm": "/work/darksigma/hero-sm.webp?v=98aa8464",
+  "full": {
+   "src": "/work/darksigma/full.webp?v=359d57ed",
+   "w": 900,
+   "h": 3768
+  },
+  "mobile": "/work/darksigma/mobile.webp?v=8ca418d1",
+  "inner": [
+   {
+    "src": "/work/darksigma/inner-1.webp?v=70de6aa0",
+    "full": {
+     "src": "/work/darksigma/inner-1-full.webp?v=d479f73b",
+     "w": 900,
+     "h": 2241
+    },
+    "path": "/about/culture",
+    "title": "Culture"
+   },
+   {
+    "src": "/work/darksigma/inner-2.webp?v=73380dfa",
+    "full": {
+     "src": "/work/darksigma/inner-2-full.webp?v=68d6bd55",
+     "w": 900,
+     "h": 2779
+    },
+    "path": "/thesis",
+    "title": "Thesis"
+   },
+   {
+    "src": "/work/darksigma/inner-3.webp?v=fab49ceb",
+    "full": {
+     "src": "/work/darksigma/inner-3-full.webp?v=63b43465",
+     "w": 900,
+     "h": 4008
+    },
+    "path": "/method",
+    "title": "Method"
+   }
+  ],
+  "mobileTop": "#1e1e1e",
+  "mobileFull": {
+   "src": "/work/darksigma/mobile-full.webp?v=1ce05c14",
+   "w": 520,
+   "h": 9000
+  }
+ },
+ "high-throne-rentals": {
+  "hero": "/work/high-throne-rentals/hero.webp?v=24fb173d",
+  "heroSm": "/work/high-throne-rentals/hero-sm.webp?v=c03f72b2",
+  "full": {
+   "src": "/work/high-throne-rentals/full.webp?v=e7fcd8c3",
+   "w": 900,
+   "h": 4042
+  },
+  "mobile": "/work/high-throne-rentals/mobile.webp?v=3654c358",
+  "inner": [
+   {
+    "src": "/work/high-throne-rentals/inner-1.webp?v=80d97bec",
+    "full": {
+     "src": "/work/high-throne-rentals/inner-1-full.webp?v=9663c035",
+     "w": 900,
+     "h": 1838
+    },
+    "path": "/about-us",
+    "title": "About"
+   },
+   {
+    "src": "/work/high-throne-rentals/inner-2.webp?v=2e9147e4",
+    "full": {
+     "src": "/work/high-throne-rentals/inner-2-full.webp?v=e5774fd0",
+     "w": 900,
+     "h": 3880
+    },
+    "path": "/services",
+    "title": "Restrooms"
+   }
+  ],
+  "mobileTop": "#544230",
+  "mobileFull": {
+   "src": "/work/high-throne-rentals/mobile-full.webp?v=128d6aea",
+   "w": 520,
+   "h": 9000
+  }
+ }
+}

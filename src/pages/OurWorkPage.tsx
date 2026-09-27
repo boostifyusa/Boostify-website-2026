@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/Navigation';
@@ -6,61 +5,17 @@ import { SeoHead } from '../components/SeoHead';
 import { SchemaJSON } from '../components/SchemaJSON';
 import { Footer } from '../components/Footer';
 import { CTASection } from '../components/CTASection';
-import { ArrowRight, TrendingUp } from 'lucide-react';
-const projects = [
-  {
-    id: '01',
-    title: 'Full Throttle Suspension',
-    category: 'WEB DESIGN & SEO',
-    stat: 'PAGE 1 RANKINGS',
-    description: <>Custom website build with <Link to="/fresno-seo" className="text-orange font-bold hover:underline">full local SEO strategy</Link>. Hand-coded for speed, optimized for conversions, and ranking on page one for competitive automotive keywords in Fresno.</>,
-    image: '/FTS-Mock.webp',
-    link: 'https://ftskits.com'
-  },
-  {
-    id: '02',
-    title: 'Martin Energy Inc',
-    category: 'WEB DESIGN & SEO',
-    stat: '3× ORGANIC TRAFFIC',
-    description: <><Link to="/" className="text-orange font-bold hover:underline">Website design in Fresno</Link> for a local solar energy company, a full redesign. Custom pages for every service, optimized for local search, and built to convert homeowners looking to go solar.</>,
-    image: '/Slide-4_3-5.webp',
-    link: 'https://martinenergyconsultingservices.com'
-  },
-  {
-    id: '03',
-    title: 'Fresno State Today',
-    category: 'WEB DEVELOPMENT',
-    stat: '50K+ MONTHLY VISITORS',
-    description: 'Built the official Fresno State news website from the ground up. A high-traffic, content-heavy platform serving students, faculty, and the Fresno community.',
-    image: '/Slide-4_3-4.webp',
-    link: 'https://today.fresnostate.edu'
-  },
-  {
-    id: '04',
-    title: 'Benchmark Pool Supply',
-    category: 'WEB DESIGN & LOCAL SEO',
-    stat: '2× SERVICE BOOKINGS',
-    description: 'Complete website and brand presence for a Fresno pool servicing company. Designed to showcase services, build trust, and drive appointment bookings from local homeowners.',
-    image: '/Slide-4_3-1.webp',
-    link: 'https://benchmarkpoolsupply.com'
-  },
-  {
-    id: '05',
-    title: 'Tint Headquarters',
-    category: 'WEB DESIGN & GOOGLE ADS',
-    stat: '#1 FOR WINDOW TINT FRESNO',
-    description: 'Bold, high-converting website for Fresno\'s top-rated ceramic window tint shop. Paired with Google Ads to dominate local search and drive same-day appointment requests.',
-    image: '/2024-04-30-2.jpg',
-    link: 'https://headquarterswindowtint.com'
-  }
-];
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { WorkWall, ShowReelPlayer } from '../components/work/ShowReel';
+import { WorkGrid } from '../components/work/WorkGrid';
+import { portfolio, host } from '../data/portfolio';
 
 export function OurWorkPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
       <SeoHead
-        title="Web Design Portfolio: Real Results & Case Studies"
-        description="Explore our portfolio of custom websites, SEO success stories, and digital marketing campaigns for Fresno businesses."
+        title="Web Design Portfolio | Client Websites in Fresno & the Valley | Boostify USA"
+        description="Websites we have designed and built for businesses in Fresno and the Central Valley. See each site on a desktop and a phone, and what we did for it."
         canonicalUrl="/work"
       />
       <SchemaJSON
@@ -85,158 +40,59 @@ export function OurWorkPage() {
       />
       <Navigation />
 
-      <main className="pt-28 md:pt-40">
-        {/* Hero */}
-        <section className="px-6 mb-20">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20
-              }}
-              animate={{
-                opacity: 1,
-                y: 0
-              }}
-              transition={{
-                duration: 0.5
-              }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
-
-              <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-              Our Work
+      <main className="pt-20 md:pt-24">
+        {/* Hero: the wall of work */}
+        <section className="relative overflow-hidden bg-dark text-white">
+          <WorkWall className="opacity-[0.42]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_45%,rgba(17,17,17,0.94)_0%,rgba(17,17,17,0.78)_45%,rgba(17,17,17,0.35)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-dark to-transparent" />
+          <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-28 md:pt-36 md:pb-40">
+            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.05 }}
+              className="text-5xl md:text-7xl lg:text-[6.2rem] font-black tracking-tighter leading-[0.9] max-w-[13ch]">
+              Our work.
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
+              className="mt-8 text-lg md:text-xl text-white/70 font-medium leading-relaxed max-w-[52ch]">
+              Websites we designed, built and look after, most of them for businesses in Fresno and the Central Valley. <span className="hidden md:inline">Hover a project to scroll through it, click it to see what we did.</span><span className="md:hidden">Tap a project to see what we did.</span>
+            </motion.p>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-10 flex flex-wrap gap-4">
+              <a href="#showreel" className="inline-flex items-center gap-2 bg-orange hover:bg-orange-hover text-white font-bold px-7 py-4 rounded-lg transition-colors">Watch the showreel</a>
+              <a href="#projects" className="inline-flex items-center gap-2 border border-white/20 hover:border-white text-white font-bold px-7 py-4 rounded-lg transition-colors">Browse projects <ArrowDown className="w-4 h-4" /></a>
             </motion.div>
-
-            <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-              <div className="max-w-3xl">
-                <motion.h1
-                  initial={{
-                    opacity: 0,
-                    y: 20
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.1
-                  }}
-                  className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-
-                  Real Work. <span className="text-orange">Real Results.</span>
-                </motion.h1>
-                <motion.p
-                  initial={{
-                    opacity: 0,
-                    y: 20
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.2
-                  }}
-                  className="text-xl text-gray font-medium leading-relaxed">
-
-                  A growing portfolio of local businesses we've helped stand out
-                  online. Every project is hand-crafted, data-driven, and built
-                  to generate leads.
-                </motion.p>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* Projects Grid */}
-        <section className="px-6 mb-32">
-          <div className="max-w-7xl mx-auto space-y-8">
-            {projects.map((project, i) =>
-              <motion.div
-                key={i}
-                initial={{
-                  opacity: 0,
-                  y: 30
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: true
-                }}
-                transition={{
-                  delay: i * 0.1,
-                  duration: 0.5
-                }}
-                className="group relative block rounded-3xl overflow-hidden aspect-[10/11] md:aspect-[21/9]">
-
-                {/* Background Image */}
-                <div className="absolute inset-0 bg-dark">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover opacity-80" />
-
-                </div>
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80" />
-
-                {/* Content */}
-                <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-between">
-                  {/* Top */}
-                  <div className="flex justify-between items-start">
-                    <span className="text-white/30 font-bold text-sm tracking-widest">
-                      {project.id}
-                    </span>
-                  </div>
-
-                  {/* Bottom */}
-                  <div>
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span className="inline-block px-3 py-1 bg-orange text-white text-xs font-bold uppercase tracking-wider rounded-full">
-                        {project.category}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-wider rounded-full">
-                        <TrendingUp size={12} className="text-green-400" />
-                        {project.stat}
-                      </span>
-                    </div>
-                    <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-3">
-                      {project.title}
-                    </h3>
-                    <p className="text-white/60 font-medium text-sm md:text-base leading-relaxed max-w-xl">
-                      {project.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
+        {/* Showreel */}
+        <section id="showreel" className="px-6 py-20 md:py-28 bg-dark">
+          <div className="max-w-6xl mx-auto">
+            <ShowReelPlayer />
           </div>
         </section>
 
-        {/* More Coming */}
-        <section className="px-6 mb-32">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="bg-light rounded-3xl border border-gray-light p-12">
-              <div className="text-5xl mb-6">🚧</div>
-              <h3 className="text-2xl font-black text-dark mb-3 tracking-tight">
-                More Projects Coming Soon
-              </h3>
-              <p className="text-gray font-medium text-lg leading-relaxed mb-8">
-                We're always building. New case studies and project breakdowns
-                are on the way. Want to be featured here?
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center text-orange font-bold text-lg hover:text-dark transition-colors duration-300">
-                Let's work together
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </div>
+        {/* Grid */}
+        <section className="px-6 pt-20 md:pt-28 pb-10">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-end justify-between gap-6">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-dark leading-[0.95] max-w-[14ch]">Projects</h2>
+            <p className="text-gray font-medium max-w-[40ch]">Screenshots taken from each site.</p>
+          </div>
+        </section>
+        <WorkGrid />
+
+        {/* Plain index of live sites (crawlable, and quick to scan) */}
+        <section className="px-6 pb-28">
+          <div className="max-w-7xl mx-auto border-t border-dark/10 pt-12">
+            <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-dark/45 mb-6">Live sites</h2>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+              {portfolio.filter(p => !p.archived).map(p => (
+                <li key={p.slug}>
+                  <a href={p.url} target="_blank" rel="noopener" className="group flex items-baseline justify-between gap-4 py-1.5 border-b border-dark/5">
+                    <span className="font-bold text-dark group-hover:text-orange transition-colors">{p.name}</span>
+                    <span className="text-sm text-dark/40 inline-flex items-center gap-1">{host(p.url)} <ArrowUpRight className="w-3.5 h-3.5" /></span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-10 text-gray font-medium max-w-[70ch]">Want a site like these? <Link to="/contact" className="text-orange font-bold hover:underline">Tell us about your business</Link>. Most clients start with <Link to="/" className="text-orange font-bold hover:underline">website design in Fresno</Link> and add <Link to="/fresno-seo" className="text-orange font-bold hover:underline">Fresno SEO</Link> once the site is live.</p>
           </div>
         </section>
 
@@ -245,5 +101,4 @@ export function OurWorkPage() {
 
       <Footer />
     </div>);
-
 }
