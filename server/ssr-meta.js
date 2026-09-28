@@ -125,18 +125,18 @@ const ssrMeta = new Map([
 
     // ─── City Marketing Agency Pages ─────────────────────────────────────────
     ['/clovis-web-design', {
-        title: 'Web Design Clovis, CA | Custom Websites | Boostify USA',
-        description: 'Clovis web design from a Fresno office at 6362 N Figarden Dr. Template sites are $649, custom builds start at $1,995, and you own the domain.',
+        title: "Clovis Web Design & SEO Agency | Boostify USA",
+        description: "Clovis web design and SEO from our Fresno office at 6362 N Figarden Dr. Websites from $649, local SEO from $595 a month, and you own the domain.",
         canonical: `${SITE_URL}/clovis-web-design`
     }],
     ['/visalia-web-design', {
-        title: 'Web Design Visalia, CA | Custom Websites | Boostify USA',
-        description: 'Web design for Visalia and Tulare County businesses from Boostify USA in Fresno. Custom sites from $1,995, templates from $649, and you own the domain.',
+        title: "Visalia Web Design & SEO | Tulare County | Boostify USA",
+        description: "Visalia web design and SEO for Tulare County businesses from Boostify USA in Fresno. Websites from $649, local SEO from $595 a month, and you own the domain.",
         canonical: `${SITE_URL}/visalia-web-design`
     }],
     ['/madera-marketing-agency', {
-        title: "Web Design Madera, CA & Local SEO | Boostify USA",
-        description: "Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649, custom builds start at $1,995.",
+        title: "Madera SEO Agency & Web Design | Madera County | Boostify USA",
+        description: "Madera SEO and web design for Madera County businesses from Boostify USA's Fresno office, about 25 minutes south on 99. Local SEO from $595 a month, websites from $649.",
         canonical: `${SITE_URL}/madera-marketing-agency`
     }],
     ['/hanford-marketing-agency', {
@@ -150,8 +150,8 @@ const ssrMeta = new Map([
         canonical: `${SITE_URL}/merced-marketing-agency`
     }],
     ['/tulare-marketing-agency', {
-        title: "Web Design Tulare, CA & Local SEO | Boostify USA",
-        description: "Web design and local SEO for Tulare businesses from a Fresno office about an hour up 99. Template sites are $649, custom builds start at $1,995.",
+        title: "Tulare SEO Agency & Web Design | Tulare County | Boostify USA",
+        description: "Tulare SEO and web design for Tulare County businesses from Boostify USA's Fresno office, about an hour up 99. Local SEO from $595 a month, websites from $649.",
         canonical: `${SITE_URL}/tulare-marketing-agency`
     }],
     ['/sanger-marketing-agency', {

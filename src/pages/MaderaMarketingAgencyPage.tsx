@@ -27,7 +27,7 @@ const faqs = [
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/madera-marketing-agency",
-    "description": "Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649 and custom builds start at $1,995.",
+    "description": "Madera SEO and web design for Madera County businesses from Boostify USA's Fresno office, about 25 minutes south on 99. Local SEO from $595 a month, websites from $649.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "6362 N Figarden Dr. #118",
@@ -72,7 +72,7 @@ export function MaderaMarketingAgencyPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null); // FAQs start open; clicking one closes it (visible answers rank better than hidden ones)
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Web Design Madera, CA & Local SEO | Boostify USA" description="Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649, custom builds start at $1,995." canonicalUrl="/madera-marketing-agency" />
+            <SeoHead title="Madera SEO Agency & Web Design | Madera County | Boostify USA" description="Madera SEO and web design for Madera County businesses from Boostify USA's Fresno office, about 25 minutes south on 99. Local SEO from $595 a month, websites from $649." canonicalUrl="/madera-marketing-agency" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -90,13 +90,13 @@ export function MaderaMarketingAgencyPage() {
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Madera Web Design & SEO
+                                Madera SEO & Web Design
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Madera Web Design &amp; SEO. <span className="text-orange">From a Fresno Office.</span>
+                                Madera SEO &amp; Web Design. <span className="text-orange">From a Fresno Office.</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Madera web design and local SEO from our office in northwest Fresno, about 25 minutes south on 99. The prices match what we quote for <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, and the first meeting can be at your place.
+                                Madera SEO and web design from our office in northwest Fresno, about 25 minutes south on 99. The prices match what we quote for <Link to="/" className="text-orange font-bold hover:underline">Fresno web design</Link>, and the first meeting can be at your place.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
                                 <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
@@ -275,7 +275,7 @@ export function MaderaMarketingAgencyPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <div className="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange mb-6 mx-auto"><Search size={24} strokeWidth={2.5} /></div>
-                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">Madera SEO, <span className="text-orange">month to month</span></h2>
+                            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 tracking-tight">A Madera SEO agency, <span className="text-orange">month to month</span></h2>
                             <p className="text-xl text-gray font-medium leading-relaxed">Local SEO is $595 a month and Lite is $249 a month, with no contract on either. North of Madera we also cover <Link to="/merced-marketing-agency" className="text-dark font-bold hover:text-orange transition-colors">Merced</Link> and <Link to="/modesto-web-design" className="text-dark font-bold hover:text-orange transition-colors">Modesto</Link>, and the <Link to="/fresno-seo" className="text-dark font-bold hover:text-orange transition-colors">Fresno SEO page</Link> lays out the first 90 days.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -340,7 +340,7 @@ export function MaderaMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Madera web design questions</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Madera SEO and web design questions</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">

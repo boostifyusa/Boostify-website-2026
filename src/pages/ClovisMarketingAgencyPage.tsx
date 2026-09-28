@@ -109,7 +109,7 @@ const advertiserSchema = {
     "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO",
     "url": "https://boostifyusa.com/clovis-web-design",
-    "description": "Web design for Clovis businesses from an office at 6362 N Figarden Dr in Fresno. Template sites are $649 and custom builds start at $1,995. You own your website and your domain.",
+    "description": "Web design and SEO for Clovis businesses from an office at 6362 N Figarden Dr in Fresno. Template sites are $649 and custom builds start at $1,995. You own your website and your domain.",
     "hasMap": "https://www.google.com/maps?cid=5709723330865512710",
     "address": {
         "@type": "PostalAddress",
@@ -222,8 +222,8 @@ export function ClovisMarketingAgencyPage() {
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
             <SeoHead
-                title="Web Design Clovis, CA | Custom Websites | Boostify USA"
-                description="Clovis web design from a Fresno office at 6362 N Figarden Dr. Template sites are $649, custom builds start at $1,995, and you own the domain."
+                title="Clovis Web Design & SEO Agency | Boostify USA"
+                description="Clovis web design and SEO from our Fresno office at 6362 N Figarden Dr. Websites from $649, local SEO from $595 a month, and you own the domain."
                 canonicalUrl="/clovis-web-design"
             />
             <Helmet>
@@ -254,15 +254,15 @@ export function ClovisMarketingAgencyPage() {
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Web Design Clovis, CA
+                                Clovis Web Design & SEO
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Clovis Web Design <span className="text-orange">From a Fresno Office</span>
+                                Clovis Web Design & SEO <span className="text-orange">From a Fresno Office</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Benchmark Pool Supply runs a store at 811 Barstow Ave in Clovis,
-                                and we built their website. The office that built it is at 6362 N
-                                Figarden Dr, Suite 118, in Fresno, and you can come visit it.
+                                Clovis web design and SEO from our office at 6362 N Figarden Dr,
+                                Suite 118, in Fresno, and you can come visit it. Benchmark Pool
+                                Supply runs a store at 811 Barstow Ave in Clovis, and we built their website.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">

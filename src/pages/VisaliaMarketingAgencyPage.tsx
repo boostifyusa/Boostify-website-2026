@@ -44,7 +44,7 @@ const pricing = [
 const advertiserSchema = {
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Boostify USA Web Design & SEO", "url": "https://boostifyusa.com/visalia-web-design",
-    "description": "Website design and local SEO for businesses in Visalia and Tulare County, from Boostify USA Web Design & SEO in Fresno, CA.",
+    "description": "Visalia web design and SEO for Tulare County businesses, from Boostify USA Web Design & SEO in Fresno, CA.",
     "hasMap": "https://www.google.com/maps?cid=5709723330865512710",
     "address": {
         "@type": "PostalAddress",
@@ -127,7 +127,7 @@ export function VisaliaMarketingAgencyPage() {
     }, []);
     return (
         <div className="min-h-screen bg-white selection:bg-orange selection:text-white">
-            <SeoHead title="Web Design Visalia, CA | Custom Websites | Boostify USA" description="Web design for Visalia and Tulare County businesses from Boostify USA in Fresno. Custom sites from $1,995, templates from $649, and you own the domain." canonicalUrl="/visalia-web-design" />
+            <SeoHead title="Visalia Web Design & SEO | Tulare County | Boostify USA" description="Visalia web design and SEO for Tulare County businesses from Boostify USA in Fresno. Websites from $649, local SEO from $595 a month, and you own the domain." canonicalUrl="/visalia-web-design" />
             <Helmet>
                 <script type="application/ld+json">{JSON.stringify(advertiserSchema)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -147,14 +147,14 @@ export function VisaliaMarketingAgencyPage() {
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-bold uppercase tracking-wider mb-8">
                                 <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-                                Web Design in Visalia, CA
+                                Visalia Web Design & SEO
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter leading-[0.95]">
-                                Visalia Web Design From a Fresno Shop <span className="text-orange">That Covers Tulare County</span>
+                                Visalia Web Design &amp; SEO <span className="text-orange">That Covers Tulare County</span>
                             </h1>
                             <p className="text-xl text-gray font-medium mb-10 leading-relaxed max-w-lg">
-                                Boostify USA builds websites for Visalia and Tulare County
-                                businesses from an office on Figarden Dr in Fresno. Custom builds
+                                Visalia web design and SEO for Tulare County businesses, from an
+                                office on Figarden Dr in Fresno. Custom builds
                                 start at $1,995 and template builds are $649. You own the domain
                                 and the code.
                             </p>
@@ -513,7 +513,7 @@ export function VisaliaMarketingAgencyPage() {
                 {/* ───── FAQ ───── */}
                 <section className="py-24 px-6 bg-light/30">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Questions About Visalia Web Design</h2>
+                        <h2 className="text-4xl font-black text-dark text-center mb-16 tracking-tight">Questions About Visalia Web Design and SEO</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div key={i} className="bg-white rounded-2xl border border-gray-light overflow-hidden">

@@ -65,7 +65,7 @@ const cityData = [
     {
         path: '/madera-marketing-agency',
         url: 'https://boostifyusa.com/madera-marketing-agency',
-        description: "Web design and local SEO for Madera businesses from a Fresno office about 25 minutes south on 99. Template sites are $649 and custom builds start at $1,995.",
+        description: "Madera SEO and web design for Madera County businesses from Boostify USA's Fresno office, about 25 minutes south on 99. Local SEO from $595 a month, websites from $649.",
         areaServed: ['Madera', 'Fresno', 'Clovis', 'Chowchilla'],
         faqs: [
             { question: "Is Boostify based in Madera?", answer: "The office is in Fresno at 6362 N Figarden Dr, Suite 118, about 25 minutes south of Madera on 99. We meet Madera clients at their shop for the first meeting, and the rest of the build happens over a screen share." },
@@ -101,13 +101,13 @@ const cityData = [
             { question: "What does a website cost in Merced?", answer: "A template build is $649, paid once, and a custom build starts at $1,995 and takes 3 to 5 weeks. Hosting and the domain run roughly $20 to $30 a month, and you can pay those directly." },
             { question: "I already have a website I like. Do I need a new one?", answer: "It depends on two things. If it loads fast on a phone and each service has its own page, SEO can build on what you have. If it takes five seconds to load or the whole business sits on one page, fixing it usually costs close to a rebuild." },
             { question: "How fast can Google Ads bring calls in Merced?", answer: "Ads can start showing the day the campaign is approved, so the first calls can come within days. Whether they keep coming depends on the landing page, which is why the site gets looked at before your ad budget gets spent." },
-            { question: "Why don't I show up on Google Maps in Merced?", answer: "The usual reasons are a category that is too broad, a service area that leaves Merced out, or a few reviews against competitors with dozens. Check those before paying anyone, including us." }
+            { question: "Should I start with ads or with the website?", answer: "Start with the website and the Google profile. Ads send people to the same page, and a page that doesn't turn visitors into calls wastes the ad spend, which for most local service businesses runs $1,000 to $2,500 a month." }
         ]
     },
     {
         path: '/tulare-marketing-agency',
         url: 'https://boostifyusa.com/tulare-marketing-agency',
-        description: "Web design and local SEO for Tulare businesses from a Fresno office about an hour up 99. Template sites are $649 and custom builds start at $1,995.",
+        description: "Tulare SEO and web design for Tulare County businesses from Boostify USA's Fresno office, about an hour up 99. Local SEO from $595 a month, websites from $649.",
         areaServed: ['Tulare', 'Visalia', 'Fresno', 'Hanford'],
         faqs: [
             { question: "Is an hour too far for a web designer to work with my Tulare business?", answer: "Most of the build happens over a screen share, so the drive only matters for the first meeting and the photos. We come to Tulare for both, because pictures of your actual trucks, crew and shop do more for the site than anything we could write. The office is at 6362 N Figarden Dr, Suite 118, in Fresno." },
