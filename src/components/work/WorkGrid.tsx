@@ -72,11 +72,7 @@ function Panel({ p, onClose, onPrev, onNext }: { p: PortfolioItem; onClose: () =
     <p className="text-sm text-gray font-medium leading-relaxed border-l-2 border-gray-light pl-4 max-w-[40ch]">
       Our build, shown as we delivered it. The client has since moved to another provider, so the live site is no longer ours.
     </p>
-  ) : (
-    <a href={p.url} target="_blank" rel="noopener" className="inline-flex items-center justify-center gap-2 bg-dark hover:bg-orange text-white font-bold px-6 py-3.5 rounded-lg transition-colors self-start">
-      Visit {host(p.url)} <ArrowUpRight className="w-4 h-4" />
-    </a>
-  );
+  ) : null; // No link out to client sites (2026-10-05: a scammer used the portfolio to target our clients).
 
   if (phone) {
     // Phone: a full-height sheet. The client's own phone view leads, the header (and the close

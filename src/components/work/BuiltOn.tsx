@@ -184,9 +184,6 @@ export function BuiltOn() {
                 <Link to={`/work?p=${p.slug}`} className="inline-flex items-center gap-1.5 font-bold text-dark hover:text-orange transition-colors">
                   The project <ArrowRight size={16} />
                 </Link>
-                <a href={p.url} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 font-bold text-dark/60 hover:text-orange transition-colors">
-                  {host(p.url)} <ArrowUpRight size={16} />
-                </a>
               </div>
             </div>
           </div>

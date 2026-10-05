@@ -78,21 +78,11 @@ export function OurWorkPage() {
         </section>
         <WorkGrid />
 
-        {/* Plain index of live sites (crawlable, and quick to scan) */}
+        {/* The plain index of live client sites was removed 2026-10-05: a scammer used it
+            to find and contact our clients while pretending to be Victor. */}
         <section className="px-6 pb-28">
           <div className="max-w-7xl mx-auto border-t border-dark/10 pt-12">
-            <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-dark/45 mb-6">Live sites</h2>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
-              {portfolio.filter(p => !p.archived).map(p => (
-                <li key={p.slug}>
-                  <a href={p.url} target="_blank" rel="noopener" className="group flex items-baseline justify-between gap-4 py-1.5 border-b border-dark/5">
-                    <span className="font-bold text-dark group-hover:text-orange transition-colors">{p.name}</span>
-                    <span className="text-sm text-dark/40 inline-flex items-center gap-1">{host(p.url)} <ArrowUpRight className="w-3.5 h-3.5" /></span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-10 text-gray font-medium max-w-[70ch]">Want a site like these? <Link to="/contact" className="text-orange font-bold hover:underline">Tell us about your business</Link>. Most clients start with <Link to="/" className="text-orange font-bold hover:underline">website design in Fresno</Link> and add <Link to="/fresno-seo" className="text-orange font-bold hover:underline">Fresno SEO</Link> once the site is live.</p>
+            <p className="text-gray font-medium max-w-[70ch]">Want a site like these? <Link to="/contact" className="text-orange font-bold hover:underline">Tell us about your business</Link>. Most clients start with <Link to="/" className="text-orange font-bold hover:underline">website design in Fresno</Link> and add <Link to="/fresno-seo" className="text-orange font-bold hover:underline">Fresno SEO</Link> once the site is live.</p>
           </div>
         </section>
 

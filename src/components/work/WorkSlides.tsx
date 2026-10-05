@@ -155,9 +155,6 @@ export function WorkSlides() {
                   <Link to={`/work?p=${p.slug}`} className="inline-flex items-center gap-2 bg-orange hover:bg-orange-hover text-white font-bold px-6 py-3.5 rounded-lg transition-colors">
                     See the project <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href={p.url} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 font-bold text-white/70 hover:text-white transition-colors">
-                    {host(p.url)} <ArrowUpRight className="w-4 h-4" />
-                  </a>
                 </div>
               </motion.div>
             </AnimatePresence>
