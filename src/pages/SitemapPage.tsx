@@ -29,6 +29,7 @@ const sitemapLinks = [
             { name: 'Website Maintenance', path: '/maintenance' },
             { name: 'Website Maintenance for Small Business', path: '/website-maintenance-small-business' },
             { name: 'Website Maintenance Cost', path: '/website-maintenance-cost' },
+            { name: 'Manufacturing Website Design', path: '/manufacturing-website-design' },
             { name: 'App Development', path: '/app-development' },
             { name: 'AI Automation', path: '/ai-automation' },
             { name: 'SEO Audit Tool', path: '/seo-audit' },

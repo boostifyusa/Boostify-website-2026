@@ -100,6 +100,23 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
+
+            {/* Industries: trade pages, set as a subgroup the way Maintenance sits
+                under Service Areas, matching the Industries column in the Services menu. */}
+            <h4 className="font-bold text-white/70 text-[11px] uppercase tracking-wider mt-10 mb-4">
+              Industries
+            </h4>
+            <ul className="space-y-3 text-white/60 font-medium text-sm">
+              <li>
+                <Link
+                  to="/manufacturing-website-design"
+                  className="hover:text-orange transition-colors leading-snug inline-block"
+                  title="Manufacturing website design for machine and fab shops"
+                >
+                  Manufacturing &amp; Job Shops
+                </Link>
+              </li>
+            </ul>
           </div>
 
           <div>

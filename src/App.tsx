@@ -14,6 +14,7 @@ const LocalMarketingPage = lazy(() => import('./pages/LocalMarketingPage').then(
 const MaintenancePage = lazy(() => import('./pages/MaintenancePage').then(module => ({ default: module.MaintenancePage })));
 const WebsiteMaintenanceSmallBusinessPage = lazy(() => import('./pages/WebsiteMaintenanceSmallBusinessPage').then(module => ({ default: module.WebsiteMaintenanceSmallBusinessPage })));
 const WebsiteMaintenanceCostPage = lazy(() => import('./pages/WebsiteMaintenanceCostPage').then(module => ({ default: module.WebsiteMaintenanceCostPage })));
+const ManufacturingWebDesignPage = lazy(() => import('./pages/ManufacturingWebDesignPage').then(module => ({ default: module.ManufacturingWebDesignPage })));
 const AboutPage = lazy(() => import('./pages/AboutPage').then(module => ({ default: module.AboutPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then(module => ({ default: module.ContactPage })));
 const OurWorkPage = lazy(() => import('./pages/OurWorkPage').then(module => ({ default: module.OurWorkPage })));
@@ -92,6 +93,7 @@ export function App() {
               <Route path="/maintenance" element={<MaintenancePage />} />
               <Route path="/website-maintenance-small-business" element={<WebsiteMaintenanceSmallBusinessPage />} />
               <Route path="/website-maintenance-cost" element={<WebsiteMaintenanceCostPage />} />
+              <Route path="/manufacturing-website-design" element={<ManufacturingWebDesignPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/work" element={<OurWorkPage />} />

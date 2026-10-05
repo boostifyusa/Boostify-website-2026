@@ -10,7 +10,9 @@ import {
   Wrench,
   ChevronDown,
   Rocket,
-  Bot
+  Bot,
+  Factory,
+  ArrowRight
 } from
   'lucide-react';
 
@@ -50,6 +52,17 @@ const serviceLinks = [
     href: '/ai-automation',
     icon: Bot,
     desc: '24/7 Auto-Reply Agents'
+  }];
+
+
+// Who we build for. Each one is a page built around that trade's buyers; the
+// Services menu shows them beside the services so the bar stays the same width.
+const industryLinks = [
+  {
+    name: 'Manufacturing & job shops',
+    href: '/manufacturing-website-design',
+    icon: Factory,
+    desc: 'Machine, fab and welding shops'
   }];
 
 
@@ -123,48 +136,91 @@ export function Navigation() {
                       <motion.div
                         initial={{
                           opacity: 0,
-                          y: 8
+                          y: 8,
+                          x: '-42%'
                         }}
                         animate={{
                           opacity: 1,
-                          y: 0
+                          y: 0,
+                          x: '-42%'
                         }}
                         exit={{
                           opacity: 0,
-                          y: 8
+                          y: 8,
+                          x: '-42%'
                         }}
                         transition={{
                           duration: 0.15
                         }}
-                        className="absolute top-full left-0 pt-3">
+                        className="absolute top-full left-1/2 pt-3">
 
-                        <div className="bg-white rounded-xl border border-gray-light shadow-xl p-2 w-64">
-                          {serviceLinks.map((service, i) =>
-                            <Link
-                              key={i}
-                              to={service.href}
-                              className="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-light transition-colors group">
+                        <div className="bg-white rounded-xl border border-gray-light shadow-xl w-[min(700px,calc(100vw-3rem))] grid grid-cols-[1fr_15.5rem] overflow-hidden">
+                          <div className="p-3">
+                            <p className="px-3 pt-1 pb-2 text-[11px] font-bold uppercase tracking-[0.13em] text-dark/40">Services</p>
+                            <div className="grid grid-cols-2 gap-0.5">
+                              {serviceLinks.map((service, i) =>
+                                <Link
+                                  key={i}
+                                  to={service.href}
+                                  className="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-light transition-colors group">
 
-                              <div className="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center text-orange shrink-0 mt-0.5 group-hover:bg-orange group-hover:text-white transition-colors">
-                                <service.icon size={16} strokeWidth={2.5} />
-                              </div>
-                              <div>
-                                <div className="text-sm font-bold text-dark leading-tight">
-                                  {service.name}
+                                  <div className="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center text-orange shrink-0 mt-0.5 group-hover:bg-orange group-hover:text-white transition-colors">
+                                    <service.icon size={16} strokeWidth={2.5} />
+                                  </div>
+                                  <div>
+                                    <div className="text-sm font-bold text-dark leading-tight">
+                                      {service.name}
+                                    </div>
+                                    <div className="text-xs text-gray font-medium">
+                                      {service.desc}
+                                    </div>
+                                  </div>
+                                </Link>
+                              )}
+                            </div>
+                            <div className="border-t border-gray-light mt-2 pt-1">
+                              <Link
+                                to="/services"
+                                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold text-orange hover:bg-orange/5 transition-colors">
+
+                                View all services <ArrowRight size={12} strokeWidth={3} />
+                              </Link>
+                            </div>
+                          </div>
+
+                          {/* Industries: one card per trade page, drawn from that page's own art */}
+                          <div className="bg-light/70 border-l border-gray-light p-3">
+                            <p className="px-1 pt-1 pb-2 text-[11px] font-bold uppercase tracking-[0.13em] text-dark/40">Industries</p>
+                            {industryLinks.map((ind) =>
+                              <Link
+                                key={ind.href}
+                                to={ind.href}
+                                className="group block rounded-lg bg-white border border-gray-light overflow-hidden hover:border-dark/25 transition-colors">
+
+                                {/* the page's hero drawing, cropped to the 3D view of the bracket */}
+                                <div className="relative h-[104px] overflow-hidden border-b border-gray-light" aria-hidden="true">
+                                  <div
+                                    className="absolute inset-0 opacity-60 transition-transform duration-300"
+                                    style={{
+                                      backgroundImage: 'url(/section-art/manufacturing-website-design_hero-drawing.svg)',
+                                      backgroundSize: '605px auto',
+                                      backgroundPosition: '-388px -212px',
+                                      backgroundRepeat: 'no-repeat'
+                                    }} />
                                 </div>
-                                <div className="text-xs text-gray font-medium">
-                                  {service.desc}
+                                <div className="flex items-start gap-2.5 px-3 py-2.5">
+                                  <ind.icon size={16} strokeWidth={2.5} className="text-orange shrink-0 mt-0.5" />
+                                  <div>
+                                    <div className="text-sm font-bold text-dark leading-tight group-hover:text-orange transition-colors">
+                                      {ind.name}
+                                    </div>
+                                    <div className="text-xs text-gray font-medium">
+                                      {ind.desc}
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                            </Link>
-                          )}
-                          <div className="border-t border-gray-light mt-1 pt-1">
-                            <Link
-                              to="/services"
-                              className="flex items-center justify-center px-3 py-2 rounded-lg text-xs font-bold text-orange hover:bg-orange/5 transition-colors">
-
-                              View All Services →
-                            </Link>
+                              </Link>
+                            )}
                           </div>
                         </div>
                       </motion.div>
@@ -323,6 +379,28 @@ export function Navigation() {
 
                             View All Services →
                           </Link>
+
+                          <p className="pl-3 pt-5 pb-1 text-[11px] font-bold uppercase tracking-[0.13em] text-dark/40">Industries</p>
+                          {industryLinks.map((ind) =>
+                            <Link
+                              key={ind.href}
+                              to={ind.href}
+                              onClick={() => setIsOpen(false)}
+                              className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-light transition-colors">
+
+                              <div className="w-8 h-8 bg-dark rounded-lg flex items-center justify-center text-white shrink-0">
+                                <ind.icon size={16} strokeWidth={2.5} />
+                              </div>
+                              <div>
+                                <div className="text-lg font-bold text-dark leading-tight">
+                                  {ind.name}
+                                </div>
+                                <div className="text-xs text-gray font-medium">
+                                  {ind.desc}
+                                </div>
+                              </div>
+                            </Link>
+                          )}
                         </div>
                       </motion.div>
                     }

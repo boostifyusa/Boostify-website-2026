@@ -39,6 +39,11 @@ const ssrMeta = new Map([
         description: 'Maximize your ROI with precision-targeted Google Ads and Local Service Ads. We help Central Valley businesses get more leads instantly.',
         canonical: `${SITE_URL}/local-marketing`
     }],
+    ['/manufacturing-website-design', {
+        title: 'Manufacturing Website Design | More RFQs | Boostify USA',
+        description: 'Manufacturing website design for machine shops, fab shops and manufacturers, built for the buyer who checks you out before sending a drawing. From $649.',
+        canonical: `${SITE_URL}/manufacturing-website-design`
+    }],
     ['/maintenance', {
         title: 'Care & Maintenance: Secure, Fast & Reliable Hosting',
         description: 'Keep your website secure, fast, and up-to-date with our comprehensive maintenance plans. Daily backups, security scans, and 24/7 monitoring.',

@@ -14,6 +14,7 @@ const dynamicRoutes = [
   '/maintenance',
   '/website-maintenance-small-business',
   '/website-maintenance-cost',
+  '/manufacturing-website-design',
   '/about',
   '/contact',
   '/work',
