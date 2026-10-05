@@ -437,13 +437,13 @@ export function ManufacturingWebDesignPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
+                  className="inline-flex items-center justify-center whitespace-nowrap px-8 lg:px-6 xl:px-8 py-4 bg-orange text-white font-bold rounded-lg hover:bg-orange-hover transition-all shadow-lg hover:shadow-orange/20 hover:-translate-y-1">
                   Get a Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
                 <a
                   href="#buyers-check"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
+                  className="inline-flex items-center justify-center whitespace-nowrap px-8 lg:px-6 xl:px-8 py-4 bg-white text-dark border-2 border-gray-light font-bold rounded-lg hover:border-dark transition-all">
                   See the buyer&rsquo;s check
                 </a>
               </div>
