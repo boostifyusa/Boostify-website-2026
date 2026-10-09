@@ -73,59 +73,11 @@ app.use((req, res, next) => {
     res.redirect(301, `https://${CANONICAL_HOST}${target}`);
 });
 
-// Googlebot Notification Middleware
-let lastGooglebotNotifyTime = 0;
-app.use((req, res, next) => {
-    try {
-        // You can enable/disable this via .env
-        // By default, if NOTIFY_GOOGLE_CRAWL is 'true', it will email you.
-        if (process.env.NOTIFY_GOOGLE_CRAWL === 'true') {
-            const userAgent = req.headers['user-agent'] || '';
-            if (userAgent.toLowerCase().includes('googlebot')) {
-                const now = Date.now();
-                // Throttle to 1 email per hour (3600000 ms) to avoid spam
-                if (now - lastGooglebotNotifyTime > 3600000) {
-                    lastGooglebotNotifyTime = now;
-
-                    const emailPayload = {
-                        sender: {
-                            name: "Boostify Server",
-                            email: process.env.BREVO_SENDER_EMAIL || "no-reply@boostifyusa.com"
-                        },
-                        to: [{
-                            email: process.env.DESTINATION_EMAIL || "hello@boostifyusa.com",
-                            name: "Admin"
-                        }],
-                        subject: "🤖 Googlebot is Crawling Your Site!",
-                        htmlContent: `
-                            <h2>Googlebot Detected</h2>
-                            <p><strong>Path requested:</strong> ${req.originalUrl}</p>
-                            <p><strong>User-Agent:</strong> ${userAgent}</p>
-                            <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
-                            <hr />
-                            <p><small>To disable these emails, set NOTIFY_GOOGLE_CRAWL=false in your .env file and restart the server.</small></p>
-                        `
-                    };
-
-                    if (process.env.BREVO_API_KEY) {
-                        fetch('https://api.brevo.com/v3/smtp/email', {
-                            method: 'POST',
-                            headers: {
-                                'accept': 'application/json',
-                                'api-key': process.env.BREVO_API_KEY,
-                                'content-type': 'application/json'
-                            },
-                            body: JSON.stringify(emailPayload)
-                        }).catch(err => console.error('Failed to notify Googlebot crawl:', err));
-                    }
-                }
-            }
-        }
-    } catch (err) {
-        console.error('Googlebot notify middleware error:', err);
-    }
-    next();
-});
+// Googlebot crawl emails were removed 2026-10-08: the middleware trusted the
+// user-agent, so scanners faking "Googlebot" while probing for .env files set it
+// off, and it pasted the requested path into the email HTML unescaped. Verified
+// Googlebot crawls (reverse + forward DNS) are now counted from the nginx log by
+// the nightly fleet report and land in the Monday security email.
 
 // Serve static files from the React app
 import path from 'path';
