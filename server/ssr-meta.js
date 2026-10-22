@@ -131,7 +131,7 @@ const ssrMeta = new Map([
     // ─── City Marketing Agency Pages ─────────────────────────────────────────
     ['/clovis-web-design', {
         title: "Clovis Web Design & SEO Agency | Boostify USA",
-        description: "Clovis web design and SEO from our Fresno office at 6362 N Figarden Dr. Websites from $649, local SEO from $595 a month, and you own the domain.",
+        description: "Clovis web design and SEO with the prices on the page: websites from $649, local SEO from $595 a month, and you own the domain.",
         canonical: `${SITE_URL}/clovis-web-design`
     }],
     ['/visalia-web-design', {

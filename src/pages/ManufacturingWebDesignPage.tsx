@@ -278,7 +278,9 @@ const faqs = [
   },
   {
     question: 'Do you only build for shops in the Central Valley?',
-    answer: 'No. The office is in Fresno and we build for shops anywhere in the US. If your shop is in the Valley, we would rather come see the floor than send you a questionnaire.'
+    answer: 'No. We’re a web design company in Fresno, and we build for shops anywhere in the US. If your shop is in the Valley, we would rather come see the floor than send you a questionnaire.',
+    // Linked in the visible answer only; the FAQ schema keeps the plain text.
+    link: { text: 'web design company in Fresno', to: '/' }
   }
 ];
 
@@ -985,7 +987,12 @@ export function ManufacturingWebDesignPage() {
                     <h3 className="text-lg md:text-xl font-black text-dark tracking-tight max-w-[52ch]">{faq.question}</h3>
                     <ChevronDown size={22} aria-hidden="true" className="text-orange shrink-0 mt-1 transition-transform duration-200 group-open:rotate-180" />
                   </summary>
-                  <p className="text-gray font-medium leading-relaxed pb-7 max-w-[68ch]">{faq.answer}</p>
+                  <p className="text-gray font-medium leading-relaxed pb-7 max-w-[68ch]">
+                    {faq.link
+                      ? faq.answer.split(faq.link.text).flatMap((part, j) =>
+                          j === 0 ? [part] : [<Link key={j} to={faq.link!.to} className="text-dark font-bold hover:text-orange transition-colors">{faq.link!.text}</Link>, part])
+                      : faq.answer}
+                  </p>
                 </details>
               ))}
             </div>
