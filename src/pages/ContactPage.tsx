@@ -14,6 +14,8 @@ import {
   Send
 } from 'lucide-react';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { leadContext } from '../lib/attribution';
+import { trackLead } from '../lib/analytics';
 
 function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -52,7 +54,7 @@ function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, recaptchaToken: token }),
+        body: JSON.stringify({ ...formData, recaptchaToken: token, ...leadContext('Contact Form') }),
       });
 
       if (!response.ok) {
@@ -68,6 +70,7 @@ function ContactForm() {
 
       const data = await response.json();
 
+      trackLead('Contact Form', formData.service);
       setSubmitted(true);
     } catch (err: any) {
       console.error('Submission error:', err);

@@ -6,6 +6,8 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { ArrowRight, CheckCircle2, Loader2, Target, Zap, Star } from 'lucide-react';
+import { leadContext } from '../lib/attribution';
+import { trackLead } from '../lib/analytics';
 
 export function PartnerLeadPage() {
     const { partnerId } = useParams();
@@ -27,12 +29,13 @@ export function PartnerLeadPage() {
             const res = await fetch('/api/partners/leads', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ partnerId, ...formData })
+                body: JSON.stringify({ partnerId, ...formData, ...leadContext('Partner Referral') })
             });
             const data = await res.json();
 
             if (!res.ok) throw new Error(data.error || 'Failed to submit form');
 
+            trackLead('Partner Referral');
             setStatus('success');
         } catch (error) {
             console.error(error);

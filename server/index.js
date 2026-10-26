@@ -338,6 +338,65 @@ app.use(express.static(DIST_DIR, {
     }
 }));
 
+// ─── GoHighLevel lead forward ────────────────────────────────────────
+// Every accepted lead is also POSTed to the GHL "Website ⇒SMS" workflow's
+// Inbound Webhook trigger, so it lands in the CRM. Fire-and-forget with a
+// short timeout: GHL being slow or down never blocks or fails the visitor's
+// submission (leads.json + the Brevo email still capture it). Failures are
+// logged. Override the URL with GHL_LEAD_WEBHOOK_URL; set it to "off" to disable.
+const GHL_LEAD_WEBHOOK_URL = process.env.GHL_LEAD_WEBHOOK_URL ||
+    'https://services.leadconnectorhq.com/hooks/7ubVUyyBfsidQFxjmyAG/webhook-trigger/145cf9b3-3df3-4002-9fd8-67625f84a7cb';
+const GHL_TIMEOUT_MS = 5000;
+
+function cleanStr(v, max = 5000) {
+    return typeof v === 'string' ? v.trim().slice(0, max) : '';
+}
+
+function forwardLeadToGHL(lead, body = {}) {
+    if (!GHL_LEAD_WEBHOOK_URL || GHL_LEAD_WEBHOOK_URL === 'off') return;
+    try {
+        const attribution = (body.attribution && typeof body.attribution === 'object') ? body.attribution : {};
+        const fullName = cleanStr(lead.name, 200);
+        const [firstName, ...rest] = fullName.split(/\s+/);
+        let email = cleanStr(lead.email, 320);
+        if (/@boostifyusa\.local$/i.test(email)) email = ''; // campaign form placeholder
+        const payload = {
+            first_name: firstName || '',
+            last_name: rest.join(' '),
+            full_name: fullName,
+            email,
+            phone: cleanStr(lead.phone, 40),
+            service_requested: cleanStr(lead.service, 200),
+            message: cleanStr(lead.message),
+            source_page: cleanStr(body.sourcePage, 500),
+            form_name: cleanStr(body.formName, 200) || lead.formName || '',
+            sms_consent: Boolean(lead.smsConsent),
+            utm_source: cleanStr(attribution.utm_source, 200),
+            utm_medium: cleanStr(attribution.utm_medium, 200),
+            utm_campaign: cleanStr(attribution.utm_campaign, 200),
+            gclid: cleanStr(attribution.gclid, 500),
+            landing_page: cleanStr(attribution.landing_page, 1000),
+            referrer: cleanStr(attribution.referrer, 1000),
+        };
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), GHL_TIMEOUT_MS);
+        fetch(GHL_LEAD_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(payload),
+            signal: controller.signal,
+        }).then(async (r) => {
+            const text = await r.text().catch(() => '');
+            if (r.ok) console.log(`GHL lead forwarded [${payload.form_name}]: ${payload.email || payload.phone} -> ${r.status} ${text.slice(0, 200)}`);
+            else console.error(`GHL lead forward FAILED [${payload.form_name}]: ${payload.email || payload.phone} -> ${r.status} ${text.slice(0, 500)}`);
+        }).catch((err) => {
+            console.error(`GHL lead forward FAILED [${payload.form_name}]: ${payload.email || payload.phone} -> ${err.name === 'AbortError' ? 'timeout' : err.message}`);
+        }).finally(() => clearTimeout(timer));
+    } catch (err) {
+        console.error('forwardLeadToGHL error (non-fatal):', err.message);
+    }
+}
+
 // Main Contact Route
 app.post('/api/contact', async (req, res) => {
     try {
@@ -373,6 +432,13 @@ app.post('/api/contact', async (req, res) => {
             console.log('ReCAPTCHA Failed:', verifyData);
             return res.status(400).json({ error: 'System detected potential spam. Please try again.' });
         }
+
+        // reCAPTCHA passed: hand the lead to GoHighLevel (never blocks the response).
+        forwardLeadToGHL({
+            name, email, phone, service, message,
+            smsConsent: Boolean(consentPromo || consentService),
+            formName: 'Contact Form',
+        }, req.body);
 
         if (!process.env.BREVO_API_KEY) {
             console.error('Missing BREVO_API_KEY in .env');
@@ -803,6 +869,13 @@ app.post('/api/audit/send-pin', async (req, res) => {
 
         // Durable capture FIRST — survives any later failure.
         logLead({ source: 'SEO Audit (PIN requested)', email, name, phone, businessName });
+        forwardLeadToGHL({
+            name, email, phone,
+            service: 'Free SEO Audit',
+            message: businessName ? `SEO audit PIN requested for: ${businessName}` : 'SEO audit PIN requested',
+            smsConsent: false,
+            formName: 'SEO Audit',
+        }, req.body);
 
         if (!process.env.BREVO_API_KEY) {
             return res.status(500).json({ error: 'Server configuration error' });
@@ -1560,6 +1633,17 @@ app.post('/api/partners/leads', async (req, res) => {
         };
         partnerLeadsStore.set(leadId, lead);
         saveJSONStore(partnerLeadsStore, PARTNER_LEADS_STORE_PATH);
+
+        forwardLeadToGHL({
+            name: clientName,
+            email: clientEmail,
+            phone: clientPhone,
+            service: 'Partner Referral',
+            message: [`Referred by partner ${partner.name}${partner.businessName ? ` (${partner.businessName})` : ''} [${partnerId}]`,
+                clientBusiness && `Business: ${clientBusiness}`, notes].filter(Boolean).join('\n'),
+            smsConsent: false,
+            formName: 'Partner Referral',
+        }, req.body);
 
         // Admin Notification
         if (process.env.BREVO_API_KEY) {

@@ -6,6 +6,8 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, ChevronDown, Star, Layout, Search, MousePointerClick, Zap, Bot, ArrowRight, Check, CheckCircle } from 'lucide-react';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { leadContext } from '../lib/attribution';
+import { trackLead } from '../lib/analytics';
 
 const FAQItem = ({ question, answer }: { question: string; answer: React.ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +75,8 @@ const AuditForm = () => {
                 message: `🔥 NEW CAMPAIGN LEAD 🔥\n\nSource: Central Valley Campaign Landing Page (/campaign)\nRequested: Custom Web Design Quote & Strategy\n\nWebsite/Business URL: ${formData.website ? formData.website : 'None provided - (Potential New Business/From Scratch Build)'}\nPhone Number: ${formData.phone}\n\n* Note: This lead originated directly from the paid ads funnel. Please follow up ASAP.`,
                 consentPromo: false,
                 consentService: false,
-                recaptchaToken: token
+                recaptchaToken: token,
+                ...leadContext('Campaign Landing Page')
             };
 
             const response = await fetch('/api/contact', {
@@ -92,6 +95,7 @@ const AuditForm = () => {
                 }
             }
 
+            trackLead('Campaign Landing Page', payload.service);
             setSubmitted(true);
         } catch (err: any) {
             console.error('Submission error:', err);

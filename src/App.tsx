@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 
 import { HomePageV2 } from './pages/HomePageV2';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { Analytics } from './lib/analytics';
 
 // Lazy load pages for better performance
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then(module => ({ default: module.ServicesPage })));
@@ -80,6 +81,7 @@ export function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTopOrHash />
+        <Analytics />
         <ErrorBoundary>
           <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white"><div className="w-12 h-12 border-4 border-orange/20 border-t-orange rounded-full animate-spin"></div></div>}>
             <Routes>

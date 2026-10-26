@@ -11,6 +11,8 @@ import { StepConfirmBusiness } from '../components/seo-audit/StepConfirmBusiness
 import { StepSelectKeyword } from '../components/seo-audit/StepSelectKeyword';
 import { StepRunning } from '../components/seo-audit/StepRunning';
 import { StepResults } from '../components/seo-audit/StepResults';
+import { leadContext } from '../lib/attribution';
+import { trackLead } from '../lib/analytics';
 
 
 const STEPS = {
@@ -177,13 +179,15 @@ export function SEOAuditPage() {
                     email: leadForm.email,
                     name: leadForm.name,
                     phone: leadForm.phone,
-                    businessName: leadForm.businessName
+                    businessName: leadForm.businessName,
+                    ...leadContext('SEO Audit')
                 })
             });
             if (!response.ok) {
                 const data = await response.json();
                 throw new Error(data.error || 'Failed to send PIN');
             }
+            trackLead('SEO Audit', 'Free SEO Audit');
             setStep(STEPS.VERIFY_PIN);
             // Start resend cooldown (60s)
             setResendCooldown(60);

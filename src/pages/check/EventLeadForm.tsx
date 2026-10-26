@@ -4,6 +4,8 @@ import {
   GoogleReCaptchaProvider,
   useGoogleReCaptcha,
 } from 'react-google-recaptcha-v3';
+import { leadContext } from '../../lib/attribution';
+import { trackLead } from '../../lib/analytics';
 
 /**
  * Compact lead-capture form for the Table Mountain QR flow. Posts to the same
@@ -93,6 +95,7 @@ function FormInner({
           consentPromo: form.consent,
           consentService: form.consent,
           recaptchaToken: token,
+          ...leadContext(source),
         }),
       });
 
@@ -106,6 +109,7 @@ function FormInner({
         }
       }
 
+      trackLead(source, source);
       setSubmitted(true);
     } catch (err: any) {
       setError(
